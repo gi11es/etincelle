@@ -1,4 +1,4 @@
-# Family Learning
+# Etincelle
 
 A personalized learning platform for the whole family. Three portals, three learners, one shared home — each with tailored content, adaptive difficulty, and progress tracking.
 
