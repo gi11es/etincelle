@@ -14,7 +14,6 @@ const DASHA_BADGE_IDS = [
 ];
 
 async function init() {
-  localStorage.setItem('family-active-user', 'dasha');
   await renderSummary();
   await renderXPChart();
   await renderMasteryDonut();

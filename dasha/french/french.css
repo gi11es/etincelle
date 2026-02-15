@@ -333,6 +333,114 @@
   background-clip: text;
 }
 
+/* ===== Stacked choices (definitions are long) ===== */
+.fill-choices.fc-stacked {
+  grid-template-columns: 1fr;
+}
+
+.fill-choices.fc-stacked .fill-choice {
+  text-align: left;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* ===== Trap / Faux amis ===== */
+.trap-box {
+  margin: 16px 0;
+  padding: 16px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.trap-label {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  margin-bottom: 6px;
+}
+
+.trap-meaning {
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.trap-explanation {
+  margin-top: 16px;
+  padding: 16px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  text-align: left;
+  line-height: 1.6;
+}
+
+.trap-warning {
+  color: var(--danger);
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.trap-btn-correct { border-color: rgba(74,222,128,0.2) !important; }
+.trap-btn-piege { border-color: rgba(248,113,113,0.2) !important; }
+
+/* ===== Register grid (explanation) ===== */
+.register-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 12px;
+  margin-top: 16px;
+  padding: 16px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  align-items: center;
+  line-height: 1.5;
+}
+
+.register-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.register-tag.soutenu { background: rgba(168,85,247,0.15); color: var(--purple); }
+.register-tag.courant { background: rgba(79,172,254,0.15); color: var(--primary); }
+.register-tag.familier { background: rgba(251,146,60,0.15); color: var(--orange); }
+
+/* ===== Context / situation ===== */
+.context-concept {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+  margin-bottom: 12px;
+  padding: 12px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.context-situation {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ===== Nuance header ===== */
+.nuance-header {
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-align: center;
+  background: linear-gradient(135deg, var(--purple), var(--pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* Responsive */
 @media (max-width: 500px) {
   .fr-title { font-size: 2rem; }

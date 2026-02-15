@@ -2,9 +2,19 @@ const DB_VERSION = 2;
 
 let dbCache = {};
 
+function detectUser() {
+  // Infer user from URL path: /felix/..., /dasha/..., /zoe/...
+  const match = window.location.pathname.match(/\/(felix|dasha|zoe)\//);
+  return match ? match[1] : null;
+}
+
 function getDBName(user) {
   if (user) return `FamilyLearning-${user}`;
-  const active = localStorage.getItem('family-active-user');
+  let active = localStorage.getItem('family-active-user');
+  if (!active) {
+    active = detectUser();
+    if (active) localStorage.setItem('family-active-user', active);
+  }
   return active ? `FamilyLearning-${active}` : 'FamilyLearning-default';
 }
 

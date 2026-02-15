@@ -1,50 +1,70 @@
 import SFX from '../../../shared/sfx.js';
 import { shuffle, escapeAttr } from '../../../shared/helpers.js';
 
+/**
+ * Match Pairs — connect French items to their definitions/equivalents.
+ * For registers: match soutenu ↔ familier.
+ * For others: match word ↔ definition.
+ */
 export function renderMatchPairs({ container, pairItems, onAnswer }) {
-  if (!pairItems || pairItems.length < 2) {
-    onAnswer(true);
-    return;
-  }
+  if (!pairItems || pairItems.length < 2) { onAnswer(true); return; }
 
   const pairs = pairItems.slice(0, 6);
-  const frItems = shuffle(pairs.map(p => ({ text: p.fr, id: p.id })));
-  const enItems = shuffle(pairs.map(p => ({ text: p.en, id: p.id })));
+  const isRegister = pairs[0]?.type === 'register';
 
-  let selectedFr = null;
-  let selectedEn = null;
+  let leftItems, rightItems, leftLabel, rightLabel;
+
+  if (isRegister) {
+    // Match soutenu ↔ familier
+    leftLabel = 'Soutenu';
+    rightLabel = 'Familier';
+    leftItems = shuffle(pairs.filter(p => p.fr_soutenu && p.fr_familier).map(p => ({ text: p.fr_soutenu, id: p.id })));
+    rightItems = shuffle(pairs.filter(p => p.fr_soutenu && p.fr_familier).map(p => ({ text: p.fr_familier, id: p.id })));
+  } else {
+    // Match word ↔ short definition
+    leftLabel = 'Mot';
+    rightLabel = 'Définition';
+    leftItems = shuffle(pairs.map(p => ({ text: p.fr, id: p.id })));
+    rightItems = shuffle(pairs.map(p => ({
+      text: truncate(p.definition_fr || p.en, 50),
+      id: p.id
+    })));
+  }
+
+  let selectedLeft = null;
+  let selectedRight = null;
   let matchedCount = 0;
   let errors = 0;
-  const totalPairs = pairs.length;
+  const totalPairs = Math.min(leftItems.length, rightItems.length);
 
   container.innerHTML = `
-    <div class="question-text">Relie les paires français-anglais</div>
+    <div class="question-text" style="margin-bottom:12px">${isRegister ? 'Relie les registres' : 'Relie les paires'}</div>
     <div class="match-container">
       <div class="match-column">
-        <h4>Français</h4>
-        ${frItems.map(f => `<div class="match-item match-fr" data-id="${f.id}" data-val="${escapeAttr(f.text)}">${f.text}</div>`).join('')}
+        <h4>${leftLabel}</h4>
+        ${leftItems.map(f => `<div class="match-item match-fr" data-id="${f.id}" data-val="${escapeAttr(f.text)}">${f.text}</div>`).join('')}
       </div>
       <div class="match-column">
-        <h4>English</h4>
-        ${enItems.map(e => `<div class="match-item match-en" data-id="${e.id}" data-val="${escapeAttr(e.text)}">${e.text}</div>`).join('')}
+        <h4>${rightLabel}</h4>
+        ${rightItems.map(e => `<div class="match-item match-en" data-id="${e.id}" data-val="${escapeAttr(e.text)}">${e.text}</div>`).join('')}
       </div>
     </div>
   `;
 
-  const frEls = container.querySelectorAll('.match-fr');
-  const enEls = container.querySelectorAll('.match-en');
+  const leftEls = container.querySelectorAll('.match-fr');
+  const rightEls = container.querySelectorAll('.match-en');
 
   function tryMatch() {
-    if (!selectedFr || !selectedEn) return;
+    if (!selectedLeft || !selectedRight) return;
 
-    const frEl = container.querySelector(`.match-fr.selected`);
-    const enEl = container.querySelector(`.match-en.selected`);
+    const leftEl = container.querySelector('.match-fr.selected');
+    const rightEl = container.querySelector('.match-en.selected');
 
-    if (selectedFr === selectedEn) {
-      frEl.classList.add('matched');
-      frEl.classList.remove('selected');
-      enEl.classList.add('matched');
-      enEl.classList.remove('selected');
+    if (selectedLeft === selectedRight) {
+      leftEl.classList.add('matched');
+      leftEl.classList.remove('selected');
+      rightEl.classList.add('matched');
+      rightEl.classList.remove('selected');
       matchedCount++;
       SFX.play('match');
 
@@ -53,39 +73,44 @@ export function renderMatchPairs({ container, pairItems, onAnswer }) {
         onAnswer(errors <= 1);
       }
     } else {
-      frEl.classList.add('wrong-match');
-      enEl.classList.add('wrong-match');
+      leftEl.classList.add('wrong-match');
+      rightEl.classList.add('wrong-match');
       errors++;
       SFX.play('wrong');
       setTimeout(() => {
-        frEl.classList.remove('wrong-match', 'selected');
-        enEl.classList.remove('wrong-match', 'selected');
+        leftEl.classList.remove('wrong-match', 'selected');
+        rightEl.classList.remove('wrong-match', 'selected');
       }, 500);
     }
 
-    selectedFr = null;
-    selectedEn = null;
+    selectedLeft = null;
+    selectedRight = null;
   }
 
-  frEls.forEach(el => {
+  leftEls.forEach(el => {
     el.addEventListener('click', () => {
       if (el.classList.contains('matched')) return;
       SFX.play('tap');
-      frEls.forEach(e => e.classList.remove('selected'));
+      leftEls.forEach(e => e.classList.remove('selected'));
       el.classList.add('selected');
-      selectedFr = el.dataset.id;
+      selectedLeft = el.dataset.id;
       tryMatch();
     });
   });
 
-  enEls.forEach(el => {
+  rightEls.forEach(el => {
     el.addEventListener('click', () => {
       if (el.classList.contains('matched')) return;
       SFX.play('tap');
-      enEls.forEach(e => e.classList.remove('selected'));
+      rightEls.forEach(e => e.classList.remove('selected'));
       el.classList.add('selected');
-      selectedEn = el.dataset.id;
+      selectedRight = el.dataset.id;
       tryMatch();
     });
   });
+}
+
+function truncate(text, max) {
+  if (!text || text.length <= max) return text;
+  return text.slice(0, max - 1) + '…';
 }
