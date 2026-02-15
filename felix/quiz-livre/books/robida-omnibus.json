@@ -13,79 +13,79 @@
       "question": "En quelle année se déroule l'action du chapitre ?",
       "choices": ["1883", "1920", "1952", "2000"],
       "answer": 2,
-      "explanation": "L'action se déroule en septembre 1952. Le roman a été publié en 1883, donc Robida imaginait le futur environ 70 ans plus tard."
+      "explanation": "Dans le texte : « Le mois de septembre 1952 touchait à sa fin. » Le roman a été publié en 1883, donc Robida imaginait le futur environ 70 ans plus tard."
     },
     {
       "question": "Combien de lycéennes sont assises sur la plate-forme arrière de l'aéronef ?",
       "choices": ["Deux", "Trois", "Quatre", "Cinq"],
       "answer": 1,
-      "explanation": "Trois jeunes filles portant l'uniforme des lycéennes forment un groupe sur la plate-forme arrière : Hélène, Barbe et Barnabette."
+      "explanation": "Dans le texte : « Assises sur les pliants de la plate-forme d'arrière, trois jeunes filles portant l'uniforme des lycéennes formaient un groupe gracieux. » Ce sont Hélène, Barbe et Barnabette."
     },
     {
       "question": "Comment s'appelle l'héroïne principale du roman ?",
       "choices": ["Barbe Ponto", "Barnabette Ponto", "Hélène Colobry", "Nicolasse Ponto"],
       "answer": 2,
-      "explanation": "Hélène Colobry est la protagoniste. Elle est la cousine de Barbe et Barnabette Ponto."
+      "explanation": "Dans le texte : « La lycéenne blonde se nommait Hélène Colobry ; elle était orpheline et pupille du banquier Ponto, cousin éloigné de sa famille. » Elle est la cousine de Barbe et Barnabette."
     },
     {
       "question": "Quel est le métier de Raphaël Ponto, le père de Barbe et Barnabette ?",
-      "choices": ["Ingénieur", "Banquier millionnaire", "Pilote d'aéronef", "Professeur au lycée"],
+      "choices": ["Ingénieur", "Banquier milliardaire", "Pilote d'aéronef", "Professeur au lycée"],
       "answer": 1,
-      "explanation": "Raphaël Ponto est un banquier millionnaire, l'un des grands financiers autour duquel gravitent des millionnaires plus modestes."
+      "explanation": "Dans le texte : « Les deux lycéennes brunes étaient les filles du banquier milliardaire Raphaël Ponto, un de ces soleils de la Bourse autour desquels gravite en humbles satellites la foule des petits millionnaires. »"
     },
     {
       "question": "À quelle altitude réglementaire vole l'aéronef-omnibus ?",
       "choices": ["50 mètres", "100 mètres", "250 mètres", "500 mètres"],
       "answer": 2,
-      "explanation": "L'aéronef-omnibus B suit l'altitude réglementaire de deux cent cinquante mètres au-dessus de la Seine."
+      "explanation": "Dans le texte : « L'aéronef omnibus B [...] suivait, à l'altitude réglementaire de deux cent cinquante mètres, la ligne onduleuse des boulevards prolongés. »"
     },
     {
       "question": "D'où part l'aéronef-omnibus B ?",
       "choices": ["La gare Saint-Lazare", "La gare centrale des Tubes, boulevard Montmartre", "L'aéroport de Nanterre", "La tour de l'Observatoire"],
       "answer": 1,
-      "explanation": "L'aéronef-omnibus B fait le service de la gare centrale des Tubes, boulevard Montmartre, jusqu'à Saint-Germain-en-Laye."
+      "explanation": "Dans le texte : « L'aéronef omnibus B, qui fait le service de la gare centrale des Tubes — boulevard Montmartre — au très aristocratique faubourg Saint-Germain-en-Laye. »"
     },
     {
       "question": "Quelle est la destination finale de l'aéronef-omnibus B ?",
       "choices": ["Le parc de Boulogne", "Nanterre", "Saint-Germain-en-Laye", "Chatou"],
       "answer": 2,
-      "explanation": "L'aéronef-omnibus B fait le service jusqu'au très aristocratique faubourg de Saint-Germain-en-Laye."
+      "explanation": "Dans le texte : « L'aéronef omnibus B, qui fait le service de la gare centrale des Tubes — boulevard Montmartre — au très aristocratique faubourg Saint-Germain-en-Laye. »"
     },
     {
       "question": "Combien de temps met l'omnibus pour aller du boulevard Montmartre au parc de Boulogne ?",
       "choices": ["Deux minutes", "Cinq minutes", "Dix minutes", "Vingt minutes"],
       "answer": 2,
-      "explanation": "Barnabette se plaint : « Dix minutes pour aller du boulevard Montmartre au parc de Boulogne, nous ne marchons pas ! »"
+      "explanation": "Dans le texte : « C'est inoui, Barnabette, disait l'une, dix minutes pour aller du boulevard Montmartre au parc de Boulogne, nous ne marchons pas ! » Les soeurs trouvent cela trop lent."
     },
     {
-      "question": "Quel véhicule individuel Barbe aurait-elle préféré prendre à la place de l'omnibus ?",
+      "question": "Quel véhicule individuel Barnabette aurait-elle préféré prendre à la place de l'omnibus ?",
       "choices": ["Un véloce", "Un aérocab", "Une chaloupe", "Un éclair"],
       "answer": 1,
-      "explanation": "Barnabette dit à Barbe : « Vois-tu que j'avais raison de vouloir prendre un aérocab ! » Les aérocabs sont des véhicules aériens individuels, plus rapides."
+      "explanation": "Dans le texte : « Ces omnibus sont ridicules ! répondait l'autre ; vois-tu que j'avais raison, Barbe, de vouloir prendre un aérocab ! nous serions arrivées..... » Les aérocabs sont des véhicules aériens individuels plus rapides."
     },
     {
       "question": "Quel obstacle l'aéronef doit-il contourner pendant le trajet ?",
       "choices": ["La Tour Eiffel", "Les tours de l'Observatoire et l'usine électrique du Mont Valérien", "Les cheminées des usines de Nanterre", "Le phare de Chatou"],
       "answer": 1,
-      "explanation": "L'aéronef fait un crochet à droite pour éviter les hautes tours de l'Observatoire et de la grande usine électrique du Mont Valérien."
+      "explanation": "Dans le texte : « L'aéronef fit un crochet à droite pour éviter les hautes tours de l'Observatoire et de la grande usine électrique du mont Valérien. »"
     },
     {
       "question": "À quel animal l'aéronef est-il comparé lors de sa descente ?",
       "choices": ["Un aigle", "Une hirondelle", "Un papillon", "Un faucon"],
       "answer": 1,
-      "explanation": "« L'aéronef, comme une gigantesque hirondelle, se laissa glisser sur les couches de l'air en décrivant une courbe. »"
+      "explanation": "Dans le texte : « L'aéronef, comme une gigantesque hirondelle, se laissa glisser sur les couches de l'air en décrivant une courbe et descendit en une minute à la hauteur du bureau. »"
     },
     {
       "question": "Combien de passagers l'aéronef-omnibus peut-il transporter environ ?",
-      "choices": ["Une dizaine", "Une vingtaine à l'intérieur, autant à l'impériale, et quatre sur la plate-forme", "Cent passagers", "Cinquante passagers"],
+      "choices": ["Une dizaine", "Une vingtaine à l'intérieur, autant sur la dunette, et quatre sur la plate-forme", "Cent passagers", "Cinquante passagers"],
       "answer": 1,
-      "explanation": "L'omnibus transporte une vingtaine de passagers à l'intérieur, autant sur l'impériale (le pont supérieur) et quatre sur la plate-forme arrière."
+      "explanation": "Dans le texte : « L'aéronef B portait son contingent complet de voyageurs, une vingtaine dans l'intérieur, autant sur la dunette — l'ancienne impériale des véhicules terriens de jadis — et quatre sur la plate-forme d'arrière. »"
     },
     {
       "question": "Comment le conducteur arrime-t-il l'aéronef au débarcadère ?",
       "choices": ["Avec des cordes", "En jetant un grappin au contrôleur", "Avec un aimant électrique", "En posant des roues sur le quai"],
       "answer": 1,
-      "explanation": "Le conducteur, placé sur la plate-forme arrière, jette le grappin au contrôleur du bureau pour établir les communications entre l'aéronef et la terre."
+      "explanation": "Dans le texte : « Le conducteur, placé sur la plate-forme d'arrière, jeta le grappin au contrôleur du bureau et les communications furent établies entre le navire aérien et la terre. »"
     },
     {
       "question": "Pourquoi les prénoms Barbe et Barnabette sont-ils choisis dans cette société future ?",
@@ -96,43 +96,37 @@
         "Ce sont des prénoms bretons traditionnels"
       ],
       "answer": 2,
-      "explanation": "Dans cette société future, les partisans de l'émancipation de la femme donnent aux filles des noms à caractère dur ou d'une euphonie rébarbative, pour marquer le sérieux de leur rôle."
+      "explanation": "Dans le texte : « les partisans de l'émancipation de la femme et de sa participation à tous les droits politiques et sociaux [...] ont adopté la coutume de donner aux enfants de ce sexe émancipé des noms d'un caractère dur ou d'une euphonie rébarbative. »"
     },
     {
       "question": "D'où arrive Hélène Colobry au début du chapitre ?",
       "choices": ["De Paris", "De Londres", "De Bretagne", "De Saint-Germain-en-Laye"],
       "answer": 2,
-      "explanation": "Hélène arrive par un train du Tube de Bretagne. Elle revient à Paris après avoir passé plusieurs années dans un lycée breton."
+      "explanation": "Dans le texte : « elle, la pauvrette, aurait pour toutes effusions une poignée de main d'un tuteur qu'elle n'avait pas vu depuis près de huit ans, depuis le jour déjà lointain de son départ pour le lycée de Plougadec-les-Cormorans, dans le Finistère. » Le Finistère est en Bretagne."
     },
     {
-      "question": "Comment s'appelle l'appareil qui remplace les domestiques pour annoncer les visiteurs chez les Ponto ?",
-      "choices": ["Le téléphonoscope", "Le phono-annonceur à clavier", "Le phonographe", "L'interphone électrique"],
+      "question": "Comment s'appelle l'appareil de communication installé dans le vestibule des maisons ?",
+      "choices": ["Le téléphone", "Le téléphonographe", "Le phonographe", "L'interphone électrique"],
       "answer": 1,
-      "explanation": "Le phono-annonceur à clavier permet aux visiteurs de taper leur nom, qui est ensuite annoncé par l'appareil, remplaçant les domestiques."
+      "explanation": "Dans le texte : « Dans toutes les maisons des grands quartiers, le panneau central du vestibule est occupé par le téléphonographe, cet heureux amalgame du téléphone et du phonographe. » C'est avec cet appareil que Barbe s'annonce en arrivant chez les Ponto."
     },
     {
       "question": "À quelle hauteur se dresse le débarcadère de Chatou ?",
       "choices": ["Cent mètres", "Deux cent cinquante mètres", "Cinq cents mètres", "Mille mètres"],
       "answer": 2,
-      "explanation": "Le débarcadère de Chatou dresse à cinq cents mètres sa haute charpente couronnée par un phare électrique."
+      "explanation": "Dans le texte : « Le débarcadère de Chatou dressait à cinq cents mètres sa haute charpente couronnée par un phare électrique. »"
     },
     {
       "question": "Quel sentiment Hélène éprouve-t-elle en regardant Paris depuis la plate-forme ?",
       "choices": ["De l'excitation", "De la mélancolie", "De la peur", "De l'indifférence"],
       "answer": 1,
-      "explanation": "Hélène, appuyée sur la balustrade, regardait avec une certaine mélancolie filer sous la nacelle les innombrables toits de l'immense Paris."
-    },
-    {
-      "question": "Quel type de transport a rendu la locomotive obsolète dans ce monde futur ?",
-      "choices": ["L'aéronef", "Le Tube", "L'aérocab", "Le trottoir roulant"],
-      "answer": 1,
-      "explanation": "Le Tube est un système de transport souterrain ou sous-marin à grande vitesse qui a rendu la locomotive obsolète."
+      "explanation": "Dans le texte : « Hélène Colobry, appuyée sur la balustrade de la plate-forme, regardait avec une certaine mélancolie filer sous la nacelle les innombrables toits, les cheminées, les belvédères, les coupoles, les tours et les phares de l'immense Paris. »"
     },
     {
       "question": "Quel quartier industriel l'aéronef survole-t-il avant d'arriver au tournant de la Seine ?",
       "choices": ["Boulogne", "Nanterre", "Montmartre", "La Défense"],
       "answer": 1,
-      "explanation": "L'aéronef fait un bond au-dessus du quartier industriel de Nanterre avant d'arriver au tournant de la Seine."
+      "explanation": "Dans le texte : « puis d'un seul bond au-dessus du quartier industriel de Nanterre, elle arriva au tournant de la Seine. »"
     }
   ],
 
@@ -140,77 +134,77 @@
     {
       "statement": "L'action du chapitre se déroule en septembre 1952.",
       "answer": true,
-      "explanation": "Le mois de septembre 1952 touchait à sa fin quand commence l'action du premier chapitre."
+      "explanation": "Dans le texte : « Le mois de septembre 1952 touchait à sa fin. »"
     },
     {
       "statement": "Hélène Colobry est la soeur de Barbe et Barnabette Ponto.",
       "answer": false,
-      "explanation": "Hélène est la cousine de Barbe et Barnabette, pas leur soeur. Les deux Ponto sont les filles du banquier Raphaël Ponto."
+      "explanation": "Dans le texte : « La lycéenne blonde se nommait Hélène Colobry ; elle était orpheline et pupille du banquier Ponto, cousin éloigné de sa famille. » Elle est leur cousine et pupille, pas leur soeur."
     },
     {
       "statement": "L'aéronef-omnibus vole à une altitude de 500 mètres.",
       "answer": false,
-      "explanation": "L'altitude réglementaire est de 250 mètres, pas 500. C'est le débarcadère de Chatou qui se dresse à 500 mètres de hauteur."
+      "explanation": "Dans le texte : « à l'altitude réglementaire de deux cent cinquante mètres. » L'altitude est de 250 mètres, pas 500. C'est le débarcadère de Chatou qui se dresse à 500 mètres."
     },
     {
       "statement": "Les aérocabs sont des véhicules aériens individuels, plus rapides que l'omnibus.",
       "answer": true,
-      "explanation": "Les aérocabs sont des sortes de taxis aériens individuels. Barnabette regrette de ne pas en avoir pris un, car l'omnibus est trop lent à son goût."
+      "explanation": "Dans le texte : « vois-tu que j'avais raison, Barbe, de vouloir prendre un aérocab ! nous serions arrivées..... » Barnabette regrette de ne pas en avoir pris un car l'omnibus est trop lent."
     },
     {
       "statement": "Barbe et Barnabette sont enthousiastes et trouvent le voyage en omnibus amusant.",
       "answer": false,
-      "explanation": "Au contraire, Barbe et Barnabette trouvent l'omnibus trop lent et « ridicule ». Elles auraient préféré prendre un aérocab plus rapide."
+      "explanation": "Dans le texte : « Ces omnibus sont ridicules ! » et « dix minutes pour aller du boulevard Montmartre au parc de Boulogne, nous ne marchons pas ! » Elles trouvent l'omnibus trop lent."
     },
     {
       "statement": "L'aéronef est comparé à une gigantesque hirondelle lors de sa descente.",
       "answer": true,
-      "explanation": "Robida écrit : « L'aéronef, comme une gigantesque hirondelle, se laissa glisser sur les couches de l'air en décrivant une courbe. »"
+      "explanation": "Dans le texte : « L'aéronef, comme une gigantesque hirondelle, se laissa glisser sur les couches de l'air en décrivant une courbe. »"
     },
     {
-      "statement": "Dans cette société future, les femmes sont totalement émancipées et occupent tous les postes.",
+      "statement": "Dans cette société future, les femmes participent à tous les droits politiques et sociaux.",
       "answer": true,
-      "explanation": "Robida imagine une société où les femmes sont députées, avocates, militaires et occupent tous les postes de responsabilité."
+      "explanation": "Dans le texte : « les partisans de l'émancipation de la femme et de sa participation à tous les droits politiques et sociaux, ainsi qu'à tous les devoirs résultant de ces droits. » Le chapitre mentionne cette émancipation à travers la coutume des prénoms sérieux."
     },
     {
       "statement": "Raphaël Ponto est un modeste employé de banque.",
       "answer": false,
-      "explanation": "Raphaël Ponto est un banquier millionnaire, l'un des grands financiers de cette époque future."
+      "explanation": "Dans le texte : « les filles du banquier milliardaire Raphaël Ponto, un de ces soleils de la Bourse autour desquels gravite en humbles satellites la foule des petits millionnaires. » Il est bien plus qu'un modeste employé."
     },
     {
       "statement": "Le conducteur de l'aéronef jette un grappin pour amarrer le véhicule au débarcadère.",
       "answer": true,
-      "explanation": "Le conducteur, placé sur la plate-forme arrière, jette le grappin au contrôleur du bureau pour établir les communications entre l'aéronef et la terre."
+      "explanation": "Dans le texte : « Le conducteur, placé sur la plate-forme d'arrière, jeta le grappin au contrôleur du bureau et les communications furent établies entre le navire aérien et la terre. »"
     },
     {
       "statement": "L'hôtel Ponto est situé à Paris, boulevard Montmartre.",
       "answer": false,
-      "explanation": "L'hôtel Ponto se trouve près de Chatou/Saint-Germain-en-Laye, en banlieue parisienne. Le boulevard Montmartre est le point de départ de l'omnibus."
+      "explanation": "Dans le texte : « L'hôtel Ponto et Cie n'était pas loin ; on apercevait à peu de distance le belvédère de son pavillon central » et « Dans ce riche trente-septième arrondissement, quartier de gros négociants et de banques [...] la banque Ponto occupait un vaste quadrilatère en façade sur la rue de Chatou. » Il se trouve près de Chatou, pas boulevard Montmartre."
     },
     {
-      "statement": "Le prenom « Barnabette » est considéré comme élégant et doux dans le texte.",
+      "statement": "Le prénom « Barnabette » est considéré comme élégant et doux dans le texte.",
       "answer": false,
-      "explanation": "Le narrateur note que les prénoms Barbe et Barnabette manquent d'élégance et de douceur, mais ils sont choisis exprès par les partisans de l'émancipation féminine."
+      "explanation": "Dans le texte : « Les noms de baptême des deux demoiselles Ponto, Barbe et Barnabette, manquent peut-être d'élégance et de douceur. » Le narrateur dit explicitement qu'ils manquent d'élégance."
     },
     {
       "statement": "Hélène arrive à Paris par un train du Tube de Bretagne.",
       "answer": true,
-      "explanation": "Hélène revient d'un lycée breton et arrive par le Tube de Bretagne à la gare centrale des Tubes, boulevard Montmartre."
+      "explanation": "Dans le texte : « L'arrivée d'un train du Tube de Bretagne avait rapidement mis au complet une douzaine des aéronefs. » Hélène revient du lycée de Plougadec-les-Cormorans, dans le Finistère."
     },
     {
       "statement": "Le roman « Le Vingtième Siècle » a été publié en 1952.",
       "answer": false,
-      "explanation": "Le roman a été publié en 1883 par Albert Robida. C'est l'action du roman qui se déroule en 1952."
+      "explanation": "Dans le texte : « Le mois de septembre 1952 touchait à sa fin. » 1952 est la date de l'action du roman, pas sa publication. Le roman a été publié en 1883 par Albert Robida."
     },
     {
-      "statement": "Le phono-annonceur à clavier remplace les domestiques pour annoncer les visiteurs.",
+      "statement": "Le téléphonographe est un amalgame du téléphone et du phonographe.",
       "answer": true,
-      "explanation": "Chez les Ponto, un phono-annonceur à clavier permet aux visiteurs de taper leur nom, qui est ensuite annoncé mécaniquement."
+      "explanation": "Dans le texte : « Dans toutes les maisons des grands quartiers, le panneau central du vestibule est occupé par le téléphonographe, cet heureux amalgame du téléphone et du phonographe. »"
     },
     {
       "statement": "L'aéronef-omnibus s'arrête brusquement avec de violentes secousses.",
       "answer": false,
-      "explanation": "L'aéronef s'arrête net mais sans secousses, avec un simple tressaillement dans la membrure, par une pression du mécanicien sur la roue du propulseur."
+      "explanation": "Dans le texte : « là, sans secousses, avec un simple tressaillement dans la membrure, elle s'arrêta net par une simple pression du mécanicien sur la roue du propulseur. » L'arrêt est doux, pas brusque."
     }
   ],
 
@@ -223,17 +217,17 @@
         "Je suis la cousine de Barbe et Barnabette."
       ],
       "answer": "Hélène Colobry",
-      "explanation": "Hélène Colobry est l'héroïne du roman. Elle revient à Paris après ses études en Bretagne et contemple la ville depuis l'omnibus aérien."
+      "explanation": "Dans le texte : « Hélène Colobry, appuyée sur la balustrade de la plate-forme, regardait avec une certaine mélancolie filer sous la nacelle les innombrables toits [...] de l'immense Paris. » Elle revient du « lycée de Plougadec-les-Cormorans, dans le Finistère »."
     },
     {
       "clues": [
         "Je suis l'une des deux soeurs Ponto.",
         "Mon prénom a été choisi pour son caractère dur.",
-        "Je suis fille d'un banquier millionnaire.",
+        "Je suis fille d'un banquier milliardaire.",
         "Je trouve l'omnibus ridicule et trop lent."
       ],
       "answer": "Barnabette Ponto",
-      "explanation": "Barnabette est l'une des deux filles de Raphaël Ponto. Elle aurait préféré prendre un aérocab, plus rapide que l'omnibus."
+      "explanation": "Dans le texte : « Ces omnibus sont ridicules ! répondait l'autre ; vois-tu que j'avais raison, Barbe, de vouloir prendre un aérocab ! » C'est Barnabette qui se plaint. Son prénom fait partie de ces « noms d'un caractère dur ou d'une euphonie rébarbative »."
     },
     {
       "clues": [
@@ -243,7 +237,7 @@
         "Je rentre chez moi en aérocab personnel."
       ],
       "answer": "Raphaël Ponto",
-      "explanation": "Raphaël Ponto est le banquier millionnaire, père de Barbe et Barnabette, qui possède un somptueux hôtel particulier."
+      "explanation": "Dans le texte : « les filles du banquier milliardaire Raphaël Ponto » et « Le banquier arrivait par le ciel ; son aérocab venait de toucher, en haut de l'hôtel, au belvédère-débarcadère. » Son hôtel se trouve « en façade sur la rue de Chatou »."
     },
     {
       "clues": [
@@ -253,27 +247,27 @@
         "On me compare à une gigantesque hirondelle."
       ],
       "answer": "L'aéronef-omnibus B",
-      "explanation": "L'aéronef-omnibus B est le transport en commun aérien qui traverse Paris à l'altitude réglementaire de 250 mètres."
+      "explanation": "Dans le texte : « L'aéronef omnibus B, qui fait le service de la gare centrale des Tubes — boulevard Montmartre — au très aristocratique faubourg Saint-Germain-en-Laye, suivait, à l'altitude réglementaire de deux cent cinquante mètres. » Et plus loin : « L'aéronef, comme une gigantesque hirondelle. »"
     },
     {
       "clues": [
         "Je suis un écrivain et illustrateur du XIXe siècle.",
-        "J'ai imaginé le téléphonoscope bien avant la télévision.",
+        "J'ai imaginé le téléphonographe et l'aéronef-omnibus.",
         "J'ai publié ce roman en 1883.",
         "On me considère comme un précurseur de la science-fiction."
       ],
       "answer": "Albert Robida",
-      "explanation": "Albert Robida (1848-1926) est l'auteur et illustrateur du roman « Le Vingtième Siècle », publié en 1883."
+      "explanation": "Dans le texte : « le téléphonographe, cet heureux amalgame du téléphone et du phonographe » est l'une des inventions imaginées par Robida dans ce roman publié en 1883, aux côtés de l'aéronef-omnibus et du Tube de Bretagne."
     },
     {
       "clues": [
-        "Je suis un appareil à clavier.",
-        "On tape un nom sur moi et je l'annonce à voix haute.",
-        "Je remplace les domestiques dans les maisons modernes.",
-        "Je peux annoncer d'une voix discrète ou d'un volume d'orgue."
+        "Je suis un appareil installé dans le vestibule des maisons.",
+        "Je suis un amalgame du téléphone et du phonographe.",
+        "On parle à voix ordinaire devant moi pour communiquer.",
+        "Barbe m'utilise pour s'annoncer à la grille de l'hôtel Ponto."
       ],
-      "answer": "Le phono-annonceur",
-      "explanation": "Le phono-annonceur à clavier est une invention imaginée par Robida. Les visiteurs tapent leur nom et l'appareil l'annonce automatiquement."
+      "answer": "Le téléphonographe",
+      "explanation": "Dans le texte : « Dans toutes les maisons des grands quartiers, le panneau central du vestibule est occupé par le téléphonographe, cet heureux amalgame du téléphone et du phonographe. » Et : « S'approchant du téléphonographe encastré dans un des piliers de la grille, Barbe s'annonça. »"
     }
   ],
 
@@ -292,7 +286,7 @@
         "Hélène et ses cousines descendent sur la plate-forme du débarcadère.",
         "Les trois jeunes filles se dirigent vers l'hôtel Ponto."
       ],
-      "explanation": "Le chapitre suit le trajet complet de l'aéronef-omnibus depuis la gare centrale des Tubes jusqu'à l'arrivée chez les Ponto, près de Chatou."
+      "explanation": "Dans le texte, le trajet suit un parcours d'est en ouest : « la gare centrale des Tubes — boulevard Montmartre — au très aristocratique faubourg Saint-Germain-en-Laye », en passant par « les hautes tours de l'Observatoire et de la grande usine électrique du mont Valérien » puis « le quartier industriel de Nanterre » jusqu'au « débarcadère de Chatou »."
     },
     {
       "title": "Les lieux survolés par l'omnibus",
@@ -306,7 +300,7 @@
         "Le tournant de la Seine.",
         "Le débarcadère de Chatou."
       ],
-      "explanation": "L'omnibus traverse Paris d'est en ouest, survolant les grands boulevards puis la banlieue ouest jusqu'à Chatou."
+      "explanation": "Dans le texte, l'omnibus suit « la ligne onduleuse des boulevards prolongés », puis « fit un crochet à droite pour éviter les hautes tours de l'Observatoire et de la grande usine électrique du mont Valérien, puis d'un seul bond au-dessus du quartier industriel de Nanterre, elle arriva au tournant de la Seine »."
     }
   ],
 
@@ -314,10 +308,10 @@
     {
       "title": "Personnages et leurs caractéristiques",
       "pairs": [
-        { "left": "Hélène Colobry", "right": "Cousine mélancolique arrivant de Bretagne" },
+        { "left": "Hélène Colobry", "right": "Orpheline et pupille mélancolique arrivant de Bretagne" },
         { "left": "Barbe Ponto", "right": "Fille du banquier au prénom rébarbatif" },
         { "left": "Barnabette Ponto", "right": "Soeur impatiente qui voulait un aérocab" },
-        { "left": "Raphaël Ponto", "right": "Banquier millionnaire, père des deux soeurs" },
+        { "left": "Raphaël Ponto", "right": "Banquier milliardaire, père des deux soeurs" },
         { "left": "Le conducteur", "right": "Homme sur la plate-forme qui jette le grappin" },
         { "left": "Albert Robida", "right": "Auteur et illustrateur du roman (1883)" }
       ]
@@ -327,10 +321,10 @@
       "pairs": [
         { "left": "Aéronef-omnibus", "right": "Transport en commun aérien à 250 mètres" },
         { "left": "Aérocab", "right": "Taxi aérien individuel et rapide" },
-        { "left": "Tube", "right": "Transport souterrain à grande vitesse" },
-        { "left": "Phono-annonceur", "right": "Appareil remplaçant les domestiques" },
-        { "left": "Téléphonoscope", "right": "Écran plat diffusant des images et du son" },
-        { "left": "Phare électrique", "right": "Lumière au sommet du débarcadère de Chatou" }
+        { "left": "Tube de Bretagne", "right": "Transport à grande vitesse remplaçant le train" },
+        { "left": "Téléphonographe", "right": "Amalgame du téléphone et du phonographe pour communiquer" },
+        { "left": "Phare électrique", "right": "Lumière au sommet du débarcadère de Chatou" },
+        { "left": "Véloce", "right": "Véhicule aérien léger mentionné parmi les engins volants" }
       ]
     },
     {
@@ -368,7 +362,7 @@
       "hint": "C'est un oiseau migrateur connu pour son vol gracieux et rapide."
     },
     {
-      "text": "Raphaël Ponto est un ___ millionnaire.",
+      "text": "Raphaël Ponto est un ___ milliardaire.",
       "answer": "banquier",
       "hint": "C'est une personne qui travaille dans la finance et gère de l'argent."
     },
@@ -393,9 +387,9 @@
       "hint": "C'est une colline de la banlieue ouest de Paris, près de Suresnes."
     },
     {
-      "text": "Le roman « Le Vingtième Siècle » a été publié par Albert Robida en ___.",
-      "answer": "1883",
-      "hint": "C'est une date du XIXe siècle, dans les années 1880."
+      "text": "Le ___ est un heureux amalgame du téléphone et du phonographe.",
+      "answer": "téléphonographe",
+      "hint": "C'est un mot composé de deux inventions du XIXe siècle : le téléphone et le phonographe."
     }
   ]
 }

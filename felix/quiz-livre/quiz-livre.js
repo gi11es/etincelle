@@ -436,8 +436,8 @@ function renderAssociations(q) {
   function tryMatch() {
     if (!selectedLeft || !selectedRight) return;
     const pair = pairs.find(p => p.left === selectedLeft);
-    const leftEl = container.querySelector(`.assoc-left[data-val="${escapeAttr(selectedLeft)}"]`);
-    const rightEl = container.querySelector(`.assoc-right[data-val="${escapeAttr(selectedRight)}"]`);
+    const leftEl = [...container.querySelectorAll('.assoc-left')].find(el => el.dataset.val === selectedLeft);
+    const rightEl = [...container.querySelectorAll('.assoc-right')].find(el => el.dataset.val === selectedRight);
 
     if (pair && pair.right === selectedRight) {
       leftEl.classList.add('matched');
