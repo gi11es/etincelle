@@ -165,7 +165,11 @@ async function renderGameItem() {
     mastery,
     container,
     allItems: levelData[currentLevel]?.items || [],
-    onAnswer: (correct) => handleAnswer(item, correct, container),
+    onAnswer: (correct) => {
+      // null means the game couldn't render this item — fall back to flashcard
+      if (correct === null) { renderFlashcard({ ...ctx, onAnswer: (c) => handleAnswer(item, c, container) }); return; }
+      handleAnswer(item, correct, container);
+    },
     speak: (text, lang) => speak(text, lang),
   };
 

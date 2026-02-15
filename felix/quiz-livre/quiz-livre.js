@@ -5,7 +5,8 @@ import LottieOverlay from '../../shared/lottie-overlay.js';
 import { endSessionFlow } from '../../shared/gamification.js';
 
 const BOOKS = [
-  { id: 'verne-2889', file: 'books/verne-2889.json' }
+  { id: 'verne-2889', file: 'books/verne-2889.json' },
+  { id: 'robida-omnibus', file: 'books/robida-omnibus.json' }
 ];
 
 let currentBook = null;
