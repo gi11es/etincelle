@@ -1,0 +1,95 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate JSON data files
+        run: |
+          echo "Validating JSON files..."
+          errors=0
+          while IFS= read -r f; do
+            if ! python3 -c "import json, sys; json.load(open(sys.argv[1]))" "$f" 2>&1; then
+              echo "FAIL: $f"
+              errors=$((errors + 1))
+            else
+              echo "  ok: $f"
+            fi
+          done < <(find . -name '*.json' -not -path '*/node_modules/*')
+          if [ "$errors" -gt 0 ]; then
+            echo "::error::$errors JSON file(s) have syntax errors"
+            exit 1
+          fi
+          echo "All JSON files valid."
+
+      - name: Check JS syntax
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: |
+          echo "Checking JS syntax..."
+          errors=0
+          while IFS= read -r f; do
+            if ! node --check "$f" 2>&1; then
+              echo "FAIL: $f"
+              errors=$((errors + 1))
+            fi
+          done < <(find . -name '*.js' -o -name '*.mjs' | grep -v node_modules | grep -v 'ort.bundle' | grep -v 'transformers.min' | grep -v 'lottie.min')
+          if [ "$errors" -gt 0 ]; then
+            echo "::error::$errors JS file(s) have syntax errors"
+            exit 1
+          fi
+          echo "All JS files valid."
+
+      - name: Validate HTML structure
+        run: |
+          echo "Checking HTML files exist and are non-empty..."
+          expected=(
+            index.html
+            felix/index.html
+            felix/english/index.html
+            felix/math/index.html
+            felix/quiz-livre/index.html
+            felix/stats/index.html
+            zoe/app.html
+            dasha/index.html
+            dasha/french/index.html
+            dasha/citizenship/index.html
+            dasha/stats/index.html
+          )
+          errors=0
+          for f in "${expected[@]}"; do
+            if [ ! -s "$f" ]; then
+              echo "MISSING or EMPTY: $f"
+              errors=$((errors + 1))
+            else
+              echo "  ok: $f"
+            fi
+          done
+          if [ "$errors" -gt 0 ]; then
+            echo "::error::$errors expected HTML file(s) missing or empty"
+            exit 1
+          fi
+          echo "All HTML entry points present."
+
+      - name: Check internal asset references
+        run: |
+          echo "Checking for broken local references..."
+          errors=0
+          # Check that no JS/HTML still references old project paths
+          if grep -r "felixs-games\|zoes-games" --include='*.html' --include='*.js' --include='*.css' .; then
+            echo "::error::Found references to old project paths (felixs-games / zoes-games)"
+            errors=$((errors + 1))
+          fi
+          if [ "$errors" -gt 0 ]; then
+            exit 1
+          fi
+          echo "No stale path references found."
