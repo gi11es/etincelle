@@ -1,0 +1,210 @@
+/* ===== Zoé Portal — kid-friendly pink/unicorn theme ===== */
+
+:root {
+  --zoe-pink: #ff69b4;
+  --zoe-pink-light: #ffb6d9;
+  --zoe-pink-pale: #fff0f5;
+  --zoe-purple: #9b59b6;
+  --zoe-purple-dark: #4a0e6b;
+  --zoe-ice: #87ceeb;
+  --zoe-gold: #ffd700;
+  --zoe-radius: 20px;
+  --zoe-shadow: 0 6px 20px rgba(150, 50, 150, 0.2);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  width: 100%; height: 100%;
+  font-family: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+body {
+  background: linear-gradient(170deg, #ffe0f5 0%, #f0e6ff 30%, #d6f0ff 60%, #e8f8ff 100%);
+  color: var(--zoe-purple-dark);
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+/* ===== Nav ===== */
+.portal-nav {
+  padding: 16px 20px 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.portal-nav .btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--zoe-purple);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 25px;
+  transition: all 0.2s;
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px solid var(--zoe-pink-light);
+  box-shadow: var(--zoe-shadow);
+}
+
+.portal-nav .btn-back:hover,
+.portal-nav .btn-back:active {
+  background: white;
+  transform: scale(0.96);
+}
+
+/* ===== Header ===== */
+.portal-header {
+  text-align: center;
+  padding: 30px 20px 10px;
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.portal-mascot {
+  font-size: clamp(60px, 14vw, 100px);
+  animation: mascotFloat 3s ease-in-out infinite;
+  filter: drop-shadow(0 8px 16px rgba(155, 89, 182, 0.4));
+}
+
+@keyframes mascotFloat {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+.portal-title {
+  font-size: clamp(28px, 7vw, 42px);
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--zoe-pink), var(--zoe-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+  margin-top: 8px;
+}
+
+.portal-subtitle {
+  color: var(--zoe-purple);
+  font-size: clamp(13px, 3vw, 16px);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.portal-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: white;
+  border-radius: 25px;
+  padding: 6px 16px;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--zoe-purple-dark);
+  box-shadow: var(--zoe-shadow);
+  border: 3px solid var(--zoe-gold);
+  margin-top: 12px;
+}
+
+.portal-stars .star-icon { font-size: 22px; }
+
+/* ===== Game Grid ===== */
+.portal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  max-width: 520px;
+  margin: 20px auto 30px;
+  padding: 0 16px;
+}
+
+.portal-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 18px 10px;
+  border-radius: var(--zoe-radius);
+  border: 4px solid rgba(255, 255, 255, 0.8);
+  font-size: clamp(13px, 3vw, 16px);
+  font-weight: 800;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: var(--zoe-shadow), inset 0 -4px 0 rgba(0, 0, 0, 0.15);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  text-decoration: none;
+  min-height: 100px;
+}
+
+.portal-card:active { transform: scale(0.93); }
+
+.portal-card-icon {
+  font-size: clamp(28px, 7vw, 40px);
+}
+
+.portal-card-label {
+  line-height: 1.2;
+}
+
+/* Card colors */
+.portal-card--letters { background: linear-gradient(135deg, #ff69b4, #ff1493); }
+.portal-card--lettermatch { background: linear-gradient(135deg, #87ceeb, #4fc3f7); }
+.portal-card--sylquiz { background: linear-gradient(135deg, #69b4ff, #1e90ff); }
+.portal-card--syllables { background: linear-gradient(135deg, #00bcd4, #0097a7); }
+.portal-card--words { background: linear-gradient(135deg, #69e88c, #2ecc71); }
+.portal-card--build { background: linear-gradient(135deg, #ffb347, #ff8c00); }
+.portal-card--draw { background: linear-gradient(135deg, #ff7f7f, #e74c3c); }
+.portal-card--pronunciation { background: linear-gradient(135deg, #b469ff, #8b00ff); }
+
+/* ===== Decorative elements ===== */
+.portal-ponies {
+  font-size: clamp(18px, 4vw, 28px);
+  text-align: center;
+  margin: 8px 0;
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(0, -8px); }
+}
+
+/* ===== Background snowflakes ===== */
+.bg-decor {
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.snowflake {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+  animation: snowfall linear infinite;
+  text-shadow: 0 0 5px rgba(135, 206, 235, 0.5);
+}
+
+@keyframes snowfall {
+  0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(720deg); opacity: 0.3; }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 400px) {
+  .portal-grid { gap: 10px; }
+  .portal-card { min-height: 85px; padding: 14px 8px; }
+}
+
+@media (min-width: 768px) {
+  .portal-grid { max-width: 560px; gap: 16px; }
+  .portal-card { min-height: 120px; padding: 22px 16px; }
+}

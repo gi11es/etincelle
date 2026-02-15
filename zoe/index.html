@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#ffe0f5">
+  <title>Zoé - Apprends à Lire !</title>
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body>
+  <div class="bg-decor" id="bg-decor"></div>
+
+  <div id="app" style="position:relative; z-index:1;">
+    <nav class="portal-nav">
+      <a href="../index.html" class="btn-back">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+        Famille
+      </a>
+    </nav>
+
+    <header class="portal-header">
+      <div class="portal-mascot">🦄</div>
+      <h1 class="portal-title">Apprends à Lire !</h1>
+      <p class="portal-subtitle">avec Lili la Licorne</p>
+      <div class="portal-stars">
+        <span class="star-icon">⭐</span>
+        <span id="star-count">0</span>
+      </div>
+    </header>
+
+    <div class="portal-ponies">🐴✨🦄✨🐴</div>
+
+    <div class="portal-grid">
+      <a href="app.html#letters" class="portal-card portal-card--letters">
+        <div class="portal-card-icon">🔤</div>
+        <div class="portal-card-label">Les Lettres</div>
+      </a>
+
+      <a href="app.html#lettermatch" class="portal-card portal-card--lettermatch">
+        <div class="portal-card-icon">✨</div>
+        <div class="portal-card-label">Les Formes</div>
+      </a>
+
+      <a href="app.html#sylquiz" class="portal-card portal-card--sylquiz">
+        <div class="portal-card-icon">🧩</div>
+        <div class="portal-card-label">Quiz Syllabes</div>
+      </a>
+
+      <a href="app.html#syllables" class="portal-card portal-card--syllables">
+        <div class="portal-card-icon">🔬</div>
+        <div class="portal-card-label">Labo Syllabes</div>
+      </a>
+
+      <a href="app.html#words" class="portal-card portal-card--words">
+        <div class="portal-card-icon">🖼️</div>
+        <div class="portal-card-label">Les Mots</div>
+      </a>
+
+      <a href="app.html#build" class="portal-card portal-card--build">
+        <div class="portal-card-icon">🧱</div>
+        <div class="portal-card-label">Construis !</div>
+      </a>
+
+      <a href="app.html#draw" class="portal-card portal-card--draw">
+        <div class="portal-card-icon">✏️</div>
+        <div class="portal-card-label">Dessine !</div>
+      </a>
+
+      <a href="app.html#pronunciation" class="portal-card portal-card--pronunciation">
+        <div class="portal-card-icon">🎤</div>
+        <div class="portal-card-label">Lis à voix haute</div>
+      </a>
+    </div>
+
+    <div class="portal-ponies">❄️🏰👸🏰❄️</div>
+  </div>
+
+  <script src="portal.js"></script>
+  <script>
+    // Show star count from localStorage (shared with game app)
+    const stars = parseInt(localStorage.getItem('lili-stars') || '0');
+    document.getElementById('star-count').textContent = stars;
+
+    // Decorative snowflakes
+    (function() {
+      const container = document.getElementById('bg-decor');
+      const emojis = ['❄️','✨','💎','⭐','💫'];
+      for (let i = 0; i < 15; i++) {
+        const sf = document.createElement('div');
+        sf.className = 'snowflake';
+        sf.textContent = emojis[i % emojis.length];
+        sf.style.left = Math.random() * 100 + '%';
+        sf.style.fontSize = (12 + Math.random() * 16) + 'px';
+        sf.style.animationDuration = (8 + Math.random() * 12) + 's';
+        sf.style.animationDelay = (Math.random() * 10) + 's';
+        container.appendChild(sf);
+      }
+    })();
+  </script>
+</body>
+</html>

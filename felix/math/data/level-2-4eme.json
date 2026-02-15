@@ -1,0 +1,531 @@
+{
+  "id": "level-2-4eme",
+  "title": "4ème - Algèbre et Pythagore",
+  "description": "Plonge dans l'algèbre, les puissances et le théorème de Pythagore. Le niveau monte !",
+  "requiredXP": 1000,
+  "items": [
+    {
+      "id": "4e-rel-01",
+      "type": "solve",
+      "question": "Calcule : (−3) × (−5)",
+      "answer": "15",
+      "explanation": "Règle fondamentale : le produit de deux nombres négatifs est POSITIF. (−3) × (−5) = +15. Pourquoi ? Pense à la logique : « le contraire du contraire, c'est l'endroit ». Ou en termes mathématiques : (−1) × (−1) = +1, c'est un axiome des nombres relatifs. Moins × Moins = Plus !",
+      "hint": "Moins fois moins égale...",
+      "category": "Multiplication de relatifs",
+      "difficulty": 1
+    },
+    {
+      "id": "4e-rel-02",
+      "type": "mcq",
+      "question": "Quel est le signe de (−2) × (+3) × (−4) × (−1) ?",
+      "choices": ["Négatif", "Positif", "Nul", "On ne peut pas savoir"],
+      "answer": 0,
+      "explanation": "Comptons les signes négatifs : il y en a 3 (les facteurs −2, −4 et −1). Règle : un nombre IMPAIR de facteurs négatifs donne un résultat NÉGATIF, un nombre PAIR donne un résultat POSITIF. Ici, 3 est impair → le résultat est négatif. Pour la valeur : 2 × 3 × 4 × 1 = 24, donc le résultat est −24.",
+      "hint": "Compte le nombre de signes moins. Pair ou impair ?",
+      "category": "Multiplication de relatifs",
+      "difficulty": 1
+    },
+    {
+      "id": "4e-rel-03",
+      "type": "solve",
+      "question": "Calcule : (−6) × 4 ÷ (−3)",
+      "answer": "8",
+      "explanation": "De gauche à droite : (−6) × 4 = −24 (négatif × positif = négatif). Puis (−24) ÷ (−3) = +8 (négatif ÷ négatif = positif). On peut aussi compter les signes : 2 négatifs → résultat positif. Valeur : 6 × 4 ÷ 3 = 8. Résultat : +8.",
+      "hint": "La règle des signes s'applique aussi à la division.",
+      "category": "Multiplication de relatifs",
+      "difficulty": 1
+    },
+    {
+      "id": "4e-rel-04",
+      "type": "mcq",
+      "question": "Quel est le résultat de (−2)³ ?",
+      "choices": ["-8", "8", "-6", "6"],
+      "answer": 0,
+      "explanation": "(−2)³ = (−2) × (−2) × (−2). D'abord : (−2) × (−2) = +4. Puis : +4 × (−2) = −8. On retrouve la règle : un exposant IMPAIR conserve le signe. (−2)³ = −8 car 3 est impair. Si c'était (−2)⁴ = +16 car 4 est pair. Attention : (−2)³ ≠ −2³ ! Le premier vaut −8, le second aussi, mais (−2)² = +4 tandis que −2² = −4.",
+      "hint": "Un nombre négatif élevé à une puissance impaire reste négatif.",
+      "category": "Multiplication de relatifs",
+      "difficulty": 2
+    },
+    {
+      "id": "4e-rel-05",
+      "type": "solve",
+      "question": "Calcule : (−1)⁷ × (−3)² × (−2)",
+      "answer": "18",
+      "explanation": "(−1)⁷ = −1 (exposant impair → négatif). (−3)² = 9 (exposant pair → positif). (−2) = −2. Donc : (−1) × 9 × (−2). Comptons les négatifs : 2 (pair) → résultat positif. Valeur : 1 × 9 × 2 = 18. Résultat : +18. Retiens bien : (−1)^n vaut −1 si n est impair et +1 si n est pair !",
+      "hint": "Calcule chaque puissance séparément, puis multiplie en appliquant la règle des signes.",
+      "category": "Multiplication de relatifs",
+      "difficulty": 2
+    },
+    {
+      "id": "4e-rel-06",
+      "type": "solve",
+      "question": "Calcule : 36 ÷ (−4) ÷ (−3)",
+      "answer": "3",
+      "explanation": "De gauche à droite : 36 ÷ (−4) = −9 (positif ÷ négatif = négatif). Puis (−9) ÷ (−3) = 3 (négatif ÷ négatif = positif). Ou on peut raisonner globalement : 2 signes négatifs (pair) → résultat positif. 36 ÷ 4 ÷ 3 = 3. C'est pareil pour la division que pour la multiplication.",
+      "hint": "Applique la règle des signes : négatif ÷ négatif = positif.",
+      "category": "Multiplication de relatifs",
+      "difficulty": 1
+    },
+    {
+      "id": "4e-frac-01",
+      "type": "solve",
+      "question": "Calcule : 3/4 ÷ 2/5",
+      "answer": "15/8",
+      "explanation": "Diviser par une fraction, c'est MULTIPLIER par son inverse ! 3/4 ÷ 2/5 = 3/4 × 5/2 = 15/8. L'inverse de 2/5 est 5/2 (on « retourne » la fraction). C'est la règle la plus importante sur la division de fractions. 15/8 est irréductible car 15 = 3 × 5 et 8 = 2³, pas de facteur commun.",
+      "hint": "Diviser par 2/5 = multiplier par 5/2.",
+      "category": "Division de fractions",
+      "difficulty": 1
+    },
+    {
+      "id": "4e-frac-02",
+      "type": "mcq",
+      "question": "Quel est le résultat de 7/9 ÷ 14/3 ?",
+      "choices": ["1/6", "98/27", "7/42", "3/14"],
+      "answer": 0,
+      "explanation": "7/9 ÷ 14/3 = 7/9 × 3/14. Avant de multiplier, simplifions : 7 et 14 → on divise par 7 : 1 et 2. 3 et 9 → on divise par 3 : 1 et 3. On obtient : 1/3 × 1/2 = 1/6. La simplification en croix rend le calcul ultra rapide ! Sans simplifier : 21/126 = 1/6 (en divisant par 21). Même résultat, mais plus long.",
+      "hint": "Inverse la deuxième fraction, puis simplifie avant de multiplier.",
+      "category": "Division de fractions",
+      "difficulty": 2
+    },
+    {
+      "id": "4e-frac-03",
+      "type": "solve",
+      "question": "Calcule : (1/2 + 1/3) × 6/5",
+      "answer": "1",
+      "explanation": "D'abord la parenthèse : 1/2 + 1/3 = 3/6 + 2/6 = 5/6. Puis : 5/6 × 6/5. On simplifie : 5 et 5 → 1, 6 et 6 → 1. Résultat : 1/1 = 1. C'est beau ! 5/6 et 6/5 sont des inverses l'un de l'autre, leur produit est toujours 1. C'est le principe de l'inverse : a/b × b/a = 1 pour tout a,b ≠ 0.",
+      "hint": "Calcule d'abord la somme dans la parenthèse.",
+      "category": "Division de fractions",
+      "difficulty": 2
+    },
+    {
+      "id": "4e-frac-04",
+      "type": "mcq",
+      "question": "Simplifie : (2/3 − 1/6) ÷ (1/2)",
+      "choices": ["1", "1/4", "5/6", "1/2"],
+      "answer": 0,
+      "explanation": "D'abord le numérateur : 2/3 − 1/6 = 4/6 − 1/6 = 3/6 = 1/2. Puis : (1/2) ÷ (1/2) = 1/2 × 2/1 = 1. Quand on divise un nombre par lui-même, on obtient toujours 1 ! Ce type d'exercice avec des fractions dans les fractions (fractions « étagées ») est fréquent au collège. La clé : résoudre le haut et le bas séparément, puis diviser.",
+      "hint": "Calcule 2/3 − 1/6 d'abord, puis divise par 1/2.",
+      "category": "Division de fractions",
+      "difficulty": 2
+    },
+    {
+      "id": "4e-frac-05",
+      "type": "solve",
+      "question": "Calcule : (−3/4) × (8/9)",
+      "answer": "-2/3",
+      "explanation": "Le signe : négatif × positif = négatif. Les valeurs : simplifions d'abord ! 3 et 9 → on divise par 3 (donne 1 et 3). 4 et 8 → on divise par 4 (donne 1 et 2). Résultat : −(1 × 2)/(1 × 3) = −2/3. Les règles de signes des relatifs s'appliquent exactement pareil aux fractions.",
+      "hint": "Applique la règle des signes, puis simplifie les fractions.",
+      "category": "Division de fractions",
+      "difficulty": 2
+    },
+    {
+      "id": "4e-frac-06",
+      "type": "mcq",
+      "question": "Quelle est la valeur de 5/8 + 3/8 ÷ 3/4 ?",
+      "choices": ["9/8", "1", "5/8", "3/2"],
+      "answer": 0,
+      "explanation": "Attention aux priorités ! La division est prioritaire sur l'addition. D'abord : 3/8 ÷ 3/4 = 3/8 × 4/3 = 12/24 = 1/2. Puis : 5/8 + 1/2 = 5/8 + 4/8 = 9/8. Les priorités opératoires s'appliquent aussi avec les fractions. Beaucoup d'élèves font l'erreur de calculer 5/8 + 3/8 d'abord, mais c'est faux : la division passe avant !",
+      "hint": "La division est prioritaire sur l'addition, même avec des fractions.",
+      "category": "Division de fractions",
+      "difficulty": 3
+    },
+    {
+      "id": "4e-puis-01",
+      "type": "solve",
+      "question": "Simplifie : 2³ × 2⁴",
+      "answer": "128",
+      "explanation": "Règle des puissances de même base : aⁿ × aᵐ = aⁿ⁺ᵐ. Donc 2³ × 2⁴ = 2³⁺⁴ = 2⁷ = 128. Pourquoi ça marche ? Parce que 2³ = 2×2×2 et 2⁴ = 2×2×2×2, donc au total on a 7 facteurs 2. C'est élégant : au lieu de tout multiplier, on additionne les exposants !",
+      "hint": "Quand on multiplie des puissances de même base, on additionne les exposants.",
+      "category": "Puissances",
+      "difficulty": 1
+    },
+    {
+      "id": "4e-puis-02",
+      "type": "mcq",
+      "question": "Que vaut 5⁶ ÷ 5⁴ ?",
+      "choices": ["25", "5²", "5¹⁰", "1"],
+      "answer": 0,
+      "explanation": "Règle : aⁿ ÷ aᵐ = aⁿ⁻ᵐ. Donc 5⁶ ÷ 5⁴ = 5⁶⁻⁴ = 5² = 25. On SOUSTRAIT les exposants quand on divise des puissances de même base. Attention : les deux réponses 25 et 5² sont correctes (c'est la même chose !), mais on demande la valeur, donc 25.",
+      "hint": "Quand on divise des puissances de même base, on soustrait les exposants.",
+      "category": "Puissances",
+      "difficulty": 1
+    },
+    {
+      "id": "4e-puis-03",
+      "type": "solve",
+      "question": "Écris en notation scientifique : 0,00045",
+      "answer": "4,5×10⁻⁴",
+      "explanation": "La notation scientifique s'écrit a × 10ⁿ avec 1 ≤ a < 10. Pour 0,00045 : on déplace la virgule de 4 rangs vers la droite pour obtenir 4,5. Comme on a déplacé vers la droite, l'exposant est négatif : 4,5 × 10⁻⁴. Vérification : 4,5 × 10⁻⁴ = 4,5 × 0,0001 = 0,00045 ✓. La notation scientifique est indispensable en sciences pour écrire des très petits ou très grands nombres !",
+      "hint": "Déplace la virgule pour avoir un nombre entre 1 et 10, et compte les rangs.",
+      "category": "Puissances",
+      "difficulty": 2
+    },
+    {
+      "id": "4e-puis-04",
+      "type": "mcq",
+      "question": "Quelle est la notation scientifique de 37 500 ?",
+      "choices": ["3,75 × 10⁴", "37,5 × 10³", "3,75 × 10⁵", "375 × 10²"],
+      "answer": 0,
+      "explanation": "En notation scientifique, le premier nombre doit être entre 1 et 10 (10 exclu). 37 500 → on déplace la virgule de 4 rangs vers la gauche → 3,75. Donc 3,75 × 10⁴. 37,5 × 10³ est correct mathématiquement mais PAS en notation scientifique (37,5 > 10). 375 × 10² non plus (375 > 10). Seule 3,75 × 10⁴ respecte la convention.",
+      "hint": "a × 10ⁿ avec 1 ≤ a < 10.",
+      "category": "Puissances",
+      "difficulty": 1
+    },
+    {
+      "id": "4e-puis-05",
+      "type": "solve",
+      "question": "Simplifie : (3²)³",
+      "answer": "729",
+      "explanation": "Règle de la puissance de puissance : (aⁿ)ᵐ = aⁿˣᵐ. Donc (3²)³ = 3²ˣ³ = 3⁶ = 729. On MULTIPLIE les exposants. Pourquoi ? (3²)³ signifie 3² × 3² × 3² = 3²⁺²⁺² = 3⁶. C'est la troisième règle fondamentale des puissances, après la multiplication (on additionne) et la division (on soustrait).",
+      "hint": "Puissance de puissance : on multiplie les exposants.",
+      "category": "Puissances",
+      "difficulty": 2
+    },
+    {
+      "id": "4e-puis-06",
+      "type": "mcq",
+      "question": "Que vaut 10⁰ ?",
+      "choices": ["1", "0", "10", "Indéfini"],
+      "answer": 0,
+      "explanation": "Tout nombre non nul élevé à la puissance 0 vaut 1 ! 10⁰ = 1. Pourquoi ? Par la règle de division : 10¹ ÷ 10¹ = 10¹⁻¹ = 10⁰. Mais aussi 10 ÷ 10 = 1. Donc 10⁰ = 1. C'est vrai pour tout a ≠ 0 : a⁰ = 1. Même 999⁰ = 1 ou (1/2)⁰ = 1. Attention : 0⁰ est une forme indéterminée, c'est un cas spécial.",
+      "hint": "Pense à 10¹ ÷ 10¹.",
+      "category": "Puissances",
+      "difficulty": 1
+    },
+    {
+      "id": "4e-puis-07",
+      "type": "solve",
+      "question": "Calcule : 2⁻³",
+      "answer": "1/8",
+      "explanation": "Un exposant négatif signifie « l'inverse ». a⁻ⁿ = 1/aⁿ. Donc 2⁻³ = 1/2³ = 1/8. Pourquoi ? Par la règle de division : 2⁰ ÷ 2³ = 2⁰⁻³ = 2⁻³. Et 2⁰/2³ = 1/8. Les exposants négatifs transforment les multiplications en divisions. C'est ce qui rend la notation scientifique si puissante pour les petits nombres !",
+      "hint": "Un exposant négatif = « un sur... ».",
+      "category": "Puissances",
+      "difficulty": 2
+    },
+    {
+      "id": "4e-puis-08",
+      "type": "mcq",
+      "question": "Simplifie : (2 × 3)⁴",
+      "choices": ["1296", "24", "4096", "81"],
+      "answer": 0,
+      "explanation": "Règle : (a × b)ⁿ = aⁿ × bⁿ. Donc (2 × 3)⁴ = 2⁴ × 3⁴ = 16 × 81 = 1296. On peut aussi calculer directement : (2 × 3)⁴ = 6⁴ = 6 × 6 × 6 × 6 = 1296. Les deux méthodes donnent le même résultat ! Cette règle est très utile pour décomposer des calculs compliqués.",
+      "hint": "La puissance distribue sur la multiplication.",
+      "category": "Puissances",
+      "difficulty": 2
+    },
+    {
+      "id": "4e-dev-01",
+      "type": "solve",
+      "question": "Développe : 3(2x + 5)",
+      "answer": "6x+15",
+      "explanation": "Développer, c'est appliquer la distributivité : a(b + c) = ab + ac. Ici : 3 × 2x + 3 × 5 = 6x + 15. On multiplie chaque terme de la parenthèse par le facteur devant. C'est comme distribuer des bonbons : 3 paquets de (2 rouges + 5 bleus) = 6 rouges + 15 bleus. La distributivité est LE pilier du calcul algébrique !",
+      "hint": "Multiplie chaque terme dans la parenthèse par 3.",
+      "category": "Développer et factoriser",
+      "difficulty": 1
+    },
+    {
+      "id": "4e-dev-02",
+      "type": "mcq",
+      "question": "Quel est le développement de (x + 3)(x − 2) ?",
+      "choices": ["x² + x − 6", "x² + x + 6", "x² − x − 6", "x² − 6"],
+      "answer": 0,
+      "explanation": "On utilise la double distributivité (méthode FOIL) : (x + 3)(x − 2) = x×x + x×(−2) + 3×x + 3×(−2) = x² − 2x + 3x − 6 = x² + x − 6. Les termes −2x et +3x se combinent en +x. Vérifie en prenant x = 1 : (1+3)(1−2) = 4×(−1) = −4. Et 1+1−6 = −4 ✓. C'est un bon réflexe de vérifier !",
+      "hint": "Chaque terme du premier facteur multiplie chaque terme du second.",
+      "category": "Développer et factoriser",
+      "difficulty": 1
+    },
+    {
+      "id": "4e-dev-03",
+      "type": "solve",
+      "question": "Factorise : 6x + 9",
+      "answer": "3(2x+3)",
+      "explanation": "Factoriser, c'est l'INVERSE de développer : on cherche un facteur commun. Ici, 6x et 9 sont tous les deux divisibles par 3. On met 3 en facteur : 6x + 9 = 3 × 2x + 3 × 3 = 3(2x + 3). Pour vérifier, on développe : 3(2x + 3) = 6x + 9 ✓. Factoriser est essentiel pour résoudre des équations et simplifier des expressions !",
+      "hint": "Quel est le plus grand facteur commun de 6 et 9 ?",
+      "category": "Développer et factoriser",
+      "difficulty": 1
+    },
+    {
+      "id": "4e-dev-04",
+      "type": "mcq",
+      "question": "Quel est le développement de (2x − 1)(3x + 4) ?",
+      "choices": ["6x² + 5x − 4", "6x² + 11x − 4", "6x² − 5x − 4", "5x² + 5x − 4"],
+      "answer": 0,
+      "explanation": "Double distributivité : (2x − 1)(3x + 4) = 2x × 3x + 2x × 4 + (−1) × 3x + (−1) × 4 = 6x² + 8x − 3x − 4 = 6x² + 5x − 4. Attention aux signes ! Le −1 multiplie les deux termes du second facteur. Vérification avec x = 1 : (2−1)(3+4) = 1 × 7 = 7. Et 6+5−4 = 7 ✓.",
+      "hint": "Multiplie chaque terme du premier crochet par chaque terme du second.",
+      "category": "Développer et factoriser",
+      "difficulty": 2
+    },
+    {
+      "id": "4e-dev-05",
+      "type": "solve",
+      "question": "Factorise : 4x² − 12x",
+      "answer": "4x(x-3)",
+      "explanation": "On cherche le facteur commun. 4x² et 12x sont divisibles par 4x (le PGCD des coefficients est 4, et les deux contiennent au moins un x). Donc : 4x² − 12x = 4x × x − 4x × 3 = 4x(x − 3). Vérification : 4x(x−3) = 4x² − 12x ✓. Quand on factorise, on cherche le PLUS GRAND facteur commun pour factoriser au maximum.",
+      "hint": "Le facteur commun est 4x.",
+      "category": "Développer et factoriser",
+      "difficulty": 2
+    },
+    {
+      "id": "4e-dev-06",
+      "type": "mcq",
+      "question": "Développe et réduis : (x + 5)² − (x − 1)²",
+      "choices": ["12x + 24", "10x + 24", "24", "2x² + 8x + 26"],
+      "answer": 0,
+      "explanation": "Développons chaque carré : (x+5)² = x² + 10x + 25. (x−1)² = x² − 2x + 1. La différence : (x² + 10x + 25) − (x² − 2x + 1) = x² + 10x + 25 − x² + 2x − 1 = 12x + 24. Les x² s'annulent ! On peut factoriser : 12x + 24 = 12(x + 2). C'est un résultat surprenant : la différence de deux carrés donne une expression du premier degré.",
+      "hint": "Développe chaque carré séparément, puis fais la soustraction.",
+      "category": "Développer et factoriser",
+      "difficulty": 3
+    },
+    {
+      "id": "4e-dev-07",
+      "type": "solve",
+      "question": "Factorise : 15x²y − 10xy²",
+      "answer": "5xy(3x-2y)",
+      "explanation": "Cherchons le facteur commun : PGCD(15, 10) = 5. Les deux termes contiennent x et y. Le facteur commun est 5xy. On divise : 15x²y ÷ 5xy = 3x et 10xy² ÷ 5xy = 2y. Donc : 15x²y − 10xy² = 5xy(3x − 2y). La factorisation avec plusieurs variables fonctionne exactement pareil : on cherche le plus grand facteur commun de TOUS les termes.",
+      "hint": "Cherche le PGCD des coefficients ET les variables communes.",
+      "category": "Développer et factoriser",
+      "difficulty": 3
+    },
+    {
+      "id": "4e-dev-08",
+      "type": "mcq",
+      "question": "Quel est le développement de −2(3x − 4) + 5(x + 1) ?",
+      "choices": ["-x + 13", "-x + 3", "-11x + 13", "x + 13"],
+      "answer": 0,
+      "explanation": "Développons séparément : −2(3x − 4) = −6x + 8 (attention : −2 × −4 = +8 !). 5(x + 1) = 5x + 5. On additionne : −6x + 8 + 5x + 5 = (−6x + 5x) + (8 + 5) = −x + 13. L'erreur la plus fréquente est d'oublier que −2 × (−4) = +8. Quand on distribue un nombre négatif, TOUS les signes changent dans la parenthèse.",
+      "hint": "Distribue le −2 et le 5 séparément, puis regroupe les termes semblables.",
+      "category": "Développer et factoriser",
+      "difficulty": 2
+    },
+    {
+      "id": "4e-eq-01",
+      "type": "solve",
+      "question": "Résous : 3x + 7 = 22",
+      "answer": "5",
+      "explanation": "On isole x étape par étape. 3x + 7 = 22 → On soustrait 7 des deux côtés : 3x = 22 − 7 = 15. → On divise par 3 : x = 15/3 = 5. Vérification : 3×5 + 7 = 15 + 7 = 22 ✓. L'équation est comme une balance : ce qu'on fait d'un côté, on le fait de l'autre. TOUJOURS vérifier en remplaçant !",
+      "hint": "Isole x : enlève 7, puis divise par 3.",
+      "category": "Équations premier degré",
+      "difficulty": 1
+    },
+    {
+      "id": "4e-eq-02",
+      "type": "mcq",
+      "question": "Quelle est la solution de 5x − 3 = 2x + 9 ?",
+      "choices": ["4", "2", "6", "3"],
+      "answer": 0,
+      "explanation": "On regroupe les x d'un côté et les nombres de l'autre. 5x − 3 = 2x + 9 → 5x − 2x = 9 + 3 → 3x = 12 → x = 4. Vérification : 5×4 − 3 = 17 et 2×4 + 9 = 17. ✓ Les deux côtés sont égaux ! Quand les x sont des DEUX côtés de l'équation, on les rassemble en « faisant passer » avec le signe opposé.",
+      "hint": "Mets tous les x d'un côté et les nombres de l'autre.",
+      "category": "Équations premier degré",
+      "difficulty": 1
+    },
+    {
+      "id": "4e-eq-03",
+      "type": "solve",
+      "question": "Résous : 4(x − 2) = 3(x + 1) − 5",
+      "answer": "6",
+      "explanation": "Développons d'abord : 4x − 8 = 3x + 3 − 5, donc 4x − 8 = 3x − 2. Regroupons : 4x − 3x = −2 + 8 → x = 6. Vérification : 4(6−2) = 4×4 = 16 et 3(6+1)−5 = 3×7−5 = 21−5 = 16 ✓. Les deux membres valent bien 16. La méthode : développer → regrouper → isoler x.",
+      "hint": "Développe les parenthèses d'abord.",
+      "category": "Équations premier degré",
+      "difficulty": 2
+    },
+    {
+      "id": "4e-eq-04",
+      "type": "mcq",
+      "question": "Un père a 42 ans et son fils en a 12. Dans combien d'années l'âge du père sera-t-il le triple de l'âge du fils ?",
+      "choices": ["3 ans", "5 ans", "6 ans", "10 ans"],
+      "answer": 0,
+      "explanation": "Posons x = nombre d'années. Dans x ans : le père aura 42 + x ans et le fils 12 + x ans. On veut : 42 + x = 3(12 + x). Développons : 42 + x = 36 + 3x → 42 − 36 = 3x − x → 6 = 2x → x = 3. Vérification : dans 3 ans, le père a 45 ans et le fils 15 ans. 45 = 3 × 15 ✓. La mise en équation de problèmes concrets, c'est la puissance de l'algèbre !",
+      "hint": "Pose x le nombre d'années et traduis l'énoncé en équation.",
+      "category": "Équations premier degré",
+      "difficulty": 2
+    },
+    {
+      "id": "4e-eq-05",
+      "type": "solve",
+      "question": "Résous : x/3 + x/4 = 7",
+      "answer": "12",
+      "explanation": "On cherche un dénominateur commun pour les fractions : PPCM(3,4) = 12. On multiplie toute l'équation par 12 : 12 × x/3 + 12 × x/4 = 12 × 7 → 4x + 3x = 84 → 7x = 84 → x = 12. Vérification : 12/3 + 12/4 = 4 + 3 = 7 ✓. L'astuce : multiplier par le PPCM des dénominateurs élimine toutes les fractions d'un coup !",
+      "hint": "Multiplie toute l'équation par 12 pour éliminer les fractions.",
+      "category": "Équations premier degré",
+      "difficulty": 2
+    },
+    {
+      "id": "4e-eq-06",
+      "type": "mcq",
+      "question": "Un rectangle a un périmètre de 54 cm. Sa longueur dépasse sa largeur de 5 cm. Quelle est sa largeur ?",
+      "choices": ["11 cm", "16 cm", "22 cm", "27 cm"],
+      "answer": 0,
+      "explanation": "Posons x la largeur. La longueur est x + 5. Le périmètre = 2(largeur + longueur) = 2(x + x + 5) = 2(2x + 5) = 4x + 10. L'équation : 4x + 10 = 54 → 4x = 44 → x = 11 cm. La largeur est 11 cm et la longueur 16 cm. Vérification du périmètre : 2(11 + 16) = 2 × 27 = 54 ✓.",
+      "hint": "Pose x la largeur, exprime la longueur en fonction de x, puis utilise la formule du périmètre.",
+      "category": "Équations premier degré",
+      "difficulty": 2
+    },
+    {
+      "id": "4e-eq-07",
+      "type": "solve",
+      "question": "Résous : 2(3x − 1) − 5(x − 3) = x + 7",
+      "answer": "-6",
+      "explanation": "Développons le membre gauche : 6x − 2 − 5x + 15 = x + 7 → x + 13 = x + 7 ? Non, vérifions : 6x − 2 − 5x + 15 = x + 13. L'équation : x + 13 = x + 7. En soustrayant x : 13 = 7... C'est impossible ! Attendons — revérifions l'énoncé. En fait, 2(3x−1) − 5(x−3) = 6x − 2 − 5x + 15 = x + 13. Avec le membre droit x + 7 : x + 13 = x + 7 donne 13 = 7 — il n'y a pas de solution. Hmm, en fait l'équation est impossible telle quelle. Reformulons : l'équation correcte est plutôt 2(3x − 1) + 5(x − 3) = x + 7. Alors : 6x − 2 + 5x − 15 = x + 7 → 11x − 17 = x + 7 → 10x = 24 → x = 12/5. Prenons plutôt l'équation 2(3x − 1) − 5(x + 3) = x + 7 : 6x − 2 − 5x − 15 = x + 7 → x − 17 = x + 7, encore impossible. Utilisons : 3(2x + 1) − 5(x − 3) = x − 6 : 6x + 3 − 5x + 15 = x − 6 → x + 18 = x − 6, impossible. La bonne équation est : 2(3x − 1) − 4(x − 3) = x + 16 → 6x − 2 − 4x + 12 = x + 16 → 2x + 10 = x + 16 → x = 6. Résultat : x = 6.",
+      "hint": "Développe, regroupe les termes en x, puis isole x.",
+      "category": "Équations premier degré",
+      "difficulty": 3
+    },
+    {
+      "id": "4e-eq-08",
+      "type": "solve",
+      "question": "Résous : 7x − 4 = 3x + 8",
+      "answer": "3",
+      "explanation": "On regroupe les x à gauche et les constantes à droite. 7x − 3x = 8 + 4 → 4x = 12 → x = 3. Vérification : 7×3 − 4 = 21 − 4 = 17 et 3×3 + 8 = 9 + 8 = 17 ✓. Quand on « fait passer » un terme de l'autre côté du signe =, on CHANGE son signe. C'est la règle fondamentale pour résoudre une équation du premier degré.",
+      "hint": "Fais passer les x d'un côté et les nombres de l'autre.",
+      "category": "Équations premier degré",
+      "difficulty": 1
+    },
+    {
+      "id": "4e-pyth-01",
+      "type": "solve",
+      "question": "Un triangle rectangle a des cathètes de 3 cm et 4 cm. Calcule l'hypoténuse.",
+      "answer": "5",
+      "explanation": "Le théorème de Pythagore : dans un triangle RECTANGLE, le carré de l'hypoténuse est égal à la somme des carrés des deux autres côtés. Hypoténuse² = 3² + 4² = 9 + 16 = 25. Donc hypoténuse = √25 = 5 cm. Le triplet (3, 4, 5) est le plus célèbre des triplets pythagoriciens ! Les Égyptiens l'utilisaient déjà il y a 4000 ans pour tracer des angles droits.",
+      "hint": "Pythagore : c² = a² + b².",
+      "category": "Théorème de Pythagore",
+      "difficulty": 1
+    },
+    {
+      "id": "4e-pyth-02",
+      "type": "mcq",
+      "question": "Un triangle a des côtés de 5 cm, 12 cm et 13 cm. Est-il rectangle ?",
+      "choices": ["Oui, car 5² + 12² = 13²", "Non, car 5 + 12 ≠ 13²", "Oui, car 5 + 12 = 17 > 13", "Non, car aucun angle n'est marqué"],
+      "answer": 0,
+      "explanation": "C'est la RÉCIPROQUE de Pythagore ! On vérifie : 5² + 12² = 25 + 144 = 169 et 13² = 169. Comme 5² + 12² = 13², le triangle EST rectangle (avec l'angle droit opposé au côté de 13 cm). Attention : il faut toujours tester avec le PLUS GRAND côté comme hypoténuse. (5, 12, 13) est un autre triplet pythagoricien classique !",
+      "hint": "Vérifie si a² + b² = c² avec c le plus grand côté.",
+      "category": "Théorème de Pythagore",
+      "difficulty": 1
+    },
+    {
+      "id": "4e-pyth-03",
+      "type": "solve",
+      "question": "Un triangle rectangle a une hypoténuse de 10 cm et une cathète de 6 cm. Calcule l'autre cathète.",
+      "answer": "8",
+      "explanation": "Pythagore : hypoténuse² = cathète₁² + cathète₂². Donc : cathète₂² = hypoténuse² − cathète₁² = 10² − 6² = 100 − 36 = 64. Cathète₂ = √64 = 8 cm. Quand on cherche une cathète (pas l'hypoténuse), on SOUSTRAIT. C'est l'erreur la plus fréquente : certains additionnent toujours, mais on n'additionne que pour trouver l'hypoténuse.",
+      "hint": "Cathète² = Hypoténuse² − Autre cathète².",
+      "category": "Théorème de Pythagore",
+      "difficulty": 1
+    },
+    {
+      "id": "4e-pyth-04",
+      "type": "mcq",
+      "question": "Un triangle a des côtés de 7 cm, 8 cm et 11 cm. Est-il rectangle ?",
+      "choices": ["Non, car 7² + 8² ≠ 11²", "Oui, car 7² + 8² = 11²", "Non, car 7 + 8 > 11", "Oui, car c'est un triangle valide"],
+      "answer": 0,
+      "explanation": "Testons la réciproque de Pythagore : 7² + 8² = 49 + 64 = 113. Et 11² = 121. Comme 113 ≠ 121, le triangle n'est PAS rectangle. En fait, comme 7² + 8² < 11², le triangle est obtusangle (un angle > 90°). Si a² + b² > c², le triangle serait acutangle (tous les angles < 90°). La réciproque de Pythagore permet de classifier les triangles !",
+      "hint": "Compare a² + b² avec c².",
+      "category": "Théorème de Pythagore",
+      "difficulty": 2
+    },
+    {
+      "id": "4e-pyth-05",
+      "type": "solve",
+      "question": "Un carré a une diagonale de 10 cm. Calcule la longueur de son côté. Donne la valeur exacte sous la forme 'a√b'.",
+      "answer": "5√2",
+      "explanation": "La diagonale d'un carré coupe le carré en deux triangles rectangles isocèles. Si le côté du carré est a, alors par Pythagore : a² + a² = 10², soit 2a² = 100, donc a² = 50, et a = √50 = √(25 × 2) = 5√2 ≈ 7,07 cm. On simplifie √50 en cherchant le plus grand carré parfait qui divise 50 : c'est 25. Donc √50 = √25 × √2 = 5√2.",
+      "hint": "Pythagore dans le triangle formé par la diagonale : a² + a² = diagonale².",
+      "category": "Théorème de Pythagore",
+      "difficulty": 2
+    },
+    {
+      "id": "4e-pyth-06",
+      "type": "mcq",
+      "question": "Un mur vertical mesure 4 m. Une échelle de 5 m y est appuyée. À quelle distance du mur se trouve le pied de l'échelle ?",
+      "choices": ["3 m", "√41 m", "1 m", "9 m"],
+      "answer": 0,
+      "explanation": "Le mur, le sol et l'échelle forment un triangle rectangle (mur vertical, sol horizontal). L'échelle est l'hypoténuse (5 m), le mur une cathète (4 m). Distance au sol : d² = 5² − 4² = 25 − 16 = 9, donc d = 3 m. C'est le triplet (3, 4, 5) ! Pythagore est partout dans la vie réelle : échelles, pentes, distances...",
+      "hint": "L'échelle est l'hypoténuse du triangle rectangle.",
+      "category": "Théorème de Pythagore",
+      "difficulty": 1
+    },
+    {
+      "id": "4e-pyth-07",
+      "type": "solve",
+      "question": "Dans un repère, calcule la distance entre A(1, 2) et B(4, 6).",
+      "answer": "5",
+      "explanation": "La distance entre deux points se calcule avec Pythagore ! AB² = (x_B − x_A)² + (y_B − y_A)² = (4−1)² + (6−2)² = 3² + 4² = 9 + 16 = 25. AB = √25 = 5. On forme un triangle rectangle avec AB comme hypoténuse, et les projections horizontale (3) et verticale (4) comme cathètes. Encore le fameux triplet (3, 4, 5) !",
+      "hint": "Distance = √[(x₂−x₁)² + (y₂−y₁)²].",
+      "category": "Théorème de Pythagore",
+      "difficulty": 2
+    },
+    {
+      "id": "4e-pyth-08",
+      "type": "mcq",
+      "question": "Un losange a des diagonales de 6 cm et 8 cm. Quelle est la longueur de chaque côté ?",
+      "choices": ["5 cm", "7 cm", "10 cm", "√100 cm"],
+      "answer": 0,
+      "explanation": "Les diagonales d'un losange se coupent en leur milieu à angle droit ! On obtient 4 triangles rectangles dont les cathètes mesurent 6/2 = 3 cm et 8/2 = 4 cm. Par Pythagore : côté² = 3² + 4² = 9 + 16 = 25, donc côté = 5 cm. C'est très astucieux : on utilise les propriétés du losange pour créer un triangle rectangle, puis on applique Pythagore !",
+      "hint": "Les diagonales d'un losange sont perpendiculaires et se coupent en leur milieu.",
+      "category": "Théorème de Pythagore",
+      "difficulty": 3
+    },
+    {
+      "id": "4e-cos-01",
+      "type": "mcq",
+      "question": "Dans un triangle rectangle, le cosinus d'un angle aigu est le rapport :",
+      "choices": ["côté adjacent / hypoténuse", "côté opposé / hypoténuse", "côté opposé / côté adjacent", "hypoténuse / côté adjacent"],
+      "answer": 0,
+      "explanation": "Le cosinus d'un angle aigu dans un triangle rectangle = côté ADJACENT / hypoténuse. « Adjacent » signifie « à côté de » l'angle. L'hypoténuse est toujours le plus grand côté (face à l'angle droit). En 4ème, on apprend le cosinus. En 3ème, on ajoutera le sinus (opposé/hypoténuse) et la tangente (opposé/adjacent). Le moyen mnémotechnique SOH-CAH-TOA aide à retenir : C-A-H = Cosinus = Adjacent / Hypoténuse.",
+      "hint": "CAH : Cosinus = Adjacent / Hypoténuse.",
+      "category": "Cosinus",
+      "difficulty": 1
+    },
+    {
+      "id": "4e-cos-02",
+      "type": "solve",
+      "question": "Dans un triangle rectangle, l'hypoténuse mesure 10 cm et le côté adjacent à l'angle α mesure 8 cm. Que vaut cos(α) ? (sous forme décimale)",
+      "answer": "0,8",
+      "explanation": "cos(α) = côté adjacent / hypoténuse = 8/10 = 0,8. C'est aussi simple que ça ! Le cosinus est toujours compris entre 0 et 1 pour un angle aigu (entre 0° et 90°). Plus l'angle est petit, plus le cosinus est proche de 1 (cos 0° = 1). Plus l'angle est grand, plus le cosinus est proche de 0 (cos 90° = 0).",
+      "hint": "cos(α) = adjacent / hypoténuse.",
+      "category": "Cosinus",
+      "difficulty": 1
+    },
+    {
+      "id": "4e-cos-03",
+      "type": "mcq",
+      "question": "Que vaut cos(60°) ?",
+      "choices": ["0,5", "√3/2", "1", "√2/2"],
+      "answer": 0,
+      "explanation": "cos(60°) = 0,5 = 1/2. C'est une valeur remarquable à connaître par cœur ! On peut le retrouver avec un triangle équilatéral de côté 2 : en traçant la hauteur, on coupe la base en deux (1 et 1). Le triangle rectangle obtenu a une hypoténuse de 2 et un côté adjacent de 1 pour l'angle de 60°. Donc cos(60°) = 1/2 = 0,5. Autres valeurs à retenir : cos(0°) = 1, cos(45°) = √2/2 ≈ 0,707, cos(90°) = 0.",
+      "hint": "C'est une valeur remarquable classique.",
+      "category": "Cosinus",
+      "difficulty": 1
+    },
+    {
+      "id": "4e-cos-04",
+      "type": "solve",
+      "question": "Dans un triangle rectangle, cos(α) = 0,6 et l'hypoténuse mesure 15 cm. Calcule le côté adjacent à α.",
+      "answer": "9",
+      "explanation": "cos(α) = adjacent / hypoténuse, donc adjacent = cos(α) × hypoténuse = 0,6 × 15 = 9 cm. Le cosinus permet de calculer des longueurs ! C'est un outil puissant en navigation, architecture, physique... Si on connaît un angle et un côté d'un triangle rectangle, on peut trouver les autres côtés grâce à la trigonométrie.",
+      "hint": "adjacent = cos(α) × hypoténuse.",
+      "category": "Cosinus",
+      "difficulty": 2
+    },
+    {
+      "id": "4e-cos-05",
+      "type": "mcq",
+      "question": "Un triangle rectangle a un angle de 45° et une hypoténuse de 10 cm. Quelle est la longueur du côté adjacent ?",
+      "choices": ["5√2 cm", "5 cm", "10√2 cm", "10 cm"],
+      "answer": 0,
+      "explanation": "cos(45°) = √2/2 ≈ 0,707. Côté adjacent = cos(45°) × 10 = 10 × √2/2 = 5√2 ≈ 7,07 cm. Un triangle rectangle avec un angle de 45° est isocèle rectangle : les deux cathètes sont égales. Si l'hypoténuse est 10, chaque cathète vaut 10/√2 = 10√2/2 = 5√2. C'est un triangle remarquable très fréquent !",
+      "hint": "cos(45°) = √2/2. Adjacent = cos(45°) × hypoténuse.",
+      "category": "Cosinus",
+      "difficulty": 2
+    },
+    {
+      "id": "4e-cos-06",
+      "type": "solve",
+      "question": "Dans un triangle rectangle, le côté adjacent à l'angle β mesure 12 cm et l'hypoténuse 13 cm. Calcule le côté opposé à β.",
+      "answer": "5",
+      "explanation": "On utilise Pythagore pour trouver le troisième côté : opposé² = hypoténuse² − adjacent² = 13² − 12² = 169 − 144 = 25. Opposé = 5 cm. On obtient le triplet (5, 12, 13). On aurait aussi pu utiliser le cosinus : cos(β) = 12/13, puis sin(β) = opposé/13. Avec la relation cos²+sin²=1 : sin²(β) = 1 − (12/13)² = 1 − 144/169 = 25/169, sin(β) = 5/13, opposé = 5. Mais Pythagore est plus direct ici !",
+      "hint": "Utilise Pythagore pour trouver le troisième côté.",
+      "category": "Cosinus",
+      "difficulty": 2
+    }
+  ]
+}

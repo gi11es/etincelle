@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0f0f23">
+  <title>Citoyenneté - Dasha</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="citizenship.css">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.js"></script>
+</head>
+<body>
+  <canvas id="confetti-canvas"></canvas>
+
+  <div id="lottie-overlay" class="lottie-overlay hidden">
+    <lottie-player id="lottie-player" speed="1" style="width:200px;height:200px;"></lottie-player>
+  </div>
+
+  <div id="app">
+    <!-- Home Screen: Category Selection + Mock Exam -->
+    <section id="screen-home" class="screen active">
+      <nav class="screen-nav">
+        <a href="../index.html" class="btn-back">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+          Portail
+        </a>
+      </nav>
+      <header class="hero">
+        <div class="hero-glow"></div>
+        <h1 class="hero-title">Citoyenneté</h1>
+        <p class="subtitle">Prépare-toi au test de naturalisation</p>
+      </header>
+
+      <div class="stats-bar">
+        <div class="stat-pill"><span class="stat-num" id="stat-mastered">0</span> maîtrisées</div>
+        <div class="stat-pill"><span class="stat-num" id="stat-learning">0</span> en cours</div>
+        <div class="stat-pill"><span class="stat-num" id="stat-total">0</span> total</div>
+      </div>
+
+      <!-- Mock Exam Card -->
+      <div class="mock-exam-card" id="btn-mock-exam">
+        <div class="mock-exam-icon">🎓</div>
+        <div class="mock-exam-info">
+          <div class="mock-exam-title">Examen blanc</div>
+          <div class="mock-exam-desc">40 questions, 45 minutes — comme le vrai test</div>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+
+      <h2 class="section-title">Révision par catégorie</h2>
+      <div id="category-grid" class="category-grid"></div>
+    </section>
+
+    <!-- Practice Session Screen -->
+    <section id="screen-session" class="screen">
+      <div class="quiz-topbar">
+        <button class="btn-back" id="btn-back-home">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-fill" id="session-progress-fill"></div>
+        </div>
+        <div class="quiz-score-pill">
+          <span id="session-score">0</span>/<span id="session-total">10</span>
+        </div>
+      </div>
+      <div class="quiz-question-count">
+        Question <span id="session-current">1</span> sur <span id="session-total-display">10</span>
+        <span id="session-streak" class="streak-badge" style="display:none">🔥 <span id="session-streak-count">0</span></span>
+      </div>
+      <div id="game-container" class="quiz-container"></div>
+    </section>
+
+    <!-- Mock Exam Screen -->
+    <section id="screen-exam" class="screen">
+      <div class="quiz-topbar">
+        <button class="btn-back" id="btn-back-home-exam">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-fill" id="exam-progress-fill"></div>
+        </div>
+        <div class="exam-timer" id="exam-timer">45:00</div>
+        <div class="quiz-score-pill">
+          <span id="exam-score">0</span>/40
+        </div>
+      </div>
+      <div class="quiz-question-count">
+        Question <span id="exam-current">1</span> sur 40
+      </div>
+      <div id="exam-container" class="quiz-container"></div>
+    </section>
+
+    <!-- Practice Results Screen -->
+    <section id="screen-results" class="screen">
+      <div class="results-card">
+        <div id="cit-results-lottie" class="results-lottie"></div>
+        <h2 id="cit-results-title"></h2>
+        <div class="results-score">
+          <span id="cit-results-score-num"></span><span class="results-divider">/</span><span id="cit-results-score-total"></span>
+        </div>
+        <p id="cit-results-message"></p>
+        <div id="cit-results-xp" class="results-xp"></div>
+        <div class="results-actions">
+          <button class="btn btn-primary" id="cit-btn-retry">Recommencer</button>
+          <button class="btn btn-ghost" id="cit-btn-home">Retour aux catégories</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mock Exam Results Screen -->
+    <section id="screen-exam-results" class="screen">
+      <div class="results-card">
+        <div id="exam-results-lottie" class="results-lottie"></div>
+        <h2 id="exam-results-title"></h2>
+        <div class="results-score">
+          <span id="exam-results-score-num"></span><span class="results-divider">/</span><span id="exam-results-score-total">40</span>
+        </div>
+        <p id="exam-results-message"></p>
+        <div id="exam-results-time" class="exam-results-time"></div>
+        <div id="exam-results-verdict" class="exam-results-verdict"></div>
+        <div id="exam-results-xp" class="results-xp"></div>
+        <div id="exam-results-breakdown" class="exam-breakdown"></div>
+        <div class="results-actions">
+          <button class="btn btn-primary" id="exam-btn-retry">Nouvel examen blanc</button>
+          <button class="btn btn-ghost" id="exam-btn-home">Retour aux catégories</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="citizenship.js"></script>
+</body>
+</html>

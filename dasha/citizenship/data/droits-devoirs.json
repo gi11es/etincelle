@@ -1,0 +1,687 @@
+{
+  "id": "droits-devoirs",
+  "title": "Droits et devoirs du citoyen",
+  "description": "Les droits fondamentaux et les obligations des citoyens français : vote, impôts, scolarité, défense, sécurité sociale, mariage civil et autorité parentale.",
+  "items": [
+    {
+      "id": "dd-001",
+      "question": "À quel âge obtient-on le droit de vote en France ?",
+      "choices": [
+        "16 ans",
+        "18 ans",
+        "20 ans",
+        "21 ans"
+      ],
+      "answer": 1,
+      "explanation": "En France, le droit de vote est acquis à 18 ans, âge de la majorité civile. Tout citoyen français majeur inscrit sur les listes électorales peut voter.",
+      "statement": "Le droit de vote en France est acquis à l'âge de 16 ans.",
+      "isTrue": false,
+      "flashcard_front": "À quel âge obtient-on le droit de vote en France ?",
+      "flashcard_back": "18 ans (âge de la majorité civile). Il faut être citoyen français et inscrit sur les listes électorales.",
+      "category": "vote"
+    },
+    {
+      "id": "dd-002",
+      "question": "L'inscription sur les listes électorales est-elle obligatoire ?",
+      "choices": [
+        "Oui, c'est une obligation légale pour tous les citoyens majeurs",
+        "Non, elle est facultative",
+        "Oui, mais seulement pour les élections présidentielles",
+        "Non, sauf pour les fonctionnaires"
+      ],
+      "answer": 0,
+      "explanation": "Depuis 1997, l'inscription sur les listes électorales est obligatoire pour tous les citoyens français majeurs. Depuis 2019, l'inscription est automatique à 18 ans.",
+      "statement": "L'inscription sur les listes électorales est facultative en France.",
+      "isTrue": false,
+      "flashcard_front": "L'inscription sur les listes électorales est-elle obligatoire ?",
+      "flashcard_back": "Oui, c'est une obligation légale. Depuis 2019, l'inscription est automatique à 18 ans.",
+      "category": "vote"
+    },
+    {
+      "id": "dd-003",
+      "question": "Quelle est la tranche d'âge de l'obligation scolaire en France ?",
+      "choices": [
+        "De 3 à 16 ans",
+        "De 6 à 16 ans",
+        "De 3 à 18 ans",
+        "De 6 à 18 ans"
+      ],
+      "answer": 0,
+      "explanation": "Depuis la loi du 26 juillet 2019 (loi Blanquer), l'instruction est obligatoire de 3 à 16 ans. Auparavant, elle était obligatoire de 6 à 16 ans. De 16 à 18 ans, une obligation de formation existe.",
+      "statement": "L'instruction est obligatoire de 6 à 16 ans en France.",
+      "isTrue": false,
+      "flashcard_front": "Tranche d'âge de l'obligation scolaire ?",
+      "flashcard_back": "De 3 à 16 ans (depuis la loi Blanquer de 2019). De 16 à 18 ans : obligation de formation.",
+      "category": "scolarité"
+    },
+    {
+      "id": "dd-004",
+      "question": "Payer des impôts est-il un devoir du citoyen ?",
+      "choices": [
+        "Non, c'est un choix personnel",
+        "Oui, c'est une obligation inscrite dans la DDHC de 1789",
+        "Oui, mais seulement pour les personnes qui travaillent",
+        "Non, seules les entreprises paient des impôts"
+      ],
+      "answer": 1,
+      "explanation": "L'article 13 de la DDHC de 1789 dispose que la contribution commune « doit être également répartie entre tous les citoyens, en raison de leurs facultés ». Payer l'impôt est un devoir citoyen.",
+      "statement": "Le paiement des impôts est un devoir du citoyen inscrit dans la DDHC de 1789.",
+      "isTrue": true,
+      "flashcard_front": "Le paiement des impôts est-il un devoir ?",
+      "flashcard_back": "Oui. Article 13 de la DDHC : la contribution commune doit être « également répartie entre tous les citoyens, en raison de leurs facultés ».",
+      "category": "impôts"
+    },
+    {
+      "id": "dd-005",
+      "question": "Qu'est-ce que la Journée défense et citoyenneté (JDC) ?",
+      "choices": [
+        "Le service militaire obligatoire",
+        "Une journée obligatoire pour les jeunes de 16 à 25 ans, qui les informe sur la défense et les droits du citoyen",
+        "Une fête nationale militaire",
+        "Une journée de formation réservée aux volontaires"
+      ],
+      "answer": 1,
+      "explanation": "La JDC (anciennement JAPD) est une journée obligatoire pour tous les jeunes Français (garçons et filles) entre 16 et 25 ans. Elle remplace le service militaire supprimé en 1997.",
+      "statement": "La Journée défense et citoyenneté est obligatoire pour les jeunes Français.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que la Journée défense et citoyenneté (JDC) ?",
+      "flashcard_back": "Journée obligatoire pour tous les jeunes Français (16-25 ans). Remplace le service militaire supprimé en 1997. Information sur la défense et les droits civiques.",
+      "category": "défense"
+    },
+    {
+      "id": "dd-006",
+      "question": "Le service militaire est-il encore obligatoire en France ?",
+      "choices": [
+        "Oui, pour tous les hommes de 18 ans",
+        "Oui, pour les hommes et les femmes",
+        "Non, il a été suspendu en 1997",
+        "Non, il a été supprimé en 1945"
+      ],
+      "answer": 2,
+      "explanation": "Le service national obligatoire a été suspendu par la loi du 28 octobre 1997 sous la présidence de Jacques Chirac. Il a été remplacé par la Journée défense et citoyenneté (JDC).",
+      "statement": "Le service militaire obligatoire a été suspendu en France en 1997.",
+      "isTrue": true,
+      "flashcard_front": "Le service militaire est-il encore obligatoire ?",
+      "flashcard_back": "Non, suspendu par la loi du 28 octobre 1997 (présidence Chirac). Remplacé par la Journée défense et citoyenneté (JDC).",
+      "category": "défense"
+    },
+    {
+      "id": "dd-007",
+      "question": "Qu'est-ce que la Sécurité sociale ?",
+      "choices": [
+        "Une assurance privée",
+        "Un système de protection sociale obligatoire couvrant maladie, maternité, vieillesse, accidents du travail et famille",
+        "Une aide réservée aux personnes sans emploi",
+        "Un service de police"
+      ],
+      "answer": 1,
+      "explanation": "La Sécurité sociale, créée en 1945, est un système obligatoire de protection sociale. Elle couvre quatre branches : maladie, accidents du travail/maladies professionnelles, vieillesse (retraite) et famille.",
+      "statement": "La Sécurité sociale est un système de protection sociale facultatif.",
+      "isTrue": false,
+      "flashcard_front": "Qu'est-ce que la Sécurité sociale ?",
+      "flashcard_back": "Système obligatoire de protection sociale créé en 1945. Quatre branches : maladie, accidents du travail, vieillesse (retraite), famille.",
+      "category": "sécurité-sociale"
+    },
+    {
+      "id": "dd-008",
+      "question": "En quelle année la Sécurité sociale a-t-elle été créée ?",
+      "choices": [
+        "1936",
+        "1945",
+        "1958",
+        "1968"
+      ],
+      "answer": 1,
+      "explanation": "La Sécurité sociale a été créée par les ordonnances des 4 et 19 octobre 1945, à la Libération. Elle a été fondée sur le principe de solidarité nationale.",
+      "statement": "La Sécurité sociale a été créée en 1945.",
+      "isTrue": true,
+      "flashcard_front": "Date de création de la Sécurité sociale ?",
+      "flashcard_back": "1945 (ordonnances des 4 et 19 octobre 1945), à la Libération. Fondée sur le principe de solidarité nationale.",
+      "category": "sécurité-sociale"
+    },
+    {
+      "id": "dd-009",
+      "question": "Le mariage civil est-il obligatoire avant le mariage religieux en France ?",
+      "choices": [
+        "Non, le mariage religieux suffit",
+        "Oui, seul le mariage civil est reconnu par la loi ; il doit précéder tout mariage religieux",
+        "Non, les deux sont équivalents",
+        "Oui, mais seulement pour les catholiques"
+      ],
+      "answer": 1,
+      "explanation": "En France, seul le mariage civil, célébré à la mairie, est reconnu par la loi. L'article 433-21 du Code pénal interdit à un ministre du culte de célébrer un mariage religieux avant le mariage civil.",
+      "statement": "En France, le mariage religieux a la même valeur juridique que le mariage civil.",
+      "isTrue": false,
+      "flashcard_front": "Le mariage civil est-il obligatoire avant le mariage religieux ?",
+      "flashcard_back": "Oui. Seul le mariage civil (célébré à la mairie) est reconnu par la loi. Le mariage religieux ne peut pas précéder le mariage civil.",
+      "category": "mariage"
+    },
+    {
+      "id": "dd-010",
+      "question": "Qui célèbre le mariage civil en France ?",
+      "choices": [
+        "Le préfet",
+        "Le juge",
+        "Le maire ou un adjoint au maire",
+        "Le notaire"
+      ],
+      "answer": 2,
+      "explanation": "Le mariage civil est célébré par le maire ou un adjoint au maire, en qualité d'officier d'état civil, à la mairie de la commune de résidence de l'un des époux.",
+      "statement": "Le mariage civil est célébré par le maire ou un adjoint au maire.",
+      "isTrue": true,
+      "flashcard_front": "Qui célèbre le mariage civil ?",
+      "flashcard_back": "Le maire ou un adjoint au maire (en qualité d'officier d'état civil), à la mairie.",
+      "category": "mariage"
+    },
+    {
+      "id": "dd-011",
+      "question": "Depuis quand le mariage est-il ouvert aux couples de même sexe en France ?",
+      "choices": [
+        "2005",
+        "2010",
+        "2013",
+        "2015"
+      ],
+      "answer": 2,
+      "explanation": "La loi du 17 mai 2013 (dite « Mariage pour tous ») a ouvert le mariage aux couples de personnes de même sexe en France, ainsi que le droit à l'adoption.",
+      "statement": "Le mariage entre personnes de même sexe est légal en France depuis 2013.",
+      "isTrue": true,
+      "flashcard_front": "Depuis quand le mariage entre personnes de même sexe est-il légal ?",
+      "flashcard_back": "Depuis la loi du 17 mai 2013 (« Mariage pour tous »). Inclut aussi le droit à l'adoption.",
+      "category": "mariage"
+    },
+    {
+      "id": "dd-012",
+      "question": "Qu'est-ce que l'autorité parentale ?",
+      "choices": [
+        "Le droit exclusif du père sur les enfants",
+        "L'ensemble des droits et des devoirs des parents ayant pour finalité l'intérêt de l'enfant",
+        "Le droit de l'État sur l'éducation des enfants",
+        "Le droit des grands-parents de voir leurs petits-enfants"
+      ],
+      "answer": 1,
+      "explanation": "L'autorité parentale est un ensemble de droits et de devoirs ayant pour finalité l'intérêt de l'enfant (article 371-1 du Code civil). Elle appartient aux deux parents et inclut protection, éducation, santé.",
+      "statement": "L'autorité parentale appartient exclusivement au père.",
+      "isTrue": false,
+      "flashcard_front": "Qu'est-ce que l'autorité parentale ?",
+      "flashcard_back": "Ensemble des droits et devoirs des parents ayant pour finalité l'intérêt de l'enfant (art. 371-1 du Code civil). Exercée conjointement par les deux parents.",
+      "category": "famille"
+    },
+    {
+      "id": "dd-013",
+      "question": "Le droit de grève est-il reconnu en France ?",
+      "choices": [
+        "Non, il est interdit",
+        "Oui, il est reconnu par le préambule de la Constitution de 1946",
+        "Oui, mais seulement dans le secteur privé",
+        "Non, sauf en cas de guerre"
+      ],
+      "answer": 1,
+      "explanation": "Le droit de grève est reconnu par le préambule de la Constitution de 1946, qui fait partie du bloc de constitutionnalité. Il s'exerce « dans le cadre des lois qui le réglementent ».",
+      "statement": "Le droit de grève est reconnu par la Constitution en France.",
+      "isTrue": true,
+      "flashcard_front": "Le droit de grève est-il reconnu en France ?",
+      "flashcard_back": "Oui. Reconnu par le préambule de la Constitution de 1946 : « Le droit de grève s'exerce dans le cadre des lois qui le réglementent. »",
+      "category": "travail"
+    },
+    {
+      "id": "dd-014",
+      "question": "Qui a le devoir de respecter les lois en France ?",
+      "choices": [
+        "Uniquement les citoyens français",
+        "Toute personne se trouvant sur le territoire français",
+        "Uniquement les personnes majeures",
+        "Uniquement les résidents permanents"
+      ],
+      "answer": 1,
+      "explanation": "Le respect des lois est un devoir qui s'impose à toute personne se trouvant sur le territoire français, quelle que soit sa nationalité ou sa situation administrative.",
+      "statement": "Seuls les citoyens français sont tenus de respecter les lois en France.",
+      "isTrue": false,
+      "flashcard_front": "Qui doit respecter les lois en France ?",
+      "flashcard_back": "Toute personne se trouvant sur le territoire français, quelle que soit sa nationalité.",
+      "category": "lois"
+    },
+    {
+      "id": "dd-015",
+      "question": "Qu'est-ce que le PACS (Pacte civil de solidarité) ?",
+      "choices": [
+        "Un contrat de travail",
+        "Un contrat entre deux personnes majeures organisant leur vie commune",
+        "Un acte de naissance",
+        "Un contrat immobilier"
+      ],
+      "answer": 1,
+      "explanation": "Le PACS, créé par la loi du 15 novembre 1999, est un contrat entre deux personnes majeures, de sexe différent ou de même sexe, pour organiser leur vie commune. Il est enregistré en mairie.",
+      "statement": "Le PACS a été créé par la loi du 15 novembre 1999.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que le PACS ?",
+      "flashcard_back": "Pacte civil de solidarité (loi du 15 novembre 1999). Contrat entre deux personnes majeures pour organiser leur vie commune. Enregistré en mairie.",
+      "category": "mariage"
+    },
+    {
+      "id": "dd-016",
+      "question": "À partir de quel âge peut-on se marier en France ?",
+      "choices": [
+        "16 ans",
+        "18 ans",
+        "20 ans",
+        "21 ans"
+      ],
+      "answer": 1,
+      "explanation": "Depuis la loi du 4 avril 2006, l'âge minimum du mariage est de 18 ans pour les hommes et les femmes. Avant, les femmes pouvaient se marier à 15 ans.",
+      "statement": "L'âge minimum pour se marier en France est de 18 ans pour les deux sexes.",
+      "isTrue": true,
+      "flashcard_front": "Âge minimum pour se marier en France ?",
+      "flashcard_back": "18 ans pour les hommes et les femmes (depuis la loi du 4 avril 2006).",
+      "category": "mariage"
+    },
+    {
+      "id": "dd-017",
+      "question": "Qu'est-ce que le recensement citoyen obligatoire ?",
+      "choices": [
+        "Le comptage de la population par l'INSEE",
+        "L'obligation pour tout jeune Français de se faire recenser à la mairie à 16 ans",
+        "L'obligation de déclarer ses revenus",
+        "L'inscription au registre du commerce"
+      ],
+      "answer": 1,
+      "explanation": "Tout jeune Français (garçon et fille) doit se faire recenser à la mairie de son domicile dans les 3 mois suivant ses 16 ans. Ce recensement est nécessaire pour participer à la JDC et pour s'inscrire aux examens.",
+      "statement": "Le recensement citoyen est obligatoire à l'âge de 16 ans.",
+      "isTrue": true,
+      "flashcard_front": "À quel âge le recensement citoyen est-il obligatoire ?",
+      "flashcard_back": "16 ans. Obligatoire dans les 3 mois suivant le 16e anniversaire, à la mairie. Nécessaire pour la JDC et l'inscription aux examens.",
+      "category": "défense"
+    },
+    {
+      "id": "dd-018",
+      "question": "Le vote est-il obligatoire en France ?",
+      "choices": [
+        "Oui, pour toutes les élections",
+        "Oui, uniquement pour l'élection présidentielle",
+        "Non, le vote est un droit mais pas une obligation légale",
+        "Oui, sous peine d'amende"
+      ],
+      "answer": 2,
+      "explanation": "En France, le vote est un droit civique mais pas une obligation légale. Il n'existe pas de sanction en cas d'abstention (contrairement à la Belgique ou au Luxembourg).",
+      "statement": "Le vote est obligatoire en France sous peine d'amende.",
+      "isTrue": false,
+      "flashcard_front": "Le vote est-il obligatoire en France ?",
+      "flashcard_back": "Non. Le vote est un droit civique mais pas une obligation légale. Aucune sanction en cas d'abstention.",
+      "category": "vote"
+    },
+    {
+      "id": "dd-019",
+      "question": "Les citoyens européens résidant en France peuvent-ils voter ?",
+      "choices": [
+        "Non, jamais",
+        "Oui, à toutes les élections",
+        "Oui, aux élections municipales et européennes uniquement",
+        "Oui, seulement aux élections européennes"
+      ],
+      "answer": 2,
+      "explanation": "Les citoyens de l'Union européenne résidant en France peuvent voter et se présenter aux élections municipales et européennes, mais pas aux élections nationales (présidentielle, législatives, sénatoriales).",
+      "statement": "Les citoyens européens résidant en France peuvent voter aux élections présidentielles.",
+      "isTrue": false,
+      "flashcard_front": "À quelles élections les citoyens européens résidant en France peuvent-ils voter ?",
+      "flashcard_back": "Aux élections municipales et européennes uniquement. Pas aux élections nationales (présidentielle, législatives, sénatoriales).",
+      "category": "vote"
+    },
+    {
+      "id": "dd-020",
+      "question": "Quel est le devoir des parents en matière d'éducation ?",
+      "choices": [
+        "Ils n'ont aucune obligation",
+        "Ils doivent assurer l'instruction obligatoire de leurs enfants (de 3 à 16 ans)",
+        "Ils doivent obligatoirement inscrire leurs enfants à l'école publique",
+        "Ils doivent seulement nourrir et loger leurs enfants"
+      ],
+      "answer": 1,
+      "explanation": "Les parents ont le devoir d'assurer l'instruction obligatoire de leurs enfants de 3 à 16 ans. L'instruction peut être donnée à l'école (publique ou privée) ou à domicile (avec autorisation depuis 2022).",
+      "statement": "L'instruction à domicile est interdite en France.",
+      "isTrue": false,
+      "flashcard_front": "Quel est le devoir des parents en matière d'éducation ?",
+      "flashcard_back": "Assurer l'instruction obligatoire de 3 à 16 ans. L'instruction peut se faire à l'école (publique ou privée) ou à domicile (avec autorisation depuis 2022).",
+      "category": "scolarité"
+    },
+    {
+      "id": "dd-021",
+      "question": "Qu'est-ce que la présomption d'innocence ?",
+      "choices": [
+        "Toute personne accusée est considérée comme coupable jusqu'à preuve du contraire",
+        "Toute personne accusée est présumée innocente jusqu'à ce que sa culpabilité soit établie",
+        "Seules les personnes mineures sont présumées innocentes",
+        "La présomption d'innocence ne s'applique qu'aux crimes"
+      ],
+      "answer": 1,
+      "explanation": "La présomption d'innocence est un droit fondamental garanti par l'article 9 de la DDHC de 1789. Toute personne accusée est présumée innocente jusqu'à ce que sa culpabilité ait été légalement établie.",
+      "statement": "La présomption d'innocence est garantie par la DDHC de 1789.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que la présomption d'innocence ?",
+      "flashcard_back": "Toute personne est présumée innocente jusqu'à ce que sa culpabilité soit légalement établie (article 9 de la DDHC de 1789).",
+      "category": "lois"
+    },
+    {
+      "id": "dd-022",
+      "question": "Quel est l'âge de la majorité civile en France ?",
+      "choices": [
+        "16 ans",
+        "18 ans",
+        "20 ans",
+        "21 ans"
+      ],
+      "answer": 1,
+      "explanation": "L'âge de la majorité civile est fixé à 18 ans en France depuis la loi du 5 juillet 1974. Avant cette date, la majorité était à 21 ans.",
+      "statement": "La majorité civile est fixée à 21 ans en France.",
+      "isTrue": false,
+      "flashcard_front": "Âge de la majorité civile en France ?",
+      "flashcard_back": "18 ans (depuis la loi du 5 juillet 1974). Avant : 21 ans.",
+      "category": "lois"
+    },
+    {
+      "id": "dd-023",
+      "question": "Qu'est-ce que le droit d'asile ?",
+      "choices": [
+        "Le droit de quitter la France librement",
+        "Le droit pour une personne persécutée de trouver refuge et protection en France",
+        "Le droit de ne pas payer d'impôts",
+        "Le droit de changer de nationalité"
+      ],
+      "answer": 1,
+      "explanation": "Le droit d'asile est garanti par le préambule de la Constitution de 1946 : « Tout homme persécuté en raison de son action en faveur de la liberté a droit d'asile sur les territoires de la République. »",
+      "statement": "Le droit d'asile est garanti par la Constitution française.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que le droit d'asile ?",
+      "flashcard_back": "Le droit pour une personne persécutée de trouver refuge en France. Garanti par le préambule de la Constitution de 1946.",
+      "category": "lois"
+    },
+    {
+      "id": "dd-024",
+      "question": "Le droit syndical est-il reconnu en France ?",
+      "choices": [
+        "Non, les syndicats sont interdits",
+        "Oui, il est reconnu par le préambule de la Constitution de 1946",
+        "Oui, mais seulement dans la fonction publique",
+        "Non, sauf autorisation du préfet"
+      ],
+      "answer": 1,
+      "explanation": "Le droit syndical est reconnu par le préambule de la Constitution de 1946 : « Tout homme peut défendre ses droits et ses intérêts par l'action syndicale et adhérer au syndicat de son choix. »",
+      "statement": "Le droit syndical est reconnu par le préambule de la Constitution de 1946.",
+      "isTrue": true,
+      "flashcard_front": "Le droit syndical est-il reconnu en France ?",
+      "flashcard_back": "Oui. Préambule de 1946 : « Tout homme peut défendre ses droits et ses intérêts par l'action syndicale et adhérer au syndicat de son choix. »",
+      "category": "travail"
+    },
+    {
+      "id": "dd-025",
+      "question": "Quelle est la durée légale du travail en France ?",
+      "choices": [
+        "32 heures par semaine",
+        "35 heures par semaine",
+        "38 heures par semaine",
+        "40 heures par semaine"
+      ],
+      "answer": 1,
+      "explanation": "La durée légale du travail est de 35 heures par semaine depuis les lois Aubry de 2000. Au-delà, les heures sont considérées comme des heures supplémentaires.",
+      "statement": "La durée légale du travail en France est de 35 heures par semaine.",
+      "isTrue": true,
+      "flashcard_front": "Durée légale du travail en France ?",
+      "flashcard_back": "35 heures par semaine (lois Aubry, 2000). Au-delà : heures supplémentaires.",
+      "category": "travail"
+    },
+    {
+      "id": "dd-026",
+      "question": "Qu'est-ce que l'aide juridictionnelle ?",
+      "choices": [
+        "Une aide financière pour payer ses impôts",
+        "Une aide de l'État pour accéder à la justice quand on n'a pas les moyens de payer un avocat",
+        "Une aide pour trouver un emploi",
+        "Une aide pour obtenir un logement"
+      ],
+      "answer": 1,
+      "explanation": "L'aide juridictionnelle permet aux personnes ayant des ressources insuffisantes de bénéficier d'une prise en charge totale ou partielle par l'État des frais de justice (avocat, huissier, etc.).",
+      "statement": "L'aide juridictionnelle permet d'accéder à la justice gratuitement pour les personnes à faibles revenus.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que l'aide juridictionnelle ?",
+      "flashcard_back": "Aide de l'État pour les personnes à faibles revenus, qui prend en charge tout ou partie des frais de justice (avocat, huissier, etc.).",
+      "category": "lois"
+    },
+    {
+      "id": "dd-027",
+      "question": "Les parents sont-ils responsables des actes de leurs enfants mineurs ?",
+      "choices": [
+        "Non, les enfants sont responsables dès 13 ans",
+        "Oui, les parents sont civilement responsables des dommages causés par leurs enfants mineurs",
+        "Non, seul l'État est responsable",
+        "Oui, mais seulement jusqu'à 16 ans"
+      ],
+      "answer": 1,
+      "explanation": "L'article 1242 du Code civil (ancien 1384) prévoit que les parents sont civilement responsables des dommages causés par leurs enfants mineurs habitant avec eux.",
+      "statement": "Les parents sont civilement responsables des actes de leurs enfants mineurs.",
+      "isTrue": true,
+      "flashcard_front": "Les parents sont-ils responsables des actes de leurs enfants mineurs ?",
+      "flashcard_back": "Oui. Les parents sont civilement responsables des dommages causés par leurs enfants mineurs (article 1242 du Code civil).",
+      "category": "famille"
+    },
+    {
+      "id": "dd-028",
+      "question": "L'école publique en France est-elle gratuite ?",
+      "choices": [
+        "Non, il faut payer des frais de scolarité",
+        "Oui, l'enseignement public est gratuit de l'école maternelle au lycée",
+        "Oui, mais seulement à l'école primaire",
+        "Non, sauf pour les familles défavorisées"
+      ],
+      "answer": 1,
+      "explanation": "L'enseignement public est gratuit de l'école maternelle au lycée. Ce principe de gratuité est inscrit dans les lois Jules Ferry de 1881-1882 et confirmé par le préambule de la Constitution de 1946.",
+      "statement": "L'enseignement public est gratuit en France de la maternelle au lycée.",
+      "isTrue": true,
+      "flashcard_front": "L'école publique est-elle gratuite ?",
+      "flashcard_back": "Oui, de la maternelle au lycée. Principe inscrit dans les lois Jules Ferry (1881-1882) et le préambule de la Constitution de 1946.",
+      "category": "scolarité"
+    },
+    {
+      "id": "dd-029",
+      "question": "Qu'est-ce que la carte Vitale ?",
+      "choices": [
+        "Une carte d'identité",
+        "La carte d'assurance maladie permettant d'accéder aux soins remboursés par la Sécurité sociale",
+        "Une carte bancaire",
+        "Une carte de transport"
+      ],
+      "answer": 1,
+      "explanation": "La carte Vitale est la carte d'assurance maladie. Elle atteste de l'affiliation à la Sécurité sociale et permet la prise en charge des frais de santé. Elle contient les informations administratives de l'assuré.",
+      "statement": "La carte Vitale est la carte d'assurance maladie de la Sécurité sociale.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que la carte Vitale ?",
+      "flashcard_back": "Carte d'assurance maladie attestant de l'affiliation à la Sécurité sociale. Permet la prise en charge des frais de santé.",
+      "category": "sécurité-sociale"
+    },
+    {
+      "id": "dd-030",
+      "question": "Quels sont les principaux impôts en France ?",
+      "choices": [
+        "L'impôt sur le revenu et la TVA uniquement",
+        "L'impôt sur le revenu, la TVA, la CSG, les impôts locaux (taxe foncière)",
+        "Seulement la TVA",
+        "Seulement l'impôt sur le revenu"
+      ],
+      "answer": 1,
+      "explanation": "Les principaux impôts sont l'impôt sur le revenu (IR), la TVA (taxe sur la valeur ajoutée), la CSG (contribution sociale généralisée) et les impôts locaux (taxe foncière). La taxe d'habitation a été supprimée pour les résidences principales.",
+      "statement": "La TVA est le seul impôt existant en France.",
+      "isTrue": false,
+      "flashcard_front": "Quels sont les principaux impôts en France ?",
+      "flashcard_back": "Impôt sur le revenu (IR), TVA, CSG, impôts locaux (taxe foncière). La taxe d'habitation a été supprimée pour les résidences principales.",
+      "category": "impôts"
+    },
+    {
+      "id": "dd-031",
+      "question": "Le divorce est-il autorisé en France ?",
+      "choices": [
+        "Non, le mariage est indissoluble",
+        "Oui, il existe plusieurs formes de divorce",
+        "Oui, mais uniquement par consentement mutuel",
+        "Non, sauf en cas de violence"
+      ],
+      "answer": 1,
+      "explanation": "Le divorce est légal en France. Il existe quatre types de divorce : par consentement mutuel, pour acceptation du principe de la rupture, pour altération définitive du lien conjugal, et pour faute.",
+      "statement": "Il existe quatre types de divorce en France.",
+      "isTrue": true,
+      "flashcard_front": "Le divorce est-il autorisé en France ?",
+      "flashcard_back": "Oui. Quatre types : consentement mutuel, acceptation de la rupture, altération définitive du lien conjugal, et pour faute.",
+      "category": "mariage"
+    },
+    {
+      "id": "dd-032",
+      "question": "Qu'est-ce que le droit à un procès équitable ?",
+      "choices": [
+        "Le droit d'être jugé par le président de la République",
+        "Le droit d'être jugé par un tribunal indépendant et impartial, dans un délai raisonnable",
+        "Le droit de ne pas être jugé",
+        "Le droit de choisir son juge"
+      ],
+      "answer": 1,
+      "explanation": "Le droit à un procès équitable (article 6 de la Convention européenne des droits de l'homme) garantit à toute personne le droit d'être jugée par un tribunal indépendant et impartial, dans un délai raisonnable.",
+      "statement": "Le droit à un procès équitable est garanti en France.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que le droit à un procès équitable ?",
+      "flashcard_back": "Le droit d'être jugé par un tribunal indépendant et impartial, dans un délai raisonnable (article 6 de la CEDH).",
+      "category": "lois"
+    },
+    {
+      "id": "dd-033",
+      "question": "Les étrangers résidant en France ont-ils des droits ?",
+      "choices": [
+        "Non, aucun droit",
+        "Oui, mais seulement le droit de travailler",
+        "Oui, ils bénéficient des droits fondamentaux (liberté, sûreté, santé, éducation) mais pas du droit de vote aux élections nationales",
+        "Oui, exactement les mêmes droits que les citoyens français"
+      ],
+      "answer": 2,
+      "explanation": "Les étrangers en situation régulière bénéficient des droits fondamentaux : libertés individuelles, accès à la santé, à l'éducation, au travail. Cependant, le droit de vote aux élections nationales est réservé aux citoyens français.",
+      "statement": "Les étrangers résidant en France n'ont aucun droit.",
+      "isTrue": false,
+      "flashcard_front": "Quels droits ont les étrangers résidant en France ?",
+      "flashcard_back": "Droits fondamentaux : libertés individuelles, santé, éducation, travail. Mais pas le droit de vote aux élections nationales (réservé aux citoyens français).",
+      "category": "lois"
+    },
+    {
+      "id": "dd-034",
+      "question": "Qu'est-ce que la « protection de l'enfance » ?",
+      "choices": [
+        "Un programme sportif pour les enfants",
+        "Un ensemble de mesures visant à protéger les mineurs en danger ou risque de danger",
+        "Un programme scolaire",
+        "Une aide financière pour les familles nombreuses"
+      ],
+      "answer": 1,
+      "explanation": "La protection de l'enfance vise à prévenir les difficultés des familles et à protéger les mineurs en danger. Elle relève de la compétence du département (Aide sociale à l'enfance - ASE) et de la justice (juge des enfants).",
+      "statement": "La protection de l'enfance vise à protéger les mineurs en danger.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que la protection de l'enfance ?",
+      "flashcard_back": "Ensemble de mesures pour protéger les mineurs en danger. Compétence du département (ASE) et de la justice (juge des enfants).",
+      "category": "famille"
+    },
+    {
+      "id": "dd-035",
+      "question": "Qu'est-ce que le RSA (Revenu de solidarité active) ?",
+      "choices": [
+        "Un impôt sur le revenu",
+        "Une prestation sociale assurant un revenu minimum aux personnes sans ressources ou à faibles ressources",
+        "Une assurance automobile",
+        "Un prêt bancaire"
+      ],
+      "answer": 1,
+      "explanation": "Le RSA est une prestation sociale qui garantit un revenu minimum aux personnes sans ressources ou à faibles ressources. Il est versé par les CAF (Caisses d'allocations familiales) et financé par les départements.",
+      "statement": "Le RSA assure un revenu minimum aux personnes sans ressources.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que le RSA ?",
+      "flashcard_back": "Revenu de solidarité active. Prestation sociale garantissant un revenu minimum aux personnes sans ressources ou à faibles ressources. Versé par les CAF.",
+      "category": "sécurité-sociale"
+    },
+    {
+      "id": "dd-036",
+      "question": "Quelles sont les conditions pour être éligible à l'élection présidentielle ?",
+      "choices": [
+        "Avoir 18 ans et être citoyen français",
+        "Avoir 18 ans, être citoyen français et avoir recueilli 500 parrainages d'élus",
+        "Avoir 30 ans et être né en France",
+        "Avoir 25 ans et être membre d'un parti politique"
+      ],
+      "answer": 1,
+      "explanation": "Pour être candidat à l'élection présidentielle, il faut avoir au moins 18 ans, être citoyen français, jouir de ses droits civils et politiques, et avoir recueilli 500 parrainages (signatures) d'élus.",
+      "statement": "Un candidat à l'élection présidentielle doit obtenir 500 parrainages d'élus.",
+      "isTrue": true,
+      "flashcard_front": "Conditions pour être candidat à la présidentielle ?",
+      "flashcard_back": "18 ans minimum, citoyen français, jouir de ses droits civils et politiques, avoir recueilli 500 parrainages d'élus.",
+      "category": "vote"
+    },
+    {
+      "id": "dd-037",
+      "question": "Qu'est-ce que le devoir de jury d'assises ?",
+      "choices": [
+        "Le droit de refuser d'être juré",
+        "L'obligation pour tout citoyen tiré au sort de siéger comme juré dans une cour d'assises",
+        "L'obligation de dénoncer un crime",
+        "Le devoir de porter plainte"
+      ],
+      "answer": 1,
+      "explanation": "Tout citoyen français inscrit sur les listes électorales peut être tiré au sort pour être juré d'assises. La participation est obligatoire sauf empêchement légitime. Les jurés jugent les crimes les plus graves.",
+      "statement": "La participation comme juré d'assises est obligatoire pour les citoyens tirés au sort.",
+      "isTrue": true,
+      "flashcard_front": "Le jury d'assises est-il obligatoire ?",
+      "flashcard_back": "Oui. Tout citoyen tiré au sort est tenu de siéger comme juré (sauf empêchement légitime). Les jurés jugent les crimes les plus graves en cour d'assises.",
+      "category": "lois"
+    },
+    {
+      "id": "dd-038",
+      "question": "Qu'est-ce que l'obligation de formation pour les 16-18 ans ?",
+      "choices": [
+        "L'obligation de suivre un service militaire",
+        "L'obligation de suivre une formation (scolarité, apprentissage, emploi, service civique, etc.) jusqu'à 18 ans",
+        "L'obligation de travailler à partir de 16 ans",
+        "L'obligation de passer le permis de conduire"
+      ],
+      "answer": 1,
+      "explanation": "Depuis la loi du 26 juillet 2019, les jeunes de 16 à 18 ans ont l'obligation de se trouver en formation (scolarité, apprentissage, emploi, service civique ou insertion). Cette obligation prolonge l'instruction obligatoire.",
+      "statement": "Les jeunes de 16 à 18 ans ont une obligation de formation depuis 2019.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que l'obligation de formation 16-18 ans ?",
+      "flashcard_back": "Depuis 2019, les 16-18 ans doivent être en formation (scolarité, apprentissage, emploi, service civique ou insertion). Prolonge l'instruction obligatoire.",
+      "category": "scolarité"
+    },
+    {
+      "id": "dd-039",
+      "question": "Les violences conjugales sont-elles punies par la loi ?",
+      "choices": [
+        "Non, les affaires familiales sont privées",
+        "Oui, les violences conjugales sont un délit ou un crime, aggravé par le lien conjugal",
+        "Oui, mais seulement les violences physiques",
+        "Non, sauf en cas de blessure grave"
+      ],
+      "answer": 1,
+      "explanation": "Les violences conjugales (physiques, psychologiques, sexuelles) sont punies par la loi. Le lien conjugal (mariage, PACS, concubinage) constitue une circonstance aggravante. La loi protège aussi les enfants témoins.",
+      "statement": "Le lien conjugal est une circonstance aggravante pour les violences.",
+      "isTrue": true,
+      "flashcard_front": "Les violences conjugales sont-elles punies par la loi ?",
+      "flashcard_back": "Oui. Violences physiques, psychologiques et sexuelles sont punies. Le lien conjugal est une circonstance aggravante.",
+      "category": "famille"
+    },
+    {
+      "id": "dd-040",
+      "question": "Qu'est-ce que le principe de non-rétroactivité de la loi pénale ?",
+      "choices": [
+        "La loi pénale s'applique toujours rétroactivement",
+        "Une loi pénale plus sévère ne peut pas s'appliquer à des faits commis avant son entrée en vigueur",
+        "Les lois pénales ne s'appliquent qu'aux récidivistes",
+        "La loi pénale ne s'applique qu'aux majeurs"
+      ],
+      "answer": 1,
+      "explanation": "L'article 8 de la DDHC de 1789 établit le principe de non-rétroactivité de la loi pénale : une loi pénale plus sévère ne peut s'appliquer à des faits antérieurs. Exception : une loi plus douce s'applique rétroactivement.",
+      "statement": "Une loi pénale plus sévère peut s'appliquer à des faits antérieurs à son adoption.",
+      "isTrue": false,
+      "flashcard_front": "Qu'est-ce que la non-rétroactivité de la loi pénale ?",
+      "flashcard_back": "Une loi pénale plus sévère ne s'applique pas aux faits antérieurs (article 8 de la DDHC). Exception : une loi plus douce s'applique rétroactivement.",
+      "category": "lois"
+    }
+  ]
+}

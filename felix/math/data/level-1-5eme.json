@@ -1,0 +1,533 @@
+{
+  "id": "level-1-5eme",
+  "title": "5ème - Nombres et Géométrie",
+  "description": "Maîtrise les bases du collège : priorités opératoires, nombres relatifs, fractions, géométrie et plus encore !",
+  "requiredXP": 0,
+  "items": [
+    {
+      "id": "5e-prio-01",
+      "type": "solve",
+      "question": "Calcule : 3 + 4 × 5 − 2",
+      "answer": "21",
+      "explanation": "Rappelle-toi la règle d'or : on effectue TOUJOURS les multiplications et divisions AVANT les additions et soustractions. Ici, on commence par 4 × 5 = 20, puis on fait 3 + 20 − 2 = 21. Beaucoup de gens font l'erreur de calculer de gauche à droite (3 + 4 = 7, puis 7 × 5 = 35...) mais c'est faux ! La multiplication est prioritaire.",
+      "hint": "La multiplication passe avant l'addition !",
+      "category": "Priorités opératoires",
+      "difficulty": 1
+    },
+    {
+      "id": "5e-prio-02",
+      "type": "solve",
+      "question": "Calcule : 5 × (3 + 7) − 4 × 6",
+      "answer": "26",
+      "explanation": "Les parenthèses sont les REINES des priorités ! On commence toujours par elles. D'abord (3 + 7) = 10, puis on fait les multiplications : 5 × 10 = 50 et 4 × 6 = 24. Enfin, 50 − 24 = 26. Les parenthèses → les multiplications/divisions → les additions/soustractions. C'est l'ordre à retenir !",
+      "hint": "Les parenthèses d'abord, puis les multiplications.",
+      "category": "Priorités opératoires",
+      "difficulty": 1
+    },
+    {
+      "id": "5e-prio-03",
+      "type": "mcq",
+      "question": "Quelle est la valeur de 48 ÷ (4 + 4) × 3 ?",
+      "choices": ["18", "6", "36", "12"],
+      "answer": 0,
+      "explanation": "Étape par étape : d'abord les parenthèses → 4 + 4 = 8. Ensuite, on lit de gauche à droite pour les opérations de même priorité (÷ et ×) : 48 ÷ 8 = 6, puis 6 × 3 = 18. Attention, quand il y a des multiplications ET des divisions, on les fait de gauche à droite, comme on lit une phrase !",
+      "hint": "Parenthèses d'abord, puis de gauche à droite pour ÷ et ×.",
+      "category": "Priorités opératoires",
+      "difficulty": 2
+    },
+    {
+      "id": "5e-prio-04",
+      "type": "solve",
+      "question": "Calcule : 2 × [3 + (5 − 1) × 2]",
+      "answer": "22",
+      "explanation": "Quand il y a des crochets ET des parenthèses, on commence par l'intérieur ! D'abord (5 − 1) = 4. Puis à l'intérieur des crochets : 4 × 2 = 8, et 3 + 8 = 11. Enfin : 2 × 11 = 22. Retiens : on travaille de l'intérieur vers l'extérieur, comme quand on ouvre des poupées russes !",
+      "hint": "Commence par les parenthèses les plus intérieures.",
+      "category": "Priorités opératoires",
+      "difficulty": 2
+    },
+    {
+      "id": "5e-prio-05",
+      "type": "mcq",
+      "question": "Quelle expression donne 20 comme résultat ?",
+      "choices": ["(2 + 3) × 4", "2 + 3 × 4", "2 × 3 + 4", "(2 + 3) + 4"],
+      "answer": 0,
+      "explanation": "Vérifions chaque expression : (2 + 3) × 4 = 5 × 4 = 20 ✓. Pour 2 + 3 × 4 = 2 + 12 = 14 (la multiplication est prioritaire !). Pour 2 × 3 + 4 = 6 + 4 = 10. Et (2 + 3) + 4 = 5 + 4 = 9. Seule la première donne 20. Cet exercice montre bien que les parenthèses changent TOUT dans un calcul !",
+      "hint": "Teste chaque expression en respectant les priorités.",
+      "category": "Priorités opératoires",
+      "difficulty": 1
+    },
+    {
+      "id": "5e-prio-06",
+      "type": "solve",
+      "question": "Calcule : 100 − 3 × (25 − 5 × 4) + 1",
+      "answer": "86",
+      "explanation": "Allons-y de l'intérieur vers l'extérieur. Dans la parenthèse : 5 × 4 = 20, puis 25 − 20 = 5. Maintenant : 3 × 5 = 15. Enfin : 100 − 15 + 1 = 86. Tu vois que même dans la parenthèse, la multiplication (5 × 4) était prioritaire sur la soustraction (25 − ...). Les règles de priorité s'appliquent PARTOUT, même à l'intérieur des parenthèses !",
+      "hint": "Dans la parenthèse, la multiplication est encore prioritaire.",
+      "category": "Priorités opératoires",
+      "difficulty": 3
+    },
+    {
+      "id": "5e-prio-07",
+      "type": "mcq",
+      "question": "Quel est le résultat de 7 + 3² × 2 ?",
+      "choices": ["25", "200", "32", "16"],
+      "answer": 0,
+      "explanation": "L'ordre complet des priorités est : 1) Parenthèses, 2) Puissances, 3) Multiplications/Divisions, 4) Additions/Soustractions. Ici : 3² = 9 (puissance d'abord), puis 9 × 2 = 18 (multiplication ensuite), puis 7 + 18 = 25. La puissance est encore plus prioritaire que la multiplication !",
+      "hint": "Les puissances passent avant les multiplications.",
+      "category": "Priorités opératoires",
+      "difficulty": 2
+    },
+    {
+      "id": "5e-prio-08",
+      "type": "solve",
+      "question": "Calcule : (8 − 2)² ÷ 4 + 3 × (7 − 5)",
+      "answer": "15",
+      "explanation": "Parenthèses d'abord : (8 − 2) = 6 et (7 − 5) = 2. Ensuite la puissance : 6² = 36. Puis les multiplications et divisions : 36 ÷ 4 = 9 et 3 × 2 = 6. Enfin : 9 + 6 = 15. Cet exercice combine toutes les priorités : parenthèses → puissances → multiplications/divisions → additions/soustractions. Bravo si tu l'as trouvé du premier coup !",
+      "hint": "Parenthèses → Puissances → ×÷ → +−",
+      "category": "Priorités opératoires",
+      "difficulty": 3
+    },
+    {
+      "id": "5e-rel-01",
+      "type": "solve",
+      "question": "Calcule : (−7) + (+3)",
+      "answer": "-4",
+      "explanation": "Pour additionner deux nombres relatifs de signes différents, on fait la différence de leurs valeurs absolues et on garde le signe du plus grand (en valeur absolue). Ici : |−7| = 7 et |+3| = 3. La différence est 7 − 3 = 4, et le signe est négatif car 7 > 3 et le nombre négatif est plus grand en valeur absolue. Résultat : −4. Imagine une balance : le côté négatif (−7) pèse plus lourd que le côté positif (+3).",
+      "hint": "On soustrait les valeurs absolues et on garde le signe du plus grand.",
+      "category": "Nombres relatifs",
+      "difficulty": 1
+    },
+    {
+      "id": "5e-rel-02",
+      "type": "solve",
+      "question": "Calcule : (−5) − (−8)",
+      "answer": "3",
+      "explanation": "La règle magique : soustraire un nombre, c'est additionner son opposé ! Donc (−5) − (−8) = (−5) + (+8). Maintenant c'est facile : on a −5 et +8, signes différents, donc |8| − |5| = 3, et c'est positif car 8 > 5. Résultat : +3 = 3. Retiens bien : « moins moins » devient « plus » ! C'est comme dire « je ne suis PAS mécontent » = « je suis content ».",
+      "hint": "Soustraire un nombre négatif, c'est additionner son opposé !",
+      "category": "Nombres relatifs",
+      "difficulty": 1
+    },
+    {
+      "id": "5e-rel-03",
+      "type": "mcq",
+      "question": "Quel est le résultat de (−3) + (−9) ?",
+      "choices": ["-12", "-6", "6", "12"],
+      "answer": 0,
+      "explanation": "Quand on additionne deux nombres du MÊME signe, c'est simple : on additionne les valeurs absolues et on garde le signe commun. Ici, les deux sont négatifs : |3| + |9| = 12, et le signe commun est « − ». Résultat : −12. Pense à une dette : si tu dois 3 € et encore 9 €, tu dois 12 € au total !",
+      "hint": "Même signe → on additionne et on garde le signe.",
+      "category": "Nombres relatifs",
+      "difficulty": 1
+    },
+    {
+      "id": "5e-rel-04",
+      "type": "solve",
+      "question": "Calcule : (−4) + (+10) + (−6) + (+2)",
+      "answer": "2",
+      "explanation": "Une bonne technique : sépare les positifs et les négatifs ! Positifs : +10 + 2 = +12. Négatifs : −4 + (−6) = −10. Puis : +12 + (−10) = 12 − 10 = 2. C'est comme un jeu : d'un côté les gains, de l'autre les pertes, et on fait la différence. Résultat : +2.",
+      "hint": "Regroupe les positifs d'un côté et les négatifs de l'autre.",
+      "category": "Nombres relatifs",
+      "difficulty": 2
+    },
+    {
+      "id": "5e-rel-05",
+      "type": "mcq",
+      "question": "Quelle est la température s'il fait −6 °C et qu'elle baisse de 5 °C ?",
+      "choices": ["-11 °C", "-1 °C", "1 °C", "11 °C"],
+      "answer": 0,
+      "explanation": "« Baisser de 5 °C » signifie soustraire 5. Donc : −6 − 5 = (−6) + (−5) = −11 °C. Les deux sont négatifs, on additionne les valeurs absolues : 6 + 5 = 11, avec le signe −. C'est logique : s'il fait déjà −6 °C et que ça baisse encore, ça fait encore plus froid ! Les nombres relatifs sont super utiles en météo.",
+      "hint": "Baisser = soustraire. Attention, on part déjà d'un nombre négatif.",
+      "category": "Nombres relatifs",
+      "difficulty": 1
+    },
+    {
+      "id": "5e-rel-06",
+      "type": "solve",
+      "question": "Calcule : 15 − (−7) + (−3) − (+9)",
+      "answer": "10",
+      "explanation": "Transformons tout en additions : 15 + (+7) + (−3) + (−9). Positifs : 15 + 7 = 22. Négatifs : −3 + (−9) = −12. Résultat : 22 − 12 = 10. L'astuce clé : « moins un nombre négatif » = « plus un nombre positif ». Par exemple, 15 − (−7) = 15 + 7 = 22. Double négatif = positif !",
+      "hint": "Transforme toutes les soustractions en additions de l'opposé.",
+      "category": "Nombres relatifs",
+      "difficulty": 2
+    },
+    {
+      "id": "5e-rel-07",
+      "type": "mcq",
+      "question": "Range dans l'ordre croissant : −3 ; 0 ; −7 ; 5 ; −1",
+      "choices": ["−7 ; −3 ; −1 ; 0 ; 5", "−1 ; −3 ; −7 ; 0 ; 5", "5 ; 0 ; −1 ; −3 ; −7", "−7 ; −1 ; −3 ; 0 ; 5"],
+      "answer": 0,
+      "explanation": "L'ordre croissant, c'est du plus petit au plus grand. Pense à la droite graduée : les nombres négatifs sont à gauche de 0, et plus on va à gauche, plus c'est petit. Donc −7 est le plus petit (le plus à gauche), puis −3, puis −1, puis 0, puis 5. Attention : −7 < −3 même si 7 > 3, car on est dans les négatifs !",
+      "hint": "Sur la droite graduée, le plus à gauche est le plus petit.",
+      "category": "Nombres relatifs",
+      "difficulty": 1
+    },
+    {
+      "id": "5e-rel-08",
+      "type": "solve",
+      "question": "Calcule : (−2) + (−3) − (−10) − (+4) + (+1)",
+      "answer": "2",
+      "explanation": "Transformons en additions : (−2) + (−3) + (+10) + (−4) + (+1). Positifs : 10 + 1 = 11. Négatifs : (−2) + (−3) + (−4) = −9. Résultat : 11 − 9 = 2. C'est comme un compte en banque : les dépôts (+) et les retraits (−). À la fin, il te reste 2 !",
+      "hint": "Transforme tout en additions, puis sépare positifs et négatifs.",
+      "category": "Nombres relatifs",
+      "difficulty": 2
+    },
+    {
+      "id": "5e-frac-01",
+      "type": "solve",
+      "question": "Calcule : 2/3 + 1/4",
+      "answer": "11/12",
+      "explanation": "Pour additionner des fractions, il faut le MÊME dénominateur ! Le plus petit dénominateur commun de 3 et 4 est 12. On convertit : 2/3 = 8/12 (on multiplie haut et bas par 4) et 1/4 = 3/12 (on multiplie haut et bas par 3). Puis : 8/12 + 3/12 = 11/12. C'est comme couper un gâteau en 12 parts égales pour pouvoir comparer !",
+      "hint": "Trouve un dénominateur commun à 3 et 4.",
+      "category": "Fractions",
+      "difficulty": 1
+    },
+    {
+      "id": "5e-frac-02",
+      "type": "mcq",
+      "question": "Quel est le résultat de 5/6 − 1/3 ?",
+      "choices": ["1/2", "4/3", "2/3", "1/6"],
+      "answer": 0,
+      "explanation": "Il faut un dénominateur commun. Le PPCM de 6 et 3 est 6. On a déjà 5/6. Et 1/3 = 2/6 (on multiplie par 2). Donc : 5/6 − 2/6 = 3/6 = 1/2 (on simplifie par 3). Toujours penser à simplifier le résultat ! 3/6 et 1/2 sont la même fraction, mais 1/2 est la forme irréductible.",
+      "hint": "Le dénominateur commun est 6. N'oublie pas de simplifier !",
+      "category": "Fractions",
+      "difficulty": 1
+    },
+    {
+      "id": "5e-frac-03",
+      "type": "solve",
+      "question": "Calcule : 3/5 × 10/9",
+      "answer": "2/3",
+      "explanation": "Pour multiplier des fractions, c'est le plus facile : numérateur × numérateur et dénominateur × dénominateur. Mais AVANT de multiplier, simplifie en croix ! 3 et 9 : on simplifie par 3 → 1 et 3. 10 et 5 : on simplifie par 5 → 2 et 1. On obtient : (1 × 2) / (1 × 3) = 2/3. C'est beaucoup plus rapide que de calculer 30/45 puis simplifier !",
+      "hint": "Simplifie avant de multiplier : regarde les diagonales.",
+      "category": "Fractions",
+      "difficulty": 1
+    },
+    {
+      "id": "5e-frac-04",
+      "type": "mcq",
+      "question": "Quelle fraction est égale à 7/4 + 2/3 ?",
+      "choices": ["29/12", "9/7", "9/12", "14/12"],
+      "answer": 0,
+      "explanation": "Dénominateur commun de 4 et 3 → PPCM = 12. On convertit : 7/4 = 21/12 (×3) et 2/3 = 8/12 (×4). Donc 21/12 + 8/12 = 29/12. On vérifie : 29 et 12 n'ont pas de diviseur commun (29 est premier !), donc c'est déjà irréductible. En nombre mixte, ça fait 2 + 5/12, soit un peu plus de 2.",
+      "hint": "Le PPCM de 4 et 3 est 12.",
+      "category": "Fractions",
+      "difficulty": 2
+    },
+    {
+      "id": "5e-frac-05",
+      "type": "solve",
+      "question": "Calcule : 4/7 × 21/8",
+      "answer": "3/2",
+      "explanation": "Avant de multiplier, simplifions ! 4 et 8 : on divise par 4 → 1 et 2. 21 et 7 : on divise par 7 → 3 et 1. On obtient : (1 × 3) / (1 × 2) = 3/2. Sans simplification, on aurait calculé 84/56, puis trouvé le PGCD (28) pour simplifier... Beaucoup plus long ! La simplification en croix, c'est le super-pouvoir des fractions.",
+      "hint": "Simplifie 4 avec 8, et 7 avec 21.",
+      "category": "Fractions",
+      "difficulty": 2
+    },
+    {
+      "id": "5e-frac-06",
+      "type": "mcq",
+      "question": "Quel est le résultat de 1/2 + 2/5 − 1/10 ?",
+      "choices": ["4/5", "3/10", "7/10", "2/17"],
+      "answer": 0,
+      "explanation": "Le dénominateur commun de 2, 5 et 10 est 10. On convertit tout : 1/2 = 5/10, 2/5 = 4/10, 1/10 reste 1/10. Donc : 5/10 + 4/10 − 1/10 = 8/10 = 4/5 (on simplifie par 2). Quand on a trois fractions ou plus, on cherche un dénominateur commun à tous, et ça marche pareil !",
+      "hint": "Le dénominateur commun de 2, 5 et 10 est 10.",
+      "category": "Fractions",
+      "difficulty": 2
+    },
+    {
+      "id": "5e-frac-07",
+      "type": "solve",
+      "question": "Calcule : 2/3 de 45",
+      "answer": "30",
+      "explanation": "« 2/3 de 45 » signifie 2/3 × 45. On écrit 45 comme 45/1. Donc : (2 × 45) / (3 × 1). On peut simplifier 45 et 3 : 45 ÷ 3 = 15. On obtient 2 × 15 = 30. « Prendre une fraction d'un nombre » revient à multiplier. C'est super utile dans la vie : 2/3 de 45 élèves, c'est 30 élèves !",
+      "hint": "« De » signifie « multiplié par ».",
+      "category": "Fractions",
+      "difficulty": 1
+    },
+    {
+      "id": "5e-frac-08",
+      "type": "mcq",
+      "question": "Quelle fraction est irréductible ?",
+      "choices": ["17/31", "6/9", "14/21", "8/12"],
+      "answer": 0,
+      "explanation": "Une fraction est irréductible quand son numérateur et son dénominateur n'ont aucun diviseur commun sauf 1. Vérifions : 6/9 → divisibles par 3 (= 2/3). 14/21 → divisibles par 7 (= 2/3). 8/12 → divisibles par 4 (= 2/3). Mais 17/31 : 17 est premier et 31 est premier, donc ils n'ont aucun diviseur commun. La fraction est irréductible ! Les nombres premiers sont les meilleurs amis des fractions irréductibles.",
+      "hint": "Vérifie si le numérateur et le dénominateur ont un diviseur commun.",
+      "category": "Fractions",
+      "difficulty": 2
+    },
+    {
+      "id": "5e-frac-09",
+      "type": "solve",
+      "question": "Calcule : 3/4 − 5/6 + 1/3",
+      "answer": "1/4",
+      "explanation": "Le dénominateur commun de 4, 6 et 3 est 12. Convertissons : 3/4 = 9/12, 5/6 = 10/12, 1/3 = 4/12. Calcul : 9/12 − 10/12 + 4/12 = (9 − 10 + 4)/12 = 3/12 = 1/4. Note que 9 − 10 = −1, puis −1 + 4 = 3. Les nombres relatifs et les fractions se combinent souvent, il faut être à l'aise avec les deux !",
+      "hint": "Dénominateur commun = 12. Attention au signe du résultat intermédiaire.",
+      "category": "Fractions",
+      "difficulty": 3
+    },
+    {
+      "id": "5e-frac-10",
+      "type": "mcq",
+      "question": "Quel est le résultat de (2/3)² ?",
+      "choices": ["4/9", "4/6", "2/9", "4/3"],
+      "answer": 0,
+      "explanation": "Pour mettre une fraction au carré, on met le numérateur ET le dénominateur au carré séparément : (2/3)² = 2²/3² = 4/9. C'est logique car (2/3)² = 2/3 × 2/3 = (2×2)/(3×3) = 4/9. Attention à ne pas confondre avec 2²/3 = 4/3 (ici seul le numérateur serait au carré) ou avec 2/3² = 2/9 (ici seul le dénominateur serait au carré).",
+      "hint": "On met au carré le numérateur ET le dénominateur.",
+      "category": "Fractions",
+      "difficulty": 2
+    },
+    {
+      "id": "5e-div-01",
+      "type": "mcq",
+      "question": "Parmi ces nombres, lequel est premier ?",
+      "choices": ["37", "39", "33", "35"],
+      "answer": 0,
+      "explanation": "Un nombre premier n'est divisible que par 1 et par lui-même. Vérifions : 39 = 3 × 13, 33 = 3 × 11, 35 = 5 × 7. Mais 37 ? On teste : pas divisible par 2 (impair), pas par 3 (3+7=10, pas multiple de 3), pas par 5 (ne finit pas par 0 ou 5). Comme √37 ≈ 6, on n'a besoin de tester que 2, 3 et 5. Aucun ne marche → 37 est premier !",
+      "hint": "Un nombre premier n'a que deux diviseurs : 1 et lui-même.",
+      "category": "Nombres premiers et divisibilité",
+      "difficulty": 1
+    },
+    {
+      "id": "5e-div-02",
+      "type": "fill-blank",
+      "question": "Décompose 60 en produit de facteurs premiers : 60 = 2² × ___ × 5",
+      "answer": "3",
+      "explanation": "Pour décomposer 60 : 60 ÷ 2 = 30, 30 ÷ 2 = 15 (on ne peut plus diviser par 2), 15 ÷ 3 = 5, 5 ÷ 5 = 1. Donc 60 = 2 × 2 × 3 × 5 = 2² × 3 × 5. Le facteur manquant est 3. Cette décomposition est UNIQUE (théorème fondamental de l'arithmétique) : tout nombre se décompose d'une seule façon en facteurs premiers !",
+      "hint": "Divise 60 par 2, puis encore par 2, puis par le prochain nombre premier...",
+      "category": "Nombres premiers et divisibilité",
+      "difficulty": 1
+    },
+    {
+      "id": "5e-div-03",
+      "type": "mcq",
+      "question": "Par quels nombres 72 est-il divisible ?",
+      "choices": ["2, 3, 4, 6, 8 et 9", "2, 3, 4, 5, 6 et 9", "2, 3, 5, 6, 8 et 9", "2, 3, 4, 6, 7 et 8"],
+      "answer": 0,
+      "explanation": "72 est pair → divisible par 2 ✓. 7+2=9, multiple de 3 → divisible par 3 ✓ et par 9 ✓. 72 ÷ 4 = 18 → divisible par 4 ✓. Divisible par 2 ET 3 → divisible par 6 ✓. 72 ÷ 8 = 9 → divisible par 8 ✓. Par 5 ? Ne finit pas par 0 ou 5 → NON. Par 7 ? 72 ÷ 7 = 10,28... → NON. Donc la bonne réponse est 2, 3, 4, 6, 8 et 9.",
+      "hint": "Utilise les critères de divisibilité : par 2 (pair), par 3 (somme des chiffres), par 5 (dernier chiffre)...",
+      "category": "Nombres premiers et divisibilité",
+      "difficulty": 2
+    },
+    {
+      "id": "5e-div-04",
+      "type": "solve",
+      "question": "Décompose 120 en produit de facteurs premiers et écris-le sous forme compacte (ex: 2³×3).",
+      "answer": "2³×3×5",
+      "explanation": "120 ÷ 2 = 60, 60 ÷ 2 = 30, 30 ÷ 2 = 15 (plus divisible par 2), 15 ÷ 3 = 5, 5 ÷ 5 = 1. Donc 120 = 2 × 2 × 2 × 3 × 5 = 2³ × 3 × 5. La décomposition en facteurs premiers est un outil fondamental en arithmétique. Elle sert notamment à trouver le PGCD et le PPCM de deux nombres !",
+      "hint": "Divise successivement par 2, 3, 5...",
+      "category": "Nombres premiers et divisibilité",
+      "difficulty": 2
+    },
+    {
+      "id": "5e-div-05",
+      "type": "mcq",
+      "question": "Quel est le PGCD de 24 et 36 ?",
+      "choices": ["12", "6", "4", "24"],
+      "answer": 0,
+      "explanation": "Le PGCD est le Plus Grand Commun Diviseur. Méthode : décomposons ! 24 = 2³ × 3 et 36 = 2² × 3². Le PGCD prend le MINIMUM des exposants pour chaque facteur premier commun : 2^min(3,2) × 3^min(1,2) = 2² × 3 = 4 × 3 = 12. On peut vérifier : 24 ÷ 12 = 2 ✓ et 36 ÷ 12 = 3 ✓. Et il n'y a pas de diviseur commun plus grand.",
+      "hint": "Décompose 24 et 36 en facteurs premiers, puis prends les facteurs communs.",
+      "category": "Nombres premiers et divisibilité",
+      "difficulty": 2
+    },
+    {
+      "id": "5e-div-06",
+      "type": "solve",
+      "question": "Combien y a-t-il de nombres premiers entre 1 et 20 ?",
+      "answer": "8",
+      "explanation": "Listons-les : 2, 3, 5, 7, 11, 13, 17, 19. Ça fait 8 nombres premiers ! Rappel : 1 n'est PAS premier (par convention), et 2 est le seul nombre premier pair. Pour vérifier, on utilise le crible d'Ératosthène : on élimine les multiples de 2, puis de 3, puis de 5... et ce qui reste, ce sont les nombres premiers.",
+      "hint": "2 est le seul nombre premier pair. 1 n'est pas premier.",
+      "category": "Nombres premiers et divisibilité",
+      "difficulty": 1
+    },
+    {
+      "id": "5e-sym-01",
+      "type": "mcq",
+      "question": "En symétrie centrale de centre O, quel est le symétrique du point A si O est le milieu de [AA'] ?",
+      "choices": ["A'", "O", "A", "Le point diamétralement opposé à O"],
+      "answer": 0,
+      "explanation": "La symétrie centrale de centre O transforme tout point A en un point A' tel que O est le MILIEU du segment [AA']. C'est comme faire un demi-tour autour de O. Si tu plantes une épingle en O et que tu fais tourner la feuille de 180°, chaque point arrive sur son symétrique. C'est la définition même de la symétrie centrale !",
+      "hint": "En symétrie centrale, le centre est le milieu du segment reliant un point à son image.",
+      "category": "Symétrie centrale",
+      "difficulty": 1
+    },
+    {
+      "id": "5e-sym-02",
+      "type": "mcq",
+      "question": "Le symétrique d'un segment [AB] par symétrie centrale de centre O est :",
+      "choices": ["Un segment de même longueur [A'B']", "Un segment plus court", "Une droite", "Un arc de cercle"],
+      "answer": 0,
+      "explanation": "La symétrie centrale CONSERVE les longueurs, les angles et les formes. Le symétrique d'un segment est un segment de même longueur. Si [AB] mesure 5 cm, alors [A'B'] mesure aussi 5 cm. La symétrie centrale est une isométrie (elle conserve les distances). Elle conserve aussi le parallélisme : si deux droites sont parallèles, leurs symétriques le sont aussi !",
+      "hint": "La symétrie centrale conserve les longueurs.",
+      "category": "Symétrie centrale",
+      "difficulty": 1
+    },
+    {
+      "id": "5e-sym-03",
+      "type": "mcq",
+      "question": "Si un parallélogramme a un centre de symétrie, où se trouve-t-il ?",
+      "choices": ["À l'intersection des diagonales", "Au milieu d'un côté", "À un sommet", "À l'extérieur du parallélogramme"],
+      "answer": 0,
+      "explanation": "Le parallélogramme admet un centre de symétrie : c'est le point d'intersection de ses diagonales ! En effet, dans un parallélogramme, les diagonales se coupent en leur milieu. Ce point est le centre de symétrie car si tu fais un demi-tour autour de lui, chaque sommet va sur le sommet opposé. C'est d'ailleurs une propriété caractéristique : un quadrilatère qui admet un centre de symétrie est un parallélogramme.",
+      "hint": "Pense aux diagonales d'un parallélogramme...",
+      "category": "Symétrie centrale",
+      "difficulty": 2
+    },
+    {
+      "id": "5e-sym-04",
+      "type": "mcq",
+      "question": "Quelle lettre majuscule admet un centre de symétrie ?",
+      "choices": ["S", "A", "B", "E"],
+      "answer": 0,
+      "explanation": "La lettre S admet un centre de symétrie (son centre géométrique). Si tu la fais tourner de 180°, tu retrouves la même lettre ! En revanche, A a un axe de symétrie vertical (symétrie axiale, pas centrale). B a un axe horizontal. E a aussi un axe horizontal. Mais aucune de ces trois n'est invariante par rotation de 180°. D'autres lettres avec un centre de symétrie : H, I, N, O, X, Z.",
+      "hint": "Fais tourner mentalement chaque lettre de 180°.",
+      "category": "Symétrie centrale",
+      "difficulty": 2
+    },
+    {
+      "id": "5e-ang-01",
+      "type": "mcq",
+      "question": "Deux droites parallèles sont coupées par une sécante. Les angles alternes-internes mesurent :",
+      "choices": ["La même chose", "90°", "180° au total", "Des valeurs différentes"],
+      "answer": 0,
+      "explanation": "C'est un théorème fondamental de la géométrie ! Quand deux droites parallèles sont coupées par une sécante, les angles alternes-internes sont ÉGAUX. « Alternes » car ils sont de part et d'autre de la sécante, « internes » car ils sont entre les deux parallèles. Ce théorème a une réciproque : si les angles alternes-internes sont égaux, alors les droites sont parallèles. C'est un outil puissant pour démontrer des parallélismes !",
+      "hint": "Pense au « Z » formé par les parallèles et la sécante.",
+      "category": "Angles et parallélisme",
+      "difficulty": 1
+    },
+    {
+      "id": "5e-ang-02",
+      "type": "solve",
+      "question": "Deux droites parallèles sont coupées par une sécante. Un angle alterne-interne mesure 63°. Que mesure l'autre angle alterne-interne ?",
+      "answer": "63",
+      "explanation": "Les angles alternes-internes sont ÉGAUX quand les droites sont parallèles. Donc si l'un mesure 63°, l'autre aussi ! Pour les reconnaître, imagine un « Z » (ou un « Z » inversé) : les deux angles du Z sont alternes-internes. C'est le même principe qui explique pourquoi les barreaux d'une échelle font les mêmes angles avec les montants.",
+      "hint": "Les angles alternes-internes sont égaux.",
+      "category": "Angles et parallélisme",
+      "difficulty": 1
+    },
+    {
+      "id": "5e-ang-03",
+      "type": "mcq",
+      "question": "Deux angles correspondants formés par des parallèles coupées par une sécante sont :",
+      "choices": ["Égaux", "Supplémentaires", "Complémentaires", "Opposés par le sommet"],
+      "answer": 0,
+      "explanation": "Les angles correspondants sont ÉGAUX quand les droites sont parallèles ! Ils sont du même côté de la sécante, l'un entre les parallèles et l'autre à l'extérieur. Imagine un « F » : les deux angles du F sont correspondants. C'est comme si on « glissait » un angle le long de la sécante. Alternes-internes (Z), correspondants (F) : deux théorèmes à connaître par cœur !",
+      "hint": "Pense au « F » formé par les parallèles et la sécante.",
+      "category": "Angles et parallélisme",
+      "difficulty": 1
+    },
+    {
+      "id": "5e-ang-04",
+      "type": "solve",
+      "question": "Un angle et son angle correspondant sur des parallèles : l'un mesure 115°. Que mesure l'angle supplémentaire de l'autre angle correspondant ?",
+      "answer": "65",
+      "explanation": "L'angle correspondant mesure aussi 115° (car les droites sont parallèles). L'angle supplémentaire de 115° est 180° − 115° = 65°. Rappel : deux angles supplémentaires ont pour somme 180°. C'est l'angle « à côté » sur la droite. En combinant les propriétés des angles correspondants et supplémentaires, tu peux trouver TOUS les angles de la figure !",
+      "hint": "D'abord, trouve l'angle correspondant, puis calcule son supplémentaire.",
+      "category": "Angles et parallélisme",
+      "difficulty": 2
+    },
+    {
+      "id": "5e-ang-05",
+      "type": "mcq",
+      "question": "Deux angles alternes-internes mesurent 72° et 72°. Peut-on conclure que les droites sont parallèles ?",
+      "choices": ["Oui, par la réciproque du théorème des alternes-internes", "Non, il faut plus d'informations", "Oui, car ils sont supplémentaires", "Non, car 72° ≠ 90°"],
+      "answer": 0,
+      "explanation": "OUI ! C'est la RÉCIPROQUE du théorème : « Si deux droites coupées par une sécante forment des angles alternes-internes égaux, alors ces droites sont parallèles. » C'est un outil de démonstration très puissant. En géométrie, le théorème et sa réciproque sont deux résultats distincts, et il est important de savoir utiliser les deux !",
+      "hint": "Connais-tu la réciproque du théorème des angles alternes-internes ?",
+      "category": "Angles et parallélisme",
+      "difficulty": 2
+    },
+    {
+      "id": "5e-ang-06",
+      "type": "solve",
+      "question": "Deux droites parallèles sont coupées par une sécante. Un angle formé mesure 48°. Quel est l'angle co-intérieur (du même côté de la sécante, entre les parallèles) ?",
+      "answer": "132",
+      "explanation": "Les angles co-intérieurs (aussi appelés angles intérieurs du même côté) sont SUPPLÉMENTAIRES quand les droites sont parallèles. Leur somme fait 180°. Donc : 180° − 48° = 132°. C'est logique : un angle alterne-interne de 48° serait de l'autre côté, et avec l'angle co-intérieur, ils formeraient un angle plat (180°).",
+      "hint": "Les angles co-intérieurs sont supplémentaires (somme = 180°).",
+      "category": "Angles et parallélisme",
+      "difficulty": 2
+    },
+    {
+      "id": "5e-tri-01",
+      "type": "solve",
+      "question": "Dans un triangle, deux angles mesurent 47° et 68°. Que mesure le troisième angle ?",
+      "answer": "65",
+      "explanation": "La somme des angles d'un triangle est TOUJOURS 180°. C'est un théorème fondamental ! Donc le troisième angle = 180° − 47° − 68° = 65°. Ce résultat est vrai pour TOUS les triangles : rectangle, isocèle, équilatéral, quelconque... Par exemple, dans un triangle équilatéral, chaque angle fait 180° ÷ 3 = 60°.",
+      "hint": "La somme des angles d'un triangle est 180°.",
+      "category": "Triangles",
+      "difficulty": 1
+    },
+    {
+      "id": "5e-tri-02",
+      "type": "mcq",
+      "question": "Peut-on construire un triangle dont les côtés mesurent 3 cm, 4 cm et 8 cm ?",
+      "choices": ["Non, car 3 + 4 < 8", "Oui, car 8 est le plus grand côté", "Non, car 3 + 4 + 8 ≠ 180", "Oui, car les trois longueurs sont différentes"],
+      "answer": 0,
+      "explanation": "L'inégalité triangulaire dit que la somme de deux côtés doit TOUJOURS être supérieure au troisième côté. Ici, 3 + 4 = 7, et 7 < 8. Impossible ! Imagine : si tu as deux bâtons de 3 et 4 cm, tu ne peux pas les relier pour « atteindre » un bâton de 8 cm posé en face, ils sont trop courts. C'est une condition NÉCESSAIRE pour former un triangle.",
+      "hint": "Vérifie l'inégalité triangulaire : la somme de deux côtés doit être supérieure au troisième.",
+      "category": "Triangles",
+      "difficulty": 1
+    },
+    {
+      "id": "5e-tri-03",
+      "type": "mcq",
+      "question": "Un triangle a des angles de 60°, 60° et 60°. Quelle est sa nature ?",
+      "choices": ["Équilatéral", "Isocèle", "Rectangle", "Quelconque"],
+      "answer": 0,
+      "explanation": "Un triangle avec trois angles égaux à 60° est ÉQUILATÉRAL : ses trois côtés sont aussi égaux. C'est le triangle le plus « parfait » ! Il est aussi isocèle (au moins deux côtés égaux), mais on utilise le terme le plus précis. Un triangle équilatéral a aussi trois axes de symétrie et un centre de symétrie. C'est la seule forme de triangle dont tous les angles sont égaux.",
+      "hint": "Si les trois angles sont égaux, que peut-on dire des côtés ?",
+      "category": "Triangles",
+      "difficulty": 1
+    },
+    {
+      "id": "5e-tri-04",
+      "type": "solve",
+      "question": "Un triangle isocèle a un angle au sommet principal de 40°. Que mesurent les angles de la base ?",
+      "answer": "70",
+      "explanation": "Un triangle isocèle a deux côtés égaux, et les angles opposés à ces côtés sont ÉGAUX (ce sont les angles de la base). La somme des angles fait 180° : 40° + 2x = 180°, donc 2x = 140°, et x = 70°. Chaque angle de la base mesure 70°. Attention : un triangle isocèle peut avoir l'angle « différent » au sommet ou à la base, il faut bien lire l'énoncé !",
+      "hint": "Les deux angles de la base sont égaux. La somme des trois fait 180°.",
+      "category": "Triangles",
+      "difficulty": 2
+    },
+    {
+      "id": "5e-vol-01",
+      "type": "solve",
+      "question": "Calcule le volume d'un prisme droit dont la base est un triangle de base 6 cm et hauteur 4 cm, et dont la hauteur du prisme est 10 cm. (en cm³)",
+      "answer": "120",
+      "explanation": "Le volume d'un prisme droit = Aire de la base × hauteur du prisme. La base est un triangle : Aire = (base × hauteur) / 2 = (6 × 4) / 2 = 12 cm². Puis : V = 12 × 10 = 120 cm³. Le prisme, c'est comme si on « empilait » le triangle sur 10 cm de hauteur. Cette formule marche pour tout prisme droit, quelle que soit la forme de la base !",
+      "hint": "Volume du prisme = Aire de la base × hauteur. L'aire du triangle = b×h/2.",
+      "category": "Aires et volumes",
+      "difficulty": 2
+    },
+    {
+      "id": "5e-vol-02",
+      "type": "mcq",
+      "question": "Quelle est la formule du volume d'un cylindre de rayon r et de hauteur h ?",
+      "choices": ["π × r² × h", "2 × π × r × h", "π × r × h", "π × r² × h / 3"],
+      "answer": 0,
+      "explanation": "Le volume d'un cylindre = π × r² × h. C'est logique : la base est un disque d'aire π × r², et on « empile » ce disque sur une hauteur h. C'est exactement le même principe que le prisme : Volume = Aire de la base × hauteur ! Attention : 2πrh, c'est l'aire LATÉRALE (le « tour » du cylindre), et πr²h/3, c'est le volume d'un CÔNE.",
+      "hint": "Le cylindre est un prisme à base circulaire. L'aire d'un disque = π × r².",
+      "category": "Aires et volumes",
+      "difficulty": 1
+    },
+    {
+      "id": "5e-vol-03",
+      "type": "solve",
+      "question": "Un cylindre a un rayon de 3 cm et une hauteur de 7 cm. Calcule son volume en fonction de π (écris ta réponse sous la forme 'Nπ', par exemple '12π').",
+      "answer": "63π",
+      "explanation": "V = π × r² × h = π × 3² × 7 = π × 9 × 7 = 63π cm³. Laisser le résultat avec π est la forme exacte. Si on voulait une valeur approchée : 63 × 3,14 ≈ 197,8 cm³. Travailler avec π (la valeur exacte) est souvent préféré en maths car c'est plus précis que d'arrondir.",
+      "hint": "V = π × r² × h. Calcule r² d'abord.",
+      "category": "Aires et volumes",
+      "difficulty": 2
+    },
+    {
+      "id": "5e-vol-04",
+      "type": "mcq",
+      "question": "On double le rayon d'un cylindre sans changer sa hauteur. Comment change le volume ?",
+      "choices": ["Il est multiplié par 4", "Il est multiplié par 2", "Il est multiplié par 8", "Il est multiplié par 6"],
+      "answer": 0,
+      "explanation": "V = π × r² × h. Si on remplace r par 2r : V' = π × (2r)² × h = π × 4r² × h = 4 × (πr²h) = 4V. Le volume est multiplié par 4 ! C'est parce que le rayon est au CARRÉ dans la formule. Doubler le rayon quadruple l'aire de la base, et donc le volume. C'est une idée puissante : en géométrie, quand on multiplie une longueur par k, les aires sont multipliées par k² et les volumes par k³.",
+      "hint": "Le rayon apparaît au carré dans la formule du volume.",
+      "category": "Aires et volumes",
+      "difficulty": 3
+    }
+  ]
+}

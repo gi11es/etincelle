@@ -1,0 +1,687 @@
+{
+  "id": "institutions",
+  "title": "Les institutions de la République",
+  "description": "Le fonctionnement des institutions françaises : Président, gouvernement, Parlement, Conseil constitutionnel, collectivités territoriales et justice.",
+  "items": [
+    {
+      "id": "inst-001",
+      "question": "Quelle est la durée du mandat du président de la République ?",
+      "choices": [
+        "4 ans",
+        "5 ans",
+        "6 ans",
+        "7 ans"
+      ],
+      "answer": 1,
+      "explanation": "Depuis le référendum de 2000 (réforme appliquée en 2002), le mandat du président de la République est de 5 ans (quinquennat). Avant, il était de 7 ans (septennat).",
+      "statement": "Le président de la République est élu pour un mandat de 7 ans.",
+      "isTrue": false,
+      "flashcard_front": "Durée du mandat présidentiel ?",
+      "flashcard_back": "5 ans (quinquennat), depuis le référendum de 2000. Avant : 7 ans (septennat).",
+      "category": "président"
+    },
+    {
+      "id": "inst-002",
+      "question": "Comment le président de la République est-il élu ?",
+      "choices": [
+        "Par le Parlement",
+        "Au suffrage universel direct",
+        "Par un collège de grands électeurs",
+        "Par le Conseil constitutionnel"
+      ],
+      "answer": 1,
+      "explanation": "Depuis la réforme constitutionnelle de 1962 (référendum du 28 octobre 1962), le président de la République est élu au suffrage universel direct, à deux tours si nécessaire.",
+      "statement": "Le président de la République est élu au suffrage universel direct depuis 1962.",
+      "isTrue": true,
+      "flashcard_front": "Mode d'élection du président de la République ?",
+      "flashcard_back": "Au suffrage universel direct (depuis 1962), scrutin uninominal à deux tours.",
+      "category": "président"
+    },
+    {
+      "id": "inst-003",
+      "question": "Qui est le chef des armées en France ?",
+      "choices": [
+        "Le Premier ministre",
+        "Le ministre de la Défense",
+        "Le président de la République",
+        "Le chef d'état-major des armées"
+      ],
+      "answer": 2,
+      "explanation": "L'article 15 de la Constitution dispose que le président de la République est le chef des armées. Il préside les conseils et comités supérieurs de la Défense nationale.",
+      "statement": "Le Premier ministre est le chef des armées en France.",
+      "isTrue": false,
+      "flashcard_front": "Qui est le chef des armées en France ?",
+      "flashcard_back": "Le président de la République (article 15 de la Constitution).",
+      "category": "président"
+    },
+    {
+      "id": "inst-004",
+      "question": "Qui nomme le Premier ministre ?",
+      "choices": [
+        "L'Assemblée nationale",
+        "Le Sénat",
+        "Le président de la République",
+        "Le Conseil constitutionnel"
+      ],
+      "answer": 2,
+      "explanation": "Le président de la République nomme le Premier ministre (article 8 de la Constitution). Il met fin à ses fonctions sur la présentation par celui-ci de la démission du Gouvernement.",
+      "statement": "Le Premier ministre est nommé par le président de la République.",
+      "isTrue": true,
+      "flashcard_front": "Qui nomme le Premier ministre ?",
+      "flashcard_back": "Le président de la République (article 8 de la Constitution).",
+      "category": "gouvernement"
+    },
+    {
+      "id": "inst-005",
+      "question": "Combien de députés siègent à l'Assemblée nationale ?",
+      "choices": [
+        "348",
+        "465",
+        "577",
+        "600"
+      ],
+      "answer": 2,
+      "explanation": "L'Assemblée nationale compte 577 députés, élus au suffrage universel direct pour 5 ans. Ils représentent les citoyens dans leurs circonscriptions.",
+      "statement": "L'Assemblée nationale compte 577 députés.",
+      "isTrue": true,
+      "flashcard_front": "Combien de députés à l'Assemblée nationale ?",
+      "flashcard_back": "577 députés, élus au suffrage universel direct pour 5 ans.",
+      "category": "parlement"
+    },
+    {
+      "id": "inst-006",
+      "question": "Combien de sénateurs siègent au Sénat ?",
+      "choices": [
+        "277",
+        "348",
+        "450",
+        "577"
+      ],
+      "answer": 1,
+      "explanation": "Le Sénat compte 348 sénateurs, élus au suffrage universel indirect par un collège de grands électeurs (élus locaux) pour un mandat de 6 ans, renouvelé par moitié tous les 3 ans.",
+      "statement": "Le Sénat compte 577 sénateurs.",
+      "isTrue": false,
+      "flashcard_front": "Combien de sénateurs au Sénat ?",
+      "flashcard_back": "348 sénateurs, élus au suffrage universel indirect pour 6 ans, renouvelés par moitié tous les 3 ans.",
+      "category": "parlement"
+    },
+    {
+      "id": "inst-007",
+      "question": "Comment les sénateurs sont-ils élus ?",
+      "choices": [
+        "Au suffrage universel direct",
+        "Au suffrage universel indirect par les grands électeurs",
+        "Par le président de la République",
+        "Par les députés de l'Assemblée nationale"
+      ],
+      "answer": 1,
+      "explanation": "Les sénateurs sont élus au suffrage universel indirect par un collège de grands électeurs composé principalement d'élus locaux (conseillers municipaux, départementaux, régionaux et députés).",
+      "statement": "Les sénateurs sont élus au suffrage universel direct, comme les députés.",
+      "isTrue": false,
+      "flashcard_front": "Comment les sénateurs sont-ils élus ?",
+      "flashcard_back": "Au suffrage universel indirect par les grands électeurs (élus locaux). Mandat de 6 ans, renouvelé par moitié tous les 3 ans.",
+      "category": "parlement"
+    },
+    {
+      "id": "inst-008",
+      "question": "Quelles sont les deux chambres qui composent le Parlement français ?",
+      "choices": [
+        "L'Assemblée nationale et le Conseil d'État",
+        "L'Assemblée nationale et le Sénat",
+        "Le Sénat et le Conseil constitutionnel",
+        "L'Assemblée nationale et le Conseil constitutionnel"
+      ],
+      "answer": 1,
+      "explanation": "Le Parlement français est bicaméral : il est composé de l'Assemblée nationale (chambre basse) et du Sénat (chambre haute). Les deux chambres votent la loi et contrôlent le gouvernement.",
+      "statement": "Le Parlement français est composé de l'Assemblée nationale et du Sénat.",
+      "isTrue": true,
+      "flashcard_front": "Quelles sont les deux chambres du Parlement ?",
+      "flashcard_back": "L'Assemblée nationale (577 députés) et le Sénat (348 sénateurs). Le Parlement est bicaméral.",
+      "category": "parlement"
+    },
+    {
+      "id": "inst-009",
+      "question": "Quelle est la principale fonction du Parlement ?",
+      "choices": [
+        "Nommer le président de la République",
+        "Voter les lois et contrôler l'action du gouvernement",
+        "Rendre la justice",
+        "Diriger la politique étrangère"
+      ],
+      "answer": 1,
+      "explanation": "Le Parlement a deux fonctions principales : voter les lois (fonction législative) et contrôler l'action du gouvernement (questions au gouvernement, commissions d'enquête, motion de censure).",
+      "statement": "Le Parlement vote les lois et contrôle l'action du gouvernement.",
+      "isTrue": true,
+      "flashcard_front": "Quelles sont les deux fonctions principales du Parlement ?",
+      "flashcard_back": "1) Voter les lois (fonction législative). 2) Contrôler l'action du gouvernement (questions, commissions d'enquête, motion de censure).",
+      "category": "parlement"
+    },
+    {
+      "id": "inst-010",
+      "question": "Quel est le rôle du Conseil constitutionnel ?",
+      "choices": [
+        "Voter les lois",
+        "Juger les crimes et délits",
+        "Vérifier la conformité des lois à la Constitution",
+        "Nommer les ministres"
+      ],
+      "answer": 2,
+      "explanation": "Le Conseil constitutionnel vérifie la conformité des lois à la Constitution. Il contrôle aussi la régularité des élections présidentielles, législatives et des référendums.",
+      "statement": "Le Conseil constitutionnel vérifie que les lois sont conformes à la Constitution.",
+      "isTrue": true,
+      "flashcard_front": "Quel est le rôle du Conseil constitutionnel ?",
+      "flashcard_back": "Vérifier la conformité des lois à la Constitution. Il contrôle aussi la régularité des élections et des référendums.",
+      "category": "conseil-constitutionnel"
+    },
+    {
+      "id": "inst-011",
+      "question": "Combien de membres composent le Conseil constitutionnel ?",
+      "choices": [
+        "7 membres",
+        "9 membres nommés + les anciens présidents de la République",
+        "12 membres",
+        "15 membres"
+      ],
+      "answer": 1,
+      "explanation": "Le Conseil constitutionnel est composé de 9 membres nommés pour 9 ans (3 par le président, 3 par le président de l'Assemblée, 3 par le président du Sénat), plus les anciens présidents de la République qui en sont membres de droit.",
+      "statement": "Le Conseil constitutionnel compte 9 membres nommés pour 9 ans.",
+      "isTrue": true,
+      "flashcard_front": "Composition du Conseil constitutionnel ?",
+      "flashcard_back": "9 membres nommés pour 9 ans (3 par le président de la République, 3 par le président de l'Assemblée, 3 par le président du Sénat) + les anciens présidents de la République.",
+      "category": "conseil-constitutionnel"
+    },
+    {
+      "id": "inst-012",
+      "question": "Qu'est-ce que la QPC (Question Prioritaire de Constitutionnalité) ?",
+      "choices": [
+        "Une question posée au gouvernement par un député",
+        "Le droit pour un justiciable de contester la constitutionnalité d'une loi lors d'un procès",
+        "Une question posée lors d'un référendum",
+        "Un examen de la Cour des comptes"
+      ],
+      "answer": 1,
+      "explanation": "La QPC, instaurée en 2010, permet à tout justiciable de contester devant le Conseil constitutionnel la conformité d'une loi aux droits et libertés garantis par la Constitution, lors d'un procès.",
+      "statement": "La QPC permet à un citoyen de contester la constitutionnalité d'une loi lors d'un procès.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que la QPC ?",
+      "flashcard_back": "Question Prioritaire de Constitutionnalité (depuis 2010). Permet à un justiciable de contester la constitutionnalité d'une loi devant le Conseil constitutionnel lors d'un procès.",
+      "category": "conseil-constitutionnel"
+    },
+    {
+      "id": "inst-013",
+      "question": "Quelles sont les trois grandes catégories de collectivités territoriales en France ?",
+      "choices": [
+        "Les cantons, les arrondissements, les provinces",
+        "Les communes, les départements, les régions",
+        "Les communes, les cantons, les préfectures",
+        "Les métropoles, les départements, les provinces"
+      ],
+      "answer": 1,
+      "explanation": "Les trois grandes catégories de collectivités territoriales sont les communes (environ 35 000), les départements (101 dont 5 outre-mer) et les régions (18 dont 13 métropolitaines et 5 outre-mer).",
+      "statement": "Les collectivités territoriales en France sont les communes, les départements et les régions.",
+      "isTrue": true,
+      "flashcard_front": "Quelles sont les trois catégories de collectivités territoriales ?",
+      "flashcard_back": "Les communes (~35 000), les départements (101) et les régions (18 dont 13 métropolitaines + 5 outre-mer).",
+      "category": "collectivités"
+    },
+    {
+      "id": "inst-014",
+      "question": "Qui est le représentant de l'État dans le département ?",
+      "choices": [
+        "Le maire",
+        "Le préfet",
+        "Le président du conseil départemental",
+        "Le sénateur"
+      ],
+      "answer": 1,
+      "explanation": "Le préfet est le représentant de l'État dans le département. Nommé par le président de la République, il veille à l'application des lois et à l'ordre public.",
+      "statement": "Le maire est le représentant de l'État dans le département.",
+      "isTrue": false,
+      "flashcard_front": "Qui représente l'État dans le département ?",
+      "flashcard_back": "Le préfet, nommé par le président de la République. Il veille à l'application des lois et à l'ordre public.",
+      "category": "collectivités"
+    },
+    {
+      "id": "inst-015",
+      "question": "Quel est le rôle du maire ?",
+      "choices": [
+        "Il représente l'État dans la région",
+        "Il est à la fois le chef de l'administration communale et un représentant de l'État dans la commune",
+        "Il vote les lois au Parlement",
+        "Il nomme les préfets"
+      ],
+      "answer": 1,
+      "explanation": "Le maire a un double rôle : il est le chef de l'administration communale (exécutif local) et un représentant de l'État dans la commune (officier d'état civil, officier de police judiciaire).",
+      "statement": "Le maire est uniquement le chef de l'administration communale.",
+      "isTrue": false,
+      "flashcard_front": "Quel est le double rôle du maire ?",
+      "flashcard_back": "1) Chef de l'administration communale (exécutif local). 2) Représentant de l'État dans la commune (officier d'état civil, officier de police judiciaire).",
+      "category": "collectivités"
+    },
+    {
+      "id": "inst-016",
+      "question": "Combien de régions métropolitaines la France compte-t-elle depuis 2016 ?",
+      "choices": [
+        "10",
+        "13",
+        "18",
+        "22"
+      ],
+      "answer": 1,
+      "explanation": "Depuis la réforme territoriale de 2016 (loi NOTRe), la France métropolitaine compte 13 régions (au lieu de 22 auparavant). Avec les 5 régions d'outre-mer, le total est de 18 régions.",
+      "statement": "La France métropolitaine compte 22 régions depuis 2016.",
+      "isTrue": false,
+      "flashcard_front": "Combien de régions métropolitaines depuis 2016 ?",
+      "flashcard_back": "13 régions métropolitaines (au lieu de 22 avant). Total avec outre-mer : 18 régions.",
+      "category": "collectivités"
+    },
+    {
+      "id": "inst-017",
+      "question": "Qu'est-ce que la motion de censure ?",
+      "choices": [
+        "Une procédure permettant au président de dissoudre l'Assemblée",
+        "Une procédure permettant à l'Assemblée nationale de renverser le gouvernement",
+        "Une procédure permettant au Sénat de destituer le président",
+        "Une procédure judiciaire contre un ministre"
+      ],
+      "answer": 1,
+      "explanation": "La motion de censure (article 49 de la Constitution) permet à l'Assemblée nationale de mettre en cause la responsabilité du gouvernement. Si elle est adoptée à la majorité absolue, le Premier ministre doit remettre la démission du gouvernement.",
+      "statement": "La motion de censure permet à l'Assemblée nationale de renverser le gouvernement.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que la motion de censure ?",
+      "flashcard_back": "Procédure (article 49) permettant à l'Assemblée nationale de renverser le gouvernement. Doit être adoptée à la majorité absolue des députés.",
+      "category": "parlement"
+    },
+    {
+      "id": "inst-018",
+      "question": "Le président de la République peut-il dissoudre l'Assemblée nationale ?",
+      "choices": [
+        "Oui, à tout moment (article 12 de la Constitution)",
+        "Non, jamais",
+        "Oui, mais seulement avec l'accord du Sénat",
+        "Oui, mais seulement en période de guerre"
+      ],
+      "answer": 0,
+      "explanation": "L'article 12 de la Constitution permet au président de dissoudre l'Assemblée nationale, après consultation du Premier ministre et des présidents des assemblées. Cela entraîne de nouvelles élections législatives.",
+      "statement": "Le président de la République peut dissoudre l'Assemblée nationale.",
+      "isTrue": true,
+      "flashcard_front": "Le président peut-il dissoudre l'Assemblée nationale ?",
+      "flashcard_back": "Oui (article 12 de la Constitution), après consultation du Premier ministre et des présidents des assemblées. Nouvelles élections dans 20 à 40 jours.",
+      "category": "président"
+    },
+    {
+      "id": "inst-019",
+      "question": "Quelle institution rend la justice en France ?",
+      "choices": [
+        "Le Parlement",
+        "L'autorité judiciaire, indépendante du pouvoir exécutif et législatif",
+        "Le président de la République",
+        "Le préfet"
+      ],
+      "answer": 1,
+      "explanation": "La justice est rendue par l'autorité judiciaire, indépendante des pouvoirs exécutif et législatif. L'article 64 de la Constitution garantit cette indépendance. Le président de la République est garant de l'indépendance de la justice.",
+      "statement": "La justice en France est indépendante des pouvoirs exécutif et législatif.",
+      "isTrue": true,
+      "flashcard_front": "Qui rend la justice en France ?",
+      "flashcard_back": "L'autorité judiciaire, indépendante des pouvoirs exécutif et législatif (article 64 de la Constitution).",
+      "category": "justice"
+    },
+    {
+      "id": "inst-020",
+      "question": "Quels sont les deux ordres de juridiction en France ?",
+      "choices": [
+        "L'ordre civil et l'ordre pénal",
+        "L'ordre judiciaire et l'ordre administratif",
+        "L'ordre constitutionnel et l'ordre législatif",
+        "L'ordre municipal et l'ordre national"
+      ],
+      "answer": 1,
+      "explanation": "La France a deux ordres de juridiction : l'ordre judiciaire (litiges entre personnes, infractions pénales) avec la Cour de cassation au sommet, et l'ordre administratif (litiges avec l'administration) avec le Conseil d'État au sommet.",
+      "statement": "La France a deux ordres de juridiction : l'ordre judiciaire et l'ordre administratif.",
+      "isTrue": true,
+      "flashcard_front": "Quels sont les deux ordres de juridiction en France ?",
+      "flashcard_back": "L'ordre judiciaire (sommet : Cour de cassation) et l'ordre administratif (sommet : Conseil d'État).",
+      "category": "justice"
+    },
+    {
+      "id": "inst-021",
+      "question": "Quelle est la juridiction suprême de l'ordre judiciaire ?",
+      "choices": [
+        "Le Conseil d'État",
+        "La Cour de cassation",
+        "Le Conseil constitutionnel",
+        "La Cour européenne des droits de l'homme"
+      ],
+      "answer": 1,
+      "explanation": "La Cour de cassation est la juridiction suprême de l'ordre judiciaire. Elle ne juge pas les faits mais vérifie que le droit a été correctement appliqué par les tribunaux et cours d'appel.",
+      "statement": "Le Conseil d'État est la juridiction suprême de l'ordre judiciaire.",
+      "isTrue": false,
+      "flashcard_front": "Juridiction suprême de l'ordre judiciaire ?",
+      "flashcard_back": "La Cour de cassation. Elle vérifie la bonne application du droit par les juridictions inférieures.",
+      "category": "justice"
+    },
+    {
+      "id": "inst-022",
+      "question": "Quelle est la juridiction suprême de l'ordre administratif ?",
+      "choices": [
+        "La Cour de cassation",
+        "Le Conseil d'État",
+        "Le Conseil constitutionnel",
+        "La Cour des comptes"
+      ],
+      "answer": 1,
+      "explanation": "Le Conseil d'État est la juridiction suprême de l'ordre administratif. Il juge les litiges entre les citoyens et l'administration. Il est aussi le conseiller du gouvernement pour les projets de loi.",
+      "statement": "Le Conseil d'État est la juridiction suprême de l'ordre administratif.",
+      "isTrue": true,
+      "flashcard_front": "Juridiction suprême de l'ordre administratif ?",
+      "flashcard_back": "Le Conseil d'État. Il juge les litiges avec l'administration et conseille le gouvernement sur les projets de loi.",
+      "category": "justice"
+    },
+    {
+      "id": "inst-023",
+      "question": "Quelle institution contrôle les finances publiques ?",
+      "choices": [
+        "Le Conseil constitutionnel",
+        "La Cour des comptes",
+        "Le Conseil d'État",
+        "Le Sénat"
+      ],
+      "answer": 1,
+      "explanation": "La Cour des comptes est chargée de contrôler la régularité des comptes publics et l'utilisation des fonds publics. Elle informe le Parlement et les citoyens de la bonne gestion de l'argent public.",
+      "statement": "La Cour des comptes contrôle les finances publiques.",
+      "isTrue": true,
+      "flashcard_front": "Quelle institution contrôle les finances publiques ?",
+      "flashcard_back": "La Cour des comptes. Elle vérifie la régularité des comptes publics et l'utilisation des fonds publics.",
+      "category": "justice"
+    },
+    {
+      "id": "inst-024",
+      "question": "Qu'est-ce que le Défenseur des droits ?",
+      "choices": [
+        "Un juge spécialisé dans les droits de l'homme",
+        "Une autorité indépendante chargée de défendre les droits des citoyens face à l'administration",
+        "Le ministre de la Justice",
+        "Le président du Conseil constitutionnel"
+      ],
+      "answer": 1,
+      "explanation": "Le Défenseur des droits est une autorité constitutionnelle indépendante créée en 2011. Il peut être saisi par tout citoyen s'estimant lésé par le fonctionnement d'une administration ou victime de discrimination.",
+      "statement": "Le Défenseur des droits est une autorité indépendante qui peut être saisie par tout citoyen.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que le Défenseur des droits ?",
+      "flashcard_back": "Autorité constitutionnelle indépendante (créée en 2011). Tout citoyen peut le saisir en cas de problème avec l'administration ou de discrimination.",
+      "category": "justice"
+    },
+    {
+      "id": "inst-025",
+      "question": "Qui préside le Conseil des ministres ?",
+      "choices": [
+        "Le Premier ministre",
+        "Le président de la République",
+        "Le ministre de l'Intérieur",
+        "Le président de l'Assemblée nationale"
+      ],
+      "answer": 1,
+      "explanation": "Le président de la République préside le Conseil des ministres (article 9 de la Constitution). Le Conseil des ministres se réunit généralement une fois par semaine à l'Élysée.",
+      "statement": "Le Premier ministre préside le Conseil des ministres.",
+      "isTrue": false,
+      "flashcard_front": "Qui préside le Conseil des ministres ?",
+      "flashcard_back": "Le président de la République (article 9 de la Constitution). Le Conseil se réunit habituellement chaque semaine à l'Élysée.",
+      "category": "président"
+    },
+    {
+      "id": "inst-026",
+      "question": "Qui dirige l'action du gouvernement ?",
+      "choices": [
+        "Le président de la République",
+        "Le Premier ministre",
+        "Le président de l'Assemblée nationale",
+        "Le ministre de l'Intérieur"
+      ],
+      "answer": 1,
+      "explanation": "L'article 21 de la Constitution dispose que le Premier ministre dirige l'action du Gouvernement. Il assure l'exécution des lois et exerce le pouvoir réglementaire.",
+      "statement": "Le Premier ministre dirige l'action du gouvernement.",
+      "isTrue": true,
+      "flashcard_front": "Qui dirige l'action du gouvernement ?",
+      "flashcard_back": "Le Premier ministre (article 21 de la Constitution). Il assure aussi l'exécution des lois.",
+      "category": "gouvernement"
+    },
+    {
+      "id": "inst-027",
+      "question": "Où siège l'Assemblée nationale ?",
+      "choices": [
+        "Au Palais de l'Élysée",
+        "Au Palais Bourbon",
+        "Au Palais du Luxembourg",
+        "Au Palais de Justice"
+      ],
+      "answer": 1,
+      "explanation": "L'Assemblée nationale siège au Palais Bourbon, à Paris, sur la rive gauche de la Seine. Le Palais du Luxembourg est le siège du Sénat.",
+      "statement": "L'Assemblée nationale siège au Palais du Luxembourg.",
+      "isTrue": false,
+      "flashcard_front": "Où siège l'Assemblée nationale ?",
+      "flashcard_back": "Au Palais Bourbon, à Paris (rive gauche de la Seine).",
+      "category": "parlement"
+    },
+    {
+      "id": "inst-028",
+      "question": "Où siège le Sénat ?",
+      "choices": [
+        "Au Palais Bourbon",
+        "Au Palais du Luxembourg",
+        "Au Palais de l'Élysée",
+        "À l'Hôtel de Matignon"
+      ],
+      "answer": 1,
+      "explanation": "Le Sénat siège au Palais du Luxembourg, dans le 6e arrondissement de Paris. Le Palais Bourbon est le siège de l'Assemblée nationale.",
+      "statement": "Le Sénat siège au Palais du Luxembourg.",
+      "isTrue": true,
+      "flashcard_front": "Où siège le Sénat ?",
+      "flashcard_back": "Au Palais du Luxembourg, à Paris (6e arrondissement).",
+      "category": "parlement"
+    },
+    {
+      "id": "inst-029",
+      "question": "Qu'est-ce que la « cohabitation » ?",
+      "choices": [
+        "Quand le président et le Premier ministre sont du même parti",
+        "Quand le président et le Premier ministre sont de bords politiques opposés",
+        "Quand les deux chambres du Parlement sont en désaccord",
+        "Quand le Conseil constitutionnel s'oppose au président"
+      ],
+      "answer": 1,
+      "explanation": "La cohabitation est la situation où le président de la République et le Premier ministre sont de bords politiques opposés (le Premier ministre étant soutenu par la majorité parlementaire). Il y a eu trois cohabitations sous la Ve République (1986, 1993, 1997).",
+      "statement": "La cohabitation survient quand le président et le Premier ministre sont du même parti.",
+      "isTrue": false,
+      "flashcard_front": "Qu'est-ce que la cohabitation ?",
+      "flashcard_back": "Situation où le président et le Premier ministre sont de bords politiques opposés. Trois cohabitations sous la Ve République : 1986, 1993, 1997.",
+      "category": "gouvernement"
+    },
+    {
+      "id": "inst-030",
+      "question": "Quel article de la Constitution permet au président d'exercer des pouvoirs exceptionnels en cas de crise grave ?",
+      "choices": [
+        "Article 5",
+        "Article 12",
+        "Article 16",
+        "Article 49"
+      ],
+      "answer": 2,
+      "explanation": "L'article 16 de la Constitution confère au président des pouvoirs exceptionnels lorsque les institutions, l'indépendance de la nation ou l'intégrité du territoire sont menacées de manière grave et immédiate.",
+      "statement": "L'article 16 permet au président d'exercer des pouvoirs exceptionnels en cas de crise grave.",
+      "isTrue": true,
+      "flashcard_front": "Quel article confère au président des pouvoirs exceptionnels en cas de crise ?",
+      "flashcard_back": "L'article 16 de la Constitution. Conditions : menace grave et immédiate sur les institutions, l'indépendance de la nation ou l'intégrité du territoire.",
+      "category": "président"
+    },
+    {
+      "id": "inst-031",
+      "question": "Combien de mandats présidentiels consécutifs peut-on exercer au maximum ?",
+      "choices": [
+        "Un seul",
+        "Deux mandats consécutifs",
+        "Trois mandats consécutifs",
+        "Aucune limite"
+      ],
+      "answer": 1,
+      "explanation": "Depuis la révision constitutionnelle de 2008, le président de la République ne peut exercer plus de deux mandats consécutifs (article 6 de la Constitution).",
+      "statement": "Le président de la République peut exercer un nombre illimité de mandats consécutifs.",
+      "isTrue": false,
+      "flashcard_front": "Combien de mandats présidentiels consécutifs au maximum ?",
+      "flashcard_back": "Deux mandats consécutifs (depuis la révision constitutionnelle de 2008, article 6).",
+      "category": "président"
+    },
+    {
+      "id": "inst-032",
+      "question": "Qu'est-ce que le CESE (Conseil économique, social et environnemental) ?",
+      "choices": [
+        "Un tribunal",
+        "Une assemblée consultative représentant la société civile",
+        "Un ministère",
+        "Une collectivité territoriale"
+      ],
+      "answer": 1,
+      "explanation": "Le CESE est une assemblée consultative composée de représentants de la société civile (syndicats, patronat, associations). Il conseille le gouvernement et le Parlement sur les questions économiques, sociales et environnementales.",
+      "statement": "Le CESE est une assemblée consultative composée de représentants de la société civile.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que le CESE ?",
+      "flashcard_back": "Conseil économique, social et environnemental. Assemblée consultative de la société civile qui conseille le gouvernement et le Parlement.",
+      "category": "gouvernement"
+    },
+    {
+      "id": "inst-033",
+      "question": "Qu'est-ce que l'article 49-3 de la Constitution ?",
+      "choices": [
+        "Le droit de dissolution de l'Assemblée nationale",
+        "La procédure permettant au gouvernement de faire adopter un texte sans vote, sauf si une motion de censure est déposée et adoptée",
+        "Le droit de grâce présidentiel",
+        "La procédure de révision de la Constitution"
+      ],
+      "answer": 1,
+      "explanation": "L'article 49 alinéa 3 permet au Premier ministre d'engager la responsabilité du gouvernement sur un texte de loi. Le texte est considéré comme adopté sauf si une motion de censure est votée dans les 24 heures.",
+      "statement": "L'article 49-3 permet au gouvernement de faire adopter une loi sans vote de l'Assemblée.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que l'article 49-3 ?",
+      "flashcard_back": "Procédure permettant au Premier ministre d'engager la responsabilité du gouvernement sur un texte. Le texte est adopté sauf si une motion de censure est votée dans les 24 heures.",
+      "category": "parlement"
+    },
+    {
+      "id": "inst-034",
+      "question": "Pour combien de temps les députés sont-ils élus ?",
+      "choices": [
+        "4 ans",
+        "5 ans",
+        "6 ans",
+        "7 ans"
+      ],
+      "answer": 1,
+      "explanation": "Les députés sont élus pour un mandat de 5 ans au suffrage universel direct, au scrutin uninominal à deux tours, dans des circonscriptions.",
+      "statement": "Les députés sont élus pour un mandat de 6 ans.",
+      "isTrue": false,
+      "flashcard_front": "Durée du mandat des députés ?",
+      "flashcard_back": "5 ans, au suffrage universel direct, scrutin uninominal à deux tours.",
+      "category": "parlement"
+    },
+    {
+      "id": "inst-035",
+      "question": "Quelle est la résidence officielle du président de la République ?",
+      "choices": [
+        "L'Hôtel de Matignon",
+        "Le Palais de l'Élysée",
+        "Le Palais Bourbon",
+        "Le château de Versailles"
+      ],
+      "answer": 1,
+      "explanation": "Le Palais de l'Élysée, situé rue du Faubourg-Saint-Honoré à Paris, est la résidence officielle du président de la République depuis 1848.",
+      "statement": "Le Palais de l'Élysée est la résidence officielle du président de la République.",
+      "isTrue": true,
+      "flashcard_front": "Résidence officielle du président de la République ?",
+      "flashcard_back": "Le Palais de l'Élysée, rue du Faubourg-Saint-Honoré à Paris (depuis 1848).",
+      "category": "président"
+    },
+    {
+      "id": "inst-036",
+      "question": "Quelle est la résidence officielle du Premier ministre ?",
+      "choices": [
+        "Le Palais de l'Élysée",
+        "L'Hôtel de Matignon",
+        "Le Palais Bourbon",
+        "Le Palais du Luxembourg"
+      ],
+      "answer": 1,
+      "explanation": "L'Hôtel de Matignon, situé rue de Varenne à Paris, est la résidence officielle du Premier ministre depuis 1935.",
+      "statement": "L'Hôtel de Matignon est la résidence officielle du Premier ministre.",
+      "isTrue": true,
+      "flashcard_front": "Résidence officielle du Premier ministre ?",
+      "flashcard_back": "L'Hôtel de Matignon, rue de Varenne à Paris (depuis 1935).",
+      "category": "gouvernement"
+    },
+    {
+      "id": "inst-037",
+      "question": "Qui assure l'intérim du président de la République en cas de vacance ?",
+      "choices": [
+        "Le Premier ministre",
+        "Le président du Sénat",
+        "Le président de l'Assemblée nationale",
+        "Le président du Conseil constitutionnel"
+      ],
+      "answer": 1,
+      "explanation": "En cas de vacance de la présidence (démission, décès) ou d'empêchement définitif, le président du Sénat assure l'intérim (article 7 de la Constitution). Alain Poher a assuré deux intérims (1969 et 1974).",
+      "statement": "En cas de vacance, le Premier ministre assure l'intérim du président.",
+      "isTrue": false,
+      "flashcard_front": "Qui assure l'intérim du président en cas de vacance ?",
+      "flashcard_back": "Le président du Sénat (article 7 de la Constitution). Exemple : Alain Poher en 1969 et 1974.",
+      "category": "président"
+    },
+    {
+      "id": "inst-038",
+      "question": "Quel est le rôle du président du conseil départemental ?",
+      "choices": [
+        "Représenter l'État dans le département",
+        "Diriger l'exécutif du département (action sociale, routes départementales, collèges)",
+        "Nommer les maires des communes du département",
+        "Voter les lois au Parlement"
+      ],
+      "answer": 1,
+      "explanation": "Le président du conseil départemental dirige l'exécutif du département. Le département a des compétences en matière d'action sociale, de voirie départementale, de gestion des collèges et d'aide aux communes.",
+      "statement": "Le président du conseil départemental dirige l'exécutif du département.",
+      "isTrue": true,
+      "flashcard_front": "Compétences principales du département ?",
+      "flashcard_back": "Action sociale (RSA, APA), routes départementales, collèges, aide aux communes. Dirigé par le président du conseil départemental.",
+      "category": "collectivités"
+    },
+    {
+      "id": "inst-039",
+      "question": "Quelles sont les principales compétences de la région ?",
+      "choices": [
+        "Action sociale et police municipale",
+        "Développement économique, transports régionaux, lycées, formation professionnelle",
+        "Défense nationale et politique étrangère",
+        "État civil et urbanisme"
+      ],
+      "answer": 1,
+      "explanation": "Les régions ont des compétences en matière de développement économique, transports régionaux (TER), gestion des lycées, formation professionnelle et aménagement du territoire.",
+      "statement": "Les régions sont compétentes en matière de développement économique et de gestion des lycées.",
+      "isTrue": true,
+      "flashcard_front": "Quelles sont les principales compétences de la région ?",
+      "flashcard_back": "Développement économique, transports régionaux (TER), lycées, formation professionnelle, aménagement du territoire.",
+      "category": "collectivités"
+    },
+    {
+      "id": "inst-040",
+      "question": "Quelles sont les principales compétences de la commune ?",
+      "choices": [
+        "Défense nationale et diplomatie",
+        "État civil, urbanisme, écoles maternelles et élémentaires, police municipale",
+        "Gestion des lycées et des universités",
+        "Gestion des hôpitaux"
+      ],
+      "answer": 1,
+      "explanation": "La commune gère l'état civil (naissances, mariages, décès), l'urbanisme (permis de construire), les écoles maternelles et élémentaires, la police municipale, l'eau, l'assainissement et les équipements sportifs et culturels.",
+      "statement": "La commune gère les écoles maternelles et élémentaires.",
+      "isTrue": true,
+      "flashcard_front": "Quelles sont les principales compétences de la commune ?",
+      "flashcard_back": "État civil, urbanisme, écoles maternelles et élémentaires, police municipale, eau, assainissement, équipements sportifs et culturels.",
+      "category": "collectivités"
+    }
+  ]
+}

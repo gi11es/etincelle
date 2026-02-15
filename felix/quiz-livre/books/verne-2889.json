@@ -1,0 +1,399 @@
+{
+  "id": "verne-2889",
+  "title": "Au XXIXe siècle : La Journée d'un journaliste américain en 2889",
+  "author": "Jules Verne",
+  "shortTitle": "La Journée d'un journaliste américain en 2889",
+  "year": 1889,
+  "color": "#1a73e8",
+  "emoji": "🚀",
+  "description": "Une nouvelle d'anticipation qui imagine la vie en 2889 à travers la journée de Francis Benett, directeur du journal Earth Herald.",
+
+  "qcm": [
+    {
+      "question": "Comment s'appelle le personnage principal de la nouvelle ?",
+      "choices": ["Francis Benett", "Gordon Benett", "Nathaniel Faithburn", "Doctor Sam"],
+      "answer": 0,
+      "explanation": "Francis Benett est le directeur du Earth Herald, le journal le plus puissant du monde en 2889."
+    },
+    {
+      "question": "Quel est le nom du journal dirigé par Francis Benett ?",
+      "choices": ["Le World Tribune", "Le Earth Herald", "Le Centropolis Times", "Le Universal Press"],
+      "answer": 1,
+      "explanation": "Le Earth Herald est un journal parlé qui compte quatre-vingt-cinq millions d'abonnés."
+    },
+    {
+      "question": "Combien d'abonnés compte le Earth Herald ?",
+      "choices": ["10 millions", "50 millions", "85 millions", "100 millions"],
+      "answer": 2,
+      "explanation": "Le Earth Herald compte quatre-vingt-cinq millions d'abonnés, ce qui en fait le plus grand journal du monde."
+    },
+    {
+      "question": "En quelle année se déroule l'histoire ?",
+      "choices": ["2089", "2789", "2889", "2989"],
+      "answer": 2,
+      "explanation": "L'action se passe le 25 juillet 2889, soit mille ans après la publication de la nouvelle."
+    },
+    {
+      "question": "Comment s'appelle la capitale où vit Francis Benett ?",
+      "choices": ["New York", "Washington", "Centropolis", "Universal-City"],
+      "answer": 2,
+      "explanation": "Centropolis est la capitale des États-Unis des deux Amériques, ayant remplacé Washington deux cents ans plus tôt."
+    },
+    {
+      "question": "Quel appareil permet de voir et entendre son interlocuteur à distance ?",
+      "choices": ["Le téléphone", "Le phonotéléphote", "Le télégraphe", "Le phototélégramme"],
+      "answer": 1,
+      "explanation": "Le phonotéléphote combine le téléphone et la vidéo, anticipant nos visioconférences actuelles."
+    },
+    {
+      "question": "Où se trouve Mme Edith Benett pendant la majeure partie de la journée ?",
+      "choices": ["À Centropolis", "À Londres", "À Paris", "À Niagara"],
+      "answer": 2,
+      "explanation": "Mme Benett est à Paris depuis huit jours pour acheter des chapeaux et des vêtements chez le couturier Wormspire."
+    },
+    {
+      "question": "À quelle vitesse les tubes pneumatiques transportent-ils les voyageurs sous l'océan ?",
+      "choices": ["500 km/h", "1 000 km/h", "1 500 km/h", "2 000 km/h"],
+      "answer": 2,
+      "explanation": "Les tubes pneumatiques sous-marins transportent les voyageurs à 1 500 km/h, permettant de relier l'Europe en 295 minutes."
+    },
+    {
+      "question": "Quel est le métier de Doctor Sam ?",
+      "choices": ["Journaliste", "Médecin personnel de Benett", "Scientifique du journal", "Ambassadeur"],
+      "answer": 1,
+      "explanation": "Doctor Sam est le médecin personnel de Francis Benett qui lui rend visite quotidiennement."
+    },
+    {
+      "question": "Comment le Earth Herald diffuse-t-il ses informations ?",
+      "choices": ["Par papier imprimé", "Par la parole (journal parlé)", "Par hologramme", "Par courrier pneumatique"],
+      "answer": 1,
+      "explanation": "Le Earth Herald est un journal parlé : les nouvelles sont transmises par téléphone aux abonnés, et non plus imprimées."
+    },
+    {
+      "question": "Combien d'étoiles compte le drapeau américain en 2889 ?",
+      "choices": ["50 étoiles", "65 étoiles", "75 étoiles", "100 étoiles"],
+      "answer": 2,
+      "explanation": "Le drapeau américain en 2889 compte 75 étoiles, reflétant l'expansion territoriale des États-Unis."
+    },
+    {
+      "question": "Comment les publicités sont-elles diffusées en 2889 ?",
+      "choices": ["Sur des écrans géants", "Projetées sur les nuages", "Par drone", "Sur les aéro-cars"],
+      "answer": 1,
+      "explanation": "Mille projecteurs envoient des publicités géantes sur les nuages, visibles de toute la ville."
+    },
+    {
+      "question": "Quel scientifique a tenté l'expérience d'hibernation il y a 100 ans ?",
+      "choices": ["Doctor Sam", "Dr. Nathaniel Faithburn", "Corley", "Brown-Séquard"],
+      "answer": 1,
+      "explanation": "Le Dr. Nathaniel Faithburn s'est fait congeler à -172 degrés cent ans plus tôt pour tenter l'hibernation humaine."
+    },
+    {
+      "question": "À quelle vitesse volent les aéro-cars ?",
+      "choices": ["200 km/h", "400 km/h", "600 km/h", "1 000 km/h"],
+      "answer": 2,
+      "explanation": "Les aéro-cars, véhicules volants individuels, se déplacent à 600 km/h."
+    },
+    {
+      "question": "Quelle est l'espérance de vie moyenne en 2889 ?",
+      "choices": ["37 ans", "58 ans", "68 ans", "120 ans"],
+      "answer": 2,
+      "explanation": "L'espérance de vie est passée de 37 ans à 68 ans grâce aux progrès de l'hygiène et de la gymnastique."
+    },
+    {
+      "question": "Que se passe-t-il quand on tente de ressusciter le Dr. Faithburn ?",
+      "choices": ["Il revient à la vie", "Il reste mort", "Il se réveille mais ne parle pas", "L'expérience est annulée"],
+      "answer": 1,
+      "explanation": "Malgré la chaleur, l'électricité, l'hypnose et l'élixir de Brown-Séquard, Faithburn reste mort. L'hibernation a duré trop longtemps."
+    },
+    {
+      "question": "Combien de reporters travaillent au service des informations du Earth Herald ?",
+      "choices": ["150", "500", "1 500", "5 000"],
+      "answer": 2,
+      "explanation": "1 500 reporters transmettent les nouvelles du monde entier par téléphone au Earth Herald."
+    },
+    {
+      "question": "Quelle usine Francis Benett visite-t-il l'après-midi ?",
+      "choices": ["Une usine d'aéro-cars", "L'usine d'accumulateurs de Niagara", "Une usine de tubes pneumatiques", "Une imprimerie"],
+      "answer": 1,
+      "explanation": "Benett visite l'usine d'accumulateurs aux chutes du Niagara, qui transforme l'énergie de la cascade en électricité."
+    },
+    {
+      "question": "Quel pays a été annexé par les États-Unis dans la nouvelle ?",
+      "choices": ["La France", "La Russie", "L'Angleterre", "La Chine"],
+      "answer": 2,
+      "explanation": "L'Angleterre a été annexée par les États-Unis 150 ans avant l'action, et le consul anglais proteste encore contre cette situation."
+    },
+    {
+      "question": "Comment se termine la nouvelle de manière comique ?",
+      "choices": [
+        "Francis tombe de son aéro-car",
+        "Mme Benett sort de la baignoire à l'arrivée de Doctor Sam",
+        "Le journal fait faillite",
+        "Les Martiens envahissent la Terre"
+      ],
+      "answer": 1,
+      "explanation": "Mme Benett, arrivée en avance par le tube transatlantique, est dans la baignoire quand Francis appuie sur le bouton, créant une situation embarrassante devant Doctor Sam."
+    }
+  ],
+
+  "vraiOuFaux": [
+    {
+      "statement": "Le Earth Herald est un journal imprimé sur papier.",
+      "answer": false,
+      "explanation": "Le Earth Herald est un journal parlé. Les nouvelles sont transmises oralement par téléphone aux 85 millions d'abonnés."
+    },
+    {
+      "statement": "Francis Benett communique avec sa femme à Paris grâce au phonotéléphote.",
+      "answer": true,
+      "explanation": "Le phonotéléphote permet de voir et entendre son interlocuteur, comme une visioconférence moderne."
+    },
+    {
+      "statement": "L'action se déroule le 25 juillet 2889.",
+      "answer": true,
+      "explanation": "La nouvelle suit la journée complète de Francis Benett le 25 juillet 2889."
+    },
+    {
+      "statement": "Les aéro-cars se déplacent à 1 500 km/h.",
+      "answer": false,
+      "explanation": "Les aéro-cars volent à 600 km/h. Ce sont les tubes pneumatiques sous-marins qui atteignent 1 500 km/h."
+    },
+    {
+      "statement": "La Russie contrôle l'Inde en 2889.",
+      "answer": true,
+      "explanation": "Dans la géopolitique imaginée par Verne, la Russie contrôle un vaste territoire oriental incluant l'Inde."
+    },
+    {
+      "statement": "Le Dr. Faithburn est ressuscité avec succès après 100 ans d'hibernation.",
+      "answer": false,
+      "explanation": "Malgré tous les efforts (chaleur, électricité, hypnose, élixir), le Dr. Faithburn reste mort. L'hibernation a duré trop longtemps."
+    },
+    {
+      "statement": "Les repas sont livrés par tubes pneumatiques en 2889.",
+      "answer": true,
+      "explanation": "La nourriture est préparée de façon aseptique et distribuée à domicile par un réseau de tubes pneumatiques."
+    },
+    {
+      "statement": "Francis Benett gagne 250 000 dollars de bénéfice dans la journée.",
+      "answer": true,
+      "explanation": "Les comptes du soir montrent un bénéfice de 250 000 dollars, soit 50 000 de plus que la veille."
+    },
+    {
+      "statement": "La capitale des États-Unis en 2889 est toujours Washington.",
+      "answer": false,
+      "explanation": "La capitale a été transférée de Washington à Centropolis deux cents ans avant l'action de la nouvelle."
+    },
+    {
+      "statement": "Le Earth Herald reçoit des communications de la planète Mars.",
+      "answer": true,
+      "explanation": "Le journal reçoit des phototélégrammes de Mars, Mercure et Vénus. En revanche, Jupiter reste hors de portée."
+    },
+    {
+      "statement": "Mme Benett est à Londres pour faire du shopping.",
+      "answer": false,
+      "explanation": "Mme Edith Benett est à Paris, pas à Londres, pour acheter des chapeaux et visiter le couturier Wormspire."
+    },
+    {
+      "statement": "Les publicités sont projetées sur les nuages par des projecteurs.",
+      "answer": true,
+      "explanation": "Mille projecteurs renvoient sur les nuages des publicités géantes. Quand le ciel est dégagé, on fabrique des nuages artificiels."
+    },
+    {
+      "statement": "Corley est un reporter astronomique qui travaille depuis 20 ans sur Jupiter.",
+      "answer": true,
+      "explanation": "Corley essaie depuis 20 ans d'établir une communication avec Jupiter, mais les télescopes de 3 kilomètres ne suffisent pas."
+    },
+    {
+      "statement": "L'espérance de vie en 2889 est de 120 ans.",
+      "answer": false,
+      "explanation": "L'espérance de vie est passée de 37 à 68 ans grâce à l'hygiène et la gymnastique, pas 120 ans."
+    },
+    {
+      "statement": "Francis Benett accepte le projet de faire fondre les glaces polaires.",
+      "answer": true,
+      "explanation": "Parmi les inventeurs reçus, Benett accepte le projet de faire fondre les glaces polaires grâce à la transformation de l'énergie solaire."
+    }
+  ],
+
+  "quiSuisJe": [
+    {
+      "clues": [
+        "Je dirige le plus grand journal du monde.",
+        "Mon journal compte 85 millions d'abonnés.",
+        "Ma femme est à Paris pour acheter des chapeaux.",
+        "Je vis à Centropolis."
+      ],
+      "answer": "Francis Benett",
+      "explanation": "Francis Benett est le personnage principal, directeur tout-puissant du Earth Herald."
+    },
+    {
+      "clues": [
+        "On me surnomme « beauté professionnelle ».",
+        "J'adore la mode parisienne.",
+        "Mon couturier s'appelle Wormspire.",
+        "Je rentre par le tube transatlantique."
+      ],
+      "answer": "Edith Benett",
+      "explanation": "Mme Edith Benett, l'épouse de Francis, est à Paris pour ses achats de mode."
+    },
+    {
+      "clues": [
+        "Je rends visite à mon patient chaque jour.",
+        "J'examine sa langue et son pouls.",
+        "Je suis présent lors de la tentative de résurrection.",
+        "Je déclare le patient hiberné définitivement mort."
+      ],
+      "answer": "Doctor Sam",
+      "explanation": "Doctor Sam est le médecin personnel de Francis Benett."
+    },
+    {
+      "clues": [
+        "J'ai voulu tester l'hibernation humaine.",
+        "On m'a congelé à -172 degrés.",
+        "J'ai dormi pendant 100 ans.",
+        "Malheureusement, on n'a pas réussi à me réveiller."
+      ],
+      "answer": "Dr. Nathaniel Faithburn",
+      "explanation": "Le Dr. Faithburn s'était fait congeler par amour de la science, mais l'hibernation a duré trop longtemps."
+    },
+    {
+      "clues": [
+        "Je suis reporter astronomique au Earth Herald.",
+        "Je travaille sur Jupiter depuis 20 ans.",
+        "Mes télescopes font 3 kilomètres de long.",
+        "Je n'arrive toujours pas à communiquer avec Jupiter."
+      ],
+      "answer": "Corley",
+      "explanation": "Corley est un des dix reporters astronomiques du journal, spécialiste de Jupiter."
+    },
+    {
+      "clues": [
+        "Je suis feuilletoniste au Earth Herald.",
+        "J'écris des romans-feuilletons pour le journal.",
+        "Francis Benett critique mon travail.",
+        "Il me reproche de manquer de profondeur psychologique."
+      ],
+      "answer": "John Last",
+      "explanation": "John Last est l'un des feuilletonistes du journal, critiqué par Benett pour son manque de profondeur."
+    }
+  ],
+
+  "ordre": [
+    {
+      "title": "Les événements de la journée de Francis Benett",
+      "events": [
+        "Francis se réveille et appelle sa femme à Paris par phonotéléphote.",
+        "Il utilise la chambre mécanique pour s'habiller en 2 minutes.",
+        "Il fait le tour des bureaux du Earth Herald (feuilletonistes, reporters, scientifiques).",
+        "Il reçoit les ambassadeurs de France, de Russie et d'Angleterre.",
+        "Il déjeune seul tout en voyant sa femme à Paris par phonotéléphote.",
+        "Il visite l'usine d'accumulateurs aux chutes du Niagara en aéro-car.",
+        "Il reçoit des inventeurs et entrepreneurs dans son salon d'attente.",
+        "Doctor Sam lui rend sa visite médicale quotidienne.",
+        "Il assiste à la tentative de résurrection du Dr. Faithburn.",
+        "Mme Benett sort de la baignoire, surprise comique de fin."
+      ],
+      "explanation": "La nouvelle suit la journée complète de Benett du matin au soir, chaque moment révélant une nouvelle facette de la vie en 2889."
+    },
+    {
+      "title": "Les inventions découvertes au fil de la journée",
+      "events": [
+        "Le phonotéléphote permet à Francis de voir sa femme à Paris.",
+        "La chambre mécanique l'habille automatiquement.",
+        "Le journal parlé remplace le journal imprimé.",
+        "Les projecteurs envoient des publicités sur les nuages.",
+        "Les accumulateurs du Niagara stockent l'énergie solaire et terrestre.",
+        "Le piano-compteur-électrique calcule les bénéfices du journal."
+      ],
+      "explanation": "Les inventions sont présentées au fil de la journée de travail de Francis Benett."
+    }
+  ],
+
+  "associations": [
+    {
+      "title": "Inventions et leurs fonctions",
+      "pairs": [
+        { "left": "Phonotéléphote", "right": "Voir et entendre à distance" },
+        { "left": "Tubes pneumatiques", "right": "Transporter les voyageurs sous l'océan" },
+        { "left": "Aéro-cars", "right": "Voler à 600 km/h" },
+        { "left": "Accumulateurs", "right": "Stocker l'énergie solaire et terrestre" },
+        { "left": "Trottoirs roulants", "right": "Transporter les piétons dans la rue" },
+        { "left": "Piano-compteur-électrique", "right": "Calculer automatiquement la comptabilité" }
+      ]
+    },
+    {
+      "title": "Personnages et leurs rôles",
+      "pairs": [
+        { "left": "Francis Benett", "right": "Directeur du Earth Herald" },
+        { "left": "Edith Benett", "right": "Épouse, « beauté professionnelle »" },
+        { "left": "Doctor Sam", "right": "Médecin personnel de Benett" },
+        { "left": "Dr. Faithburn", "right": "Scientifique congelé depuis 100 ans" },
+        { "left": "Corley", "right": "Reporter astronomique spécialiste de Jupiter" },
+        { "left": "John Last", "right": "Feuilletoniste critiqué par Benett" }
+      ]
+    },
+    {
+      "title": "Lieux et leur description",
+      "pairs": [
+        { "left": "Centropolis", "right": "Capitale des États-Unis des deux Amériques" },
+        { "left": "Paris", "right": "Ville où Mme Benett fait ses achats" },
+        { "left": "Niagara", "right": "Usine d'accumulateurs d'énergie" },
+        { "left": "Earth Herald", "right": "Journal parlé aux 85 millions d'abonnés" },
+        { "left": "Mars", "right": "Planète avec laquelle on communique" },
+        { "left": "Jupiter", "right": "Planète injoignable malgré 20 ans d'efforts" }
+      ]
+    }
+  ],
+
+  "texteATrous": [
+    {
+      "text": "Francis Benett est le directeur du journal ___.",
+      "answer": "Earth Herald",
+      "hint": "Le nom du journal est en anglais et signifie « Héraut de la Terre »."
+    },
+    {
+      "text": "L'appareil qui permet de voir et entendre quelqu'un à distance s'appelle le ___.",
+      "answer": "phonotéléphote",
+      "hint": "Ce mot combine « phono » (son), « télé » (loin) et « phote » (lumière)."
+    },
+    {
+      "text": "Mme Benett est à ___ pour acheter des chapeaux chez le couturier Wormspire.",
+      "answer": "Paris",
+      "hint": "C'est la capitale de la France, connue pour la mode."
+    },
+    {
+      "text": "Les tubes pneumatiques transportent les voyageurs sous l'océan à ___ km/h.",
+      "answer": "1 500",
+      "hint": "C'est mille cinq cents."
+    },
+    {
+      "text": "Le Earth Herald compte ___ millions d'abonnés.",
+      "answer": "85",
+      "hint": "C'est quatre-vingt-cinq."
+    },
+    {
+      "text": "Le Dr. Nathaniel Faithburn a été congelé à ___ degrés pendant 100 ans.",
+      "answer": "-172",
+      "hint": "C'est une température très froide, en dessous de zéro."
+    },
+    {
+      "text": "La capitale des États-Unis en 2889 s'appelle ___.",
+      "answer": "Centropolis",
+      "hint": "Le nom signifie « ville du centre » en grec."
+    },
+    {
+      "text": "Les ___ sont des véhicules volants qui se déplacent à 600 km/h.",
+      "answer": "aéro-cars",
+      "hint": "C'est un mot composé de « aéro » (air) et « cars »."
+    },
+    {
+      "text": "Le reporter ___ essaie depuis 20 ans de communiquer avec Jupiter.",
+      "answer": "Corley",
+      "hint": "C'est un nom de famille anglais."
+    },
+    {
+      "text": "Le bénéfice quotidien du journal est de ___ dollars.",
+      "answer": "250 000",
+      "hint": "C'est un quart de million."
+    }
+  ]
+}

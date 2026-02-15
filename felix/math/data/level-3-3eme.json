@@ -1,0 +1,533 @@
+{
+  "id": "level-3-3eme",
+  "title": "3ème - Fonctions et Identités",
+  "description": "Découvre les identités remarquables, les fonctions, Thalès et la trigonométrie complète. Tu es prêt pour le brevet !",
+  "requiredXP": 3000,
+  "items": [
+    {
+      "id": "3e-pgcd-01",
+      "type": "solve",
+      "question": "Calcule le PGCD de 84 et 56 en utilisant l'algorithme d'Euclide.",
+      "answer": "28",
+      "explanation": "L'algorithme d'Euclide fonctionne par divisions successives : 84 = 56 × 1 + 28, puis 56 = 28 × 2 + 0. Le reste est 0, donc le PGCD est le dernier reste non nul : 28. Cet algorithme est TRÈS efficace : il trouve le PGCD de n'importe quels nombres en quelques étapes. Euclide l'a décrit il y a plus de 2300 ans, et il est encore utilisé en informatique !",
+      "hint": "Divise le plus grand par le plus petit, puis continue avec le diviseur et le reste.",
+      "category": "PGCD et algorithme d'Euclide",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-pgcd-02",
+      "type": "mcq",
+      "question": "Quel est le PGCD de 126 et 90 ?",
+      "choices": ["18", "9", "6", "36"],
+      "answer": 0,
+      "explanation": "Algorithme d'Euclide : 126 = 90 × 1 + 36. 90 = 36 × 2 + 18. 36 = 18 × 2 + 0. Le dernier reste non nul est 18. On peut vérifier : 126 = 18 × 7 et 90 = 18 × 5. Et 7 et 5 sont premiers entre eux (PGCD = 1), donc 126/90 sous forme irréductible est 7/5.",
+      "hint": "126 = 90 × ? + ?, puis continue...",
+      "category": "PGCD et algorithme d'Euclide",
+      "difficulty": 2
+    },
+    {
+      "id": "3e-pgcd-03",
+      "type": "solve",
+      "question": "Rends irréductible la fraction 156/104 (écris numérateur/dénominateur).",
+      "answer": "3/2",
+      "explanation": "On cherche le PGCD de 156 et 104. Par Euclide : 156 = 104 × 1 + 52. 104 = 52 × 2 + 0. PGCD = 52. Donc 156/104 = (156÷52)/(104÷52) = 3/2. Le PGCD sert exactement à ça : simplifier les fractions au maximum ! La fraction 3/2 est irréductible car PGCD(3,2) = 1.",
+      "hint": "Trouve le PGCD de 156 et 104 par l'algorithme d'Euclide.",
+      "category": "PGCD et algorithme d'Euclide",
+      "difficulty": 2
+    },
+    {
+      "id": "3e-pgcd-04",
+      "type": "mcq",
+      "question": "On veut partager 180 bonbons rouges et 252 bonbons bleus en paquets identiques contenant les deux couleurs, sans reste. Quel est le nombre maximum de paquets ?",
+      "choices": ["36", "12", "18", "9"],
+      "answer": 0,
+      "explanation": "Le nombre max de paquets = PGCD(180, 252). Par Euclide : 252 = 180 × 1 + 72. 180 = 72 × 2 + 36. 72 = 36 × 2 + 0. PGCD = 36. On peut faire 36 paquets de 180/36 = 5 bonbons rouges et 252/36 = 7 bonbons bleus. Le PGCD résout les problèmes de partage équitable, c'est une application concrète très fréquente !",
+      "hint": "Le nombre de paquets doit diviser à la fois 180 et 252.",
+      "category": "PGCD et algorithme d'Euclide",
+      "difficulty": 2
+    },
+    {
+      "id": "3e-pgcd-05",
+      "type": "solve",
+      "question": "Deux nombres sont premiers entre eux si leur PGCD vaut 1. Les nombres 35 et 24 sont-ils premiers entre eux ? (oui/non)",
+      "answer": "oui",
+      "explanation": "35 = 5 × 7 et 24 = 2³ × 3. Ils n'ont AUCUN facteur premier commun (35 n'a que 5 et 7, 24 n'a que 2 et 3). Donc PGCD(35, 24) = 1, ils sont premiers entre eux. Attention : « premiers entre eux » ne signifie PAS que les nombres sont premiers ! 35 et 24 ne sont pas des nombres premiers, mais ils sont premiers ENTRE EUX (leur seul diviseur commun est 1).",
+      "hint": "Décompose les deux nombres en facteurs premiers et cherche des facteurs communs.",
+      "category": "PGCD et algorithme d'Euclide",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-id-01",
+      "type": "solve",
+      "question": "Développe : (x + 4)²",
+      "answer": "x²+8x+16",
+      "explanation": "C'est la première identité remarquable : (a + b)² = a² + 2ab + b². Ici a = x et b = 4. Donc : (x + 4)² = x² + 2×x×4 + 4² = x² + 8x + 16. Le piège classique : écrire (x+4)² = x² + 16 en OUBLIANT le double produit 2ab = 8x. N'oublie JAMAIS le terme du milieu ! C'est l'erreur n°1 en algèbre.",
+      "hint": "(a + b)² = a² + 2ab + b². N'oublie pas le double produit !",
+      "category": "Identités remarquables",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-id-02",
+      "type": "mcq",
+      "question": "Quel est le développement de (3x − 5)² ?",
+      "choices": ["9x² − 30x + 25", "9x² + 30x + 25", "9x² − 25", "3x² − 10x + 25"],
+      "answer": 0,
+      "explanation": "Deuxième identité remarquable : (a − b)² = a² − 2ab + b². Avec a = 3x et b = 5 : (3x − 5)² = (3x)² − 2(3x)(5) + 5² = 9x² − 30x + 25. Attention au signe du double produit : c'est TOUJOURS −2ab dans (a−b)². Mais le dernier terme b² est TOUJOURS positif (un carré est toujours positif). Le signe − du double produit est le piège !",
+      "hint": "(a − b)² = a² − 2ab + b². Le double produit est négatif !",
+      "category": "Identités remarquables",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-id-03",
+      "type": "solve",
+      "question": "Factorise : x² − 9",
+      "answer": "(x-3)(x+3)",
+      "explanation": "C'est la troisième identité remarquable : a² − b² = (a − b)(a + b). Ici : x² − 9 = x² − 3² = (x − 3)(x + 3). C'est la DIFFÉRENCE DE DEUX CARRÉS. Cette identité est magique car elle factorise une expression de degré 2 en deux facteurs de degré 1 ! Attention : a² + b² ne se factorise PAS (dans les réels). Seule la différence de carrés marche.",
+      "hint": "Reconnais a² − b² avec a = x et b = 3.",
+      "category": "Identités remarquables",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-id-04",
+      "type": "mcq",
+      "question": "Factorise : 4x² − 25",
+      "choices": ["(2x − 5)(2x + 5)", "(4x − 5)(x + 5)", "(2x − 5)²", "(4x − 25)(x + 1)"],
+      "answer": 0,
+      "explanation": "4x² − 25 = (2x)² − 5². C'est une différence de deux carrés ! Donc : (2x − 5)(2x + 5). On vérifie en développant : (2x)(2x) + (2x)(5) + (−5)(2x) + (−5)(5) = 4x² + 10x − 10x − 25 = 4x² − 25 ✓. Le terme en x s'annule, c'est la beauté de cette identité !",
+      "hint": "Écris 4x² comme (2x)² et 25 comme 5².",
+      "category": "Identités remarquables",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-id-05",
+      "type": "solve",
+      "question": "Développe : (2x + 3)(2x − 3)",
+      "answer": "4x²-9",
+      "explanation": "(a + b)(a − b) = a² − b². Avec a = 2x et b = 3 : (2x + 3)(2x − 3) = (2x)² − 3² = 4x² − 9. C'est la troisième identité remarquable « à l'envers ». Quand tu vois un produit de la forme (A+B)(A−B), tu sais immédiatement que c'est A² − B². Pas besoin de développer en détail !",
+      "hint": "(a + b)(a − b) = a² − b².",
+      "category": "Identités remarquables",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-id-06",
+      "type": "mcq",
+      "question": "Factorise : x² + 6x + 9",
+      "choices": ["(x + 3)²", "(x + 9)(x + 1)", "(x − 3)²", "(x + 3)(x − 3)"],
+      "answer": 0,
+      "explanation": "Reconnaissons : x² + 6x + 9 = x² + 2(3)(x) + 3². C'est de la forme a² + 2ab + b² = (a + b)² avec a = x et b = 3. Donc : (x + 3)². Pour reconnaître un carré parfait, vérifie que le dernier terme est un carré (9 = 3²) et que le coefficient de x est 2×3 = 6. C'est la « détection » d'une identité remarquable, une compétence essentielle !",
+      "hint": "Est-ce de la forme a² + 2ab + b² ?",
+      "category": "Identités remarquables",
+      "difficulty": 2
+    },
+    {
+      "id": "3e-id-07",
+      "type": "solve",
+      "question": "Calcule mentalement 97² en utilisant une identité remarquable.",
+      "answer": "9409",
+      "explanation": "97 = 100 − 3. Donc 97² = (100 − 3)² = 100² − 2×100×3 + 3² = 10000 − 600 + 9 = 9409. Les identités remarquables ne servent pas qu'en algèbre : elles permettent des calculs mentaux impressionnants ! De même, 103² = (100+3)² = 10000 + 600 + 9 = 10609. Ou 98 × 102 = (100−2)(100+2) = 10000 − 4 = 9996.",
+      "hint": "Écris 97 = 100 − 3 et utilise (a − b)².",
+      "category": "Identités remarquables",
+      "difficulty": 2
+    },
+    {
+      "id": "3e-id-08",
+      "type": "mcq",
+      "question": "Développe : (x + 2)² − (x − 1)²",
+      "choices": ["6x + 3", "2x² + 5", "4x + 3", "3"],
+      "answer": 0,
+      "explanation": "On peut développer chaque carré : (x+2)² = x² + 4x + 4 et (x−1)² = x² − 2x + 1. Différence : x² + 4x + 4 − x² + 2x − 1 = 6x + 3. MAIS il y a une méthode plus élégante : utiliser a² − b² = (a−b)(a+b) avec a = x+2 et b = x−1. On obtient : [(x+2)−(x−1)][(x+2)+(x−1)] = [3][2x+1] = 6x + 3. Même résultat, plus vite !",
+      "hint": "Utilise la différence de deux carrés A² − B² = (A−B)(A+B) ou développe directement.",
+      "category": "Identités remarquables",
+      "difficulty": 3
+    },
+    {
+      "id": "3e-id-09",
+      "type": "solve",
+      "question": "Factorise : 9x² − 12x + 4",
+      "answer": "(3x-2)²",
+      "explanation": "Reconnaissons : 9x² = (3x)², 4 = 2², et 12x = 2 × 3x × 2. C'est de la forme a² − 2ab + b² = (a − b)² avec a = 3x et b = 2. Donc : 9x² − 12x + 4 = (3x − 2)². La clé : vérifier que le « double produit » correspond. Ici 2 × 3x × 2 = 12x ✓. Si ça ne correspond pas, ce n'est pas un carré parfait.",
+      "hint": "9x² = (3x)² et 4 = 2². Vérifie le double produit.",
+      "category": "Identités remarquables",
+      "difficulty": 2
+    },
+    {
+      "id": "3e-id-10",
+      "type": "mcq",
+      "question": "Factorise : (2x + 1)² − (x − 3)²",
+      "choices": ["(x + 4)(3x − 2)", "(x + 4)(x − 2)", "(3x − 2)(2x + 1)", "(x − 4)(3x + 2)"],
+      "answer": 0,
+      "explanation": "C'est A² − B² = (A − B)(A + B) avec A = 2x+1 et B = x−3. A − B = (2x+1) − (x−3) = 2x+1−x+3 = x+4. A + B = (2x+1) + (x−3) = 2x+1+x−3 = 3x−2. Donc : (x+4)(3x−2). C'est un exercice de type brevet classique ! La difficulté est de bien calculer A−B et A+B en faisant attention aux signes.",
+      "hint": "Pose A = 2x+1 et B = x−3, puis utilise A² − B² = (A−B)(A+B).",
+      "category": "Identités remarquables",
+      "difficulty": 3
+    },
+    {
+      "id": "3e-prod-01",
+      "type": "solve",
+      "question": "Résous : (x − 3)(x + 5) = 0",
+      "answer": "3 ou -5",
+      "explanation": "Le théorème du produit nul : si A × B = 0, alors A = 0 ou B = 0. Donc : x − 3 = 0 → x = 3, OU x + 5 = 0 → x = −5. Les solutions sont x = 3 et x = −5. Ce théorème est FONDAMENTAL : un produit est nul si et seulement si au moins un des facteurs est nul. C'est pourquoi on factorise avant de résoudre !",
+      "hint": "Un produit est nul si et seulement si un de ses facteurs est nul.",
+      "category": "Équation produit nul",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-prod-02",
+      "type": "mcq",
+      "question": "Quelles sont les solutions de (2x − 6)(3x + 9) = 0 ?",
+      "choices": ["x = 3 ou x = −3", "x = 6 ou x = −9", "x = 3 ou x = 3", "x = −3 ou x = 9"],
+      "answer": 0,
+      "explanation": "Produit nul : 2x − 6 = 0 → 2x = 6 → x = 3. OU 3x + 9 = 0 → 3x = −9 → x = −3. Les solutions sont x = 3 et x = −3. Attention : les solutions ne sont PAS les constantes de l'équation (6 et 9), mais les valeurs de x qui annulent chaque facteur. Il faut résoudre chaque petite équation séparément !",
+      "hint": "Résous 2x − 6 = 0 et 3x + 9 = 0 séparément.",
+      "category": "Équation produit nul",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-prod-03",
+      "type": "solve",
+      "question": "Résous : x² − 16 = 0 (donne les deux solutions séparées par 'ou')",
+      "answer": "4 ou -4",
+      "explanation": "On factorise d'abord avec l'identité remarquable : x² − 16 = x² − 4² = (x − 4)(x + 4) = 0. Par le produit nul : x − 4 = 0 → x = 4, ou x + 4 = 0 → x = −4. C'est la combinaison parfaite : identité remarquable + produit nul. On peut aussi raisonner directement : x² = 16 → x = ±√16 = ±4.",
+      "hint": "Factorise avec a² − b², puis applique le produit nul.",
+      "category": "Équation produit nul",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-prod-04",
+      "type": "mcq",
+      "question": "Résous : x² + 2x + 1 = 0",
+      "choices": ["x = −1 (solution double)", "x = 1 ou x = −1", "x = −1 ou x = 1", "Pas de solution"],
+      "answer": 0,
+      "explanation": "On reconnaît l'identité remarquable : x² + 2x + 1 = (x + 1)² = 0. Donc x + 1 = 0, soit x = −1. C'est une SOLUTION DOUBLE : le polynôme a une seule racine, mais « comptée deux fois ». Graphiquement, la parabole y = (x+1)² touche l'axe des x en un seul point (x = −1) sans le traverser.",
+      "hint": "Reconnaître (a+b)² puis résoudre.",
+      "category": "Équation produit nul",
+      "difficulty": 2
+    },
+    {
+      "id": "3e-prod-05",
+      "type": "solve",
+      "question": "Résous : 4x² − 12x + 9 = 0",
+      "answer": "3/2",
+      "explanation": "Reconnaissons : 4x² = (2x)², 9 = 3², 12x = 2×2x×3. C'est (2x − 3)² = 0. Donc 2x − 3 = 0, soit x = 3/2. Solution double ! Pour vérifier : 4×(3/2)² − 12×(3/2) + 9 = 4×9/4 − 18 + 9 = 9 − 18 + 9 = 0 ✓. Combiner les identités remarquables avec le produit nul est la méthode standard du brevet.",
+      "hint": "C'est un carré parfait. Écris-le sous forme (ax − b)².",
+      "category": "Équation produit nul",
+      "difficulty": 2
+    },
+    {
+      "id": "3e-prod-06",
+      "type": "mcq",
+      "question": "Résous : x(2x − 7) = 0",
+      "choices": ["x = 0 ou x = 7/2", "x = 7/2", "x = 0 ou x = −7/2", "x = 7"],
+      "answer": 0,
+      "explanation": "Le produit est déjà factorisé ! x × (2x − 7) = 0. Par le produit nul : x = 0 OU 2x − 7 = 0 → x = 7/2 = 3,5. N'oublie JAMAIS la solution x = 0 ! C'est une erreur fréquente de diviser par x (ce qui « perd » la solution x = 0). On ne divise JAMAIS par une expression qui peut être nulle.",
+      "hint": "Le produit est déjà factorisé. N'oublie pas x = 0.",
+      "category": "Équation produit nul",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-fonc-01",
+      "type": "mcq",
+      "question": "La fonction f(x) = 3x est :",
+      "choices": ["Linéaire", "Affine non linéaire", "Constante", "Du second degré"],
+      "answer": 0,
+      "explanation": "f(x) = 3x est de la forme f(x) = ax. C'est une fonction LINÉAIRE (cas particulier de fonction affine avec b = 0). Sa représentation graphique est une droite passant par l'ORIGINE. Le coefficient 3 est le coefficient directeur : il indique que quand x augmente de 1, f(x) augmente de 3. Une fonction affine f(x) = ax + b avec b ≠ 0 ne passe pas par l'origine.",
+      "hint": "f(x) = ax est linéaire, f(x) = ax + b (b≠0) est affine.",
+      "category": "Fonctions linéaires et affines",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-fonc-02",
+      "type": "solve",
+      "question": "La fonction f est affine avec f(0) = 3 et f(2) = 7. Détermine f(x).",
+      "answer": "2x+3",
+      "explanation": "f est affine donc f(x) = ax + b. f(0) = b = 3. Puis f(2) = 2a + 3 = 7 → 2a = 4 → a = 2. Donc f(x) = 2x + 3. Le coefficient directeur a = 2 se calcule aussi avec (f(2)−f(0))/(2−0) = (7−3)/2 = 2. L'ordonnée à l'origine b = f(0) = 3. Ces deux nombres suffisent à déterminer une fonction affine !",
+      "hint": "f(x) = ax + b. Utilise f(0) pour trouver b, puis f(2) pour trouver a.",
+      "category": "Fonctions linéaires et affines",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-fonc-03",
+      "type": "mcq",
+      "question": "Deux droites d₁ : y = 2x + 1 et d₂ : y = −x + 7 se coupent. Quel est le point d'intersection ?",
+      "choices": ["(2, 5)", "(3, 4)", "(1, 3)", "(2, 3)"],
+      "answer": 0,
+      "explanation": "Au point d'intersection, les deux y sont égaux : 2x + 1 = −x + 7 → 3x = 6 → x = 2. Puis y = 2(2) + 1 = 5. Le point est (2, 5). Vérifions avec d₂ : y = −2 + 7 = 5 ✓. Le point d'intersection de deux droites se trouve en résolvant le système de deux équations. C'est la base de la géométrie analytique !",
+      "hint": "Égalise les deux expressions de y.",
+      "category": "Fonctions linéaires et affines",
+      "difficulty": 2
+    },
+    {
+      "id": "3e-fonc-04",
+      "type": "solve",
+      "question": "La droite passe par A(1, 4) et B(3, 10). Quel est son coefficient directeur ?",
+      "answer": "3",
+      "explanation": "Le coefficient directeur (ou pente) = Δy/Δx = (y_B − y_A)/(x_B − x_A) = (10 − 4)/(3 − 1) = 6/2 = 3. Ça signifie que quand x augmente de 1, y augmente de 3. C'est la « vitesse de montée » de la droite. Un coefficient directeur positif → droite montante, négatif → droite descendante, nul → droite horizontale.",
+      "hint": "Coefficient directeur = (y₂ − y₁) / (x₂ − x₁).",
+      "category": "Fonctions linéaires et affines",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-fonc-05",
+      "type": "mcq",
+      "question": "La fonction f(x) = −2x + 5 est :",
+      "choices": ["Décroissante", "Croissante", "Constante", "D'abord croissante puis décroissante"],
+      "answer": 0,
+      "explanation": "Le coefficient directeur est a = −2 < 0. Quand a est négatif, la fonction affine est DÉCROISSANTE : quand x augmente, f(x) diminue. Graphiquement, la droite « descend » de gauche à droite. Si a > 0 → croissante (la droite « monte »). Si a = 0 → constante (droite horizontale). Le signe de a détermine le sens de variation !",
+      "hint": "Regarde le signe du coefficient directeur.",
+      "category": "Fonctions linéaires et affines",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-fonc-06",
+      "type": "solve",
+      "question": "Un taxi facture 2,50 € par km plus 4 € de prise en charge. Écris f(x) le prix pour x km.",
+      "answer": "2,5x+4",
+      "explanation": "Le prix dépend linéairement de la distance : f(x) = 2,5x + 4. C'est une fonction affine avec a = 2,5 (le prix par km, coefficient directeur) et b = 4 (la prise en charge fixe, ordonnée à l'origine). Pour 10 km : f(10) = 2,5×10 + 4 = 29 €. Les fonctions affines modélisent toutes les situations de la vie avec un coût fixe + un coût proportionnel.",
+      "hint": "Coût = prix par km × nombre de km + forfait fixe.",
+      "category": "Fonctions linéaires et affines",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-fonc-07",
+      "type": "mcq",
+      "question": "La droite y = 3x − 2 passe-t-elle par le point (4, 10) ?",
+      "choices": ["Oui, car 3×4 − 2 = 10", "Non, car 3×4 − 2 = 14", "Non, car 4 − 2 ≠ 10", "On ne peut pas savoir"],
+      "answer": 0,
+      "explanation": "Pour vérifier, on remplace x par 4 : y = 3×4 − 2 = 12 − 2 = 10. On obtient bien y = 10, donc le point (4, 10) est SUR la droite. Un point appartient à une droite si et seulement si ses coordonnées vérifient l'équation de la droite. C'est la méthode universelle pour tester l'appartenance d'un point à une courbe !",
+      "hint": "Remplace x par 4 dans l'équation et vérifie si tu obtiens y = 10.",
+      "category": "Fonctions linéaires et affines",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-fonc-08",
+      "type": "solve",
+      "question": "La droite a pour équation y = ax + 1 et passe par (−2, 7). Trouve a.",
+      "answer": "-3",
+      "explanation": "On remplace x et y par les coordonnées du point : 7 = a×(−2) + 1 → 7 = −2a + 1 → −2a = 6 → a = −3. Donc y = −3x + 1. Vérification : pour x = −2, y = −3×(−2) + 1 = 6 + 1 = 7 ✓. Si on connaît un point et l'ordonnée à l'origine (ici b = 1), on peut trouver le coefficient directeur en résolvant une simple équation.",
+      "hint": "Remplace x par −2 et y par 7, puis résous pour a.",
+      "category": "Fonctions linéaires et affines",
+      "difficulty": 2
+    },
+    {
+      "id": "3e-fonc-09",
+      "type": "mcq",
+      "question": "Deux droites de pentes 3 et −1/3 sont :",
+      "choices": ["Perpendiculaires", "Parallèles", "Sécantes non perpendiculaires", "Confondues"],
+      "answer": 0,
+      "explanation": "Deux droites sont perpendiculaires si et seulement si le produit de leurs pentes vaut −1. Ici : 3 × (−1/3) = −1. Elles sont donc perpendiculaires ! Cette propriété est très utile : pour trouver la pente d'une droite perpendiculaire à une droite de pente m, on calcule −1/m (l'opposé de l'inverse). Si m = 3, la pente perpendiculaire est −1/3.",
+      "hint": "Calcule le produit des deux pentes. Que vaut-il ?",
+      "category": "Fonctions linéaires et affines",
+      "difficulty": 2
+    },
+    {
+      "id": "3e-fonc-10",
+      "type": "solve",
+      "question": "Pour quelle valeur de x a-t-on 3x + 2 = 0 ? C'est l'antécédent de 0 par la fonction f(x) = 3x + 2.",
+      "answer": "-2/3",
+      "explanation": "On résout 3x + 2 = 0 → 3x = −2 → x = −2/3. L'antécédent de 0 par f est la valeur de x pour laquelle f(x) = 0. C'est aussi l'abscisse du point où la droite coupe l'axe des x (le « zéro » de la fonction). Pour f(x) = ax + b, ce zéro est toujours x = −b/a. Ici : −2/3.",
+      "hint": "Résous f(x) = 0.",
+      "category": "Fonctions linéaires et affines",
+      "difficulty": 2
+    },
+    {
+      "id": "3e-thales-01",
+      "type": "mcq",
+      "question": "Dans un triangle ABC, M est sur [AB] et N sur [AC] tels que (MN) ∥ (BC). Si AM = 3, AB = 9, et BC = 12, que vaut MN ?",
+      "choices": ["4", "6", "36", "3"],
+      "answer": 0,
+      "explanation": "Par le théorème de Thalès : AM/AB = MN/BC. Donc 3/9 = MN/12 → 1/3 = MN/12 → MN = 12/3 = 4. Le théorème de Thalès dit que si une droite est parallèle à un côté d'un triangle, elle découpe les deux autres côtés en segments proportionnels. C'est le roi de la proportionnalité en géométrie !",
+      "hint": "Thalès : les longueurs sont proportionnelles. AM/AB = MN/BC.",
+      "category": "Théorème de Thalès",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-thales-02",
+      "type": "solve",
+      "question": "Dans la configuration de Thalès : OA/OA' = OB/OB'. Si OA = 4, OA' = 10, OB = 6, que vaut OB' ?",
+      "answer": "15",
+      "explanation": "Par Thalès : OA/OA' = OB/OB'. Donc 4/10 = 6/OB' → OB' = 6 × 10/4 = 60/4 = 15. On utilise le produit en croix ! La configuration « papillon » (deux droites sécantes coupées par deux parallèles) donne les mêmes proportions que la configuration « triangle ». Thalès fonctionne dans les deux cas.",
+      "hint": "Produit en croix : OB' = OB × OA' / OA.",
+      "category": "Théorème de Thalès",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-thales-03",
+      "type": "mcq",
+      "question": "Un arbre projette une ombre de 8 m au sol. Au même moment, un bâton de 1,5 m projette une ombre de 2 m. Quelle est la hauteur de l'arbre ?",
+      "choices": ["6 m", "4 m", "8 m", "10,67 m"],
+      "answer": 0,
+      "explanation": "Les rayons du soleil sont parallèles, donc c'est une situation de Thalès ! Hauteur/Ombre = constante. Bâton : 1,5/2. Arbre : h/8. Par proportionnalité : h/8 = 1,5/2 → h = 8 × 1,5/2 = 6 m. Thalès de Milet a lui-même mesuré la hauteur de la pyramide de Khéops avec cette méthode ! C'est l'une des premières applications historiques de la géométrie.",
+      "hint": "Hauteur arbre / Ombre arbre = Hauteur bâton / Ombre bâton.",
+      "category": "Théorème de Thalès",
+      "difficulty": 2
+    },
+    {
+      "id": "3e-thales-04",
+      "type": "solve",
+      "question": "Dans un triangle ABC avec M sur [AB] et N sur [AC], AM = 6, MB = 4, AN = 9. Si (MN) ∥ (BC), calcule NC.",
+      "answer": "6",
+      "explanation": "Par Thalès : AM/AB = AN/AC. AB = AM + MB = 6 + 4 = 10. Donc 6/10 = 9/AC → AC = 9 × 10/6 = 15. Puis NC = AC − AN = 15 − 9 = 6. Attention : Thalès utilise les rapports de longueurs sur les MÊMES droites (AB et AC), pas entre les deux droites. Le ratio ici est 6/10 = 3/5.",
+      "hint": "D'abord AB = AM + MB, puis utilise le rapport AM/AB = AN/AC.",
+      "category": "Théorème de Thalès",
+      "difficulty": 2
+    },
+    {
+      "id": "3e-thales-05",
+      "type": "mcq",
+      "question": "Si AM/AB = AN/AC mais (MN) n'est pas parallèle à (BC), le théorème de Thalès s'applique-t-il ?",
+      "choices": ["Non, la réciproque exige aussi AM/AB = MN/BC", "Oui, la proportionnalité suffit", "Non, il faut un angle droit", "Oui, toujours"],
+      "answer": 0,
+      "explanation": "Attention subtile ! La réciproque de Thalès dit : si les points sont dans le bon ordre ET AM/AB = AN/AC = MN/BC (les TROIS rapports sont égaux), ALORS (MN) ∥ (BC). Un seul rapport ne suffit pas pour conclure au parallélisme. Il faut vérifier l'alignement des points et au moins deux rapports. C'est une erreur de raisonnement fréquente au brevet !",
+      "hint": "La réciproque de Thalès a des conditions précises à vérifier.",
+      "category": "Théorème de Thalès",
+      "difficulty": 3
+    },
+    {
+      "id": "3e-thales-06",
+      "type": "solve",
+      "question": "Configuration de Thalès en papillon : deux droites se coupent en O. (AB) ∥ (CD). OA = 3, OC = 5, AB = 6. Calcule CD.",
+      "answer": "10",
+      "explanation": "Dans la configuration papillon, les rapports sont : OA/OC = OB/OD = AB/CD. Donc 3/5 = 6/CD → CD = 6 × 5/3 = 10. La configuration papillon apparaît quand le point O est entre les deux parallèles (les triangles sont « de part et d'autre »). Les rapports sont les mêmes qu'en configuration triangle !",
+      "hint": "OA/OC = AB/CD. Résous par produit en croix.",
+      "category": "Théorème de Thalès",
+      "difficulty": 2
+    },
+    {
+      "id": "3e-trigo-01",
+      "type": "mcq",
+      "question": "Dans un triangle rectangle, sin(α) = ?",
+      "choices": ["opposé / hypoténuse", "adjacent / hypoténuse", "opposé / adjacent", "hypoténuse / opposé"],
+      "answer": 0,
+      "explanation": "SOH-CAH-TOA, le moyen mnémotechnique ultime ! Sin = Opposé / Hypoténuse (SOH). Cos = Adjacent / Hypoténuse (CAH). Tan = Opposé / Adjacent (TOA). Le sinus utilise le côté OPPOSÉ à l'angle (le côté « en face »). Le cosinus utilise le côté ADJACENT (le côté « à côté »). L'hypoténuse est toujours le plus grand côté, face à l'angle droit.",
+      "hint": "SOH-CAH-TOA : Sinus = Opposé / Hypoténuse.",
+      "category": "Trigonométrie",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-trigo-02",
+      "type": "solve",
+      "question": "Dans un triangle rectangle, le côté opposé à l'angle α mesure 5 cm et l'hypoténuse 13 cm. Que vaut sin(α) ? (forme fractionnaire)",
+      "answer": "5/13",
+      "explanation": "sin(α) = opposé / hypoténuse = 5/13. C'est irréductible car 5 est premier et ne divise pas 13. On peut aussi trouver le côté adjacent par Pythagore : √(13² − 5²) = √(169 − 25) = √144 = 12. Donc cos(α) = 12/13 et tan(α) = 5/12. Le triplet (5, 12, 13) revient souvent !",
+      "hint": "sin(α) = côté opposé / hypoténuse.",
+      "category": "Trigonométrie",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-trigo-03",
+      "type": "mcq",
+      "question": "Que vaut tan(45°) ?",
+      "choices": ["1", "0", "√2", "√2/2"],
+      "answer": 0,
+      "explanation": "tan(45°) = sin(45°)/cos(45°) = (√2/2)/(√2/2) = 1. On peut aussi le voir géométriquement : dans un triangle rectangle isocèle (angles 45°-45°-90°), les deux cathètes sont égales. Donc tan(45°) = opposé/adjacent = a/a = 1. Valeurs à connaître : tan(0°) = 0, tan(30°) = √3/3, tan(45°) = 1, tan(60°) = √3.",
+      "hint": "Dans un triangle rectangle isocèle, les deux cathètes sont égales.",
+      "category": "Trigonométrie",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-trigo-04",
+      "type": "solve",
+      "question": "Dans un triangle rectangle, tan(α) = 3/4 et le côté adjacent mesure 8 cm. Calcule le côté opposé.",
+      "answer": "6",
+      "explanation": "tan(α) = opposé / adjacent. Donc opposé = tan(α) × adjacent = (3/4) × 8 = 6 cm. La tangente relie directement les deux cathètes entre elles (sans passer par l'hypoténuse). C'est utile quand on n'a pas besoin de l'hypoténuse. Pour info, l'hypoténuse vaut √(6² + 8²) = √100 = 10 cm.",
+      "hint": "tan(α) = opposé / adjacent, donc opposé = tan(α) × adjacent.",
+      "category": "Trigonométrie",
+      "difficulty": 2
+    },
+    {
+      "id": "3e-trigo-05",
+      "type": "mcq",
+      "question": "Quelle relation lie sin et cos pour tout angle α ?",
+      "choices": ["sin²(α) + cos²(α) = 1", "sin(α) + cos(α) = 1", "sin(α) × cos(α) = 1", "sin²(α) − cos²(α) = 1"],
+      "answer": 0,
+      "explanation": "C'est l'identité trigonométrique fondamentale : sin²(α) + cos²(α) = 1. Elle vient directement de Pythagore ! Dans un triangle rectangle d'hypoténuse c : (a/c)² + (b/c)² = a²/c² + b²/c² = (a²+b²)/c² = c²/c² = 1. Donc sin²+cos² = 1. Cette identité est vraie pour TOUT angle, pas seulement les angles aigus.",
+      "hint": "C'est une conséquence directe du théorème de Pythagore.",
+      "category": "Trigonométrie",
+      "difficulty": 2
+    },
+    {
+      "id": "3e-trigo-06",
+      "type": "solve",
+      "question": "sin(α) = 0,6. Que vaut cos(α) sachant que α est aigu ? (valeur décimale)",
+      "answer": "0,8",
+      "explanation": "Par l'identité fondamentale : sin²(α) + cos²(α) = 1. Donc cos²(α) = 1 − sin²(α) = 1 − 0,36 = 0,64. Comme α est aigu, cos(α) > 0, donc cos(α) = √0,64 = 0,8. On retrouve le triplet 3-4-5 déguisé : sin = 3/5 = 0,6 et cos = 4/5 = 0,8.",
+      "hint": "sin² + cos² = 1, donc cos² = 1 − sin².",
+      "category": "Trigonométrie",
+      "difficulty": 2
+    },
+    {
+      "id": "3e-trigo-07",
+      "type": "mcq",
+      "question": "Une rampe d'accès fait un angle de 30° avec l'horizontale et a une longueur de 10 m. Quelle est la hauteur atteinte ?",
+      "choices": ["5 m", "8,66 m", "10 m", "5√3 m"],
+      "answer": 0,
+      "explanation": "La hauteur est le côté opposé à l'angle de 30°. sin(30°) = opposé / hypoténuse = h / 10. Or sin(30°) = 1/2 (valeur remarquable !). Donc h = 10 × sin(30°) = 10 × 0,5 = 5 m. La rampe mesure 10 m, mais elle ne monte que de 5 m en hauteur. La trigonométrie est indispensable en architecture pour calculer les pentes !",
+      "hint": "La hauteur est le côté opposé. Utilise sin(30°) = 1/2.",
+      "category": "Trigonométrie",
+      "difficulty": 2
+    },
+    {
+      "id": "3e-trigo-08",
+      "type": "solve",
+      "question": "Dans un triangle rectangle, le côté opposé mesure 7 cm et le côté adjacent mesure 7 cm. Que vaut l'angle α en degrés ?",
+      "answer": "45",
+      "explanation": "tan(α) = opposé / adjacent = 7/7 = 1. On cherche α tel que tan(α) = 1. C'est une valeur remarquable : tan(45°) = 1. Donc α = 45°. C'est logique : quand les deux cathètes sont égales, le triangle est isocèle rectangle et les deux angles aigus valent 45°. Pas besoin de calculatrice pour les valeurs remarquables !",
+      "hint": "Si opposé = adjacent, que vaut tan(α) ? Et quel angle a cette tangente ?",
+      "category": "Trigonométrie",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-vol-01",
+      "type": "mcq",
+      "question": "Quelle est la formule du volume d'une pyramide de base d'aire A et de hauteur h ?",
+      "choices": ["A × h / 3", "A × h", "A × h / 2", "4/3 × A × h"],
+      "answer": 0,
+      "explanation": "V = (1/3) × A × h. Le « 1/3 » vient du fait qu'une pyramide est « pointue » : elle contient exactement un tiers du prisme de même base et même hauteur. C'est le même facteur pour le cône : V_cône = (1/3)πr²h = (1/3) × V_cylindre. Retiens le motif : solide « pointu » → on divise par 3.",
+      "hint": "Un solide qui se termine en pointe a un volume divisé par 3 par rapport au prisme correspondant.",
+      "category": "Volumes",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-vol-02",
+      "type": "solve",
+      "question": "Calcule le volume d'un cône de rayon 3 cm et de hauteur 7 cm. Donne la réponse en fonction de π (sous la forme 'Nπ').",
+      "answer": "21π",
+      "explanation": "V_cône = (1/3)πr²h = (1/3) × π × 3² × 7 = (1/3) × π × 9 × 7 = (1/3) × 63π = 21π cm³. En valeur approchée : 21 × 3,14 ≈ 65,9 cm³. Le cône est la version « pyramidale » du cylindre : même base (cercle), même hauteur, mais un tiers du volume. Un cornet de glace est un cône !",
+      "hint": "V = (1/3) × π × r² × h.",
+      "category": "Volumes",
+      "difficulty": 2
+    },
+    {
+      "id": "3e-vol-03",
+      "type": "mcq",
+      "question": "Quelle est la formule du volume d'une sphère de rayon r ?",
+      "choices": ["(4/3)πr³", "4πr²", "(4/3)πr²", "πr³"],
+      "answer": 0,
+      "explanation": "V_sphère = (4/3)πr³. Attention à ne pas confondre avec l'aire de la sphère qui est 4πr² (surface). Le volume contient r au CUBE (c'est un volume, en 3D), tandis que l'aire contient r au CARRÉ (c'est une surface, en 2D). Archimède a démontré cette formule il y a plus de 2200 ans, et il en était si fier qu'il a demandé qu'on grave une sphère sur sa tombe !",
+      "hint": "Ne confonds pas le volume (avec r³) et l'aire (avec r²).",
+      "category": "Volumes",
+      "difficulty": 1
+    },
+    {
+      "id": "3e-vol-04",
+      "type": "solve",
+      "question": "Une sphère a un rayon de 6 cm. Calcule son volume en fonction de π (sous la forme 'Nπ').",
+      "answer": "288π",
+      "explanation": "V = (4/3)πr³ = (4/3) × π × 6³ = (4/3) × π × 216 = 4 × 72 × π = 288π cm³. En valeur approchée : 288 × 3,14 ≈ 904,3 cm³. Pour calculer 6³ : 6 × 6 = 36, puis 36 × 6 = 216. Et (4/3) × 216 : on divise d'abord 216 par 3 = 72, puis 72 × 4 = 288.",
+      "hint": "V = (4/3)πr³. Calcule d'abord r³ = 6³ = 216.",
+      "category": "Volumes",
+      "difficulty": 2
+    },
+    {
+      "id": "3e-vol-05",
+      "type": "mcq",
+      "question": "On double le rayon d'une sphère. Comment change son volume ?",
+      "choices": ["Il est multiplié par 8", "Il est multiplié par 4", "Il est multiplié par 2", "Il est multiplié par 6"],
+      "answer": 0,
+      "explanation": "V = (4/3)πr³. Si r → 2r : V' = (4/3)π(2r)³ = (4/3)π × 8r³ = 8V. Le volume est multiplié par 8 ! C'est parce que r est au CUBE. Quand on multiplie une longueur par k, le volume est multiplié par k³. Si k = 2 : 2³ = 8. C'est pourquoi une boule de 10 cm de rayon contient 8 fois plus que celle de 5 cm, pas 2 fois plus !",
+      "hint": "Le rayon est au cube dans la formule. Si r est doublé, r³ est multiplié par...",
+      "category": "Volumes",
+      "difficulty": 2
+    }
+  ]
+}

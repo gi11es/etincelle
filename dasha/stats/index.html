@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0f0f23">
+  <title>Statistiques - Dasha</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="stats.css">
+</head>
+<body>
+  <div id="app">
+    <section class="stats-page">
+      <nav class="screen-nav">
+        <a href="../index.html" class="btn-back">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+          Portail
+        </a>
+      </nav>
+
+      <header class="stats-header">
+        <h1 class="stats-title">Statistiques</h1>
+        <p class="stats-subtitle">Ton parcours d'apprentissage</p>
+      </header>
+
+      <!-- Summary Cards -->
+      <div class="stats-summary">
+        <div class="summary-card">
+          <span class="summary-icon">⭐</span>
+          <span class="summary-value" id="sum-xp">0</span>
+          <span class="summary-label">XP total</span>
+        </div>
+        <div class="summary-card">
+          <span class="summary-icon">🔥</span>
+          <span class="summary-value" id="sum-streak">0</span>
+          <span class="summary-label">jours de suite</span>
+        </div>
+        <div class="summary-card">
+          <span class="summary-icon">🧠</span>
+          <span class="summary-value" id="sum-mastered">0</span>
+          <span class="summary-label">maîtrisées</span>
+        </div>
+        <div class="summary-card">
+          <span class="summary-icon">🎮</span>
+          <span class="summary-value" id="sum-sessions">0</span>
+          <span class="summary-label">sessions</span>
+        </div>
+      </div>
+
+      <!-- Charts -->
+      <div class="chart-grid">
+        <div class="chart-card">
+          <h3>XP gagnés (30 jours)</h3>
+          <canvas id="chart-xp"></canvas>
+        </div>
+
+        <div class="chart-card">
+          <h3>Maîtrise des questions</h3>
+          <div class="donut-container">
+            <canvas id="chart-mastery"></canvas>
+            <div class="donut-legend" id="donut-legend"></div>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <h3>Précision (30 jours)</h3>
+          <canvas id="chart-accuracy"></canvas>
+        </div>
+
+        <div class="chart-card">
+          <h3>Activité récente</h3>
+          <canvas id="chart-heatmap"></canvas>
+        </div>
+
+        <div class="chart-card">
+          <h3>Temps passé (14 jours)</h3>
+          <canvas id="chart-time"></canvas>
+        </div>
+
+        <div class="chart-card chart-card--wide">
+          <h3>Collection de badges</h3>
+          <div id="badge-grid" class="badge-grid"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="stats.js"></script>
+</body>
+</html>

@@ -1,0 +1,687 @@
+{
+  "id": "valeurs-principes",
+  "title": "Valeurs et principes de la République",
+  "description": "Les valeurs fondamentales, les principes républicains, la laïcité, les droits de l'homme et les libertés fondamentales de la République française.",
+  "items": [
+    {
+      "id": "vp-001",
+      "question": "Quelle est la devise de la République française ?",
+      "choices": [
+        "Liberté, Égalité, Fraternité",
+        "Unité, Justice, Progrès",
+        "Paix, Travail, Patrie",
+        "Honneur, Patrie, Valeur"
+      ],
+      "answer": 0,
+      "explanation": "La devise de la République française est « Liberté, Égalité, Fraternité ». Elle figure dans l'article 2 de la Constitution de 1958 et trouve son origine dans la Révolution française.",
+      "statement": "La devise de la République française est « Liberté, Égalité, Fraternité ».",
+      "isTrue": true,
+      "flashcard_front": "Quelle est la devise de la République française ?",
+      "flashcard_back": "Liberté, Égalité, Fraternité (article 2 de la Constitution de 1958)",
+      "category": "devise"
+    },
+    {
+      "id": "vp-002",
+      "question": "En quelle année la Déclaration des droits de l'homme et du citoyen a-t-elle été adoptée ?",
+      "choices": [
+        "1776",
+        "1789",
+        "1791",
+        "1804"
+      ],
+      "answer": 1,
+      "explanation": "La Déclaration des droits de l'homme et du citoyen (DDHC) a été adoptée le 26 août 1789, pendant la Révolution française. Elle est le texte fondateur des libertés fondamentales en France.",
+      "statement": "La Déclaration des droits de l'homme et du citoyen date de 1791.",
+      "isTrue": false,
+      "flashcard_front": "Date d'adoption de la Déclaration des droits de l'homme et du citoyen ?",
+      "flashcard_back": "26 août 1789, pendant la Révolution française",
+      "category": "DDHC"
+    },
+    {
+      "id": "vp-003",
+      "question": "Que signifie le principe de laïcité en France ?",
+      "choices": [
+        "L'interdiction de toute religion",
+        "La séparation des Églises et de l'État et la liberté de conscience",
+        "L'obligation d'être athée pour être citoyen",
+        "La supériorité de la religion catholique"
+      ],
+      "answer": 1,
+      "explanation": "La laïcité garantit la liberté de conscience et la séparation des Églises et de l'État. Chacun est libre de croire ou de ne pas croire, et l'État ne privilégie aucune religion.",
+      "statement": "La laïcité interdit toute pratique religieuse en France.",
+      "isTrue": false,
+      "flashcard_front": "Que garantit le principe de laïcité ?",
+      "flashcard_back": "La séparation des Églises et de l'État, la liberté de conscience et la neutralité de l'État envers toutes les religions.",
+      "category": "laïcité"
+    },
+    {
+      "id": "vp-004",
+      "question": "Quelle loi a instauré la séparation des Églises et de l'État ?",
+      "choices": [
+        "La loi du 9 décembre 1905",
+        "La loi du 14 juillet 1880",
+        "La loi du 28 mars 1882",
+        "La loi du 1er juillet 1901"
+      ],
+      "answer": 0,
+      "explanation": "La loi du 9 décembre 1905 relative à la séparation des Églises et de l'État est le texte fondateur de la laïcité en France. Elle affirme que « La République ne reconnaît, ne salarie ni ne subventionne aucun culte ».",
+      "statement": "La loi de séparation des Églises et de l'État date du 9 décembre 1905.",
+      "isTrue": true,
+      "flashcard_front": "Date de la loi de séparation des Églises et de l'État ?",
+      "flashcard_back": "9 décembre 1905. Elle affirme que la République ne reconnaît, ne salarie ni ne subventionne aucun culte.",
+      "category": "laïcité"
+    },
+    {
+      "id": "vp-005",
+      "question": "Quel article de la Déclaration des droits de l'homme et du citoyen affirme que « Les hommes naissent et demeurent libres et égaux en droits » ?",
+      "choices": [
+        "Article 1er",
+        "Article 3",
+        "Article 6",
+        "Article 10"
+      ],
+      "answer": 0,
+      "explanation": "L'article 1er de la DDHC de 1789 dispose : « Les hommes naissent et demeurent libres et égaux en droits. Les distinctions sociales ne peuvent être fondées que sur l'utilité commune. »",
+      "statement": "L'article 1er de la DDHC de 1789 affirme que les hommes naissent et demeurent libres et égaux en droits.",
+      "isTrue": true,
+      "flashcard_front": "Que dit l'article 1er de la DDHC de 1789 ?",
+      "flashcard_back": "« Les hommes naissent et demeurent libres et égaux en droits. Les distinctions sociales ne peuvent être fondées que sur l'utilité commune. »",
+      "category": "DDHC"
+    },
+    {
+      "id": "vp-006",
+      "question": "Selon la Constitution, la France est une République...",
+      "choices": [
+        "indivisible, laïque, démocratique et sociale",
+        "fédérale, laïque, libérale et sociale",
+        "indivisible, catholique, démocratique et sociale",
+        "divisible, laïque, démocratique et libérale"
+      ],
+      "answer": 0,
+      "explanation": "L'article 1er de la Constitution de 1958 dispose que « La France est une République indivisible, laïque, démocratique et sociale ».",
+      "statement": "La France est une République fédérale, laïque, démocratique et sociale.",
+      "isTrue": false,
+      "flashcard_front": "Quels sont les quatre caractères de la République selon l'article 1er de la Constitution ?",
+      "flashcard_back": "Indivisible, laïque, démocratique et sociale (article 1er de la Constitution de 1958)",
+      "category": "principes"
+    },
+    {
+      "id": "vp-007",
+      "question": "Qu'est-ce que le suffrage universel ?",
+      "choices": [
+        "Le droit de vote réservé aux hommes",
+        "Le droit de vote accordé à tous les citoyens majeurs sans distinction",
+        "Le droit de vote réservé aux propriétaires",
+        "Le droit de vote réservé aux personnes instruites"
+      ],
+      "answer": 1,
+      "explanation": "Le suffrage universel est le droit de vote accordé à tous les citoyens majeurs (18 ans) sans distinction de sexe, de richesse, de religion ou d'origine.",
+      "statement": "Le suffrage universel est le droit de vote réservé aux citoyens propriétaires.",
+      "isTrue": false,
+      "flashcard_front": "Définition du suffrage universel ?",
+      "flashcard_back": "Droit de vote accordé à tous les citoyens majeurs (18 ans) sans distinction de sexe, de richesse, de religion ou d'origine.",
+      "category": "suffrage"
+    },
+    {
+      "id": "vp-008",
+      "question": "En quelle année le suffrage universel masculin a-t-il été définitivement instauré en France ?",
+      "choices": [
+        "1789",
+        "1830",
+        "1848",
+        "1870"
+      ],
+      "answer": 2,
+      "explanation": "Le suffrage universel masculin a été définitivement instauré en France par le décret du 5 mars 1848, sous la IIe République. Tous les hommes de plus de 21 ans obtiennent alors le droit de vote.",
+      "statement": "Le suffrage universel masculin a été instauré définitivement en 1848.",
+      "isTrue": true,
+      "flashcard_front": "Date du suffrage universel masculin définitif en France ?",
+      "flashcard_back": "1848, sous la IIe République (décret du 5 mars 1848). Tous les hommes de plus de 21 ans obtiennent le droit de vote.",
+      "category": "suffrage"
+    },
+    {
+      "id": "vp-009",
+      "question": "En quelle année les femmes ont-elles obtenu le droit de vote en France ?",
+      "choices": [
+        "1936",
+        "1944",
+        "1946",
+        "1958"
+      ],
+      "answer": 1,
+      "explanation": "Les femmes ont obtenu le droit de vote par l'ordonnance du 21 avril 1944, signée par le général de Gaulle à Alger. Elles ont voté pour la première fois aux élections municipales du 29 avril 1945.",
+      "statement": "Les femmes françaises ont obtenu le droit de vote en 1944.",
+      "isTrue": true,
+      "flashcard_front": "Quand les femmes ont-elles obtenu le droit de vote en France ?",
+      "flashcard_back": "Ordonnance du 21 avril 1944. Premier vote féminin : élections municipales du 29 avril 1945.",
+      "category": "suffrage"
+    },
+    {
+      "id": "vp-010",
+      "question": "Que signifie le principe d'indivisibilité de la République ?",
+      "choices": [
+        "Que la France ne peut pas être divisée en régions",
+        "Que la loi est la même pour tous sur l'ensemble du territoire",
+        "Que le président ne peut pas être destitué",
+        "Que le territoire ne peut jamais changer"
+      ],
+      "answer": 1,
+      "explanation": "L'indivisibilité de la République signifie que la loi est la même pour tous sur l'ensemble du territoire, qu'il n'existe qu'une seule souveraineté et qu'aucune partie du peuple ne peut s'en attribuer l'exercice.",
+      "statement": "Le principe d'indivisibilité de la République signifie que la loi est la même pour tous sur l'ensemble du territoire.",
+      "isTrue": true,
+      "flashcard_front": "Que signifie le principe d'indivisibilité de la République ?",
+      "flashcard_back": "La loi est la même pour tous sur l'ensemble du territoire. Il n'existe qu'une seule souveraineté nationale.",
+      "category": "principes"
+    },
+    {
+      "id": "vp-011",
+      "question": "Quel texte constitutionnel est actuellement en vigueur en France ?",
+      "choices": [
+        "La Constitution de 1946",
+        "La Constitution de 1958",
+        "La Déclaration des droits de l'homme de 1789",
+        "La Charte de 1830"
+      ],
+      "answer": 1,
+      "explanation": "La Constitution du 4 octobre 1958, fondatrice de la Ve République, est le texte constitutionnel actuellement en vigueur. Son préambule renvoie à la DDHC de 1789 et au préambule de 1946.",
+      "statement": "La Constitution actuellement en vigueur en France date de 1946.",
+      "isTrue": false,
+      "flashcard_front": "Quelle Constitution est actuellement en vigueur en France ?",
+      "flashcard_back": "La Constitution du 4 octobre 1958 (Ve République). Son préambule renvoie à la DDHC de 1789 et au préambule de la Constitution de 1946.",
+      "category": "principes"
+    },
+    {
+      "id": "vp-012",
+      "question": "La liberté d'expression en France est-elle absolue ?",
+      "choices": [
+        "Oui, on peut tout dire sans aucune limite",
+        "Non, elle est limitée par le respect d'autrui, l'interdiction de la diffamation, de l'injure et de l'incitation à la haine",
+        "Non, seuls les journalistes ont la liberté d'expression",
+        "Oui, sauf en période électorale"
+      ],
+      "answer": 1,
+      "explanation": "La liberté d'expression est un droit fondamental mais elle n'est pas absolue. Elle est encadrée par la loi : interdiction de la diffamation, de l'injure, de l'incitation à la haine raciale, du négationnisme, etc.",
+      "statement": "La liberté d'expression en France est absolue et sans aucune limite.",
+      "isTrue": false,
+      "flashcard_front": "La liberté d'expression est-elle absolue en France ?",
+      "flashcard_back": "Non. Elle est limitée par l'interdiction de la diffamation, de l'injure, de l'incitation à la haine raciale, de l'apologie du terrorisme, etc.",
+      "category": "libertés"
+    },
+    {
+      "id": "vp-013",
+      "question": "Quelle liberté la loi du 1er juillet 1901 garantit-elle ?",
+      "choices": [
+        "La liberté de la presse",
+        "La liberté d'association",
+        "La liberté de réunion",
+        "La liberté de culte"
+      ],
+      "answer": 1,
+      "explanation": "La loi du 1er juillet 1901 relative au contrat d'association garantit la liberté d'association. Toute personne peut créer ou adhérer librement à une association.",
+      "statement": "La loi du 1er juillet 1901 garantit la liberté d'association.",
+      "isTrue": true,
+      "flashcard_front": "Que garantit la loi du 1er juillet 1901 ?",
+      "flashcard_back": "La liberté d'association. Toute personne peut créer ou adhérer librement à une association.",
+      "category": "libertés"
+    },
+    {
+      "id": "vp-014",
+      "question": "Que signifie la liberté de conscience ?",
+      "choices": [
+        "Le droit de changer de nationalité",
+        "Le droit de penser, croire ou ne pas croire librement",
+        "Le droit de ne pas payer d'impôts",
+        "Le droit de ne pas respecter les lois"
+      ],
+      "answer": 1,
+      "explanation": "La liberté de conscience est le droit pour chacun de penser, croire ou ne pas croire librement. Elle est garantie par la DDHC de 1789 (article 10) et par la loi de 1905.",
+      "statement": "La liberté de conscience permet à chacun de croire ou de ne pas croire librement.",
+      "isTrue": true,
+      "flashcard_front": "Définition de la liberté de conscience ?",
+      "flashcard_back": "Le droit pour chacun de penser, croire ou ne pas croire librement. Garantie par la DDHC (art. 10) et la loi de 1905.",
+      "category": "libertés"
+    },
+    {
+      "id": "vp-015",
+      "question": "D'où émane la souveraineté nationale selon la Constitution ?",
+      "choices": [
+        "Du président de la République",
+        "Du Parlement",
+        "Du peuple",
+        "Du Conseil constitutionnel"
+      ],
+      "answer": 2,
+      "explanation": "L'article 3 de la Constitution dispose que « La souveraineté nationale appartient au peuple qui l'exerce par ses représentants et par la voie du référendum ».",
+      "statement": "La souveraineté nationale appartient au président de la République.",
+      "isTrue": false,
+      "flashcard_front": "À qui appartient la souveraineté nationale selon la Constitution ?",
+      "flashcard_back": "Au peuple, qui l'exerce par ses représentants et par la voie du référendum (article 3 de la Constitution).",
+      "category": "souveraineté"
+    },
+    {
+      "id": "vp-016",
+      "question": "Quel est le principe d'égalité devant la loi ?",
+      "choices": [
+        "Seuls les citoyens français sont égaux devant la loi",
+        "Tous les citoyens sont égaux devant la loi sans distinction d'origine, de race ou de religion",
+        "Les hommes et les femmes ne sont pas égaux devant la loi",
+        "L'égalité ne concerne que le droit de vote"
+      ],
+      "answer": 1,
+      "explanation": "L'article 1er de la Constitution garantit l'égalité devant la loi de tous les citoyens sans distinction d'origine, de race ou de religion. Ce principe est aussi affirmé dans la DDHC de 1789.",
+      "statement": "Tous les citoyens sont égaux devant la loi sans distinction d'origine, de race ou de religion.",
+      "isTrue": true,
+      "flashcard_front": "Que garantit le principe d'égalité devant la loi ?",
+      "flashcard_back": "Tous les citoyens sont égaux devant la loi sans distinction d'origine, de race ou de religion (article 1er de la Constitution).",
+      "category": "égalité"
+    },
+    {
+      "id": "vp-017",
+      "question": "Depuis quand l'égalité entre les hommes et les femmes est-elle inscrite dans la Constitution ?",
+      "choices": [
+        "Depuis 1789",
+        "Depuis 1946",
+        "Depuis 1958",
+        "Depuis 2000"
+      ],
+      "answer": 1,
+      "explanation": "Le préambule de la Constitution de 1946 affirme que « la loi garantit à la femme, dans tous les domaines, des droits égaux à ceux de l'homme ». Ce texte fait partie du bloc de constitutionnalité.",
+      "statement": "L'égalité entre les hommes et les femmes est inscrite dans le préambule de la Constitution de 1946.",
+      "isTrue": true,
+      "flashcard_front": "Depuis quand l'égalité homme-femme est-elle inscrite dans la Constitution ?",
+      "flashcard_back": "Depuis le préambule de la Constitution de 1946 : « la loi garantit à la femme, dans tous les domaines, des droits égaux à ceux de l'homme ».",
+      "category": "égalité"
+    },
+    {
+      "id": "vp-018",
+      "question": "Quel article de la DDHC définit la liberté ?",
+      "choices": [
+        "Article 1er",
+        "Article 4",
+        "Article 6",
+        "Article 11"
+      ],
+      "answer": 1,
+      "explanation": "L'article 4 de la DDHC de 1789 définit la liberté : « La liberté consiste à pouvoir faire tout ce qui ne nuit pas à autrui ». Il fixe ainsi les limites de la liberté individuelle.",
+      "statement": "L'article 4 de la DDHC définit la liberté comme le pouvoir de faire tout ce qui ne nuit pas à autrui.",
+      "isTrue": true,
+      "flashcard_front": "Comment la DDHC de 1789 définit-elle la liberté (article 4) ?",
+      "flashcard_back": "« La liberté consiste à pouvoir faire tout ce qui ne nuit pas à autrui. » Les limites ne peuvent être fixées que par la loi.",
+      "category": "DDHC"
+    },
+    {
+      "id": "vp-019",
+      "question": "La laïcité interdit-elle de porter des signes religieux dans l'espace public ?",
+      "choices": [
+        "Oui, tout signe religieux est interdit partout",
+        "Non, la laïcité garantit la liberté de pratiquer sa religion, mais des restrictions existent dans certains lieux publics (écoles, etc.)",
+        "Oui, sauf dans les lieux de culte",
+        "Non, il n'existe aucune restriction"
+      ],
+      "answer": 1,
+      "explanation": "La laïcité garantit la liberté religieuse. Le port de signes religieux est libre dans l'espace public, mais la loi du 15 mars 2004 interdit le port de signes religieux ostensibles dans les écoles publiques.",
+      "statement": "La laïcité interdit tout signe religieux dans l'espace public en France.",
+      "isTrue": false,
+      "flashcard_front": "La laïcité interdit-elle les signes religieux dans l'espace public ?",
+      "flashcard_back": "Non. Le port est libre dans l'espace public. Mais la loi du 15 mars 2004 interdit les signes religieux ostensibles dans les écoles publiques.",
+      "category": "laïcité"
+    },
+    {
+      "id": "vp-020",
+      "question": "Quelle loi garantit la liberté de la presse en France ?",
+      "choices": [
+        "La loi du 29 juillet 1881",
+        "La loi du 1er juillet 1901",
+        "La loi du 9 décembre 1905",
+        "La loi du 15 mars 2004"
+      ],
+      "answer": 0,
+      "explanation": "La loi du 29 juillet 1881 sur la liberté de la presse est le texte fondateur de la liberté de la presse en France. Elle garantit la liberté d'imprimer et de publier.",
+      "statement": "La liberté de la presse est garantie par la loi du 29 juillet 1881.",
+      "isTrue": true,
+      "flashcard_front": "Quelle loi garantit la liberté de la presse en France ?",
+      "flashcard_back": "La loi du 29 juillet 1881 sur la liberté de la presse.",
+      "category": "libertés"
+    },
+    {
+      "id": "vp-021",
+      "question": "Que signifie la fraternité dans la devise républicaine ?",
+      "choices": [
+        "L'obligation d'avoir des frères et soeurs",
+        "Le devoir de solidarité et d'entraide entre les citoyens",
+        "Le droit de former des partis politiques",
+        "L'obligation de servir dans l'armée"
+      ],
+      "answer": 1,
+      "explanation": "La fraternité exprime le devoir de solidarité et d'entraide entre les citoyens. Elle implique la solidarité nationale et le vivre-ensemble. Le Conseil constitutionnel a reconnu la valeur constitutionnelle de la fraternité en 2018.",
+      "statement": "La fraternité dans la devise républicaine exprime le devoir de solidarité entre les citoyens.",
+      "isTrue": true,
+      "flashcard_front": "Que signifie la fraternité dans la devise républicaine ?",
+      "flashcard_back": "Le devoir de solidarité et d'entraide entre les citoyens. Le Conseil constitutionnel a reconnu sa valeur constitutionnelle en 2018.",
+      "category": "devise"
+    },
+    {
+      "id": "vp-022",
+      "question": "Comment peut-on modifier la Constitution de la Ve République ?",
+      "choices": [
+        "Par un simple vote de l'Assemblée nationale",
+        "Par référendum ou par le Congrès (Parlement réuni à Versailles, majorité des 3/5)",
+        "Par décision du président seul",
+        "Par décision du Conseil constitutionnel"
+      ],
+      "answer": 1,
+      "explanation": "La Constitution peut être révisée soit par référendum, soit par le Congrès (Assemblée nationale et Sénat réunis à Versailles) qui doit approuver la révision à la majorité des 3/5 des suffrages exprimés (article 89).",
+      "statement": "La Constitution peut être modifiée par référendum ou par le Congrès à la majorité des 3/5.",
+      "isTrue": true,
+      "flashcard_front": "Comment peut-on réviser la Constitution ?",
+      "flashcard_back": "Par référendum ou par le Congrès (Parlement réuni à Versailles) à la majorité des 3/5 des suffrages exprimés (article 89).",
+      "category": "principes"
+    },
+    {
+      "id": "vp-023",
+      "question": "Qu'est-ce que le principe de République « sociale » signifie ?",
+      "choices": [
+        "Que la France est un pays socialiste",
+        "Que l'État doit assurer la solidarité et la protection sociale des citoyens",
+        "Que les réseaux sociaux sont un droit constitutionnel",
+        "Que chacun doit être membre d'un parti politique"
+      ],
+      "answer": 1,
+      "explanation": "Le caractère social de la République signifie que l'État doit assurer la solidarité nationale, la protection sociale (Sécurité sociale, aide aux plus démunis), et lutter contre les inégalités.",
+      "statement": "Le caractère social de la République signifie que l'État doit assurer la protection sociale des citoyens.",
+      "isTrue": true,
+      "flashcard_front": "Que signifie le caractère « social » de la République ?",
+      "flashcard_back": "L'État doit assurer la solidarité nationale et la protection sociale des citoyens (Sécurité sociale, aide sociale, lutte contre les inégalités).",
+      "category": "principes"
+    },
+    {
+      "id": "vp-024",
+      "question": "Quel est le principe fondamental du caractère démocratique de la République ?",
+      "choices": [
+        "Le gouvernement du peuple, par le peuple, pour le peuple",
+        "Le gouvernement par une élite éclairée",
+        "Le gouvernement par le roi et ses conseillers",
+        "Le gouvernement par les juges"
+      ],
+      "answer": 0,
+      "explanation": "L'article 2 de la Constitution reprend la formule d'Abraham Lincoln : « gouvernement du peuple, par le peuple et pour le peuple ». C'est le principe de la démocratie.",
+      "statement": "L'article 2 de la Constitution définit le principe démocratique comme le « gouvernement du peuple, par le peuple et pour le peuple ».",
+      "isTrue": true,
+      "flashcard_front": "Comment la Constitution définit-elle le principe démocratique ?",
+      "flashcard_back": "« Gouvernement du peuple, par le peuple et pour le peuple » (article 2 de la Constitution, formule d'Abraham Lincoln).",
+      "category": "principes"
+    },
+    {
+      "id": "vp-025",
+      "question": "Quelle est la langue officielle de la République selon la Constitution ?",
+      "choices": [
+        "Le français et les langues régionales",
+        "Le français uniquement",
+        "Le français et l'anglais",
+        "La Constitution ne précise pas de langue officielle"
+      ],
+      "answer": 1,
+      "explanation": "L'article 2 de la Constitution de 1958 dispose que « La langue de la République est le français ». C'est la seule langue officielle de la France.",
+      "statement": "L'article 2 de la Constitution précise que la langue de la République est le français.",
+      "isTrue": true,
+      "flashcard_front": "Quelle est la langue officielle de la République ?",
+      "flashcard_back": "Le français (article 2 de la Constitution : « La langue de la République est le français »).",
+      "category": "principes"
+    },
+    {
+      "id": "vp-026",
+      "question": "Qu'est-ce que le « bloc de constitutionnalité » ?",
+      "choices": [
+        "Le bâtiment du Conseil constitutionnel",
+        "L'ensemble des textes ayant valeur constitutionnelle : Constitution de 1958, DDHC de 1789, préambule de 1946, Charte de l'environnement de 2004",
+        "Le Code civil",
+        "L'ensemble des lois votées par le Parlement"
+      ],
+      "answer": 1,
+      "explanation": "Le bloc de constitutionnalité comprend la Constitution de 1958, la DDHC de 1789, le préambule de la Constitution de 1946 et la Charte de l'environnement de 2004. Ces textes sont au sommet de la hiérarchie des normes.",
+      "statement": "Le bloc de constitutionnalité inclut la DDHC de 1789 et le préambule de la Constitution de 1946.",
+      "isTrue": true,
+      "flashcard_front": "Quels textes composent le « bloc de constitutionnalité » ?",
+      "flashcard_back": "La Constitution de 1958, la DDHC de 1789, le préambule de la Constitution de 1946, et la Charte de l'environnement de 2004.",
+      "category": "principes"
+    },
+    {
+      "id": "vp-027",
+      "question": "Quel principe interdit la discrimination fondée sur le sexe ?",
+      "choices": [
+        "Le principe de laïcité",
+        "Le principe d'égalité entre les hommes et les femmes",
+        "Le principe de fraternité",
+        "Le principe de souveraineté"
+      ],
+      "answer": 1,
+      "explanation": "Le principe d'égalité entre les hommes et les femmes, inscrit dans le préambule de 1946 et renforcé par la révision constitutionnelle de 1999, interdit toute discrimination fondée sur le sexe.",
+      "statement": "Le principe de laïcité interdit la discrimination fondée sur le sexe.",
+      "isTrue": false,
+      "flashcard_front": "Quel principe constitutionnel interdit la discrimination fondée sur le sexe ?",
+      "flashcard_back": "Le principe d'égalité entre les hommes et les femmes (préambule de 1946, renforcé par la révision constitutionnelle de 1999).",
+      "category": "égalité"
+    },
+    {
+      "id": "vp-028",
+      "question": "L'article 10 de la DDHC de 1789 porte sur quel droit ?",
+      "choices": [
+        "Le droit de propriété",
+        "La liberté d'opinion et de religion",
+        "Le droit à un procès équitable",
+        "Le droit de vote"
+      ],
+      "answer": 1,
+      "explanation": "L'article 10 de la DDHC dispose : « Nul ne doit être inquiété pour ses opinions, même religieuses, pourvu que leur manifestation ne trouble pas l'ordre public établi par la Loi ». Il garantit la liberté d'opinion.",
+      "statement": "L'article 10 de la DDHC de 1789 garantit la liberté d'opinion, y compris religieuse.",
+      "isTrue": true,
+      "flashcard_front": "Que dit l'article 10 de la DDHC de 1789 ?",
+      "flashcard_back": "« Nul ne doit être inquiété pour ses opinions, même religieuses, pourvu que leur manifestation ne trouble pas l'ordre public. »",
+      "category": "DDHC"
+    },
+    {
+      "id": "vp-029",
+      "question": "Qu'est-ce que le référendum ?",
+      "choices": [
+        "Une consultation du Conseil constitutionnel",
+        "Un vote par lequel le peuple se prononce directement sur un projet de loi ou une révision constitutionnelle",
+        "Un vote réservé aux élus",
+        "Une pétition adressée au président"
+      ],
+      "answer": 1,
+      "explanation": "Le référendum est un vote par lequel le peuple se prononce directement sur un texte. Il est prévu par les articles 11 et 89 de la Constitution. C'est une forme de démocratie directe.",
+      "statement": "Le référendum permet au peuple de se prononcer directement sur un projet de loi.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce qu'un référendum ?",
+      "flashcard_back": "Un vote par lequel le peuple se prononce directement sur un projet de loi ou une révision constitutionnelle (articles 11 et 89 de la Constitution).",
+      "category": "souveraineté"
+    },
+    {
+      "id": "vp-030",
+      "question": "Quelle valeur républicaine est illustrée par le système de Sécurité sociale ?",
+      "choices": [
+        "La liberté",
+        "L'égalité",
+        "La fraternité / solidarité",
+        "La laïcité"
+      ],
+      "answer": 2,
+      "explanation": "Le système de Sécurité sociale illustre la fraternité et la solidarité nationale. Créé en 1945, il repose sur le principe « chacun contribue selon ses moyens et reçoit selon ses besoins ».",
+      "statement": "Le système de Sécurité sociale illustre le principe de fraternité et de solidarité.",
+      "isTrue": true,
+      "flashcard_front": "Quelle valeur républicaine illustre la Sécurité sociale ?",
+      "flashcard_back": "La fraternité / solidarité. Créée en 1945, elle repose sur le principe « chacun contribue selon ses moyens et reçoit selon ses besoins ».",
+      "category": "devise"
+    },
+    {
+      "id": "vp-031",
+      "question": "Quel article de la DDHC concerne le droit de propriété ?",
+      "choices": [
+        "Article 1er",
+        "Article 11",
+        "Article 17",
+        "Article 4"
+      ],
+      "answer": 2,
+      "explanation": "L'article 17 de la DDHC déclare : « La propriété étant un droit inviolable et sacré, nul ne peut en être privé, si ce n'est lorsque la nécessité publique, légalement constatée, l'exige évidemment ».",
+      "statement": "L'article 17 de la DDHC de 1789 protège le droit de propriété.",
+      "isTrue": true,
+      "flashcard_front": "Quel article de la DDHC protège le droit de propriété ?",
+      "flashcard_back": "L'article 17 : « La propriété étant un droit inviolable et sacré, nul ne peut en être privé » sauf nécessité publique.",
+      "category": "DDHC"
+    },
+    {
+      "id": "vp-032",
+      "question": "La loi de 1905 prévoit-elle que l'État subventionne les cultes ?",
+      "choices": [
+        "Oui, tous les cultes reçoivent une subvention",
+        "Oui, mais seulement les cultes reconnus",
+        "Non, la République ne reconnaît, ne salarie ni ne subventionne aucun culte",
+        "Non, sauf dans les départements d'Alsace-Moselle"
+      ],
+      "answer": 2,
+      "explanation": "L'article 2 de la loi de 1905 dispose que « La République ne reconnaît, ne salarie ni ne subventionne aucun culte ». Exception historique : l'Alsace-Moselle conserve le régime concordataire.",
+      "statement": "Selon la loi de 1905, la République ne reconnaît, ne salarie ni ne subventionne aucun culte.",
+      "isTrue": true,
+      "flashcard_front": "La loi de 1905 permet-elle à l'État de financer les cultes ?",
+      "flashcard_back": "Non. « La République ne reconnaît, ne salarie ni ne subventionne aucun culte » (article 2). Exception : l'Alsace-Moselle (régime concordataire).",
+      "category": "laïcité"
+    },
+    {
+      "id": "vp-033",
+      "question": "Que garantit l'article 11 de la DDHC de 1789 ?",
+      "choices": [
+        "Le droit de propriété",
+        "La libre communication des pensées et des opinions",
+        "Le droit à un avocat",
+        "Le droit au travail"
+      ],
+      "answer": 1,
+      "explanation": "L'article 11 de la DDHC dispose : « La libre communication des pensées et des opinions est un des droits les plus précieux de l'Homme ». C'est le fondement de la liberté d'expression.",
+      "statement": "L'article 11 de la DDHC de 1789 fonde la liberté d'expression.",
+      "isTrue": true,
+      "flashcard_front": "Que garantit l'article 11 de la DDHC de 1789 ?",
+      "flashcard_back": "La libre communication des pensées et des opinions : « un des droits les plus précieux de l'Homme ». Fondement de la liberté d'expression.",
+      "category": "DDHC"
+    },
+    {
+      "id": "vp-034",
+      "question": "Qu'est-ce que la « République démocratique » implique pour les citoyens ?",
+      "choices": [
+        "L'obligation d'adhérer à un parti politique",
+        "Le droit de participer à la vie politique par le vote et la candidature aux élections",
+        "L'obligation de voter",
+        "Le droit de désobéir aux lois injustes"
+      ],
+      "answer": 1,
+      "explanation": "La démocratie implique que les citoyens participent à la vie politique par le vote et la possibilité de se présenter aux élections. En France, le vote n'est pas obligatoire (contrairement à la Belgique).",
+      "statement": "En France, le vote est obligatoire.",
+      "isTrue": false,
+      "flashcard_front": "Le vote est-il obligatoire en France ?",
+      "flashcard_back": "Non. Le vote est un droit mais pas une obligation légale en France (contrairement à la Belgique ou au Luxembourg).",
+      "category": "souveraineté"
+    },
+    {
+      "id": "vp-035",
+      "question": "La loi du 15 mars 2004 concerne quel sujet ?",
+      "choices": [
+        "L'interdiction du voile intégral dans l'espace public",
+        "L'interdiction des signes religieux ostensibles dans les écoles publiques",
+        "La séparation des Églises et de l'État",
+        "La liberté d'association"
+      ],
+      "answer": 1,
+      "explanation": "La loi du 15 mars 2004 interdit le port de signes ou tenues manifestant ostensiblement une appartenance religieuse dans les écoles, collèges et lycées publics.",
+      "statement": "La loi du 15 mars 2004 interdit les signes religieux ostensibles dans les écoles publiques.",
+      "isTrue": true,
+      "flashcard_front": "Que prévoit la loi du 15 mars 2004 ?",
+      "flashcard_back": "L'interdiction du port de signes ou tenues manifestant ostensiblement une appartenance religieuse dans les écoles, collèges et lycées publics.",
+      "category": "laïcité"
+    },
+    {
+      "id": "vp-036",
+      "question": "Quels sont les symboles de la République mentionnés dans la Constitution ?",
+      "choices": [
+        "Le drapeau tricolore, La Marseillaise, la devise « Liberté, Égalité, Fraternité »",
+        "Le coq, la fleur de lys, Marianne",
+        "L'hymne européen, le drapeau européen, l'euro",
+        "Le bonnet phrygien, la cocarde, le faisceau"
+      ],
+      "answer": 0,
+      "explanation": "L'article 2 de la Constitution mentionne : le drapeau tricolore bleu-blanc-rouge, l'hymne national La Marseillaise, la devise « Liberté, Égalité, Fraternité » et le principe « gouvernement du peuple, par le peuple et pour le peuple ».",
+      "statement": "La Marseillaise et le drapeau tricolore sont des symboles de la République inscrits dans la Constitution.",
+      "isTrue": true,
+      "flashcard_front": "Quels symboles de la République sont mentionnés à l'article 2 de la Constitution ?",
+      "flashcard_back": "Le drapeau tricolore bleu-blanc-rouge, La Marseillaise (hymne national), la devise « Liberté, Égalité, Fraternité ».",
+      "category": "principes"
+    },
+    {
+      "id": "vp-037",
+      "question": "Qu'est-ce que la « Charte de la laïcité à l'École » ?",
+      "choices": [
+        "Une loi votée par le Parlement",
+        "Un document affiché dans les établissements scolaires publics rappelant les principes de la laïcité",
+        "Un texte réservé aux enseignants",
+        "Un traité international"
+      ],
+      "answer": 1,
+      "explanation": "La Charte de la laïcité à l'École, publiée en 2013, est un document affiché dans tous les établissements scolaires publics. Elle rappelle en 15 articles les principes de la laïcité à l'école.",
+      "statement": "La Charte de la laïcité à l'École est affichée dans tous les établissements scolaires publics depuis 2013.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que la Charte de la laïcité à l'École ?",
+      "flashcard_back": "Un document en 15 articles affiché dans tous les établissements scolaires publics depuis 2013, rappelant les principes de la laïcité.",
+      "category": "laïcité"
+    },
+    {
+      "id": "vp-038",
+      "question": "L'article 6 de la DDHC de 1789 porte sur quel sujet ?",
+      "choices": [
+        "La liberté d'expression",
+        "La loi, expression de la volonté générale",
+        "Le droit de propriété",
+        "La présomption d'innocence"
+      ],
+      "answer": 1,
+      "explanation": "L'article 6 de la DDHC dispose que « La Loi est l'expression de la volonté générale. Tous les Citoyens ont droit de concourir personnellement, ou par leurs Représentants, à sa formation ».",
+      "statement": "L'article 6 de la DDHC affirme que la loi est l'expression de la volonté générale.",
+      "isTrue": true,
+      "flashcard_front": "Que dit l'article 6 de la DDHC de 1789 ?",
+      "flashcard_back": "« La Loi est l'expression de la volonté générale. Tous les Citoyens ont droit de concourir à sa formation. » Elle doit être la même pour tous.",
+      "category": "DDHC"
+    },
+    {
+      "id": "vp-039",
+      "question": "Que signifie la notion de « contrat social » dans la République ?",
+      "choices": [
+        "Un contrat de travail obligatoire",
+        "Un engagement mutuel entre les citoyens et la collectivité : droits et devoirs réciproques",
+        "Un accord commercial entre la France et l'Europe",
+        "Un contrat de mariage"
+      ],
+      "answer": 1,
+      "explanation": "Le contrat social, concept développé par Jean-Jacques Rousseau, signifie un engagement mutuel entre les citoyens et la collectivité. Chacun a des droits (libertés, protection) et des devoirs (respect des lois, impôts, solidarité).",
+      "statement": "Le contrat social repose sur un engagement mutuel entre les citoyens et la collectivité.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que le « contrat social » ?",
+      "flashcard_back": "Un engagement mutuel entre les citoyens et la collectivité : droits (libertés, protection) et devoirs réciproques (respect des lois, impôts, solidarité). Concept de Jean-Jacques Rousseau.",
+      "category": "principes"
+    },
+    {
+      "id": "vp-040",
+      "question": "Quel principe républicain garantit que nul ne peut être arbitrairement détenu ?",
+      "choices": [
+        "La fraternité",
+        "La laïcité",
+        "La sûreté (article 7 de la DDHC)",
+        "La souveraineté nationale"
+      ],
+      "answer": 2,
+      "explanation": "L'article 7 de la DDHC de 1789 protège la sûreté des personnes : « Nul homme ne peut être accusé, arrêté ni détenu que dans les cas déterminés par la Loi ». C'est le fondement de l'habeas corpus français.",
+      "statement": "L'article 7 de la DDHC interdit les détentions arbitraires.",
+      "isTrue": true,
+      "flashcard_front": "Quel article de la DDHC interdit les détentions arbitraires ?",
+      "flashcard_back": "L'article 7 : « Nul homme ne peut être accusé, arrêté ni détenu que dans les cas déterminés par la Loi. »",
+      "category": "DDHC"
+    }
+  ]
+}

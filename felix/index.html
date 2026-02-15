@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0f0f23">
+  <title>Felix Academy</title>
+  <link rel="stylesheet" href="../shared/base.css">
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body>
+  <canvas id="confetti-canvas"></canvas>
+
+  <div id="app">
+    <nav class="portal-nav">
+      <a href="../index.html" class="btn-back" id="btn-switch-user">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+        Famille
+      </a>
+    </nav>
+
+    <header class="portal-header">
+      <div class="portal-glow"></div>
+      <h1 class="portal-title">Felix Academy</h1>
+      <p class="portal-subtitle">Apprends en t'amusant !</p>
+      <div class="xp-bar-container" id="xp-bar-container">
+        <div class="xp-bar-info">
+          <span class="xp-level" id="xp-level">Niveau 1</span>
+          <span class="xp-amount" id="xp-amount">0 XP</span>
+        </div>
+        <div class="xp-bar">
+          <div class="xp-bar-fill" id="xp-bar-fill"></div>
+        </div>
+      </div>
+      <div class="streak-badge" id="streak-badge">
+        <span class="streak-fire">🔥</span>
+        <span class="streak-count" id="streak-count">0</span>
+        <span class="streak-label">jours</span>
+      </div>
+    </header>
+
+    <div class="portal-grid">
+      <a href="quiz-livre/index.html" class="portal-card portal-card--quiz">
+        <div class="portal-card-icon">📚</div>
+        <div class="portal-card-info">
+          <h2>Quiz Livre</h2>
+          <p>Teste tes connaissances sur tes lectures</p>
+        </div>
+        <div class="portal-card-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </a>
+
+      <a href="english/index.html" class="portal-card portal-card--english">
+        <div class="portal-card-icon">🇬🇧</div>
+        <div class="portal-card-info">
+          <h2>English</h2>
+          <p>Apprends le vocabulaire anglais</p>
+        </div>
+        <div class="portal-card-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </a>
+
+      <a href="math/index.html" class="portal-card portal-card--math">
+        <div class="portal-card-icon">🧮</div>
+        <div class="portal-card-info">
+          <h2>Maths</h2>
+          <p>Maîtrise les maths du collège au lycée</p>
+        </div>
+        <div class="portal-card-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </a>
+
+      <a href="stats/index.html" class="portal-card portal-card--stats">
+        <div class="portal-card-icon">📊</div>
+        <div class="portal-card-info">
+          <h2>Statistiques</h2>
+          <p>Suis ta progression et tes badges</p>
+        </div>
+        <div class="portal-card-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </a>
+    </div>
+
+    <div class="portal-badges" id="portal-badges"></div>
+  </div>
+
+  <script type="module" src="portal.js"></script>
+</body>
+</html>

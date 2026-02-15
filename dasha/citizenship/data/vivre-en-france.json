@@ -1,0 +1,687 @@
+{
+  "id": "vivre-en-france",
+  "title": "Vivre en France",
+  "description": "Culture, société, vie quotidienne et Union européenne",
+  "items": [
+    {
+      "id": "vf-001",
+      "question": "Quelles sont les couleurs du drapeau français, de gauche à droite ?",
+      "choices": [
+        "Rouge, blanc, bleu",
+        "Bleu, blanc, rouge",
+        "Blanc, bleu, rouge",
+        "Bleu, rouge, blanc"
+      ],
+      "answer": 1,
+      "explanation": "Le drapeau français est composé de trois bandes verticales : bleu, blanc, rouge (de gauche à droite face au drapeau). Le bleu et le rouge représentent les couleurs de Paris, et le blanc symbolise la royauté. Ce drapeau tricolore est inscrit à l'article 2 de la Constitution.",
+      "statement": "Le drapeau français est composé de trois bandes horizontales bleu, blanc, rouge.",
+      "isTrue": false,
+      "flashcard_front": "Quelles sont les couleurs du drapeau français ?",
+      "flashcard_back": "Bleu, blanc, rouge — trois bandes verticales. Bleu et rouge = Paris, blanc = royauté. Article 2 de la Constitution.",
+      "category": "symboles"
+    },
+    {
+      "id": "vf-002",
+      "question": "Quel est l'hymne national français ?",
+      "choices": [
+        "Le Chant du Départ",
+        "La Marseillaise",
+        "L'Internationale",
+        "L'Ode à la joie"
+      ],
+      "answer": 1,
+      "explanation": "La Marseillaise est l'hymne national français depuis 1795. Composée par Rouget de Lisle en 1792 à Strasbourg, elle est un chant patriotique de la Révolution française. Elle est inscrite à l'article 2 de la Constitution.",
+      "statement": "La Marseillaise a été composée par Rouget de Lisle en 1792.",
+      "isTrue": true,
+      "flashcard_front": "Quel est l'hymne national français et qui l'a composé ?",
+      "flashcard_back": "La Marseillaise, composée par Rouget de Lisle en 1792 à Strasbourg. Hymne national depuis 1795.",
+      "category": "symboles"
+    },
+    {
+      "id": "vf-003",
+      "question": "Quelle est la devise de la République française ?",
+      "choices": [
+        "Unité, Justice, Progrès",
+        "Paix, Travail, Patrie",
+        "Liberté, Égalité, Fraternité",
+        "Honneur, Patrie, Valeur"
+      ],
+      "answer": 2,
+      "explanation": "La devise de la République française est « Liberté, Égalité, Fraternité ». Elle trouve ses origines dans la Révolution française et figure à l'article 2 de la Constitution de 1958. On la retrouve sur les frontons des bâtiments publics.",
+      "statement": "La devise de la République française est « Liberté, Égalité, Fraternité ».",
+      "isTrue": true,
+      "flashcard_front": "Quelle est la devise de la République française ?",
+      "flashcard_back": "Liberté, Égalité, Fraternité — article 2 de la Constitution. Inscrite sur les frontons des bâtiments publics.",
+      "category": "symboles"
+    },
+    {
+      "id": "vf-004",
+      "question": "Qui est Marianne ?",
+      "choices": [
+        "La première femme présidente de la République",
+        "La figure allégorique de la République française",
+        "Une héroïne de la Révolution française",
+        "La sainte patronne de la France"
+      ],
+      "answer": 1,
+      "explanation": "Marianne est la figure allégorique de la République française. Elle incarne les valeurs de la République : liberté, égalité, fraternité. Son buste est présent dans toutes les mairies de France et elle porte le bonnet phrygien, symbole de liberté.",
+      "statement": "Marianne est la figure allégorique de la République française.",
+      "isTrue": true,
+      "flashcard_front": "Qui est Marianne ?",
+      "flashcard_back": "Figure allégorique de la République. Buste dans toutes les mairies. Porte le bonnet phrygien (symbole de liberté).",
+      "category": "symboles"
+    },
+    {
+      "id": "vf-005",
+      "question": "Quel animal est un symbole officieux de la France ?",
+      "choices": [
+        "L'aigle",
+        "Le lion",
+        "Le coq gaulois",
+        "L'ours"
+      ],
+      "answer": 2,
+      "explanation": "Le coq gaulois est un symbole officieux de la France. Il représente la fierté et la combativité du peuple français. On le trouve notamment sur les grilles du palais de l'Élysée et sur les maillots des équipes sportives nationales. Il n'est cependant pas inscrit dans la Constitution.",
+      "statement": "Le coq gaulois est un symbole officiel inscrit dans la Constitution française.",
+      "isTrue": false,
+      "flashcard_front": "Quel animal symbolise la France ?",
+      "flashcard_back": "Le coq gaulois (symbole officieux, non inscrit dans la Constitution). Fierté et combativité. Sur les grilles de l'Élysée.",
+      "category": "symboles"
+    },
+    {
+      "id": "vf-006",
+      "question": "Qu'est-ce que le Panthéon ?",
+      "choices": [
+        "Le siège du gouvernement",
+        "Un monument où reposent les grands personnages de la nation",
+        "Le palais du président de la République",
+        "Un musée d'art moderne"
+      ],
+      "answer": 1,
+      "explanation": "Le Panthéon, situé à Paris, est un monument où reposent les grands personnages qui ont marqué l'histoire de France. On y trouve notamment Voltaire, Rousseau, Victor Hugo, Jean Moulin et Simone Veil. L'inscription au fronton dit : « Aux grands hommes, la patrie reconnaissante ».",
+      "statement": "Le Panthéon est un monument où reposent les grands personnages de la nation.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que le Panthéon ?",
+      "flashcard_back": "Monument à Paris où reposent les grands personnages de la nation. « Aux grands hommes, la patrie reconnaissante. » Voltaire, Hugo, Moulin, Veil, etc.",
+      "category": "symboles"
+    },
+    {
+      "id": "vf-007",
+      "question": "Quelle est la fête nationale française ?",
+      "choices": [
+        "Le 8 mai",
+        "Le 11 novembre",
+        "Le 14 juillet",
+        "Le 1er mai"
+      ],
+      "answer": 2,
+      "explanation": "Le 14 juillet est la fête nationale française. Elle commémore à la fois la prise de la Bastille (14 juillet 1789) et la Fête de la Fédération (14 juillet 1790), symbole d'unité nationale. Ce jour est marqué par un défilé militaire sur les Champs-Élysées.",
+      "statement": "La fête nationale française est le 11 novembre.",
+      "isTrue": false,
+      "flashcard_front": "Quelle est la fête nationale française ?",
+      "flashcard_back": "Le 14 juillet. Prise de la Bastille (1789) et Fête de la Fédération (1790). Défilé militaire sur les Champs-Élysées.",
+      "category": "symboles"
+    },
+    {
+      "id": "vf-008",
+      "question": "Quel jour commémore l'anniversaire de la loi de séparation des Églises et de l'État ?",
+      "choices": [
+        "Le 14 juillet",
+        "Le 9 décembre",
+        "Le 1er mai",
+        "Le 8 mars"
+      ],
+      "answer": 1,
+      "explanation": "La journée de la laïcité est célébrée le 9 décembre, date anniversaire de la loi de séparation des Églises et de l'État de 1905. Des événements sont organisés notamment dans les établissements scolaires pour promouvoir ce principe républicain fondamental.",
+      "statement": "La journée de la laïcité est célébrée le 14 juillet.",
+      "isTrue": false,
+      "flashcard_front": "Quand est la journée de la laïcité ?",
+      "flashcard_back": "Le 9 décembre, anniversaire de la loi de séparation des Églises et de l'État (1905).",
+      "category": "symboles"
+    },
+    {
+      "id": "vf-009",
+      "question": "À partir de quel âge l'instruction est-elle obligatoire en France ?",
+      "choices": [
+        "2 ans",
+        "3 ans",
+        "5 ans",
+        "6 ans"
+      ],
+      "answer": 1,
+      "explanation": "Depuis la loi du 26 juillet 2019, l'instruction est obligatoire dès l'âge de 3 ans (auparavant 6 ans). L'instruction obligatoire s'étend jusqu'à 16 ans. L'obligation de formation est prolongée jusqu'à 18 ans depuis 2020.",
+      "statement": "L'instruction est obligatoire en France à partir de 6 ans.",
+      "isTrue": false,
+      "flashcard_front": "À quel âge l'instruction devient-elle obligatoire ?",
+      "flashcard_back": "3 ans (depuis la loi du 26 juillet 2019). Obligatoire jusqu'à 16 ans. Obligation de formation jusqu'à 18 ans.",
+      "category": "éducation"
+    },
+    {
+      "id": "vf-010",
+      "question": "Quelles sont les grandes étapes du système éducatif français ?",
+      "choices": [
+        "Primaire, secondaire, universitaire",
+        "Maternelle, élémentaire, collège, lycée, enseignement supérieur",
+        "Crèche, école, lycée, université",
+        "Maternelle, primaire, lycée, grandes écoles"
+      ],
+      "answer": 1,
+      "explanation": "Le système éducatif français comprend : l'école maternelle (3-6 ans), l'école élémentaire (6-11 ans), le collège (11-15 ans), le lycée (15-18 ans) et l'enseignement supérieur (université, grandes écoles). Le collège et le lycée forment l'enseignement secondaire.",
+      "statement": "L'école maternelle accueille les enfants de 3 à 6 ans en France.",
+      "isTrue": true,
+      "flashcard_front": "Quelles sont les étapes du système éducatif français ?",
+      "flashcard_back": "Maternelle (3-6), élémentaire (6-11), collège (11-15), lycée (15-18), enseignement supérieur.",
+      "category": "éducation"
+    },
+    {
+      "id": "vf-011",
+      "question": "Quel diplôme sanctionne la fin des études secondaires en France ?",
+      "choices": [
+        "Le brevet",
+        "Le CAP",
+        "Le baccalauréat",
+        "La licence"
+      ],
+      "answer": 2,
+      "explanation": "Le baccalauréat (« bac ») sanctionne la fin des études secondaires au lycée. Il existe trois voies : générale, technologique et professionnelle. Il permet l'accès à l'enseignement supérieur (université, classes préparatoires, BTS, etc.).",
+      "statement": "Le baccalauréat sanctionne la fin du lycée et permet l'accès à l'enseignement supérieur.",
+      "isTrue": true,
+      "flashcard_front": "Quel diplôme sanctionne la fin du lycée ?",
+      "flashcard_back": "Le baccalauréat (« bac »). Trois voies : générale, technologique, professionnelle. Ouvre l'accès à l'enseignement supérieur.",
+      "category": "éducation"
+    },
+    {
+      "id": "vf-012",
+      "question": "Qu'est-ce que le système LMD dans l'enseignement supérieur ?",
+      "choices": [
+        "Licence (3 ans), Master (2 ans), Doctorat (3 ans)",
+        "Lycée, Master, Diplôme",
+        "Lettres, Mathématiques, Droit",
+        "Licence (2 ans), Maîtrise (2 ans), Doctorat (4 ans)"
+      ],
+      "answer": 0,
+      "explanation": "Le système LMD (Licence-Master-Doctorat) organise l'enseignement supérieur en trois grades : Licence (bac+3), Master (bac+5) et Doctorat (bac+8). Ce système est harmonisé au niveau européen pour faciliter la mobilité des étudiants.",
+      "statement": "Le système LMD signifie Licence (bac+3), Master (bac+5), Doctorat (bac+8).",
+      "isTrue": true,
+      "flashcard_front": "Que signifie LMD dans l'enseignement supérieur ?",
+      "flashcard_back": "Licence (bac+3), Master (bac+5), Doctorat (bac+8). Harmonisé au niveau européen.",
+      "category": "éducation"
+    },
+    {
+      "id": "vf-013",
+      "question": "L'école publique en France est-elle gratuite ?",
+      "choices": [
+        "Non, les familles paient des frais de scolarité",
+        "Oui, l'enseignement public est gratuit de la maternelle au lycée",
+        "Oui, mais uniquement à l'école élémentaire",
+        "Non, seule l'école maternelle est gratuite"
+      ],
+      "answer": 1,
+      "explanation": "L'école publique est gratuite en France, de la maternelle au lycée. Ce principe de gratuité a été établi par les lois Jules Ferry de 1881-1882. L'enseignement supérieur public est quant à lui quasi gratuit, avec des droits d'inscription modiques.",
+      "statement": "L'école publique en France est gratuite de la maternelle au lycée.",
+      "isTrue": true,
+      "flashcard_front": "L'école publique est-elle gratuite ?",
+      "flashcard_back": "Oui, de la maternelle au lycée. Lois Jules Ferry (1881-1882). L'université publique a des frais modiques.",
+      "category": "éducation"
+    },
+    {
+      "id": "vf-014",
+      "question": "L'école publique en France est-elle laïque ?",
+      "choices": [
+        "Non, l'enseignement religieux y est obligatoire",
+        "Oui, l'enseignement public est laïque depuis les lois Jules Ferry",
+        "Oui, mais seulement au lycée",
+        "Non, chaque école choisit librement"
+      ],
+      "answer": 1,
+      "explanation": "L'école publique est laïque depuis les lois Jules Ferry de 1882. Aucun enseignement religieux n'y est dispensé et les personnels doivent respecter un strict devoir de neutralité. Les élèves sont libres dans leurs convictions mais ne peuvent porter de signes religieux ostensibles (loi de 2004).",
+      "statement": "L'école publique est laïque en France depuis les lois Jules Ferry.",
+      "isTrue": true,
+      "flashcard_front": "L'école publique est-elle laïque ?",
+      "flashcard_back": "Oui, depuis les lois Jules Ferry (1882). Pas d'enseignement religieux. Neutralité des personnels. Pas de signes religieux ostensibles pour les élèves (loi 2004).",
+      "category": "éducation"
+    },
+    {
+      "id": "vf-015",
+      "question": "Quand la Sécurité sociale a-t-elle été créée en France ?",
+      "choices": [
+        "En 1936",
+        "En 1945",
+        "En 1958",
+        "En 1968"
+      ],
+      "answer": 1,
+      "explanation": "La Sécurité sociale a été créée en 1945, par les ordonnances des 4 et 19 octobre 1945. Elle repose sur le principe de solidarité nationale et couvre quatre branches : maladie, accidents du travail, vieillesse et famille.",
+      "statement": "La Sécurité sociale a été créée en 1945.",
+      "isTrue": true,
+      "flashcard_front": "Quand la Sécurité sociale a-t-elle été créée ?",
+      "flashcard_back": "En 1945 (ordonnances des 4 et 19 octobre). Solidarité nationale. 4 branches : maladie, AT, vieillesse, famille.",
+      "category": "santé"
+    },
+    {
+      "id": "vf-016",
+      "question": "Qu'est-ce que la carte Vitale ?",
+      "choices": [
+        "Une carte d'identité nationale",
+        "La carte d'assurance maladie de la Sécurité sociale",
+        "Une carte de fidélité en pharmacie",
+        "Une carte de séjour"
+      ],
+      "answer": 1,
+      "explanation": "La carte Vitale est la carte d'assurance maladie de la Sécurité sociale. Elle atteste des droits à l'assurance maladie et permet la transmission électronique des feuilles de soins pour le remboursement. Toute personne affiliée en possède une.",
+      "statement": "La carte Vitale est la carte d'assurance maladie de la Sécurité sociale.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que la carte Vitale ?",
+      "flashcard_back": "Carte d'assurance maladie de la Sécurité sociale. Atteste des droits et permet le remboursement des soins.",
+      "category": "santé"
+    },
+    {
+      "id": "vf-017",
+      "question": "Qu'est-ce que le médecin traitant ?",
+      "choices": [
+        "Un médecin hospitalier de garde",
+        "Le médecin choisi par l'assuré comme référent dans le parcours de soins",
+        "Un médecin urgentiste du SAMU",
+        "Un médecin réservé aux enfants"
+      ],
+      "answer": 1,
+      "explanation": "Le médecin traitant est le médecin (généralement généraliste) choisi par chaque assuré comme référent. Il coordonne le parcours de soins et oriente vers les spécialistes. Ne pas avoir de médecin traitant entraîne un moindre remboursement des consultations.",
+      "statement": "Chaque assuré doit déclarer un médecin traitant à la Sécurité sociale.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que le médecin traitant ?",
+      "flashcard_back": "Médecin choisi par l'assuré comme référent. Coordonne le parcours de soins. Obligatoire pour un remboursement optimal.",
+      "category": "santé"
+    },
+    {
+      "id": "vf-018",
+      "question": "Quel est le rôle de l'hôpital public en France ?",
+      "choices": [
+        "Il soigne uniquement les personnes qui ont une mutuelle",
+        "Il accueille tous les patients sans distinction et assure un service public de santé",
+        "Il est réservé aux urgences uniquement",
+        "Il ne prend en charge que les maladies graves"
+      ],
+      "answer": 1,
+      "explanation": "L'hôpital public accueille tous les patients sans distinction de revenus, d'origine ou de couverture sociale. Il assure un service public de santé avec des missions de soins, d'enseignement et de recherche. Les urgences sont accessibles 24h/24.",
+      "statement": "L'hôpital public en France réserve les soins aux personnes ayant une mutuelle.",
+      "isTrue": false,
+      "flashcard_front": "Quel est le rôle de l'hôpital public ?",
+      "flashcard_back": "Accueille tous les patients sans distinction. Service public de santé : soins, enseignement, recherche. Urgences 24h/24.",
+      "category": "santé"
+    },
+    {
+      "id": "vf-019",
+      "question": "Qu'est-ce que la Complémentaire santé solidaire (C2S, ex CMU-C) ?",
+      "choices": [
+        "Une mutuelle privée obligatoire",
+        "Une couverture maladie gratuite ou à faible coût pour les personnes à faibles revenus",
+        "Un diplôme de médecine",
+        "Une assurance automobile"
+      ],
+      "answer": 1,
+      "explanation": "La Complémentaire santé solidaire (C2S, anciennement CMU-C/ACS) permet aux personnes à faibles revenus de bénéficier d'une complémentaire santé gratuite ou à participation réduite. Elle couvre les frais non remboursés par l'Assurance maladie obligatoire.",
+      "statement": "La Complémentaire santé solidaire est accessible à tous les résidents sans condition de ressources.",
+      "isTrue": false,
+      "flashcard_front": "Qu'est-ce que la C2S (ex CMU-C/ACS) ?",
+      "flashcard_back": "Complémentaire santé solidaire. Couverture maladie gratuite ou à faible coût pour les personnes à faibles revenus.",
+      "category": "santé"
+    },
+    {
+      "id": "vf-020",
+      "question": "Quel rôle joue l'Assurance maladie dans le système de santé français ?",
+      "choices": [
+        "Elle gère les hôpitaux privés",
+        "Elle rembourse une partie des frais de santé des assurés",
+        "Elle forme les médecins",
+        "Elle fabrique les médicaments"
+      ],
+      "answer": 1,
+      "explanation": "L'Assurance maladie (branche maladie de la Sécurité sociale) rembourse une partie des frais de santé : consultations médicales, médicaments, hospitalisations, examens. Le reste à charge peut être couvert par une mutuelle complémentaire.",
+      "statement": "L'Assurance maladie rembourse la totalité des frais de santé en France.",
+      "isTrue": false,
+      "flashcard_front": "Quel est le rôle de l'Assurance maladie ?",
+      "flashcard_back": "Rembourse une partie des frais de santé (consultations, médicaments, hospitalisations). Le reste est couvert par une mutuelle complémentaire.",
+      "category": "santé"
+    },
+    {
+      "id": "vf-021",
+      "question": "Le mariage civil est-il obligatoire en France avant un mariage religieux ?",
+      "choices": [
+        "Non, le mariage religieux suffit",
+        "Oui, le mariage civil doit précéder tout mariage religieux",
+        "Non, les deux sont indépendants",
+        "Oui, mais uniquement pour les catholiques"
+      ],
+      "answer": 1,
+      "explanation": "En France, seul le mariage civil a une valeur juridique. Le mariage civil, célébré à la mairie, doit obligatoirement précéder tout mariage religieux. Un mariage religieux seul n'a aucune valeur légale en droit français.",
+      "statement": "En France, le mariage religieux a la même valeur juridique que le mariage civil.",
+      "isTrue": false,
+      "flashcard_front": "Le mariage civil est-il obligatoire en France ?",
+      "flashcard_back": "Oui. Seul le mariage civil (à la mairie) a une valeur juridique. Il doit obligatoirement précéder tout mariage religieux.",
+      "category": "vie quotidienne"
+    },
+    {
+      "id": "vf-022",
+      "question": "Qu'est-ce que le PACS ?",
+      "choices": [
+        "Un contrat de travail",
+        "Un pacte civil de solidarité entre deux personnes majeures pour organiser leur vie commune",
+        "Un programme d'aide aux chômeurs",
+        "Un permis de séjour"
+      ],
+      "answer": 1,
+      "explanation": "Le PACS (Pacte civil de solidarité) est un contrat conclu entre deux personnes majeures, de sexe différent ou de même sexe, pour organiser leur vie commune. Créé par la loi du 15 novembre 1999, il confère des droits et obligations aux partenaires (impôts, succession, logement).",
+      "statement": "Le PACS est un contrat entre deux personnes majeures pour organiser leur vie commune.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que le PACS ?",
+      "flashcard_back": "Pacte civil de solidarité. Contrat entre deux personnes majeures pour organiser leur vie commune. Loi du 15 novembre 1999.",
+      "category": "vie quotidienne"
+    },
+    {
+      "id": "vf-023",
+      "question": "Qu'est-ce que l'autorité parentale en droit français ?",
+      "choices": [
+        "Le droit du père uniquement de décider pour l'enfant",
+        "L'ensemble des droits et devoirs des parents envers l'enfant, exercé conjointement",
+        "Le droit de l'État de retirer les enfants",
+        "Un contrat entre les parents et l'école"
+      ],
+      "answer": 1,
+      "explanation": "L'autorité parentale est l'ensemble des droits et des devoirs ayant pour finalité l'intérêt de l'enfant. Elle est exercée conjointement par les deux parents, qu'ils soient mariés ou non, séparés ou divorcés. Elle vise la protection, la santé, la sécurité et l'éducation de l'enfant.",
+      "statement": "L'autorité parentale est exercée conjointement par les deux parents.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que l'autorité parentale ?",
+      "flashcard_back": "Droits et devoirs des parents dans l'intérêt de l'enfant. Exercée conjointement par les deux parents, mariés ou non.",
+      "category": "vie quotidienne"
+    },
+    {
+      "id": "vf-024",
+      "question": "Combien de jours fériés y a-t-il en France ?",
+      "choices": [
+        "8",
+        "10",
+        "11",
+        "14"
+      ],
+      "answer": 2,
+      "explanation": "La France compte 11 jours fériés légaux : 1er janvier, lundi de Pâques, 1er mai, 8 mai, Ascension, lundi de Pentecôte, 14 juillet, 15 août, 1er novembre, 11 novembre et 25 décembre. Seul le 1er mai est obligatoirement chômé.",
+      "statement": "La France compte 11 jours fériés légaux.",
+      "isTrue": true,
+      "flashcard_front": "Combien de jours fériés en France ?",
+      "flashcard_back": "11 jours fériés légaux. Seul le 1er mai est obligatoirement chômé.",
+      "category": "vie quotidienne"
+    },
+    {
+      "id": "vf-025",
+      "question": "Qu'est-ce que la Journée Défense et Citoyenneté (JDC) ?",
+      "choices": [
+        "Le service militaire obligatoire de 10 mois",
+        "Une journée obligatoire d'information sur la défense nationale pour les jeunes de 16 à 25 ans",
+        "Un engagement volontaire dans l'armée",
+        "Un examen de citoyenneté pour les étrangers"
+      ],
+      "answer": 1,
+      "explanation": "La Journée Défense et Citoyenneté (JDC, ex-JAPD) est une journée obligatoire pour tous les jeunes Français, filles et garçons, entre 16 et 25 ans. Elle remplace le service militaire depuis sa suspension en 1997. L'attestation de participation est nécessaire pour passer les examens et concours.",
+      "statement": "La Journée Défense et Citoyenneté remplace le service militaire obligatoire suspendu en 1997.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que la JDC ?",
+      "flashcard_back": "Journée Défense et Citoyenneté. Obligatoire pour les jeunes de 16 à 25 ans. Remplace le service militaire (suspendu en 1997). Attestation nécessaire pour les examens.",
+      "category": "vie quotidienne"
+    },
+    {
+      "id": "vf-026",
+      "question": "De quel côté de la route conduit-on en France ?",
+      "choices": [
+        "À gauche",
+        "À droite",
+        "Des deux côtés selon la région",
+        "À gauche en ville, à droite sur autoroute"
+      ],
+      "answer": 1,
+      "explanation": "En France, la conduite se fait à droite. Ce système est en vigueur depuis 1792, date à laquelle la Convention nationale a imposé la circulation à droite. La plupart des pays d'Europe continentale suivent cette règle.",
+      "statement": "En France, on conduit à droite.",
+      "isTrue": true,
+      "flashcard_front": "De quel côté de la route conduit-on en France ?",
+      "flashcard_back": "À droite. En vigueur depuis 1792. Comme la plupart des pays d'Europe continentale.",
+      "category": "vie quotidienne"
+    },
+    {
+      "id": "vf-027",
+      "question": "À quel âge atteint-on la majorité en France ?",
+      "choices": [
+        "16 ans",
+        "18 ans",
+        "21 ans",
+        "17 ans"
+      ],
+      "answer": 1,
+      "explanation": "En France, la majorité civile est fixée à 18 ans depuis la loi du 5 juillet 1974 (auparavant 21 ans). À 18 ans, une personne acquiert la pleine capacité juridique et le droit de vote. Elle peut également se marier sans autorisation parentale.",
+      "statement": "La majorité civile en France est fixée à 21 ans.",
+      "isTrue": false,
+      "flashcard_front": "À quel âge est-on majeur en France ?",
+      "flashcard_back": "18 ans (depuis la loi du 5 juillet 1974, auparavant 21 ans). Pleine capacité juridique et droit de vote.",
+      "category": "vie quotidienne"
+    },
+    {
+      "id": "vf-028",
+      "question": "À quel âge peut-on voter en France ?",
+      "choices": [
+        "16 ans",
+        "18 ans",
+        "20 ans",
+        "21 ans"
+      ],
+      "answer": 1,
+      "explanation": "Le droit de vote s'acquiert à 18 ans en France, l'âge de la majorité civile. L'inscription sur les listes électorales est automatique depuis 2019. Voter n'est pas obligatoire en France, mais c'est un devoir civique.",
+      "statement": "En France, on peut voter à partir de 16 ans.",
+      "isTrue": false,
+      "flashcard_front": "À quel âge peut-on voter en France ?",
+      "flashcard_back": "18 ans (âge de la majorité). Inscription automatique sur les listes électorales depuis 2019. Vote non obligatoire mais devoir civique.",
+      "category": "vie quotidienne"
+    },
+    {
+      "id": "vf-029",
+      "question": "Combien d'États membres l'Union européenne compte-t-elle ?",
+      "choices": [
+        "25",
+        "27",
+        "28",
+        "30"
+      ],
+      "answer": 1,
+      "explanation": "L'Union européenne compte 27 États membres depuis le départ du Royaume-Uni (Brexit) le 31 janvier 2020. Avant le Brexit, l'UE comptait 28 membres. Les six pays fondateurs sont la France, l'Allemagne, l'Italie, la Belgique, les Pays-Bas et le Luxembourg.",
+      "statement": "L'Union européenne compte 28 États membres.",
+      "isTrue": false,
+      "flashcard_front": "Combien d'États membres dans l'UE ?",
+      "flashcard_back": "27 États membres (depuis le Brexit, 31 janvier 2020). 6 fondateurs : France, Allemagne, Italie, Belgique, Pays-Bas, Luxembourg.",
+      "category": "Union européenne"
+    },
+    {
+      "id": "vf-030",
+      "question": "Quelle est la devise de l'Union européenne ?",
+      "choices": [
+        "« Paix et prospérité »",
+        "« Unie dans la diversité »",
+        "« Liberté, Égalité, Fraternité »",
+        "« Force et honneur »"
+      ],
+      "answer": 1,
+      "explanation": "La devise de l'Union européenne est « Unie dans la diversité » (en latin : « In varietate concordia »). Elle signifie que les Européens s'unissent pour œuvrer en faveur de la paix et de la prospérité, tout en préservant la richesse de leurs cultures et traditions.",
+      "statement": "La devise de l'Union européenne est « Unie dans la diversité ».",
+      "isTrue": true,
+      "flashcard_front": "Quelle est la devise de l'UE ?",
+      "flashcard_back": "« Unie dans la diversité » (latin : « In varietate concordia »). Union dans le respect des cultures.",
+      "category": "Union européenne"
+    },
+    {
+      "id": "vf-031",
+      "question": "Où se trouve le siège du Parlement européen ?",
+      "choices": [
+        "Bruxelles",
+        "Luxembourg",
+        "Strasbourg",
+        "Paris"
+      ],
+      "answer": 2,
+      "explanation": "Le siège officiel du Parlement européen est à Strasbourg (France), où se tiennent les sessions plénières. Des travaux parlementaires (commissions, sessions additionnelles) ont aussi lieu à Bruxelles. Le Parlement est composé de députés élus au suffrage universel direct.",
+      "statement": "Le Parlement européen a son siège officiel à Bruxelles.",
+      "isTrue": false,
+      "flashcard_front": "Où siège le Parlement européen ?",
+      "flashcard_back": "Siège officiel à Strasbourg (sessions plénières). Travaux aussi à Bruxelles. Députés élus au suffrage universel direct.",
+      "category": "Union européenne"
+    },
+    {
+      "id": "vf-032",
+      "question": "Quelle est la monnaie utilisée en France ?",
+      "choices": [
+        "Le franc",
+        "La livre",
+        "L'euro",
+        "Le dollar"
+      ],
+      "answer": 2,
+      "explanation": "L'euro est la monnaie de la France depuis le 1er janvier 2002 (mise en circulation des pièces et billets). Il remplace le franc français. L'euro est partagé par 20 pays de la zone euro, facilitant les échanges commerciaux et les voyages.",
+      "statement": "L'euro est la monnaie de la France depuis le 1er janvier 2002.",
+      "isTrue": true,
+      "flashcard_front": "Quelle est la monnaie de la France ?",
+      "flashcard_back": "L'euro, depuis le 1er janvier 2002. Remplace le franc. 20 pays dans la zone euro.",
+      "category": "Union européenne"
+    },
+    {
+      "id": "vf-033",
+      "question": "Qu'est-ce que l'espace Schengen ?",
+      "choices": [
+        "Une zone de libre-échange commerciale",
+        "Un espace de libre circulation des personnes sans contrôle aux frontières intérieures",
+        "L'ensemble des pays utilisant l'euro",
+        "Un traité militaire européen"
+      ],
+      "answer": 1,
+      "explanation": "L'espace Schengen est une zone de libre circulation des personnes dans laquelle les contrôles aux frontières intérieures ont été supprimés. Il regroupe 29 pays européens. Les contrôles sont renforcés aux frontières extérieures de cet espace.",
+      "statement": "L'espace Schengen permet la libre circulation des personnes sans contrôle aux frontières intérieures.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que l'espace Schengen ?",
+      "flashcard_back": "Zone de libre circulation des personnes sans contrôle aux frontières intérieures. 29 pays européens. Contrôles renforcés aux frontières extérieures.",
+      "category": "Union européenne"
+    },
+    {
+      "id": "vf-034",
+      "question": "Que représente le drapeau européen ?",
+      "choices": [
+        "12 étoiles représentant les 12 premiers pays membres",
+        "12 étoiles dorées sur fond bleu symbolisant l'unité et la solidarité",
+        "27 étoiles pour les 27 pays membres actuels",
+        "Les couleurs des six pays fondateurs"
+      ],
+      "answer": 1,
+      "explanation": "Le drapeau européen est composé de 12 étoiles dorées disposées en cercle sur fond bleu. Les 12 étoiles ne représentent pas le nombre de pays mais symbolisent l'unité, la solidarité et la perfection (le chiffre 12 étant symbole de plénitude).",
+      "statement": "Les 12 étoiles du drapeau européen représentent les 12 premiers pays membres de l'UE.",
+      "isTrue": false,
+      "flashcard_front": "Que représente le drapeau européen ?",
+      "flashcard_back": "12 étoiles dorées en cercle sur fond bleu. Les 12 étoiles = unité et solidarité (pas le nombre de pays).",
+      "category": "Union européenne"
+    },
+    {
+      "id": "vf-035",
+      "question": "Quel monument parisien, construit pour l'Exposition universelle de 1889, est le symbole de la France dans le monde ?",
+      "choices": [
+        "L'Arc de Triomphe",
+        "La Tour Eiffel",
+        "Le Sacré-Cœur",
+        "Notre-Dame de Paris"
+      ],
+      "answer": 1,
+      "explanation": "La Tour Eiffel a été construite par Gustave Eiffel pour l'Exposition universelle de 1889 à Paris. Haute de 330 mètres, elle est le monument payant le plus visité au monde et le symbole le plus reconnu de la France à l'étranger.",
+      "statement": "La Tour Eiffel a été construite pour l'Exposition universelle de 1889.",
+      "isTrue": true,
+      "flashcard_front": "Quand et pourquoi la Tour Eiffel a-t-elle été construite ?",
+      "flashcard_back": "Construite par Gustave Eiffel pour l'Exposition universelle de 1889. 330 m. Monument payant le plus visité au monde.",
+      "category": "culture"
+    },
+    {
+      "id": "vf-036",
+      "question": "Qu'est-ce que le Louvre ?",
+      "choices": [
+        "Le siège de l'Assemblée nationale",
+        "Le plus grand musée d'art au monde, abritant notamment La Joconde",
+        "Un théâtre national",
+        "La résidence officielle du président de la République"
+      ],
+      "answer": 1,
+      "explanation": "Le musée du Louvre, situé à Paris, est le plus grand musée d'art au monde par sa surface. Ancien palais royal, il abrite des œuvres majeures comme La Joconde de Léonard de Vinci et la Vénus de Milo. Il accueille près de 10 millions de visiteurs par an.",
+      "statement": "Le Louvre est le plus grand musée d'art au monde.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que le musée du Louvre ?",
+      "flashcard_back": "Plus grand musée d'art au monde (Paris). Ancien palais royal. La Joconde, Vénus de Milo. ~10 millions de visiteurs/an.",
+      "category": "culture"
+    },
+    {
+      "id": "vf-037",
+      "question": "Quel article de la Constitution établit que « La langue de la République est le français » ?",
+      "choices": [
+        "L'article 1er",
+        "L'article 2",
+        "L'article 5",
+        "L'article 89"
+      ],
+      "answer": 1,
+      "explanation": "L'article 2 de la Constitution de 1958 dispose que « La langue de la République est le français ». Ce même article définit aussi le drapeau, l'hymne national, la devise et le principe de gouvernement (du peuple, par le peuple, pour le peuple).",
+      "statement": "L'article 2 de la Constitution établit que la langue de la République est le français.",
+      "isTrue": true,
+      "flashcard_front": "Quel article de la Constitution définit la langue de la République ?",
+      "flashcard_back": "Article 2 : « La langue de la République est le français. » Même article que le drapeau, l'hymne et la devise.",
+      "category": "culture"
+    },
+    {
+      "id": "vf-038",
+      "question": "Combien de sites français sont inscrits au patrimoine mondial de l'UNESCO ?",
+      "choices": [
+        "Moins de 10",
+        "Environ 25",
+        "Plus de 50",
+        "Plus de 100"
+      ],
+      "answer": 2,
+      "explanation": "La France compte plus de 50 sites inscrits au patrimoine mondial de l'UNESCO, ce qui la place parmi les pays les mieux représentés. Parmi eux : le Mont-Saint-Michel, le château de Versailles, les bords de Seine à Paris, les châteaux de la Loire et le centre historique de Lyon.",
+      "statement": "La France compte moins de 20 sites inscrits au patrimoine mondial de l'UNESCO.",
+      "isTrue": false,
+      "flashcard_front": "La France et le patrimoine mondial UNESCO ?",
+      "flashcard_back": "Plus de 50 sites inscrits. Mont-Saint-Michel, Versailles, bords de Seine, châteaux de la Loire, Lyon, etc.",
+      "category": "culture"
+    },
+    {
+      "id": "vf-039",
+      "question": "Le repas gastronomique des Français est-il inscrit au patrimoine culturel immatériel de l'UNESCO ?",
+      "choices": [
+        "Non, ce n'est pas reconnu internationalement",
+        "Oui, depuis 2010",
+        "Oui, depuis 2000",
+        "Non, seule la cuisine italienne est inscrite"
+      ],
+      "answer": 1,
+      "explanation": "Le repas gastronomique des Français a été inscrit au patrimoine culturel immatériel de l'humanité par l'UNESCO en novembre 2010. Il s'agit d'une pratique sociale coutumière destinée à célébrer les moments importants de la vie (naissances, mariages, anniversaires, retrouvailles).",
+      "statement": "Le repas gastronomique des Français est inscrit au patrimoine culturel immatériel de l'UNESCO depuis 2010.",
+      "isTrue": true,
+      "flashcard_front": "Le repas gastronomique français et l'UNESCO ?",
+      "flashcard_back": "Inscrit au patrimoine culturel immatériel de l'UNESCO en 2010. Pratique sociale pour célébrer les moments importants de la vie.",
+      "category": "culture"
+    },
+    {
+      "id": "vf-040",
+      "question": "Qu'est-ce que la francophonie ?",
+      "choices": [
+        "L'ensemble des pays qui ont été colonisés par la France",
+        "L'ensemble des personnes et des pays qui parlent ou utilisent le français dans le monde",
+        "Une association de professeurs de français",
+        "Un mouvement politique français"
+      ],
+      "answer": 1,
+      "explanation": "La francophonie désigne l'ensemble des personnes et des pays qui parlent ou utilisent le français. L'Organisation internationale de la Francophonie (OIF) regroupe 88 États et gouvernements. Le français est la 5e langue la plus parlée au monde avec environ 321 millions de locuteurs.",
+      "statement": "La francophonie regroupe uniquement les pays européens francophones.",
+      "isTrue": false,
+      "flashcard_front": "Qu'est-ce que la francophonie ?",
+      "flashcard_back": "Ensemble des personnes et pays parlant français. OIF : 88 États et gouvernements. Le français = 5e langue mondiale (~321 millions de locuteurs).",
+      "category": "culture"
+    }
+  ]
+}

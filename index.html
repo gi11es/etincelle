@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0f0f23">
+  <title>Family Learning</title>
+  <link rel="stylesheet" href="shared/base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="confetti-canvas"></canvas>
+
+  <div id="app">
+    <header class="family-header">
+      <div class="family-glow"></div>
+      <h1 class="family-title">Family Learning</h1>
+      <p class="family-subtitle">Qui apprend aujourd'hui ?</p>
+    </header>
+
+    <div class="family-grid">
+      <button class="family-card family-card--felix" data-user="felix">
+        <div class="family-avatar">
+          <span class="family-avatar-emoji">🧑‍💻</span>
+        </div>
+        <div class="family-card-info">
+          <h2>Félix</h2>
+          <p>English, Maths, Quiz Livre</p>
+        </div>
+        <div class="family-card-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </button>
+
+      <button class="family-card family-card--zoe" data-user="zoe">
+        <div class="family-avatar">
+          <span class="family-avatar-emoji">🦄</span>
+        </div>
+        <div class="family-card-info">
+          <h2>Zoé</h2>
+          <p>Lettres, Syllabes, Mots, Dessine</p>
+        </div>
+        <div class="family-card-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </button>
+
+      <button class="family-card family-card--dasha" data-user="dasha">
+        <div class="family-avatar">
+          <span class="family-avatar-emoji">🌸</span>
+        </div>
+        <div class="family-card-info">
+          <h2>Dasha</h2>
+          <p>Français B2+, Citoyenneté</p>
+        </div>
+        <div class="family-card-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </button>
+    </div>
+
+    <footer class="family-footer">
+      <p>Chaque aventure commence par un premier pas</p>
+    </footer>
+  </div>
+
+  <script>
+    document.querySelectorAll('.family-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const user = card.dataset.user;
+        localStorage.setItem('family-active-user', user);
+        card.style.transform = 'scale(0.96)';
+        setTimeout(() => {
+          window.location.href = user + '/index.html';
+        }, 150);
+      });
+    });
+  </script>
+</body>
+</html>

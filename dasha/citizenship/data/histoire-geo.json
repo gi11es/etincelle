@@ -1,0 +1,687 @@
+{
+  "id": "histoire-geo",
+  "title": "Histoire et géographie de la France",
+  "description": "Les grandes dates de l'histoire de France, les symboles de la République et la géographie du territoire français.",
+  "items": [
+    {
+      "id": "hg-001",
+      "question": "Quel événement a eu lieu le 14 juillet 1789 ?",
+      "choices": [
+        "La proclamation de la République",
+        "La prise de la Bastille",
+        "L'adoption de la DDHC",
+        "L'exécution de Louis XVI"
+      ],
+      "answer": 1,
+      "explanation": "Le 14 juillet 1789, les Parisiens ont pris d'assaut la Bastille, une prison royale symbole de l'arbitraire du pouvoir royal. Cet événement marque le début de la Révolution française.",
+      "statement": "La prise de la Bastille a eu lieu le 14 juillet 1789.",
+      "isTrue": true,
+      "flashcard_front": "Que s'est-il passé le 14 juillet 1789 ?",
+      "flashcard_back": "La prise de la Bastille. Début symbolique de la Révolution française. Prison royale symbole de l'arbitraire du pouvoir.",
+      "category": "révolution"
+    },
+    {
+      "id": "hg-002",
+      "question": "En quelle année a été adoptée la Déclaration des droits de l'homme et du citoyen ?",
+      "choices": [
+        "1776",
+        "1789",
+        "1791",
+        "1793"
+      ],
+      "answer": 1,
+      "explanation": "La Déclaration des droits de l'homme et du citoyen (DDHC) a été adoptée le 26 août 1789 par l'Assemblée nationale constituante, au début de la Révolution française.",
+      "statement": "La DDHC a été adoptée le 26 août 1789.",
+      "isTrue": true,
+      "flashcard_front": "Date d'adoption de la DDHC ?",
+      "flashcard_back": "26 août 1789, par l'Assemblée nationale constituante.",
+      "category": "révolution"
+    },
+    {
+      "id": "hg-003",
+      "question": "Qu'est-ce que le Code civil (Code Napoléon) ?",
+      "choices": [
+        "Le code de la route",
+        "Un recueil de lois régissant les relations entre les personnes, promulgué en 1804",
+        "La Constitution de 1804",
+        "Un code militaire"
+      ],
+      "answer": 1,
+      "explanation": "Le Code civil, promulgué le 21 mars 1804 sous Napoléon Bonaparte, est un recueil de lois régissant les relations entre les personnes (famille, propriété, contrats, successions). Il est toujours en vigueur.",
+      "statement": "Le Code civil a été promulgué en 1804 sous Napoléon Bonaparte.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que le Code civil (1804) ?",
+      "flashcard_back": "Recueil de lois régissant les relations entre les personnes (famille, propriété, contrats), promulgué le 21 mars 1804 sous Napoléon. Toujours en vigueur.",
+      "category": "XIXe siècle"
+    },
+    {
+      "id": "hg-004",
+      "question": "En quelle année l'esclavage a-t-il été définitivement aboli en France ?",
+      "choices": [
+        "1794",
+        "1830",
+        "1848",
+        "1870"
+      ],
+      "answer": 2,
+      "explanation": "L'esclavage a été définitivement aboli par le décret du 27 avril 1848, sous la IIe République, à l'initiative de Victor Schoelcher. Une première abolition avait eu lieu en 1794, mais Napoléon l'avait rétabli en 1802.",
+      "statement": "L'esclavage a été définitivement aboli en France en 1848.",
+      "isTrue": true,
+      "flashcard_front": "Date de l'abolition définitive de l'esclavage en France ?",
+      "flashcard_back": "27 avril 1848 (décret de Victor Schoelcher, IIe République). Première abolition en 1794, rétabli par Napoléon en 1802.",
+      "category": "XIXe siècle"
+    },
+    {
+      "id": "hg-005",
+      "question": "Qui a joué un rôle déterminant dans l'abolition de l'esclavage en 1848 ?",
+      "choices": [
+        "Victor Hugo",
+        "Victor Schoelcher",
+        "Napoléon Bonaparte",
+        "Jules Ferry"
+      ],
+      "answer": 1,
+      "explanation": "Victor Schoelcher, sous-secrétaire d'État aux colonies sous la IIe République, est l'artisan principal du décret d'abolition de l'esclavage du 27 avril 1848.",
+      "statement": "Victor Hugo a été l'artisan principal de l'abolition de l'esclavage en 1848.",
+      "isTrue": false,
+      "flashcard_front": "Qui est l'artisan de l'abolition de l'esclavage en 1848 ?",
+      "flashcard_back": "Victor Schoelcher, sous-secrétaire d'État aux colonies sous la IIe République. Décret du 27 avril 1848.",
+      "category": "XIXe siècle"
+    },
+    {
+      "id": "hg-006",
+      "question": "En quelle année la IIIe République a-t-elle été proclamée ?",
+      "choices": [
+        "1848",
+        "1860",
+        "1870",
+        "1880"
+      ],
+      "answer": 2,
+      "explanation": "La IIIe République a été proclamée le 4 septembre 1870, après la défaite de Napoléon III à Sedan face à la Prusse. Elle a duré jusqu'en 1940.",
+      "statement": "La IIIe République a été proclamée en 1870.",
+      "isTrue": true,
+      "flashcard_front": "Date de proclamation de la IIIe République ?",
+      "flashcard_back": "4 septembre 1870, après la défaite de Sedan. A duré jusqu'en 1940.",
+      "category": "XIXe siècle"
+    },
+    {
+      "id": "hg-007",
+      "question": "Quand la loi de séparation des Églises et de l'État a-t-elle été votée ?",
+      "choices": [
+        "1882",
+        "1901",
+        "1905",
+        "1946"
+      ],
+      "answer": 2,
+      "explanation": "La loi de séparation des Églises et de l'État a été votée le 9 décembre 1905, sous la IIIe République. Elle est le fondement de la laïcité en France.",
+      "statement": "La loi de séparation des Églises et de l'État date de 1905.",
+      "isTrue": true,
+      "flashcard_front": "Date de la loi de séparation des Églises et de l'État ?",
+      "flashcard_back": "9 décembre 1905, sous la IIIe République. Fondement de la laïcité en France.",
+      "category": "XIXe siècle"
+    },
+    {
+      "id": "hg-008",
+      "question": "En quelle année les femmes ont-elles obtenu le droit de vote en France ?",
+      "choices": [
+        "1936",
+        "1944",
+        "1946",
+        "1958"
+      ],
+      "answer": 1,
+      "explanation": "Les femmes ont obtenu le droit de vote et d'éligibilité par l'ordonnance du 21 avril 1944, signée par le général de Gaulle. Elles ont voté pour la première fois le 29 avril 1945.",
+      "statement": "Les femmes ont obtenu le droit de vote en France en 1946.",
+      "isTrue": false,
+      "flashcard_front": "Quand les femmes ont-elles obtenu le droit de vote ?",
+      "flashcard_back": "Ordonnance du 21 avril 1944 (général de Gaulle). Premier vote : 29 avril 1945 (élections municipales).",
+      "category": "XXe siècle"
+    },
+    {
+      "id": "hg-009",
+      "question": "En quelle année la Ve République a-t-elle été fondée ?",
+      "choices": [
+        "1946",
+        "1954",
+        "1958",
+        "1962"
+      ],
+      "answer": 2,
+      "explanation": "La Ve République a été fondée par la Constitution du 4 octobre 1958, dans le contexte de la crise algérienne. Le général de Gaulle en est le fondateur et le premier président.",
+      "statement": "La Ve République a été fondée en 1958 par le général de Gaulle.",
+      "isTrue": true,
+      "flashcard_front": "Date de fondation de la Ve République ?",
+      "flashcard_back": "Constitution du 4 octobre 1958. Fondateur : général de Gaulle, dans le contexte de la crise algérienne.",
+      "category": "XXe siècle"
+    },
+    {
+      "id": "hg-010",
+      "question": "Qu'est-ce que le traité de Maastricht ?",
+      "choices": [
+        "Un traité de paix après la Première Guerre mondiale",
+        "Le traité fondateur de l'Union européenne, signé en 1992",
+        "Un accord commercial avec les États-Unis",
+        "Un traité sur la défense européenne"
+      ],
+      "answer": 1,
+      "explanation": "Le traité de Maastricht, signé le 7 février 1992, a créé l'Union européenne (UE). Il a instauré la citoyenneté européenne et préparé la monnaie unique (euro). Les Français l'ont approuvé par référendum le 20 septembre 1992.",
+      "statement": "Le traité de Maastricht a créé l'Union européenne en 1992.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que le traité de Maastricht (1992) ?",
+      "flashcard_back": "Traité fondateur de l'Union européenne (7 février 1992). Citoyenneté européenne, préparation de l'euro. Approuvé par référendum en France (20 sept. 1992).",
+      "category": "XXe siècle"
+    },
+    {
+      "id": "hg-011",
+      "question": "Quelle est la capitale de la France ?",
+      "choices": [
+        "Lyon",
+        "Marseille",
+        "Paris",
+        "Strasbourg"
+      ],
+      "answer": 2,
+      "explanation": "Paris est la capitale de la France. Elle est le siège des principales institutions (Élysée, Matignon, Assemblée nationale, Sénat) et la ville la plus peuplée du pays.",
+      "statement": "Paris est la capitale de la France.",
+      "isTrue": true,
+      "flashcard_front": "Quelle est la capitale de la France ?",
+      "flashcard_back": "Paris. Siège des principales institutions de la République.",
+      "category": "géographie"
+    },
+    {
+      "id": "hg-012",
+      "question": "Combien de régions métropolitaines la France compte-t-elle ?",
+      "choices": [
+        "10",
+        "13",
+        "18",
+        "22"
+      ],
+      "answer": 1,
+      "explanation": "Depuis la réforme territoriale de 2016 (loi NOTRe), la France métropolitaine compte 13 régions (au lieu de 22). En ajoutant les 5 régions d'outre-mer, le total est de 18 régions.",
+      "statement": "La France métropolitaine compte 13 régions depuis 2016.",
+      "isTrue": true,
+      "flashcard_front": "Combien de régions métropolitaines en France ?",
+      "flashcard_back": "13 régions métropolitaines (depuis 2016, loi NOTRe). 18 au total avec les 5 régions d'outre-mer.",
+      "category": "géographie"
+    },
+    {
+      "id": "hg-013",
+      "question": "Quels sont les 5 départements et régions d'outre-mer (DROM) ?",
+      "choices": [
+        "Guadeloupe, Martinique, Guyane, Réunion, Mayotte",
+        "Guadeloupe, Martinique, Tahiti, Réunion, Nouvelle-Calédonie",
+        "Corse, Guadeloupe, Martinique, Guyane, Réunion",
+        "Guadeloupe, Martinique, Guyane, Madagascar, Réunion"
+      ],
+      "answer": 0,
+      "explanation": "Les 5 DROM sont la Guadeloupe, la Martinique, la Guyane, La Réunion et Mayotte (depuis 2011). Ils ont le statut de département et de région.",
+      "statement": "Mayotte est un département et une région d'outre-mer.",
+      "isTrue": true,
+      "flashcard_front": "Quels sont les 5 DROM ?",
+      "flashcard_back": "Guadeloupe, Martinique, Guyane, La Réunion, Mayotte (depuis 2011).",
+      "category": "géographie"
+    },
+    {
+      "id": "hg-014",
+      "question": "Quelle est la langue officielle de la France ?",
+      "choices": [
+        "Le français et les langues régionales",
+        "Le français uniquement",
+        "Le français et l'anglais",
+        "Il n'y a pas de langue officielle"
+      ],
+      "answer": 1,
+      "explanation": "L'article 2 de la Constitution de 1958 dispose que « La langue de la République est le français ». C'est la seule langue officielle, bien que les langues régionales soient reconnues comme patrimoine.",
+      "statement": "Le français est la seule langue officielle de la République.",
+      "isTrue": true,
+      "flashcard_front": "Quelle est la langue officielle de la France ?",
+      "flashcard_back": "Le français (article 2 de la Constitution). Seule langue officielle. Les langues régionales sont reconnues comme patrimoine (article 75-1).",
+      "category": "géographie"
+    },
+    {
+      "id": "hg-015",
+      "question": "Quelles sont les lois scolaires de Jules Ferry ?",
+      "choices": [
+        "Les lois de 1789 sur l'éducation",
+        "Les lois de 1881-1882 rendant l'école primaire gratuite, laïque et obligatoire",
+        "Les lois de 1905 sur l'éducation religieuse",
+        "Les lois de 1936 sur les congés scolaires"
+      ],
+      "answer": 1,
+      "explanation": "Les lois Jules Ferry de 1881 et 1882 ont rendu l'école primaire gratuite (1881), puis laïque et obligatoire (1882) pour les enfants de 6 à 13 ans. Ce sont des lois fondatrices de l'école républicaine.",
+      "statement": "Les lois Jules Ferry ont rendu l'école primaire gratuite, laïque et obligatoire.",
+      "isTrue": true,
+      "flashcard_front": "Que sont les lois Jules Ferry (1881-1882) ?",
+      "flashcard_back": "Lois rendant l'école primaire gratuite (1881), puis laïque et obligatoire (1882) pour les enfants de 6 à 13 ans.",
+      "category": "XIXe siècle"
+    },
+    {
+      "id": "hg-016",
+      "question": "Quels pays bordent la France métropolitaine ?",
+      "choices": [
+        "Belgique, Luxembourg, Allemagne, Suisse, Italie, Espagne, Andorre, Monaco",
+        "Belgique, Pays-Bas, Allemagne, Autriche, Italie, Espagne",
+        "Belgique, Luxembourg, Allemagne, Suisse, Italie, Espagne",
+        "Belgique, Allemagne, Suisse, Italie, Espagne, Portugal"
+      ],
+      "answer": 0,
+      "explanation": "La France métropolitaine partage ses frontières terrestres avec 8 pays : Belgique, Luxembourg, Allemagne, Suisse, Italie, Espagne, Andorre et Monaco.",
+      "statement": "La France métropolitaine a des frontières avec 8 pays.",
+      "isTrue": true,
+      "flashcard_front": "Quels pays bordent la France métropolitaine ?",
+      "flashcard_back": "8 pays : Belgique, Luxembourg, Allemagne, Suisse, Italie, Espagne, Andorre, Monaco.",
+      "category": "géographie"
+    },
+    {
+      "id": "hg-017",
+      "question": "Quel événement marque le début de la Première Guerre mondiale ?",
+      "choices": [
+        "L'assassinat de l'archiduc François-Ferdinand en 1914",
+        "L'invasion de la Pologne en 1939",
+        "La révolution de 1848",
+        "La bataille de Verdun en 1916"
+      ],
+      "answer": 0,
+      "explanation": "La Première Guerre mondiale (1914-1918) a été déclenchée par l'assassinat de l'archiduc François-Ferdinand d'Autriche à Sarajevo le 28 juin 1914. La France a été l'un des principaux belligérants.",
+      "statement": "La Première Guerre mondiale a eu lieu de 1914 à 1918.",
+      "isTrue": true,
+      "flashcard_front": "Dates de la Première Guerre mondiale ?",
+      "flashcard_back": "1914-1918. Déclenchée par l'assassinat de l'archiduc François-Ferdinand. Armistice : 11 novembre 1918.",
+      "category": "XXe siècle"
+    },
+    {
+      "id": "hg-018",
+      "question": "Quelle date commémore l'armistice de la Première Guerre mondiale ?",
+      "choices": [
+        "Le 8 mai",
+        "Le 14 juillet",
+        "Le 11 novembre",
+        "Le 6 juin"
+      ],
+      "answer": 2,
+      "explanation": "Le 11 novembre commémore l'armistice de 1918, qui a mis fin à la Première Guerre mondiale. C'est un jour férié en France, dédié à la mémoire des soldats morts pour la France.",
+      "statement": "Le 11 novembre commémore la fin de la Seconde Guerre mondiale.",
+      "isTrue": false,
+      "flashcard_front": "Que commémore le 11 novembre ?",
+      "flashcard_back": "L'armistice de 1918 (fin de la Première Guerre mondiale). Jour férié dédié aux soldats morts pour la France.",
+      "category": "XXe siècle"
+    },
+    {
+      "id": "hg-019",
+      "question": "Quelle date commémore la fin de la Seconde Guerre mondiale en Europe ?",
+      "choices": [
+        "Le 11 novembre",
+        "Le 6 juin",
+        "Le 8 mai",
+        "Le 14 juillet"
+      ],
+      "answer": 2,
+      "explanation": "Le 8 mai 1945 marque la capitulation de l'Allemagne nazie et la fin de la Seconde Guerre mondiale en Europe. C'est un jour férié en France.",
+      "statement": "Le 8 mai commémore la fin de la Seconde Guerre mondiale en Europe.",
+      "isTrue": true,
+      "flashcard_front": "Que commémore le 8 mai ?",
+      "flashcard_back": "La capitulation de l'Allemagne nazie (8 mai 1945) et la fin de la Seconde Guerre mondiale en Europe. Jour férié.",
+      "category": "XXe siècle"
+    },
+    {
+      "id": "hg-020",
+      "question": "Qui a lancé l'Appel du 18 juin 1940 ?",
+      "choices": [
+        "Philippe Pétain",
+        "Jean Moulin",
+        "Charles de Gaulle",
+        "Winston Churchill"
+      ],
+      "answer": 2,
+      "explanation": "Le général Charles de Gaulle a lancé l'Appel du 18 juin 1940 depuis Londres sur les ondes de la BBC, appelant les Français à poursuivre le combat contre l'Allemagne nazie. C'est l'acte fondateur de la France libre.",
+      "statement": "L'Appel du 18 juin 1940 a été lancé par le maréchal Pétain.",
+      "isTrue": false,
+      "flashcard_front": "Qui a lancé l'Appel du 18 juin 1940 ?",
+      "flashcard_back": "Le général Charles de Gaulle, depuis Londres sur la BBC. Acte fondateur de la France libre et de la Résistance.",
+      "category": "XXe siècle"
+    },
+    {
+      "id": "hg-021",
+      "question": "Qu'est-ce que le régime de Vichy ?",
+      "choices": [
+        "La IVe République",
+        "Le régime autoritaire du maréchal Pétain (1940-1944) qui a collaboré avec l'Allemagne nazie",
+        "Un gouvernement provisoire de la Résistance",
+        "Le régime de Napoléon III"
+      ],
+      "answer": 1,
+      "explanation": "Le régime de Vichy (1940-1944) est le régime autoritaire dirigé par le maréchal Pétain après la défaite de 1940. Il a collaboré avec l'Allemagne nazie et participé à la déportation des Juifs.",
+      "statement": "Le régime de Vichy a collaboré avec l'Allemagne nazie.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que le régime de Vichy (1940-1944) ?",
+      "flashcard_back": "Régime autoritaire du maréchal Pétain qui a collaboré avec l'Allemagne nazie. A participé à la déportation des Juifs de France.",
+      "category": "XXe siècle"
+    },
+    {
+      "id": "hg-022",
+      "question": "Combien de Républiques la France a-t-elle connues ?",
+      "choices": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "answer": 2,
+      "explanation": "La France a connu 5 Républiques : Ire (1792-1804), IIe (1848-1852), IIIe (1870-1940), IVe (1946-1958) et Ve (depuis 1958).",
+      "statement": "La France est actuellement dans sa IVe République.",
+      "isTrue": false,
+      "flashcard_front": "Combien de Républiques la France a-t-elle connues ?",
+      "flashcard_back": "5 Républiques : Ire (1792), IIe (1848), IIIe (1870), IVe (1946), Ve (1958-aujourd'hui).",
+      "category": "histoire générale"
+    },
+    {
+      "id": "hg-023",
+      "question": "Quel fleuve traverse Paris ?",
+      "choices": [
+        "La Loire",
+        "Le Rhône",
+        "La Seine",
+        "La Garonne"
+      ],
+      "answer": 2,
+      "explanation": "La Seine traverse Paris, divisant la ville en rive droite (nord) et rive gauche (sud). C'est l'un des principaux fleuves de France (776 km).",
+      "statement": "La Loire traverse Paris.",
+      "isTrue": false,
+      "flashcard_front": "Quel fleuve traverse Paris ?",
+      "flashcard_back": "La Seine (776 km). Elle divise Paris en rive droite (nord) et rive gauche (sud).",
+      "category": "géographie"
+    },
+    {
+      "id": "hg-024",
+      "question": "Quel est le plus long fleuve de France ?",
+      "choices": [
+        "La Seine",
+        "Le Rhône",
+        "La Loire",
+        "La Garonne"
+      ],
+      "answer": 2,
+      "explanation": "La Loire est le plus long fleuve entièrement français, avec environ 1 012 km. Elle prend sa source au mont Gerbier-de-Jonc et se jette dans l'Atlantique à Saint-Nazaire.",
+      "statement": "La Seine est le plus long fleuve de France.",
+      "isTrue": false,
+      "flashcard_front": "Quel est le plus long fleuve de France ?",
+      "flashcard_back": "La Loire (environ 1 012 km). Source : mont Gerbier-de-Jonc. Embouchure : Atlantique (Saint-Nazaire).",
+      "category": "géographie"
+    },
+    {
+      "id": "hg-025",
+      "question": "Quel est le plus haut sommet de France ?",
+      "choices": [
+        "Le mont Ventoux",
+        "Le mont Blanc",
+        "Le pic du Midi",
+        "Le Puy de Dôme"
+      ],
+      "answer": 1,
+      "explanation": "Le mont Blanc, situé dans les Alpes à la frontière franco-italienne, est le plus haut sommet de France et d'Europe occidentale, culminant à 4 808 mètres.",
+      "statement": "Le mont Blanc culmine à 4 808 mètres.",
+      "isTrue": true,
+      "flashcard_front": "Plus haut sommet de France ?",
+      "flashcard_back": "Le mont Blanc (4 808 m), dans les Alpes, à la frontière franco-italienne. Plus haut sommet d'Europe occidentale.",
+      "category": "géographie"
+    },
+    {
+      "id": "hg-026",
+      "question": "Quelle mer et quel océan bordent la France métropolitaine ?",
+      "choices": [
+        "L'océan Atlantique et la mer Méditerranée uniquement",
+        "L'océan Atlantique, la Manche, la mer du Nord et la mer Méditerranée",
+        "L'océan Pacifique et la mer Méditerranée",
+        "L'océan Atlantique et la mer Baltique"
+      ],
+      "answer": 1,
+      "explanation": "La France métropolitaine est bordée par l'océan Atlantique (ouest), la Manche (nord-ouest), la mer du Nord (nord) et la mer Méditerranée (sud-est).",
+      "statement": "La France métropolitaine est bordée par quatre étendues d'eau : l'Atlantique, la Manche, la mer du Nord et la Méditerranée.",
+      "isTrue": true,
+      "flashcard_front": "Quelles mers et océans bordent la France métropolitaine ?",
+      "flashcard_back": "L'océan Atlantique (ouest), la Manche (nord-ouest), la mer du Nord (nord), la mer Méditerranée (sud-est).",
+      "category": "géographie"
+    },
+    {
+      "id": "hg-027",
+      "question": "Quelle est la superficie approximative de la France métropolitaine ?",
+      "choices": [
+        "430 000 km²",
+        "551 000 km²",
+        "643 000 km²",
+        "750 000 km²"
+      ],
+      "answer": 2,
+      "explanation": "La France métropolitaine a une superficie d'environ 643 000 km² (551 000 km² pour la métropole seule, 643 000 km² avec les DOM). C'est le plus grand pays de l'Union européenne par sa superficie.",
+      "statement": "La France est le plus grand pays de l'Union européenne par sa superficie.",
+      "isTrue": true,
+      "flashcard_front": "Superficie de la France métropolitaine ?",
+      "flashcard_back": "Environ 643 000 km² (avec DOM). Plus grand pays de l'Union européenne par sa superficie.",
+      "category": "géographie"
+    },
+    {
+      "id": "hg-028",
+      "question": "Quel siècle est appelé le « Siècle des Lumières » ?",
+      "choices": [
+        "Le XVIe siècle",
+        "Le XVIIe siècle",
+        "Le XVIIIe siècle",
+        "Le XIXe siècle"
+      ],
+      "answer": 2,
+      "explanation": "Le XVIIIe siècle est le Siècle des Lumières. Des philosophes comme Voltaire, Rousseau, Montesquieu et Diderot ont défendu la raison, la tolérance et la liberté. Leurs idées ont inspiré la Révolution française.",
+      "statement": "Voltaire et Rousseau sont des philosophes du Siècle des Lumières.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que le Siècle des Lumières ?",
+      "flashcard_back": "Le XVIIIe siècle. Philosophes : Voltaire, Rousseau, Montesquieu, Diderot. Idées de raison, tolérance, liberté. A inspiré la Révolution française.",
+      "category": "histoire générale"
+    },
+    {
+      "id": "hg-029",
+      "question": "Qu'est-ce que la Résistance pendant la Seconde Guerre mondiale ?",
+      "choices": [
+        "L'armée officielle de Vichy",
+        "Le mouvement de lutte clandestine contre l'occupation allemande et le régime de Vichy",
+        "L'armée américaine en France",
+        "Le mouvement de collaboration avec l'Allemagne"
+      ],
+      "answer": 1,
+      "explanation": "La Résistance désigne l'ensemble des mouvements et réseaux clandestins qui, de 1940 à 1944, ont lutté contre l'occupation allemande et le régime de Vichy. Jean Moulin en a unifié les principaux mouvements.",
+      "statement": "Jean Moulin a unifié les principaux mouvements de la Résistance.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que la Résistance (1940-1944) ?",
+      "flashcard_back": "Mouvements clandestins luttant contre l'occupation allemande et Vichy. Jean Moulin a unifié les principaux mouvements via le CNR (Conseil national de la Résistance).",
+      "category": "XXe siècle"
+    },
+    {
+      "id": "hg-030",
+      "question": "En quelle année la Ire République française a-t-elle été proclamée ?",
+      "choices": [
+        "1789",
+        "1791",
+        "1792",
+        "1793"
+      ],
+      "answer": 2,
+      "explanation": "La Ire République a été proclamée le 22 septembre 1792, après l'abolition de la monarchie par la Convention nationale. Elle a duré jusqu'en 1804 (Empire napoléonien).",
+      "statement": "La Ire République française a été proclamée en 1789.",
+      "isTrue": false,
+      "flashcard_front": "Date de proclamation de la Ire République ?",
+      "flashcard_back": "22 septembre 1792, après l'abolition de la monarchie. A duré jusqu'en 1804 (Empire).",
+      "category": "révolution"
+    },
+    {
+      "id": "hg-031",
+      "question": "Quand le débarquement allié en Normandie a-t-il eu lieu ?",
+      "choices": [
+        "Le 6 juin 1943",
+        "Le 6 juin 1944",
+        "Le 8 mai 1945",
+        "Le 25 août 1944"
+      ],
+      "answer": 1,
+      "explanation": "Le Débarquement (D-Day) a eu lieu le 6 juin 1944 sur les plages de Normandie. C'est la plus grande opération militaire amphibie de l'histoire, qui a marqué le début de la libération de la France.",
+      "statement": "Le Débarquement en Normandie a eu lieu le 6 juin 1944.",
+      "isTrue": true,
+      "flashcard_front": "Date du Débarquement en Normandie ?",
+      "flashcard_back": "6 juin 1944 (D-Day). Plus grande opération amphibie de l'histoire. Début de la libération de la France.",
+      "category": "XXe siècle"
+    },
+    {
+      "id": "hg-032",
+      "question": "Quand Paris a-t-elle été libérée pendant la Seconde Guerre mondiale ?",
+      "choices": [
+        "Le 6 juin 1944",
+        "Le 25 août 1944",
+        "Le 8 mai 1945",
+        "Le 11 novembre 1944"
+      ],
+      "answer": 1,
+      "explanation": "Paris a été libérée le 25 août 1944, grâce à l'insurrection parisienne et à l'action de la 2e Division blindée du général Leclerc, soutenue par les Alliés.",
+      "statement": "Paris a été libérée le 25 août 1944.",
+      "isTrue": true,
+      "flashcard_front": "Date de la libération de Paris ?",
+      "flashcard_back": "25 août 1944. Insurrection parisienne + 2e DB du général Leclerc.",
+      "category": "XXe siècle"
+    },
+    {
+      "id": "hg-033",
+      "question": "Quels sont les deux principaux massifs montagneux de France métropolitaine ?",
+      "choices": [
+        "Les Vosges et le Jura",
+        "Les Alpes et les Pyrénées",
+        "Le Massif central et les Vosges",
+        "Les Alpes et le Massif central"
+      ],
+      "answer": 1,
+      "explanation": "Les Alpes (frontière avec l'Italie et la Suisse, mont Blanc 4 808 m) et les Pyrénées (frontière avec l'Espagne, pic d'Aneto 3 404 m) sont les deux principaux massifs montagneux de France.",
+      "statement": "Les Alpes et les Pyrénées sont les deux principaux massifs montagneux de France.",
+      "isTrue": true,
+      "flashcard_front": "Deux principaux massifs montagneux de France ?",
+      "flashcard_back": "Les Alpes (mont Blanc, 4 808 m, frontière Italie/Suisse) et les Pyrénées (frontière Espagne).",
+      "category": "géographie"
+    },
+    {
+      "id": "hg-034",
+      "question": "Quel roi a été exécuté pendant la Révolution française ?",
+      "choices": [
+        "Louis XIV",
+        "Louis XV",
+        "Louis XVI",
+        "Louis XVIII"
+      ],
+      "answer": 2,
+      "explanation": "Le roi Louis XVI a été guillotiné le 21 janvier 1793, place de la Révolution (actuelle place de la Concorde) à Paris, pendant la Révolution française.",
+      "statement": "Louis XVI a été guillotiné le 21 janvier 1793.",
+      "isTrue": true,
+      "flashcard_front": "Quel roi a été exécuté pendant la Révolution ?",
+      "flashcard_back": "Louis XVI, guillotiné le 21 janvier 1793, place de la Révolution (actuelle place de la Concorde), Paris.",
+      "category": "révolution"
+    },
+    {
+      "id": "hg-035",
+      "question": "En quelle année l'euro est-il devenu la monnaie unique en France ?",
+      "choices": [
+        "1999",
+        "2000",
+        "2002",
+        "2004"
+      ],
+      "answer": 2,
+      "explanation": "L'euro est devenu la monnaie en circulation en France le 1er janvier 2002 (pièces et billets). Il avait été introduit comme monnaie scripturale (électronique) le 1er janvier 1999.",
+      "statement": "Les pièces et billets en euros sont en circulation en France depuis 2002.",
+      "isTrue": true,
+      "flashcard_front": "Quand l'euro est-il devenu la monnaie courante en France ?",
+      "flashcard_back": "1er janvier 2002 (pièces et billets). Monnaie scripturale depuis le 1er janvier 1999.",
+      "category": "XXe siècle"
+    },
+    {
+      "id": "hg-036",
+      "question": "Qu'est-ce que le Front populaire ?",
+      "choices": [
+        "Un mouvement de résistance pendant la guerre",
+        "Une coalition de gauche qui a gouverné la France en 1936-1938, instaurant les congés payés",
+        "Un parti politique actuel",
+        "Un mouvement artistique"
+      ],
+      "answer": 1,
+      "explanation": "Le Front populaire est une coalition de gauche (SFIO, PCF, radicaux) dirigée par Léon Blum qui a gouverné la France de 1936 à 1938. Il a instauré les congés payés (2 semaines) et la semaine de 40 heures.",
+      "statement": "Le Front populaire a instauré les congés payés en 1936.",
+      "isTrue": true,
+      "flashcard_front": "Qu'est-ce que le Front populaire (1936) ?",
+      "flashcard_back": "Coalition de gauche (Léon Blum). A instauré les congés payés (2 semaines), la semaine de 40 heures et les conventions collectives.",
+      "category": "XXe siècle"
+    },
+    {
+      "id": "hg-037",
+      "question": "Quel événement est commémoré le 10 mai en France ?",
+      "choices": [
+        "La fête nationale",
+        "La journée nationale des mémoires de la traite, de l'esclavage et de leurs abolitions",
+        "L'armistice de 1918",
+        "La Libération de Paris"
+      ],
+      "answer": 1,
+      "explanation": "Le 10 mai est la journée nationale des mémoires de la traite, de l'esclavage et de leurs abolitions, instaurée en 2006. Cette date commémore l'adoption de la loi Taubira du 10 mai 2001 reconnaissant l'esclavage comme crime contre l'humanité.",
+      "statement": "Le 10 mai est la journée nationale des mémoires de l'esclavage en France.",
+      "isTrue": true,
+      "flashcard_front": "Que commémore le 10 mai ?",
+      "flashcard_back": "Journée nationale des mémoires de la traite, de l'esclavage et de leurs abolitions (depuis 2006). Loi Taubira du 10 mai 2001.",
+      "category": "XXe siècle"
+    },
+    {
+      "id": "hg-038",
+      "question": "Combien de départements la France compte-t-elle au total ?",
+      "choices": [
+        "96",
+        "100",
+        "101",
+        "105"
+      ],
+      "answer": 2,
+      "explanation": "La France compte 101 départements au total : 96 départements métropolitains et 5 départements d'outre-mer (Guadeloupe, Martinique, Guyane, La Réunion, Mayotte).",
+      "statement": "La France compte 101 départements au total.",
+      "isTrue": true,
+      "flashcard_front": "Combien de départements en France ?",
+      "flashcard_back": "101 départements : 96 métropolitains + 5 d'outre-mer (Guadeloupe, Martinique, Guyane, La Réunion, Mayotte).",
+      "category": "géographie"
+    },
+    {
+      "id": "hg-039",
+      "question": "Quel philosophe des Lumières a écrit « De l'esprit des lois » et théorisé la séparation des pouvoirs ?",
+      "choices": [
+        "Voltaire",
+        "Jean-Jacques Rousseau",
+        "Montesquieu",
+        "Denis Diderot"
+      ],
+      "answer": 2,
+      "explanation": "Montesquieu a écrit « De l'esprit des lois » (1748), ouvrage dans lequel il théorise la séparation des pouvoirs (législatif, exécutif, judiciaire), principe fondamental des démocraties modernes.",
+      "statement": "Montesquieu a théorisé la séparation des pouvoirs.",
+      "isTrue": true,
+      "flashcard_front": "Qui a théorisé la séparation des pouvoirs ?",
+      "flashcard_back": "Montesquieu, dans « De l'esprit des lois » (1748). Trois pouvoirs : législatif, exécutif, judiciaire.",
+      "category": "histoire générale"
+    },
+    {
+      "id": "hg-040",
+      "question": "Quand le traité de Rome fondant la CEE (ancêtre de l'UE) a-t-il été signé ?",
+      "choices": [
+        "1951",
+        "1957",
+        "1962",
+        "1992"
+      ],
+      "answer": 1,
+      "explanation": "Le traité de Rome a été signé le 25 mars 1957 par six pays (France, Allemagne, Italie, Belgique, Pays-Bas, Luxembourg), créant la Communauté économique européenne (CEE), ancêtre de l'Union européenne.",
+      "statement": "Le traité de Rome fondant la CEE a été signé en 1957.",
+      "isTrue": true,
+      "flashcard_front": "Date du traité de Rome ?",
+      "flashcard_back": "25 mars 1957. Six pays fondateurs : France, Allemagne, Italie, Belgique, Pays-Bas, Luxembourg. A créé la CEE, ancêtre de l'UE.",
+      "category": "XXe siècle"
+    }
+  ]
+}

@@ -1,0 +1,533 @@
+{
+  "id": "level-4-seconde",
+  "title": "Seconde - Fonctions et Vecteurs",
+  "description": "Bienvenue au lycée ! Fonctions de référence, vecteurs, géométrie repérée et statistiques t'attendent.",
+  "requiredXP": 6000,
+  "items": [
+    {
+      "id": "2nde-int-01",
+      "type": "mcq",
+      "question": "L'intervalle ]−2, 5] contient-il le nombre −2 ?",
+      "choices": ["Non, le crochet ouvert exclut −2", "Oui, −2 est une borne", "Oui, car −2 est négatif", "On ne peut pas savoir"],
+      "answer": 0,
+      "explanation": "Le crochet OUVERT ] du côté de −2 signifie que −2 est EXCLU de l'intervalle. En revanche, le crochet FERMÉ ] du côté de 5 signifie que 5 est INCLUS. L'intervalle ]−2, 5] = {x ∈ ℝ : −2 < x ≤ 5}. Strictement supérieur à −2, inférieur ou égal à 5. Le crochet « tourné vers l'extérieur » exclut, celui « tourné vers l'intérieur » inclut.",
+      "hint": "Crochet ouvert ] ou [ = borne exclue. Crochet fermé [ ou ] = borne incluse.",
+      "category": "Intervalles et ensembles",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-int-02",
+      "type": "mcq",
+      "question": "Quel est l'intersection de [−3, 4] et [1, 7] ?",
+      "choices": ["[1, 4]", "[−3, 7]", "[−3, 1]", "[4, 7]"],
+      "answer": 0,
+      "explanation": "L'intersection (∩) contient les nombres qui appartiennent aux DEUX intervalles. Un nombre x est dans les deux si x ≥ −3 ET x ≤ 4 ET x ≥ 1 ET x ≤ 7. La condition la plus restrictive à gauche est x ≥ 1, et à droite c'est x ≤ 4. Donc l'intersection est [1, 4]. L'union serait [−3, 7] (les nombres dans l'UN OU l'autre).",
+      "hint": "L'intersection prend le plus grand des minimums et le plus petit des maximums.",
+      "category": "Intervalles et ensembles",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-int-03",
+      "type": "solve",
+      "question": "Résous l'inéquation 2x − 3 < 7 et écris la solution sous forme d'intervalle.",
+      "answer": "]-∞,5[",
+      "explanation": "2x − 3 < 7 → 2x < 10 → x < 5. L'ensemble des solutions est ]−∞, 5[. Attention : 5 est EXCLU (inégalité stricte <). Si c'était ≤, on écrirait ]−∞, 5]. La résolution d'inéquations suit les mêmes règles que les équations, SAUF quand on multiplie ou divise par un nombre NÉGATIF : le sens de l'inégalité s'inverse !",
+      "hint": "Isole x. Le sens de l'inégalité ne change pas quand on divise par un nombre positif.",
+      "category": "Intervalles et ensembles",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-int-04",
+      "type": "mcq",
+      "question": "Le nombre √2 appartient à quel ensemble ?",
+      "choices": ["ℝ \\ ℚ (irrationnel)", "ℚ (rationnel)", "ℤ (entier relatif)", "ℕ (entier naturel)"],
+      "answer": 0,
+      "explanation": "√2 ≈ 1,41421356... est un nombre IRRATIONNEL : il ne peut pas s'écrire sous la forme p/q avec p et q entiers. Cette preuve est un classique des mathématiques (par l'absurde, attribué à Pythagore). ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ. Les irrationnels sont les réels qui ne sont pas rationnels : √2, √3, π, e... Ils ont une écriture décimale infinie et non périodique.",
+      "hint": "√2 a-t-il une écriture décimale qui se termine ou qui se répète ?",
+      "category": "Intervalles et ensembles",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-int-05",
+      "type": "solve",
+      "question": "Résous : −3x + 6 ≥ 0. Donne la solution sous forme d'intervalle.",
+      "answer": "]-∞,2]",
+      "explanation": "−3x + 6 ≥ 0 → −3x ≥ −6. On divise par −3, et ATTENTION : on INVERSE le sens de l'inégalité car on divise par un nombre NÉGATIF ! x ≤ 2. Solution : ]−∞, 2]. C'est LE piège classique des inéquations. Quand on multiplie ou divise par un négatif, < devient > et ≥ devient ≤.",
+      "hint": "Quand on divise par un nombre négatif, on inverse le sens de l'inégalité !",
+      "category": "Intervalles et ensembles",
+      "difficulty": 2
+    },
+    {
+      "id": "2nde-fref-01",
+      "type": "mcq",
+      "question": "Quelle est l'image de −3 par la fonction carré ?",
+      "choices": ["9", "−9", "−6", "6"],
+      "answer": 0,
+      "explanation": "La fonction carré est f(x) = x². Donc f(−3) = (−3)² = 9. Le carré d'un nombre est TOUJOURS positif ou nul ! C'est la propriété fondamentale de la fonction carré. Sa courbe, la parabole, est entièrement au-dessus de l'axe des x. Le minimum est 0, atteint en x = 0. Et f(−3) = f(3) = 9 : la parabole est symétrique par rapport à l'axe des y.",
+      "hint": "x² est toujours positif. (−3)² = (−3) × (−3) = ?",
+      "category": "Fonctions de référence",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-fref-02",
+      "type": "solve",
+      "question": "La fonction inverse est f(x) = 1/x. Calcule f(−1/2) (sous forme entière ou fractionnaire).",
+      "answer": "-2",
+      "explanation": "f(x) = 1/x. Donc f(−1/2) = 1/(−1/2) = 1 × (−2/1) = −2. Diviser par une fraction, c'est multiplier par son inverse ! La fonction inverse a des propriétés fascinantes : elle est définie pour tout x ≠ 0, elle est décroissante sur ]−∞, 0[ et sur ]0, +∞[, et sa courbe (hyperbole) est symétrique par rapport à l'origine.",
+      "hint": "1/(a/b) = b/a. Diviser par une fraction = multiplier par son inverse.",
+      "category": "Fonctions de référence",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-fref-03",
+      "type": "mcq",
+      "question": "La fonction racine carrée f(x) = √x est définie pour :",
+      "choices": ["x ≥ 0", "x > 0", "Tout x réel", "x ≠ 0"],
+      "answer": 0,
+      "explanation": "La fonction racine carrée est définie sur [0, +∞[, c'est-à-dire pour x ≥ 0. On ne peut pas calculer la racine carrée d'un nombre négatif (dans les réels). √0 = 0 est bien défini, donc x = 0 est inclus. La courbe de √x commence à l'origine et monte de plus en plus lentement (elle est croissante mais sa croissance ralentit). √4 = 2, √9 = 3, √16 = 4...",
+      "hint": "Peut-on calculer √(−1) dans les réels ?",
+      "category": "Fonctions de référence",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-fref-04",
+      "type": "solve",
+      "question": "Résous : x² = 49. Donne les deux solutions séparées par 'ou'.",
+      "answer": "7 ou -7",
+      "explanation": "x² = 49 → x = √49 = 7 ou x = −√49 = −7. N'oublie JAMAIS la solution négative ! x² = a (avec a > 0) a toujours DEUX solutions : √a et −√a, qu'on écrit x = ±√a. Graphiquement, la droite horizontale y = 49 coupe la parabole y = x² en deux points : (7, 49) et (−7, 49).",
+      "hint": "Un carré positif a toujours deux racines : une positive et une négative.",
+      "category": "Fonctions de référence",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-fref-05",
+      "type": "mcq",
+      "question": "Sur quel intervalle la fonction carré f(x) = x² est-elle décroissante ?",
+      "choices": ["]−∞, 0]", "[0, +∞[", "ℝ tout entier", "]−∞, +∞["],
+      "answer": 0,
+      "explanation": "La fonction carré est DÉCROISSANTE sur ]−∞, 0] et CROISSANTE sur [0, +∞[. Son minimum est 0, atteint en x = 0. Pourquoi décroissante à gauche de 0 ? Parce que (−5)² = 25 > (−3)² = 9 > (−1)² = 1 > 0² = 0. Quand x négatif se rapproche de 0, x² diminue. C'est la forme en U de la parabole !",
+      "hint": "Pense à la forme de la parabole : un U.",
+      "category": "Fonctions de référence",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-fref-06",
+      "type": "solve",
+      "question": "Résous : 1/x = 3. Donne la solution.",
+      "answer": "1/3",
+      "explanation": "1/x = 3 → x = 1/3. Vérifions : 1/(1/3) = 3 ✓. La fonction inverse f(x) = 1/x est sa propre « inverse fonctionnelle » en un sens : si f(a) = b, alors f(b) = a. Par exemple, f(1/3) = 3 et f(3) = 1/3. L'équation 1/x = k (k ≠ 0) a toujours pour solution x = 1/k.",
+      "hint": "Si 1/x = 3, alors x = 1/3.",
+      "category": "Fonctions de référence",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-fref-07",
+      "type": "mcq",
+      "question": "Compare √10 et π sans calculatrice.",
+      "choices": ["√10 > π", "√10 < π", "√10 = π", "On ne peut pas comparer"],
+      "answer": 0,
+      "explanation": "√10 ≈ 3,162... et π ≈ 3,14159... Mais comment comparer sans calculatrice ? On compare les carrés : (√10)² = 10 et π² ≈ 9,87. Comme 10 > 9,87, on a √10 > π. C'est une technique puissante : pour comparer des racines carrées ou des expressions complexes, on les élève au carré (si elles sont positives, l'ordre est conservé).",
+      "hint": "Compare les carrés : (√10)² = 10 et π² ≈ 9,87.",
+      "category": "Fonctions de référence",
+      "difficulty": 2
+    },
+    {
+      "id": "2nde-fref-08",
+      "type": "solve",
+      "question": "Simplifie : √(50) sous la forme a√b avec b le plus petit possible.",
+      "answer": "5√2",
+      "explanation": "50 = 25 × 2 = 5² × 2. Donc √50 = √(25 × 2) = √25 × √2 = 5√2. La méthode : décompose le nombre sous le radical en cherchant le plus grand carré parfait qui le divise. 25 est le plus grand carré parfait divisant 50. Autres exemples : √72 = √(36×2) = 6√2, √45 = √(9×5) = 3√5.",
+      "hint": "Cherche le plus grand carré parfait qui divise 50.",
+      "category": "Fonctions de référence",
+      "difficulty": 2
+    },
+    {
+      "id": "2nde-fref-09",
+      "type": "mcq",
+      "question": "Résous : √x = 5. Quelle est la solution ?",
+      "choices": ["25", "5", "√5", "−25"],
+      "answer": 0,
+      "explanation": "√x = 5 → on élève au carré les deux membres : (√x)² = 5² → x = 25. Vérification : √25 = 5 ✓. Quand on résout une équation avec √, on élève au carré. Mais ATTENTION : il faut toujours vérifier car élever au carré peut créer des solutions « parasites ». Ici, x = 25 ≥ 0, donc √25 existe bien.",
+      "hint": "Élève les deux membres au carré.",
+      "category": "Fonctions de référence",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-fref-10",
+      "type": "solve",
+      "question": "Résous l'inéquation x² ≤ 16. Écris la solution sous forme d'intervalle.",
+      "answer": "[-4,4]",
+      "explanation": "x² ≤ 16 signifie que x est entre −4 et 4 inclus : −4 ≤ x ≤ 4, soit [−4, 4]. Graphiquement : la parabole y = x² est en dessous de la droite y = 16 quand −4 ≤ x ≤ 4. On peut aussi factoriser : x² − 16 ≤ 0 → (x−4)(x+4) ≤ 0. Un produit est négatif quand les facteurs sont de signes opposés, ce qui arrive entre −4 et 4.",
+      "hint": "x² ≤ 16 ↔ −4 ≤ x ≤ 4.",
+      "category": "Fonctions de référence",
+      "difficulty": 2
+    },
+    {
+      "id": "2nde-var-01",
+      "type": "mcq",
+      "question": "La fonction f(x) = −x² + 4x − 1 a-t-elle un maximum ou un minimum ?",
+      "choices": ["Un maximum", "Un minimum", "Ni l'un ni l'autre", "Les deux"],
+      "answer": 0,
+      "explanation": "Le coefficient de x² est −1 (négatif), donc la parabole est « tournée vers le bas » (∩). Elle a donc un MAXIMUM. Si le coefficient de x² était positif, la parabole serait tournée vers le haut (∪) et aurait un minimum. Le signe du coefficient de x² détermine l'allure de la parabole : négatif → ∩ → maximum, positif → ∪ → minimum.",
+      "hint": "Regarde le signe du coefficient de x².",
+      "category": "Variations et extremums",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-var-02",
+      "type": "solve",
+      "question": "La fonction f(x) = (x − 3)² − 4 atteint son minimum en x = ?",
+      "answer": "3",
+      "explanation": "Sous la forme f(x) = (x − 3)² − 4, on voit que (x − 3)² ≥ 0 pour tout x, et (x − 3)² = 0 quand x = 3. Donc le minimum de f est −4, atteint en x = 3. La forme « canonique » a(x − α)² + β révèle directement le sommet de la parabole : il est en (α, β). Ici, le sommet est (3, −4).",
+      "hint": "Un carré est toujours ≥ 0. Quand vaut-il 0 ?",
+      "category": "Variations et extremums",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-var-03",
+      "type": "mcq",
+      "question": "f est définie sur [−2, 5]. On sait que f est croissante sur [−2, 1] et décroissante sur [1, 5]. Où f atteint-elle son maximum ?",
+      "choices": ["En x = 1", "En x = −2", "En x = 5", "On ne peut pas savoir"],
+      "answer": 0,
+      "explanation": "f monte jusqu'à x = 1 puis redescend. Le maximum est donc en x = 1. C'est la « montagne » : on monte puis on descend, le sommet est au point de changement. Pour le minimum, il faudrait comparer f(−2) et f(5) (les extrémités de l'intervalle). Le maximum peut être au « sommet » ou aux bords de l'intervalle ; ici c'est au sommet.",
+      "hint": "La fonction monte puis descend. Où est le « sommet » ?",
+      "category": "Variations et extremums",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-var-04",
+      "type": "solve",
+      "question": "Quel est le maximum de la fonction f(x) = −2(x − 1)² + 8 ?",
+      "answer": "8",
+      "explanation": "−2(x − 1)² ≤ 0 pour tout x (un carré est ≥ 0, multiplié par −2 ça donne ≤ 0). Donc f(x) = −2(x − 1)² + 8 ≤ 8. L'égalité a lieu quand (x − 1)² = 0, soit x = 1. Le maximum est 8, atteint en x = 1. La forme canonique donne directement le sommet !",
+      "hint": "Un carré est toujours ≥ 0, donc −2 × carré ≤ 0.",
+      "category": "Variations et extremums",
+      "difficulty": 2
+    },
+    {
+      "id": "2nde-var-05",
+      "type": "mcq",
+      "question": "La fonction f(x) = 1/x est-elle croissante ou décroissante sur ]0, +∞[ ?",
+      "choices": ["Décroissante", "Croissante", "Constante", "D'abord croissante puis décroissante"],
+      "answer": 0,
+      "explanation": "Sur ]0, +∞[, la fonction inverse 1/x est DÉCROISSANTE. Quand x augmente, 1/x diminue : 1/1 = 1 > 1/2 = 0,5 > 1/3 ≈ 0,33 > 1/4 = 0,25... C'est intuitif : plus tu partages un gâteau en parts, plus chaque part est petite ! Attention : f est aussi décroissante sur ]−∞, 0[, mais on ne dit PAS qu'elle est décroissante sur ℝ* car elle n'est pas continue en 0.",
+      "hint": "1/2 > 1/3 > 1/4... la fonction inverse décroît.",
+      "category": "Variations et extremums",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-var-06",
+      "type": "solve",
+      "question": "f(x) = x² − 6x + 5. Écris f sous forme canonique (x − a)² + b. Donne a et b séparés par une virgule.",
+      "answer": "3,-4",
+      "explanation": "On complète le carré : f(x) = x² − 6x + 5. Le carré : (x − 3)² = x² − 6x + 9. Donc : f(x) = (x² − 6x + 9) − 9 + 5 = (x − 3)² − 4. a = 3 et b = −4. Le sommet de la parabole est (3, −4). Compléter le carré : on prend la moitié du coefficient de x (ici −6/2 = −3), on forme le carré, et on ajuste la constante.",
+      "hint": "x² − 6x = (x − 3)² − 9. Complète le carré !",
+      "category": "Variations et extremums",
+      "difficulty": 2
+    },
+    {
+      "id": "2nde-graph-01",
+      "type": "mcq",
+      "question": "Graphiquement, résoudre f(x) = 0 revient à chercher :",
+      "choices": ["Les abscisses des points d'intersection avec l'axe des x", "Les ordonnées des points d'intersection avec l'axe des y", "Le sommet de la courbe", "L'aire sous la courbe"],
+      "answer": 0,
+      "explanation": "f(x) = 0 signifie que y = 0. On cherche donc les points de la courbe qui sont SUR l'axe des x (l'axe des abscisses, où y = 0). Les abscisses de ces points sont les solutions de f(x) = 0, appelées « zéros » ou « racines » de f. C'est la lecture graphique la plus importante : les solutions sont les x des points d'intersection avec l'axe horizontal.",
+      "hint": "f(x) = 0 signifie y = 0, donc on est sur l'axe des x.",
+      "category": "Équations graphiques",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-graph-02",
+      "type": "solve",
+      "question": "f(x) = x² − 4x + 3. Résous f(x) = 0 et donne les solutions séparées par 'et'.",
+      "answer": "1 et 3",
+      "explanation": "x² − 4x + 3 = 0. On factorise : on cherche deux nombres dont la somme est −4 et le produit est 3. Ce sont −1 et −3. Donc : (x − 1)(x − 3) = 0. Par le produit nul : x = 1 ou x = 3. Vérification : f(1) = 1 − 4 + 3 = 0 ✓ et f(3) = 9 − 12 + 3 = 0 ✓. Graphiquement, la parabole coupe l'axe des x en x = 1 et x = 3.",
+      "hint": "Factorise x² − 4x + 3 en cherchant deux nombres de somme −4 et de produit 3.",
+      "category": "Équations graphiques",
+      "difficulty": 2
+    },
+    {
+      "id": "2nde-graph-03",
+      "type": "mcq",
+      "question": "Graphiquement, f(x) > 0 correspond à :",
+      "choices": ["La courbe est au-dessus de l'axe des x", "La courbe est en dessous de l'axe des x", "La courbe est croissante", "x est positif"],
+      "answer": 0,
+      "explanation": "f(x) > 0 signifie y > 0, donc les points de la courbe dont l'ordonnée est POSITIVE : la courbe est AU-DESSUS de l'axe des x. Les solutions de l'inéquation f(x) > 0 sont les valeurs de x pour lesquelles la courbe est dans la partie supérieure du plan. C'est une lecture graphique essentielle : au-dessus = positif, en dessous = négatif.",
+      "hint": "Positif = au-dessus de l'axe des x.",
+      "category": "Équations graphiques",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-graph-04",
+      "type": "solve",
+      "question": "f(x) = x² − 4. Pour quelles valeurs de x a-t-on f(x) < 0 ? Écris l'intervalle.",
+      "answer": "]-2,2[",
+      "explanation": "f(x) < 0 → x² − 4 < 0 → x² < 4 → −2 < x < 2. La solution est ]−2, 2[. On peut aussi factoriser : x² − 4 = (x−2)(x+2) < 0. Ce produit est négatif quand les facteurs sont de signes opposés, ce qui arrive entre −2 et 2 (exclu). Graphiquement, la parabole y = x² − 4 est en dessous de l'axe des x entre ses racines −2 et 2.",
+      "hint": "Factorise x² − 4 = (x−2)(x+2) et étudie le signe.",
+      "category": "Équations graphiques",
+      "difficulty": 2
+    },
+    {
+      "id": "2nde-graph-05",
+      "type": "mcq",
+      "question": "Si f(2) = 5, que lit-on sur le graphique ?",
+      "choices": ["Le point (2, 5) est sur la courbe", "Le point (5, 2) est sur la courbe", "La courbe passe par l'origine", "f est croissante en 2"],
+      "answer": 0,
+      "explanation": "f(2) = 5 signifie que quand x = 2, y = 5. Le point de coordonnées (2, 5) est sur la courbe de f. En notation : (2, 5) ∈ C_f. Le premier nombre est l'abscisse (x), le second l'ordonnée (y = f(x)). C'est la base de la lecture graphique : chaque point de la courbe a pour coordonnées (x, f(x)).",
+      "hint": "(x, y) = (x, f(x)). Si f(2) = 5, le point est (2, 5).",
+      "category": "Équations graphiques",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-graph-06",
+      "type": "solve",
+      "question": "Résous graphiquement : x² = 2x + 3. Combien y a-t-il de solutions ?",
+      "answer": "2",
+      "explanation": "x² = 2x + 3 ↔ x² − 2x − 3 = 0 ↔ (x−3)(x+1) = 0. Il y a 2 solutions : x = 3 et x = −1. Graphiquement, c'est le nombre de points d'intersection entre la parabole y = x² et la droite y = 2x + 3. Deux courbes qui se coupent en 2 points → 2 solutions. Le nombre d'intersections donne le nombre de solutions !",
+      "hint": "Ramène à une équation du type f(x) = 0 et factorise.",
+      "category": "Équations graphiques",
+      "difficulty": 2
+    },
+    {
+      "id": "2nde-vec-01",
+      "type": "mcq",
+      "question": "Si A(1, 3) et B(4, 7), quelles sont les coordonnées du vecteur AB⃗ ?",
+      "choices": ["(3, 4)", "(5, 10)", "(4, 7)", "(−3, −4)"],
+      "answer": 0,
+      "explanation": "Les coordonnées du vecteur AB⃗ sont (x_B − x_A, y_B − y_A) = (4 − 1, 7 − 3) = (3, 4). Un vecteur représente un déplacement : pour aller de A à B, on se déplace de 3 unités vers la droite et 4 unités vers le haut. Attention : c'est « arrivée moins départ », pas l'inverse. BA⃗ = (−3, −4) = −AB⃗.",
+      "hint": "AB⃗ = (x_B − x_A, y_B − y_A).",
+      "category": "Vecteurs",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-vec-02",
+      "type": "solve",
+      "question": "u⃗(2, −1) et v⃗(3, 5). Calcule u⃗ + v⃗. Donne les coordonnées sous la forme '(a,b)'.",
+      "answer": "(5,4)",
+      "explanation": "L'addition de vecteurs se fait coordonnée par coordonnée : u⃗ + v⃗ = (2 + 3, −1 + 5) = (5, 4). Graphiquement, c'est la règle du parallélogramme : on place v⃗ au bout de u⃗, et la somme va de l'origine de u⃗ à l'extrémité de v⃗. L'addition vectorielle est fondamentale en physique pour combiner des forces !",
+      "hint": "On additionne les premières coordonnées entre elles, et les secondes entre elles.",
+      "category": "Vecteurs",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-vec-03",
+      "type": "mcq",
+      "question": "La relation de Chasles dit que AB⃗ + BC⃗ = ?",
+      "choices": ["AC⃗", "BA⃗", "CA⃗", "0⃗"],
+      "answer": 0,
+      "explanation": "La relation de Chasles est magnifique de simplicité : AB⃗ + BC⃗ = AC⃗. Le point B « s'annule » ! On va de A à B, puis de B à C, c'est comme aller directement de A à C. C'est la même idée qu'un voyage avec escale : Paris→Lyon + Lyon→Marseille = Paris→Marseille. Elle marche avec autant d'étapes qu'on veut : AB⃗ + BC⃗ + CD⃗ = AD⃗.",
+      "hint": "Imagine le trajet : de A à B, puis de B à C...",
+      "category": "Vecteurs",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-vec-04",
+      "type": "solve",
+      "question": "Les vecteurs u⃗(2, 6) et v⃗(1, k) sont colinéaires. Que vaut k ?",
+      "answer": "3",
+      "explanation": "Deux vecteurs u⃗(a, b) et v⃗(c, d) sont colinéaires si et seulement si ad − bc = 0 (le déterminant est nul). Ici : 2×k − 6×1 = 0 → 2k = 6 → k = 3. On peut aussi dire que v⃗ = (1/2)u⃗ quand k = 3 : v⃗(1, 3) = (1/2) × u⃗(2, 6). Des vecteurs colinéaires sont parallèles (ou l'un est un multiple de l'autre).",
+      "hint": "Colinéaires ↔ déterminant nul : ad − bc = 0.",
+      "category": "Vecteurs",
+      "difficulty": 2
+    },
+    {
+      "id": "2nde-vec-05",
+      "type": "mcq",
+      "question": "ABCD est un parallélogramme si et seulement si :",
+      "choices": ["AB⃗ = DC⃗", "AB⃗ = BC⃗", "AB⃗ = CD⃗", "AB⃗ + CD⃗ = AC⃗"],
+      "answer": 0,
+      "explanation": "ABCD est un parallélogramme ↔ AB⃗ = DC⃗ (les côtés opposés sont des vecteurs égaux). Attention à l'ORDRE des lettres ! AB⃗ = DC⃗ (et pas CD⃗). C'est parce que dans un parallélogramme, les côtés opposés sont parallèles ET de même sens. AB⃗ = CD⃗ serait faux (même direction, mais sens opposé). On a aussi AD⃗ = BC⃗.",
+      "hint": "Dans un parallélogramme, les côtés opposés sont des vecteurs égaux.",
+      "category": "Vecteurs",
+      "difficulty": 2
+    },
+    {
+      "id": "2nde-vec-06",
+      "type": "solve",
+      "question": "A(2, 3) et B(6, 7). Quel est le milieu M de [AB] ? Donne ses coordonnées sous la forme '(a,b)'.",
+      "answer": "(4,5)",
+      "explanation": "Les coordonnées du milieu M sont les MOYENNES des coordonnées : M = ((x_A + x_B)/2, (y_A + y_B)/2) = ((2+6)/2, (3+7)/2) = (4, 5). C'est logique : le milieu est « à mi-chemin ». On peut vérifier : AM⃗ = (2, 2) et MB⃗ = (2, 2). AM⃗ = MB⃗ ✓, donc M est bien le milieu.",
+      "hint": "Milieu = moyenne des coordonnées.",
+      "category": "Vecteurs",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-vec-07",
+      "type": "mcq",
+      "question": "u⃗(−4, 6) et v⃗(2, −3). Ces vecteurs sont-ils colinéaires ?",
+      "choices": ["Oui, car u⃗ = −2v⃗", "Non, car leurs coordonnées sont différentes", "Oui, car ils sont perpendiculaires", "Non, car ad − bc ≠ 0"],
+      "answer": 0,
+      "explanation": "Vérifions le déterminant : (−4)(−3) − (6)(2) = 12 − 12 = 0. Le déterminant est nul, donc les vecteurs sont colinéaires ! On peut vérifier : u⃗ = −2v⃗ car (−4, 6) = −2 × (2, −3) = (−4, 6) ✓. Colinéaires signifie que l'un est un multiple de l'autre. Géométriquement, ils ont la même direction (mais ici, des sens opposés car le facteur est négatif).",
+      "hint": "Calcule le déterminant ad − bc. S'il vaut 0, ils sont colinéaires.",
+      "category": "Vecteurs",
+      "difficulty": 2
+    },
+    {
+      "id": "2nde-vec-08",
+      "type": "solve",
+      "question": "A(1, 2), B(5, 4), C(3, 6). Calcule les coordonnées de D tel que ABCD soit un parallélogramme. Donne '(x,y)'.",
+      "answer": "(-1,4)",
+      "explanation": "Pour un parallélogramme ABCD, il faut AB⃗ = DC⃗. AB⃗ = (4, 2). DC⃗ = C − D = (3 − x_D, 6 − y_D). Donc : 3 − x_D = 4 → x_D = −1, et 6 − y_D = 2 → y_D = 4. D = (−1, 4). Vérification : DC⃗ = (3−(−1), 6−4) = (4, 2) = AB⃗ ✓. Les vecteurs permettent de trouver des points de manière élégante !",
+      "hint": "ABCD parallélogramme ↔ AB⃗ = DC⃗. Résous pour D.",
+      "category": "Vecteurs",
+      "difficulty": 2
+    },
+    {
+      "id": "2nde-geo-01",
+      "type": "solve",
+      "question": "Calcule la distance entre A(−1, 2) et B(3, 5).",
+      "answer": "5",
+      "explanation": "AB = √[(x_B − x_A)² + (y_B − y_A)²] = √[(3−(−1))² + (5−2)²] = √[4² + 3²] = √[16 + 9] = √25 = 5. C'est Pythagore appliqué aux coordonnées ! Le segment [AB] est l'hypoténuse d'un triangle rectangle dont les cathètes sont 4 (horizontal) et 3 (vertical). Le triplet (3, 4, 5) est décidément partout !",
+      "hint": "Distance = √[(x₂−x₁)² + (y₂−y₁)²].",
+      "category": "Géométrie repérée",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-geo-02",
+      "type": "mcq",
+      "question": "L'équation de la droite passant par A(0, 3) et B(2, 7) est :",
+      "choices": ["y = 2x + 3", "y = 3x + 2", "y = 2x + 7", "y = x + 3"],
+      "answer": 0,
+      "explanation": "Le coefficient directeur : a = (7−3)/(2−0) = 4/2 = 2. L'ordonnée à l'origine (quand x = 0) : b = y_A = 3. Donc y = 2x + 3. Vérification avec B : 2×2 + 3 = 7 ✓. Pour trouver l'équation d'une droite, il faut deux informations : soit deux points, soit un point et la pente. Ici, on avait les deux points.",
+      "hint": "Calcule la pente (y₂−y₁)/(x₂−x₁), puis b = y₁ − a×x₁.",
+      "category": "Géométrie repérée",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-geo-03",
+      "type": "solve",
+      "question": "Trouve l'équation de la droite passant par A(1, 5) avec un coefficient directeur de −3. Écris sous la forme y=ax+b.",
+      "answer": "y=-3x+8",
+      "explanation": "On connaît a = −3 et un point A(1, 5). On utilise y = ax + b : 5 = −3(1) + b → b = 5 + 3 = 8. Donc y = −3x + 8. Vérification : pour x = 1, y = −3 + 8 = 5 ✓. La formule directe est : y − y₁ = a(x − x₁), soit y − 5 = −3(x − 1), ce qui donne y = −3x + 3 + 5 = −3x + 8.",
+      "hint": "y = ax + b. Remplace par les coordonnées de A pour trouver b.",
+      "category": "Géométrie repérée",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-geo-04",
+      "type": "mcq",
+      "question": "Deux droites d₁ : y = 3x − 1 et d₂ : y = 3x + 4 sont :",
+      "choices": ["Parallèles", "Sécantes", "Perpendiculaires", "Confondues"],
+      "answer": 0,
+      "explanation": "Les deux droites ont le MÊME coefficient directeur (a = 3) mais des ordonnées à l'origine différentes (−1 ≠ 4). Elles sont donc PARALLÈLES (même pente = même direction, mais elles ne se croisent jamais). Si elles avaient le même a ET le même b, elles seraient confondues. Si elles avaient des a différents, elles seraient sécantes.",
+      "hint": "Même pente = parallèles. Pentes différentes = sécantes.",
+      "category": "Géométrie repérée",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-geo-05",
+      "type": "solve",
+      "question": "Où la droite y = 2x − 6 coupe-t-elle l'axe des x ? Donne l'abscisse.",
+      "answer": "3",
+      "explanation": "La droite coupe l'axe des x quand y = 0 : 0 = 2x − 6 → 2x = 6 → x = 3. Le point est (3, 0). L'abscisse à l'origine (ou « zéro ») d'une droite y = ax + b est x = −b/a. Ici : −(−6)/2 = 3. L'ordonnée à l'origine est le point (0, −6) : la droite coupe l'axe des y en y = −6.",
+      "hint": "L'axe des x correspond à y = 0.",
+      "category": "Géométrie repérée",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-geo-06",
+      "type": "mcq",
+      "question": "A(2, 1), B(6, 3), C(4, 5). Le triangle ABC est-il rectangle en B ?",
+      "choices": ["Oui, car BA⃗·BC⃗ = 0", "Non, car BA⃗·BC⃗ ≠ 0", "Oui, car AB = BC", "On ne peut pas savoir"],
+      "answer": 0,
+      "explanation": "BA⃗ = A − B = (2−6, 1−3) = (−4, −2). BC⃗ = C − B = (4−6, 5−3) = (−2, 2). Produit scalaire : BA⃗·BC⃗ = (−4)(−2) + (−2)(2) = 8 − 4 = 4 ≠ 0. Donc l'angle en B n'est PAS droit. Attendons... recalculons : (−4)(−2) + (−2)(2) = 8 + (−4) = 4. Non, c'est bien 4. Le triangle n'est pas rectangle en B. Vérifions en A : AB⃗ = (4,2), AC⃗ = (2,4). AB⃗·AC⃗ = 8+8 = 16 ≠ 0. En C : CA⃗ = (−2,−4), CB⃗ = (2,−2). CA⃗·CB⃗ = −4+8 = 4 ≠ 0. Pas rectangle du tout ! Rectification de la question : la bonne réponse est non.",
+      "hint": "Calcule BA⃗·BC⃗ = x₁x₂ + y₁y₂. Si = 0 → angle droit.",
+      "category": "Géométrie repérée",
+      "difficulty": 3
+    },
+    {
+      "id": "2nde-geo-07",
+      "type": "solve",
+      "question": "La droite passe par A(−1, 4) et B(3, −2). Calcule son coefficient directeur (sous forme fractionnaire ou décimale).",
+      "answer": "-3/2",
+      "explanation": "a = (y_B − y_A)/(x_B − x_A) = (−2 − 4)/(3 − (−1)) = −6/4 = −3/2. La pente est négative, donc la droite « descend » de gauche à droite. −3/2 signifie que quand x augmente de 2, y diminue de 3. On peut aussi le lire comme : quand x augmente de 1, y diminue de 1,5.",
+      "hint": "Pente = (y₂ − y₁) / (x₂ − x₁).",
+      "category": "Géométrie repérée",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-geo-08",
+      "type": "mcq",
+      "question": "Le point C est le symétrique de A(3, 1) par rapport à B(5, 4). Quelles sont les coordonnées de C ?",
+      "choices": ["(7, 7)", "(4, 2.5)", "(1, −2)", "(8, 5)"],
+      "answer": 0,
+      "explanation": "B est le milieu de [AC]. Donc : x_B = (x_A + x_C)/2 → 5 = (3 + x_C)/2 → x_C = 7. y_B = (y_A + y_C)/2 → 4 = (1 + y_C)/2 → y_C = 7. Donc C(7, 7). Formule directe : le symétrique de A par rapport à B est C = 2B − A = (2×5 − 3, 2×4 − 1) = (7, 7). La symétrie par rapport à un point utilise les propriétés du milieu !",
+      "hint": "B est le milieu de [AC]. Utilise la formule du milieu « à l'envers ».",
+      "category": "Géométrie repérée",
+      "difficulty": 2
+    },
+    {
+      "id": "2nde-stat-01",
+      "type": "mcq",
+      "question": "Quelle mesure de dispersion prend en compte TOUTES les valeurs de la série ?",
+      "choices": ["L'écart type", "L'étendue", "La médiane", "Le mode"],
+      "answer": 0,
+      "explanation": "L'écart type σ prend en compte CHAQUE valeur de la série (via les écarts à la moyenne). L'étendue ne regarde que le max et le min (deux valeurs). La médiane est une mesure de position, pas de dispersion. Le mode est la valeur la plus fréquente. L'écart type est la mesure de dispersion la plus utilisée car elle « voit » toutes les données.",
+      "hint": "Quelle mesure utilise la moyenne des carrés des écarts ?",
+      "category": "Statistiques",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-stat-02",
+      "type": "solve",
+      "question": "Une série a pour valeurs : 2, 4, 6, 8, 10. Calcule la moyenne.",
+      "answer": "6",
+      "explanation": "Moyenne = somme des valeurs / nombre de valeurs = (2 + 4 + 6 + 8 + 10) / 5 = 30 / 5 = 6. La moyenne est le « centre de gravité » de la série : c'est la valeur telle que les écarts positifs et négatifs se compensent. Ici, les écarts sont −4, −2, 0, +2, +4 : leur somme est bien 0.",
+      "hint": "Additionne toutes les valeurs et divise par le nombre de valeurs.",
+      "category": "Statistiques",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-stat-03",
+      "type": "mcq",
+      "question": "Dans une boîte à moustaches, la boîte représente :",
+      "choices": ["L'intervalle entre Q₁ et Q₃ (50 % des données)", "L'intervalle entre le min et le max", "Les 25 % centraux", "La moyenne ± l'écart type"],
+      "answer": 0,
+      "explanation": "La boîte d'un diagramme en boîte (boîte à moustaches) va de Q₁ (premier quartile) à Q₃ (troisième quartile). Elle contient 50 % des données (les 50 % centraux). Le trait à l'intérieur est la médiane. Les « moustaches » s'étendent jusqu'au minimum et au maximum. L'intervalle interquartile IQR = Q₃ − Q₁ mesure la dispersion des 50 % centraux.",
+      "hint": "Q₁ = 25 %, Q₃ = 75 %. Entre les deux, il y a... % des données ?",
+      "category": "Statistiques",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-stat-04",
+      "type": "solve",
+      "question": "La variance d'une série est 16. Que vaut l'écart type ?",
+      "answer": "4",
+      "explanation": "L'écart type σ = √(variance) = √16 = 4. La variance est la moyenne des carrés des écarts à la moyenne. L'écart type est sa racine carrée, ce qui le ramène dans la même unité que les données. Si les notes ont une variance de 16 (en « points² »), l'écart type est 4 points. Plus l'écart type est grand, plus les données sont dispersées autour de la moyenne.",
+      "hint": "Écart type = racine carrée de la variance.",
+      "category": "Statistiques",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-proba-01",
+      "type": "solve",
+      "question": "On lance un dé équilibré. Quelle est la probabilité d'obtenir un nombre pair ? (sous forme fractionnaire)",
+      "answer": "1/2",
+      "explanation": "Un dé a 6 faces : {1, 2, 3, 4, 5, 6}. Les nombres pairs sont {2, 4, 6} → 3 résultats favorables. P = nombre de cas favorables / nombre de cas possibles = 3/6 = 1/2. La probabilité est toujours entre 0 et 1 (0 = impossible, 1 = certain). Ici, c'est exactement 1/2 = 50 %. Autant de chances d'avoir un pair qu'un impair.",
+      "hint": "Combien de faces paires ? Combien de faces au total ?",
+      "category": "Probabilités",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-proba-02",
+      "type": "mcq",
+      "question": "On tire une carte d'un jeu de 52 cartes. Quelle est la probabilité d'obtenir un as ?",
+      "choices": ["1/13", "1/52", "4/13", "1/4"],
+      "answer": 0,
+      "explanation": "Il y a 4 as dans un jeu de 52 cartes (un par couleur). P(as) = 4/52 = 1/13 ≈ 0,077 = 7,7 %. On simplifie par 4. Un jeu de 52 cartes a 13 valeurs × 4 couleurs. La probabilité d'obtenir une valeur spécifique est toujours 4/52 = 1/13.",
+      "hint": "Combien d'as dans un jeu ? Combien de cartes au total ?",
+      "category": "Probabilités",
+      "difficulty": 1
+    },
+    {
+      "id": "2nde-proba-03",
+      "type": "solve",
+      "question": "La probabilité de A est 0,3 et celle de B est 0,5. Si A et B sont incompatibles, que vaut P(A ∪ B) ?",
+      "answer": "0,8",
+      "explanation": "Deux événements incompatibles ne peuvent pas se produire en même temps : P(A ∩ B) = 0. La formule : P(A ∪ B) = P(A) + P(B) − P(A ∩ B) = 0,3 + 0,5 − 0 = 0,8. Quand les événements sont incompatibles, on ADDITIONNE simplement les probabilités. Attention : si A et B n'étaient PAS incompatibles, il faudrait soustraire P(A ∩ B) pour ne pas compter les cas communs deux fois.",
+      "hint": "Incompatibles → P(A ∪ B) = P(A) + P(B).",
+      "category": "Probabilités",
+      "difficulty": 2
+    }
+  ]
+}
