@@ -314,8 +314,9 @@ function bindNav() {
   });
 }
 
-/* ────────── TTS (Web Speech API — French voice) ────────── */
+/* ────────── TTS (Web Speech API — French female voice, high quality) ────────── */
 let frenchVoice = null;
+const MALE_NAMES = ['thomas','eddy','reed','jacques','daniel','grandpa','grandpère','luca','nicolas'];
 
 function initFrenchVoice() {
   const voices = speechSynthesis.getVoices();
@@ -326,15 +327,19 @@ function pickFrenchVoice(voices) {
   if (!voices || voices.length === 0) return;
 
   const frVoices = voices.filter(v => v.lang.startsWith('fr'));
+  const femaleFr = frVoices.filter(v => !MALE_NAMES.some(m => v.name.toLowerCase().includes(m)));
 
   frenchVoice =
-    frVoices.find(v => v.lang === 'fr-FR' && v.name.toLowerCase().includes('audrey') && v.localService) ||
-    frVoices.find(v => v.lang === 'fr-FR' && v.name.toLowerCase().includes('amelie') && v.localService) ||
-    frVoices.find(v => v.lang === 'fr-FR' && v.name.toLowerCase().includes('marie') && v.localService) ||
-    frVoices.find(v => v.lang === 'fr-FR' && v.localService) ||
-    frVoices.find(v => v.localService) ||
+    femaleFr.find(v => v.name.toLowerCase().includes('audrey') && v.localService) ||
+    femaleFr.find(v => v.name.toLowerCase().includes('audrey')) ||
+    femaleFr.find(v => v.name.toLowerCase().includes('amelie')) ||
+    femaleFr.find(v => v.name.toLowerCase().includes('marie')) ||
+    femaleFr.find(v => v.localService) ||
+    femaleFr[0] ||
     frVoices[0] ||
     null;
+
+  if (frenchVoice) console.log('French voice:', frenchVoice.name, frenchVoice.lang);
 }
 
 speechSynthesis.onvoiceschanged = () => {
@@ -353,8 +358,8 @@ function speak(text, lang = 'fr-FR') {
     speak._timer = setTimeout(() => {
       const u = new SpeechSynthesisUtterance(text);
       u.lang = lang;
-      u.rate = 0.9;
-      u.pitch = 1.0;
+      u.rate = 0.85;
+      u.pitch = 1.1;
       if (frenchVoice && lang.startsWith('fr')) u.voice = frenchVoice;
       u.onend = resolve;
       u.onerror = resolve;
