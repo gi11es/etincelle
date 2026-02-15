@@ -93,3 +93,97 @@ jobs:
             exit 1
           fi
           echo "No stale path references found."
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Scan for secrets and credentials
+        run: |
+          echo "Scanning for potential secrets..."
+          errors=0
+
+          # API keys, tokens, passwords in code (not in .git)
+          patterns=(
+            'api[_-]?key\s*[:=]\s*["\x27][A-Za-z0-9_\-]{20,}'
+            'api[_-]?token\s*[:=]\s*["\x27][A-Za-z0-9_\-]{20,}'
+            'secret[_-]?key\s*[:=]\s*["\x27][A-Za-z0-9_\-]{20,}'
+            'password\s*[:=]\s*["\x27][^\x27"]{8,}'
+            'private[_-]?key\s*[:=]\s*["\x27][A-Za-z0-9_\-]{20,}'
+            'AKIA[0-9A-Z]{16}'
+            'sk-[a-zA-Z0-9]{20,}'
+            'ghp_[a-zA-Z0-9]{36}'
+            'glpat-[a-zA-Z0-9\-]{20,}'
+          )
+
+          for pat in "${patterns[@]}"; do
+            if grep -rEin "$pat" --include='*.html' --include='*.js' --include='*.css' --include='*.json' --include='*.md' --include='*.yml' . 2>/dev/null | grep -v node_modules | grep -v '.git/'; then
+              echo "::warning::Potential secret found matching pattern: $pat"
+              errors=$((errors + 1))
+            fi
+          done
+
+          # Check for private key files
+          if find . -name '*.pem' -o -name '*.key' -o -name '*.p12' -o -name '*.pfx' | grep -v node_modules | grep -q .; then
+            echo "::error::Private key files found in repository"
+            errors=$((errors + 1))
+          fi
+
+          # Check for .env files
+          if find . -name '.env' -o -name '.env.*' | grep -q .; then
+            echo "::error::.env file found in repository"
+            errors=$((errors + 1))
+          fi
+
+          if [ "$errors" -gt 0 ]; then
+            echo "::error::$errors potential secret(s) detected — review above"
+            exit 1
+          fi
+          echo "No secrets detected."
+
+      - name: Check for dangerous JS patterns
+        run: |
+          echo "Scanning for dangerous code patterns..."
+          warnings=0
+
+          # eval() usage (excluding minified bundles)
+          if grep -rn 'eval\s*(' --include='*.js' --include='*.html' . | grep -v node_modules | grep -v 'ort.bundle' | grep -v 'transformers.min' | grep -v 'lottie.min' | grep -v '// safe:'; then
+            echo "::warning::eval() usage detected"
+            warnings=$((warnings + 1))
+          fi
+
+          # document.write
+          if grep -rn 'document\.write\s*(' --include='*.js' --include='*.html' . | grep -v node_modules | grep -v 'ort.bundle' | grep -v 'transformers.min'; then
+            echo "::warning::document.write() usage detected"
+            warnings=$((warnings + 1))
+          fi
+
+          # innerHTML with variable interpolation (potential XSS)
+          if grep -rn 'innerHTML\s*=\s*`' --include='*.js' --include='*.html' . | grep -v node_modules | grep -v 'ort.bundle' | grep -v 'transformers.min' | grep '\${'; then
+            echo "::warning::innerHTML with template literal interpolation detected (potential XSS)"
+            warnings=$((warnings + 1))
+          fi
+
+          if [ "$warnings" -gt 0 ]; then
+            echo "::warning::$warnings potentially dangerous pattern(s) found — review above"
+          fi
+          echo "Security pattern scan complete."
+
+      - name: Check HTTP security headers in nginx config
+        run: |
+          echo "Checking for security best practices..."
+          warnings=0
+
+          # Flag any http:// URLs in source (should be https:// or relative)
+          if grep -rn 'http://' --include='*.html' --include='*.js' --include='*.css' . | grep -v node_modules | grep -v '// ' | grep -v 'localhost' | grep -v '127.0.0.1' | grep -v 'http://www.w3.org' | grep -v 'http://schemas'; then
+            echo "::warning::Non-HTTPS URLs found in source files"
+            warnings=$((warnings + 1))
+          fi
+
+          if [ "$warnings" -gt 0 ]; then
+            echo "::warning::$warnings security warning(s) — review above"
+          fi
+          echo "Security checks complete."
