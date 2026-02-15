@@ -10,7 +10,7 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url('../../zoes-games/DancingScript-Bold.woff2') format('woff2');
+  src: url('assets/DancingScript-Bold.woff2') format('woff2');
 }
 /* ═══════════════════════════════════════════════════════
    BASE & VARIABLES
@@ -1387,23 +1387,23 @@ body {
     <!-- Family Characters -->
     <div class="family-row" id="family-row">
       <div class="family-member" onclick="familyTap('papa')">
-        <img class="family-portrait" src="../../zoes-games/papa_cartoon.png" style="object-position: 50% 30%" alt="Papa">
+        <img class="family-portrait" src="assets/papa_cartoon.png" style="object-position: 50% 30%" alt="Papa">
         <span class="family-name">Papa</span>
       </div>
       <div class="family-member" onclick="familyTap('maman')">
-        <img class="family-portrait" src="../../zoes-games/maman_cartoon.png" style="object-position: 50% 25%" alt="Maman">
+        <img class="family-portrait" src="assets/maman_cartoon.png" style="object-position: 50% 25%" alt="Maman">
         <span class="family-name">Maman</span>
       </div>
       <div class="family-member" onclick="familyTap('félix')">
-        <img class="family-portrait" src="../../zoes-games/felix_cartoon.png" style="object-position: 50% 30%" alt="Félix">
+        <img class="family-portrait" src="assets/felix_cartoon.png" style="object-position: 50% 30%" alt="Félix">
         <span class="family-name">Félix</span>
       </div>
       <div class="family-member player" onclick="familyTap('zoé')">
-        <img class="family-portrait" src="../../zoes-games/zoe_cartoon.png" style="object-position: 50% 35%" alt="Zoé">
+        <img class="family-portrait" src="assets/zoe_cartoon.png" style="object-position: 50% 35%" alt="Zoé">
         <span class="family-name">⭐ Zoé !</span>
       </div>
       <div class="family-member" onclick="familyTap('moustache')">
-        <img class="family-portrait" src="../../zoes-games/moustache_cartoon.png" style="object-position: 50% 30%; border-color: #8B4513; box-shadow: 0 3px 10px rgba(139,69,19,0.3)" alt="Moustache">
+        <img class="family-portrait" src="assets/moustache_cartoon.png" style="object-position: 50% 30%; border-color: #8B4513; box-shadow: 0 3px 10px rgba(139,69,19,0.3)" alt="Moustache">
         <span class="family-name">Moustache</span>
       </div>
     </div>
@@ -1574,7 +1574,7 @@ body {
 
   <!-- ═══ Player Avatar (Zoé) ═══ -->
   <div id="player-avatar">
-    <img class="family-portrait" src="../../zoes-games/zoe_cartoon.png" style="object-position: 50% 25%; width:50px; height:50px;" alt="Zoé">
+    <img class="family-portrait" src="assets/zoe_cartoon.png" style="object-position: 50% 25%; width:50px; height:50px;" alt="Zoé">
   </div>
 
   <!-- ═══ Mascot ═══ -->
@@ -2366,12 +2366,12 @@ function letterEmojiHTML(data) {
   if (data.em.startsWith('avatar:')) {
     const who = data.em.replace('avatar:', '');
     if (who === 'moustache') {
-      return `<div style="width:clamp(50px,12vw,80px);height:clamp(50px,12vw,80px);border-radius:50%;overflow:hidden;border:3px solid #8B4513;box-shadow:0 3px 10px rgba(139,69,19,0.3);display:inline-block"><img src="../../zoes-games/moustache_cartoon.png" style="object-position:50% 30%;width:100%;height:100%;object-fit:cover;border:none;box-shadow:none;border-radius:0" alt="Moustache"></div>`;
+      return `<div style="width:clamp(50px,12vw,80px);height:clamp(50px,12vw,80px);border-radius:50%;overflow:hidden;border:3px solid #8B4513;box-shadow:0 3px 10px rgba(139,69,19,0.3);display:inline-block"><img src="assets/moustache_cartoon.png" style="object-position:50% 30%;width:100%;height:100%;object-fit:cover;border:none;box-shadow:none;border-radius:0" alt="Moustache"></div>`;
     }
-    const src = who === 'felix' ? '../../zoes-games/felix_cartoon.png'
-      : who === 'zoe' ? '../../zoes-games/zoe_cartoon.png'
-      : who === 'maman' ? '../../zoes-games/maman_cartoon.png'
-      : '../../zoes-games/papa_cartoon.png';
+    const src = who === 'felix' ? 'assets/felix_cartoon.png'
+      : who === 'zoe' ? 'assets/zoe_cartoon.png'
+      : who === 'maman' ? 'assets/maman_cartoon.png'
+      : 'assets/papa_cartoon.png';
     const pos = who === 'maman' ? '50% 25%'
       : who === 'felix' ? '50% 30%'
       : who === 'papa' ? '50% 30%'
@@ -2387,13 +2387,13 @@ function setWordEmoji(elId, emoji) {
   if (emoji.startsWith('avatar:')) {
     const who = emoji.replace('avatar:', '');
     if (who === 'moustache') {
-      el.innerHTML = `<div style="width:clamp(70px,18vw,130px);height:clamp(70px,18vw,130px);border-radius:50%;overflow:hidden;border:4px solid #8B4513;box-shadow:0 3px 10px rgba(139,69,19,0.3)"><img src="../../zoes-games/moustache_cartoon.png" style="object-position:50% 30%;width:100%;height:100%;object-fit:cover" alt="Moustache"></div>`;
+      el.innerHTML = `<div style="width:clamp(70px,18vw,130px);height:clamp(70px,18vw,130px);border-radius:50%;overflow:hidden;border:4px solid #8B4513;box-shadow:0 3px 10px rgba(139,69,19,0.3)"><img src="assets/moustache_cartoon.png" style="object-position:50% 30%;width:100%;height:100%;object-fit:cover" alt="Moustache"></div>`;
       return;
     }
-    const src = who === 'felix' ? '../../zoes-games/felix_cartoon.png'
-      : who === 'zoe' ? '../../zoes-games/zoe_cartoon.png'
-      : who === 'maman' ? '../../zoes-games/maman_cartoon.png'
-      : '../../zoes-games/papa_cartoon.png';
+    const src = who === 'felix' ? 'assets/felix_cartoon.png'
+      : who === 'zoe' ? 'assets/zoe_cartoon.png'
+      : who === 'maman' ? 'assets/maman_cartoon.png'
+      : 'assets/papa_cartoon.png';
     const pos = who === 'maman' ? '50% 25%' : who === 'felix' ? '50% 30%' : who === 'papa' ? '50% 30%' : '50% 35%';
     el.innerHTML = `<div style="width:clamp(70px,18vw,130px);height:clamp(70px,18vw,130px);border-radius:50%;overflow:hidden;border:4px solid var(--pink);box-shadow:0 3px 10px rgba(255,105,180,0.3)"><img src="${src}" style="object-position:${pos};width:100%;height:100%;object-fit:cover" alt="${who}"></div>`;
   } else {
@@ -4050,7 +4050,7 @@ document.addEventListener('DOMContentLoaded', init);
      ═══════════════════════════════════════════════════════ -->
 <script>
 (function() {
-  const worker = new Worker('../../zoes-games/whisper-worker.js', { type: 'module' });
+  const worker = new Worker('ai/whisper-worker.js', { type: 'module' });
   window._whisperWorker = worker;
 
   worker.onmessage = (e) => {
@@ -4099,12 +4099,12 @@ document.addEventListener('DOMContentLoaded', init);
      Powered by ONNX Runtime Web
      ═══════════════════════════════════════════════════════ -->
 <script type="module">
-import * as ort from '../../zoes-games/ort.bundle.mjs';
+import * as ort from './ai/ort.bundle.mjs';
 
-ort.env.wasm.wasmPaths = '../../zoes-games/';
+// wasmPaths not needed — ort.bundle.mjs auto-resolves siblings via import.meta.url
 
 try {
-  window.emnistSession = await ort.InferenceSession.create('../../zoes-games/emnist_letters.onnx', {
+  window.emnistSession = await ort.InferenceSession.create('ai/emnist_letters.onnx', {
     executionProviders: ['wasm'],
   });
   window.ort = ort;
