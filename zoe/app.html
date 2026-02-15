@@ -3316,14 +3316,15 @@ async function checkDrawing() {
   }
 
   const result = await recognizeLetter(canvas);
-  drawTotal++;
 
-  if (result.letter === null) {
+  if (!result.letter && !result.targetProb) {
+    // Model returned nothing useful — don't count this attempt
     resultEl.textContent = 'Dessine quelque chose d\'abord ! ✏️';
     resultEl.classList.remove('hidden');
-    drawTotal--;
     return;
   }
+
+  drawTotal++;
 
   const bestIsTarget = result.letter === drawCurrentLetter;
   const targetProb = result.targetProb;
