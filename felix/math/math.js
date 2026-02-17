@@ -314,7 +314,8 @@ function renderSolve(item, container) {
 }
 
 function renderFillBlank(item, container) {
-  renderMCQ(item, container);
+  if (item.choices) renderMCQ(item, container);
+  else renderSolve(item, container);
 }
 
 async function renderGeoClickItem(item, container) {
