@@ -27,25 +27,3 @@ export function generate(item) {
   }
 }
 
-// --- Import all generator modules (side-effect: they call register()) ---
-import './prio-ops.js';
-import './relatifs.js';
-import './fractions.js';
-import './divisibilite.js';
-import './proportionnalite.js';
-import './puissances.js';
-import './calcul-litteral.js';
-import './pythagore.js';
-import './trigo.js';
-import './arithmetique.js';
-import './identites.js';
-import './equations.js';
-import './thales-gen.js';
-import './probas.js';
-import './fonctions.js';
-import './geo-repere.js';
-import './stats.js';
-import './second-degre.js';
-import './suites.js';
-import './derivation.js';
-import './scalaire.js';

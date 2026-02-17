@@ -8,6 +8,28 @@ import { buildSessionQueue, getOrCreateMastery, recordAnswer, requeueWrong } fro
 import { renderDiagram } from './games/geo-diagram.js';
 import { renderGeoClick, renderGeoPlace } from './games/geo-interactive.js';
 import { generate } from './generators/registry.js';
+// Side-effect imports: each module calls register() to populate the generator registry
+import './generators/prio-ops.js';
+import './generators/relatifs.js';
+import './generators/fractions.js';
+import './generators/divisibilite.js';
+import './generators/proportionnalite.js';
+import './generators/puissances.js';
+import './generators/calcul-litteral.js';
+import './generators/pythagore.js';
+import './generators/trigo.js';
+import './generators/arithmetique.js';
+import './generators/identites.js';
+import './generators/equations.js';
+import './generators/thales-gen.js';
+import './generators/probas.js';
+import './generators/fonctions.js';
+import './generators/geo-repere.js';
+import './generators/stats.js';
+import './generators/second-degre.js';
+import './generators/suites.js';
+import './generators/derivation.js';
+import './generators/scalaire.js';
 import { renderInteractive } from './games/interactive-dispatch.js';
 
 const LEVELS = [
