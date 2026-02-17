@@ -101,6 +101,10 @@ Advanced French vocabulary and French citizenship test preparation.
 | Hosting | nginx + Let's Encrypt (DNS-01 via Cloudflare) |
 | Deployment | GitHub + cron git pull |
 
+## Hosting
+
+100% static — just point any web server at the repo root over HTTPS. See [HOSTING.md](HOSTING.md) for setup instructions and a sample nginx config.
+
 ## License
 
 Private family project.
