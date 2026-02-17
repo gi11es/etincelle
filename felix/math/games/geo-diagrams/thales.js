@@ -12,7 +12,9 @@ export function drawThales(container, diagram) {
 
 function drawTriangleCut(container, diagram) {
   const { vertices, cuts, labels, showParallel } = diagram;
-  const A = vertices.A, B = vertices.B, C = vertices.C;
+  const verts = Object.values(vertices || {});
+  if (verts.length < 3) return;
+  const [A, B, C] = verts;
 
   // Compute cut points
   const cutPoints = {};
