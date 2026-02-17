@@ -65,7 +65,7 @@ jobs:
       - name: Check for changes
         id: changes
         run: |
-          if git diff --quiet; then
+          if git diff --quiet && [ -z "$(git ls-files --others --exclude-standard -- . ':!.github')" ]; then
             echo "has_changes=false" >> "$GITHUB_OUTPUT"
           else
             echo "has_changes=true" >> "$GITHUB_OUTPUT"
@@ -86,7 +86,7 @@ jobs:
           git config user.name "claude-bot"
           git config user.email "claude-bot@users.noreply.github.com"
           git checkout -b "$BRANCH"
-          git add -A
+          git add -A -- . ':!.github'
           git commit -m "Fix #${{ steps.issue.outputs.number }}: auto-fix by Claude
 
           Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>"
