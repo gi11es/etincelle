@@ -96,7 +96,6 @@ function injectStyles() {
       max-height: 120px;
       object-fit: cover;
       border-radius: 8px;
-      opacity: 0.8;
     }
 
     .brw-desc {
@@ -278,25 +277,29 @@ function loadHtml2Canvas() {
 }
 
 async function captureScreenshot() {
-  try {
-    fab.style.display = 'none';
-    panel.style.display = 'none';
+  // Hide widget + any overlays that would darken the capture
+  const hidden = [fab, panel];
+  document.querySelectorAll('.levelup-overlay, .lottie-overlay').forEach(el => hidden.push(el));
+  const savedDisplay = hidden.map(el => el.style.display);
+  hidden.forEach(el => { el.style.display = 'none'; });
 
+  try {
     const html2canvas = await loadHtml2Canvas();
+    const bgColor = getComputedStyle(document.body).backgroundColor || '#1a1a2e';
     const canvas = await html2canvas(document.body, {
       scale: 1,
       useCORS: true,
       logging: false,
       width: Math.min(document.body.scrollWidth, 1200),
+      backgroundColor: bgColor,
     });
 
-    screenshotDataUrl = canvas.toDataURL('image/png');
+    screenshotDataUrl = canvas.toDataURL('image/jpeg', 0.85);
   } catch (err) {
     console.warn('Bug widget: screenshot failed', err);
     screenshotDataUrl = null;
   } finally {
-    fab.style.display = '';
-    panel.style.display = '';
+    hidden.forEach((el, i) => { el.style.display = savedDisplay[i]; });
   }
 }
 
