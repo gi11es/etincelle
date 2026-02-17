@@ -16,7 +16,9 @@ export function renderFillBlank({ item, container, allItems, onAnswer, speak }) 
     displayAnswer = searchTerm;
   }
 
-  // Strip trailing punctuation for flexible matching
+  // Strip trailing punctuation: the answer is inserted into a larger sentence,
+  // so trailing periods/marks would create e.g. "word., next word"
+  displayAnswer = displayAnswer.replace(/[.!?]+$/, '');
   const searchBase = searchTerm.replace(/[.!?]+$/, '');
 
   // Build regex: match the phrase (trailing punctuation already stripped)
@@ -38,7 +40,7 @@ export function renderFillBlank({ item, container, allItems, onAnswer, speak }) 
     .slice(0, 3)
     .map(i => {
       const m = i.en.match(/^(.+?)\s*\(.*\)$/);
-      return m ? m[1].trim() : i.en;
+      return (m ? m[1].trim() : i.en).replace(/[.!?]+$/, '');
     });
 
   const choices = shuffle([displayAnswer, ...wrongItems]);
