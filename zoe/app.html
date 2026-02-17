@@ -4112,5 +4112,15 @@ try {
 }
 </script>
 
+  <script type="module" src="../shared/bug-report/bug-widget.js" data-hidden></script>
+  <script>
+    (function() {
+      var t, el = document.getElementById('mascot-emoji');
+      if (!el) return;
+      el.addEventListener('touchstart', function() { t = setTimeout(function() { if (window.__showBugWidget) window.__showBugWidget(); }, 1500); });
+      el.addEventListener('touchend', function() { clearTimeout(t); });
+      el.addEventListener('touchcancel', function() { clearTimeout(t); });
+    })();
+  </script>
 </body>
 </html>

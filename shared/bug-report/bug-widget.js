@@ -296,5 +296,14 @@ async function togglePanel() {
 }
 
 // ── Init ───────────────────────────────────────────────────────────────
+const scriptTag = document.querySelector('script[src*="bug-widget"]');
+const startHidden = scriptTag?.hasAttribute('data-hidden');
+
 injectStyles();
 createDOM();
+
+if (startHidden) {
+  fab.style.display = 'none';
+  // Expose global to reveal the widget (e.g. via long-press secret)
+  window.__showBugWidget = () => { fab.style.display = ''; };
+}
