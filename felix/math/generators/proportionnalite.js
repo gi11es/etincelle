@@ -44,6 +44,7 @@ register('tri-mcq-inequality', (item) => {
     'Seulement si c\'est un triangle rectangle',
     'On ne peut pas savoir'
   ]);
+  const h = Math.round(a * 0.8);
   return {
     question: `Peut-on construire un triangle avec des cotes de ${a} cm, ${b} cm et ${c} cm ?`,
     answer,
@@ -51,7 +52,12 @@ register('tri-mcq-inequality', (item) => {
     hint: 'Inegalite triangulaire : chaque cote doit etre strictement inferieur a la somme des deux autres.',
     explanation: canForm
       ? `Oui ! ${a} < ${b} + ${c} = ${b + c}, ${b} < ${a} + ${c} = ${a + c}, ${c} < ${a} + ${b} = ${a + b}. L'inegalite triangulaire est verifiee.`
-      : `Non ! ${c} ≥ ${a} + ${b} = ${a + b}. L'inegalite triangulaire n'est pas verifiee.`
+      : `Non ! ${c} ≥ ${a} + ${b} = ${a + b}. L'inegalite triangulaire n'est pas verifiee.`,
+    diagram: {
+      type: 'right-triangle',
+      vertices: { A: [0, 0], B: [c, 0], C: [a * 0.4, h] },
+      labels: { AB: `${c} cm`, AC: `${a} cm`, BC: `${b} cm` }
+    }
   };
 });
 
