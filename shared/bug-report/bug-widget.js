@@ -2,6 +2,7 @@
  * Bug Reporter Widget
  * Floating button that sends bug reports as GitHub Issues.
  * Captures: user description, screenshot, page URL, user-agent.
+ * Includes speech-to-text via Web Speech API (French).
  * Self-contained: injects its own CSS, creates its own DOM.
  */
 
@@ -11,6 +12,7 @@ const BASE = new URL('.', import.meta.url).href;
 let panelOpen = false;
 let screenshotDataUrl = null;
 let sending = false;
+let listening = false;
 
 // ── CSS ────────────────────────────────────────────────────────────────
 function injectStyles() {
@@ -114,7 +116,13 @@ function injectStyles() {
     .brw-desc::placeholder { color: #6a6a80; }
     .brw-desc:focus { border-color: #6366f1; }
 
+    .brw-actions {
+      display: flex;
+      gap: 8px;
+    }
+
     .brw-send {
+      flex: 1;
       padding: 10px;
       border-radius: 10px;
       border: none;
@@ -125,6 +133,32 @@ function injectStyles() {
       color: white;
     }
     .brw-send:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .brw-mic {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      background: #2a2a40;
+      color: #a0a0b0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, color 0.2s;
+    }
+    .brw-mic:hover { background: #3a3a50; color: #e0e0e0; }
+    .brw-mic svg { width: 20px; height: 20px; }
+    .brw-mic.brw-mic-on {
+      background: #ef4444;
+      color: white;
+      animation: brw-pulse 1s ease-in-out infinite;
+    }
+
+    @keyframes brw-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(239,68,68,0); }
+    }
 
     .brw-status {
       font-size: 12px;
@@ -147,7 +181,9 @@ function injectStyles() {
 }
 
 // ── DOM ────────────────────────────────────────────────────────────────
-let fab, panel, bodyEl, descEl, sendBtn, statusEl;
+let fab, panel, bodyEl, descEl, sendBtn, micBtn, statusEl;
+
+const hasMic = !!(navigator.mediaDevices?.getUserMedia || window.SpeechRecognition || window.webkitSpeechRecognition);
 
 function createDOM() {
   fab = document.createElement('button');
@@ -165,7 +201,10 @@ function createDOM() {
     </div>
     <div class="brw-body">
       <textarea class="brw-desc" placeholder="Décrivez le problème..."></textarea>
-      <button class="brw-send">Envoyer</button>
+      <div class="brw-actions">
+        ${hasMic ? `<button class="brw-mic" title="Dicter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></button>` : ''}
+        <button class="brw-send">Envoyer</button>
+      </div>
       <div class="brw-status"></div>
     </div>
   `;
@@ -173,13 +212,46 @@ function createDOM() {
   bodyEl = panel.querySelector('.brw-body');
   descEl = panel.querySelector('.brw-desc');
   sendBtn = panel.querySelector('.brw-send');
+  micBtn = panel.querySelector('.brw-mic');
   statusEl = panel.querySelector('.brw-status');
 
   panel.querySelector('.brw-close').addEventListener('click', togglePanel);
   sendBtn.addEventListener('click', handleSend);
+  if (micBtn) micBtn.addEventListener('click', toggleMic);
 
   document.body.appendChild(fab);
   document.body.appendChild(panel);
+}
+
+// ── Speech-to-Text ─────────────────────────────────────────────────────
+let stt = null;
+
+async function toggleMic() {
+  if (listening) return; // already recording, wait for it to finish
+
+  // Lazy-import shared STT service
+  if (!stt) {
+    const mod = await import(BASE + '../stt-service.js');
+    stt = mod.default;
+    stt.init('french'); // non-blocking; falls back to Web Speech API if Whisper unavailable
+  }
+
+  listening = true;
+  micBtn.classList.add('brw-mic-on');
+
+  const text = await stt.listen(
+    8000,
+    () => { statusEl.textContent = 'Parlez...'; },
+    () => { statusEl.textContent = 'Transcription...'; },
+  );
+
+  listening = false;
+  micBtn.classList.remove('brw-mic-on');
+  statusEl.textContent = '';
+
+  if (text) {
+    descEl.value = descEl.value + (descEl.value ? ' ' : '') + text;
+  }
 }
 
 // ── Screenshot ─────────────────────────────────────────────────────────
@@ -231,6 +303,8 @@ async function captureScreenshot() {
 async function handleSend() {
   const desc = descEl.value.trim();
   if (!desc || sending) return;
+
+  if (listening) return; // wait for recording to finish
 
   sending = true;
   sendBtn.disabled = true;
@@ -304,6 +378,5 @@ createDOM();
 
 if (startHidden) {
   fab.style.display = 'none';
-  // Expose global to reveal the widget (e.g. via long-press secret)
   window.__showBugWidget = () => { fab.style.display = ''; };
 }
