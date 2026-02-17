@@ -91,8 +91,8 @@ async function renderLevelGrid() {
     chaptersWrap.className = 'chapter-grid';
 
     for (const [cat, items] of categoryMap) {
-      const catMastery = allMastery.filter(m => m.status === 'mastered' && items.some(i => i.id === m.itemId));
-      const progressPct = items.length > 0 ? (catMastery.length / items.length) * 100 : 0;
+      const catLearned = allMastery.filter(m => (m.status === 'learning' || m.status === 'mastered') && items.some(i => i.id === m.itemId));
+      const progressPct = items.length > 0 ? (catLearned.length / items.length) * 100 : 0;
 
       const card = document.createElement('div');
       card.className = 'chapter-card';
@@ -100,7 +100,7 @@ async function renderLevelGrid() {
         <div class="chapter-name">${cat}</div>
         <div class="chapter-meta">${items.length} exercices</div>
         <div class="chapter-progress-bar"><div class="chapter-progress-fill" style="width:${progressPct}%"></div></div>
-        <div class="chapter-mastery">${catMastery.length}/${items.length}</div>
+        <div class="chapter-mastery">${catLearned.length}/${items.length}</div>
       `;
 
       card.addEventListener('click', () => {

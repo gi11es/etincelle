@@ -86,8 +86,8 @@ async function renderLevelGrid() {
 
     const levelItems = data.items || [];
     const levelMastery = allMastery.filter(m => levelItems.some(i => i.id === m.itemId));
-    const levelMastered = levelMastery.filter(m => m.status === 'mastered').length;
-    const progressPct = levelItems.length > 0 ? (levelMastered / levelItems.length) * 100 : 0;
+    const levelLearned = levelMastery.filter(m => m.status === 'learning' || m.status === 'mastered').length;
+    const progressPct = levelItems.length > 0 ? (levelLearned / levelItems.length) * 100 : 0;
 
     const card = document.createElement('div');
     card.className = 'level-card';
@@ -97,7 +97,7 @@ async function renderLevelGrid() {
         <div class="level-title">${data.title}</div>
         <div class="level-desc">${data.description}</div>
         <div class="level-progress-bar"><div class="level-progress-fill" style="width:${progressPct}%"></div></div>
-        <div class="level-mastery-badge">${levelMastered}/${levelItems.length} maîtrisés</div>
+        <div class="level-mastery-badge">${levelLearned}/${levelItems.length} en cours</div>
       </div>
     `;
 
