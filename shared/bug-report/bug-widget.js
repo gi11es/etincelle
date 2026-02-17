@@ -187,7 +187,7 @@ const hasMic = !!(navigator.mediaDevices?.getUserMedia || window.SpeechRecogniti
 function createDOM() {
   fab = document.createElement('button');
   fab.className = 'brw-fab';
-  fab.title = 'Signaler un bug';
+  fab.title = 'Signaler un problème';
   fab.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`;
   fab.addEventListener('click', togglePanel);
 
@@ -195,7 +195,7 @@ function createDOM() {
   panel.className = 'brw-panel';
   panel.innerHTML = `
     <div class="brw-header">
-      <span>Signaler un bug</span>
+      <span>Signaler un problème</span>
       <button class="brw-close">&times;</button>
     </div>
     <div class="brw-body">
@@ -265,44 +265,31 @@ async function toggleMic() {
 }
 
 // ── Screenshot ─────────────────────────────────────────────────────────
-function loadHtml2Canvas() {
+function loadDomToImage() {
   return new Promise((resolve, reject) => {
-    if (window.html2canvas) { resolve(window.html2canvas); return; }
+    if (window.domtoimage) { resolve(window.domtoimage); return; }
     const script = document.createElement('script');
-    script.src = BASE + 'html2canvas.min.js';
-    script.onload = () => resolve(window.html2canvas);
-    script.onerror = () => reject(new Error('Failed to load html2canvas'));
+    script.src = BASE + 'dom-to-image-more.min.js';
+    script.onload = () => resolve(window.domtoimage);
+    script.onerror = () => reject(new Error('Failed to load dom-to-image'));
     document.head.appendChild(script);
   });
 }
 
 async function captureScreenshot() {
-  // Hide widget + any overlays that would darken the capture
+  // Hide widget + any overlays during capture
   const hidden = [fab, panel];
   document.querySelectorAll('#confetti-canvas, .levelup-overlay, .lottie-overlay').forEach(el => hidden.push(el));
   const savedDisplay = hidden.map(el => el.style.display);
   hidden.forEach(el => { el.style.display = 'none'; });
 
   try {
-    const html2canvas = await loadHtml2Canvas();
-    const canvas = await html2canvas(document.body, {
-      scale: 1,
-      useCORS: true,
-      logging: false,
+    const domtoimage = await loadDomToImage();
+    screenshotDataUrl = await domtoimage.toJpeg(document.body, {
+      quality: 0.85,
+      bgcolor: getComputedStyle(document.body).backgroundColor || '#0f0f23',
       width: Math.min(document.body.scrollWidth, 1200),
-      backgroundColor: null,
     });
-
-    // Composite onto a solid background (html2canvas can leave transparent areas)
-    const opaque = document.createElement('canvas');
-    opaque.width = canvas.width;
-    opaque.height = canvas.height;
-    const ctx = opaque.getContext('2d');
-    ctx.fillStyle = getComputedStyle(document.body).backgroundColor || '#0f0f23';
-    ctx.fillRect(0, 0, opaque.width, opaque.height);
-    ctx.drawImage(canvas, 0, 0);
-
-    screenshotDataUrl = opaque.toDataURL('image/jpeg', 0.85);
   } catch (err) {
     console.warn('Bug widget: screenshot failed', err);
     screenshotDataUrl = null;

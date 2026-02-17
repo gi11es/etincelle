@@ -169,7 +169,7 @@ jobs:
           )
 
           for pat in "${patterns[@]}"; do
-            if grep -rEin "$pat" --include='*.html' --include='*.js' --include='*.css' --include='*.json' --include='*.md' --include='*.yml' . 2>/dev/null | grep -v node_modules | grep -v '.git/' | grep -v 'html2canvas\.min\.js'; then
+            if grep -rEin "$pat" --include='*.html' --include='*.js' --include='*.css' --include='*.json' --include='*.md' --include='*.yml' . 2>/dev/null | grep -v node_modules | grep -v '.git/' | grep -v 'dom-to-image-more\.min\.js'; then
               echo "::warning::Potential secret found matching pattern: $pat"
               errors=$((errors + 1))
             fi

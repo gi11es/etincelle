@@ -72,7 +72,7 @@ export async function uploadScreenshot(dataUrl) {
     const blob = await (await fetch(dataUrl)).blob();
     const form = new FormData();
     form.append('reqtype', 'fileupload');
-    form.append('fileToUpload', blob, 'screenshot.png');
+    form.append('fileToUpload', blob, 'screenshot.jpg');
 
     const res = await fetch('/api/catbox', {
       method: 'POST',
