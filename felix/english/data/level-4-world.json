@@ -10,7 +10,7 @@
     { "id": "en4-004", "type": "word", "en": "cold", "fr": "froid", "category": "weather", "example_en": "It's very cold in winter.", "example_fr": "Il fait très froid en hiver." },
     { "id": "en4-005", "type": "word", "en": "hot", "fr": "chaud", "category": "weather", "example_en": "It's too hot to play outside.", "example_fr": "Il fait trop chaud pour jouer dehors." },
     { "id": "en4-006", "type": "word", "en": "windy", "fr": "venteux", "category": "weather", "example_en": "It's windy, hold your hat!", "example_fr": "Il y a du vent, tiens ton chapeau !" },
-    { "id": "en4-007", "type": "word", "en": "snow", "fr": "neige", "category": "weather", "example_en": "It snows a lot in the mountains.", "example_fr": "Il neige beaucoup à la montagne." },
+    { "id": "en4-007", "type": "word", "en": "snow", "fr": "neige", "category": "weather", "example_en": "There is snow on the mountains.", "example_fr": "Il y a de la neige sur les montagnes." },
     { "id": "en4-008", "type": "word", "en": "storm", "fr": "tempête", "category": "weather", "example_en": "There was a big storm last night.", "example_fr": "Il y a eu une grosse tempête hier soir." },
 
     { "id": "en4-009", "type": "word", "en": "shirt", "fr": "chemise", "category": "clothes", "example_en": "He wears a white shirt to school.", "example_fr": "Il porte une chemise blanche à l'école." },
@@ -21,7 +21,7 @@
     { "id": "en4-014", "type": "word", "en": "dress", "fr": "robe", "category": "clothes", "example_en": "She bought a new dress.", "example_fr": "Elle a acheté une nouvelle robe." },
     { "id": "en4-015", "type": "word", "en": "socks", "fr": "chaussettes", "category": "clothes", "example_en": "I can't find my socks!", "example_fr": "Je ne trouve pas mes chaussettes !" },
     { "id": "en4-016", "type": "word", "en": "scarf", "fr": "écharpe", "category": "clothes", "example_en": "Wear a scarf, it's freezing.", "example_fr": "Mets une écharpe, il gèle." },
-    { "id": "en4-017", "type": "word", "en": "to wear", "fr": "porter (vêtement)", "category": "clothes", "example_en": "I always wear trainers.", "example_fr": "Je porte toujours des baskets." },
+    { "id": "en4-017", "type": "word", "en": "to wear", "fr": "porter (vêtement)", "category": "clothes", "example_en": "I like to wear trainers at school.", "example_fr": "J'aime porter des baskets à l'école." },
     { "id": "en4-018", "type": "word", "en": "pocket", "fr": "poche", "category": "clothes", "example_en": "My phone is in my pocket.", "example_fr": "Mon téléphone est dans ma poche." },
 
     { "id": "en4-019", "type": "word", "en": "city", "fr": "ville", "category": "places", "example_en": "Paris is a big city.", "example_fr": "Paris est une grande ville." },
@@ -55,9 +55,9 @@
     { "id": "en4-044", "type": "sentence", "en": "It was raining when I left the house.", "fr": "Il pleuvait quand je suis sorti de la maison.", "category": "sentences", "example_en": "It was raining when I left the house, so I took my umbrella.", "example_fr": "Il pleuvait quand je suis sorti, alors j'ai pris mon parapluie." },
     { "id": "en4-045", "type": "sentence", "en": "I have never been to England.", "fr": "Je ne suis jamais allé en Angleterre.", "category": "sentences", "example_en": "I have never been to England but I would love to go.", "example_fr": "Je ne suis jamais allé en Angleterre mais j'adorerais y aller." },
     { "id": "en4-046", "type": "sentence", "en": "Could you tell me how to get to the museum?", "fr": "Pourriez-vous me dire comment aller au musée ?", "category": "sentences", "example_en": "Could you tell me how to get to the museum? Sure, it's on Park Street.", "example_fr": "Pourriez-vous me dire comment aller au musée ? Bien sûr, c'est dans Park Street." },
-    { "id": "en4-047", "type": "sentence", "en": "If it rains, we will stay inside.", "fr": "S'il pleut, on restera à l'intérieur.", "category": "sentences", "example_en": "If it rains tomorrow, we will stay inside and play games.", "example_fr": "S'il pleut demain, on restera à l'intérieur et on jouera." },
+    { "id": "en4-047", "type": "sentence", "en": "If it rains, we will stay inside.", "fr": "S'il pleut, on restera à l'intérieur.", "category": "sentences", "example_en": "If it rains, we will stay inside and play games.", "example_fr": "S'il pleut, on restera à l'intérieur et on jouera." },
     { "id": "en4-048", "type": "sentence", "en": "The train leaves at half past eight.", "fr": "Le train part à huit heures et demie.", "category": "sentences", "example_en": "Hurry up! The train leaves at half past eight.", "example_fr": "Dépêche-toi ! Le train part à huit heures et demie." },
-    { "id": "en4-049", "type": "sentence", "en": "This city is bigger than my town.", "fr": "Cette ville est plus grande que ma ville.", "category": "sentences", "example_en": "London is bigger than any city in France.", "example_fr": "Londres est plus grande que n'importe quelle ville en France." },
+    { "id": "en4-049", "type": "sentence", "en": "This city is bigger than my town.", "fr": "Cette ville est plus grande que ma ville.", "category": "sentences", "example_en": "This city is bigger than my town but not as big as Paris.", "example_fr": "Cette ville est plus grande que ma ville mais pas autant que Paris." },
     { "id": "en4-050", "type": "sentence", "en": "I would like to travel to Japan one day.", "fr": "J'aimerais voyager au Japon un jour.", "category": "sentences", "example_en": "I would like to travel to Japan one day because I love manga.", "example_fr": "J'aimerais voyager au Japon un jour parce que j'adore les mangas." }
   ]
 }
