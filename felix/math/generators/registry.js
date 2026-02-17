@@ -20,7 +20,11 @@ export function generate(item) {
   }
   try {
     const generated = fn(item);
-    return { ...item, ...generated };
+    const merged = { ...item, ...generated };
+    if (item.diagram && !generated.diagram) {
+      delete merged.diagram;
+    }
+    return merged;
   } catch (e) {
     console.error('Generator error:', item.generator, e);
     return item;
