@@ -111,11 +111,9 @@ The widget requires `shared/secrets.js` (gitignored). Copy the example and fill 
 cp shared/secrets.example.js shared/secrets.js
 ```
 
-You need:
-- A **GitHub fine-grained PAT** scoped to Issues (Read & Write) on the target repo
-- An **Imgur Client-ID** for screenshot hosting (register free at https://api.imgur.com/oauth2/addclient)
+You need a **GitHub fine-grained PAT** scoped to Issues (Read & Write) on the target repo. Screenshots are hosted on catbox.moe (no key needed).
 
-If `secrets.js` is missing or tokens are placeholders, the widget does not appear.
+If `secrets.js` is missing or the token is a placeholder, the widget does not appear.
 
 ## Hosting
 

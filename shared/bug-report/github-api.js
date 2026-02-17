@@ -62,30 +62,26 @@ export async function createIssue(title, body) {
 }
 
 /**
- * Upload a screenshot to Imgur for embedding in GitHub issues.
+ * Upload a screenshot to catbox.moe for embedding in GitHub issues.
+ * Free, anonymous, permanent hosting — no API key needed.
  * @param {string} dataUrl - data:image/... URI
- * @returns {Promise<string|null>} Imgur URL or null on failure
+ * @returns {Promise<string|null>} hosted URL or null on failure
  */
 export async function uploadScreenshot(dataUrl) {
   try {
-    const secrets = await import('../secrets.js');
-    const clientId = secrets.IMGUR_CLIENT_ID;
-    if (!clientId || clientId === 'PASTE_YOUR_IMGUR_CLIENT_ID_HERE') return null;
+    const blob = await (await fetch(dataUrl)).blob();
+    const form = new FormData();
+    form.append('reqtype', 'fileupload');
+    form.append('fileToUpload', blob, 'screenshot.png');
 
-    const base64 = dataUrl.replace(/^data:image\/\w+;base64,/, '');
-
-    const res = await fetch('https://api.imgur.com/3/image', {
+    const res = await fetch('https://catbox.moe/user/api.php', {
       method: 'POST',
-      headers: {
-        Authorization: `Client-ID ${clientId}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ image: base64, type: 'base64' }),
+      body: form,
     });
 
     if (!res.ok) return null;
-    const json = await res.json();
-    return json.data?.link || null;
+    const url = (await res.text()).trim();
+    return url.startsWith('https://') ? url : null;
   } catch {
     return null;
   }
