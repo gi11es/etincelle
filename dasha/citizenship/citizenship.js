@@ -74,8 +74,8 @@ async function renderHome() {
 
     const items = data.items || [];
     const catMastery = allMastery.filter(m => items.some(i => i.id === m.itemId));
-    const catMastered = catMastery.filter(m => m.status === 'mastered').length;
-    const progressPct = items.length > 0 ? (catMastered / items.length) * 100 : 0;
+    const catLearned = catMastery.filter(m => m.status === 'learning' || m.status === 'mastered').length;
+    const progressPct = items.length > 0 ? (catLearned / items.length) * 100 : 0;
 
     const card = document.createElement('div');
     card.className = 'category-card';
@@ -86,7 +86,7 @@ async function renderHome() {
         <div class="category-desc">${data.description || ''}</div>
         <div class="category-progress-bar"><div class="category-progress-fill" style="width:${progressPct}%"></div></div>
       </div>
-      <div class="category-count">${catMastered}/${items.length}</div>
+      <div class="category-count">${catLearned}/${items.length}</div>
     `;
 
     card.addEventListener('click', () => {
@@ -338,16 +338,20 @@ function renderExamItem() {
   });
 }
 
-function handleExamAnswer(item, correct, container) {
+async function handleExamAnswer(item, correct, container) {
   // Find which category this item belongs to
+  let itemCategory = null;
   for (const cat of CATEGORIES) {
     const data = categoryData[cat.key];
     if (data && data.items.some(i => i.id === item.id)) {
       examCategoryScores[cat.key].total++;
       if (correct) examCategoryScores[cat.key].correct++;
+      itemCategory = cat.key;
       break;
     }
   }
+
+  await recordAnswer(item.id, correct, 'citizenship', itemCategory);
 
   if (correct) {
     examScore++;
