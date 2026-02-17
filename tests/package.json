@@ -2,8 +2,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node smoke-test.mjs && node gamification-test.mjs",
-    "test:smoke": "node smoke-test.mjs",
+    "test": "npm run test:pages && npm run test:math && npm run test:english && npm run test:quizlivre && npm run test:french && npm run test:citizenship && npm run test:zoe",
+    "test:pages": "node smoke-pages.mjs",
+    "test:math": "node smoke-felix-math.mjs",
+    "test:english": "node smoke-felix-english.mjs",
+    "test:quizlivre": "node smoke-felix-quizlivre.mjs",
+    "test:french": "node smoke-dasha-french.mjs",
+    "test:citizenship": "node smoke-dasha-citizenship.mjs",
+    "test:zoe": "node smoke-zoe.mjs",
     "test:gamification": "node gamification-test.mjs"
   },
   "devDependencies": {

@@ -96,6 +96,18 @@ jobs:
 
   smoke-test:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        test:
+          - { name: 'Page loads', file: 'smoke-pages.mjs' }
+          - { name: 'Felix Math', file: 'smoke-felix-math.mjs' }
+          - { name: 'Felix English', file: 'smoke-felix-english.mjs' }
+          - { name: 'Felix Quiz-Livre', file: 'smoke-felix-quizlivre.mjs' }
+          - { name: 'Dasha French', file: 'smoke-dasha-french.mjs' }
+          - { name: 'Dasha Citizenship', file: 'smoke-dasha-citizenship.mjs' }
+          - { name: 'Zoe', file: 'smoke-zoe.mjs' }
+    name: smoke / ${{ matrix.test.name }}
     steps:
       - uses: actions/checkout@v4
 
@@ -107,9 +119,22 @@ jobs:
         working-directory: tests
         run: npm ci
 
-      - name: Run headless browser smoke tests
+      - name: ${{ matrix.test.name }}
         working-directory: tests
-        run: node smoke-test.mjs
+        run: node ${{ matrix.test.file }}
+
+  gamification-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install test dependencies
+        working-directory: tests
+        run: npm ci
 
       - name: Run gamification / IndexedDB tests
         working-directory: tests
