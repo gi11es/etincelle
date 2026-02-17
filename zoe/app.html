@@ -1899,7 +1899,7 @@ function computeStatus(m) {
   if (!m || m.total === 0) return 'new';
   const recent = m.recentWindow || [];
   const recentCorrect = recent.filter(x => x === 1).length;
-  if (m.total >= 5 && recentCorrect >= 4 && recent.length >= 5 && m.streak >= 3) {
+  if (m.total >= 3 && recentCorrect >= 3 && recent.length >= 3 && m.streak >= 2) {
     return 'mastered';
   }
   return 'learning';
@@ -2093,7 +2093,7 @@ async function checkTierUnlock(game, masteryMap) {
     const m = masteryMap[game + ':' + item];
     if (computeStatus(m) === 'mastered') masteredCount++;
   }
-  return masteredCount >= Math.ceil(tierItems.length * 0.70);
+  return masteredCount >= Math.ceil(tierItems.length * 0.50);
 }
 
 async function checkTierRegression(game, masteryMap) {

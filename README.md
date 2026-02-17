@@ -107,4 +107,4 @@ Advanced French vocabulary and French citizenship test preparation.
 
 ## License
 
-Private family project.
+MIT — see [LICENSE](LICENSE).
