@@ -10,11 +10,14 @@ function detectUser() {
 
 function getDBName(user) {
   if (user) return `FamilyLearning-${user}`;
-  let active = localStorage.getItem('family-active-user');
-  if (!active) {
-    active = detectUser();
-    if (active) localStorage.setItem('family-active-user', active);
+  // Always prefer URL-based detection over localStorage (which can be stale
+  // from visiting a different portal).
+  const detected = detectUser();
+  if (detected) {
+    localStorage.setItem('family-active-user', detected);
+    return `FamilyLearning-${detected}`;
   }
+  const active = localStorage.getItem('family-active-user');
   return active ? `FamilyLearning-${active}` : 'FamilyLearning-default';
 }
 
@@ -218,7 +221,6 @@ export async function updateDailyActivity(date, updates) {
   if (!record) {
     record = { date, xpEarned: 0, sessionsPlayed: 0, correctAnswers: 0, totalAnswers: 0, timeSpent: 0 };
   }
-  Object.assign(record, updates);
   if (updates.addXP) record.xpEarned += updates.addXP;
   if (updates.addSession) record.sessionsPlayed += 1;
   if (updates.addCorrect) record.correctAnswers += updates.addCorrect;
