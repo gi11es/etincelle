@@ -101,6 +101,22 @@ Advanced French vocabulary and French citizenship test preparation.
 | Hosting | nginx + Let's Encrypt (DNS-01 via Cloudflare) |
 | Deployment | GitHub + cron git pull |
 
+## Bug Reports
+
+A floating bug-report widget is embedded in every page. It captures a screenshot, user description (with speech-to-text support), page URL, and browser info, then submits everything as a GitHub Issue.
+
+The widget requires `shared/secrets.js` (gitignored). Copy the example and fill in your tokens:
+
+```bash
+cp shared/secrets.example.js shared/secrets.js
+```
+
+You need:
+- A **GitHub fine-grained PAT** scoped to Issues (Read & Write) on the target repo
+- An **Imgur Client-ID** for screenshot hosting (register free at https://api.imgur.com/oauth2/addclient)
+
+If `secrets.js` is missing or tokens are placeholders, the widget does not appear.
+
 ## Hosting
 
 100% static — just point any web server at the repo root over HTTPS. See [HOSTING.md](HOSTING.md) for setup instructions and a sample nginx config.

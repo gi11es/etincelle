@@ -1,4 +1,5 @@
 node_modules/
+shared/secrets.js
 screenshots/node_modules/
 screenshots/package.json
 screenshots/package-lock.json

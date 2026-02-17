@@ -62,6 +62,36 @@ export async function createIssue(title, body) {
 }
 
 /**
+ * Upload a screenshot to Imgur for embedding in GitHub issues.
+ * @param {string} dataUrl - data:image/... URI
+ * @returns {Promise<string|null>} Imgur URL or null on failure
+ */
+export async function uploadScreenshot(dataUrl) {
+  try {
+    const secrets = await import('../secrets.js');
+    const clientId = secrets.IMGUR_CLIENT_ID;
+    if (!clientId || clientId === 'PASTE_YOUR_IMGUR_CLIENT_ID_HERE') return null;
+
+    const base64 = dataUrl.replace(/^data:image\/\w+;base64,/, '');
+
+    const res = await fetch('https://api.imgur.com/3/image', {
+      method: 'POST',
+      headers: {
+        Authorization: `Client-ID ${clientId}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ image: base64, type: 'base64' }),
+    });
+
+    if (!res.ok) return null;
+    const json = await res.json();
+    return json.data?.link || null;
+  } catch {
+    return null;
+  }
+}
+
+/**
  * Check if GitHub submission is available (token configured).
  */
 export async function isConfigured() {

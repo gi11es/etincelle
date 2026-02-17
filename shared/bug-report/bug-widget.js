@@ -318,27 +318,40 @@ async function handleSend() {
   statusEl.textContent = '';
 
   const title = desc.length > 80 ? desc.slice(0, 77) + '...' : desc;
-  const body = [
-    `### Description`,
-    desc,
-    ``,
-    `### Contexte`,
-    `| | |`,
-    `|---|---|`,
-    `| **Page** | \`${location.href}\` |`,
-    `| **User-Agent** | \`${navigator.userAgent}\` |`,
-    `| **Écran** | ${screen.width}x${screen.height} |`,
-    `| **Date** | ${new Date().toLocaleString('fr-FR')} |`,
-  ].join('\n');
 
   try {
-    const { createIssue, isConfigured } = await import(BASE + 'github-api.js');
+    const { createIssue, isConfigured, uploadScreenshot } = await import(BASE + 'github-api.js');
     if (!(await isConfigured())) {
-      await navigator.clipboard.writeText(`# ${title}\n\n${body}`);
+      await navigator.clipboard.writeText(`# ${title}\n\n${desc}\n\nPage: ${location.href}`);
       statusEl.textContent = 'Token GitHub absent. Rapport copié dans le presse-papier.';
       return;
     }
 
+    // Upload screenshot to Imgur
+    let screenshotUrl = null;
+    if (screenshotDataUrl) {
+      statusEl.textContent = 'Upload capture d\'écran...';
+      screenshotUrl = await uploadScreenshot(screenshotDataUrl);
+    }
+
+    const bodyParts = [
+      `### Description`,
+      desc,
+      ``,
+      `### Contexte`,
+      `| | |`,
+      `|---|---|`,
+      `| **Page** | \`${location.href}\` |`,
+      `| **User-Agent** | \`${navigator.userAgent}\` |`,
+      `| **Écran** | ${screen.width}x${screen.height} |`,
+      `| **Date** | ${new Date().toLocaleString('fr-FR')} |`,
+    ];
+    if (screenshotUrl) {
+      bodyParts.push('', `### Capture d'écran`, `![Screenshot](${screenshotUrl})`);
+    }
+    const body = bodyParts.join('\n');
+
+    statusEl.textContent = 'Envoi du rapport...';
     const { url } = await createIssue(title, body);
     statusEl.innerHTML = `<a href="${url}" target="_blank">Bug soumis !</a>`;
     descEl.value = '';
@@ -378,13 +391,24 @@ async function togglePanel() {
 }
 
 // ── Init ───────────────────────────────────────────────────────────────
-const scriptTag = document.querySelector('script[src*="bug-widget"]');
-const startHidden = scriptTag?.hasAttribute('data-hidden');
+async function init() {
+  // Don't show widget if secrets aren't configured
+  try {
+    const { isConfigured } = await import(BASE + 'github-api.js');
+    if (!(await isConfigured())) return;
+  } catch {
+    return;
+  }
 
-injectStyles();
-createDOM();
+  const scriptTag = document.querySelector('script[src*="bug-widget"]');
+  const startHidden = scriptTag?.hasAttribute('data-hidden');
 
-if (startHidden) {
-  fab.style.display = 'none';
-  window.__showBugWidget = () => { fab.style.display = ''; };
+  injectStyles();
+  createDOM();
+
+  if (startHidden) {
+    fab.style.display = 'none';
+    window.__showBugWidget = () => { fab.style.display = ''; };
+  }
 }
+init();
