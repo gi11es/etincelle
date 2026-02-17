@@ -55,12 +55,23 @@ jobs:
           - The issue was submitted via an in-app bug widget, so the description may be in French.
           - The Page URL in the Context section tells you which page is affected.
           - Only change what is necessary to fix the reported issue.
-          - Do NOT add comments, docstrings, or unrelated improvements."
+          - Do NOT add comments, docstrings, or unrelated improvements.
+          - After making your changes, write a short English summary (under 60 chars, no quotes) of what you fixed to a file called /tmp/fix_summary.txt. Example: Update English section description on Felix portal"
 
           claude --print --dangerously-skip-permissions \
             --model claude-opus-4-6 \
             --max-turns 20 \
             "$PROMPT"
+
+      - name: Read fix summary
+        id: summary
+        run: |
+          if [ -f /tmp/fix_summary.txt ]; then
+            SUMMARY=$(head -1 /tmp/fix_summary.txt | cut -c1-60)
+            echo "title=$SUMMARY" >> "$GITHUB_OUTPUT"
+          else
+            echo "title=Auto-fix by Claude" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Check for changes
         id: changes
@@ -87,7 +98,8 @@ jobs:
           git config user.email "claude-bot@users.noreply.github.com"
           git checkout -b "$BRANCH"
           git add -A -- . ':!.github'
-          git commit -m "Fix #${{ steps.issue.outputs.number }}: auto-fix by Claude
+          SUMMARY="${{ steps.summary.outputs.title }}"
+          git commit -m "Fix #${{ steps.issue.outputs.number }}: $SUMMARY
 
           Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>"
           git push origin "$BRANCH"
@@ -165,7 +177,7 @@ jobs:
           PR_URL=$(gh pr create \
             --base master \
             --head "$BRANCH" \
-            --title "Fix #${{ steps.issue.outputs.number }}: auto-fix by Claude" \
+            --title "Fix #${{ steps.issue.outputs.number }}: ${{ steps.summary.outputs.title }}" \
             --body "Automated fix for #${{ steps.issue.outputs.number }}.
 
           Fixes #${{ steps.issue.outputs.number }}
@@ -185,7 +197,7 @@ jobs:
           PR_URL=$(gh pr create \
             --base master \
             --head "$BRANCH" \
-            --title "Fix #${{ steps.issue.outputs.number }}: auto-fix by Claude (needs review)" \
+            --title "Fix #${{ steps.issue.outputs.number }}: ${{ steps.summary.outputs.title }} (needs review)" \
             --body "Automated fix attempt for #${{ steps.issue.outputs.number }}.
 
           ⚠️ **Tests failed** — this PR needs manual review before merging.
