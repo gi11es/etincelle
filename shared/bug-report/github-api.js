@@ -62,7 +62,7 @@ export async function createIssue(title, body) {
 }
 
 /**
- * Upload a screenshot to catbox.moe for embedding in GitHub issues.
+ * Upload a screenshot to catbox.moe via local nginx proxy (avoids CORS).
  * Free, anonymous, permanent hosting — no API key needed.
  * @param {string} dataUrl - data:image/... URI
  * @returns {Promise<string|null>} hosted URL or null on failure
@@ -74,7 +74,7 @@ export async function uploadScreenshot(dataUrl) {
     form.append('reqtype', 'fileupload');
     form.append('fileToUpload', blob, 'screenshot.png');
 
-    const res = await fetch('https://catbox.moe/user/api.php', {
+    const res = await fetch('/api/catbox', {
       method: 'POST',
       body: form,
     });

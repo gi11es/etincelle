@@ -103,17 +103,9 @@ Advanced French vocabulary and French citizenship test preparation.
 
 ## Bug Reports
 
-A floating bug-report widget is embedded in every page. It captures a screenshot, user description (with speech-to-text support), page URL, and browser info, then submits everything as a GitHub Issue.
+A floating bug-report widget is embedded in every page. It captures a screenshot, user description (with speech-to-text support), page URL, and browser info, then submits everything as a GitHub Issue with the screenshot hosted on [catbox.moe](https://catbox.moe).
 
-The widget requires `shared/secrets.js` (gitignored). Copy the example and fill in your tokens:
-
-```bash
-cp shared/secrets.example.js shared/secrets.js
-```
-
-You need a **GitHub fine-grained PAT** scoped to Issues (Read & Write) on the target repo. Screenshots are hosted on catbox.moe (no key needed).
-
-If `secrets.js` is missing or the token is a placeholder, the widget does not appear.
+Requires `shared/secrets.js` with a GitHub PAT (gitignored) and an nginx proxy for screenshot uploads. See [HOSTING.md](HOSTING.md) for setup. Without secrets, the widget does not appear.
 
 ## Hosting
 

@@ -48,6 +48,24 @@ server {
 }
 ```
 
+## Bug report widget (optional)
+
+A floating bug-report widget can submit issues to GitHub with screenshots. It requires:
+
+1. **`shared/secrets.js`** — copy `shared/secrets.example.js` and add a [GitHub fine-grained PAT](https://github.com/settings/personal-access-tokens/new) scoped to Issues (Read & Write) on the target repo. This file is gitignored.
+
+2. **Screenshot proxy** — the widget uploads screenshots to [catbox.moe](https://catbox.moe) for hosting. To avoid CORS issues, add a reverse proxy in your nginx config:
+
+```nginx
+    # Proxy for screenshot uploads to catbox.moe (avoids CORS)
+    location = /api/catbox {
+        proxy_pass https://catbox.moe/user/api.php;
+        proxy_ssl_server_name on;
+    }
+```
+
+Without `secrets.js`, the widget does not appear. Without the proxy, the widget works but screenshots won't be included in issues.
+
 ## Auto-deployment
 
 ```
