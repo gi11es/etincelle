@@ -147,6 +147,69 @@ class STTService {
     }
   }
 
+  // ── Continuous listening (toggle on/off) ───────────────────────────────
+
+  /**
+   * Start continuous speech recognition. Keeps listening across pauses
+   * until stopContinuous() is called.
+   * @param {function} onResult — called with (finalText, interimText) on each update
+   * @param {function} onStart — called when recognition starts
+   * @returns {boolean} true if started
+   */
+  startContinuous(onResult, onStart = null) {
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SR || this._contRecognition) return false;
+
+    const rec = new SR();
+    rec.lang = this._language === 'english' ? 'en-US' : 'fr-FR';
+    rec.continuous = true;
+    rec.interimResults = true;
+    this._contRecognition = rec;
+    this._contStopping = false;
+
+    rec.onstart = () => { if (onStart) onStart(); };
+
+    rec.onresult = (event) => {
+      let final = '', interim = '';
+      for (let i = 0; i < event.results.length; i++) {
+        const t = event.results[i][0].transcript;
+        if (event.results[i].isFinal) final += t;
+        else interim += t;
+      }
+      if (onResult) onResult(final, interim);
+    };
+
+    // Web Speech API sometimes stops on its own (e.g. long silence);
+    // auto-restart unless we're intentionally stopping.
+    rec.onend = () => {
+      if (!this._contStopping && this._contRecognition) {
+        try { rec.start(); } catch (_) { this._contRecognition = null; }
+      } else {
+        this._contRecognition = null;
+      }
+    };
+
+    rec.onerror = (e) => {
+      if (e.error === 'no-speech') return; // ignore, will auto-restart via onend
+      this._contRecognition = null;
+    };
+
+    rec.start();
+    return true;
+  }
+
+  /**
+   * Stop continuous recognition started with startContinuous().
+   */
+  stopContinuous() {
+    if (!this._contRecognition) return;
+    this._contStopping = true;
+    try { this._contRecognition.stop(); } catch (_) { /* ignore */ }
+    this._contRecognition = null;
+  }
+
+  get isContinuousListening() { return !!this._contRecognition; }
+
   _listenWebSpeech(maxMs, onRecording) {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SpeechRecognition) return Promise.resolve('');

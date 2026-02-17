@@ -225,32 +225,43 @@ function createDOM() {
 
 // ── Speech-to-Text ─────────────────────────────────────────────────────
 let stt = null;
+let preVoiceText = '';
 
 async function toggleMic() {
-  if (listening) return; // already recording, wait for it to finish
-
   // Lazy-import shared STT service
   if (!stt) {
     const mod = await import(BASE + '../stt-service.js');
     stt = mod.default;
-    stt.init('french'); // non-blocking; falls back to Web Speech API if Whisper unavailable
+    stt.init('french');
   }
 
-  listening = true;
-  micBtn.classList.add('brw-mic-on');
+  // Toggle off
+  if (listening) {
+    stt.stopContinuous();
+    listening = false;
+    micBtn.classList.remove('brw-mic-on');
+    statusEl.textContent = '';
+    return;
+  }
 
-  const text = await stt.listen(
-    8000,
-    () => { statusEl.textContent = 'Parlez...'; },
-    () => { statusEl.textContent = 'Transcription...'; },
+  // Toggle on — continuous mode, keeps listening across pauses
+  preVoiceText = descEl.value;
+  listening = true;
+
+  const started = stt.startContinuous(
+    (final, interim) => {
+      const prefix = preVoiceText ? preVoiceText + ' ' : '';
+      descEl.value = prefix + final + interim;
+    },
+    () => {
+      micBtn.classList.add('brw-mic-on');
+      statusEl.textContent = 'Parlez... (cliquez pour arrêter)';
+    },
   );
 
-  listening = false;
-  micBtn.classList.remove('brw-mic-on');
-  statusEl.textContent = '';
-
-  if (text) {
-    descEl.value = descEl.value + (descEl.value ? ' ' : '') + text;
+  if (!started) {
+    listening = false;
+    statusEl.textContent = 'Reconnaissance vocale non disponible.';
   }
 }
 
@@ -304,7 +315,12 @@ async function handleSend() {
   const desc = descEl.value.trim();
   if (!desc || sending) return;
 
-  if (listening) return; // wait for recording to finish
+  // Stop mic if still recording
+  if (listening && stt) {
+    stt.stopContinuous();
+    listening = false;
+    micBtn?.classList.remove('brw-mic-on');
+  }
 
   sending = true;
   sendBtn.disabled = true;
@@ -366,6 +382,11 @@ async function togglePanel() {
       }
     }
     descEl.focus();
+  } else if (listening && stt) {
+    stt.stopContinuous();
+    listening = false;
+    micBtn?.classList.remove('brw-mic-on');
+    statusEl.textContent = '';
   }
 }
 
