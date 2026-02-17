@@ -6,6 +6,7 @@
   "items": [
     {
       "id": "4e-rel-01",
+      "generator": "rel-mul-basic",
       "type": "solve",
       "question": "Calcule : (−3) × (−5)",
       "answer": "15",
@@ -16,6 +17,7 @@
     },
     {
       "id": "4e-rel-02",
+      "generator": "rel-mcq-sign",
       "type": "mcq",
       "question": "Quel est le signe de (−2) × (+3) × (−4) × (−1) ?",
       "choices": ["Négatif", "Positif", "Nul", "On ne peut pas savoir"],
@@ -27,6 +29,7 @@
     },
     {
       "id": "4e-rel-03",
+      "generator": "rel-solve-divmul",
       "type": "solve",
       "question": "Calcule : (−6) × 4 ÷ (−3)",
       "answer": "8",
@@ -37,6 +40,7 @@
     },
     {
       "id": "4e-rel-04",
+      "generator": "rel-mcq-power",
       "type": "mcq",
       "question": "Quel est le résultat de (−2)³ ?",
       "choices": ["-8", "8", "-6", "6"],
@@ -48,6 +52,7 @@
     },
     {
       "id": "4e-rel-05",
+      "generator": "rel-solve-power-combo",
       "type": "solve",
       "question": "Calcule : (−1)⁷ × (−3)² × (−2)",
       "answer": "18",
@@ -58,6 +63,7 @@
     },
     {
       "id": "4e-rel-06",
+      "generator": "rel-solve-div-chain",
       "type": "solve",
       "question": "Calcule : 36 ÷ (−4) ÷ (−3)",
       "answer": "3",
@@ -68,6 +74,7 @@
     },
     {
       "id": "4e-frac-01",
+      "generator": "frac-div",
       "type": "solve",
       "question": "Calcule : 3/4 ÷ 2/5",
       "answer": "15/8",
@@ -78,6 +85,7 @@
     },
     {
       "id": "4e-frac-02",
+      "generator": "frac-mcq-div",
       "type": "mcq",
       "question": "Quel est le résultat de 7/9 ÷ 14/3 ?",
       "choices": ["1/6", "98/27", "7/42", "3/14"],
@@ -89,6 +97,7 @@
     },
     {
       "id": "4e-frac-03",
+      "generator": "frac-solve-compound",
       "type": "solve",
       "question": "Calcule : (1/2 + 1/3) × 6/5",
       "answer": "1",
@@ -99,6 +108,7 @@
     },
     {
       "id": "4e-frac-04",
+      "generator": "frac-mcq-compound-div",
       "type": "mcq",
       "question": "Simplifie : (2/3 − 1/6) ÷ (1/2)",
       "choices": ["1", "1/4", "5/6", "1/2"],
@@ -110,6 +120,7 @@
     },
     {
       "id": "4e-frac-05",
+      "generator": "frac-solve-neg",
       "type": "solve",
       "question": "Calcule : (−3/4) × (8/9)",
       "answer": "-2/3",
@@ -120,6 +131,7 @@
     },
     {
       "id": "4e-frac-06",
+      "generator": "frac-mcq-priority",
       "type": "mcq",
       "question": "Quelle est la valeur de 5/8 + 3/8 ÷ 3/4 ?",
       "choices": ["9/8", "1", "5/8", "3/2"],
@@ -131,6 +143,7 @@
     },
     {
       "id": "4e-puis-01",
+      "generator": "puis-solve-mul",
       "type": "solve",
       "question": "Simplifie : 2³ × 2⁴",
       "answer": "128",
@@ -141,6 +154,7 @@
     },
     {
       "id": "4e-puis-02",
+      "generator": "puis-mcq-div",
       "type": "mcq",
       "question": "Que vaut 5⁶ ÷ 5⁴ ?",
       "choices": ["25", "5²", "5¹⁰", "1"],
@@ -152,6 +166,7 @@
     },
     {
       "id": "4e-puis-03",
+      "generator": "puis-solve-notation-sci",
       "type": "solve",
       "question": "Écris en notation scientifique : 0,00045",
       "answer": "4,5×10⁻⁴",
@@ -162,6 +177,7 @@
     },
     {
       "id": "4e-puis-04",
+      "generator": "puis-mcq-notation-sci",
       "type": "mcq",
       "question": "Quelle est la notation scientifique de 37 500 ?",
       "choices": ["3,75 × 10⁴", "37,5 × 10³", "3,75 × 10⁵", "375 × 10²"],
@@ -173,6 +189,7 @@
     },
     {
       "id": "4e-puis-05",
+      "generator": "puis-solve-power-power",
       "type": "solve",
       "question": "Simplifie : (3²)³",
       "answer": "729",
@@ -183,6 +200,7 @@
     },
     {
       "id": "4e-puis-06",
+      "generator": "puis-mcq-zero",
       "type": "mcq",
       "question": "Que vaut 10⁰ ?",
       "choices": ["1", "0", "10", "Indéfini"],
@@ -194,6 +212,7 @@
     },
     {
       "id": "4e-puis-07",
+      "generator": "puis-solve-negative",
       "type": "solve",
       "question": "Calcule : 2⁻³",
       "answer": "1/8",
@@ -204,6 +223,7 @@
     },
     {
       "id": "4e-puis-08",
+      "generator": "puis-mcq-product",
       "type": "mcq",
       "question": "Simplifie : (2 × 3)⁴",
       "choices": ["1296", "24", "4096", "81"],
@@ -215,6 +235,7 @@
     },
     {
       "id": "4e-dev-01",
+      "generator": "dev-solve-simple",
       "type": "solve",
       "question": "Développe : 3(2x + 5)",
       "answer": "6x+15",
@@ -225,6 +246,7 @@
     },
     {
       "id": "4e-dev-02",
+      "generator": "dev-mcq-double",
       "type": "mcq",
       "question": "Quel est le développement de (x + 3)(x − 2) ?",
       "choices": ["x² + x − 6", "x² + x + 6", "x² − x − 6", "x² − 6"],
@@ -236,6 +258,7 @@
     },
     {
       "id": "4e-dev-03",
+      "generator": "dev-solve-factor",
       "type": "solve",
       "question": "Factorise : 6x + 9",
       "answer": "3(2x+3)",
@@ -246,6 +269,7 @@
     },
     {
       "id": "4e-dev-04",
+      "generator": "dev-mcq-double-coeff",
       "type": "mcq",
       "question": "Quel est le développement de (2x − 1)(3x + 4) ?",
       "choices": ["6x² + 5x − 4", "6x² + 11x − 4", "6x² − 5x − 4", "5x² + 5x − 4"],
@@ -257,6 +281,7 @@
     },
     {
       "id": "4e-dev-05",
+      "generator": "dev-solve-factor-x",
       "type": "solve",
       "question": "Factorise : 4x² − 12x",
       "answer": "4x(x-3)",
@@ -267,6 +292,7 @@
     },
     {
       "id": "4e-dev-06",
+      "generator": "dev-mcq-diff-squares",
       "type": "mcq",
       "question": "Développe et réduis : (x + 5)² − (x − 1)²",
       "choices": ["12x + 24", "10x + 24", "24", "2x² + 8x + 26"],
@@ -278,6 +304,7 @@
     },
     {
       "id": "4e-dev-07",
+      "generator": "dev-solve-factor-two-var",
       "type": "solve",
       "question": "Factorise : 15x²y − 10xy²",
       "answer": "5xy(3x-2y)",
@@ -288,6 +315,7 @@
     },
     {
       "id": "4e-dev-08",
+      "generator": "dev-mcq-distribute",
       "type": "mcq",
       "question": "Quel est le développement de −2(3x − 4) + 5(x + 1) ?",
       "choices": ["-x + 13", "-x + 3", "-11x + 13", "x + 13"],
@@ -299,6 +327,7 @@
     },
     {
       "id": "4e-eq-01",
+      "generator": "eq-solve-basic",
       "type": "solve",
       "question": "Résous : 3x + 7 = 22",
       "answer": "5",
@@ -309,6 +338,7 @@
     },
     {
       "id": "4e-eq-02",
+      "generator": "eq-mcq-both-sides",
       "type": "mcq",
       "question": "Quelle est la solution de 5x − 3 = 2x + 9 ?",
       "choices": ["4", "2", "6", "3"],
@@ -320,6 +350,7 @@
     },
     {
       "id": "4e-eq-03",
+      "generator": "eq-solve-parens",
       "type": "solve",
       "question": "Résous : 4(x − 2) = 3(x + 1) − 5",
       "answer": "6",
@@ -330,6 +361,7 @@
     },
     {
       "id": "4e-eq-04",
+      "generator": "eq-mcq-word",
       "type": "mcq",
       "question": "Un père a 42 ans et son fils en a 12. Dans combien d'années l'âge du père sera-t-il le triple de l'âge du fils ?",
       "choices": ["3 ans", "5 ans", "6 ans", "10 ans"],
@@ -341,6 +373,7 @@
     },
     {
       "id": "4e-eq-05",
+      "generator": "eq-solve-frac",
       "type": "solve",
       "question": "Résous : x/3 + x/4 = 7",
       "answer": "12",
@@ -351,6 +384,7 @@
     },
     {
       "id": "4e-eq-06",
+      "generator": "eq-mcq-perimetre",
       "type": "mcq",
       "question": "Un rectangle a un périmètre de 54 cm. Sa longueur dépasse sa largeur de 5 cm. Quelle est sa largeur ?",
       "choices": ["11 cm", "16 cm", "22 cm", "27 cm"],
@@ -362,6 +396,7 @@
     },
     {
       "id": "4e-eq-07",
+      "generator": "eq-solve-two-sides",
       "type": "solve",
       "question": "Résous : 2(3x − 1) − 5(x − 3) = x + 7",
       "answer": "-6",
@@ -382,16 +417,24 @@
     },
     {
       "id": "4e-pyth-01",
+      "generator": "pyth-solve-hyp",
       "type": "solve",
       "question": "Un triangle rectangle a des cathètes de 3 cm et 4 cm. Calcule l'hypoténuse.",
       "answer": "5",
       "explanation": "Le théorème de Pythagore : dans un triangle RECTANGLE, le carré de l'hypoténuse est égal à la somme des carrés des deux autres côtés. Hypoténuse² = 3² + 4² = 9 + 16 = 25. Donc hypoténuse = √25 = 5 cm. Le triplet (3, 4, 5) est le plus célèbre des triplets pythagoriciens ! Les Égyptiens l'utilisaient déjà il y a 4000 ans pour tracer des angles droits.",
       "hint": "Pythagore : c² = a² + b².",
       "category": "Théorème de Pythagore",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [4, 0], "C": [0, 3]},
+        "rightAngle": "A",
+        "labels": {"AB": "4 cm", "AC": "3 cm", "BC": "?"}
+      }
     },
     {
       "id": "4e-pyth-02",
+      "generator": "pyth-mcq-reciprocal",
       "type": "mcq",
       "question": "Un triangle a des côtés de 5 cm, 12 cm et 13 cm. Est-il rectangle ?",
       "choices": ["Oui, car 5² + 12² = 13²", "Non, car 5 + 12 ≠ 13²", "Oui, car 5 + 12 = 17 > 13", "Non, car aucun angle n'est marqué"],
@@ -399,20 +442,34 @@
       "explanation": "C'est la RÉCIPROQUE de Pythagore ! On vérifie : 5² + 12² = 25 + 144 = 169 et 13² = 169. Comme 5² + 12² = 13², le triangle EST rectangle (avec l'angle droit opposé au côté de 13 cm). Attention : il faut toujours tester avec le PLUS GRAND côté comme hypoténuse. (5, 12, 13) est un autre triplet pythagoricien classique !",
       "hint": "Vérifie si a² + b² = c² avec c le plus grand côté.",
       "category": "Théorème de Pythagore",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [12, 0], "C": [0, 5]},
+        "rightAngle": "A",
+        "labels": {"AB": "12 cm", "AC": "5 cm", "BC": "13 cm"}
+      }
     },
     {
       "id": "4e-pyth-03",
+      "generator": "pyth-solve-cathete",
       "type": "solve",
       "question": "Un triangle rectangle a une hypoténuse de 10 cm et une cathète de 6 cm. Calcule l'autre cathète.",
       "answer": "8",
       "explanation": "Pythagore : hypoténuse² = cathète₁² + cathète₂². Donc : cathète₂² = hypoténuse² − cathète₁² = 10² − 6² = 100 − 36 = 64. Cathète₂ = √64 = 8 cm. Quand on cherche une cathète (pas l'hypoténuse), on SOUSTRAIT. C'est l'erreur la plus fréquente : certains additionnent toujours, mais on n'additionne que pour trouver l'hypoténuse.",
       "hint": "Cathète² = Hypoténuse² − Autre cathète².",
       "category": "Théorème de Pythagore",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [8, 0], "C": [0, 6]},
+        "rightAngle": "A",
+        "labels": {"AB": "?", "AC": "6 cm", "BC": "10 cm"}
+      }
     },
     {
       "id": "4e-pyth-04",
+      "generator": "pyth-mcq-not-rect",
       "type": "mcq",
       "question": "Un triangle a des côtés de 7 cm, 8 cm et 11 cm. Est-il rectangle ?",
       "choices": ["Non, car 7² + 8² ≠ 11²", "Oui, car 7² + 8² = 11²", "Non, car 7 + 8 > 11", "Oui, car c'est un triangle valide"],
@@ -420,20 +477,33 @@
       "explanation": "Testons la réciproque de Pythagore : 7² + 8² = 49 + 64 = 113. Et 11² = 121. Comme 113 ≠ 121, le triangle n'est PAS rectangle. En fait, comme 7² + 8² < 11², le triangle est obtusangle (un angle > 90°). Si a² + b² > c², le triangle serait acutangle (tous les angles < 90°). La réciproque de Pythagore permet de classifier les triangles !",
       "hint": "Compare a² + b² avec c².",
       "category": "Théorème de Pythagore",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [8, 0], "C": [0, 7]},
+        "labels": {"AB": "8 cm", "AC": "7 cm", "BC": "11 cm"}
+      }
     },
     {
       "id": "4e-pyth-05",
+      "generator": "pyth-solve-diagonal",
       "type": "solve",
       "question": "Un carré a une diagonale de 10 cm. Calcule la longueur de son côté. Donne la valeur exacte sous la forme 'a√b'.",
       "answer": "5√2",
       "explanation": "La diagonale d'un carré coupe le carré en deux triangles rectangles isocèles. Si le côté du carré est a, alors par Pythagore : a² + a² = 10², soit 2a² = 100, donc a² = 50, et a = √50 = √(25 × 2) = 5√2 ≈ 7,07 cm. On simplifie √50 en cherchant le plus grand carré parfait qui divise 50 : c'est 25. Donc √50 = √25 × √2 = 5√2.",
       "hint": "Pythagore dans le triangle formé par la diagonale : a² + a² = diagonale².",
       "category": "Théorème de Pythagore",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [5, 0], "C": [5, 5]},
+        "rightAngle": "B",
+        "labels": {"AB": "côté = ?", "BC": "côté = ?", "AC": "d = 10 cm"}
+      }
     },
     {
       "id": "4e-pyth-06",
+      "generator": "pyth-mcq-ladder",
       "type": "mcq",
       "question": "Un mur vertical mesure 4 m. Une échelle de 5 m y est appuyée. À quelle distance du mur se trouve le pied de l'échelle ?",
       "choices": ["3 m", "√41 m", "1 m", "9 m"],
@@ -441,20 +511,35 @@
       "explanation": "Le mur, le sol et l'échelle forment un triangle rectangle (mur vertical, sol horizontal). L'échelle est l'hypoténuse (5 m), le mur une cathète (4 m). Distance au sol : d² = 5² − 4² = 25 − 16 = 9, donc d = 3 m. C'est le triplet (3, 4, 5) ! Pythagore est partout dans la vie réelle : échelles, pentes, distances...",
       "hint": "L'échelle est l'hypoténuse du triangle rectangle.",
       "category": "Théorème de Pythagore",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [3, 0], "C": [0, 4]},
+        "rightAngle": "A",
+        "labels": {"AB": "?", "AC": "4 m", "BC": "5 m"}
+      }
     },
     {
       "id": "4e-pyth-07",
+      "generator": "pyth-solve-distance",
       "type": "solve",
       "question": "Dans un repère, calcule la distance entre A(1, 2) et B(4, 6).",
       "answer": "5",
       "explanation": "La distance entre deux points se calcule avec Pythagore ! AB² = (x_B − x_A)² + (y_B − y_A)² = (4−1)² + (6−2)² = 3² + 4² = 9 + 16 = 25. AB = √25 = 5. On forme un triangle rectangle avec AB comme hypoténuse, et les projections horizontale (3) et verticale (4) comme cathètes. Encore le fameux triplet (3, 4, 5) !",
       "hint": "Distance = √[(x₂−x₁)² + (y₂−y₁)²].",
       "category": "Théorème de Pythagore",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "coordinate-plane",
+        "bounds": {"xMin": 0, "xMax": 5, "yMin": 0, "yMax": 7},
+        "points": {"A": [1, 2], "B": [4, 6]},
+        "segments": [{"from": "A", "to": "B"}],
+        "showGrid": true
+      }
     },
     {
       "id": "4e-pyth-08",
+      "generator": "pyth-mcq-losange",
       "type": "mcq",
       "question": "Un losange a des diagonales de 6 cm et 8 cm. Quelle est la longueur de chaque côté ?",
       "choices": ["5 cm", "7 cm", "10 cm", "√100 cm"],
@@ -462,10 +547,17 @@
       "explanation": "Les diagonales d'un losange se coupent en leur milieu à angle droit ! On obtient 4 triangles rectangles dont les cathètes mesurent 6/2 = 3 cm et 8/2 = 4 cm. Par Pythagore : côté² = 3² + 4² = 9 + 16 = 25, donc côté = 5 cm. C'est très astucieux : on utilise les propriétés du losange pour créer un triangle rectangle, puis on applique Pythagore !",
       "hint": "Les diagonales d'un losange sont perpendiculaires et se coupent en leur milieu.",
       "category": "Théorème de Pythagore",
-      "difficulty": 3
+      "difficulty": 3,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [4, 0], "C": [0, 3]},
+        "rightAngle": "A",
+        "labels": {"AB": "4", "AC": "3", "BC": "5 = côté"}
+      }
     },
     {
       "id": "4e-cos-01",
+      "generator": "cos-mcq-def",
       "type": "mcq",
       "question": "Dans un triangle rectangle, le cosinus d'un angle aigu est le rapport :",
       "choices": ["côté adjacent / hypoténuse", "côté opposé / hypoténuse", "côté opposé / côté adjacent", "hypoténuse / côté adjacent"],
@@ -473,20 +565,38 @@
       "explanation": "Le cosinus d'un angle aigu dans un triangle rectangle = côté ADJACENT / hypoténuse. « Adjacent » signifie « à côté de » l'angle. L'hypoténuse est toujours le plus grand côté (face à l'angle droit). En 4ème, on apprend le cosinus. En 3ème, on ajoutera le sinus (opposé/hypoténuse) et la tangente (opposé/adjacent). Le moyen mnémotechnique SOH-CAH-TOA aide à retenir : C-A-H = Cosinus = Adjacent / Hypoténuse.",
       "hint": "CAH : Cosinus = Adjacent / Hypoténuse.",
       "category": "Cosinus",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [6, 0], "C": [0, 4]},
+        "rightAngle": "A",
+        "highlightAngle": "B",
+        "angleLabel": "α",
+        "labels": {"AB": "adj", "BC": "hyp", "AC": "opp"}
+      }
     },
     {
       "id": "4e-cos-02",
+      "generator": "cos-solve-value",
       "type": "solve",
       "question": "Dans un triangle rectangle, l'hypoténuse mesure 10 cm et le côté adjacent à l'angle α mesure 8 cm. Que vaut cos(α) ? (sous forme décimale)",
       "answer": "0,8",
       "explanation": "cos(α) = côté adjacent / hypoténuse = 8/10 = 0,8. C'est aussi simple que ça ! Le cosinus est toujours compris entre 0 et 1 pour un angle aigu (entre 0° et 90°). Plus l'angle est petit, plus le cosinus est proche de 1 (cos 0° = 1). Plus l'angle est grand, plus le cosinus est proche de 0 (cos 90° = 0).",
       "hint": "cos(α) = adjacent / hypoténuse.",
       "category": "Cosinus",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [8, 0], "C": [0, 6]},
+        "rightAngle": "A",
+        "highlightAngle": "B",
+        "angleLabel": "α",
+        "labels": {"AB": "adj = 8 cm", "BC": "hyp = 10 cm", "AC": "opp = ?"}
+      }
     },
     {
       "id": "4e-cos-03",
+      "generator": "cos-mcq-remarkable",
       "type": "mcq",
       "question": "Que vaut cos(60°) ?",
       "choices": ["0,5", "√3/2", "1", "√2/2"],
@@ -494,20 +604,38 @@
       "explanation": "cos(60°) = 0,5 = 1/2. C'est une valeur remarquable à connaître par cœur ! On peut le retrouver avec un triangle équilatéral de côté 2 : en traçant la hauteur, on coupe la base en deux (1 et 1). Le triangle rectangle obtenu a une hypoténuse de 2 et un côté adjacent de 1 pour l'angle de 60°. Donc cos(60°) = 1/2 = 0,5. Autres valeurs à retenir : cos(0°) = 1, cos(45°) = √2/2 ≈ 0,707, cos(90°) = 0.",
       "hint": "C'est une valeur remarquable classique.",
       "category": "Cosinus",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [1, 0], "C": [0, 1.732]},
+        "rightAngle": "A",
+        "highlightAngle": "B",
+        "angleLabel": "60°",
+        "labels": {"AB": "adj = 1", "BC": "hyp = 2", "AC": "opp = √3"}
+      }
     },
     {
       "id": "4e-cos-04",
+      "generator": "cos-solve-adjacent",
       "type": "solve",
       "question": "Dans un triangle rectangle, cos(α) = 0,6 et l'hypoténuse mesure 15 cm. Calcule le côté adjacent à α.",
       "answer": "9",
       "explanation": "cos(α) = adjacent / hypoténuse, donc adjacent = cos(α) × hypoténuse = 0,6 × 15 = 9 cm. Le cosinus permet de calculer des longueurs ! C'est un outil puissant en navigation, architecture, physique... Si on connaît un angle et un côté d'un triangle rectangle, on peut trouver les autres côtés grâce à la trigonométrie.",
       "hint": "adjacent = cos(α) × hypoténuse.",
       "category": "Cosinus",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [9, 0], "C": [0, 12]},
+        "rightAngle": "A",
+        "highlightAngle": "B",
+        "angleLabel": "α",
+        "labels": {"AB": "adj = ?", "BC": "hyp = 15 cm", "AC": "opp"}
+      }
     },
     {
       "id": "4e-cos-05",
+      "generator": "cos-mcq-45",
       "type": "mcq",
       "question": "Un triangle rectangle a un angle de 45° et une hypoténuse de 10 cm. Quelle est la longueur du côté adjacent ?",
       "choices": ["5√2 cm", "5 cm", "10√2 cm", "10 cm"],
@@ -515,17 +643,215 @@
       "explanation": "cos(45°) = √2/2 ≈ 0,707. Côté adjacent = cos(45°) × 10 = 10 × √2/2 = 5√2 ≈ 7,07 cm. Un triangle rectangle avec un angle de 45° est isocèle rectangle : les deux cathètes sont égales. Si l'hypoténuse est 10, chaque cathète vaut 10/√2 = 10√2/2 = 5√2. C'est un triangle remarquable très fréquent !",
       "hint": "cos(45°) = √2/2. Adjacent = cos(45°) × hypoténuse.",
       "category": "Cosinus",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [7.07, 0], "C": [0, 7.07]},
+        "rightAngle": "A",
+        "highlightAngle": "B",
+        "angleLabel": "45°",
+        "labels": {"AB": "adj = ?", "BC": "hyp = 10 cm", "AC": "opp"}
+      }
     },
     {
       "id": "4e-cos-06",
+      "generator": "cos-solve-opposite-pyth",
       "type": "solve",
       "question": "Dans un triangle rectangle, le côté adjacent à l'angle β mesure 12 cm et l'hypoténuse 13 cm. Calcule le côté opposé à β.",
       "answer": "5",
       "explanation": "On utilise Pythagore pour trouver le troisième côté : opposé² = hypoténuse² − adjacent² = 13² − 12² = 169 − 144 = 25. Opposé = 5 cm. On obtient le triplet (5, 12, 13). On aurait aussi pu utiliser le cosinus : cos(β) = 12/13, puis sin(β) = opposé/13. Avec la relation cos²+sin²=1 : sin²(β) = 1 − (12/13)² = 1 − 144/169 = 25/169, sin(β) = 5/13, opposé = 5. Mais Pythagore est plus direct ici !",
       "hint": "Utilise Pythagore pour trouver le troisième côté.",
       "category": "Cosinus",
+      "difficulty": 2,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [12, 0], "C": [0, 5]},
+        "rightAngle": "A",
+        "highlightAngle": "B",
+        "angleLabel": "β",
+        "labels": {"AB": "adj = 12 cm", "BC": "hyp = 13 cm", "AC": "opp = ?"}
+      }
+    },
+    {
+      "id": "4e-pyth-inter",
+      "type": "interactive",
+      "interactive": "pythagoras-explorer",
+      "question": "Explore le théorème de Pythagore avec les carrés construits sur les côtés",
+      "explanation": "Le théorème de Pythagore dit que dans un triangle rectangle, a² + b² = c² où c est l'hypoténuse.",
+      "category": "Théorème de Pythagore",
       "difficulty": 2
+    },
+    {
+      "id": "4e-pyth-geo-01",
+      "type": "geo-click",
+      "question": "Clique sur l'hypoténuse du triangle rectangle",
+      "answer": "hyp",
+      "explanation": "L'hypoténuse est le côté opposé à l'angle droit. Dans le théorème de Pythagore, c'est le côté dont le carré égale la somme des carrés des deux autres.",
+      "category": "Pythagore",
+      "difficulty": 1,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [4, 0], "C": [0, 3]},
+        "rightAngle": "A",
+        "labels": {"AB": "4", "AC": "3", "BC": "?"},
+        "targets": [
+          {"type": "side", "side": "BC", "name": "hyp"},
+          {"type": "side", "side": "AB", "name": "side-AB"},
+          {"type": "side", "side": "CA", "name": "side-CA"}
+        ]
+      }
+    },
+    {
+      "id": "4e-pyth-geo-02",
+      "type": "geo-click",
+      "question": "Clique sur l'hypoténuse du triangle rectangle",
+      "answer": "hyp",
+      "explanation": "L'hypoténuse est toujours en face de l'angle droit. C'est le plus long côté du triangle rectangle.",
+      "category": "Pythagore",
+      "difficulty": 1,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"E": [1, 0], "F": [6, 0], "G": [6, 4]},
+        "rightAngle": "F",
+        "labels": {"EF": "5", "FG": "4", "EG": "?"},
+        "targets": [
+          {"type": "side", "side": "EF", "name": "side-EF"},
+          {"type": "side", "side": "FG", "name": "side-FG"},
+          {"type": "side", "side": "EG", "name": "hyp"}
+        ]
+      }
+    },
+    {
+      "id": "4e-pyth-geo-03",
+      "type": "geo-click",
+      "question": "Clique sur le cathète (côté de l'angle droit) opposé à l'angle marqué",
+      "answer": "opposite",
+      "explanation": "Le côté opposé à un angle est celui qui ne touche pas le sommet de cet angle.",
+      "category": "Pythagore",
+      "difficulty": 2,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [5, 0], "C": [0, 3]},
+        "rightAngle": "A",
+        "highlightAngle": "B",
+        "angleLabel": "β",
+        "labels": {},
+        "targets": [
+          {"type": "side", "side": "AC", "name": "opposite"},
+          {"type": "side", "side": "AB", "name": "adjacent"},
+          {"type": "side", "side": "BC", "name": "hyp"}
+        ]
+      }
+    },
+    {
+      "id": "4e-pyth-geo-04",
+      "type": "geo-click",
+      "question": "Clique sur le cathète opposé à l'angle marqué",
+      "answer": "opposite",
+      "explanation": "Le côté opposé est en face de l'angle. Il ne touche pas le sommet de l'angle marqué.",
+      "category": "Pythagore",
+      "difficulty": 2,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"P": [0, 0], "Q": [4, 0], "R": [4, 3]},
+        "rightAngle": "Q",
+        "highlightAngle": "P",
+        "angleLabel": "α",
+        "labels": {},
+        "targets": [
+          {"type": "side", "side": "QR", "name": "opposite"},
+          {"type": "side", "side": "PQ", "name": "adjacent"},
+          {"type": "side", "side": "PR", "name": "hyp"}
+        ]
+      }
+    },
+    {
+      "id": "4e-cos-geo-01",
+      "type": "geo-click",
+      "question": "Pour cos(α), clique sur le côté adjacent à l'angle α",
+      "answer": "adjacent",
+      "explanation": "cos(α) = adjacent / hypoténuse. Le côté adjacent est celui qui forme l'angle α avec l'hypoténuse.",
+      "category": "Cosinus",
+      "difficulty": 2,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [5, 0], "C": [0, 3]},
+        "rightAngle": "A",
+        "highlightAngle": "B",
+        "angleLabel": "α",
+        "labels": {},
+        "targets": [
+          {"type": "side", "side": "AB", "name": "adjacent"},
+          {"type": "side", "side": "AC", "name": "opposite"},
+          {"type": "side", "side": "BC", "name": "hyp"}
+        ]
+      }
+    },
+    {
+      "id": "4e-cos-geo-02",
+      "type": "geo-click",
+      "question": "Pour cos(β), clique sur le côté adjacent à l'angle β",
+      "answer": "adjacent",
+      "explanation": "Le côté adjacent est celui qui touche le sommet de l'angle β et qui n'est pas l'hypoténuse.",
+      "category": "Cosinus",
+      "difficulty": 2,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"D": [0, 0], "E": [4, 0], "F": [4, 3]},
+        "rightAngle": "E",
+        "highlightAngle": "F",
+        "angleLabel": "β",
+        "labels": {},
+        "targets": [
+          {"type": "side", "side": "EF", "name": "adjacent"},
+          {"type": "side", "side": "DE", "name": "opposite"},
+          {"type": "side", "side": "DF", "name": "hyp"}
+        ]
+      }
+    },
+    {
+      "id": "4e-cos-geo-03",
+      "type": "geo-click",
+      "question": "Pour cos(α), clique sur le côté opposé à l'angle α",
+      "answer": "opposite",
+      "explanation": "Le côté opposé est en face de l'angle α. Il ne touche pas le sommet de l'angle.",
+      "category": "Cosinus",
+      "difficulty": 2,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [5, 0], "C": [0, 4]},
+        "rightAngle": "A",
+        "highlightAngle": "B",
+        "angleLabel": "α",
+        "labels": {},
+        "targets": [
+          {"type": "side", "side": "AC", "name": "opposite"},
+          {"type": "side", "side": "AB", "name": "adjacent"},
+          {"type": "side", "side": "BC", "name": "hyp"}
+        ]
+      }
+    },
+    {
+      "id": "4e-cos-geo-04",
+      "type": "geo-click",
+      "question": "Pour cos(γ), clique sur le côté opposé à l'angle γ",
+      "answer": "opposite",
+      "explanation": "Le côté opposé à γ est celui qui est en face, il ne passe pas par le sommet de l'angle γ.",
+      "category": "Cosinus",
+      "difficulty": 2,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"X": [1, 0], "Y": [6, 0], "Z": [6, 3]},
+        "rightAngle": "Y",
+        "highlightAngle": "X",
+        "angleLabel": "γ",
+        "labels": {},
+        "targets": [
+          {"type": "side", "side": "YZ", "name": "opposite"},
+          {"type": "side", "side": "XY", "name": "adjacent"},
+          {"type": "side", "side": "XZ", "name": "hyp"}
+        ]
+      }
     }
   ]
 }

@@ -6,6 +6,7 @@
   "items": [
     {
       "id": "3e-pgcd-01",
+      "generator": "pgcd-solve-euclide",
       "type": "solve",
       "question": "Calcule le PGCD de 84 et 56 en utilisant l'algorithme d'Euclide.",
       "answer": "28",
@@ -16,6 +17,7 @@
     },
     {
       "id": "3e-pgcd-02",
+      "generator": "pgcd-mcq",
       "type": "mcq",
       "question": "Quel est le PGCD de 126 et 90 ?",
       "choices": ["18", "9", "6", "36"],
@@ -27,6 +29,7 @@
     },
     {
       "id": "3e-pgcd-03",
+      "generator": "pgcd-solve-irreductible",
       "type": "solve",
       "question": "Rends irréductible la fraction 156/104 (écris numérateur/dénominateur).",
       "answer": "3/2",
@@ -37,6 +40,7 @@
     },
     {
       "id": "3e-pgcd-04",
+      "generator": "pgcd-mcq-partage",
       "type": "mcq",
       "question": "On veut partager 180 bonbons rouges et 252 bonbons bleus en paquets identiques contenant les deux couleurs, sans reste. Quel est le nombre maximum de paquets ?",
       "choices": ["36", "12", "18", "9"],
@@ -48,6 +52,7 @@
     },
     {
       "id": "3e-pgcd-05",
+      "generator": "pgcd-solve-coprime",
       "type": "solve",
       "question": "Deux nombres sont premiers entre eux si leur PGCD vaut 1. Les nombres 35 et 24 sont-ils premiers entre eux ? (oui/non)",
       "answer": "oui",
@@ -58,6 +63,7 @@
     },
     {
       "id": "3e-id-01",
+      "generator": "id-solve-plus-sq",
       "type": "solve",
       "question": "Développe : (x + 4)²",
       "answer": "x²+8x+16",
@@ -68,6 +74,7 @@
     },
     {
       "id": "3e-id-02",
+      "generator": "id-mcq-minus-sq",
       "type": "mcq",
       "question": "Quel est le développement de (3x − 5)² ?",
       "choices": ["9x² − 30x + 25", "9x² + 30x + 25", "9x² − 25", "3x² − 10x + 25"],
@@ -79,6 +86,7 @@
     },
     {
       "id": "3e-id-03",
+      "generator": "id-solve-diff-sq",
       "type": "solve",
       "question": "Factorise : x² − 9",
       "answer": "(x-3)(x+3)",
@@ -89,6 +97,7 @@
     },
     {
       "id": "3e-id-04",
+      "generator": "id-mcq-diff-sq-coeff",
       "type": "mcq",
       "question": "Factorise : 4x² − 25",
       "choices": ["(2x − 5)(2x + 5)", "(4x − 5)(x + 5)", "(2x − 5)²", "(4x − 25)(x + 1)"],
@@ -100,6 +109,7 @@
     },
     {
       "id": "3e-id-05",
+      "generator": "id-solve-product",
       "type": "solve",
       "question": "Développe : (2x + 3)(2x − 3)",
       "answer": "4x²-9",
@@ -110,6 +120,7 @@
     },
     {
       "id": "3e-id-06",
+      "generator": "id-mcq-recognize-sq",
       "type": "mcq",
       "question": "Factorise : x² + 6x + 9",
       "choices": ["(x + 3)²", "(x + 9)(x + 1)", "(x − 3)²", "(x + 3)(x − 3)"],
@@ -121,6 +132,7 @@
     },
     {
       "id": "3e-id-07",
+      "generator": "id-solve-mental-calc",
       "type": "solve",
       "question": "Calcule mentalement 97² en utilisant une identité remarquable.",
       "answer": "9409",
@@ -131,6 +143,7 @@
     },
     {
       "id": "3e-id-08",
+      "generator": "id-mcq-diff-two-sq",
       "type": "mcq",
       "question": "Développe : (x + 2)² − (x − 1)²",
       "choices": ["6x + 3", "2x² + 5", "4x + 3", "3"],
@@ -142,6 +155,7 @@
     },
     {
       "id": "3e-id-09",
+      "generator": "id-solve-factor-perfect",
       "type": "solve",
       "question": "Factorise : 9x² − 12x + 4",
       "answer": "(3x-2)²",
@@ -152,6 +166,7 @@
     },
     {
       "id": "3e-id-10",
+      "generator": "id-mcq-nested-diff",
       "type": "mcq",
       "question": "Factorise : (2x + 1)² − (x − 3)²",
       "choices": ["(x + 4)(3x − 2)", "(x + 4)(x − 2)", "(3x − 2)(2x + 1)", "(x − 4)(3x + 2)"],
@@ -163,6 +178,7 @@
     },
     {
       "id": "3e-prod-01",
+      "generator": "eq-prod-solve",
       "type": "solve",
       "question": "Résous : (x − 3)(x + 5) = 0",
       "answer": "3 ou -5",
@@ -173,6 +189,7 @@
     },
     {
       "id": "3e-prod-02",
+      "generator": "eq-prod-mcq",
       "type": "mcq",
       "question": "Quelles sont les solutions de (2x − 6)(3x + 9) = 0 ?",
       "choices": ["x = 3 ou x = −3", "x = 6 ou x = −9", "x = 3 ou x = 3", "x = −3 ou x = 9"],
@@ -184,6 +201,7 @@
     },
     {
       "id": "3e-prod-03",
+      "generator": "eq-prod-solve-sq",
       "type": "solve",
       "question": "Résous : x² − 16 = 0 (donne les deux solutions séparées par 'ou')",
       "answer": "4 ou -4",
@@ -194,6 +212,7 @@
     },
     {
       "id": "3e-prod-04",
+      "generator": "eq-prod-mcq-double",
       "type": "mcq",
       "question": "Résous : x² + 2x + 1 = 0",
       "choices": ["x = −1 (solution double)", "x = 1 ou x = −1", "x = −1 ou x = 1", "Pas de solution"],
@@ -205,6 +224,7 @@
     },
     {
       "id": "3e-prod-05",
+      "generator": "eq-prod-solve-perfect",
       "type": "solve",
       "question": "Résous : 4x² − 12x + 9 = 0",
       "answer": "3/2",
@@ -215,6 +235,7 @@
     },
     {
       "id": "3e-prod-06",
+      "generator": "eq-prod-mcq-factor",
       "type": "mcq",
       "question": "Résous : x(2x − 7) = 0",
       "choices": ["x = 0 ou x = 7/2", "x = 7/2", "x = 0 ou x = −7/2", "x = 7"],
@@ -226,6 +247,7 @@
     },
     {
       "id": "3e-fonc-01",
+      "generator": "fonc-mcq-lineaire",
       "type": "mcq",
       "question": "La fonction f(x) = 3x est :",
       "choices": ["Linéaire", "Affine non linéaire", "Constante", "Du second degré"],
@@ -237,6 +259,7 @@
     },
     {
       "id": "3e-fonc-02",
+      "generator": "fonc-solve-affine",
       "type": "solve",
       "question": "La fonction f est affine avec f(0) = 3 et f(2) = 7. Détermine f(x).",
       "answer": "2x+3",
@@ -247,6 +270,7 @@
     },
     {
       "id": "3e-fonc-03",
+      "generator": "fonc-mcq-intersection",
       "type": "mcq",
       "question": "Deux droites d₁ : y = 2x + 1 et d₂ : y = −x + 7 se coupent. Quel est le point d'intersection ?",
       "choices": ["(2, 5)", "(3, 4)", "(1, 3)", "(2, 3)"],
@@ -258,6 +282,7 @@
     },
     {
       "id": "3e-fonc-04",
+      "generator": "fonc-solve-pente",
       "type": "solve",
       "question": "La droite passe par A(1, 4) et B(3, 10). Quel est son coefficient directeur ?",
       "answer": "3",
@@ -268,6 +293,7 @@
     },
     {
       "id": "3e-fonc-05",
+      "generator": "fonc-mcq-decroissante",
       "type": "mcq",
       "question": "La fonction f(x) = −2x + 5 est :",
       "choices": ["Décroissante", "Croissante", "Constante", "D'abord croissante puis décroissante"],
@@ -279,6 +305,7 @@
     },
     {
       "id": "3e-fonc-06",
+      "generator": "fonc-solve-taxi",
       "type": "solve",
       "question": "Un taxi facture 2,50 € par km plus 4 € de prise en charge. Écris f(x) le prix pour x km.",
       "answer": "2,5x+4",
@@ -289,6 +316,7 @@
     },
     {
       "id": "3e-fonc-07",
+      "generator": "fonc-mcq-point-on-line",
       "type": "mcq",
       "question": "La droite y = 3x − 2 passe-t-elle par le point (4, 10) ?",
       "choices": ["Oui, car 3×4 − 2 = 10", "Non, car 3×4 − 2 = 14", "Non, car 4 − 2 ≠ 10", "On ne peut pas savoir"],
@@ -300,6 +328,7 @@
     },
     {
       "id": "3e-fonc-08",
+      "generator": "fonc-solve-find-a",
       "type": "solve",
       "question": "La droite a pour équation y = ax + 1 et passe par (−2, 7). Trouve a.",
       "answer": "-3",
@@ -310,6 +339,7 @@
     },
     {
       "id": "3e-fonc-09",
+      "generator": "fonc-mcq-perpendicular",
       "type": "mcq",
       "question": "Deux droites de pentes 3 et −1/3 sont :",
       "choices": ["Perpendiculaires", "Parallèles", "Sécantes non perpendiculaires", "Confondues"],
@@ -321,6 +351,7 @@
     },
     {
       "id": "3e-fonc-10",
+      "generator": "fonc-solve-antecedent",
       "type": "solve",
       "question": "Pour quelle valeur de x a-t-on 3x + 2 = 0 ? C'est l'antécédent de 0 par la fonction f(x) = 3x + 2.",
       "answer": "-2/3",
@@ -331,6 +362,7 @@
     },
     {
       "id": "3e-thales-01",
+      "generator": "thales-mcq-triangle",
       "type": "mcq",
       "question": "Dans un triangle ABC, M est sur [AB] et N sur [AC] tels que (MN) ∥ (BC). Si AM = 3, AB = 9, et BC = 12, que vaut MN ?",
       "choices": ["4", "6", "36", "3"],
@@ -338,20 +370,38 @@
       "explanation": "Par le théorème de Thalès : AM/AB = MN/BC. Donc 3/9 = MN/12 → 1/3 = MN/12 → MN = 12/3 = 4. Le théorème de Thalès dit que si une droite est parallèle à un côté d'un triangle, elle découpe les deux autres côtés en segments proportionnels. C'est le roi de la proportionnalité en géométrie !",
       "hint": "Thalès : les longueurs sont proportionnelles. AM/AB = MN/BC.",
       "category": "Théorème de Thalès",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "thales",
+        "config": "triangle",
+        "vertices": {"A": [4, 8], "B": [0, 0], "C": [8, 0]},
+        "cuts": {"M": {"on": "AB", "ratio": 0.333}, "N": {"on": "AC", "ratio": 0.333}},
+        "labels": {"AM": "3", "AB": "9", "BC": "12", "MN": "?"},
+        "showParallel": ["MN", "BC"]
+      }
     },
     {
       "id": "3e-thales-02",
+      "generator": "thales-solve-butterfly",
       "type": "solve",
       "question": "Dans la configuration de Thalès : OA/OA' = OB/OB'. Si OA = 4, OA' = 10, OB = 6, que vaut OB' ?",
       "answer": "15",
       "explanation": "Par Thalès : OA/OA' = OB/OB'. Donc 4/10 = 6/OB' → OB' = 6 × 10/4 = 60/4 = 15. On utilise le produit en croix ! La configuration « papillon » (deux droites sécantes coupées par deux parallèles) donne les mêmes proportions que la configuration « triangle ». Thalès fonctionne dans les deux cas.",
       "hint": "Produit en croix : OB' = OB × OA' / OA.",
       "category": "Théorème de Thalès",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "thales",
+        "config": "butterfly",
+        "center": [4, 4],
+        "points": {"A": [2, 6], "B": [6, 6], "A'": [1, 1], "B'": [7, 1]},
+        "labels": {"OA": "4", "OA'": "10", "OB": "6", "OB'": "?"},
+        "showParallel": ["AB", "A'B'"]
+      }
     },
     {
       "id": "3e-thales-03",
+      "generator": "thales-mcq-shadow",
       "type": "mcq",
       "question": "Un arbre projette une ombre de 8 m au sol. Au même moment, un bâton de 1,5 m projette une ombre de 2 m. Quelle est la hauteur de l'arbre ?",
       "choices": ["6 m", "4 m", "8 m", "10,67 m"],
@@ -359,20 +409,38 @@
       "explanation": "Les rayons du soleil sont parallèles, donc c'est une situation de Thalès ! Hauteur/Ombre = constante. Bâton : 1,5/2. Arbre : h/8. Par proportionnalité : h/8 = 1,5/2 → h = 8 × 1,5/2 = 6 m. Thalès de Milet a lui-même mesuré la hauteur de la pyramide de Khéops avec cette méthode ! C'est l'une des premières applications historiques de la géométrie.",
       "hint": "Hauteur arbre / Ombre arbre = Hauteur bâton / Ombre bâton.",
       "category": "Théorème de Thalès",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "thales",
+        "config": "triangle",
+        "vertices": {"S": [8, 6], "O": [0, 0], "P": [8, 0]},
+        "cuts": {"Q": {"on": "SO", "ratio": 0.25}, "R": {"on": "SP", "ratio": 0.25}},
+        "labels": {"OP": "8 m", "QR": "1,5 m", "OR₀": "2 m", "SP": "?"},
+        "showParallel": ["QR", "SP"]
+      }
     },
     {
       "id": "3e-thales-04",
+      "generator": "thales-solve-find-nc",
       "type": "solve",
       "question": "Dans un triangle ABC avec M sur [AB] et N sur [AC], AM = 6, MB = 4, AN = 9. Si (MN) ∥ (BC), calcule NC.",
       "answer": "6",
       "explanation": "Par Thalès : AM/AB = AN/AC. AB = AM + MB = 6 + 4 = 10. Donc 6/10 = 9/AC → AC = 9 × 10/6 = 15. Puis NC = AC − AN = 15 − 9 = 6. Attention : Thalès utilise les rapports de longueurs sur les MÊMES droites (AB et AC), pas entre les deux droites. Le ratio ici est 6/10 = 3/5.",
       "hint": "D'abord AB = AM + MB, puis utilise le rapport AM/AB = AN/AC.",
       "category": "Théorème de Thalès",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "thales",
+        "config": "triangle",
+        "vertices": {"A": [5, 10], "B": [0, 0], "C": [10, 0]},
+        "cuts": {"M": {"on": "AB", "ratio": 0.6}, "N": {"on": "AC", "ratio": 0.6}},
+        "labels": {"AM": "6", "MB": "4", "AN": "9", "NC": "?"},
+        "showParallel": ["MN", "BC"]
+      }
     },
     {
       "id": "3e-thales-05",
+      "generator": "thales-mcq-reciprocal",
       "type": "mcq",
       "question": "Si AM/AB = AN/AC mais (MN) n'est pas parallèle à (BC), le théorème de Thalès s'applique-t-il ?",
       "choices": ["Non, la réciproque exige aussi AM/AB = MN/BC", "Oui, la proportionnalité suffit", "Non, il faut un angle droit", "Oui, toujours"],
@@ -380,20 +448,47 @@
       "explanation": "Attention subtile ! La réciproque de Thalès dit : si les points sont dans le bon ordre ET AM/AB = AN/AC = MN/BC (les TROIS rapports sont égaux), ALORS (MN) ∥ (BC). Un seul rapport ne suffit pas pour conclure au parallélisme. Il faut vérifier l'alignement des points et au moins deux rapports. C'est une erreur de raisonnement fréquente au brevet !",
       "hint": "La réciproque de Thalès a des conditions précises à vérifier.",
       "category": "Théorème de Thalès",
-      "difficulty": 3
+      "difficulty": 3,
+      "diagram": {
+        "type": "thales",
+        "config": "triangle",
+        "vertices": {"A": [4, 8], "B": [0, 0], "C": [8, 0]},
+        "cuts": {"M": {"on": "AB", "ratio": 0.5}, "N": {"on": "AC", "ratio": 0.5}},
+        "labels": {"AM/AB": "k", "AN/AC": "k", "MN/BC": "?"},
+        "showParallel": ["MN", "BC"]
+      }
     },
     {
       "id": "3e-thales-06",
+      "generator": "thales-solve-butterfly-full",
       "type": "solve",
       "question": "Configuration de Thalès en papillon : deux droites se coupent en O. (AB) ∥ (CD). OA = 3, OC = 5, AB = 6. Calcule CD.",
       "answer": "10",
       "explanation": "Dans la configuration papillon, les rapports sont : OA/OC = OB/OD = AB/CD. Donc 3/5 = 6/CD → CD = 6 × 5/3 = 10. La configuration papillon apparaît quand le point O est entre les deux parallèles (les triangles sont « de part et d'autre »). Les rapports sont les mêmes qu'en configuration triangle !",
       "hint": "OA/OC = AB/CD. Résous par produit en croix.",
       "category": "Théorème de Thalès",
+      "difficulty": 2,
+      "diagram": {
+        "type": "thales",
+        "config": "butterfly",
+        "center": [4, 4],
+        "points": {"A": [2, 6], "B": [6, 6], "C": [5, 2], "D": [3, 2]},
+        "labels": {"OA": "3", "OC": "5", "AB": "6", "CD": "?"},
+        "showParallel": ["AB", "CD"]
+      }
+    },
+    {
+      "id": "3e-thales-inter",
+      "type": "interactive",
+      "interactive": "thales-slider",
+      "question": "Positionne la parallèle pour vérifier les rapports du théorème de Thalès",
+      "explanation": "Le théorème de Thalès : si (MN) ∥ (BC), alors AM/AB = AN/AC = MN/BC.",
+      "category": "Théorème de Thalès",
       "difficulty": 2
     },
     {
       "id": "3e-trigo-01",
+      "generator": "trig-mcq-sin-def",
       "type": "mcq",
       "question": "Dans un triangle rectangle, sin(α) = ?",
       "choices": ["opposé / hypoténuse", "adjacent / hypoténuse", "opposé / adjacent", "hypoténuse / opposé"],
@@ -401,20 +496,38 @@
       "explanation": "SOH-CAH-TOA, le moyen mnémotechnique ultime ! Sin = Opposé / Hypoténuse (SOH). Cos = Adjacent / Hypoténuse (CAH). Tan = Opposé / Adjacent (TOA). Le sinus utilise le côté OPPOSÉ à l'angle (le côté « en face »). Le cosinus utilise le côté ADJACENT (le côté « à côté »). L'hypoténuse est toujours le plus grand côté, face à l'angle droit.",
       "hint": "SOH-CAH-TOA : Sinus = Opposé / Hypoténuse.",
       "category": "Trigonométrie",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [5, 0], "C": [0, 3]},
+        "rightAngle": "A",
+        "highlightAngle": "B",
+        "angleLabel": "\u03b1",
+        "labels": {"AB": "adj", "AC": "opp", "BC": "hyp"}
+      }
     },
     {
       "id": "3e-trigo-02",
+      "generator": "trig-solve-sin",
       "type": "solve",
       "question": "Dans un triangle rectangle, le côté opposé à l'angle α mesure 5 cm et l'hypoténuse 13 cm. Que vaut sin(α) ? (forme fractionnaire)",
       "answer": "5/13",
       "explanation": "sin(α) = opposé / hypoténuse = 5/13. C'est irréductible car 5 est premier et ne divise pas 13. On peut aussi trouver le côté adjacent par Pythagore : √(13² − 5²) = √(169 − 25) = √144 = 12. Donc cos(α) = 12/13 et tan(α) = 5/12. Le triplet (5, 12, 13) revient souvent !",
       "hint": "sin(α) = côté opposé / hypoténuse.",
       "category": "Trigonométrie",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [12, 0], "C": [0, 5]},
+        "rightAngle": "A",
+        "highlightAngle": "B",
+        "angleLabel": "\u03b1",
+        "labels": {"AB": "12", "AC": "5", "BC": "13"}
+      }
     },
     {
       "id": "3e-trigo-03",
+      "generator": "trig-mcq-tan45",
       "type": "mcq",
       "question": "Que vaut tan(45°) ?",
       "choices": ["1", "0", "√2", "√2/2"],
@@ -422,20 +535,38 @@
       "explanation": "tan(45°) = sin(45°)/cos(45°) = (√2/2)/(√2/2) = 1. On peut aussi le voir géométriquement : dans un triangle rectangle isocèle (angles 45°-45°-90°), les deux cathètes sont égales. Donc tan(45°) = opposé/adjacent = a/a = 1. Valeurs à connaître : tan(0°) = 0, tan(30°) = √3/3, tan(45°) = 1, tan(60°) = √3.",
       "hint": "Dans un triangle rectangle isocèle, les deux cathètes sont égales.",
       "category": "Trigonométrie",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [4, 0], "C": [0, 4]},
+        "rightAngle": "A",
+        "highlightAngle": "B",
+        "angleLabel": "45\u00b0",
+        "labels": {"AB": "a", "AC": "a", "BC": "a\u221a2"}
+      }
     },
     {
       "id": "3e-trigo-04",
+      "generator": "trig-solve-tan",
       "type": "solve",
       "question": "Dans un triangle rectangle, tan(α) = 3/4 et le côté adjacent mesure 8 cm. Calcule le côté opposé.",
       "answer": "6",
       "explanation": "tan(α) = opposé / adjacent. Donc opposé = tan(α) × adjacent = (3/4) × 8 = 6 cm. La tangente relie directement les deux cathètes entre elles (sans passer par l'hypoténuse). C'est utile quand on n'a pas besoin de l'hypoténuse. Pour info, l'hypoténuse vaut √(6² + 8²) = √100 = 10 cm.",
       "hint": "tan(α) = opposé / adjacent, donc opposé = tan(α) × adjacent.",
       "category": "Trigonométrie",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [8, 0], "C": [0, 6]},
+        "rightAngle": "A",
+        "highlightAngle": "B",
+        "angleLabel": "\u03b1",
+        "labels": {"AB": "8", "AC": "?", "BC": "10"}
+      }
     },
     {
       "id": "3e-trigo-05",
+      "generator": "trig-mcq-identity",
       "type": "mcq",
       "question": "Quelle relation lie sin et cos pour tout angle α ?",
       "choices": ["sin²(α) + cos²(α) = 1", "sin(α) + cos(α) = 1", "sin(α) × cos(α) = 1", "sin²(α) − cos²(α) = 1"],
@@ -443,20 +574,38 @@
       "explanation": "C'est l'identité trigonométrique fondamentale : sin²(α) + cos²(α) = 1. Elle vient directement de Pythagore ! Dans un triangle rectangle d'hypoténuse c : (a/c)² + (b/c)² = a²/c² + b²/c² = (a²+b²)/c² = c²/c² = 1. Donc sin²+cos² = 1. Cette identité est vraie pour TOUT angle, pas seulement les angles aigus.",
       "hint": "C'est une conséquence directe du théorème de Pythagore.",
       "category": "Trigonométrie",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [4, 0], "C": [0, 3]},
+        "rightAngle": "A",
+        "highlightAngle": "B",
+        "angleLabel": "\u03b1",
+        "labels": {"AB": "b (adj)", "AC": "a (opp)", "BC": "c (hyp)"}
+      }
     },
     {
       "id": "3e-trigo-06",
+      "generator": "trig-solve-cos-from-sin",
       "type": "solve",
       "question": "sin(α) = 0,6. Que vaut cos(α) sachant que α est aigu ? (valeur décimale)",
       "answer": "0,8",
       "explanation": "Par l'identité fondamentale : sin²(α) + cos²(α) = 1. Donc cos²(α) = 1 − sin²(α) = 1 − 0,36 = 0,64. Comme α est aigu, cos(α) > 0, donc cos(α) = √0,64 = 0,8. On retrouve le triplet 3-4-5 déguisé : sin = 3/5 = 0,6 et cos = 4/5 = 0,8.",
       "hint": "sin² + cos² = 1, donc cos² = 1 − sin².",
       "category": "Trigonométrie",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [4, 0], "C": [0, 3]},
+        "rightAngle": "A",
+        "highlightAngle": "B",
+        "angleLabel": "\u03b1",
+        "labels": {"AB": "4 (cos=0,8)", "AC": "3 (sin=0,6)", "BC": "5"}
+      }
     },
     {
       "id": "3e-trigo-07",
+      "generator": "trig-mcq-ramp",
       "type": "mcq",
       "question": "Une rampe d'accès fait un angle de 30° avec l'horizontale et a une longueur de 10 m. Quelle est la hauteur atteinte ?",
       "choices": ["5 m", "8,66 m", "10 m", "5√3 m"],
@@ -464,20 +613,38 @@
       "explanation": "La hauteur est le côté opposé à l'angle de 30°. sin(30°) = opposé / hypoténuse = h / 10. Or sin(30°) = 1/2 (valeur remarquable !). Donc h = 10 × sin(30°) = 10 × 0,5 = 5 m. La rampe mesure 10 m, mais elle ne monte que de 5 m en hauteur. La trigonométrie est indispensable en architecture pour calculer les pentes !",
       "hint": "La hauteur est le côté opposé. Utilise sin(30°) = 1/2.",
       "category": "Trigonométrie",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [8.66, 0], "C": [0, 5]},
+        "rightAngle": "A",
+        "highlightAngle": "B",
+        "angleLabel": "30\u00b0",
+        "labels": {"AB": "8,66 m", "AC": "5 m", "BC": "10 m"}
+      }
     },
     {
       "id": "3e-trigo-08",
+      "generator": "trig-solve-angle-tan",
       "type": "solve",
       "question": "Dans un triangle rectangle, le côté opposé mesure 7 cm et le côté adjacent mesure 7 cm. Que vaut l'angle α en degrés ?",
       "answer": "45",
       "explanation": "tan(α) = opposé / adjacent = 7/7 = 1. On cherche α tel que tan(α) = 1. C'est une valeur remarquable : tan(45°) = 1. Donc α = 45°. C'est logique : quand les deux cathètes sont égales, le triangle est isocèle rectangle et les deux angles aigus valent 45°. Pas besoin de calculatrice pour les valeurs remarquables !",
       "hint": "Si opposé = adjacent, que vaut tan(α) ? Et quel angle a cette tangente ?",
       "category": "Trigonométrie",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [7, 0], "C": [0, 7]},
+        "rightAngle": "A",
+        "highlightAngle": "B",
+        "angleLabel": "\u03b1",
+        "labels": {"AB": "7", "AC": "7", "BC": "7\u221a2"}
+      }
     },
     {
       "id": "3e-vol-01",
+      "generator": "vol-mcq-pyramid",
       "type": "mcq",
       "question": "Quelle est la formule du volume d'une pyramide de base d'aire A et de hauteur h ?",
       "choices": ["A × h / 3", "A × h", "A × h / 2", "4/3 × A × h"],
@@ -485,20 +652,34 @@
       "explanation": "V = (1/3) × A × h. Le « 1/3 » vient du fait qu'une pyramide est « pointue » : elle contient exactement un tiers du prisme de même base et même hauteur. C'est le même facteur pour le cône : V_cône = (1/3)πr²h = (1/3) × V_cylindre. Retiens le motif : solide « pointu » → on divise par 3.",
       "hint": "Un solide qui se termine en pointe a un volume divisé par 3 par rapport au prisme correspondant.",
       "category": "Volumes",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "volume",
+        "shape": "pyramid",
+        "dimensions": {"base": 5, "h": 6},
+        "labels": {"base": "A", "h": "h"}
+      }
     },
     {
       "id": "3e-vol-02",
+      "generator": "vol-solve-cone",
       "type": "solve",
       "question": "Calcule le volume d'un cône de rayon 3 cm et de hauteur 7 cm. Donne la réponse en fonction de π (sous la forme 'Nπ').",
       "answer": "21π",
       "explanation": "V_cône = (1/3)πr²h = (1/3) × π × 3² × 7 = (1/3) × π × 9 × 7 = (1/3) × 63π = 21π cm³. En valeur approchée : 21 × 3,14 ≈ 65,9 cm³. Le cône est la version « pyramidale » du cylindre : même base (cercle), même hauteur, mais un tiers du volume. Un cornet de glace est un cône !",
       "hint": "V = (1/3) × π × r² × h.",
       "category": "Volumes",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "volume",
+        "shape": "cone",
+        "dimensions": {"r": 3, "h": 7},
+        "labels": {"r": "3 cm", "h": "7 cm"}
+      }
     },
     {
       "id": "3e-vol-03",
+      "generator": "vol-mcq-sphere-formula",
       "type": "mcq",
       "question": "Quelle est la formule du volume d'une sphère de rayon r ?",
       "choices": ["(4/3)πr³", "4πr²", "(4/3)πr²", "πr³"],
@@ -506,20 +687,34 @@
       "explanation": "V_sphère = (4/3)πr³. Attention à ne pas confondre avec l'aire de la sphère qui est 4πr² (surface). Le volume contient r au CUBE (c'est un volume, en 3D), tandis que l'aire contient r au CARRÉ (c'est une surface, en 2D). Archimède a démontré cette formule il y a plus de 2200 ans, et il en était si fier qu'il a demandé qu'on grave une sphère sur sa tombe !",
       "hint": "Ne confonds pas le volume (avec r³) et l'aire (avec r²).",
       "category": "Volumes",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "volume",
+        "shape": "sphere",
+        "dimensions": {"r": 3},
+        "labels": {"r": "r"}
+      }
     },
     {
       "id": "3e-vol-04",
+      "generator": "vol-solve-sphere",
       "type": "solve",
       "question": "Une sphère a un rayon de 6 cm. Calcule son volume en fonction de π (sous la forme 'Nπ').",
       "answer": "288π",
       "explanation": "V = (4/3)πr³ = (4/3) × π × 6³ = (4/3) × π × 216 = 4 × 72 × π = 288π cm³. En valeur approchée : 288 × 3,14 ≈ 904,3 cm³. Pour calculer 6³ : 6 × 6 = 36, puis 36 × 6 = 216. Et (4/3) × 216 : on divise d'abord 216 par 3 = 72, puis 72 × 4 = 288.",
       "hint": "V = (4/3)πr³. Calcule d'abord r³ = 6³ = 216.",
       "category": "Volumes",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "volume",
+        "shape": "sphere",
+        "dimensions": {"r": 6},
+        "labels": {"r": "6 cm"}
+      }
     },
     {
       "id": "3e-vol-05",
+      "generator": "vol-mcq-double-sphere",
       "type": "mcq",
       "question": "On double le rayon d'une sphère. Comment change son volume ?",
       "choices": ["Il est multiplié par 8", "Il est multiplié par 4", "Il est multiplié par 2", "Il est multiplié par 6"],
@@ -527,7 +722,196 @@
       "explanation": "V = (4/3)πr³. Si r → 2r : V' = (4/3)π(2r)³ = (4/3)π × 8r³ = 8V. Le volume est multiplié par 8 ! C'est parce que r est au CUBE. Quand on multiplie une longueur par k, le volume est multiplié par k³. Si k = 2 : 2³ = 8. C'est pourquoi une boule de 10 cm de rayon contient 8 fois plus que celle de 5 cm, pas 2 fois plus !",
       "hint": "Le rayon est au cube dans la formule. Si r est doublé, r³ est multiplié par...",
       "category": "Volumes",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "volume",
+        "shape": "sphere",
+        "dimensions": {"r": 3, "r2": 6},
+        "labels": {"r": "r", "r2": "2r"}
+      }
+    },
+    {
+      "id": "3e-thal-geo-01",
+      "type": "geo-click",
+      "question": "Clique sur le segment proportionnel à AM (configuration triangle)",
+      "answer": "BN",
+      "explanation": "D'après le théorème de Thalès, si (MN) ∥ (BC), alors AM/AB = AN/AC = MN/BC. Le segment proportionnel à AM sur l'autre côté est AN... mais parmi les segments coupés, BN est proportionnel côté B.",
+      "category": "Thalès",
+      "difficulty": 2,
+      "diagram": {
+        "type": "thales",
+        "config": "triangle-cut",
+        "vertices": {"A": [3, 7], "B": [0, 0], "C": [7, 0]},
+        "cuts": {
+          "M": {"on": ["A", "B"], "ratio": 0.45},
+          "N": {"on": ["A", "C"], "ratio": 0.45}
+        },
+        "showParallel": ["MN", "BC"],
+        "labels": {"AM": "AM", "MB": "MB", "AN": "AN", "NC": "NC"},
+        "targets": [
+          {"side": "AN", "name": "AN"},
+          {"side": "MB", "name": "BN"},
+          {"side": "NC", "name": "NC"},
+          {"side": "BC", "name": "BC"}
+        ]
+      }
+    },
+    {
+      "id": "3e-thal-geo-02",
+      "type": "geo-click",
+      "question": "Clique sur le segment proportionnel à AN dans le théorème de Thalès",
+      "answer": "AM",
+      "explanation": "Par Thalès avec (MN) ∥ (BC) : AM/AB = AN/AC. Donc AM est proportionnel à AN.",
+      "category": "Thalès",
+      "difficulty": 2,
+      "diagram": {
+        "type": "thales",
+        "config": "triangle-cut",
+        "vertices": {"A": [3, 7], "B": [0, 0], "C": [7, 0]},
+        "cuts": {
+          "M": {"on": ["A", "B"], "ratio": 0.5},
+          "N": {"on": ["A", "C"], "ratio": 0.5}
+        },
+        "showParallel": ["MN", "BC"],
+        "labels": {"AM": "AM", "AN": "AN", "MN": "MN"},
+        "targets": [
+          {"side": "AM", "name": "AM"},
+          {"side": "MB", "name": "MB"},
+          {"side": "BC", "name": "BC"}
+        ]
+      }
+    },
+    {
+      "id": "3e-thal-geo-03",
+      "type": "geo-click",
+      "question": "Clique sur le segment parallèle à AB dans cette configuration papillon",
+      "answer": "CD",
+      "explanation": "Dans la configuration papillon, les segments parallèles sont AB et CD. C'est la condition d'application du théorème de Thalès.",
+      "category": "Thalès",
+      "difficulty": 2,
+      "diagram": {
+        "type": "thales",
+        "config": "butterfly",
+        "center": [4, 4],
+        "points": {"A": [1, 6], "B": [7, 6], "C": [6, 2], "D": [2, 2]},
+        "showParallel": ["AB", "CD"],
+        "labels": {"OA": "OA", "OD": "OD", "OB": "OB", "OC": "OC"},
+        "targets": [
+          {"side": "CD", "name": "CD"},
+          {"side": "OC", "name": "OC"},
+          {"side": "OD", "name": "OD"}
+        ]
+      }
+    },
+    {
+      "id": "3e-thal-geo-04",
+      "type": "geo-click",
+      "question": "Dans cette configuration papillon avec (AB) ∥ (CD), clique sur le segment proportionnel à OA",
+      "answer": "OD",
+      "explanation": "Par Thalès : OA/OD = OB/OC = AB/CD. Donc OD est le segment proportionnel à OA.",
+      "category": "Thalès",
+      "difficulty": 3,
+      "diagram": {
+        "type": "thales",
+        "config": "butterfly",
+        "center": [4, 4],
+        "points": {"A": [1, 6.5], "B": [7, 6.5], "C": [6.5, 1.5], "D": [1.5, 1.5]},
+        "showParallel": ["AB", "CD"],
+        "labels": {"OA": "OA", "OD": "OD", "OB": "OB", "OC": "OC"},
+        "targets": [
+          {"side": "OD", "name": "OD"},
+          {"side": "OB", "name": "OB"},
+          {"side": "OC", "name": "OC"}
+        ]
+      }
+    },
+    {
+      "id": "3e-trig-geo-01",
+      "type": "geo-click",
+      "question": "Pour calculer sin(α), clique sur le côté qui est au numérateur (opposé)",
+      "answer": "opposite",
+      "explanation": "sin(α) = opposé / hypoténuse. Le côté opposé est en face de l'angle α.",
+      "category": "Trigonométrie",
+      "difficulty": 2,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [5, 0], "C": [0, 3]},
+        "rightAngle": "A",
+        "highlightAngle": "B",
+        "angleLabel": "α",
+        "labels": {},
+        "targets": [
+          {"type": "side", "side": "AC", "name": "opposite"},
+          {"type": "side", "side": "AB", "name": "adjacent"},
+          {"type": "side", "side": "BC", "name": "hyp"}
+        ]
+      }
+    },
+    {
+      "id": "3e-trig-geo-02",
+      "type": "geo-click",
+      "question": "Pour calculer sin(β), clique sur le côté opposé à l'angle β",
+      "answer": "opposite",
+      "explanation": "sin(β) = opposé / hypoténuse. Le côté opposé à β est celui qui ne touche pas le sommet de β.",
+      "category": "Trigonométrie",
+      "difficulty": 2,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"D": [0, 0], "E": [4, 0], "F": [4, 3]},
+        "rightAngle": "E",
+        "highlightAngle": "D",
+        "angleLabel": "β",
+        "labels": {},
+        "targets": [
+          {"type": "side", "side": "EF", "name": "opposite"},
+          {"type": "side", "side": "DE", "name": "adjacent"},
+          {"type": "side", "side": "DF", "name": "hyp"}
+        ]
+      }
+    },
+    {
+      "id": "3e-trig-geo-03",
+      "type": "geo-click",
+      "question": "Pour calculer cos(α), clique sur le côté qui est au numérateur (adjacent)",
+      "answer": "adjacent",
+      "explanation": "cos(α) = adjacent / hypoténuse. Le côté adjacent est celui qui touche le sommet de α (et qui n'est pas l'hypoténuse).",
+      "category": "Trigonométrie",
+      "difficulty": 2,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [5, 0], "C": [0, 4]},
+        "rightAngle": "A",
+        "highlightAngle": "B",
+        "angleLabel": "α",
+        "labels": {},
+        "targets": [
+          {"type": "side", "side": "AB", "name": "adjacent"},
+          {"type": "side", "side": "AC", "name": "opposite"},
+          {"type": "side", "side": "BC", "name": "hyp"}
+        ]
+      }
+    },
+    {
+      "id": "3e-trig-geo-04",
+      "type": "geo-click",
+      "question": "Pour calculer cos(γ), clique sur le côté adjacent à l'angle γ",
+      "answer": "adjacent",
+      "explanation": "cos(γ) = adjacent / hypoténuse. Le côté adjacent touche le sommet de l'angle γ.",
+      "category": "Trigonométrie",
+      "difficulty": 2,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"P": [0, 0], "Q": [4, 0], "R": [4, 3]},
+        "rightAngle": "Q",
+        "highlightAngle": "R",
+        "angleLabel": "γ",
+        "labels": {},
+        "targets": [
+          {"type": "side", "side": "QR", "name": "adjacent"},
+          {"type": "side", "side": "PQ", "name": "opposite"},
+          {"type": "side", "side": "PR", "name": "hyp"}
+        ]
+      }
     }
   ]
 }

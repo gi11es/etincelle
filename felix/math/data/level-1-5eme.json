@@ -6,6 +6,7 @@
   "items": [
     {
       "id": "5e-prio-01",
+      "generator": "prio-solve-basic",
       "type": "solve",
       "question": "Calcule : 3 + 4 × 5 − 2",
       "answer": "21",
@@ -16,6 +17,7 @@
     },
     {
       "id": "5e-prio-02",
+      "generator": "prio-solve-parens",
       "type": "solve",
       "question": "Calcule : 5 × (3 + 7) − 4 × 6",
       "answer": "26",
@@ -26,6 +28,7 @@
     },
     {
       "id": "5e-prio-03",
+      "generator": "prio-mcq-value",
       "type": "mcq",
       "question": "Quelle est la valeur de 48 ÷ (4 + 4) × 3 ?",
       "choices": ["18", "6", "36", "12"],
@@ -37,6 +40,7 @@
     },
     {
       "id": "5e-prio-04",
+      "generator": "prio-solve-nested",
       "type": "solve",
       "question": "Calcule : 2 × [3 + (5 − 1) × 2]",
       "answer": "22",
@@ -47,6 +51,7 @@
     },
     {
       "id": "5e-prio-05",
+      "generator": "prio-mcq-which",
       "type": "mcq",
       "question": "Quelle expression donne 20 comme résultat ?",
       "choices": ["(2 + 3) × 4", "2 + 3 × 4", "2 × 3 + 4", "(2 + 3) + 4"],
@@ -58,6 +63,7 @@
     },
     {
       "id": "5e-prio-06",
+      "generator": "prio-solve-complex",
       "type": "solve",
       "question": "Calcule : 100 − 3 × (25 − 5 × 4) + 1",
       "answer": "86",
@@ -68,6 +74,7 @@
     },
     {
       "id": "5e-prio-07",
+      "generator": "prio-mcq-power",
       "type": "mcq",
       "question": "Quel est le résultat de 7 + 3² × 2 ?",
       "choices": ["25", "200", "32", "16"],
@@ -79,6 +86,7 @@
     },
     {
       "id": "5e-prio-08",
+      "generator": "prio-solve-full",
       "type": "solve",
       "question": "Calcule : (8 − 2)² ÷ 4 + 3 × (7 − 5)",
       "answer": "15",
@@ -89,6 +97,7 @@
     },
     {
       "id": "5e-rel-01",
+      "generator": "rel-add-diff",
       "type": "solve",
       "question": "Calcule : (−7) + (+3)",
       "answer": "-4",
@@ -99,6 +108,7 @@
     },
     {
       "id": "5e-rel-02",
+      "generator": "rel-sub-neg",
       "type": "solve",
       "question": "Calcule : (−5) − (−8)",
       "answer": "3",
@@ -109,6 +119,7 @@
     },
     {
       "id": "5e-rel-03",
+      "generator": "rel-mcq-add-same",
       "type": "mcq",
       "question": "Quel est le résultat de (−3) + (−9) ?",
       "choices": ["-12", "-6", "6", "12"],
@@ -120,6 +131,7 @@
     },
     {
       "id": "5e-rel-04",
+      "generator": "rel-solve-chain",
       "type": "solve",
       "question": "Calcule : (−4) + (+10) + (−6) + (+2)",
       "answer": "2",
@@ -130,6 +142,7 @@
     },
     {
       "id": "5e-rel-05",
+      "generator": "rel-mcq-temp",
       "type": "mcq",
       "question": "Quelle est la température s'il fait −6 °C et qu'elle baisse de 5 °C ?",
       "choices": ["-11 °C", "-1 °C", "1 °C", "11 °C"],
@@ -141,6 +154,7 @@
     },
     {
       "id": "5e-rel-06",
+      "generator": "rel-solve-mixed",
       "type": "solve",
       "question": "Calcule : 15 − (−7) + (−3) − (+9)",
       "answer": "10",
@@ -151,6 +165,7 @@
     },
     {
       "id": "5e-rel-07",
+      "generator": "rel-mcq-order",
       "type": "mcq",
       "question": "Range dans l'ordre croissant : −3 ; 0 ; −7 ; 5 ; −1",
       "choices": ["−7 ; −3 ; −1 ; 0 ; 5", "−1 ; −3 ; −7 ; 0 ; 5", "5 ; 0 ; −1 ; −3 ; −7", "−7 ; −1 ; −3 ; 0 ; 5"],
@@ -162,6 +177,7 @@
     },
     {
       "id": "5e-rel-08",
+      "generator": "rel-solve-complex",
       "type": "solve",
       "question": "Calcule : (−2) + (−3) − (−10) − (+4) + (+1)",
       "answer": "2",
@@ -172,6 +188,7 @@
     },
     {
       "id": "5e-frac-01",
+      "generator": "frac-add",
       "type": "solve",
       "question": "Calcule : 2/3 + 1/4",
       "answer": "11/12",
@@ -182,6 +199,7 @@
     },
     {
       "id": "5e-frac-02",
+      "generator": "frac-mcq-sub",
       "type": "mcq",
       "question": "Quel est le résultat de 5/6 − 1/3 ?",
       "choices": ["1/2", "4/3", "2/3", "1/6"],
@@ -193,6 +211,7 @@
     },
     {
       "id": "5e-frac-03",
+      "generator": "frac-mul",
       "type": "solve",
       "question": "Calcule : 3/5 × 10/9",
       "answer": "2/3",
@@ -203,6 +222,7 @@
     },
     {
       "id": "5e-frac-04",
+      "generator": "frac-mcq-add-mixed",
       "type": "mcq",
       "question": "Quelle fraction est égale à 7/4 + 2/3 ?",
       "choices": ["29/12", "9/7", "9/12", "14/12"],
@@ -214,6 +234,7 @@
     },
     {
       "id": "5e-frac-05",
+      "generator": "frac-mul-simplify",
       "type": "solve",
       "question": "Calcule : 4/7 × 21/8",
       "answer": "3/2",
@@ -224,6 +245,7 @@
     },
     {
       "id": "5e-frac-06",
+      "generator": "frac-mcq-three",
       "type": "mcq",
       "question": "Quel est le résultat de 1/2 + 2/5 − 1/10 ?",
       "choices": ["4/5", "3/10", "7/10", "2/17"],
@@ -235,6 +257,7 @@
     },
     {
       "id": "5e-frac-07",
+      "generator": "frac-of-number",
       "type": "solve",
       "question": "Calcule : 2/3 de 45",
       "answer": "30",
@@ -245,6 +268,7 @@
     },
     {
       "id": "5e-frac-08",
+      "generator": "frac-mcq-irreducible",
       "type": "mcq",
       "question": "Quelle fraction est irréductible ?",
       "choices": ["17/31", "6/9", "14/21", "8/12"],
@@ -256,6 +280,7 @@
     },
     {
       "id": "5e-frac-09",
+      "generator": "frac-solve-three",
       "type": "solve",
       "question": "Calcule : 3/4 − 5/6 + 1/3",
       "answer": "1/4",
@@ -266,6 +291,7 @@
     },
     {
       "id": "5e-frac-10",
+      "generator": "frac-mcq-square",
       "type": "mcq",
       "question": "Quel est le résultat de (2/3)² ?",
       "choices": ["4/9", "4/6", "2/9", "4/3"],
@@ -277,6 +303,7 @@
     },
     {
       "id": "5e-div-01",
+      "generator": "div-mcq-prime",
       "type": "mcq",
       "question": "Parmi ces nombres, lequel est premier ?",
       "choices": ["37", "39", "33", "35"],
@@ -288,6 +315,7 @@
     },
     {
       "id": "5e-div-02",
+      "generator": "div-fill-factor",
       "type": "fill-blank",
       "question": "Décompose 60 en produit de facteurs premiers : 60 = 2² × ___ × 5",
       "answer": "3",
@@ -298,6 +326,7 @@
     },
     {
       "id": "5e-div-03",
+      "generator": "div-mcq-divisible",
       "type": "mcq",
       "question": "Par quels nombres 72 est-il divisible ?",
       "choices": ["2, 3, 4, 6, 8 et 9", "2, 3, 4, 5, 6 et 9", "2, 3, 5, 6, 8 et 9", "2, 3, 4, 6, 7 et 8"],
@@ -309,6 +338,7 @@
     },
     {
       "id": "5e-div-04",
+      "generator": "div-solve-decompose",
       "type": "solve",
       "question": "Décompose 120 en produit de facteurs premiers et écris-le sous forme compacte (ex: 2³×3).",
       "answer": "2³×3×5",
@@ -319,6 +349,7 @@
     },
     {
       "id": "5e-div-05",
+      "generator": "div-mcq-pgcd",
       "type": "mcq",
       "question": "Quel est le PGCD de 24 et 36 ?",
       "choices": ["12", "6", "4", "24"],
@@ -330,6 +361,7 @@
     },
     {
       "id": "5e-div-06",
+      "generator": "div-solve-count-primes",
       "type": "solve",
       "question": "Combien y a-t-il de nombres premiers entre 1 et 20 ?",
       "answer": "8",
@@ -347,7 +379,15 @@
       "explanation": "La symétrie centrale de centre O transforme tout point A en un point A' tel que O est le MILIEU du segment [AA']. C'est comme faire un demi-tour autour de O. Si tu plantes une épingle en O et que tu fais tourner la feuille de 180°, chaque point arrive sur son symétrique. C'est la définition même de la symétrie centrale !",
       "hint": "En symétrie centrale, le centre est le milieu du segment reliant un point à son image.",
       "category": "Symétrie centrale",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "symmetry",
+        "center": [4, 4],
+        "points": { "A": [2, 6] },
+        "showImage": true,
+        "showSegment": true,
+        "showMidpoint": true
+      }
     },
     {
       "id": "5e-sym-02",
@@ -358,7 +398,15 @@
       "explanation": "La symétrie centrale CONSERVE les longueurs, les angles et les formes. Le symétrique d'un segment est un segment de même longueur. Si [AB] mesure 5 cm, alors [A'B'] mesure aussi 5 cm. La symétrie centrale est une isométrie (elle conserve les distances). Elle conserve aussi le parallélisme : si deux droites sont parallèles, leurs symétriques le sont aussi !",
       "hint": "La symétrie centrale conserve les longueurs.",
       "category": "Symétrie centrale",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "symmetry",
+        "center": [4, 4],
+        "points": { "A": [1, 6], "B": [3, 7] },
+        "showImage": true,
+        "showSegment": true,
+        "showMidpoint": true
+      }
     },
     {
       "id": "5e-sym-03",
@@ -369,7 +417,15 @@
       "explanation": "Le parallélogramme admet un centre de symétrie : c'est le point d'intersection de ses diagonales ! En effet, dans un parallélogramme, les diagonales se coupent en leur milieu. Ce point est le centre de symétrie car si tu fais un demi-tour autour de lui, chaque sommet va sur le sommet opposé. C'est d'ailleurs une propriété caractéristique : un quadrilatère qui admet un centre de symétrie est un parallélogramme.",
       "hint": "Pense aux diagonales d'un parallélogramme...",
       "category": "Symétrie centrale",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "symmetry",
+        "center": [4, 4],
+        "points": { "M": [2, 5] },
+        "showImage": true,
+        "showSegment": true,
+        "showMidpoint": true
+      }
     },
     {
       "id": "5e-sym-04",
@@ -380,7 +436,15 @@
       "explanation": "La lettre S admet un centre de symétrie (son centre géométrique). Si tu la fais tourner de 180°, tu retrouves la même lettre ! En revanche, A a un axe de symétrie vertical (symétrie axiale, pas centrale). B a un axe horizontal. E a aussi un axe horizontal. Mais aucune de ces trois n'est invariante par rotation de 180°. D'autres lettres avec un centre de symétrie : H, I, N, O, X, Z.",
       "hint": "Fais tourner mentalement chaque lettre de 180°.",
       "category": "Symétrie centrale",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "symmetry",
+        "center": [4, 4],
+        "points": { "P": [3, 5] },
+        "showImage": true,
+        "showSegment": true,
+        "showMidpoint": true
+      }
     },
     {
       "id": "5e-ang-01",
@@ -391,7 +455,17 @@
       "explanation": "C'est un théorème fondamental de la géométrie ! Quand deux droites parallèles sont coupées par une sécante, les angles alternes-internes sont ÉGAUX. « Alternes » car ils sont de part et d'autre de la sécante, « internes » car ils sont entre les deux parallèles. Ce théorème a une réciproque : si les angles alternes-internes sont égaux, alors les droites sont parallèles. C'est un outil puissant pour démontrer des parallélismes !",
       "hint": "Pense au « Z » formé par les parallèles et la sécante.",
       "category": "Angles et parallélisme",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "parallel-lines",
+        "lines": [{"y": 2, "label": "d₁"}, {"y": 6, "label": "d₂"}],
+        "transversal": {"slope": 0.7},
+        "angles": [
+          {"at": "top", "side": "left", "value": "α", "highlight": true},
+          {"at": "bottom", "side": "right", "value": "α", "highlight": true}
+        ],
+        "showParallelMarks": true
+      }
     },
     {
       "id": "5e-ang-02",
@@ -401,7 +475,17 @@
       "explanation": "Les angles alternes-internes sont ÉGAUX quand les droites sont parallèles. Donc si l'un mesure 63°, l'autre aussi ! Pour les reconnaître, imagine un « Z » (ou un « Z » inversé) : les deux angles du Z sont alternes-internes. C'est le même principe qui explique pourquoi les barreaux d'une échelle font les mêmes angles avec les montants.",
       "hint": "Les angles alternes-internes sont égaux.",
       "category": "Angles et parallélisme",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "parallel-lines",
+        "lines": [{"y": 2, "label": "d₁"}, {"y": 6, "label": "d₂"}],
+        "transversal": {"slope": 0.7},
+        "angles": [
+          {"at": "top", "side": "right", "value": "63°", "highlight": true},
+          {"at": "bottom", "side": "left", "value": "?", "highlight": true}
+        ],
+        "showParallelMarks": true
+      }
     },
     {
       "id": "5e-ang-03",
@@ -412,7 +496,17 @@
       "explanation": "Les angles correspondants sont ÉGAUX quand les droites sont parallèles ! Ils sont du même côté de la sécante, l'un entre les parallèles et l'autre à l'extérieur. Imagine un « F » : les deux angles du F sont correspondants. C'est comme si on « glissait » un angle le long de la sécante. Alternes-internes (Z), correspondants (F) : deux théorèmes à connaître par cœur !",
       "hint": "Pense au « F » formé par les parallèles et la sécante.",
       "category": "Angles et parallélisme",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "parallel-lines",
+        "lines": [{"y": 2, "label": "d₁"}, {"y": 6, "label": "d₂"}],
+        "transversal": {"slope": 0.7},
+        "angles": [
+          {"at": "top", "side": "right", "value": "β", "highlight": true},
+          {"at": "bottom", "side": "right", "value": "β", "highlight": true}
+        ],
+        "showParallelMarks": true
+      }
     },
     {
       "id": "5e-ang-04",
@@ -422,7 +516,17 @@
       "explanation": "L'angle correspondant mesure aussi 115° (car les droites sont parallèles). L'angle supplémentaire de 115° est 180° − 115° = 65°. Rappel : deux angles supplémentaires ont pour somme 180°. C'est l'angle « à côté » sur la droite. En combinant les propriétés des angles correspondants et supplémentaires, tu peux trouver TOUS les angles de la figure !",
       "hint": "D'abord, trouve l'angle correspondant, puis calcule son supplémentaire.",
       "category": "Angles et parallélisme",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "parallel-lines",
+        "lines": [{"y": 2, "label": "d₁"}, {"y": 6, "label": "d₂"}],
+        "transversal": {"slope": 0.7},
+        "angles": [
+          {"at": "top", "side": "right", "value": "115°", "highlight": true},
+          {"at": "bottom", "side": "left", "value": "?", "highlight": true}
+        ],
+        "showParallelMarks": true
+      }
     },
     {
       "id": "5e-ang-05",
@@ -433,7 +537,17 @@
       "explanation": "OUI ! C'est la RÉCIPROQUE du théorème : « Si deux droites coupées par une sécante forment des angles alternes-internes égaux, alors ces droites sont parallèles. » C'est un outil de démonstration très puissant. En géométrie, le théorème et sa réciproque sont deux résultats distincts, et il est important de savoir utiliser les deux !",
       "hint": "Connais-tu la réciproque du théorème des angles alternes-internes ?",
       "category": "Angles et parallélisme",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "parallel-lines",
+        "lines": [{"y": 2, "label": "d₁"}, {"y": 6, "label": "d₂"}],
+        "transversal": {"slope": 0.7},
+        "angles": [
+          {"at": "top", "side": "left", "value": "72°", "highlight": true},
+          {"at": "bottom", "side": "right", "value": "72°", "highlight": true}
+        ],
+        "showParallelMarks": true
+      }
     },
     {
       "id": "5e-ang-06",
@@ -443,20 +557,37 @@
       "explanation": "Les angles co-intérieurs (aussi appelés angles intérieurs du même côté) sont SUPPLÉMENTAIRES quand les droites sont parallèles. Leur somme fait 180°. Donc : 180° − 48° = 132°. C'est logique : un angle alterne-interne de 48° serait de l'autre côté, et avec l'angle co-intérieur, ils formeraient un angle plat (180°).",
       "hint": "Les angles co-intérieurs sont supplémentaires (somme = 180°).",
       "category": "Angles et parallélisme",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "parallel-lines",
+        "lines": [{"y": 2, "label": "d₁"}, {"y": 6, "label": "d₂"}],
+        "transversal": {"slope": 0.7},
+        "angles": [
+          {"at": "top", "side": "right", "value": "48°", "highlight": true},
+          {"at": "bottom", "side": "right", "value": "?", "highlight": true}
+        ],
+        "showParallelMarks": true
+      }
     },
     {
       "id": "5e-tri-01",
+      "generator": "tri-solve-angle",
       "type": "solve",
       "question": "Dans un triangle, deux angles mesurent 47° et 68°. Que mesure le troisième angle ?",
       "answer": "65",
       "explanation": "La somme des angles d'un triangle est TOUJOURS 180°. C'est un théorème fondamental ! Donc le troisième angle = 180° − 47° − 68° = 65°. Ce résultat est vrai pour TOUS les triangles : rectangle, isocèle, équilatéral, quelconque... Par exemple, dans un triangle équilatéral, chaque angle fait 180° ÷ 3 = 60°.",
       "hint": "La somme des angles d'un triangle est 180°.",
       "category": "Triangles",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [6, 0], "C": [2, 5]},
+        "labels": {"A": "47°", "B": "68°", "C": "?"}
+      }
     },
     {
       "id": "5e-tri-02",
+      "generator": "tri-mcq-inequality",
       "type": "mcq",
       "question": "Peut-on construire un triangle dont les côtés mesurent 3 cm, 4 cm et 8 cm ?",
       "choices": ["Non, car 3 + 4 < 8", "Oui, car 8 est le plus grand côté", "Non, car 3 + 4 + 8 ≠ 180", "Oui, car les trois longueurs sont différentes"],
@@ -464,10 +595,16 @@
       "explanation": "L'inégalité triangulaire dit que la somme de deux côtés doit TOUJOURS être supérieure au troisième côté. Ici, 3 + 4 = 7, et 7 < 8. Impossible ! Imagine : si tu as deux bâtons de 3 et 4 cm, tu ne peux pas les relier pour « atteindre » un bâton de 8 cm posé en face, ils sont trop courts. C'est une condition NÉCESSAIRE pour former un triangle.",
       "hint": "Vérifie l'inégalité triangulaire : la somme de deux côtés doit être supérieure au troisième.",
       "category": "Triangles",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [8, 0], "C": [3, 3]},
+        "labels": {"AB": "8 cm", "AC": "3 cm", "BC": "4 cm"}
+      }
     },
     {
       "id": "5e-tri-03",
+      "generator": "tri-mcq-nature",
       "type": "mcq",
       "question": "Un triangle a des angles de 60°, 60° et 60°. Quelle est sa nature ?",
       "choices": ["Équilatéral", "Isocèle", "Rectangle", "Quelconque"],
@@ -475,30 +612,49 @@
       "explanation": "Un triangle avec trois angles égaux à 60° est ÉQUILATÉRAL : ses trois côtés sont aussi égaux. C'est le triangle le plus « parfait » ! Il est aussi isocèle (au moins deux côtés égaux), mais on utilise le terme le plus précis. Un triangle équilatéral a aussi trois axes de symétrie et un centre de symétrie. C'est la seule forme de triangle dont tous les angles sont égaux.",
       "hint": "Si les trois angles sont égaux, que peut-on dire des côtés ?",
       "category": "Triangles",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [6, 0], "C": [3, 5.2]},
+        "labels": {"A": "60°", "B": "60°", "C": "60°"}
+      }
     },
     {
       "id": "5e-tri-04",
+      "generator": "tri-solve-isocele",
       "type": "solve",
       "question": "Un triangle isocèle a un angle au sommet principal de 40°. Que mesurent les angles de la base ?",
       "answer": "70",
       "explanation": "Un triangle isocèle a deux côtés égaux, et les angles opposés à ces côtés sont ÉGAUX (ce sont les angles de la base). La somme des angles fait 180° : 40° + 2x = 180°, donc 2x = 140°, et x = 70°. Chaque angle de la base mesure 70°. Attention : un triangle isocèle peut avoir l'angle « différent » au sommet ou à la base, il faut bien lire l'énoncé !",
       "hint": "Les deux angles de la base sont égaux. La somme des trois fait 180°.",
       "category": "Triangles",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [6, 0], "C": [3, 5]},
+        "labels": {"A": "?", "B": "?", "C": "40°"}
+      }
     },
     {
       "id": "5e-vol-01",
+      "generator": "vol-solve-prism",
       "type": "solve",
       "question": "Calcule le volume d'un prisme droit dont la base est un triangle de base 6 cm et hauteur 4 cm, et dont la hauteur du prisme est 10 cm. (en cm³)",
       "answer": "120",
       "explanation": "Le volume d'un prisme droit = Aire de la base × hauteur du prisme. La base est un triangle : Aire = (base × hauteur) / 2 = (6 × 4) / 2 = 12 cm². Puis : V = 12 × 10 = 120 cm³. Le prisme, c'est comme si on « empilait » le triangle sur 10 cm de hauteur. Cette formule marche pour tout prisme droit, quelle que soit la forme de la base !",
       "hint": "Volume du prisme = Aire de la base × hauteur. L'aire du triangle = b×h/2.",
       "category": "Aires et volumes",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "volume",
+        "shape": "prism",
+        "dimensions": {"base": 6, "baseHeight": 4, "h": 10},
+        "labels": {"base": "6 cm", "baseHeight": "4 cm", "h": "10 cm"}
+      }
     },
     {
       "id": "5e-vol-02",
+      "generator": "vol-mcq-cylinder-formula",
       "type": "mcq",
       "question": "Quelle est la formule du volume d'un cylindre de rayon r et de hauteur h ?",
       "choices": ["π × r² × h", "2 × π × r × h", "π × r × h", "π × r² × h / 3"],
@@ -506,20 +662,34 @@
       "explanation": "Le volume d'un cylindre = π × r² × h. C'est logique : la base est un disque d'aire π × r², et on « empile » ce disque sur une hauteur h. C'est exactement le même principe que le prisme : Volume = Aire de la base × hauteur ! Attention : 2πrh, c'est l'aire LATÉRALE (le « tour » du cylindre), et πr²h/3, c'est le volume d'un CÔNE.",
       "hint": "Le cylindre est un prisme à base circulaire. L'aire d'un disque = π × r².",
       "category": "Aires et volumes",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "volume",
+        "shape": "cylinder",
+        "dimensions": {"r": 3, "h": 5},
+        "labels": {"r": "r", "h": "h"}
+      }
     },
     {
       "id": "5e-vol-03",
+      "generator": "vol-solve-cylinder",
       "type": "solve",
       "question": "Un cylindre a un rayon de 3 cm et une hauteur de 7 cm. Calcule son volume en fonction de π (écris ta réponse sous la forme 'Nπ', par exemple '12π').",
       "answer": "63π",
       "explanation": "V = π × r² × h = π × 3² × 7 = π × 9 × 7 = 63π cm³. Laisser le résultat avec π est la forme exacte. Si on voulait une valeur approchée : 63 × 3,14 ≈ 197,8 cm³. Travailler avec π (la valeur exacte) est souvent préféré en maths car c'est plus précis que d'arrondir.",
       "hint": "V = π × r² × h. Calcule r² d'abord.",
       "category": "Aires et volumes",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "volume",
+        "shape": "cylinder",
+        "dimensions": {"r": 3, "h": 7},
+        "labels": {"r": "3 cm", "h": "7 cm"}
+      }
     },
     {
       "id": "5e-vol-04",
+      "generator": "vol-mcq-double-radius",
       "type": "mcq",
       "question": "On double le rayon d'un cylindre sans changer sa hauteur. Comment change le volume ?",
       "choices": ["Il est multiplié par 4", "Il est multiplié par 2", "Il est multiplié par 8", "Il est multiplié par 6"],
@@ -527,7 +697,319 @@
       "explanation": "V = π × r² × h. Si on remplace r par 2r : V' = π × (2r)² × h = π × 4r² × h = 4 × (πr²h) = 4V. Le volume est multiplié par 4 ! C'est parce que le rayon est au CARRÉ dans la formule. Doubler le rayon quadruple l'aire de la base, et donc le volume. C'est une idée puissante : en géométrie, quand on multiplie une longueur par k, les aires sont multipliées par k² et les volumes par k³.",
       "hint": "Le rayon apparaît au carré dans la formule du volume.",
       "category": "Aires et volumes",
-      "difficulty": 3
+      "difficulty": 3,
+      "diagram": {
+        "type": "volume",
+        "shape": "cylinder",
+        "dimensions": {"r": 3, "h": 5},
+        "labels": {"r": "r → 2r", "h": "h"}
+      }
+    },
+    {
+      "id": "5e-ang-inter",
+      "type": "interactive",
+      "interactive": "angle-machine",
+      "question": "Manipule la sécante pour explorer les angles entre parallèles",
+      "explanation": "Les angles alternes-internes sont égaux, les correspondants aussi, et les co-intérieurs sont supplémentaires.",
+      "category": "Angles et parallélisme",
+      "difficulty": 2
+    },
+    {
+      "id": "5e-ang-geo-01",
+      "type": "geo-click",
+      "question": "Clique sur l'angle alterne-interne à l'angle marqué (motif en Z)",
+      "answer": "alt-int",
+      "explanation": "Les angles alternes-internes sont de part et d'autre de la sécante, entre les parallèles. Ils forment un Z.",
+      "category": "Angles et parallélisme",
+      "difficulty": 1,
+      "diagram": {
+        "type": "parallel-lines",
+        "lines": [{"y": 2, "label": "d₁"}, {"y": 6, "label": "d₂"}],
+        "transversal": {"slope": 0.8},
+        "showParallelMarks": true,
+        "angles": [
+          {"at": "top", "side": "right", "highlight": true, "value": "α"},
+          {"at": "bottom", "side": "left", "value": ""},
+          {"at": "bottom", "side": "right", "value": ""}
+        ],
+        "targets": [
+          {"name": "alt-int", "at": "bottom", "side": "left"},
+          {"name": "corresp", "at": "bottom", "side": "right"}
+        ]
+      }
+    },
+    {
+      "id": "5e-ang-geo-02",
+      "type": "geo-click",
+      "question": "Clique sur l'angle alterne-interne à l'angle marqué",
+      "answer": "alt-int",
+      "explanation": "Les angles alternes-internes sont situés entre les deux droites parallèles, de chaque côté de la sécante.",
+      "category": "Angles et parallélisme",
+      "difficulty": 1,
+      "diagram": {
+        "type": "parallel-lines",
+        "lines": [{"y": 2, "label": "d₁"}, {"y": 6, "label": "d₂"}],
+        "transversal": {"slope": 0.8},
+        "showParallelMarks": true,
+        "angles": [
+          {"at": "bottom", "side": "left", "highlight": true, "value": "β"},
+          {"at": "top", "side": "right", "value": ""},
+          {"at": "top", "side": "left", "value": ""}
+        ],
+        "targets": [
+          {"name": "alt-int", "at": "top", "side": "right"},
+          {"name": "co-int", "at": "top", "side": "left"}
+        ]
+      }
+    },
+    {
+      "id": "5e-ang-geo-03",
+      "type": "geo-click",
+      "question": "Clique sur l'angle correspondant à l'angle marqué (motif en F)",
+      "answer": "corresp",
+      "explanation": "Les angles correspondants sont du même côté de la sécante, l'un entre les parallèles, l'autre à l'extérieur.",
+      "category": "Angles et parallélisme",
+      "difficulty": 1,
+      "diagram": {
+        "type": "parallel-lines",
+        "lines": [{"y": 2, "label": "d₁"}, {"y": 6, "label": "d₂"}],
+        "transversal": {"slope": 0.8},
+        "showParallelMarks": true,
+        "angles": [
+          {"at": "top", "side": "right", "highlight": true, "value": "α"},
+          {"at": "bottom", "side": "right", "value": ""},
+          {"at": "bottom", "side": "left", "value": ""}
+        ],
+        "targets": [
+          {"name": "corresp", "at": "bottom", "side": "right"},
+          {"name": "alt-int", "at": "bottom", "side": "left"}
+        ]
+      }
+    },
+    {
+      "id": "5e-ang-geo-04",
+      "type": "geo-click",
+      "question": "Clique sur l'angle correspondant à l'angle marqué",
+      "answer": "corresp",
+      "explanation": "Les angles correspondants occupent la même position relative à chaque intersection.",
+      "category": "Angles et parallélisme",
+      "difficulty": 1,
+      "diagram": {
+        "type": "parallel-lines",
+        "lines": [{"y": 2, "label": "d₁"}, {"y": 6, "label": "d₂"}],
+        "transversal": {"slope": 0.8},
+        "showParallelMarks": true,
+        "angles": [
+          {"at": "top", "side": "left", "highlight": true, "value": "γ"},
+          {"at": "bottom", "side": "left", "value": ""},
+          {"at": "bottom", "side": "right", "value": ""}
+        ],
+        "targets": [
+          {"name": "corresp", "at": "bottom", "side": "left"},
+          {"name": "wrong", "at": "bottom", "side": "right"}
+        ]
+      }
+    },
+    {
+      "id": "5e-ang-geo-05",
+      "type": "geo-click",
+      "question": "Clique sur l'angle co-intérieur (même côté) de l'angle marqué (motif en U)",
+      "answer": "co-int",
+      "explanation": "Les angles co-intérieurs (ou angles intérieurs du même côté) sont entre les parallèles, du même côté de la sécante. Leur somme vaut 180°.",
+      "category": "Angles et parallélisme",
+      "difficulty": 2,
+      "diagram": {
+        "type": "parallel-lines",
+        "lines": [{"y": 2, "label": "d₁"}, {"y": 6, "label": "d₂"}],
+        "transversal": {"slope": 0.8},
+        "showParallelMarks": true,
+        "angles": [
+          {"at": "top", "side": "right", "highlight": true, "value": "α"},
+          {"at": "bottom", "side": "right", "value": ""},
+          {"at": "bottom", "side": "left", "value": ""}
+        ],
+        "targets": [
+          {"name": "co-int", "at": "bottom", "side": "right"},
+          {"name": "alt-int", "at": "bottom", "side": "left"}
+        ]
+      }
+    },
+    {
+      "id": "5e-ang-geo-06",
+      "type": "geo-click",
+      "question": "Clique sur l'angle co-intérieur de l'angle marqué",
+      "answer": "co-int",
+      "explanation": "Les angles co-intérieurs sont du même côté de la sécante, entre les parallèles. α + co-int = 180°.",
+      "category": "Angles et parallélisme",
+      "difficulty": 2,
+      "diagram": {
+        "type": "parallel-lines",
+        "lines": [{"y": 2, "label": "d₁"}, {"y": 6, "label": "d₂"}],
+        "transversal": {"slope": 0.8},
+        "showParallelMarks": true,
+        "angles": [
+          {"at": "bottom", "side": "left", "highlight": true, "value": "β"},
+          {"at": "top", "side": "left", "value": ""},
+          {"at": "top", "side": "right", "value": ""}
+        ],
+        "targets": [
+          {"name": "co-int", "at": "top", "side": "left"},
+          {"name": "alt-int", "at": "top", "side": "right"}
+        ]
+      }
+    },
+    {
+      "id": "5e-sym-inter",
+      "type": "interactive",
+      "interactive": "symmetry-painter",
+      "question": "Place les sommets symétriques du polygone par rapport au centre O",
+      "explanation": "En symétrie centrale de centre O, le symétrique de A(x,y) est A'(2cx−x, 2cy−y) où O(cx,cy).",
+      "category": "Symétrie centrale",
+      "difficulty": 2
+    },
+    {
+      "id": "5e-sym-geo-01",
+      "type": "geo-place",
+      "question": "Place le symétrique du point A par rapport au centre O",
+      "answer": "6,2",
+      "explanation": "Le symétrique de A(2,6) par rapport à O(4,4) est A'(6,2). On calcule : x' = 2×4−2 = 6, y' = 2×4−6 = 2.",
+      "category": "Symétrie centrale",
+      "difficulty": 1,
+      "diagram": {
+        "type": "grid-place",
+        "bounds": {"xMin": 0, "xMax": 8, "yMin": 0, "yMax": 8},
+        "points": {"A": [2, 6], "O": [4, 4]},
+        "pointStyles": {"O": "geo-point-center"},
+        "snapToGrid": true
+      }
+    },
+    {
+      "id": "5e-sym-geo-02",
+      "type": "geo-place",
+      "question": "Place le symétrique du point A par rapport au centre O",
+      "answer": "5,1",
+      "explanation": "Le symétrique de A(1,5) par rapport à O(3,3) est A'(5,1). On calcule : x' = 2×3−1 = 5, y' = 2×3−5 = 1.",
+      "category": "Symétrie centrale",
+      "difficulty": 1,
+      "diagram": {
+        "type": "grid-place",
+        "bounds": {"xMin": 0, "xMax": 7, "yMin": 0, "yMax": 7},
+        "points": {"A": [1, 5], "O": [3, 3]},
+        "pointStyles": {"O": "geo-point-center"},
+        "snapToGrid": true
+      }
+    },
+    {
+      "id": "5e-sym-geo-03",
+      "type": "geo-place",
+      "question": "Place le symétrique du point B par rapport au centre O",
+      "answer": "2,5",
+      "explanation": "Le symétrique de B(6,3) par rapport à O(4,4) est B'(2,5). On calcule : x' = 2×4−6 = 2, y' = 2×4−3 = 5.",
+      "category": "Symétrie centrale",
+      "difficulty": 2,
+      "diagram": {
+        "type": "grid-place",
+        "bounds": {"xMin": 0, "xMax": 8, "yMin": 0, "yMax": 8},
+        "points": {"B": [6, 3], "O": [4, 4]},
+        "pointStyles": {"O": "geo-point-center"},
+        "snapToGrid": true
+      }
+    },
+    {
+      "id": "5e-sym-geo-04",
+      "type": "geo-place",
+      "question": "Place le symétrique du point C par rapport au centre O",
+      "answer": "7,2",
+      "explanation": "Le symétrique de C(1,6) par rapport à O(4,4) est C'(7,2). On calcule : x' = 2×4−1 = 7, y' = 2×4−6 = 2.",
+      "category": "Symétrie centrale",
+      "difficulty": 2,
+      "diagram": {
+        "type": "grid-place",
+        "bounds": {"xMin": 0, "xMax": 8, "yMin": 0, "yMax": 8},
+        "points": {"C": [1, 6], "O": [4, 4]},
+        "pointStyles": {"O": "geo-point-center"},
+        "snapToGrid": true
+      }
+    },
+    {
+      "id": "5e-tri-geo-01",
+      "type": "geo-click",
+      "question": "Clique sur l'angle droit du triangle",
+      "answer": "right-angle",
+      "explanation": "L'angle droit est marqué par un petit carré. Il mesure exactement 90°.",
+      "category": "Triangles",
+      "difficulty": 1,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [5, 0], "C": [0, 3]},
+        "rightAngle": "A",
+        "labels": {},
+        "targets": [
+          {"type": "angle", "vertex": "A", "name": "right-angle"},
+          {"type": "angle", "vertex": "B", "name": "angle-B"},
+          {"type": "angle", "vertex": "C", "name": "angle-C"}
+        ]
+      }
+    },
+    {
+      "id": "5e-tri-geo-02",
+      "type": "geo-click",
+      "question": "Clique sur l'angle droit du triangle",
+      "answer": "right-angle",
+      "explanation": "L'angle droit est toujours indiqué par un petit carré dans le coin.",
+      "category": "Triangles",
+      "difficulty": 1,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"P": [1, 0], "Q": [5, 0], "R": [5, 4]},
+        "rightAngle": "Q",
+        "labels": {},
+        "targets": [
+          {"type": "angle", "vertex": "P", "name": "angle-P"},
+          {"type": "angle", "vertex": "Q", "name": "right-angle"},
+          {"type": "angle", "vertex": "R", "name": "angle-R"}
+        ]
+      }
+    },
+    {
+      "id": "5e-tri-geo-03",
+      "type": "geo-click",
+      "question": "Clique sur l'hypoténuse du triangle rectangle",
+      "answer": "hyp",
+      "explanation": "L'hypoténuse est le côté le plus long, opposé à l'angle droit.",
+      "category": "Triangles",
+      "difficulty": 1,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"A": [0, 0], "B": [5, 0], "C": [0, 3]},
+        "rightAngle": "A",
+        "labels": {},
+        "targets": [
+          {"type": "side", "side": "BC", "name": "hyp"},
+          {"type": "side", "side": "AB", "name": "side-AB"},
+          {"type": "side", "side": "CA", "name": "side-CA"}
+        ]
+      }
+    },
+    {
+      "id": "5e-tri-geo-04",
+      "type": "geo-click",
+      "question": "Clique sur l'hypoténuse du triangle rectangle",
+      "answer": "hyp",
+      "explanation": "L'hypoténuse est toujours le côté opposé à l'angle droit. C'est le plus grand côté.",
+      "category": "Triangles",
+      "difficulty": 1,
+      "diagram": {
+        "type": "right-triangle",
+        "vertices": {"P": [1, 0], "Q": [5, 0], "R": [5, 4]},
+        "rightAngle": "Q",
+        "labels": {},
+        "targets": [
+          {"type": "side", "side": "PQ", "name": "side-PQ"},
+          {"type": "side", "side": "QR", "name": "side-QR"},
+          {"type": "side", "side": "PR", "name": "hyp"}
+        ]
+      }
     }
   ]
 }

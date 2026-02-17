@@ -5,6 +5,10 @@ import LottieOverlay from '../../shared/lottie-overlay.js';
 import * as DB from '../../shared/db.js';
 import { getLevel, endSessionFlow, checkLevelBadges } from '../../shared/gamification.js';
 import { buildSessionQueue, getOrCreateMastery, recordAnswer, requeueWrong } from '../../shared/spaced-repetition.js';
+import { renderDiagram } from './games/geo-diagram.js';
+import { renderGeoClick, renderGeoPlace } from './games/geo-interactive.js';
+import { generate } from './generators/registry.js';
+import { renderInteractive } from './games/interactive-dispatch.js';
 
 const LEVELS = [
   { file: 'data/level-1-5eme.json', key: '5eme' },
@@ -133,6 +137,9 @@ async function startSession(levelKey, category) {
     sessionQueue = shuffle(pool).slice(0, 12);
   }
 
+  // Materialize dynamic generators — produce fresh random values
+  sessionQueue = sessionQueue.map(item => item.generator ? generate(item) : item);
+
   $('#math-total').textContent = sessionQueue.length;
   $('#math-streak-count').textContent = '0';
   updateProgress();
@@ -164,6 +171,9 @@ async function renderMathItem() {
     case 'mcq': renderMCQ(item, container); break;
     case 'solve': renderSolve(item, container); break;
     case 'fill-blank': renderFillBlank(item, container); break;
+    case 'geo-click': renderGeoClickItem(item, container); break;
+    case 'geo-place': renderGeoPlaceItem(item, container); break;
+    case 'interactive': renderInteractiveItem(item, container); break;
     default: renderMCQ(item, container);
   }
 
@@ -175,11 +185,14 @@ function renderMCQ(item, container) {
   let answered = false;
 
   container.innerHTML = `
+    ${item.diagram ? '<div class="math-diagram"></div>' : ''}
     <div class="math-question">${texify(item.question)}</div>
     <div class="math-choices">
       ${item.choices.map((c, i) => `<button class="math-choice" data-idx="${i}">${texify(c)}</button>`).join('')}
     </div>
   `;
+
+  if (item.diagram) renderDiagram(container.querySelector('.math-diagram'), item.diagram);
 
   container.querySelectorAll('.math-choice').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -215,6 +228,7 @@ function renderSolve(item, container) {
   let answered = false;
 
   container.innerHTML = `
+    ${item.diagram ? '<div class="math-diagram"></div>' : ''}
     <div class="math-question">${texify(item.question)}</div>
     <div class="math-solve-row">
       <input class="math-solve-input" type="text" placeholder="Ta réponse..." autocomplete="off" autocapitalize="off">
@@ -223,6 +237,8 @@ function renderSolve(item, container) {
     </div>
     <div id="math-solve-feedback"></div>
   `;
+
+  if (item.diagram) renderDiagram(container.querySelector('.math-diagram'), item.diagram);
 
   const input = container.querySelector('.math-solve-input');
   const submitBtn = container.querySelector('#math-submit');
@@ -277,6 +293,58 @@ function renderSolve(item, container) {
 
 function renderFillBlank(item, container) {
   renderMCQ(item, container);
+}
+
+async function renderGeoClickItem(item, container) {
+  container.innerHTML = `<div class="math-question">${texify(item.question)}</div>`;
+  typeset(container);
+
+  const { correct, selected } = await renderGeoClick(container, item);
+
+  if (correct) {
+    SFX.play('correct');
+    LottieOverlay.show('correct', 800);
+  } else {
+    SFX.play('wrong');
+  }
+
+  showMathExplanation(container, item.explanation);
+  handleMathAnswer(item, correct);
+  showMathNext(container);
+}
+
+async function renderGeoPlaceItem(item, container) {
+  container.innerHTML = `<div class="math-question">${texify(item.question)}</div>`;
+  typeset(container);
+
+  const { correct, placed } = await renderGeoPlace(container, item);
+
+  if (correct) {
+    SFX.play('correct');
+    LottieOverlay.show('correct', 800);
+  } else {
+    SFX.play('wrong');
+  }
+
+  showMathExplanation(container, item.explanation);
+  handleMathAnswer(item, correct);
+  showMathNext(container);
+}
+
+async function renderInteractiveItem(item, container) {
+  container.innerHTML = '';
+  const { correct, explanation } = await renderInteractive(container, item);
+
+  if (correct) {
+    SFX.play('correct');
+    LottieOverlay.show('correct', 800);
+  } else {
+    SFX.play('wrong');
+  }
+
+  showMathExplanation(container, explanation || item.explanation);
+  handleMathAnswer(item, correct);
+  showMathNext(container);
 }
 
 function checkMathAnswer(userVal, answer) {

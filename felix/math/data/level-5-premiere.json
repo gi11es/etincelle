@@ -6,6 +6,7 @@
   "items": [
     {
       "id": "1ere-suite-01",
+      "generator": "suite-mcq-nature",
       "type": "mcq",
       "question": "La suite (uₙ) définie par uₙ = 3n + 2 est :",
       "choices": ["Arithmétique de raison 3", "Géométrique de raison 3", "Arithmétique de raison 2", "Ni arithmétique ni géométrique"],
@@ -17,6 +18,7 @@
     },
     {
       "id": "1ere-suite-02",
+      "generator": "suite-solve-term",
       "type": "solve",
       "question": "La suite arithmétique (uₙ) a pour premier terme u₀ = 5 et raison r = −2. Calcule u₁₀.",
       "answer": "-15",
@@ -27,6 +29,7 @@
     },
     {
       "id": "1ere-suite-03",
+      "generator": "suite-mcq-geo",
       "type": "mcq",
       "question": "La suite (vₙ) définie par vₙ = 3 × 2ⁿ est :",
       "choices": ["Géométrique de raison 2", "Arithmétique de raison 2", "Géométrique de raison 3", "Arithmétique de raison 6"],
@@ -38,6 +41,7 @@
     },
     {
       "id": "1ere-suite-04",
+      "generator": "suite-solve-geo-term",
       "type": "solve",
       "question": "Suite géométrique : v₀ = 4 et q = 3. Calcule v₅.",
       "answer": "972",
@@ -48,6 +52,7 @@
     },
     {
       "id": "1ere-suite-05",
+      "generator": "suite-mcq-sum-arith",
       "type": "mcq",
       "question": "Quelle est la somme des 10 premiers termes de la suite arithmétique u₀ = 1, r = 2 ?",
       "choices": ["100", "90", "110", "55"],
@@ -59,6 +64,7 @@
     },
     {
       "id": "1ere-suite-06",
+      "generator": "suite-solve-sum-geo",
       "type": "solve",
       "question": "Somme d'une suite géométrique : v₀ = 1, q = 2, n = 6 termes (de v₀ à v₅). Calcule S.",
       "answer": "63",
@@ -69,6 +75,7 @@
     },
     {
       "id": "1ere-suite-07",
+      "generator": "suite-mcq-variation",
       "type": "mcq",
       "question": "La suite uₙ₊₁ = uₙ + 5 avec u₀ = 3. Quel est le sens de variation ?",
       "choices": ["Strictement croissante", "Strictement décroissante", "Constante", "On ne peut pas savoir"],
@@ -80,6 +87,7 @@
     },
     {
       "id": "1ere-suite-08",
+      "generator": "suite-solve-find-q",
       "type": "solve",
       "question": "Suite géométrique : v₂ = 12 et v₅ = 96. Trouve la raison q.",
       "answer": "2",
@@ -90,6 +98,7 @@
     },
     {
       "id": "1ere-poly-01",
+      "generator": "poly-solve-discriminant",
       "type": "solve",
       "question": "Calcule le discriminant de x² − 5x + 6.",
       "answer": "1",
@@ -100,6 +109,7 @@
     },
     {
       "id": "1ere-poly-02",
+      "generator": "poly-mcq-solutions",
       "type": "mcq",
       "question": "Les solutions de x² − 5x + 6 = 0 sont :",
       "choices": ["x = 2 et x = 3", "x = −2 et x = −3", "x = 1 et x = 6", "x = 2 et x = −3"],
@@ -111,6 +121,7 @@
     },
     {
       "id": "1ere-poly-03",
+      "generator": "poly-solve-two-roots",
       "type": "solve",
       "question": "Résous : 2x² + 3x − 2 = 0. Donne les deux solutions séparées par 'et'.",
       "answer": "1/2 et -2",
@@ -121,6 +132,7 @@
     },
     {
       "id": "1ere-poly-04",
+      "generator": "poly-mcq-no-solution",
       "type": "mcq",
       "question": "L'équation x² + x + 1 = 0 a :",
       "choices": ["Pas de solution réelle", "Deux solutions", "Une solution double", "Une solution"],
@@ -132,6 +144,7 @@
     },
     {
       "id": "1ere-poly-05",
+      "generator": "poly-solve-sommet",
       "type": "solve",
       "question": "Détermine le sommet de la parabole y = x² − 4x + 7. Donne les coordonnées sous la forme '(a,b)'.",
       "answer": "(2,3)",
@@ -142,6 +155,7 @@
     },
     {
       "id": "1ere-poly-06",
+      "generator": "poly-mcq-signe",
       "type": "mcq",
       "question": "Le signe de 2x² − 5x + 3 pour x ∈ ℝ :",
       "choices": ["Positif sauf entre les racines 1 et 3/2", "Toujours positif", "Toujours négatif", "Négatif sauf entre les racines"],
@@ -153,6 +167,7 @@
     },
     {
       "id": "1ere-poly-07",
+      "generator": "poly-solve-factorize",
       "type": "solve",
       "question": "Factorise : 3x² − 12x + 12",
       "answer": "3(x-2)²",
@@ -163,6 +178,7 @@
     },
     {
       "id": "1ere-poly-08",
+      "generator": "poly-mcq-viete",
       "type": "mcq",
       "question": "Si x₁ et x₂ sont les racines de x² − 7x + 10 = 0, que vaut x₁ × x₂ ?",
       "choices": ["10", "7", "−7", "−10"],
@@ -174,6 +190,7 @@
     },
     {
       "id": "1ere-poly-09",
+      "generator": "poly-solve-square-eq",
       "type": "solve",
       "question": "Résous : (x − 1)² = 9. Donne les deux solutions séparées par 'et'.",
       "answer": "4 et -2",
@@ -184,6 +201,7 @@
     },
     {
       "id": "1ere-poly-10",
+      "generator": "poly-mcq-k-double",
       "type": "mcq",
       "question": "Pour quelle valeur de k l'équation x² − 6x + k = 0 a-t-elle une solution double ?",
       "choices": ["9", "0", "36", "−9"],
@@ -195,6 +213,7 @@
     },
     {
       "id": "1ere-deriv-01",
+      "generator": "deriv-mcq-xn",
       "type": "mcq",
       "question": "Quelle est la dérivée de f(x) = x³ ?",
       "choices": ["3x²", "x²", "3x³", "x⁴/4"],
@@ -206,6 +225,7 @@
     },
     {
       "id": "1ere-deriv-02",
+      "generator": "deriv-solve-poly",
       "type": "solve",
       "question": "Dérive f(x) = 4x³ − 2x² + 5x − 7.",
       "answer": "12x²-4x+5",
@@ -216,6 +236,7 @@
     },
     {
       "id": "1ere-deriv-03",
+      "generator": "deriv-mcq-inverse",
       "type": "mcq",
       "question": "La dérivée de f(x) = 1/x est :",
       "choices": ["-1/x²", "1/x²", "ln(x)", "-1/x"],
@@ -227,6 +248,7 @@
     },
     {
       "id": "1ere-deriv-04",
+      "generator": "deriv-solve-product",
       "type": "solve",
       "question": "Dérive f(x) = (2x + 1)(3x − 4) en utilisant la formule du produit.",
       "answer": "12x-5",
@@ -237,6 +259,7 @@
     },
     {
       "id": "1ere-deriv-05",
+      "generator": "deriv-mcq-zero",
       "type": "mcq",
       "question": "f(x) = x² − 4x + 3. Pour quelle valeur de x a-t-on f'(x) = 0 ?",
       "choices": ["x = 2", "x = 0", "x = 4", "x = −2"],
@@ -248,6 +271,7 @@
     },
     {
       "id": "1ere-deriv-06",
+      "generator": "deriv-solve-critical",
       "type": "solve",
       "question": "f(x) = x³ − 3x. Trouve les valeurs de x où f'(x) = 0.",
       "answer": "1 et -1",
@@ -258,6 +282,7 @@
     },
     {
       "id": "1ere-deriv-07",
+      "generator": "deriv-mcq-tangent",
       "type": "mcq",
       "question": "L'équation de la tangente à la courbe de f en a est :",
       "choices": ["y = f'(a)(x − a) + f(a)", "y = f(a)(x − a) + f'(a)", "y = f'(a)x + f(a)", "y = f(x) + f'(a)"],
@@ -269,6 +294,7 @@
     },
     {
       "id": "1ere-deriv-08",
+      "generator": "deriv-solve-tangent",
       "type": "solve",
       "question": "f(x) = x² + 1. Quelle est l'équation de la tangente en x = 3 ? Écris sous la forme y=ax+b.",
       "answer": "y=6x-8",
@@ -279,6 +305,7 @@
     },
     {
       "id": "1ere-deriv-09",
+      "generator": "deriv-mcq-sqrt",
       "type": "mcq",
       "question": "Dérive f(x) = √x.",
       "choices": ["1/(2√x)", "√x/2", "2√x", "1/√x"],
@@ -290,6 +317,7 @@
     },
     {
       "id": "1ere-deriv-10",
+      "generator": "deriv-solve-chain",
       "type": "solve",
       "question": "Dérive f(x) = (3x + 1)². Utilise la dérivée d'une composée.",
       "answer": "6(3x+1)",
@@ -300,6 +328,7 @@
     },
     {
       "id": "1ere-exp-01",
+      "generator": "exp-mcq-property",
       "type": "mcq",
       "question": "Quelle est la propriété fondamentale de la fonction exponentielle ?",
       "choices": ["eᵃ × eᵇ = eᵃ⁺ᵇ", "eᵃ × eᵇ = eᵃᵇ", "eᵃ + eᵇ = eᵃ⁺ᵇ", "eᵃ / eᵇ = eᵃ⁺ᵇ"],
@@ -311,6 +340,7 @@
     },
     {
       "id": "1ere-exp-02",
+      "generator": "exp-solve-simplify",
       "type": "solve",
       "question": "Simplifie : e²ˣ × e³ˣ (sous la forme eᵃˣ, écris juste l'exposant).",
       "answer": "5x",
@@ -321,6 +351,7 @@
     },
     {
       "id": "1ere-exp-03",
+      "generator": "exp-mcq-derivative",
       "type": "mcq",
       "question": "La dérivée de eˣ est :",
       "choices": ["eˣ", "xeˣ⁻¹", "1/eˣ", "x × eˣ"],
@@ -332,6 +363,7 @@
     },
     {
       "id": "1ere-exp-04",
+      "generator": "exp-solve-derive-chain",
       "type": "solve",
       "question": "Dérive f(x) = e²ˣ⁺¹.",
       "answer": "2e²ˣ⁺¹",
@@ -342,6 +374,7 @@
     },
     {
       "id": "1ere-exp-05",
+      "generator": "exp-mcq-solve-1",
       "type": "mcq",
       "question": "Résous eˣ = 1.",
       "choices": ["x = 0", "x = 1", "x = e", "Pas de solution"],
@@ -353,6 +386,7 @@
     },
     {
       "id": "1ere-exp-06",
+      "generator": "exp-solve-equal",
       "type": "solve",
       "question": "Résous : e²ˣ⁻³ = e⁵. Donne la valeur de x.",
       "answer": "4",
@@ -363,6 +397,7 @@
     },
     {
       "id": "1ere-trig-01",
+      "generator": "trig1-mcq-radian",
       "type": "mcq",
       "question": "Sur le cercle trigonométrique, l'angle π/2 radians correspond à :",
       "choices": ["90°", "180°", "45°", "60°"],
@@ -374,6 +409,7 @@
     },
     {
       "id": "1ere-trig-02",
+      "generator": "trig1-solve-cos",
       "type": "solve",
       "question": "Que vaut cos(π/3) ? (valeur exacte, sous forme fractionnaire)",
       "answer": "1/2",
@@ -384,6 +420,7 @@
     },
     {
       "id": "1ere-trig-03",
+      "generator": "trig1-mcq-cos-zero",
       "type": "mcq",
       "question": "Résous cos(x) = 0 sur [0, 2π[.",
       "choices": ["x = π/2 ou x = 3π/2", "x = 0 ou x = π", "x = π/4 ou x = 3π/4", "x = π/2"],
@@ -395,6 +432,7 @@
     },
     {
       "id": "1ere-trig-04",
+      "generator": "trig1-solve-sin",
       "type": "solve",
       "question": "Que vaut sin(π/4) ? (valeur exacte)",
       "answer": "√2/2",
@@ -405,6 +443,7 @@
     },
     {
       "id": "1ere-trig-05",
+      "generator": "trig1-mcq-supplementary",
       "type": "mcq",
       "question": "sin(π − x) = ?",
       "choices": ["sin(x)", "−sin(x)", "cos(x)", "−cos(x)"],
@@ -416,6 +455,7 @@
     },
     {
       "id": "1ere-trig-06",
+      "generator": "trig1-solve-sin-eq",
       "type": "solve",
       "question": "Résous sin(x) = 1/2 sur [0, 2π[. Donne les deux solutions séparées par 'et'.",
       "answer": "π/6 et 5π/6",
@@ -426,6 +466,7 @@
     },
     {
       "id": "1ere-scal-01",
+      "generator": "scal-mcq-compute",
       "type": "mcq",
       "question": "Le produit scalaire u⃗·v⃗ de u⃗(3, 4) et v⃗(2, −1) vaut :",
       "choices": ["2", "10", "−2", "5"],
@@ -433,20 +474,36 @@
       "explanation": "u⃗·v⃗ = x₁x₂ + y₁y₂ = 3×2 + 4×(−1) = 6 − 4 = 2. Le produit scalaire est un NOMBRE (pas un vecteur !). Il mesure « combien » deux vecteurs vont dans la même direction. S'il est positif, l'angle entre eux est aigu ; nul, ils sont perpendiculaires ; négatif, l'angle est obtus.",
       "hint": "u⃗·v⃗ = x₁x₂ + y₁y₂.",
       "category": "Produit scalaire",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "coordinate-plane",
+        "bounds": {"xMin": -1, "xMax": 5, "yMin": -3, "yMax": 6},
+        "points": {"O": [0, 0], "U": [3, 4], "V": [2, -1]},
+        "vectors": [{"from": "O", "to": "U", "label": "u⃗"}, {"from": "O", "to": "V", "label": "v⃗"}],
+        "showGrid": true
+      }
     },
     {
       "id": "1ere-scal-02",
+      "generator": "scal-solve-perpendicular",
       "type": "solve",
       "question": "u⃗(1, 2) et v⃗(k, −1). Pour quelle valeur de k sont-ils perpendiculaires ?",
       "answer": "2",
       "explanation": "Perpendiculaires ↔ u⃗·v⃗ = 0. 1×k + 2×(−1) = 0 → k − 2 = 0 → k = 2. Vérification : u⃗(1, 2)·v⃗(2, −1) = 2 − 2 = 0 ✓. Le produit scalaire nul est la CARACTÉRISATION algébrique de la perpendicularité. C'est beaucoup plus pratique que de mesurer des angles !",
       "hint": "Perpendiculaires ↔ produit scalaire = 0.",
       "category": "Produit scalaire",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "coordinate-plane",
+        "bounds": {"xMin": -1, "xMax": 4, "yMin": -3, "yMax": 4},
+        "points": {"O": [0, 0], "U": [1, 2], "V": [2, -1]},
+        "vectors": [{"from": "O", "to": "U", "label": "u⃗"}, {"from": "O", "to": "V", "label": "v⃗"}],
+        "showGrid": true
+      }
     },
     {
       "id": "1ere-scal-03",
+      "generator": "scal-mcq-90",
       "type": "mcq",
       "question": "u⃗·v⃗ = ‖u⃗‖ × ‖v⃗‖ × cos(θ). Si θ = 90°, que vaut u⃗·v⃗ ?",
       "choices": ["0", "‖u⃗‖ × ‖v⃗‖", "1", "−1"],
@@ -454,20 +511,36 @@
       "explanation": "cos(90°) = 0, donc u⃗·v⃗ = ‖u⃗‖ × ‖v⃗‖ × 0 = 0. On retrouve la propriété : deux vecteurs perpendiculaires ont un produit scalaire nul. La formule u⃗·v⃗ = ‖u⃗‖‖v⃗‖cos(θ) relie l'angle θ entre les vecteurs au produit scalaire. C'est cette formule qui permet de calculer des angles en géométrie analytique !",
       "hint": "cos(90°) = 0.",
       "category": "Produit scalaire",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "coordinate-plane",
+        "bounds": {"xMin": -1, "xMax": 5, "yMin": -1, "yMax": 4},
+        "points": {"O": [0, 0], "U": [4, 0], "V": [0, 3]},
+        "vectors": [{"from": "O", "to": "U", "label": "u⃗"}, {"from": "O", "to": "V", "label": "v⃗"}],
+        "showGrid": true
+      }
     },
     {
       "id": "1ere-scal-04",
+      "generator": "scal-solve-norme",
       "type": "solve",
       "question": "Calcule la norme du vecteur u⃗(3, −4).",
       "answer": "5",
       "explanation": "‖u⃗‖ = √(x² + y²) = √(3² + (−4)²) = √(9 + 16) = √25 = 5. La norme est la « longueur » du vecteur. C'est Pythagore appliqué aux coordonnées ! u⃗·u⃗ = ‖u⃗‖² = 25. Donc la norme est aussi √(u⃗·u⃗). Le vecteur (3, −4) a une norme de 5, c'est notre triplet (3, 4, 5) encore une fois.",
       "hint": "‖u⃗‖ = √(x² + y²).",
       "category": "Produit scalaire",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "coordinate-plane",
+        "bounds": {"xMin": -1, "xMax": 5, "yMin": -6, "yMax": 2},
+        "points": {"O": [0, 0], "U": [3, -4]},
+        "vectors": [{"from": "O", "to": "U", "label": "u⃗"}],
+        "showGrid": true
+      }
     },
     {
       "id": "1ere-scal-05",
+      "generator": "scal-mcq-angle",
       "type": "mcq",
       "question": "u⃗·v⃗ = ‖u⃗‖‖v⃗‖cos(θ). Si ‖u⃗‖ = 3, ‖v⃗‖ = 4 et u⃗·v⃗ = 6, que vaut cos(θ) ?",
       "choices": ["1/2", "2", "√2/2", "3/4"],
@@ -475,10 +548,18 @@
       "explanation": "cos(θ) = u⃗·v⃗/(‖u⃗‖‖v⃗‖) = 6/(3×4) = 6/12 = 1/2. Donc θ = π/3 = 60°. L'angle entre les deux vecteurs est de 60°. Le produit scalaire permet de calculer l'angle entre deux vecteurs quand on connaît les normes : cos(θ) = u⃗·v⃗/(‖u⃗‖‖v⃗‖). C'est un outil puissant pour la géométrie !",
       "hint": "cos(θ) = u⃗·v⃗ / (‖u⃗‖ × ‖v⃗‖).",
       "category": "Produit scalaire",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "coordinate-plane",
+        "bounds": {"xMin": -1, "xMax": 5, "yMin": -1, "yMax": 5},
+        "points": {"O": [0, 0], "U": [3, 0], "V": [2, 3.46]},
+        "vectors": [{"from": "O", "to": "U", "label": "u⃗"}, {"from": "O", "to": "V", "label": "v⃗"}],
+        "showGrid": true
+      }
     },
     {
       "id": "1ere-proba-01",
+      "generator": "proba1-mcq-conditional",
       "type": "mcq",
       "question": "P(A) = 0,6 et P_A(B) = 0,5. Que vaut P(A ∩ B) ?",
       "choices": ["0,3", "1,1", "0,5", "0,6"],
@@ -490,6 +571,7 @@
     },
     {
       "id": "1ere-proba-02",
+      "generator": "proba1-solve-without-replacement",
       "type": "solve",
       "question": "Un sac contient 3 rouges et 7 bleues. On tire une bille, puis une autre SANS remise. Quelle est P(2 rouges) ? (forme fractionnaire)",
       "answer": "1/15",
@@ -500,6 +582,7 @@
     },
     {
       "id": "1ere-proba-03",
+      "generator": "proba1-mcq-independent",
       "type": "mcq",
       "question": "Deux événements A et B sont indépendants si :",
       "choices": ["P(A ∩ B) = P(A) × P(B)", "P(A ∩ B) = 0", "P(A) + P(B) = 1", "P(A|B) = P(B)"],
@@ -511,6 +594,7 @@
     },
     {
       "id": "1ere-proba-04",
+      "generator": "proba1-solve-binomial",
       "type": "solve",
       "question": "On lance une pièce 5 fois. Quelle est la probabilité d'obtenir exactement 3 Pile ? (forme fractionnaire)",
       "answer": "5/16",
@@ -521,6 +605,7 @@
     },
     {
       "id": "1ere-proba-05",
+      "generator": "proba1-mcq-esperance",
       "type": "mcq",
       "question": "X suit une loi binomiale B(10, 0,3). Que vaut E(X), l'espérance ?",
       "choices": ["3", "7", "0,3", "30"],
@@ -529,6 +614,54 @@
       "hint": "E(X) = n × p pour une binomiale.",
       "category": "Probabilités conditionnelles",
       "difficulty": 1
+    },
+    {
+      "id": "1ere-scal-geo-01",
+      "type": "geo-click",
+      "question": "Clique sur la paire de vecteurs perpendiculaires (produit scalaire nul)",
+      "answer": "perp-pair",
+      "explanation": "Deux vecteurs sont perpendiculaires si et seulement si leur produit scalaire est nul. Ici u⃗·v⃗ = 2×(−2) + 3×3 = −4+9 = 5 ≠ 0, et u⃗·w⃗ = 2×3 + 3×(−2) = 6−6 = 0.",
+      "category": "Produit scalaire",
+      "difficulty": 2,
+      "diagram": {
+        "type": "coordinate-plane",
+        "bounds": {"xMin": -4, "xMax": 5, "yMin": -4, "yMax": 5},
+        "showGrid": true,
+        "points": {"O": [0, 0], "A": [2, 3], "B": [-2, 3], "C": [3, -2]},
+        "vectors": [
+          {"from": "O", "to": "A", "label": "u⃗"},
+          {"from": "O", "to": "B", "label": "v⃗"},
+          {"from": "O", "to": "C", "label": "w⃗"}
+        ],
+        "targets": [
+          {"type": "vector", "from": "O", "to": "C", "name": "perp-pair"},
+          {"type": "vector", "from": "O", "to": "B", "name": "non-perp"}
+        ]
+      }
+    },
+    {
+      "id": "1ere-scal-geo-02",
+      "type": "geo-click",
+      "question": "Clique sur le vecteur perpendiculaire à u⃗(4,1)",
+      "answer": "perp",
+      "explanation": "Le vecteur perpendiculaire à u⃗(4,1) est celui dont le produit scalaire avec u⃗ est nul. v⃗(1,−4) : 4×1 + 1×(−4) = 0 ✓",
+      "category": "Produit scalaire",
+      "difficulty": 2,
+      "diagram": {
+        "type": "coordinate-plane",
+        "bounds": {"xMin": -2, "xMax": 6, "yMin": -5, "yMax": 4},
+        "showGrid": true,
+        "points": {"O": [0, 0], "A": [4, 1], "B": [1, -4], "C": [2, 3]},
+        "vectors": [
+          {"from": "O", "to": "A", "label": "u⃗"},
+          {"from": "O", "to": "B", "label": "v⃗"},
+          {"from": "O", "to": "C", "label": "w⃗"}
+        ],
+        "targets": [
+          {"type": "vector", "from": "O", "to": "B", "name": "perp"},
+          {"type": "vector", "from": "O", "to": "C", "name": "non-perp"}
+        ]
+      }
     }
   ]
 }

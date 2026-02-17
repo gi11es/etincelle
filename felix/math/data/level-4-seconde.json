@@ -6,6 +6,7 @@
   "items": [
     {
       "id": "2nde-int-01",
+      "generator": "ineq-solve-basic",
       "type": "mcq",
       "question": "L'intervalle ]−2, 5] contient-il le nombre −2 ?",
       "choices": ["Non, le crochet ouvert exclut −2", "Oui, −2 est une borne", "Oui, car −2 est négatif", "On ne peut pas savoir"],
@@ -17,6 +18,7 @@
     },
     {
       "id": "2nde-int-02",
+      "generator": "ineq-solve-neg",
       "type": "mcq",
       "question": "Quel est l'intersection de [−3, 4] et [1, 7] ?",
       "choices": ["[1, 4]", "[−3, 7]", "[−3, 1]", "[4, 7]"],
@@ -59,6 +61,7 @@
     },
     {
       "id": "2nde-fref-01",
+      "generator": "fref-mcq-carre",
       "type": "mcq",
       "question": "Quelle est l'image de −3 par la fonction carré ?",
       "choices": ["9", "−9", "−6", "6"],
@@ -70,6 +73,7 @@
     },
     {
       "id": "2nde-fref-02",
+      "generator": "fref-solve-inverse",
       "type": "solve",
       "question": "La fonction inverse est f(x) = 1/x. Calcule f(−1/2) (sous forme entière ou fractionnaire).",
       "answer": "-2",
@@ -80,6 +84,7 @@
     },
     {
       "id": "2nde-fref-03",
+      "generator": "fref-mcq-racine-domain",
       "type": "mcq",
       "question": "La fonction racine carrée f(x) = √x est définie pour :",
       "choices": ["x ≥ 0", "x > 0", "Tout x réel", "x ≠ 0"],
@@ -91,6 +96,7 @@
     },
     {
       "id": "2nde-fref-04",
+      "generator": "fref-solve-x-sq",
       "type": "solve",
       "question": "Résous : x² = 49. Donne les deux solutions séparées par 'ou'.",
       "answer": "7 ou -7",
@@ -101,6 +107,7 @@
     },
     {
       "id": "2nde-fref-05",
+      "generator": "fref-mcq-carre-decroissante",
       "type": "mcq",
       "question": "Sur quel intervalle la fonction carré f(x) = x² est-elle décroissante ?",
       "choices": ["]−∞, 0]", "[0, +∞[", "ℝ tout entier", "]−∞, +∞["],
@@ -112,6 +119,7 @@
     },
     {
       "id": "2nde-fref-06",
+      "generator": "fref-solve-inverse-eq",
       "type": "solve",
       "question": "Résous : 1/x = 3. Donne la solution.",
       "answer": "1/3",
@@ -122,6 +130,7 @@
     },
     {
       "id": "2nde-fref-07",
+      "generator": "fref-mcq-compare",
       "type": "mcq",
       "question": "Compare √10 et π sans calculatrice.",
       "choices": ["√10 > π", "√10 < π", "√10 = π", "On ne peut pas comparer"],
@@ -133,6 +142,7 @@
     },
     {
       "id": "2nde-fref-08",
+      "generator": "fref-solve-simplify-sqrt",
       "type": "solve",
       "question": "Simplifie : √(50) sous la forme a√b avec b le plus petit possible.",
       "answer": "5√2",
@@ -143,6 +153,7 @@
     },
     {
       "id": "2nde-fref-09",
+      "generator": "fref-mcq-solve-sqrt",
       "type": "mcq",
       "question": "Résous : √x = 5. Quelle est la solution ?",
       "choices": ["25", "5", "√5", "−25"],
@@ -154,6 +165,7 @@
     },
     {
       "id": "2nde-fref-10",
+      "generator": "fref-solve-ineq-sq",
       "type": "solve",
       "question": "Résous l'inéquation x² ≤ 16. Écris la solution sous forme d'intervalle.",
       "answer": "[-4,4]",
@@ -290,6 +302,7 @@
     },
     {
       "id": "2nde-vec-01",
+      "generator": "vec-mcq-coords",
       "type": "mcq",
       "question": "Si A(1, 3) et B(4, 7), quelles sont les coordonnées du vecteur AB⃗ ?",
       "choices": ["(3, 4)", "(5, 10)", "(4, 7)", "(−3, −4)"],
@@ -297,20 +310,36 @@
       "explanation": "Les coordonnées du vecteur AB⃗ sont (x_B − x_A, y_B − y_A) = (4 − 1, 7 − 3) = (3, 4). Un vecteur représente un déplacement : pour aller de A à B, on se déplace de 3 unités vers la droite et 4 unités vers le haut. Attention : c'est « arrivée moins départ », pas l'inverse. BA⃗ = (−3, −4) = −AB⃗.",
       "hint": "AB⃗ = (x_B − x_A, y_B − y_A).",
       "category": "Vecteurs",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "coordinate-plane",
+        "bounds": {"xMin": -1, "xMax": 6, "yMin": 1, "yMax": 9},
+        "points": {"A": [1, 3], "B": [4, 7]},
+        "vectors": [{"from": "A", "to": "B", "label": "AB⃗"}],
+        "showGrid": true
+      }
     },
     {
       "id": "2nde-vec-02",
+      "generator": "vec-solve-add",
       "type": "solve",
       "question": "u⃗(2, −1) et v⃗(3, 5). Calcule u⃗ + v⃗. Donne les coordonnées sous la forme '(a,b)'.",
       "answer": "(5,4)",
       "explanation": "L'addition de vecteurs se fait coordonnée par coordonnée : u⃗ + v⃗ = (2 + 3, −1 + 5) = (5, 4). Graphiquement, c'est la règle du parallélogramme : on place v⃗ au bout de u⃗, et la somme va de l'origine de u⃗ à l'extrémité de v⃗. L'addition vectorielle est fondamentale en physique pour combiner des forces !",
       "hint": "On additionne les premières coordonnées entre elles, et les secondes entre elles.",
       "category": "Vecteurs",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "coordinate-plane",
+        "bounds": {"xMin": -1, "xMax": 7, "yMin": -3, "yMax": 6},
+        "points": {"O": [0, 0], "U": [2, -1], "V": [3, 5], "S": [5, 4]},
+        "vectors": [{"from": "O", "to": "U", "label": "u⃗"}, {"from": "O", "to": "V", "label": "v⃗"}, {"from": "O", "to": "S", "label": "u⃗+v⃗"}],
+        "showGrid": true
+      }
     },
     {
       "id": "2nde-vec-03",
+      "generator": "vec-mcq-chasles",
       "type": "mcq",
       "question": "La relation de Chasles dit que AB⃗ + BC⃗ = ?",
       "choices": ["AC⃗", "BA⃗", "CA⃗", "0⃗"],
@@ -318,20 +347,36 @@
       "explanation": "La relation de Chasles est magnifique de simplicité : AB⃗ + BC⃗ = AC⃗. Le point B « s'annule » ! On va de A à B, puis de B à C, c'est comme aller directement de A à C. C'est la même idée qu'un voyage avec escale : Paris→Lyon + Lyon→Marseille = Paris→Marseille. Elle marche avec autant d'étapes qu'on veut : AB⃗ + BC⃗ + CD⃗ = AD⃗.",
       "hint": "Imagine le trajet : de A à B, puis de B à C...",
       "category": "Vecteurs",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "coordinate-plane",
+        "bounds": {"xMin": -1, "xMax": 7, "yMin": -1, "yMax": 6},
+        "points": {"A": [0, 1], "B": [3, 4], "C": [6, 2]},
+        "vectors": [{"from": "A", "to": "B", "label": "AB⃗"}, {"from": "B", "to": "C", "label": "BC⃗"}, {"from": "A", "to": "C", "label": "AC⃗"}],
+        "showGrid": true
+      }
     },
     {
       "id": "2nde-vec-04",
+      "generator": "vec-solve-colineaire",
       "type": "solve",
       "question": "Les vecteurs u⃗(2, 6) et v⃗(1, k) sont colinéaires. Que vaut k ?",
       "answer": "3",
       "explanation": "Deux vecteurs u⃗(a, b) et v⃗(c, d) sont colinéaires si et seulement si ad − bc = 0 (le déterminant est nul). Ici : 2×k − 6×1 = 0 → 2k = 6 → k = 3. On peut aussi dire que v⃗ = (1/2)u⃗ quand k = 3 : v⃗(1, 3) = (1/2) × u⃗(2, 6). Des vecteurs colinéaires sont parallèles (ou l'un est un multiple de l'autre).",
       "hint": "Colinéaires ↔ déterminant nul : ad − bc = 0.",
       "category": "Vecteurs",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "coordinate-plane",
+        "bounds": {"xMin": -1, "xMax": 4, "yMin": -1, "yMax": 8},
+        "points": {"O": [0, 0], "U": [2, 6], "V": [1, 3]},
+        "vectors": [{"from": "O", "to": "U", "label": "u⃗"}, {"from": "O", "to": "V", "label": "v⃗"}],
+        "showGrid": true
+      }
     },
     {
       "id": "2nde-vec-05",
+      "generator": "vec-mcq-parallelogramme",
       "type": "mcq",
       "question": "ABCD est un parallélogramme si et seulement si :",
       "choices": ["AB⃗ = DC⃗", "AB⃗ = BC⃗", "AB⃗ = CD⃗", "AB⃗ + CD⃗ = AC⃗"],
@@ -339,20 +384,36 @@
       "explanation": "ABCD est un parallélogramme ↔ AB⃗ = DC⃗ (les côtés opposés sont des vecteurs égaux). Attention à l'ORDRE des lettres ! AB⃗ = DC⃗ (et pas CD⃗). C'est parce que dans un parallélogramme, les côtés opposés sont parallèles ET de même sens. AB⃗ = CD⃗ serait faux (même direction, mais sens opposé). On a aussi AD⃗ = BC⃗.",
       "hint": "Dans un parallélogramme, les côtés opposés sont des vecteurs égaux.",
       "category": "Vecteurs",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "coordinate-plane",
+        "bounds": {"xMin": -1, "xMax": 7, "yMin": -1, "yMax": 5},
+        "points": {"A": [0, 0], "B": [3, 0], "C": [5, 3], "D": [2, 3]},
+        "vectors": [{"from": "A", "to": "B", "label": "AB⃗"}, {"from": "D", "to": "C", "label": "DC⃗"}],
+        "showGrid": true
+      }
     },
     {
       "id": "2nde-vec-06",
+      "generator": "vec-solve-milieu",
       "type": "solve",
       "question": "A(2, 3) et B(6, 7). Quel est le milieu M de [AB] ? Donne ses coordonnées sous la forme '(a,b)'.",
       "answer": "(4,5)",
       "explanation": "Les coordonnées du milieu M sont les MOYENNES des coordonnées : M = ((x_A + x_B)/2, (y_A + y_B)/2) = ((2+6)/2, (3+7)/2) = (4, 5). C'est logique : le milieu est « à mi-chemin ». On peut vérifier : AM⃗ = (2, 2) et MB⃗ = (2, 2). AM⃗ = MB⃗ ✓, donc M est bien le milieu.",
       "hint": "Milieu = moyenne des coordonnées.",
       "category": "Vecteurs",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "coordinate-plane",
+        "bounds": {"xMin": 0, "xMax": 8, "yMin": 1, "yMax": 9},
+        "points": {"A": [2, 3], "B": [6, 7], "M": [4, 5]},
+        "vectors": [{"from": "A", "to": "M", "label": "AM⃗"}, {"from": "M", "to": "B", "label": "MB⃗"}],
+        "showGrid": true
+      }
     },
     {
       "id": "2nde-vec-07",
+      "generator": "vec-mcq-colineaire-check",
       "type": "mcq",
       "question": "u⃗(−4, 6) et v⃗(2, −3). Ces vecteurs sont-ils colinéaires ?",
       "choices": ["Oui, car u⃗ = −2v⃗", "Non, car leurs coordonnées sont différentes", "Oui, car ils sont perpendiculaires", "Non, car ad − bc ≠ 0"],
@@ -360,30 +421,54 @@
       "explanation": "Vérifions le déterminant : (−4)(−3) − (6)(2) = 12 − 12 = 0. Le déterminant est nul, donc les vecteurs sont colinéaires ! On peut vérifier : u⃗ = −2v⃗ car (−4, 6) = −2 × (2, −3) = (−4, 6) ✓. Colinéaires signifie que l'un est un multiple de l'autre. Géométriquement, ils ont la même direction (mais ici, des sens opposés car le facteur est négatif).",
       "hint": "Calcule le déterminant ad − bc. S'il vaut 0, ils sont colinéaires.",
       "category": "Vecteurs",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "coordinate-plane",
+        "bounds": {"xMin": -6, "xMax": 4, "yMin": -5, "yMax": 8},
+        "points": {"O": [0, 0], "U": [-4, 6], "V": [2, -3]},
+        "vectors": [{"from": "O", "to": "U", "label": "u⃗"}, {"from": "O", "to": "V", "label": "v⃗"}],
+        "showGrid": true
+      }
     },
     {
       "id": "2nde-vec-08",
+      "generator": "vec-solve-4th-point",
       "type": "solve",
       "question": "A(1, 2), B(5, 4), C(3, 6). Calcule les coordonnées de D tel que ABCD soit un parallélogramme. Donne '(x,y)'.",
       "answer": "(-1,4)",
       "explanation": "Pour un parallélogramme ABCD, il faut AB⃗ = DC⃗. AB⃗ = (4, 2). DC⃗ = C − D = (3 − x_D, 6 − y_D). Donc : 3 − x_D = 4 → x_D = −1, et 6 − y_D = 2 → y_D = 4. D = (−1, 4). Vérification : DC⃗ = (3−(−1), 6−4) = (4, 2) = AB⃗ ✓. Les vecteurs permettent de trouver des points de manière élégante !",
       "hint": "ABCD parallélogramme ↔ AB⃗ = DC⃗. Résous pour D.",
       "category": "Vecteurs",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "coordinate-plane",
+        "bounds": {"xMin": -3, "xMax": 7, "yMin": 0, "yMax": 8},
+        "points": {"A": [1, 2], "B": [5, 4], "C": [3, 6], "D": [-1, 4]},
+        "vectors": [{"from": "A", "to": "B", "label": "AB⃗"}, {"from": "D", "to": "C", "label": "DC⃗"}],
+        "showGrid": true
+      }
     },
     {
       "id": "2nde-geo-01",
+      "generator": "geo-solve-distance",
       "type": "solve",
       "question": "Calcule la distance entre A(−1, 2) et B(3, 5).",
       "answer": "5",
       "explanation": "AB = √[(x_B − x_A)² + (y_B − y_A)²] = √[(3−(−1))² + (5−2)²] = √[4² + 3²] = √[16 + 9] = √25 = 5. C'est Pythagore appliqué aux coordonnées ! Le segment [AB] est l'hypoténuse d'un triangle rectangle dont les cathètes sont 4 (horizontal) et 3 (vertical). Le triplet (3, 4, 5) est décidément partout !",
       "hint": "Distance = √[(x₂−x₁)² + (y₂−y₁)²].",
       "category": "Géométrie repérée",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "coordinate-plane",
+        "bounds": {"xMin": -3, "xMax": 5, "yMin": 0, "yMax": 7},
+        "points": {"A": [-1, 2], "B": [3, 5]},
+        "segments": [{"from": "A", "to": "B"}],
+        "showGrid": true
+      }
     },
     {
       "id": "2nde-geo-02",
+      "generator": "geo-mcq-equation-line",
       "type": "mcq",
       "question": "L'équation de la droite passant par A(0, 3) et B(2, 7) est :",
       "choices": ["y = 2x + 3", "y = 3x + 2", "y = 2x + 7", "y = x + 3"],
@@ -391,20 +476,36 @@
       "explanation": "Le coefficient directeur : a = (7−3)/(2−0) = 4/2 = 2. L'ordonnée à l'origine (quand x = 0) : b = y_A = 3. Donc y = 2x + 3. Vérification avec B : 2×2 + 3 = 7 ✓. Pour trouver l'équation d'une droite, il faut deux informations : soit deux points, soit un point et la pente. Ici, on avait les deux points.",
       "hint": "Calcule la pente (y₂−y₁)/(x₂−x₁), puis b = y₁ − a×x₁.",
       "category": "Géométrie repérée",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "coordinate-plane",
+        "bounds": {"xMin": -1, "xMax": 4, "yMin": -1, "yMax": 9},
+        "points": {"A": [0, 3], "B": [2, 7]},
+        "lineEqs": [{"m": 2, "b": 3, "label": "d"}],
+        "showGrid": true
+      }
     },
     {
       "id": "2nde-geo-03",
+      "generator": "geo-solve-line-from-point",
       "type": "solve",
       "question": "Trouve l'équation de la droite passant par A(1, 5) avec un coefficient directeur de −3. Écris sous la forme y=ax+b.",
       "answer": "y=-3x+8",
       "explanation": "On connaît a = −3 et un point A(1, 5). On utilise y = ax + b : 5 = −3(1) + b → b = 5 + 3 = 8. Donc y = −3x + 8. Vérification : pour x = 1, y = −3 + 8 = 5 ✓. La formule directe est : y − y₁ = a(x − x₁), soit y − 5 = −3(x − 1), ce qui donne y = −3x + 3 + 5 = −3x + 8.",
       "hint": "y = ax + b. Remplace par les coordonnées de A pour trouver b.",
       "category": "Géométrie repérée",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "coordinate-plane",
+        "bounds": {"xMin": -1, "xMax": 4, "yMin": -2, "yMax": 10},
+        "points": {"A": [1, 5]},
+        "lineEqs": [{"m": -3, "b": 8, "label": "d"}],
+        "showGrid": true
+      }
     },
     {
       "id": "2nde-geo-04",
+      "generator": "geo-mcq-parallel",
       "type": "mcq",
       "question": "Deux droites d₁ : y = 3x − 1 et d₂ : y = 3x + 4 sont :",
       "choices": ["Parallèles", "Sécantes", "Perpendiculaires", "Confondues"],
@@ -412,20 +513,36 @@
       "explanation": "Les deux droites ont le MÊME coefficient directeur (a = 3) mais des ordonnées à l'origine différentes (−1 ≠ 4). Elles sont donc PARALLÈLES (même pente = même direction, mais elles ne se croisent jamais). Si elles avaient le même a ET le même b, elles seraient confondues. Si elles avaient des a différents, elles seraient sécantes.",
       "hint": "Même pente = parallèles. Pentes différentes = sécantes.",
       "category": "Géométrie repérée",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "coordinate-plane",
+        "bounds": {"xMin": -2, "xMax": 3, "yMin": -3, "yMax": 10},
+        "points": {},
+        "lineEqs": [{"m": 3, "b": -1, "label": "d₁"}, {"m": 3, "b": 4, "label": "d₂"}],
+        "showGrid": true
+      }
     },
     {
       "id": "2nde-geo-05",
+      "generator": "geo-solve-x-intercept",
       "type": "solve",
       "question": "Où la droite y = 2x − 6 coupe-t-elle l'axe des x ? Donne l'abscisse.",
       "answer": "3",
       "explanation": "La droite coupe l'axe des x quand y = 0 : 0 = 2x − 6 → 2x = 6 → x = 3. Le point est (3, 0). L'abscisse à l'origine (ou « zéro ») d'une droite y = ax + b est x = −b/a. Ici : −(−6)/2 = 3. L'ordonnée à l'origine est le point (0, −6) : la droite coupe l'axe des y en y = −6.",
       "hint": "L'axe des x correspond à y = 0.",
       "category": "Géométrie repérée",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "coordinate-plane",
+        "bounds": {"xMin": -1, "xMax": 5, "yMin": -8, "yMax": 4},
+        "points": {"A": [3, 0], "B": [0, -6]},
+        "lineEqs": [{"m": 2, "b": -6, "label": "d"}],
+        "showGrid": true
+      }
     },
     {
       "id": "2nde-geo-06",
+      "generator": "geo-solve-slope",
       "type": "mcq",
       "question": "A(2, 1), B(6, 3), C(4, 5). Le triangle ABC est-il rectangle en B ?",
       "choices": ["Oui, car BA⃗·BC⃗ = 0", "Non, car BA⃗·BC⃗ ≠ 0", "Oui, car AB = BC", "On ne peut pas savoir"],
@@ -433,17 +550,32 @@
       "explanation": "BA⃗ = A − B = (2−6, 1−3) = (−4, −2). BC⃗ = C − B = (4−6, 5−3) = (−2, 2). Produit scalaire : BA⃗·BC⃗ = (−4)(−2) + (−2)(2) = 8 − 4 = 4 ≠ 0. Donc l'angle en B n'est PAS droit. Attendons... recalculons : (−4)(−2) + (−2)(2) = 8 + (−4) = 4. Non, c'est bien 4. Le triangle n'est pas rectangle en B. Vérifions en A : AB⃗ = (4,2), AC⃗ = (2,4). AB⃗·AC⃗ = 8+8 = 16 ≠ 0. En C : CA⃗ = (−2,−4), CB⃗ = (2,−2). CA⃗·CB⃗ = −4+8 = 4 ≠ 0. Pas rectangle du tout ! Rectification de la question : la bonne réponse est non.",
       "hint": "Calcule BA⃗·BC⃗ = x₁x₂ + y₁y₂. Si = 0 → angle droit.",
       "category": "Géométrie repérée",
-      "difficulty": 3
+      "difficulty": 3,
+      "diagram": {
+        "type": "coordinate-plane",
+        "bounds": {"xMin": 0, "xMax": 8, "yMin": -1, "yMax": 7},
+        "points": {"A": [2, 1], "B": [6, 3], "C": [4, 5]},
+        "segments": [{"from": "A", "to": "B"}, {"from": "B", "to": "C"}, {"from": "A", "to": "C"}],
+        "showGrid": true
+      }
     },
     {
       "id": "2nde-geo-07",
+      "generator": "geo-mcq-symmetry",
       "type": "solve",
       "question": "La droite passe par A(−1, 4) et B(3, −2). Calcule son coefficient directeur (sous forme fractionnaire ou décimale).",
       "answer": "-3/2",
       "explanation": "a = (y_B − y_A)/(x_B − x_A) = (−2 − 4)/(3 − (−1)) = −6/4 = −3/2. La pente est négative, donc la droite « descend » de gauche à droite. −3/2 signifie que quand x augmente de 2, y diminue de 3. On peut aussi le lire comme : quand x augmente de 1, y diminue de 1,5.",
       "hint": "Pente = (y₂ − y₁) / (x₂ − x₁).",
       "category": "Géométrie repérée",
-      "difficulty": 1
+      "difficulty": 1,
+      "diagram": {
+        "type": "coordinate-plane",
+        "bounds": {"xMin": -3, "xMax": 5, "yMin": -4, "yMax": 6},
+        "points": {"A": [-1, 4], "B": [3, -2]},
+        "lineEqs": [{"m": -1.5, "b": 2.5, "label": "d"}],
+        "showGrid": true
+      }
     },
     {
       "id": "2nde-geo-08",
@@ -454,10 +586,18 @@
       "explanation": "B est le milieu de [AC]. Donc : x_B = (x_A + x_C)/2 → 5 = (3 + x_C)/2 → x_C = 7. y_B = (y_A + y_C)/2 → 4 = (1 + y_C)/2 → y_C = 7. Donc C(7, 7). Formule directe : le symétrique de A par rapport à B est C = 2B − A = (2×5 − 3, 2×4 − 1) = (7, 7). La symétrie par rapport à un point utilise les propriétés du milieu !",
       "hint": "B est le milieu de [AC]. Utilise la formule du milieu « à l'envers ».",
       "category": "Géométrie repérée",
-      "difficulty": 2
+      "difficulty": 2,
+      "diagram": {
+        "type": "coordinate-plane",
+        "bounds": {"xMin": 1, "xMax": 9, "yMin": -1, "yMax": 9},
+        "points": {"A": [3, 1], "B": [5, 4], "C": [7, 7]},
+        "segments": [{"from": "A", "to": "B"}, {"from": "B", "to": "C"}],
+        "showGrid": true
+      }
     },
     {
       "id": "2nde-stat-01",
+      "generator": "stat-mcq-dispersion",
       "type": "mcq",
       "question": "Quelle mesure de dispersion prend en compte TOUTES les valeurs de la série ?",
       "choices": ["L'écart type", "L'étendue", "La médiane", "Le mode"],
@@ -469,6 +609,7 @@
     },
     {
       "id": "2nde-stat-02",
+      "generator": "stat-solve-moyenne",
       "type": "solve",
       "question": "Une série a pour valeurs : 2, 4, 6, 8, 10. Calcule la moyenne.",
       "answer": "6",
@@ -479,6 +620,7 @@
     },
     {
       "id": "2nde-stat-03",
+      "generator": "stat-mcq-boite",
       "type": "mcq",
       "question": "Dans une boîte à moustaches, la boîte représente :",
       "choices": ["L'intervalle entre Q₁ et Q₃ (50 % des données)", "L'intervalle entre le min et le max", "Les 25 % centraux", "La moyenne ± l'écart type"],
@@ -490,6 +632,7 @@
     },
     {
       "id": "2nde-stat-04",
+      "generator": "stat-solve-ecart-type",
       "type": "solve",
       "question": "La variance d'une série est 16. Que vaut l'écart type ?",
       "answer": "4",
@@ -528,6 +671,136 @@
       "hint": "Incompatibles → P(A ∪ B) = P(A) + P(B).",
       "category": "Probabilités",
       "difficulty": 2
+    },
+    {
+      "id": "2nde-geo-rep-01",
+      "type": "geo-place",
+      "question": "Place le milieu du segment [AB] avec A(1,2) et B(5,6)",
+      "answer": "3,4",
+      "explanation": "Le milieu M a pour coordonnées ((x_A+x_B)/2, (y_A+y_B)/2) = ((1+5)/2, (2+6)/2) = (3, 4).",
+      "category": "Géométrie repérée",
+      "difficulty": 1,
+      "diagram": {
+        "type": "grid-place",
+        "bounds": {"xMin": -1, "xMax": 7, "yMin": -1, "yMax": 8},
+        "points": {"A": [1, 2], "B": [5, 6]},
+        "segments": [{"from": "A", "to": "B", "dashed": true}],
+        "snapToGrid": true
+      }
+    },
+    {
+      "id": "2nde-geo-rep-02",
+      "type": "geo-place",
+      "question": "Place le milieu du segment [CD] avec C(2,5) et D(6,1)",
+      "answer": "4,3",
+      "explanation": "Le milieu M a pour coordonnées ((2+6)/2, (5+1)/2) = (4, 3).",
+      "category": "Géométrie repérée",
+      "difficulty": 1,
+      "diagram": {
+        "type": "grid-place",
+        "bounds": {"xMin": 0, "xMax": 8, "yMin": -1, "yMax": 7},
+        "points": {"C": [2, 5], "D": [6, 1]},
+        "segments": [{"from": "C", "to": "D", "dashed": true}],
+        "snapToGrid": true
+      }
+    },
+    {
+      "id": "2nde-geo-rep-03",
+      "type": "geo-place",
+      "question": "Place le point P(3, 5) dans le repère",
+      "answer": "3,5",
+      "explanation": "Le point P(3,5) se trouve à l'abscisse 3 et l'ordonnée 5.",
+      "category": "Géométrie repérée",
+      "difficulty": 1,
+      "diagram": {
+        "type": "grid-place",
+        "bounds": {"xMin": -1, "xMax": 7, "yMin": -1, "yMax": 7},
+        "points": {},
+        "snapToGrid": true
+      }
+    },
+    {
+      "id": "2nde-geo-rep-04",
+      "type": "geo-place",
+      "question": "Place le point Q(−2, 3) dans le repère",
+      "answer": "-2,3",
+      "explanation": "Le point Q(−2,3) se trouve à l'abscisse −2 (à gauche de l'axe des ordonnées) et l'ordonnée 3.",
+      "category": "Géométrie repérée",
+      "difficulty": 1,
+      "diagram": {
+        "type": "grid-place",
+        "bounds": {"xMin": -4, "xMax": 4, "yMin": -1, "yMax": 5},
+        "points": {},
+        "snapToGrid": true
+      }
+    },
+    {
+      "id": "2nde-vec-geo-01",
+      "type": "geo-place",
+      "question": "On donne A(1,2) et le vecteur AB(3,2). Place le point B.",
+      "answer": "4,4",
+      "explanation": "B = A + AB = (1+3, 2+2) = (4, 4).",
+      "category": "Vecteurs",
+      "difficulty": 2,
+      "diagram": {
+        "type": "grid-place",
+        "bounds": {"xMin": -1, "xMax": 7, "yMin": -1, "yMax": 7},
+        "points": {"A": [1, 2]},
+        "snapToGrid": true
+      }
+    },
+    {
+      "id": "2nde-vec-geo-02",
+      "type": "geo-place",
+      "question": "On donne C(2,5) et le vecteur CD(4,−3). Place le point D.",
+      "answer": "6,2",
+      "explanation": "D = C + CD = (2+4, 5+(−3)) = (6, 2).",
+      "category": "Vecteurs",
+      "difficulty": 2,
+      "diagram": {
+        "type": "grid-place",
+        "bounds": {"xMin": -1, "xMax": 8, "yMin": -1, "yMax": 7},
+        "points": {"C": [2, 5]},
+        "snapToGrid": true
+      }
+    },
+    {
+      "id": "2nde-vec-geo-03",
+      "type": "geo-place",
+      "question": "Place le point M tel que OM = OA + OB, avec A(3,1) et B(1,4).",
+      "answer": "4,5",
+      "explanation": "OM = OA + OB = (3+1, 1+4) = (4, 5). La somme des vecteurs s'obtient en additionnant les coordonnées.",
+      "category": "Vecteurs",
+      "difficulty": 3,
+      "diagram": {
+        "type": "grid-place",
+        "bounds": {"xMin": -1, "xMax": 7, "yMin": -1, "yMax": 7},
+        "points": {"O": [0, 0], "A": [3, 1], "B": [1, 4]},
+        "vectors": [
+          {"from": "O", "to": "A", "label": "OA"},
+          {"from": "O", "to": "B", "label": "OB"}
+        ],
+        "snapToGrid": true
+      }
+    },
+    {
+      "id": "2nde-vec-geo-04",
+      "type": "geo-place",
+      "question": "Place le point N tel que ON = OA + OB, avec A(2,3) et B(3,−1).",
+      "answer": "5,2",
+      "explanation": "ON = OA + OB = (2+3, 3+(−1)) = (5, 2).",
+      "category": "Vecteurs",
+      "difficulty": 3,
+      "diagram": {
+        "type": "grid-place",
+        "bounds": {"xMin": -1, "xMax": 7, "yMin": -2, "yMax": 5},
+        "points": {"O": [0, 0], "A": [2, 3], "B": [3, -1]},
+        "vectors": [
+          {"from": "O", "to": "A", "label": "OA"},
+          {"from": "O", "to": "B", "label": "OB"}
+        ],
+        "snapToGrid": true
+      }
     }
   ]
 }
