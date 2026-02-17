@@ -115,6 +115,9 @@ jobs:
         with:
           node-version: 20
 
+      - name: Create dummy secrets for tests
+        run: cp shared/secrets.example.js shared/secrets.js
+
       - name: Install test dependencies
         working-directory: tests
         run: npm ci
