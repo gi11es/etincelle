@@ -10,8 +10,7 @@ const BASE = new URL('.', import.meta.url).href;
 
 // ── State ──────────────────────────────────────────────────────────────
 let panelOpen = false;
-let screenshotDataUrl = null;      // full-res for UI display
-let screenshotThumbDataUrl = null; // small JPEG for GitHub issue body
+let screenshotDataUrl = null;
 let sending = false;
 let listening = false;
 
@@ -292,15 +291,6 @@ async function captureScreenshot() {
     });
 
     screenshotDataUrl = canvas.toDataURL('image/png');
-
-    // Small JPEG thumbnail for GitHub issue body (keeps it under 65KB limit)
-    const thumbW = 480;
-    const ratio = thumbW / canvas.width;
-    const thumb = document.createElement('canvas');
-    thumb.width = thumbW;
-    thumb.height = Math.round(canvas.height * ratio);
-    thumb.getContext('2d').drawImage(canvas, 0, 0, thumb.width, thumb.height);
-    screenshotThumbDataUrl = thumb.toDataURL('image/jpeg', 0.5);
   } catch (err) {
     console.warn('Bug widget: screenshot failed', err);
     screenshotDataUrl = null;
@@ -331,9 +321,6 @@ async function handleSend() {
   const body = [
     `### Description`,
     desc,
-    ``,
-    `### Capture d'écran`,
-    screenshotThumbDataUrl ? `![screenshot](${screenshotThumbDataUrl})` : '_Capture non disponible_',
     ``,
     `### Contexte`,
     `| | |`,
