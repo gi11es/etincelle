@@ -1,0 +1,192 @@
+name: Claude Auto-Fix
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  fix:
+    if: github.event.label.name == 'bug-report'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Extract issue data
+        id: issue
+        run: |
+          ISSUE_NUMBER=$(jq -r '.issue.number' "$GITHUB_EVENT_PATH")
+          ISSUE_TITLE=$(jq -r '.issue.title' "$GITHUB_EVENT_PATH")
+          ISSUE_BODY=$(jq -r '.issue.body' "$GITHUB_EVENT_PATH")
+          echo "number=$ISSUE_NUMBER" >> "$GITHUB_OUTPUT"
+          # Title and body go to files to avoid shell injection
+          echo "$ISSUE_TITLE" > /tmp/issue_title.txt
+          echo "$ISSUE_BODY" > /tmp/issue_body.txt
+
+      - name: Run Claude to fix the issue
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          TITLE=$(cat /tmp/issue_title.txt)
+          BODY=$(cat /tmp/issue_body.txt)
+
+          PROMPT="You are fixing a bug in a static website (pure HTML/CSS/JS, ES modules, no bundler).
+
+          GitHub Issue #${{ steps.issue.outputs.number }}:
+          Title: ${TITLE}
+
+          Body:
+          ${BODY}
+
+          Instructions:
+          - Read the relevant files, understand the issue, and make the fix.
+          - This is a static site with portals for Felix (12yo), Zoe (5yo), and Dasha (mother).
+          - The issue was submitted via an in-app bug widget, so the description may be in French.
+          - The Page URL in the Context section tells you which page is affected.
+          - Only change what is necessary to fix the reported issue.
+          - Do NOT add comments, docstrings, or unrelated improvements."
+
+          claude --print --dangerously-skip-permissions \
+            --model claude-opus-4-6 \
+            --max-turns 20 \
+            "$PROMPT"
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Comment if no changes
+        if: steps.changes.outputs.has_changes == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment ${{ steps.issue.outputs.number }} \
+            --body "Claude analyzed this issue but could not produce a code fix automatically. A human will need to take a look."
+
+      - name: Create fix branch and commit
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          BRANCH="claude-fix/issue-${{ steps.issue.outputs.number }}"
+          git config user.name "claude-bot"
+          git config user.email "claude-bot@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add -A
+          git commit -m "Fix #${{ steps.issue.outputs.number }}: auto-fix by Claude
+
+          Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>"
+          git push origin "$BRANCH"
+
+      - name: Run validation tests
+        if: steps.changes.outputs.has_changes == 'true'
+        id: validate
+        continue-on-error: true
+        run: |
+          echo "Validating JSON files..."
+          errors=0
+          while IFS= read -r f; do
+            if ! python3 -c "import json, sys; json.load(open(sys.argv[1]))" "$f" 2>&1; then
+              echo "FAIL: $f"
+              errors=$((errors + 1))
+            fi
+          done < <(find . -name '*.json' -not -path '*/node_modules/*')
+          if [ "$errors" -gt 0 ]; then
+            echo "::error::$errors JSON file(s) have syntax errors"
+            exit 1
+          fi
+
+          echo "Checking JS syntax..."
+          while IFS= read -r f; do
+            if ! node --check "$f" 2>&1; then
+              echo "FAIL: $f"
+              errors=$((errors + 1))
+            fi
+          done < <(find . -name '*.js' -o -name '*.mjs' | grep -v node_modules | grep -v 'ort.bundle' | grep -v 'transformers.min' | grep -v 'lottie.min')
+          if [ "$errors" -gt 0 ]; then
+            echo "::error::$errors JS file(s) have syntax errors"
+            exit 1
+          fi
+
+      - name: Run smoke tests
+        if: steps.changes.outputs.has_changes == 'true'
+        id: smoke
+        continue-on-error: true
+        working-directory: tests
+        run: |
+          npm ci
+          FAILED=0
+          for test_file in smoke-*.mjs; do
+            echo "Running $test_file..."
+            if ! node "$test_file"; then
+              echo "FAIL: $test_file"
+              FAILED=$((FAILED + 1))
+            fi
+          done
+          if [ "$FAILED" -gt 0 ]; then
+            echo "::error::$FAILED smoke test(s) failed"
+            exit 1
+          fi
+
+      - name: Determine test result
+        if: steps.changes.outputs.has_changes == 'true'
+        id: tests
+        run: |
+          if [ "${{ steps.validate.outcome }}" = "success" ] && [ "${{ steps.smoke.outcome }}" = "success" ]; then
+            echo "passed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "passed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create PR (tests passed) and merge
+        if: steps.changes.outputs.has_changes == 'true' && steps.tests.outputs.passed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH="claude-fix/issue-${{ steps.issue.outputs.number }}"
+          PR_URL=$(gh pr create \
+            --base master \
+            --head "$BRANCH" \
+            --title "Fix #${{ steps.issue.outputs.number }}: auto-fix by Claude" \
+            --body "Automated fix for #${{ steps.issue.outputs.number }}.
+
+          Fixes #${{ steps.issue.outputs.number }}
+
+          All tests passed — merging automatically.
+
+          🤖 Generated by Claude Opus 4.6")
+
+          gh pr merge "$PR_URL" --merge --delete-branch
+
+      - name: Create PR (tests failed)
+        if: steps.changes.outputs.has_changes == 'true' && steps.tests.outputs.passed == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH="claude-fix/issue-${{ steps.issue.outputs.number }}"
+          PR_URL=$(gh pr create \
+            --base master \
+            --head "$BRANCH" \
+            --title "Fix #${{ steps.issue.outputs.number }}: auto-fix by Claude (needs review)" \
+            --body "Automated fix attempt for #${{ steps.issue.outputs.number }}.
+
+          ⚠️ **Tests failed** — this PR needs manual review before merging.
+
+          🤖 Generated by Claude Opus 4.6")
+
+          gh issue comment ${{ steps.issue.outputs.number }} \
+            --body "Claude produced a fix but some tests failed. PR created for manual review: $PR_URL"
