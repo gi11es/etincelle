@@ -142,11 +142,11 @@ export function getGameTypeForMastery(masteryStatus, availableGames) {
     return easy.length > 0 ? easy[Math.floor(Math.random() * easy.length)] : availableGames[0];
   } else if (masteryStatus === 'learning') {
     // Learning: active recall
-    const mid = availableGames.filter(g => ['translate', 'fill-blank', 'match-pairs', 'mcq', 'solve'].includes(g));
+    const mid = availableGames.filter(g => ['translate', 'fill-blank', 'match-pairs', 'mcq', 'solve', 'speak-word'].includes(g));
     return mid.length > 0 ? mid[Math.floor(Math.random() * mid.length)] : availableGames[0];
   } else {
     // Mastered: harder games
-    const hard = availableGames.filter(g => ['translate', 'listen-type', 'sentence-builder', 'solve', 'proof'].includes(g));
+    const hard = availableGames.filter(g => ['translate', 'listen-type', 'sentence-builder', 'solve', 'proof', 'speak-translate'].includes(g));
     return hard.length > 0 ? hard[Math.floor(Math.random() * hard.length)] : availableGames[0];
   }
 }

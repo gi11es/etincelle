@@ -13,6 +13,8 @@ import { renderFillBlank } from './games/fill-blank.js';
 import { renderMatchPairs } from './games/match-pairs.js';
 import { renderListenType } from './games/listen-type.js';
 import { renderSentenceBuilder } from './games/sentence-builder.js';
+import { renderSpeakWord } from './games/speak-word.js';
+import { renderSpeakTranslate } from './games/speak-translate.js';
 
 const LEVELS = [
   { file: 'data/level-1-basics.json', key: 1 },
@@ -33,7 +35,7 @@ let sessionStartTime = 0;
 let newWordsLearned = 0;
 let reviewedWords = 0;
 
-const AVAILABLE_GAMES = ['flashcard', 'translate', 'fill-blank', 'match-pairs', 'listen-type', 'sentence-builder'];
+const AVAILABLE_GAMES = ['flashcard', 'translate', 'fill-blank', 'match-pairs', 'listen-type', 'sentence-builder', 'speak-word', 'speak-translate'];
 
 async function init() {
   Confetti.init();
@@ -183,6 +185,8 @@ async function renderGameItem() {
     case 'match-pairs': renderMatchPairs(ctx); break;
     case 'listen-type': renderListenType(ctx); break;
     case 'sentence-builder': renderSentenceBuilder(ctx); break;
+    case 'speak-word': renderSpeakWord(ctx); break;
+    case 'speak-translate': renderSpeakTranslate(ctx); break;
     default: renderFlashcard(ctx);
   }
 }

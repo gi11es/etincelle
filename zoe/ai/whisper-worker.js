@@ -28,7 +28,7 @@ self.onmessage = async (e) => {
   if (type === 'transcribe') {
     try {
       const result = await transcriber(e.data.audio, {
-        language: 'french',
+        language: e.data.language || 'french',
         task: 'transcribe',
       });
       self.postMessage({ type: 'result', text: result.text });

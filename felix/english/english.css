@@ -465,6 +465,81 @@
   background-clip: text;
 }
 
+/* ===== Speak Games ===== */
+.speak-container { text-align: center; }
+
+.speak-word-display {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 12px 0 8px;
+  color: var(--text);
+}
+
+.speak-hint {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.speak-mic-btn {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  margin: 16px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(255,107,107,0.3);
+  transition: all 0.2s;
+}
+
+.speak-mic-btn:hover { transform: scale(1.05); }
+.speak-mic-btn:active { transform: scale(0.95); }
+.speak-mic-btn:disabled { opacity: 0.4; cursor: default; transform: none; }
+
+.speak-mic-btn.recording {
+  animation: pulse-red 1s ease-in-out infinite;
+  background: linear-gradient(135deg, #ff4444, #cc0000);
+}
+
+@keyframes pulse-red {
+  0%, 100% { transform: scale(1); box-shadow: 0 4px 20px rgba(255,68,68,0.3); }
+  50% { transform: scale(1.08); box-shadow: 0 4px 30px rgba(255,68,68,0.5); }
+}
+
+.speak-status {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin: 12px 0;
+  min-height: 1.5em;
+}
+
+.speak-transcription {
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 8px;
+}
+
+.btn-skip {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-muted);
+  padding: 8px 20px;
+  border-radius: 100px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.8rem;
+  margin-top: 16px;
+  transition: all 0.2s;
+}
+
+.btn-skip:hover { border-color: rgba(255,255,255,0.2); color: var(--text-dim); }
+
 /* Responsive */
 @media (max-width: 500px) {
   .en-title { font-size: 2rem; }
@@ -473,4 +548,6 @@
   .fill-choices { gap: 8px; }
   .match-container { gap: 10px; }
   .match-item { padding: 10px 8px; font-size: 0.8rem; }
+  .speak-word-display { font-size: 1.6rem; }
+  .speak-mic-btn { width: 68px; height: 68px; font-size: 1.6rem; }
 }
