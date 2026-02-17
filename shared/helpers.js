@@ -22,10 +22,12 @@ export function todayStr() {
   return new Date().toISOString().slice(0, 10);
 }
 
-export function showScreen(id) {
+let _screenPopstateActive = false;
+
+function _activateScreen(id) {
   const current = document.querySelector('.screen.active');
   const next = document.querySelector(`#screen-${id}`);
-  if (current === next) return;
+  if (!next || current === next) return;
 
   if (current) {
     current.classList.add('screen-exit');
@@ -38,4 +40,23 @@ export function showScreen(id) {
     next.classList.add('active');
     window.scrollTo(0, 0);
   }
+}
+
+export function showScreen(id) {
+  if (!_screenPopstateActive) {
+    _screenPopstateActive = true;
+    // Replace current entry so the initial screen has state too
+    const first = document.querySelector('.screen.active');
+    if (first) {
+      history.replaceState({ screen: first.id.replace('screen-', '') }, '');
+    }
+    window.addEventListener('popstate', (e) => {
+      if (e.state && e.state.screen) {
+        _activateScreen(e.state.screen);
+      }
+    });
+  }
+
+  _activateScreen(id);
+  history.pushState({ screen: id }, '');
 }
