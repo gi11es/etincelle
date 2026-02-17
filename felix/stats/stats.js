@@ -4,26 +4,29 @@ import { BADGE_DEFS, getLevel } from '../../shared/gamification.js';
 import { drawLineChart, drawDonutChart, drawBarChart, drawHeatmap } from '../../shared/mini-chart.js';
 
 async function init() {
-  await renderSummary();
-  await renderXPChart();
-  await renderMasteryDonut();
-  await renderAccuracyChart();
-  await renderHeatmap();
-  await renderTimeChart();
-  await renderBadges();
+  const renders = [
+    renderSummary, renderXPChart, renderMasteryDonut,
+    renderAccuracyChart, renderHeatmap, renderTimeChart, renderBadges,
+  ];
+  await Promise.all(renders.map(fn => fn().catch(e => console.error(`${fn.name}:`, e))));
 }
 
 // ===== Summary Cards =====
 async function renderSummary() {
-  const profile = await DB.getProfile();
-  const sessionCount = await DB.countSessions();
-  const allMastery = await DB.getAllMastery();
-  const masteredCount = allMastery.filter(m => m.status === 'mastered').length;
+  const [profile, sessionCount, allMastery] = await Promise.all([
+    DB.getProfile().catch(() => null),
+    DB.countSessions().catch(() => null),
+    DB.getAllMastery().catch(() => null),
+  ]);
 
-  $('#sum-xp').textContent = (profile.xp || 0).toLocaleString('fr-FR');
-  $('#sum-streak').textContent = profile.streak || 0;
-  $('#sum-mastered').textContent = masteredCount;
-  $('#sum-sessions').textContent = sessionCount;
+  if (profile) {
+    $('#sum-xp').textContent = (profile.xp || 0).toLocaleString('fr-FR');
+    $('#sum-streak').textContent = profile.streak || 0;
+  }
+  if (sessionCount != null) $('#sum-sessions').textContent = sessionCount;
+  if (allMastery) {
+    $('#sum-mastered').textContent = allMastery.filter(m => m.status === 'mastered').length;
+  }
 }
 
 // ===== XP Over Time (30 days) =====

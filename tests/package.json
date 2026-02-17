@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node smoke-test.mjs && node gamification-test.mjs",
+    "test:smoke": "node smoke-test.mjs",
+    "test:gamification": "node gamification-test.mjs"
+  },
+  "devDependencies": {
+    "puppeteer": "^24.0.0"
+  }
+}
