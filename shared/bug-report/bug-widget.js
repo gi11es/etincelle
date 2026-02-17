@@ -279,7 +279,7 @@ function loadHtml2Canvas() {
 async function captureScreenshot() {
   // Hide widget + any overlays that would darken the capture
   const hidden = [fab, panel];
-  document.querySelectorAll('.levelup-overlay, .lottie-overlay').forEach(el => hidden.push(el));
+  document.querySelectorAll('#confetti-canvas, .levelup-overlay, .lottie-overlay').forEach(el => hidden.push(el));
   const savedDisplay = hidden.map(el => el.style.display);
   hidden.forEach(el => { el.style.display = 'none'; });
 
