@@ -116,3 +116,12 @@ function formatDate(dateStr) {
 }
 
 document.addEventListener('DOMContentLoaded', init);
+
+// Refresh profile when returning to this page (e.g. after a game session)
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) {
+    renderProfile();
+    renderAppStats();
+    renderBadges();
+  }
+});

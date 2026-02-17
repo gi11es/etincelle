@@ -389,6 +389,96 @@ async function main() {
   }
 
   // ==========================================================================
+  // Test 9: Portal page displays XP after session
+  // ==========================================================================
+  console.log('\n=== Test 9: Portal displays XP after session ===\n');
+  {
+    const ctx = await browser.createBrowserContext();
+    const page = await ctx.newPage();
+    const errs = instrumentPage(page);
+
+    // Complete a session on the game page
+    await page.goto(`${BASE}/felix/english/`, { waitUntil: 'networkidle2', timeout: 15000 });
+
+    const sessionResult = await page.evaluate(async () => {
+      try {
+        const GAM = await import('/shared/gamification.js');
+        const result = await GAM.endSessionFlow({
+          app: 'english', correct: 7, total: 10, timeSec: 90,
+        });
+        return { xp: result.xp, error: null };
+      } catch (e) { return { error: e.message }; }
+    });
+
+    if (sessionResult.error) { console.log(`  ERROR: ${sessionResult.error}`); failed++; }
+    else { assert(sessionResult.xp > 0, `Session earned XP (got ${sessionResult.xp})`); }
+
+    // Navigate to portal (full page load, like a real user clicking back)
+    await page.goto(`${BASE}/felix/`, { waitUntil: 'networkidle2', timeout: 15000 });
+    await new Promise((r) => setTimeout(r, 1000));
+
+    const portal = await page.evaluate(() => ({
+      xpLevel: document.querySelector('#xp-level')?.textContent,
+      xpAmount: document.querySelector('#xp-amount')?.textContent,
+      barWidth: document.querySelector('#xp-bar-fill')?.style.width,
+    }));
+
+    console.log(`  Portal: level="${portal.xpLevel}" xp="${portal.xpAmount}" bar="${portal.barWidth}"`);
+    assert(portal.xpAmount && !portal.xpAmount.startsWith('0 /'), `Portal XP not "0" (got "${portal.xpAmount}")`);
+    assert(portal.xpLevel !== null, `Portal level rendered (got "${portal.xpLevel}")`);
+    assert(portal.barWidth && portal.barWidth !== '0%', `XP bar has progress (got "${portal.barWidth}")`);
+    assert(errs.length === 0, `No JS errors (got ${errs.length})`);
+
+    await page.close();
+    await ctx.close();
+  }
+
+  // ==========================================================================
+  // Test 10: Portal XP updates on visibilitychange (tab switch)
+  // ==========================================================================
+  console.log('\n=== Test 10: Portal XP updates on visibility change ===\n');
+  {
+    const ctx = await browser.createBrowserContext();
+    const page = await ctx.newPage();
+    const errs = instrumentPage(page);
+
+    // Load portal first (XP should be 0)
+    await page.goto(`${BASE}/felix/`, { waitUntil: 'networkidle2', timeout: 15000 });
+    await new Promise((r) => setTimeout(r, 500));
+
+    const before = await page.evaluate(() =>
+      document.querySelector('#xp-amount')?.textContent
+    );
+    console.log(`  Portal before session: "${before}"`);
+
+    // Simulate earning XP directly in IndexedDB (as if a game in another tab did it)
+    await page.evaluate(async () => {
+      const DB = await import('/shared/db.js');
+      const profile = await DB.getProfile();
+      profile.xp = (profile.xp || 0) + 200;
+      await DB.saveProfile(profile);
+    });
+
+    // Simulate tab becoming visible again (triggers visibilitychange)
+    await page.evaluate(() => {
+      document.dispatchEvent(new Event('visibilitychange'));
+      Object.defineProperty(document, 'hidden', { value: false, configurable: true });
+      document.dispatchEvent(new Event('visibilitychange'));
+    });
+    await new Promise((r) => setTimeout(r, 1000));
+
+    const after = await page.evaluate(() =>
+      document.querySelector('#xp-amount')?.textContent
+    );
+    console.log(`  Portal after visibility change: "${after}"`);
+    assert(after !== before, `Portal XP updated after visibilitychange ("${before}" → "${after}")`);
+    assert(errs.length === 0, `No JS errors (got ${errs.length})`);
+
+    await page.close();
+    await ctx.close();
+  }
+
+  // ==========================================================================
   // Summary
   // ==========================================================================
   await browser.close();
