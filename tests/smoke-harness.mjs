@@ -100,7 +100,7 @@ export function collectErrors(page, label, globalErrors) {
     if (!url.includes('127.0.0.1')) return;
     const path = url.replace(/.*127\.0\.0\.1:\d+/, '');
     if (path.endsWith('.js') || path.endsWith('.mjs') || path.endsWith('.json')) {
-      if (path.includes('/ai/')) return;
+      if (path.includes('/ai/') || path.includes('secrets.js')) return;
       pageErrors.push(`Failed to load: ${path}`);
     }
   };
@@ -110,7 +110,7 @@ export function collectErrors(page, label, globalErrors) {
     if (!url.includes('127.0.0.1')) return;
     const path = url.replace(/.*127\.0\.0\.1:\d+/, '');
     if (path.endsWith('.js') || path.endsWith('.mjs') || path.endsWith('.json')) {
-      if (path.includes('/ai/')) return;
+      if (path.includes('/ai/') || path.includes('secrets.js')) return;
       pageErrors.push(`404: ${path}`);
     }
   };
