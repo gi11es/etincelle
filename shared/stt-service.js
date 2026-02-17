@@ -160,42 +160,54 @@ class STTService {
     const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SR || this._contRecognition) return false;
 
+    this._contStopping = false;
+    this._contAccumulated = ''; // text finalized across restarts
+    this._contOnResult = onResult;
+    this._contOnStart = onStart;
+    this._startRecognition();
+    return true;
+  }
+
+  _startRecognition() {
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
     const rec = new SR();
     rec.lang = this._language === 'english' ? 'en-US' : 'fr-FR';
     rec.continuous = true;
     rec.interimResults = true;
     this._contRecognition = rec;
-    this._contStopping = false;
 
-    rec.onstart = () => { if (onStart) onStart(); };
+    rec.onstart = () => { if (this._contOnStart) { this._contOnStart(); this._contOnStart = null; } };
+
+    let sessionFinal = '';
 
     rec.onresult = (event) => {
-      let final = '', interim = '';
+      sessionFinal = '';
+      let interim = '';
       for (let i = 0; i < event.results.length; i++) {
         const t = event.results[i][0].transcript;
-        if (event.results[i].isFinal) final += t;
+        if (event.results[i].isFinal) sessionFinal += t;
         else interim += t;
       }
-      if (onResult) onResult(final, interim);
+      if (this._contOnResult) this._contOnResult(this._contAccumulated + sessionFinal, interim);
     };
 
-    // Web Speech API sometimes stops on its own (e.g. long silence);
-    // auto-restart unless we're intentionally stopping.
+    // Web Speech API stops on its own after silence.
+    // Accumulate finalized text and restart.
     rec.onend = () => {
-      if (!this._contStopping && this._contRecognition) {
-        try { rec.start(); } catch (_) { this._contRecognition = null; }
+      this._contAccumulated += sessionFinal;
+      if (!this._contStopping) {
+        try { this._startRecognition(); } catch (_) { this._contRecognition = null; }
       } else {
         this._contRecognition = null;
       }
     };
 
     rec.onerror = (e) => {
-      if (e.error === 'no-speech') return; // ignore, will auto-restart via onend
+      if (e.error === 'no-speech' || e.error === 'aborted') return; // will auto-restart via onend
       this._contRecognition = null;
     };
 
     rec.start();
-    return true;
   }
 
   /**

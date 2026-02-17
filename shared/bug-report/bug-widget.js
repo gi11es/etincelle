@@ -10,7 +10,8 @@ const BASE = new URL('.', import.meta.url).href;
 
 // ── State ──────────────────────────────────────────────────────────────
 let panelOpen = false;
-let screenshotDataUrl = null;
+let screenshotDataUrl = null;      // full-res for UI display
+let screenshotThumbDataUrl = null; // small JPEG for GitHub issue body
 let sending = false;
 let listening = false;
 
@@ -290,17 +291,16 @@ async function captureScreenshot() {
       width: Math.min(document.body.scrollWidth, 1200),
     });
 
-    const maxW = 1200;
-    if (canvas.width > maxW) {
-      const ratio = maxW / canvas.width;
-      const resized = document.createElement('canvas');
-      resized.width = maxW;
-      resized.height = Math.round(canvas.height * ratio);
-      resized.getContext('2d').drawImage(canvas, 0, 0, resized.width, resized.height);
-      screenshotDataUrl = resized.toDataURL('image/png');
-    } else {
-      screenshotDataUrl = canvas.toDataURL('image/png');
-    }
+    screenshotDataUrl = canvas.toDataURL('image/png');
+
+    // Small JPEG thumbnail for GitHub issue body (keeps it under 65KB limit)
+    const thumbW = 480;
+    const ratio = thumbW / canvas.width;
+    const thumb = document.createElement('canvas');
+    thumb.width = thumbW;
+    thumb.height = Math.round(canvas.height * ratio);
+    thumb.getContext('2d').drawImage(canvas, 0, 0, thumb.width, thumb.height);
+    screenshotThumbDataUrl = thumb.toDataURL('image/jpeg', 0.5);
   } catch (err) {
     console.warn('Bug widget: screenshot failed', err);
     screenshotDataUrl = null;
@@ -333,7 +333,7 @@ async function handleSend() {
     desc,
     ``,
     `### Capture d'écran`,
-    screenshotDataUrl ? `![screenshot](${screenshotDataUrl})` : '_Capture non disponible_',
+    screenshotThumbDataUrl ? `![screenshot](${screenshotThumbDataUrl})` : '_Capture non disponible_',
     ``,
     `### Contexte`,
     `| | |`,
