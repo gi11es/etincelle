@@ -285,16 +285,24 @@ async function captureScreenshot() {
 
   try {
     const html2canvas = await loadHtml2Canvas();
-    const bgColor = getComputedStyle(document.body).backgroundColor || '#1a1a2e';
     const canvas = await html2canvas(document.body, {
       scale: 1,
       useCORS: true,
       logging: false,
       width: Math.min(document.body.scrollWidth, 1200),
-      backgroundColor: bgColor,
+      backgroundColor: null,
     });
 
-    screenshotDataUrl = canvas.toDataURL('image/jpeg', 0.85);
+    // Composite onto a solid background (html2canvas can leave transparent areas)
+    const opaque = document.createElement('canvas');
+    opaque.width = canvas.width;
+    opaque.height = canvas.height;
+    const ctx = opaque.getContext('2d');
+    ctx.fillStyle = getComputedStyle(document.body).backgroundColor || '#0f0f23';
+    ctx.fillRect(0, 0, opaque.width, opaque.height);
+    ctx.drawImage(canvas, 0, 0);
+
+    screenshotDataUrl = opaque.toDataURL('image/jpeg', 0.85);
   } catch (err) {
     console.warn('Bug widget: screenshot failed', err);
     screenshotDataUrl = null;
