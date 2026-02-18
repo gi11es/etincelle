@@ -731,6 +731,49 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════
+   COLOR GAME
+   ═══════════════════════════════════════════════════════ */
+.color-emoji-display {
+  font-size: clamp(64px, 15vw, 100px);
+  line-height: 1;
+  animation: letterPop 0.5s ease-out;
+}
+
+.color-choices {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 380px;
+}
+
+.color-choice-btn {
+  padding: 22px 12px;
+  font-size: clamp(18px, 4vw, 22px);
+  font-weight: 800;
+  border-radius: 16px;
+  border: 4px solid rgba(255,255,255,0.6);
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.2s, box-shadow 0.2s;
+  text-shadow: 0 2px 3px rgba(0,0,0,0.3);
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.15), var(--shadow);
+}
+
+.color-choice-btn:active { transform: scale(0.95); }
+.color-choice-btn.correct {
+  border-color: var(--gold);
+  animation: correctPulse 0.6s ease;
+  box-shadow: 0 0 30px rgba(46,204,113,0.5);
+}
+.color-choice-btn.wrong {
+  animation: wrongShake 0.5s ease;
+}
+
+/* ═══════════════════════════════════════════════════════
    BUILD WORD SCREEN
    ═══════════════════════════════════════════════════════ */
 .build-area {
@@ -1421,6 +1464,10 @@ body {
         <span class="menu-icon">🎤</span>
         Lis à voix haute
       </div>
+      <div class="menu-btn coral" onclick="goTo('colors')">
+        <span class="menu-icon">🎨</span>
+        Les Couleurs
+      </div>
     </div>
   </div>
 
@@ -1537,6 +1584,18 @@ body {
       </div>
       <div id="draw-result" class="draw-result hidden"></div>
       <button id="draw-next-btn" class="btn-action hidden" onclick="nextDrawRound()">➡️ Suivant</button>
+    </div>
+  </div>
+
+  <!-- ═══ COLORS SCREEN ═══ -->
+  <div id="screen-colors" class="screen">
+    <div class="screen-title">Les Couleurs 🎨</div>
+    <div class="word-game-area">
+      <div id="color-emoji" class="color-emoji-display"></div>
+      <div id="color-prompt" class="word-prompt">Quelle est cette couleur ?</div>
+      <div id="color-choices" class="color-choices"></div>
+      <div id="color-result" class="letter-quiz-result hidden"></div>
+      <button id="color-next-btn" class="btn-action hidden" onclick="nextColorRound()">➡️ Suivant</button>
     </div>
   </div>
 
@@ -1804,6 +1863,12 @@ let whisperTranscriber = null;
 let whisperLoading = false;
 let mediaStream = null;
 
+// Colors game
+let colorRoundIndex = 0;
+let colorOrder = [];
+let colorCorrect = 0;
+let colorTotal = 0;
+
 updateStarDisplay();
 
 /* ════════════════════════════════════════════════════════════
@@ -2018,6 +2083,11 @@ const TIER_CONFIGS = {
       return pool;
     },
   },
+  colors: {
+    maxTier: 3,
+    choices: [3, 4, 6],
+    items: function(tier) { return COLORS.filter(c => c.level <= tier).map(c => c.word); },
+  },
 };
 
 const EASY_DRAW_LETTERS = ['C','I','J','L','O','S','T','U','V','X'];
@@ -2128,7 +2198,7 @@ function showTierUnlockCelebration(game, newTier) {
   const gameNames = {
     letters:'Les Lettres', lettermatch:'Les Formes', sylquiz:'Quiz Syllabes',
     syllables:'Labo Syllabes', words:'Les Mots', build:'Construis',
-    draw:'Dessine', pronunciation:'Lis à voix haute',
+    draw:'Dessine', pronunciation:'Lis à voix haute', colors:'Les Couleurs',
   };
   showMascotMessage(TIER_EMOJIS[newTier] + ' Niveau ' + TIER_NAMES[newTier] + ' !');
   speak('Bravo Zoé ! Tu es maintenant ' + TIER_NAMES[newTier] + ' en ' + (gameNames[game] || game) + ' !', 0.75);
@@ -2227,7 +2297,7 @@ function createDecorations() {
 }
 
 /* ────────── NAVIGATION ────────── */
-const VALID_SCREENS = ['home','letters','lettermatch','sylquiz','syllables','words','build','draw','pronunciation','stats'];
+const VALID_SCREENS = ['home','letters','lettermatch','sylquiz','syllables','words','build','draw','pronunciation','colors','stats'];
 
 function goTo(screen, updateHash = true) {
   sfxClick();
@@ -2262,6 +2332,7 @@ function goTo(screen, updateHash = true) {
   else if (screen === 'build') initBuild();
   else if (screen === 'draw') initDraw();
   else if (screen === 'pronunciation') initPronunciation();
+  else if (screen === 'colors') initColors();
   else if (screen === 'stats') initStats();
 
   if (screen === 'home') {
@@ -3664,7 +3735,107 @@ const GAME_INFO = [
   { key:'build', emoji:'🧱', name:'Construis', color:'#ff9800' },
   { key:'draw', emoji:'✏️', name:'Dessine', color:'#e74c3c' },
   { key:'pronunciation', emoji:'🎤', name:'Lecture', color:'#9b59b6' },
+  { key:'colors', emoji:'🎨', name:'Couleurs', color:'#e67e22' },
 ];
+
+/* ────────── COLORS GAME ────────── */
+async function initColors() {
+  colorCorrect = 0;
+  colorTotal = 0;
+  _sessionNewItems['colors'] = 0;
+  const progress = await loadGameProgress('colors');
+  const masteryMap = await dbReadAllByIndex('mastery', 'game', 'colors');
+  const pool = getItemsForTier('colors', progress.currentTier);
+  colorOrder = buildAdaptiveOrder(pool, masteryMap, 'colors', pool.length);
+  colorRoundIndex = 0;
+  showColorRound();
+  showMascotMessage('Trouve la couleur ! 🎨');
+}
+
+function showColorRound() {
+  if (colorRoundIndex >= colorOrder.length) {
+    colorOrder = shuffle([...colorOrder]);
+    colorRoundIndex = 0;
+  }
+  const targetColor = colorOrder[colorRoundIndex];
+  const color = COLORS.find(c => c.word === targetColor) || COLORS[0];
+
+  document.getElementById('color-prompt').textContent = 'Quelle est cette couleur ?';
+  document.getElementById('color-next-btn').classList.add('hidden');
+  document.getElementById('color-result').classList.add('hidden');
+
+  const tier = _gameProgress['colors']?.currentTier || 1;
+  const numChoices = (TIER_CONFIGS.colors.choices[tier - 1] || 4);
+  const numWrong = numChoices - 1;
+
+  const wrongPool = shuffle(COLORS.filter(c => c.word !== color.word)).slice(0, numWrong);
+  const choices = shuffle([color, ...wrongPool]);
+
+  const container = document.getElementById('color-choices');
+  container.innerHTML = '';
+
+  choices.forEach((c) => {
+    const btn = document.createElement('button');
+    btn.className = 'color-choice-btn';
+    btn.style.background = c.css;
+    if (c.word === 'blanc' || c.word === 'jaune' || c.word === 'doré') {
+      btn.style.color = '#333';
+      btn.style.textShadow = 'none';
+    }
+    btn.textContent = c.word;
+    btn.onclick = () => checkColorAnswer(btn, c.word === color.word, color);
+    container.appendChild(btn);
+  });
+
+  document.getElementById('color-emoji').textContent = color.emoji;
+
+  speak(color.word, 0.65);
+}
+
+function checkColorAnswer(btn, correct, colorData) {
+  if (btn.classList.contains('correct') || btn.classList.contains('wrong')) return;
+  colorTotal++;
+  recordAttempt('colors', colorData.word, correct);
+
+  if (correct) {
+    btn.classList.add('correct');
+    sfxSuccess();
+    colorCorrect++;
+    addStar();
+    mascotCelebrate();
+    spawnConfetti();
+    showMascotMessage('Bravo ! 🎉');
+
+    speakQueue([
+      { text: 'Bravo !', rate: 0.7 },
+      { text: colorData.word, rate: 0.65 },
+    ]);
+
+    document.getElementById('color-prompt').textContent = '✅ ' + colorData.word.toUpperCase() + ' !';
+
+    const result = document.getElementById('color-result');
+    result.innerHTML = '<span class="letter-quiz-result-emoji">' + colorData.emoji + '</span>' +
+      '<span class="letter-quiz-result-text"><strong>' + colorData.word + '</strong></span>';
+    result.classList.remove('hidden');
+
+    document.getElementById('color-next-btn').classList.remove('hidden');
+
+    document.querySelectorAll('.color-choice-btn').forEach(b => {
+      if (b !== btn) b.style.pointerEvents = 'none';
+    });
+  } else {
+    btn.classList.add('wrong');
+    sfxWrong();
+    showMascotMessage('Essaie encore ! 💪');
+    speak('Essaie encore !', 0.85);
+  }
+}
+
+function nextColorRound() {
+  sfxClick();
+  colorRoundIndex++;
+  showColorRound();
+}
 
 async function initStats() {
   const container = document.getElementById('stats-content');
