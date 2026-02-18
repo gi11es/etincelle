@@ -3288,6 +3288,23 @@ async function checkDrawing() {
   const resultEl = document.getElementById('draw-result');
 
   if (!window.emnistSession) {
+    if (window.emnistLoadFailed) {
+      drawTotal++;
+      recordAttempt('draw', drawCurrentLetter, true);
+      drawCorrect++;
+      resultEl.textContent = '🎉 Bravo ! C\'est bien ' + drawCurrentLetter + ' !';
+      resultEl.classList.remove('hidden');
+      document.getElementById('draw-check-btn').classList.add('hidden');
+      document.getElementById('draw-clear-btn').classList.add('hidden');
+      document.getElementById('draw-next-btn').classList.remove('hidden');
+      sfxSuccess();
+      addStar();
+      mascotCelebrate();
+      spawnConfetti();
+      showMascotMessage('Bravo ! 🎉');
+      speak('Bravo ! C\'est bien la lettre ' + (LETTER_SOUNDS[drawCurrentLetter] || drawCurrentLetter), 0.75);
+      return;
+    }
     resultEl.textContent = 'Le modèle charge... Attends un instant !';
     resultEl.classList.remove('hidden');
     return;
@@ -4076,16 +4093,21 @@ document.addEventListener('DOMContentLoaded', init);
 <script type="module">
 import * as ort from './ai/ort.bundle.mjs';
 
-// wasmPaths not needed — ort.bundle.mjs auto-resolves siblings via import.meta.url
+ort.env.wasm.numThreads = 1;
 
 try {
-  window.emnistSession = await ort.InferenceSession.create('ai/emnist_letters.onnx', {
+  const loadPromise = ort.InferenceSession.create('ai/emnist_letters.onnx', {
     executionProviders: ['wasm'],
   });
+  const timeoutPromise = new Promise((_, reject) =>
+    setTimeout(() => reject(new Error('EMNIST load timeout')), 30000)
+  );
+  window.emnistSession = await Promise.race([loadPromise, timeoutPromise]);
   window.ort = ort;
   console.log('EMNIST letter recognition model loaded');
 } catch(e) {
   console.warn('EMNIST model loading failed:', e);
+  window.emnistLoadFailed = true;
 }
 </script>
 
