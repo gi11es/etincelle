@@ -283,7 +283,7 @@ function loadHtml2Canvas() {
   return new Promise((resolve, reject) => {
     if (window.html2canvas) { resolve(window.html2canvas); return; }
     const script = document.createElement('script');
-    script.src = 'https://unpkg.com/html2canvas@1.4.1/dist/html2canvas.min.js';
+    script.src = BASE + 'html2canvas.min.js';
     script.onload = () => resolve(window.html2canvas);
     script.onerror = () => reject(new Error('Failed to load html2canvas'));
     document.head.appendChild(script);
