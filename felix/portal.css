@@ -1,3 +1,60 @@
+/* ===== Floating Theme Decorations (football & chess) ===== */
+.portal-decorations {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.portal-decorations .deco {
+  position: absolute;
+  font-size: 1.6rem;
+  opacity: 0.07;
+  animation: decoFloat linear infinite;
+}
+
+.portal-decorations .deco:nth-child(1) { left: 5%; font-size: 1.8rem; animation-duration: 22s; animation-delay: 0s; }
+.portal-decorations .deco:nth-child(2) { left: 18%; font-size: 1.4rem; animation-duration: 26s; animation-delay: -4s; }
+.portal-decorations .deco:nth-child(3) { left: 32%; font-size: 2rem; animation-duration: 20s; animation-delay: -8s; }
+.portal-decorations .deco:nth-child(4) { left: 50%; font-size: 1.5rem; animation-duration: 28s; animation-delay: -2s; }
+.portal-decorations .deco:nth-child(5) { left: 65%; font-size: 1.3rem; animation-duration: 24s; animation-delay: -12s; }
+.portal-decorations .deco:nth-child(6) { left: 80%; font-size: 1.7rem; animation-duration: 21s; animation-delay: -6s; }
+.portal-decorations .deco:nth-child(7) { left: 92%; font-size: 1.4rem; animation-duration: 25s; animation-delay: -15s; }
+.portal-decorations .deco:nth-child(8) { left: 12%; font-size: 1.6rem; animation-duration: 27s; animation-delay: -10s; }
+
+@keyframes decoFloat {
+  0% { top: 105%; transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.1); }
+  100% { top: -10%; transform: rotate(360deg) scale(1); }
+}
+
+/* ===== Theme Accent on Header ===== */
+.portal-theme-icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+  font-size: 1.3rem;
+  opacity: 0.35;
+}
+
+.portal-theme-icons span {
+  display: inline-block;
+  animation: themeIconBounce 3s ease-in-out infinite;
+}
+
+.portal-theme-icons span:nth-child(2) { animation-delay: 0.3s; }
+.portal-theme-icons span:nth-child(3) { animation-delay: 0.6s; }
+.portal-theme-icons span:nth-child(4) { animation-delay: 0.9s; }
+.portal-theme-icons span:nth-child(5) { animation-delay: 1.2s; }
+
+@keyframes themeIconBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
 /* ===== Portal Nav (back to family) ===== */
 .portal-nav {
   padding: 16px 20px 0;
@@ -285,6 +342,12 @@
 @media (max-width: 500px) {
   .portal-title { font-size: 2.2rem; }
   .portal-card { padding: 18px 16px; }
+  .portal-theme-icons { font-size: 1.1rem; gap: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portal-decorations .deco { animation: none; opacity: 0.04; top: 50%; }
+  .portal-theme-icons span { animation: none; }
 }
 
 @media (min-width: 601px) {
