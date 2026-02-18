@@ -379,6 +379,8 @@ async function handleSend() {
       `---`,
       `### Instructions for implementation`,
       ``,
+      `- **Read \`CLAUDE.md\` first** to understand the project architecture and patterns.`,
+      `- If this is a **feature request** (new game, new activity, new section), implement it **fully end-to-end** — data, UI, game logic, navigation, and user interaction. The feature must be usable and complete. Study an existing similar feature first and follow the same patterns.`,
       `- If this request adds a **new section or activity**, make sure it is linked from the relevant portal/menu page (e.g. \`felix/index.html\`, \`zoe/index.html\`, \`dasha/index.html\`).`,
       `- If this request adds **new features or pages**, add smoke tests in \`tests/\` that open the new page/feature and verify no JavaScript errors occur. Add the new test to the CI matrix in \`.github/workflows/ci.yml\`.`,
       `- **Iterate until CI passes.** If the PR fails checks, fix the issues and push again before merging. Do not merge a red PR.`,

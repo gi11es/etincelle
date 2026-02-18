@@ -41,7 +41,8 @@ jobs:
           TITLE=$(cat /tmp/issue_title.txt)
           BODY=$(cat /tmp/issue_body.txt)
 
-          PROMPT="You are fixing a bug in a static website (pure HTML/CSS/JS, ES modules, no bundler).
+          PROMPT="You are resolving a GitHub issue for a static website (pure HTML/CSS/JS, ES modules, no bundler).
+          The issue may be a bug report OR a feature request. Read CLAUDE.md first for architecture details.
 
           GitHub Issue #${{ steps.issue.outputs.number }}:
           Title: ${TITLE}
@@ -50,17 +51,28 @@ jobs:
           ${BODY}
 
           Instructions:
-          - Read the relevant files, understand the issue, and make the fix.
-          - This is a static site with portals for Felix (12yo), Zoe (5yo), and Dasha (mother).
+          - Start by reading CLAUDE.md to understand the project architecture and patterns.
           - The issue was submitted via an in-app bug widget, so the description may be in French.
           - The Page URL in the Context section tells you which page is affected.
-          - Only change what is necessary to fix the reported issue.
+          - Determine whether this is a bug fix or a feature request.
+
+          For BUG FIXES:
+          - Read the relevant files, understand the issue, and make the minimal fix.
+          - Only change what is necessary.
+
+          For FEATURE REQUESTS (new game, new activity, new section, new content):
+          - Study at least one existing similar feature in the same file to understand the patterns before building.
+          - Implement the feature FULLY end-to-end — data, UI, logic, navigation, and user interaction.
+          - The feature must be usable and complete when you are done. Do not just add data without wiring up the UI and game logic.
+          - Follow the existing patterns exactly (see CLAUDE.md for per-portal architecture).
+
+          General:
           - Do NOT add comments, docstrings, or unrelated improvements.
-          - After making your changes, write a short English summary (under 60 chars, no quotes) of what you fixed to a file called /tmp/fix_summary.txt. Example: Update English section description on Felix portal"
+          - After making your changes, write a short English summary (under 60 chars, no quotes) of what you did to a file called /tmp/fix_summary.txt. Example: Add color-matching game for Zoe portal"
 
           claude --print --dangerously-skip-permissions \
             --model claude-opus-4-6 \
-            --max-turns 20 \
+            --max-turns 40 \
             "$PROMPT"
 
       - name: Read fix summary
