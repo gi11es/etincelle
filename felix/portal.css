@@ -176,6 +176,9 @@
 .portal-card--english::before { background: linear-gradient(135deg, rgba(79,172,254,0.08), transparent); }
 .portal-card--english:hover { border-color: rgba(79,172,254,0.3); }
 
+.portal-card--espagnol::before { background: linear-gradient(135deg, rgba(255,171,0,0.08), transparent); }
+.portal-card--espagnol:hover { border-color: rgba(255,171,0,0.3); }
+
 .portal-card--math::before { background: linear-gradient(135deg, rgba(0,214,143,0.08), transparent); }
 .portal-card--math:hover { border-color: rgba(0,214,143,0.3); }
 
@@ -194,6 +197,7 @@
 
 .portal-card--quiz .portal-card-icon { background: var(--primary-light); }
 .portal-card--english .portal-card-icon { background: rgba(79,172,254,0.15); }
+.portal-card--espagnol .portal-card-icon { background: rgba(255,171,0,0.15); }
 .portal-card--math .portal-card-icon { background: rgba(0,214,143,0.15); }
 .portal-card--stats .portal-card-icon { background: rgba(168,85,247,0.15); }
 
