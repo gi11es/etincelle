@@ -48,7 +48,16 @@
       "Bash(xargs sed:*)",
       "Bash(gh issue close:*)",
       "Bash(gh api:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(gh auth status:*)",
+      "WebFetch(domain:lottie.host)",
+      "Bash(1:*)",
+      "Bash(echo:*)",
+      "Bash(git -C /Users/gilles/Documents/personal/etincelle add -A)",
+      "Bash(git -C /Users/gilles/Documents/personal/etincelle status)",
+      "Bash(/bin/ls:*)",
+      "Bash(/bin/bash -c 'cd /Users/gilles/Documents/personal/etincelle && pwd':*)",
+      "Bash(/usr/bin/env bash -c 'echo works')"
     ]
   }
 }
