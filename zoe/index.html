@@ -99,20 +99,6 @@
       }
     })();
   </script>
-  <script type="module" src="../shared/bug-report/bug-widget.js" data-hidden></script>
-  <script>
-    (function() {
-      var t, el = document.querySelector('.portal-mascot');
-      if (!el) return;
-      function start() { t = setTimeout(function() { if (window.__showBugWidget) window.__showBugWidget(); }, 1500); }
-      function cancel() { clearTimeout(t); }
-      el.addEventListener('touchstart', start);
-      el.addEventListener('touchend', cancel);
-      el.addEventListener('touchcancel', cancel);
-      el.addEventListener('mousedown', start);
-      el.addEventListener('mouseup', cancel);
-      el.addEventListener('mouseleave', cancel);
-    })();
-  </script>
+  <script type="module" src="../shared/bug-report/bug-widget.js"></script>
 </body>
 </html>

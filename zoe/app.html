@@ -165,11 +165,11 @@ body {
 #mascot {
   position: fixed;
   bottom: 10px;
-  right: 10px;
+  left: 10px;
   z-index: 90;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-end;
   pointer-events: none;
 }
 
@@ -206,7 +206,7 @@ body {
   max-width: 200px;
   text-align: center;
   position: relative;
-  margin-bottom: 8px;
+  margin-left: 8px;
   box-shadow: var(--shadow);
   opacity: 0;
   transform: scale(0.8);
@@ -221,11 +221,11 @@ body {
 #speech-bubble::after {
   content: '';
   position: absolute;
-  bottom: -10px;
-  right: 30px;
+  bottom: 12px;
+  left: -10px;
   border: 10px solid transparent;
-  border-top-color: white;
-  border-bottom: 0;
+  border-right-color: white;
+  border-left: 0;
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -1329,23 +1329,6 @@ body {
   100% { transform: translateY(0) rotate(0); }
 }
 
-/* Player avatar in game screens */
-#player-avatar {
-  position: fixed;
-  bottom: 10px;
-  left: 10px;
-  z-index: 90;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-
-#player-avatar.visible { opacity: 1; }
-
-#player-avatar svg {
-  filter: drop-shadow(0 3px 6px rgba(255,105,180,0.3));
-  animation: mascotBounce 4s ease-in-out infinite;
-}
 </style>
 </head>
 <body>
@@ -1569,15 +1552,10 @@ body {
     <span class="big-star">⭐</span>
   </div>
 
-  <!-- ═══ Player Avatar (Zoé) ═══ -->
-  <div id="player-avatar">
-    <img class="family-portrait" src="assets/zoe_cartoon.png" style="object-position: 50% 25%; width:50px; height:50px;" alt="Zoé">
-  </div>
-
   <!-- ═══ Mascot ═══ -->
   <div id="mascot">
-    <div id="speech-bubble"></div>
     <div id="mascot-emoji">🦄</div>
+    <div id="speech-bubble"></div>
   </div>
 </div>
 
@@ -2254,7 +2232,6 @@ function goTo(screen, updateHash = true) {
   }
 
   document.getElementById('btn-back').classList.toggle('visible', screen !== 'home');
-  document.getElementById('player-avatar').classList.toggle('visible', screen !== 'home');
 
   // Update URL hash for bookmarking
   if (updateHash) {
@@ -4112,20 +4089,6 @@ try {
 }
 </script>
 
-  <script type="module" src="../shared/bug-report/bug-widget.js" data-hidden></script>
-  <script>
-    (function() {
-      var t, el = document.getElementById('mascot-emoji');
-      if (!el) return;
-      function start() { t = setTimeout(function() { if (window.__showBugWidget) window.__showBugWidget(); }, 1500); }
-      function cancel() { clearTimeout(t); }
-      el.addEventListener('touchstart', start);
-      el.addEventListener('touchend', cancel);
-      el.addEventListener('touchcancel', cancel);
-      el.addEventListener('mousedown', start);
-      el.addEventListener('mouseup', cancel);
-      el.addEventListener('mouseleave', cancel);
-    })();
-  </script>
+  <script type="module" src="../shared/bug-report/bug-widget.js"></script>
 </body>
 </html>
