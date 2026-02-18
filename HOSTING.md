@@ -43,7 +43,7 @@ server {
     # Cache static assets
     location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff2|json|mjs|wasm|onnx|pdf)$ {
         expires 7d;
-        add_header Cache-Control "public, immutable";
+        add_header Cache-Control "public";
     }
 }
 ```
