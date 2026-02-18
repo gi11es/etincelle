@@ -317,6 +317,28 @@ function svgDataUrlToJpeg(svgDataUrl, width, height, quality) {
   });
 }
 
+/** Check if a canvas is mostly a single color (failed capture). */
+function isCanvasBlank(canvas) {
+  const ctx = canvas.getContext('2d');
+  // Sample 20 pixels spread across the canvas
+  const points = [];
+  for (let i = 0; i < 5; i++) {
+    for (let j = 0; j < 4; j++) {
+      points.push([
+        Math.floor((canvas.width * (i + 0.5)) / 5),
+        Math.floor((canvas.height * (j + 0.5)) / 4),
+      ]);
+    }
+  }
+  const first = ctx.getImageData(points[0][0], points[0][1], 1, 1).data;
+  return points.every(([x, y]) => {
+    const px = ctx.getImageData(x, y, 1, 1).data;
+    return Math.abs(px[0] - first[0]) < 5 &&
+           Math.abs(px[1] - first[1]) < 5 &&
+           Math.abs(px[2] - first[2]) < 5;
+  });
+}
+
 async function captureScreenshot() {
   const hidden = [fab, panel];
   document.querySelectorAll('#confetti-canvas, .levelup-overlay, .lottie-overlay').forEach(el => hidden.push(el));
@@ -326,6 +348,7 @@ async function captureScreenshot() {
   const bgcolor = getComputedStyle(document.body).backgroundColor || '#0f0f23';
   const w = Math.min(document.body.scrollWidth, 1200);
   const h = Math.min(document.body.scrollHeight, 2400);
+  const _dbg = []; // temporary debug breadcrumbs
 
   try {
     // Strategy 1: html2canvas (works well on Safari, can fail on Chrome iOS)
@@ -334,12 +357,15 @@ async function captureScreenshot() {
       const canvas = await html2canvas(document.body, {
         backgroundColor: bgcolor, width: w, height: h, scale: 1,
       });
-      screenshotDataUrl = canvas.toDataURL('image/jpeg', 0.85);
-      // Detect black/empty screenshots (data URL < 1KB is suspicious)
-      if (screenshotDataUrl && screenshotDataUrl.length > 1000) return;
-      console.warn('Bug widget: html2canvas produced suspiciously small image, trying fallback');
+      _dbg.push(`h2c:${canvas.width}x${canvas.height}`);
+      if (!isCanvasBlank(canvas)) {
+        screenshotDataUrl = canvas.toDataURL('image/jpeg', 0.85);
+        _dbg.push('h2c:OK');
+        return;
+      }
+      _dbg.push('h2c:BLANK');
     } catch (err) {
-      console.warn('Bug widget: html2canvas failed, trying fallback', err);
+      _dbg.push(`h2c:ERR:${err.message}`);
     }
 
     // Strategy 2: dom-to-image with Blob URL rendering (avoids iOS data-URL limit)
@@ -347,19 +373,25 @@ async function captureScreenshot() {
     const domtoimage = await loadDomToImage();
     if (isIOS) {
       const svgDataUrl = await domtoimage.toSvg(document.body, { bgcolor, width: w, height: h });
+      _dbg.push(`dti:svg=${svgDataUrl ? svgDataUrl.length : 0}`);
       if (svgDataUrl && svgDataUrl !== 'data:,') {
         screenshotDataUrl = await svgDataUrlToJpeg(svgDataUrl, w, h, 0.85);
+        _dbg.push(`dti:jpg=${screenshotDataUrl?.length || 0}`);
       }
     } else {
       screenshotDataUrl = await domtoimage.toJpeg(document.body, {
         quality: 0.85, bgcolor, width: w, height: h,
       });
+      _dbg.push('dti:OK');
     }
   } catch (err) {
     console.warn('Bug widget: screenshot failed', err);
+    _dbg.push(`FAIL:${err.message}`);
     screenshotDataUrl = null;
   } finally {
     hidden.forEach((el, i) => { el.style.display = savedDisplay[i]; });
+    // Temporary: show debug via alert so it's guaranteed visible
+    try { alert(`[BUG-DBG] ${w}x${h} | ${_dbg.join(' | ')}`); } catch {}
   }
 }
 
