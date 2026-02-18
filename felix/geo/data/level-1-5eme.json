@@ -1,7 +1,7 @@
 {
   "id": "level-1-5eme",
-  "title": "5ème - Démographie et développement durable",
-  "description": "Population, ressources et enjeux du développement durable",
+  "title": "5ème - Démographie, ressources et risques",
+  "description": "Population, ressources, développement durable et prévention des risques",
   "requiredXP": 0,
   "items": [
     {
@@ -183,6 +183,186 @@
       "answer": 1,
       "explanation": "Le stress hydrique survient quand la demande en eau dépasse les ressources disponibles. De nombreuses régions du monde y sont confrontées (Moyen-Orient, Afrique du Nord).",
       "category": "Les ressources et leur gestion"
+    },
+    {
+      "id": "geo5-021",
+      "type": "mcq",
+      "question": "Qu'est-ce qu'un aléa naturel ?",
+      "choices": ["Une catastrophe causée par l'homme", "Un phénomène naturel potentiellement dangereux (séisme, cyclone, inondation)", "Un changement de climat sur le long terme", "Une pollution industrielle"],
+      "answer": 1,
+      "explanation": "Un aléa naturel est un événement d'origine naturelle (séisme, éruption volcanique, cyclone, inondation) qui peut menacer les populations et les territoires.",
+      "category": "Prévenir les risques"
+    },
+    {
+      "id": "geo5-022",
+      "type": "mcq",
+      "question": "Qu'est-ce que la vulnérabilité d'une population face à un risque ?",
+      "choices": ["Sa capacité à résister aux catastrophes", "Sa fragilité et son exposition face à un aléa", "Son nombre d'habitants", "Sa richesse économique"],
+      "answer": 1,
+      "explanation": "La vulnérabilité mesure la fragilité d'une population face à un aléa. Elle dépend de la pauvreté, de la densité de population, du manque d'infrastructures et de préparation.",
+      "category": "Prévenir les risques"
+    },
+    {
+      "id": "geo5-023",
+      "type": "mcq",
+      "question": "Qu'est-ce qu'un risque industriel ?",
+      "choices": ["Le risque de faillite d'une entreprise", "Un danger lié aux activités industrielles (explosion, pollution chimique)", "Un tremblement de terre près d'une usine", "Le chômage dans l'industrie"],
+      "answer": 1,
+      "explanation": "Un risque industriel est un danger lié aux activités industrielles : explosion, incendie, fuite de produits toxiques. La catastrophe d'AZF à Toulouse (2001) en est un exemple.",
+      "category": "Prévenir les risques"
+    },
+    {
+      "id": "geo5-024",
+      "type": "mcq",
+      "question": "Qu'est-ce qu'un PPR (Plan de Prévention des Risques) ?",
+      "choices": ["Un plan de développement économique", "Un document réglementant l'urbanisme dans les zones à risque", "Un plan d'évacuation d'urgence", "Un programme de dépollution"],
+      "answer": 1,
+      "explanation": "Le PPR est un document qui délimite les zones exposées à un risque (inondation, séisme, glissement de terrain) et réglemente la construction dans ces zones.",
+      "category": "Prévenir les risques"
+    },
+    {
+      "id": "geo5-025",
+      "type": "mcq",
+      "question": "Quelle est une conséquence du réchauffement climatique sur les littoraux ?",
+      "choices": ["La baisse du niveau des mers", "La montée du niveau des mers et l'érosion côtière", "L'augmentation des glaciers", "La diminution des tempêtes"],
+      "answer": 1,
+      "explanation": "Le réchauffement climatique provoque la fonte des glaciers et la dilatation thermique des océans, entraînant une montée du niveau des mers qui menace les populations côtières.",
+      "category": "Le changement global"
+    },
+    {
+      "id": "geo5-026",
+      "type": "mcq",
+      "question": "Pourquoi les pays pauvres sont-ils plus vulnérables aux catastrophes naturelles ?",
+      "choices": ["Ils ont plus de catastrophes naturelles", "Ils manquent d'infrastructures, de moyens de prévention et de secours", "Ils sont tous situés en zone à risque", "Ils ont plus d'habitants"],
+      "answer": 1,
+      "explanation": "Les pays pauvres sont plus vulnérables car ils manquent d'infrastructures résistantes, de systèmes d'alerte, de moyens de secours et de capacité de reconstruction.",
+      "category": "Prévenir les risques"
+    },
+    {
+      "id": "geo5-027",
+      "type": "mcq",
+      "question": "Qu'est-ce que la déforestation ?",
+      "choices": ["La plantation de nouveaux arbres", "La destruction massive des forêts par l'homme", "La protection des forêts", "Un type de reboisement"],
+      "answer": 1,
+      "explanation": "La déforestation est la destruction des forêts, principalement pour l'agriculture, l'élevage et l'exploitation du bois. Elle aggrave le réchauffement climatique et menace la biodiversité.",
+      "category": "Le changement global"
+    },
+    {
+      "id": "geo5-028",
+      "type": "mcq",
+      "question": "Qu'est-ce que le changement global ?",
+      "choices": ["Uniquement le réchauffement climatique", "L'ensemble des modifications environnementales liées aux activités humaines à l'échelle planétaire", "La mondialisation économique", "Le changement des frontières des pays"],
+      "answer": 1,
+      "explanation": "Le changement global désigne l'ensemble des transformations environnementales d'origine humaine : réchauffement climatique, perte de biodiversité, déforestation, pollution.",
+      "category": "Le changement global"
+    },
+    {
+      "id": "geo5-029",
+      "type": "mcq",
+      "question": "Qu'est-ce qu'un risque sismique ?",
+      "choices": ["Un risque lié aux tempêtes", "Un risque lié aux tremblements de terre", "Un risque lié aux inondations", "Un risque lié à la pollution"],
+      "answer": 1,
+      "explanation": "Le risque sismique est le danger lié aux tremblements de terre. Il est particulièrement fort dans les zones situées aux limites des plaques tectoniques (Japon, Californie, Turquie).",
+      "category": "Prévenir les risques"
+    },
+    {
+      "id": "geo5-030",
+      "type": "mcq",
+      "question": "Comment appelle-t-on l'agriculture qui respecte l'environnement et limite les pesticides ?",
+      "choices": ["L'agriculture intensive", "L'agriculture biologique", "L'agriculture industrielle", "L'agriculture hors-sol"],
+      "answer": 1,
+      "explanation": "L'agriculture biologique interdit l'utilisation de pesticides et d'engrais chimiques de synthèse. Elle vise à préserver les sols, l'eau et la biodiversité.",
+      "category": "Les ressources et leur gestion"
+    },
+    {
+      "id": "geo5-031",
+      "type": "mcq",
+      "question": "Qu'appelle-t-on un « réfugié climatique » ?",
+      "choices": ["Un touriste qui fuit le mauvais temps", "Une personne contrainte de quitter son lieu de vie à cause des effets du changement climatique", "Un scientifique qui étudie le climat", "Un habitant des régions froides"],
+      "answer": 1,
+      "explanation": "Un réfugié climatique est une personne forcée de migrer à cause de catastrophes liées au climat : montée des eaux, sécheresses, cyclones. Leur nombre pourrait atteindre 200 millions d'ici 2050.",
+      "category": "Le changement global"
+    },
+    {
+      "id": "geo5-032",
+      "type": "mcq",
+      "question": "Qu'est-ce que la biodiversité ?",
+      "choices": ["Le nombre d'espèces humaines", "La diversité des êtres vivants (animaux, végétaux, micro-organismes) dans un milieu", "Le nombre de forêts dans un pays", "La variété des climats sur Terre"],
+      "answer": 1,
+      "explanation": "La biodiversité désigne la diversité du vivant à tous les niveaux : diversité des espèces, des écosystèmes et des gènes. Elle est menacée par les activités humaines.",
+      "category": "Le changement global"
+    },
+    {
+      "id": "geo5-033",
+      "type": "mcq",
+      "question": "Comment nourrir 10 milliards d'humains en 2050 de manière durable ?",
+      "choices": ["En augmentant massivement les pesticides", "En combinant agriculture durable, réduction du gaspillage et meilleure répartition", "En défrichant toutes les forêts restantes", "En ne mangeant que des produits importés"],
+      "answer": 1,
+      "explanation": "Nourrir la planète durablement nécessite une agriculture plus respectueuse de l'environnement, la réduction du gaspillage alimentaire (30% de la production est perdue) et une meilleure répartition des ressources.",
+      "category": "Les ressources et leur gestion"
+    },
+    {
+      "id": "geo5-034",
+      "type": "mcq",
+      "question": "Qu'est-ce que l'empreinte écologique ?",
+      "choices": ["La surface de terre cultivée par habitant", "La mesure de la pression exercée par l'homme sur les ressources naturelles", "Le nombre d'espèces protégées dans un pays", "La surface des parcs naturels"],
+      "answer": 1,
+      "explanation": "L'empreinte écologique mesure la surface de terre et d'eau nécessaire pour produire ce que consomme une population et absorber ses déchets. Si tout le monde vivait comme un Européen, il faudrait 3 planètes.",
+      "category": "Le développement durable"
+    },
+    {
+      "id": "geo5-035",
+      "type": "mcq",
+      "question": "Quel type de catastrophe naturelle est le plus meurtrier en Asie du Sud-Est ?",
+      "choices": ["Les séismes", "Les cyclones et inondations", "Les éruptions volcaniques", "Les sécheresses"],
+      "answer": 1,
+      "explanation": "L'Asie du Sud-Est est très exposée aux cyclones (typhons) et aux inondations en raison de son climat tropical et de la concentration de population sur les côtes et les deltas.",
+      "category": "Prévenir les risques"
+    },
+    {
+      "id": "geo5-036",
+      "type": "mcq",
+      "question": "Qu'est-ce que l'agriculture vivrière ?",
+      "choices": ["L'agriculture destinée à l'exportation", "L'agriculture destinée à nourrir l'agriculteur et sa famille", "L'agriculture biologique", "L'agriculture mécanisée"],
+      "answer": 1,
+      "explanation": "L'agriculture vivrière est pratiquée pour nourrir l'agriculteur et sa famille, contrairement à l'agriculture commerciale destinée à la vente. Elle domine encore dans de nombreux pays du Sud.",
+      "category": "Les ressources et leur gestion"
+    },
+    {
+      "id": "geo5-037",
+      "type": "mcq",
+      "question": "Quel gaz à effet de serre est principalement émis par l'élevage bovin ?",
+      "choices": ["Le dioxyde de carbone (CO₂)", "Le méthane (CH₄)", "L'ozone (O₃)", "La vapeur d'eau"],
+      "answer": 1,
+      "explanation": "L'élevage bovin émet du méthane (CH₄), un gaz à effet de serre 25 fois plus puissant que le CO₂. L'élevage est responsable d'environ 14% des émissions mondiales de gaz à effet de serre.",
+      "category": "Le changement global"
+    },
+    {
+      "id": "geo5-038",
+      "type": "mcq",
+      "question": "Qu'est-ce que l'espérance de vie ?",
+      "choices": ["L'âge moyen de la population", "Le nombre moyen d'années qu'une personne peut espérer vivre à sa naissance", "L'âge de la retraite", "La durée de vie maximale possible"],
+      "answer": 1,
+      "explanation": "L'espérance de vie à la naissance est un indicateur clé du développement. Elle varie de moins de 55 ans dans certains pays d'Afrique à plus de 84 ans au Japon.",
+      "category": "Richesse et pauvreté dans le monde"
+    },
+    {
+      "id": "geo5-039",
+      "type": "mcq",
+      "question": "Qu'est-ce qu'un tsunami ?",
+      "choices": ["Un cyclone tropical", "Une vague géante provoquée par un séisme sous-marin", "Une marée haute exceptionnelle", "Une tempête de sable"],
+      "answer": 1,
+      "explanation": "Un tsunami est une série de vagues géantes provoquées par un séisme ou un glissement de terrain sous-marin. Le tsunami de 2004 dans l'océan Indien a fait plus de 230 000 victimes.",
+      "category": "Prévenir les risques"
+    },
+    {
+      "id": "geo5-040",
+      "type": "mcq",
+      "question": "Quel est le rôle des ONG comme Médecins Sans Frontières dans le développement ?",
+      "choices": ["Diriger les pays en développement", "Apporter une aide humanitaire et médicale aux populations vulnérables", "Remplacer les gouvernements locaux", "Vendre des médicaments aux pays pauvres"],
+      "answer": 1,
+      "explanation": "Les ONG (Organisations Non Gouvernementales) comme MSF apportent une aide humanitaire d'urgence et contribuent au développement par des actions de santé, d'éducation et de soutien aux populations vulnérables.",
+      "category": "Richesse et pauvreté dans le monde"
     }
   ]
 }

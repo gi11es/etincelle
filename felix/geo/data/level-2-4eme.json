@@ -1,7 +1,7 @@
 {
   "id": "level-2-4eme",
-  "title": "4ème - Mondialisation et mobilités",
-  "description": "Échanges internationaux, flux migratoires et espaces transformés par la mondialisation",
+  "title": "4ème - Mondialisation, urbanisation et mobilités",
+  "description": "Urbanisation, échanges internationaux, mers et océans, mobilités et espaces transformés par la mondialisation",
   "requiredXP": 0,
   "items": [
     {
@@ -183,6 +183,186 @@
       "answer": 1,
       "explanation": "Shanghai est le premier port mondial de conteneurs depuis 2010, avec plus de 47 millions de conteneurs EVP traités par an. Il symbolise la puissance commerciale chinoise.",
       "category": "Les échanges internationaux"
+    },
+    {
+      "id": "geo4-021",
+      "type": "mcq",
+      "question": "Depuis quand plus de la moitié de l'humanité vit-elle en ville ?",
+      "choices": ["Depuis 1950", "Depuis 2007", "Depuis 1990", "Depuis 2020"],
+      "answer": 1,
+      "explanation": "Depuis 2007, plus de 50% de la population mondiale est urbaine. Ce taux pourrait atteindre 68% en 2050 selon l'ONU.",
+      "category": "L'urbanisation du monde"
+    },
+    {
+      "id": "geo4-022",
+      "type": "mcq",
+      "question": "Qu'est-ce que l'étalement urbain ?",
+      "choices": ["La construction de gratte-ciel au centre-ville", "L'extension des villes sur les espaces ruraux environnants", "La rénovation des quartiers anciens", "La destruction des banlieues"],
+      "answer": 1,
+      "explanation": "L'étalement urbain est l'extension des surfaces urbanisées en périphérie des villes, souvent sous forme de lotissements et de zones commerciales, au détriment des terres agricoles.",
+      "category": "L'urbanisation du monde"
+    },
+    {
+      "id": "geo4-023",
+      "type": "mcq",
+      "question": "Qu'est-ce que la gentrification ?",
+      "choices": ["L'abandon d'un quartier par ses habitants", "L'installation de populations aisées dans un quartier populaire, entraînant une hausse des prix", "La construction de logements sociaux", "Le déplacement des entreprises vers les banlieues"],
+      "answer": 1,
+      "explanation": "La gentrification est le processus par lequel des populations plus aisées s'installent dans des quartiers populaires, provoquant une hausse des prix immobiliers et le départ des anciens habitants.",
+      "category": "L'urbanisation du monde"
+    },
+    {
+      "id": "geo4-024",
+      "type": "mcq",
+      "question": "Quelle est la différence entre une ville connectée et une ville en marge de la mondialisation ?",
+      "choices": ["La taille de la ville", "Son intégration aux réseaux mondiaux (transports, finance, communication)", "Son climat", "Son nombre de monuments"],
+      "answer": 1,
+      "explanation": "Les villes connectées (New York, Londres, Tokyo) sont des nœuds des réseaux mondiaux (finance, transports, Internet). D'autres villes restent en marge, avec peu de connexions internationales.",
+      "category": "L'urbanisation du monde"
+    },
+    {
+      "id": "geo4-025",
+      "type": "mcq",
+      "question": "Que signifie la « maritimisation » de l'économie ?",
+      "choices": ["La disparition de la pêche", "Le rôle croissant des mers et océans dans les échanges mondiaux", "La montée du niveau des mers", "Le développement du tourisme balnéaire"],
+      "answer": 1,
+      "explanation": "La maritimisation désigne l'importance croissante des mers et océans dans la mondialisation : 90% des marchandises échangées transitent par voie maritime.",
+      "category": "Mers et océans"
+    },
+    {
+      "id": "geo4-026",
+      "type": "mcq",
+      "question": "Qu'est-ce qu'une ZEE (Zone Économique Exclusive) ?",
+      "choices": ["Une zone de libre-échange entre pays", "Un espace maritime de 200 milles nautiques où un État a des droits d'exploitation", "Un port franc", "Une zone interdite à la navigation"],
+      "answer": 1,
+      "explanation": "La ZEE est un espace maritime s'étendant jusqu'à 200 milles nautiques (370 km) des côtes d'un État, qui y dispose de droits souverains sur les ressources (pêche, minerais, pétrole).",
+      "category": "Mers et océans"
+    },
+    {
+      "id": "geo4-027",
+      "type": "mcq",
+      "question": "Quel pays possède la plus grande ZEE (Zone Économique Exclusive) au monde ?",
+      "choices": ["Les États-Unis", "La Russie", "La France", "L'Australie"],
+      "answer": 2,
+      "explanation": "Grâce à ses territoires d'outre-mer (Polynésie, Nouvelle-Calédonie, La Réunion…), la France possède la plus grande ZEE du monde avec plus de 11 millions de km².",
+      "category": "Mers et océans"
+    },
+    {
+      "id": "geo4-028",
+      "type": "mcq",
+      "question": "Qu'est-ce qu'une route maritime majeure ?",
+      "choices": ["Une autoroute construite le long de la mer", "Un itinéraire emprunté par de nombreux navires pour le commerce mondial", "Un chemin de randonnée côtier", "Un canal artificiel"],
+      "answer": 1,
+      "explanation": "Les routes maritimes majeures relient les grands pôles économiques (Asie, Europe, Amérique). Elles passent par des points stratégiques comme le canal de Suez, le détroit de Malacca et le canal de Panama.",
+      "category": "Mers et océans"
+    },
+    {
+      "id": "geo4-029",
+      "type": "mcq",
+      "question": "Pourquoi les États-Unis sont-ils considérés comme une grande puissance mondiale ?",
+      "choices": ["Uniquement grâce à leur armée", "Grâce à leur puissance économique, militaire, technologique et culturelle", "Parce qu'ils sont le pays le plus peuplé", "Parce qu'ils sont le plus grand pays du monde"],
+      "answer": 1,
+      "explanation": "Les États-Unis sont la première puissance mondiale grâce à leur PIB (1er mondial), leur armée, leurs entreprises (GAFAM), leurs universités et leur influence culturelle (soft power).",
+      "category": "Les États-Unis et la mondialisation"
+    },
+    {
+      "id": "geo4-030",
+      "type": "mcq",
+      "question": "Qu'est-ce que la « Sun Belt » aux États-Unis ?",
+      "choices": ["Une chaîne de magasins", "La bande sud du pays en forte croissance économique et démographique", "Un parc national", "Une autoroute transcontinentale"],
+      "answer": 1,
+      "explanation": "La Sun Belt (« ceinture du soleil ») désigne le sud des États-Unis (Californie, Texas, Floride), une région en forte croissance grâce aux hautes technologies, au tourisme et à un climat attractif.",
+      "category": "Les États-Unis et la mondialisation"
+    },
+    {
+      "id": "geo4-031",
+      "type": "mcq",
+      "question": "Qu'est-ce que le « soft power » américain ?",
+      "choices": ["La puissance militaire des États-Unis", "L'influence culturelle exercée par les États-Unis dans le monde (cinéma, musique, mode de vie)", "La politique commerciale américaine", "Le système éducatif américain"],
+      "answer": 1,
+      "explanation": "Le soft power est la capacité d'un pays à influencer les autres par sa culture, ses valeurs et son mode de vie. Hollywood, les séries, la musique pop et les marques américaines en sont des exemples.",
+      "category": "Les États-Unis et la mondialisation"
+    },
+    {
+      "id": "geo4-032",
+      "type": "mcq",
+      "question": "Quel est le principal défi de l'Afrique face à la mondialisation ?",
+      "choices": ["Le manque de ressources naturelles", "L'intégration inégale dans les échanges mondiaux malgré un fort potentiel", "L'absence de grandes villes", "Le manque de population"],
+      "answer": 1,
+      "explanation": "L'Afrique est riche en ressources mais reste inégalement intégrée à la mondialisation. Les défis incluent les infrastructures insuffisantes, la dépendance aux matières premières et les inégalités.",
+      "category": "L'Afrique dans la mondialisation"
+    },
+    {
+      "id": "geo4-033",
+      "type": "mcq",
+      "question": "Quel pays d'Afrique a le PIB le plus élevé ?",
+      "choices": ["L'Afrique du Sud", "Le Nigeria", "l'Égypte", "Le Kenya"],
+      "answer": 1,
+      "explanation": "Le Nigeria est la première puissance économique d'Afrique grâce à sa production pétrolière et sa population de plus de 220 millions d'habitants, la plus importante du continent.",
+      "category": "L'Afrique dans la mondialisation"
+    },
+    {
+      "id": "geo4-034",
+      "type": "mcq",
+      "question": "Qu'est-ce qu'un conteneur en transport maritime ?",
+      "choices": ["Un type de navire", "Une grande boîte métallique standardisée pour transporter des marchandises", "Un port de commerce", "Un entrepôt flottant"],
+      "answer": 1,
+      "explanation": "Le conteneur est une boîte métallique aux dimensions standardisées (EVP = Équivalent Vingt Pieds) qui a révolutionné le commerce mondial en facilitant le transport multimodal (bateau, camion, train).",
+      "category": "Mers et océans"
+    },
+    {
+      "id": "geo4-035",
+      "type": "mcq",
+      "question": "Qu'est-ce que le détroit de Malacca et pourquoi est-il stratégique ?",
+      "choices": ["Un canal en Amérique centrale", "Un passage maritime entre l'Asie du Sud-Est et l'océan Indien par lequel transite un quart du commerce mondial", "Un fleuve en Asie", "Un port chinois"],
+      "answer": 1,
+      "explanation": "Le détroit de Malacca, entre la Malaisie et l'Indonésie, est l'un des passages maritimes les plus fréquentés au monde. Environ 25% du commerce mondial y transite, notamment le pétrole du Moyen-Orient vers l'Asie.",
+      "category": "Mers et océans"
+    },
+    {
+      "id": "geo4-036",
+      "type": "mcq",
+      "question": "Qu'appelle-t-on les migrations Sud-Sud ?",
+      "choices": ["Les migrations des pays du Sud vers les pays du Nord", "Les migrations entre pays en développement", "Les migrations vers l'Antarctique", "Les migrations touristiques"],
+      "answer": 1,
+      "explanation": "Les migrations Sud-Sud sont les déplacements entre pays en développement. Elles représentent près de la moitié des migrations internationales (ex : travailleurs africains dans les pays du Golfe).",
+      "category": "Les mobilités humaines"
+    },
+    {
+      "id": "geo4-037",
+      "type": "mcq",
+      "question": "Qu'est-ce que Lagos au Nigeria illustre en géographie ?",
+      "choices": ["Un modèle de ville durable", "Une mégapole d'un pays émergent avec une croissance urbaine rapide et des inégalités", "Une ville en déclin", "Un centre financier mondial"],
+      "answer": 1,
+      "explanation": "Lagos (plus de 15 millions d'habitants) illustre la croissance urbaine rapide des villes africaines, avec des contrastes forts entre quartiers d'affaires modernes et bidonvilles.",
+      "category": "L'urbanisation du monde"
+    },
+    {
+      "id": "geo4-038",
+      "type": "mcq",
+      "question": "Comment appelle-t-on l'ensemble des câbles sous-marins qui transportent Internet ?",
+      "choices": ["Le réseau satellite", "Le réseau de câbles sous-marins de fibre optique", "Le réseau 5G", "Le réseau hertzien"],
+      "answer": 1,
+      "explanation": "Plus de 95% du trafic Internet intercontinental transite par des câbles sous-marins de fibre optique posés au fond des océans. Il y en a plus de 500 dans le monde.",
+      "category": "Mers et océans"
+    },
+    {
+      "id": "geo4-039",
+      "type": "mcq",
+      "question": "Pourquoi l'Afrique de l'Ouest est-elle un espace en transformation rapide ?",
+      "choices": ["Parce que sa population diminue", "Grâce à sa croissance démographique, son urbanisation rapide et ses échanges commerciaux croissants", "Parce qu'elle s'industrialise comme la Chine", "Parce qu'elle est isolée du reste du monde"],
+      "answer": 1,
+      "explanation": "L'Afrique de l'Ouest connaît une croissance démographique forte, une urbanisation rapide (Lagos, Abidjan, Dakar) et développe ses échanges régionaux et internationaux.",
+      "category": "L'Afrique dans la mondialisation"
+    },
+    {
+      "id": "geo4-040",
+      "type": "mcq",
+      "question": "Quel est le rôle du canal de Panama ?",
+      "choices": ["Relier la Méditerranée à la mer Rouge", "Relier l'océan Atlantique à l'océan Pacifique en évitant de contourner l'Amérique du Sud", "Relier la mer du Nord à la mer Baltique", "Relier l'océan Indien à l'océan Pacifique"],
+      "answer": 1,
+      "explanation": "Le canal de Panama (82 km), ouvert en 1914, permet aux navires de passer de l'Atlantique au Pacifique sans contourner l'Amérique du Sud par le cap Horn, économisant des milliers de kilomètres.",
+      "category": "Mers et océans"
     }
   ]
 }
