@@ -80,7 +80,56 @@
     <div class="portal-badges" id="portal-badges"></div>
   </div>
 
+  <!-- ═══ Mascot ═══ -->
+  <div id="mascot">
+    <div id="mascot-avatar"></div>
+    <div id="mascot-bubble"></div>
+  </div>
+
   <script type="module" src="portal.js?v=1771447445"></script>
   <script type="module" src="../shared/bug-report/bug-widget.js?v=1771447445"></script>
+  <script>
+  (function() {
+    const MASCOTS = ['🥖', '🧀', '🗼', '🥐', '🇫🇷'];
+    const emoji = MASCOTS[Math.floor(Math.random() * MASCOTS.length)];
+
+    const avatarEl = document.getElementById('mascot-avatar');
+    const bubbleEl = document.getElementById('mascot-bubble');
+    avatarEl.textContent = emoji;
+
+    let facts = [];
+    let shownIndices = [];
+
+    fetch('mascot/france-facts.json').then(r => r.json()).then(data => { facts = data; });
+
+    function getRandomFact() {
+      if (!facts.length) return 'Chargement…';
+      if (shownIndices.length >= facts.length) shownIndices = [];
+      let idx;
+      do { idx = Math.floor(Math.random() * facts.length); } while (shownIndices.includes(idx));
+      shownIndices.push(idx);
+      return facts[idx];
+    }
+
+    function showFact() {
+      bubbleEl.textContent = getRandomFact();
+      bubbleEl.classList.add('visible');
+      avatarEl.classList.add('talking');
+      clearTimeout(bubbleEl._timer);
+      bubbleEl._timer = setTimeout(() => {
+        bubbleEl.classList.remove('visible');
+        avatarEl.classList.remove('talking');
+      }, 5000);
+    }
+
+    avatarEl.addEventListener('click', showFact);
+
+    setTimeout(() => {
+      bubbleEl.textContent = 'Clique sur moi pour un fun fact sur la France !';
+      bubbleEl.classList.add('visible');
+      setTimeout(() => bubbleEl.classList.remove('visible'), 4000);
+    }, 1500);
+  })();
+  </script>
 </body>
 </html>

@@ -224,12 +224,95 @@
 
 .portal-badges-empty { color: var(--text-muted); font-size: 0.85rem; }
 
+/* ===== Mascot ===== */
+#mascot {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  z-index: 90;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+#mascot-avatar {
+  font-size: 56px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  filter: drop-shadow(0 4px 12px rgba(236, 72, 153, 0.35));
+  animation: mascotIdle 3s ease-in-out infinite;
+  transition: transform 0.2s;
+}
+
+#mascot-avatar:hover { transform: scale(1.12); }
+#mascot-avatar:active { transform: scale(0.95); }
+
+#mascot-avatar.talking {
+  animation: mascotTalk 0.4s ease-in-out 3;
+}
+
+@keyframes mascotIdle {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+@keyframes mascotTalk {
+  0% { transform: scale(1) rotate(0); }
+  25% { transform: scale(1.15) rotate(-10deg); }
+  75% { transform: scale(1.15) rotate(10deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+
+#mascot-bubble {
+  position: relative;
+  background: var(--bg-card, #1a1a2e);
+  border: 2px solid #f472b6;
+  border-radius: 16px;
+  padding: 12px 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.4;
+  max-width: 240px;
+  color: var(--text, #e2e8f0);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3),
+              0 0 20px rgba(236, 72, 153, 0.15);
+  opacity: 0;
+  transform: scale(0.8) translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+#mascot-bubble.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+}
+
+#mascot-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: 14px;
+  left: -8px;
+  border: 8px solid transparent;
+  border-right-color: #f472b6;
+  border-left: 0;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 500px) {
   .portal-title { font-size: 2.2rem; }
   .portal-card { padding: 18px 16px; }
+  #mascot-avatar { font-size: 44px; }
+  #mascot-bubble { max-width: 200px; font-size: 0.8rem; }
+  #mascot { bottom: 12px; left: 12px; }
 }
 
 @media (min-width: 601px) {
   .portal-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #mascot-avatar { animation: none; }
+  #mascot-avatar.talking { animation: none; }
 }
