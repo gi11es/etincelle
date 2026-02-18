@@ -163,6 +163,7 @@ body {
 .portal-card--build { background: linear-gradient(135deg, #ffb347, #ff8c00); }
 .portal-card--draw { background: linear-gradient(135deg, #ff7f7f, #e74c3c); }
 .portal-card--pronunciation { background: linear-gradient(135deg, #b469ff, #8b00ff); }
+.portal-card--colors { background: linear-gradient(135deg, #ffb347, #e67e22); }
 
 /* ===== Decorative elements ===== */
 .portal-ponies {
