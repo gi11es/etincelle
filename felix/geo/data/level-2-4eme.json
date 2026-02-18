@@ -1,0 +1,188 @@
+{
+  "id": "level-2-4eme",
+  "title": "4ème - Mondialisation et mobilités",
+  "description": "Échanges internationaux, flux migratoires et espaces transformés par la mondialisation",
+  "requiredXP": 0,
+  "items": [
+    {
+      "id": "geo4-001",
+      "type": "mcq",
+      "question": "Qu'est-ce que la mondialisation ?",
+      "choices": ["La domination d'un seul pays sur le monde", "La mise en relation des différentes parties du monde par des flux de marchandises, d'informations et de personnes", "L'uniformisation des cultures", "La disparition des frontières"],
+      "answer": 1,
+      "explanation": "La mondialisation désigne le processus de mise en relation croissante des économies, des sociétés et des territoires à l'échelle mondiale.",
+      "category": "La mondialisation"
+    },
+    {
+      "id": "geo4-002",
+      "type": "mcq",
+      "question": "Quel est le principal moyen de transport du commerce international ?",
+      "choices": ["L'avion", "Le camion", "Le navire porte-conteneurs", "Le train"],
+      "answer": 2,
+      "explanation": "Le transport maritime assure environ 90% du commerce mondial en volume grâce aux navires porte-conteneurs. C'est le moyen le moins coûteux pour transporter des marchandises.",
+      "category": "Les échanges internationaux"
+    },
+    {
+      "id": "geo4-003",
+      "type": "mcq",
+      "question": "Qu'est-ce qu'une FTN (Firme Transnationale) ?",
+      "choices": ["Une petite entreprise locale", "Une entreprise qui opère dans plusieurs pays", "Une organisation humanitaire", "Un service public international"],
+      "answer": 1,
+      "explanation": "Une FTN est une grande entreprise qui possède des filiales dans plusieurs pays. Exemples : Apple, Toyota, Total, Nestlé.",
+      "category": "La mondialisation"
+    },
+    {
+      "id": "geo4-004",
+      "type": "mcq",
+      "question": "Quel détroit est un passage stratégique entre la Méditerranée et l'océan Atlantique ?",
+      "choices": ["Le détroit de Malacca", "Le détroit de Gibraltar", "Le détroit d'Ormuz", "Le canal de Suez"],
+      "answer": 1,
+      "explanation": "Le détroit de Gibraltar (14 km de large) sépare l'Europe (Espagne) de l'Afrique (Maroc) et relie la Méditerranée à l'Atlantique.",
+      "category": "Les échanges internationaux"
+    },
+    {
+      "id": "geo4-005",
+      "type": "mcq",
+      "question": "Qu'est-ce qu'un flux migratoire ?",
+      "choices": ["Le déplacement de marchandises", "Le déplacement de populations d'un lieu à un autre", "Le mouvement des capitaux", "Le flux d'informations sur Internet"],
+      "answer": 1,
+      "explanation": "Un flux migratoire désigne le déplacement de personnes d'un pays ou d'une région vers un autre, de manière temporaire ou définitive.",
+      "category": "Les mobilités humaines"
+    },
+    {
+      "id": "geo4-006",
+      "type": "mcq",
+      "question": "Quelle est la principale cause des migrations économiques ?",
+      "choices": ["Le tourisme", "La recherche de meilleures conditions de vie et d'emploi", "Les études à l'étranger", "Le changement de climat"],
+      "answer": 1,
+      "explanation": "Les migrations économiques sont motivées par la recherche d'un emploi et de meilleures conditions de vie. Les migrants quittent souvent les pays du Sud pour les pays du Nord.",
+      "category": "Les mobilités humaines"
+    },
+    {
+      "id": "geo4-007",
+      "type": "mcq",
+      "question": "Qu'est-ce que le tourisme de masse ?",
+      "choices": ["Le tourisme réservé aux riches", "Le tourisme pratiqué par un grand nombre de personnes, souvent dans les mêmes lieux", "Le tourisme spatial", "Le tourisme en zone rurale"],
+      "answer": 1,
+      "explanation": "Le tourisme de masse concerne des millions de voyageurs qui se concentrent dans les mêmes destinations (plages, capitales, sites historiques), ce qui peut poser des problèmes environnementaux.",
+      "category": "Les mobilités touristiques"
+    },
+    {
+      "id": "geo4-008",
+      "type": "mcq",
+      "question": "Quel canal relie la mer Méditerranée à la mer Rouge ?",
+      "choices": ["Le canal de Panama", "Le canal de Suez", "Le canal de Kiel", "Le canal de Corinthe"],
+      "answer": 1,
+      "explanation": "Le canal de Suez (193 km), ouvert en 1869 en Égypte, est un passage maritime stratégique qui évite de contourner l'Afrique.",
+      "category": "Les échanges internationaux"
+    },
+    {
+      "id": "geo4-009",
+      "type": "mcq",
+      "question": "Qu'est-ce qu'une ZIP (Zone Industrialo-Portuaire) ?",
+      "choices": ["Un parc d'attractions", "Un espace aménagé associant un port et des industries", "Une zone protégée", "Un quartier résidentiel"],
+      "answer": 1,
+      "explanation": "Une ZIP est un espace littoral aménagé qui combine activités portuaires et industrielles. Exemples : Rotterdam, Shanghai, Le Havre.",
+      "category": "Les espaces de la mondialisation"
+    },
+    {
+      "id": "geo4-010",
+      "type": "mcq",
+      "question": "Quelle ville est considérée comme la première place financière mondiale ?",
+      "choices": ["Paris", "Tokyo", "New York", "Dubaï"],
+      "answer": 2,
+      "explanation": "New York, avec Wall Street et la Bourse de New York (NYSE), est la première place financière mondiale. Londres et Tokyo complètent le podium.",
+      "category": "Les espaces de la mondialisation"
+    },
+    {
+      "id": "geo4-011",
+      "type": "mcq",
+      "question": "Qu'est-ce que la « fracture numérique » ?",
+      "choices": ["Une panne d'Internet", "L'inégalité d'accès aux technologies numériques entre les populations", "Un virus informatique", "La censure d'Internet"],
+      "answer": 1,
+      "explanation": "La fracture numérique désigne les inégalités d'accès et d'usage des technologies numériques entre pays riches et pauvres, mais aussi au sein d'un même pays.",
+      "category": "La mondialisation"
+    },
+    {
+      "id": "geo4-012",
+      "type": "mcq",
+      "question": "Qu'appelle-t-on la Triade ?",
+      "choices": ["Un groupe de trois pays africains", "Les trois pôles économiques majeurs : Amérique du Nord, Europe, Asie de l'Est", "Trois organisations internationales", "Les trois océans principaux"],
+      "answer": 1,
+      "explanation": "La Triade désigne les trois pôles dominants de l'économie mondiale : l'Amérique du Nord (États-Unis, Canada), l'Europe occidentale et l'Asie de l'Est (Japon, Chine, Corée du Sud).",
+      "category": "Les espaces de la mondialisation"
+    },
+    {
+      "id": "geo4-013",
+      "type": "mcq",
+      "question": "Qu'est-ce qu'un réfugié ?",
+      "choices": ["Un touriste", "Une personne contrainte de quitter son pays pour fuir un danger (guerre, persécution)", "Un travailleur expatrié", "Un étudiant à l'étranger"],
+      "answer": 1,
+      "explanation": "Un réfugié est une personne qui a fui son pays en raison de persécutions, de conflits ou de violences et qui ne peut pas y retourner. Ce statut est défini par la Convention de Genève (1951).",
+      "category": "Les mobilités humaines"
+    },
+    {
+      "id": "geo4-014",
+      "type": "mcq",
+      "question": "Quel est le premier pays touristique mondial en nombre de visiteurs ?",
+      "choices": ["États-Unis", "Espagne", "France", "Italie"],
+      "answer": 2,
+      "explanation": "La France est le premier pays touristique mondial avec environ 90 millions de visiteurs étrangers par an, grâce à son patrimoine culturel, sa gastronomie et la diversité de ses paysages.",
+      "category": "Les mobilités touristiques"
+    },
+    {
+      "id": "geo4-015",
+      "type": "mcq",
+      "question": "Qu'est-ce que la littoralisation ?",
+      "choices": ["La protection des côtes", "La concentration des activités et des populations sur les littoraux", "La montée des eaux", "La construction de phares"],
+      "answer": 1,
+      "explanation": "La littoralisation est la tendance à la concentration des hommes et des activités économiques sur les littoraux. Aujourd'hui, 60% de la population mondiale vit à moins de 100 km des côtes.",
+      "category": "Les espaces de la mondialisation"
+    },
+    {
+      "id": "geo4-016",
+      "type": "mcq",
+      "question": "Quel détroit est un point de passage stratégique pour le pétrole du Moyen-Orient ?",
+      "choices": ["Le détroit de Gibraltar", "Le détroit de Béring", "Le détroit d'Ormuz", "Le détroit de Magellan"],
+      "answer": 2,
+      "explanation": "Le détroit d'Ormuz, entre l'Iran et Oman, est un passage stratégique par lequel transite environ 20% du pétrole mondial.",
+      "category": "Les échanges internationaux"
+    },
+    {
+      "id": "geo4-017",
+      "type": "mcq",
+      "question": "Qu'est-ce que le commerce équitable ?",
+      "choices": ["Le troc entre pays", "Un commerce qui assure une rémunération juste aux producteurs des pays du Sud", "Le commerce entre pays de même niveau de développement", "Le commerce en ligne"],
+      "answer": 1,
+      "explanation": "Le commerce équitable garantit un prix juste aux petits producteurs des pays en développement et promeut des conditions de travail décentes et le respect de l'environnement.",
+      "category": "La mondialisation"
+    },
+    {
+      "id": "geo4-018",
+      "type": "mcq",
+      "question": "Qu'est-ce qu'une métropole mondiale (ville mondiale) ?",
+      "choices": ["Toute ville de plus de 1 million d'habitants", "Une ville qui exerce une influence majeure à l'échelle mondiale (finance, politique, culture)", "La capitale d'un pays", "Une ville située sur un littoral"],
+      "answer": 1,
+      "explanation": "Une ville mondiale est une métropole qui concentre des fonctions de commandement à l'échelle planétaire : sièges sociaux, bourses, organisations internationales, culture.",
+      "category": "Les espaces de la mondialisation"
+    },
+    {
+      "id": "geo4-019",
+      "type": "mcq",
+      "question": "Que sont les BRICS ?",
+      "choices": ["Des matériaux de construction", "Un groupe de pays émergents : Brésil, Russie, Inde, Chine, Afrique du Sud", "Des villes mondiales", "Un accord commercial européen"],
+      "answer": 1,
+      "explanation": "Les BRICS regroupent des puissances émergentes qui pèsent de plus en plus dans l'économie mondiale. Depuis 2024, le groupe s'est élargi à d'autres pays (Égypte, Éthiopie, Iran, Émirats).",
+      "category": "La mondialisation"
+    },
+    {
+      "id": "geo4-020",
+      "type": "mcq",
+      "question": "Quel est le premier port mondial en volume de conteneurs traités ?",
+      "choices": ["Rotterdam (Pays-Bas)", "Shanghai (Chine)", "Los Angeles (États-Unis)", "Le Havre (France)"],
+      "answer": 1,
+      "explanation": "Shanghai est le premier port mondial de conteneurs depuis 2010, avec plus de 47 millions de conteneurs EVP traités par an. Il symbolise la puissance commerciale chinoise.",
+      "category": "Les échanges internationaux"
+    }
+  ]
+}

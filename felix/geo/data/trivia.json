@@ -1,0 +1,327 @@
+{
+  "id": "trivia",
+  "title": "Trivial Géo",
+  "description": "Capitales, records et infos clés sur les pays du monde",
+  "items": [
+    {
+      "id": "triv-001",
+      "type": "mcq",
+      "question": "Quelle est la capitale de l'Australie ?",
+      "choices": ["Sydney", "Melbourne", "Canberra", "Perth"],
+      "answer": 2,
+      "category": "Capitales"
+    },
+    {
+      "id": "triv-002",
+      "type": "mcq",
+      "question": "Quelle est la capitale du Brésil ?",
+      "choices": ["Rio de Janeiro", "São Paulo", "Salvador", "Brasilia"],
+      "answer": 3,
+      "category": "Capitales"
+    },
+    {
+      "id": "triv-003",
+      "type": "mcq",
+      "question": "Quelle est la capitale du Canada ?",
+      "choices": ["Toronto", "Montréal", "Vancouver", "Ottawa"],
+      "answer": 3,
+      "category": "Capitales"
+    },
+    {
+      "id": "triv-004",
+      "type": "mcq",
+      "question": "Quelle est la capitale de la Turquie ?",
+      "choices": ["Istanbul", "Ankara", "Izmir", "Antalya"],
+      "answer": 1,
+      "category": "Capitales"
+    },
+    {
+      "id": "triv-005",
+      "type": "mcq",
+      "question": "Quelle est la capitale du Maroc ?",
+      "choices": ["Casablanca", "Marrakech", "Rabat", "Fès"],
+      "answer": 2,
+      "category": "Capitales"
+    },
+    {
+      "id": "triv-006",
+      "type": "mcq",
+      "question": "Quelle est la capitale de la Suisse ?",
+      "choices": ["Genève", "Zurich", "Berne", "Lausanne"],
+      "answer": 2,
+      "category": "Capitales"
+    },
+    {
+      "id": "triv-007",
+      "type": "mcq",
+      "question": "Quelle est la capitale du Japon ?",
+      "choices": ["Osaka", "Kyoto", "Tokyo", "Yokohama"],
+      "answer": 2,
+      "category": "Capitales"
+    },
+    {
+      "id": "triv-008",
+      "type": "mcq",
+      "question": "Quelle est la capitale de l'Inde ?",
+      "choices": ["Mumbai", "New Delhi", "Kolkata", "Bangalore"],
+      "answer": 1,
+      "category": "Capitales"
+    },
+    {
+      "id": "triv-009",
+      "type": "mcq",
+      "question": "Quelle est la capitale de la Chine ?",
+      "choices": ["Shanghai", "Hong Kong", "Pékin", "Canton"],
+      "answer": 2,
+      "category": "Capitales"
+    },
+    {
+      "id": "triv-010",
+      "type": "mcq",
+      "question": "Quelle est la capitale de l'Afrique du Sud (administrative) ?",
+      "choices": ["Johannesburg", "Le Cap", "Pretoria", "Durban"],
+      "answer": 2,
+      "category": "Capitales"
+    },
+    {
+      "id": "triv-011",
+      "type": "mcq",
+      "question": "Quel est le plus grand pays du monde par sa superficie ?",
+      "choices": ["Canada", "Chine", "États-Unis", "Russie"],
+      "answer": 3,
+      "category": "Records"
+    },
+    {
+      "id": "triv-012",
+      "type": "mcq",
+      "question": "Quel est le plus petit pays du monde ?",
+      "choices": ["Monaco", "Vatican", "Saint-Marin", "Liechtenstein"],
+      "answer": 1,
+      "category": "Records"
+    },
+    {
+      "id": "triv-013",
+      "type": "mcq",
+      "question": "Quel est le fleuve le plus long du monde ?",
+      "choices": ["L'Amazone", "Le Nil", "Le Mississippi", "Le Yangtsé"],
+      "answer": 1,
+      "category": "Records"
+    },
+    {
+      "id": "triv-014",
+      "type": "mcq",
+      "question": "Quel est le plus haut sommet du monde ?",
+      "choices": ["Le K2", "Le Kilimandjaro", "Le Mont Blanc", "L'Everest"],
+      "answer": 3,
+      "category": "Records"
+    },
+    {
+      "id": "triv-015",
+      "type": "mcq",
+      "question": "Quel est l'océan le plus vaste ?",
+      "choices": ["L'océan Atlantique", "L'océan Indien", "L'océan Pacifique", "L'océan Arctique"],
+      "answer": 2,
+      "category": "Records"
+    },
+    {
+      "id": "triv-016",
+      "type": "mcq",
+      "question": "Quel est le désert le plus grand du monde ?",
+      "choices": ["Le Sahara", "Le désert de Gobi", "L'Antarctique", "Le désert d'Arabie"],
+      "answer": 2,
+      "category": "Records"
+    },
+    {
+      "id": "triv-017",
+      "type": "mcq",
+      "question": "Sur quel continent se trouve la forêt amazonienne ?",
+      "choices": ["Afrique", "Asie", "Amérique du Sud", "Océanie"],
+      "answer": 2,
+      "category": "Géographie physique"
+    },
+    {
+      "id": "triv-018",
+      "type": "mcq",
+      "question": "Combien de continents y a-t-il ?",
+      "choices": ["5", "6", "7", "8"],
+      "answer": 1,
+      "category": "Géographie physique"
+    },
+    {
+      "id": "triv-019",
+      "type": "mcq",
+      "question": "Dans quel pays se trouve la Grande Muraille ?",
+      "choices": ["Japon", "Corée du Sud", "Chine", "Mongolie"],
+      "answer": 2,
+      "category": "Monuments"
+    },
+    {
+      "id": "triv-020",
+      "type": "mcq",
+      "question": "Quel pays a la forme d'une botte ?",
+      "choices": ["Espagne", "Grèce", "Italie", "Croatie"],
+      "answer": 2,
+      "category": "Géographie physique"
+    },
+    {
+      "id": "triv-021",
+      "type": "mcq",
+      "question": "Quelle mer borde le sud de la France ?",
+      "choices": ["Mer du Nord", "Mer Baltique", "Mer Méditerranée", "Mer Noire"],
+      "answer": 2,
+      "category": "Géographie physique"
+    },
+    {
+      "id": "triv-022",
+      "type": "mcq",
+      "question": "Quel pays est surnommé « le pays du Soleil Levant » ?",
+      "choices": ["Chine", "Thaïlande", "Japon", "Corée du Sud"],
+      "answer": 2,
+      "category": "Culture"
+    },
+    {
+      "id": "triv-023",
+      "type": "mcq",
+      "question": "Quelle est la monnaie utilisée dans la plupart des pays européens ?",
+      "choices": ["Le dollar", "La livre", "L'euro", "Le franc"],
+      "answer": 2,
+      "category": "Culture"
+    },
+    {
+      "id": "triv-024",
+      "type": "mcq",
+      "question": "Quel est le plus grand lac d'Afrique ?",
+      "choices": ["Lac Tchad", "Lac Victoria", "Lac Tanganyika", "Lac Malawi"],
+      "answer": 1,
+      "category": "Records"
+    },
+    {
+      "id": "triv-025",
+      "type": "mcq",
+      "question": "Quelle chaîne de montagnes sépare la France de l'Espagne ?",
+      "choices": ["Les Alpes", "Les Pyrénées", "Le Jura", "Les Vosges"],
+      "answer": 1,
+      "category": "Géographie physique"
+    },
+    {
+      "id": "triv-026",
+      "type": "mcq",
+      "question": "Quelle est la langue la plus parlée dans le monde (en nombre de locuteurs natifs) ?",
+      "choices": ["L'anglais", "L'espagnol", "Le mandarin", "L'hindi"],
+      "answer": 2,
+      "category": "Culture"
+    },
+    {
+      "id": "triv-027",
+      "type": "mcq",
+      "question": "Quel pays possède le plus de fuseaux horaires ?",
+      "choices": ["Russie", "États-Unis", "France", "Chine"],
+      "answer": 2,
+      "category": "Records"
+    },
+    {
+      "id": "triv-028",
+      "type": "mcq",
+      "question": "Quel est le plus long fleuve d'Europe ?",
+      "choices": ["Le Danube", "Le Rhin", "La Volga", "La Loire"],
+      "answer": 2,
+      "category": "Records"
+    },
+    {
+      "id": "triv-029",
+      "type": "mcq",
+      "question": "Dans quel pays se trouvent les pyramides de Gizeh ?",
+      "choices": ["Maroc", "Irak", "Égypte", "Soudan"],
+      "answer": 2,
+      "category": "Monuments"
+    },
+    {
+      "id": "triv-030",
+      "type": "mcq",
+      "question": "Quel pays est à la fois en Europe et en Asie ?",
+      "choices": ["Grèce", "Turquie", "Iran", "Égypte"],
+      "answer": 1,
+      "category": "Géographie physique"
+    },
+    {
+      "id": "triv-031",
+      "type": "mcq",
+      "question": "Quelle est la capitale de l'Égypte ?",
+      "choices": ["Alexandrie", "Le Caire", "Louxor", "Assouan"],
+      "answer": 1,
+      "category": "Capitales"
+    },
+    {
+      "id": "triv-032",
+      "type": "mcq",
+      "question": "Quelle est la capitale de l'Argentine ?",
+      "choices": ["Santiago", "Lima", "Buenos Aires", "Montevideo"],
+      "answer": 2,
+      "category": "Capitales"
+    },
+    {
+      "id": "triv-033",
+      "type": "mcq",
+      "question": "Quelle est la capitale de la Corée du Sud ?",
+      "choices": ["Busan", "Séoul", "Incheon", "Pyongyang"],
+      "answer": 1,
+      "category": "Capitales"
+    },
+    {
+      "id": "triv-034",
+      "type": "mcq",
+      "question": "Quel est le plus grand île du monde ?",
+      "choices": ["Madagascar", "Bornéo", "Le Groenland", "La Grande-Bretagne"],
+      "answer": 2,
+      "category": "Records"
+    },
+    {
+      "id": "triv-035",
+      "type": "mcq",
+      "question": "Quel détroit sépare l'Afrique de l'Europe ?",
+      "choices": ["Le Bosphore", "Le détroit de Malacca", "Le détroit de Gibraltar", "Le détroit d'Ormuz"],
+      "answer": 2,
+      "category": "Géographie physique"
+    },
+    {
+      "id": "triv-036",
+      "type": "mcq",
+      "question": "Quelle est la capitale du Nigeria ?",
+      "choices": ["Lagos", "Abuja", "Kano", "Ibadan"],
+      "answer": 1,
+      "category": "Capitales"
+    },
+    {
+      "id": "triv-037",
+      "type": "mcq",
+      "question": "Quelle est la capitale de la Russie ?",
+      "choices": ["Saint-Pétersbourg", "Moscou", "Novossibirsk", "Iekaterinbourg"],
+      "answer": 1,
+      "category": "Capitales"
+    },
+    {
+      "id": "triv-038",
+      "type": "mcq",
+      "question": "Sur quel continent se trouve le Kilimandjaro ?",
+      "choices": ["Asie", "Amérique du Sud", "Afrique", "Europe"],
+      "answer": 2,
+      "category": "Géographie physique"
+    },
+    {
+      "id": "triv-039",
+      "type": "mcq",
+      "question": "Quel pays est le plus peuplé d'Afrique ?",
+      "choices": ["Éthiopie", "Égypte", "Afrique du Sud", "Nigeria"],
+      "answer": 3,
+      "category": "Records"
+    },
+    {
+      "id": "triv-040",
+      "type": "mcq",
+      "question": "Quelle est la capitale de la Pologne ?",
+      "choices": ["Cracovie", "Varsovie", "Gdansk", "Wroclaw"],
+      "answer": 1,
+      "category": "Capitales"
+    }
+  ]
+}

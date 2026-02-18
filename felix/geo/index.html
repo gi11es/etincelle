@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0f0f23">
+  <title>Géographie - Felix Academy</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="geo.css">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.js"></script>
+</head>
+<body>
+  <canvas id="confetti-canvas"></canvas>
+
+  <div id="lottie-overlay" class="lottie-overlay hidden">
+    <lottie-player id="lottie-player" speed="1" style="width:200px;height:200px;"></lottie-player>
+  </div>
+
+  <div id="app">
+    <!-- Section Select Screen -->
+    <section id="screen-levels" class="screen active">
+      <nav class="screen-nav">
+        <a href="../index.html" class="btn-back">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+          Accueil
+        </a>
+      </nav>
+      <header class="geo-header">
+        <h1 class="geo-title">Géographie</h1>
+        <p class="geo-subtitle">Explore le monde en t'amusant !</p>
+        <div class="geo-stats-bar" id="geo-stats-bar">
+          <div class="geo-stat">
+            <span class="geo-stat-num" id="gstat-mastered">0</span>
+            <span class="geo-stat-label">maîtrisés</span>
+          </div>
+          <div class="geo-stat">
+            <span class="geo-stat-num" id="gstat-learning">0</span>
+            <span class="geo-stat-label">en cours</span>
+          </div>
+          <div class="geo-stat">
+            <span class="geo-stat-num" id="gstat-accuracy">-</span>
+            <span class="geo-stat-label">précision</span>
+          </div>
+        </div>
+      </header>
+      <div id="geo-section-grid" class="geo-section-grid"></div>
+    </section>
+
+    <!-- Game Session Screen -->
+    <section id="screen-session" class="screen">
+      <div class="session-topbar">
+        <button class="btn-back" id="btn-back-levels">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-fill" id="geo-progress-fill"></div>
+        </div>
+        <div class="session-streak-pill" id="geo-streak-pill">
+          <span>🔥</span>
+          <span id="geo-streak-count">0</span>
+        </div>
+      </div>
+      <div class="session-question-count">
+        <span id="geo-current">1</span> / <span id="geo-total">15</span>
+      </div>
+      <div id="geo-game-container" class="game-container"></div>
+    </section>
+
+    <!-- Results Screen -->
+    <section id="screen-results" class="screen">
+      <div class="results-card">
+        <div id="geo-results-lottie" class="results-lottie"></div>
+        <h2 id="geo-results-title"></h2>
+        <div class="results-score">
+          <span id="geo-results-score-num"></span><span class="results-divider">/</span><span id="geo-results-score-total"></span>
+        </div>
+        <p id="geo-results-message"></p>
+        <div id="geo-results-xp" class="results-xp"></div>
+        <div class="results-actions">
+          <button class="btn btn-primary" id="geo-btn-retry">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+            Continuer
+          </button>
+          <button class="btn btn-secondary" id="geo-btn-levels">Choisir une section</button>
+          <a href="../index.html" class="btn btn-ghost">Retour à l'accueil</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="geo.js"></script>
+  <script type="module" src="../../shared/bug-report/bug-widget.js"></script>
+</body>
+</html>
