@@ -1,3 +1,4 @@
+export const ASSET_V = '?v=1771447445';
 export const $ = (sel) => document.querySelector(sel);
 export const $$ = (sel) => document.querySelectorAll(sel);
 

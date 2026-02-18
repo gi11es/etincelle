@@ -9,7 +9,9 @@
  *   const text = await STT.listen(4000); // record & transcribe
  */
 
-const WORKER_URL = '/zoe/ai/whisper-worker.js';
+import { ASSET_V } from './helpers.js';
+
+const WORKER_URL = '/zoe/ai/whisper-worker.js' + ASSET_V;
 
 class STTService {
   constructor() {

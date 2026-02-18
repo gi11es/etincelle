@@ -1,4 +1,4 @@
-import { $, $$, shuffle, showScreen } from '../../shared/helpers.js';
+import { $, $$, shuffle, showScreen, ASSET_V } from '../../shared/helpers.js';
 import SFX from '../../shared/sfx.js';
 import Confetti from '../../shared/confetti.js';
 import LottieOverlay from '../../shared/lottie-overlay.js';
@@ -45,7 +45,7 @@ async function init() {
 async function loadCategories() {
   for (const cat of CATEGORIES) {
     try {
-      const resp = await fetch(cat.file);
+      const resp = await fetch(cat.file + ASSET_V);
       const data = await resp.json();
       categoryData[cat.key] = data;
     } catch (e) {

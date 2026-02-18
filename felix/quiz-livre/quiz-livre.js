@@ -1,4 +1,4 @@
-import { $, $$, shuffle, normalize, escapeAttr, showScreen } from '../../shared/helpers.js';
+import { $, $$, shuffle, normalize, escapeAttr, showScreen, ASSET_V } from '../../shared/helpers.js';
 import SFX from '../../shared/sfx.js';
 import Confetti from '../../shared/confetti.js';
 import LottieOverlay from '../../shared/lottie-overlay.js';
@@ -37,7 +37,7 @@ async function renderBookGrid() {
   grid.innerHTML = '';
   for (const entry of BOOKS) {
     try {
-      const resp = await fetch(entry.file);
+      const resp = await fetch(entry.file + ASSET_V);
       const book = await resp.json();
       const card = document.createElement('button');
       card.className = 'book-card';

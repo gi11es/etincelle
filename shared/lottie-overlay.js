@@ -1,11 +1,11 @@
-import { $ } from './helpers.js';
+import { $, ASSET_V } from './helpers.js';
 
 const LottieOverlay = (() => {
   const ANIMS = {
-    correct: '/shared/vendor/animations/correct.json',
-    wrong: '/shared/vendor/animations/wrong.json',
-    trophy: '/shared/vendor/animations/trophy.json',
-    star: '/shared/vendor/animations/star.json'
+    correct: '/shared/vendor/animations/correct.json' + ASSET_V,
+    wrong: '/shared/vendor/animations/wrong.json' + ASSET_V,
+    trophy: '/shared/vendor/animations/trophy.json' + ASSET_V,
+    star: '/shared/vendor/animations/star.json' + ASSET_V
   };
 
   function show(type, duration = 1200) {
