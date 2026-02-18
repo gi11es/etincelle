@@ -1,60 +1,3 @@
-/* ===== Floating Theme Decorations (football & chess) ===== */
-.portal-decorations {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.portal-decorations .deco {
-  position: absolute;
-  font-size: 1.6rem;
-  opacity: 0.07;
-  animation: decoFloat linear infinite;
-}
-
-.portal-decorations .deco:nth-child(1) { left: 5%; font-size: 1.8rem; animation-duration: 22s; animation-delay: 0s; }
-.portal-decorations .deco:nth-child(2) { left: 18%; font-size: 1.4rem; animation-duration: 26s; animation-delay: -4s; }
-.portal-decorations .deco:nth-child(3) { left: 32%; font-size: 2rem; animation-duration: 20s; animation-delay: -8s; }
-.portal-decorations .deco:nth-child(4) { left: 50%; font-size: 1.5rem; animation-duration: 28s; animation-delay: -2s; }
-.portal-decorations .deco:nth-child(5) { left: 65%; font-size: 1.3rem; animation-duration: 24s; animation-delay: -12s; }
-.portal-decorations .deco:nth-child(6) { left: 80%; font-size: 1.7rem; animation-duration: 21s; animation-delay: -6s; }
-.portal-decorations .deco:nth-child(7) { left: 92%; font-size: 1.4rem; animation-duration: 25s; animation-delay: -15s; }
-.portal-decorations .deco:nth-child(8) { left: 12%; font-size: 1.6rem; animation-duration: 27s; animation-delay: -10s; }
-
-@keyframes decoFloat {
-  0% { top: 105%; transform: rotate(0deg) scale(1); }
-  50% { transform: rotate(180deg) scale(1.1); }
-  100% { top: -10%; transform: rotate(360deg) scale(1); }
-}
-
-/* ===== Theme Accent on Header ===== */
-.portal-theme-icons {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-top: 8px;
-  font-size: 1.3rem;
-  opacity: 0.35;
-}
-
-.portal-theme-icons span {
-  display: inline-block;
-  animation: themeIconBounce 3s ease-in-out infinite;
-}
-
-.portal-theme-icons span:nth-child(2) { animation-delay: 0.3s; }
-.portal-theme-icons span:nth-child(3) { animation-delay: 0.6s; }
-.portal-theme-icons span:nth-child(4) { animation-delay: 0.9s; }
-.portal-theme-icons span:nth-child(5) { animation-delay: 1.2s; }
-
-@keyframes themeIconBounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
-}
-
 /* ===== Portal Nav (back to family) ===== */
 .portal-nav {
   padding: 16px 20px 0;
@@ -338,20 +281,103 @@
   font-size: 0.85rem;
 }
 
+/* ===== Mascot ===== */
+#mascot {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 90;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+#mascot-avatar {
+  font-size: 56px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  filter: drop-shadow(0 4px 12px var(--mascot-glow, rgba(168, 85, 247, 0.35)));
+  animation: mascotIdle 3s ease-in-out infinite;
+  transition: transform 0.2s;
+}
+
+#mascot-avatar:hover {
+  transform: scale(1.12);
+}
+
+#mascot-avatar:active {
+  transform: scale(0.95);
+}
+
+#mascot-avatar.talking {
+  animation: mascotTalk 0.4s ease-in-out 3;
+}
+
+@keyframes mascotIdle {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+@keyframes mascotTalk {
+  0% { transform: scale(1) rotate(0); }
+  25% { transform: scale(1.15) rotate(-10deg); }
+  75% { transform: scale(1.15) rotate(10deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+
+#mascot-bubble {
+  position: relative;
+  background: var(--bg-card, #1a1a2e);
+  border: 2px solid var(--bubble-border, #c084fc);
+  border-radius: 16px;
+  padding: 12px 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.4;
+  max-width: 240px;
+  color: var(--text, #e2e8f0);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3),
+              0 0 20px var(--mascot-glow, rgba(168, 85, 247, 0.15));
+  opacity: 0;
+  transform: scale(0.8) translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+#mascot-bubble.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+}
+
+#mascot-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: 14px;
+  right: -8px;
+  border: 8px solid transparent;
+  border-left-color: var(--bubble-border, #c084fc);
+  border-right: 0;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 500px) {
   .portal-title { font-size: 2.2rem; }
   .portal-card { padding: 18px 16px; }
-  .portal-theme-icons { font-size: 1.1rem; gap: 12px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .portal-decorations .deco { animation: none; opacity: 0.04; top: 50%; }
-  .portal-theme-icons span { animation: none; }
+  #mascot-avatar { font-size: 44px; }
+  #mascot-bubble { max-width: 200px; font-size: 0.8rem; }
+  #mascot { bottom: 12px; right: 12px; }
 }
 
 @media (min-width: 601px) {
   .portal-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #mascot-avatar { animation: none; }
+  #mascot-avatar.talking { animation: none; }
 }
