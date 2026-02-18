@@ -195,7 +195,7 @@ function createDOM() {
   panel.className = 'brw-panel';
   panel.innerHTML = `
     <div class="brw-header">
-      <span>Demander une modification (v7)</span>
+      <span>Demander une modification</span>
       <button class="brw-close">&times;</button>
     </div>
     <div class="brw-body">
@@ -348,8 +348,6 @@ async function captureScreenshot() {
   const bgcolor = getComputedStyle(document.body).backgroundColor || '#0f0f23';
   const w = Math.min(document.body.scrollWidth, 1200);
   const h = Math.min(document.body.scrollHeight, 2400);
-  const _dbg = []; // temporary debug breadcrumbs
-
   try {
     // Strategy 1: html2canvas (works well on Safari, can fail on Chrome iOS)
     try {
@@ -357,15 +355,12 @@ async function captureScreenshot() {
       const canvas = await html2canvas(document.body, {
         backgroundColor: bgcolor, width: w, height: h, scale: 1,
       });
-      _dbg.push(`h2c:${canvas.width}x${canvas.height}`);
       if (!isCanvasBlank(canvas)) {
         screenshotDataUrl = canvas.toDataURL('image/jpeg', 0.85);
-        _dbg.push('h2c:OK');
         return;
       }
-      _dbg.push('h2c:BLANK');
     } catch (err) {
-      _dbg.push(`h2c:ERR:${err.message}`);
+      console.warn('Bug widget: html2canvas failed, trying fallback', err);
     }
 
     // Strategy 2: dom-to-image with Blob URL rendering (avoids iOS data-URL limit)
@@ -373,25 +368,19 @@ async function captureScreenshot() {
     const domtoimage = await loadDomToImage();
     if (isIOS) {
       const svgDataUrl = await domtoimage.toSvg(document.body, { bgcolor, width: w, height: h });
-      _dbg.push(`dti:svg=${svgDataUrl ? svgDataUrl.length : 0}`);
       if (svgDataUrl && svgDataUrl !== 'data:,') {
         screenshotDataUrl = await svgDataUrlToJpeg(svgDataUrl, w, h, 0.85);
-        _dbg.push(`dti:jpg=${screenshotDataUrl?.length || 0}`);
       }
     } else {
       screenshotDataUrl = await domtoimage.toJpeg(document.body, {
         quality: 0.85, bgcolor, width: w, height: h,
       });
-      _dbg.push('dti:OK');
     }
   } catch (err) {
     console.warn('Bug widget: screenshot failed', err);
-    _dbg.push(`FAIL:${err.message}`);
     screenshotDataUrl = null;
   } finally {
     hidden.forEach((el, i) => { el.style.display = savedDisplay[i]; });
-    // Temporary: show debug via alert so it's guaranteed visible
-    try { alert(`[BUG-DBG] ${w}x${h} | ${_dbg.join(' | ')}`); } catch {}
   }
 }
 

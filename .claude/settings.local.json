@@ -45,7 +45,10 @@
       "Bash(git -C /Users/gilles/Documents/personal/etincelle status shared/bug-report/)",
       "Bash(gh issue create:*)",
       "Bash(gh run watch:*)",
-      "Bash(xargs sed:*)"
+      "Bash(xargs sed:*)",
+      "Bash(gh issue close:*)",
+      "Bash(gh api:*)",
+      "Bash(git checkout:*)"
     ]
   }
 }
