@@ -187,7 +187,7 @@ const hasMic = !!(navigator.mediaDevices?.getUserMedia || window.SpeechRecogniti
 function createDOM() {
   fab = document.createElement('button');
   fab.className = 'brw-fab';
-  fab.title = 'Signaler un problème';
+  fab.title = 'Demander une modification';
   fab.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`;
   fab.addEventListener('click', togglePanel);
 
@@ -195,7 +195,7 @@ function createDOM() {
   panel.className = 'brw-panel';
   panel.innerHTML = `
     <div class="brw-header">
-      <span>Signaler un problème</span>
+      <span>Demander une modification</span>
       <button class="brw-close">&times;</button>
     </div>
     <div class="brw-body">
