@@ -1,0 +1,188 @@
+{
+  "id": "level-1-5eme",
+  "title": "5ème - Démographie et développement durable",
+  "description": "Population, ressources et enjeux du développement durable",
+  "requiredXP": 0,
+  "items": [
+    {
+      "id": "geo5-001",
+      "type": "mcq",
+      "question": "Quelle est la population mondiale approximative en 2025 ?",
+      "choices": ["6 milliards", "8 milliards", "10 milliards", "5 milliards"],
+      "answer": 1,
+      "explanation": "La population mondiale a dépassé 8 milliards d'habitants en 2022.",
+      "category": "La croissance démographique"
+    },
+    {
+      "id": "geo5-002",
+      "type": "mcq",
+      "question": "Quel continent connaît la croissance démographique la plus rapide ?",
+      "choices": ["Asie", "Europe", "Afrique", "Amérique du Sud"],
+      "answer": 2,
+      "explanation": "L'Afrique a le taux de croissance démographique le plus élevé au monde. Sa population pourrait doubler d'ici 2050.",
+      "category": "La croissance démographique"
+    },
+    {
+      "id": "geo5-003",
+      "type": "mcq",
+      "question": "Qu'est-ce que la transition démographique ?",
+      "choices": ["Le passage d'un régime de forte natalité/mortalité à un régime de faible natalité/mortalité", "La migration des populations rurales vers les villes", "Le vieillissement de la population", "L'augmentation du taux de natalité"],
+      "answer": 0,
+      "explanation": "La transition démographique est le passage d'un régime démographique ancien (forte natalité et mortalité) à un régime moderne (faible natalité et mortalité).",
+      "category": "La croissance démographique"
+    },
+    {
+      "id": "geo5-004",
+      "type": "mcq",
+      "question": "Quel pays est le plus peuplé du monde ?",
+      "choices": ["États-Unis", "Chine", "Inde", "Indonésie"],
+      "answer": 2,
+      "explanation": "L'Inde a dépassé la Chine en 2023 pour devenir le pays le plus peuplé du monde avec plus de 1,4 milliard d'habitants.",
+      "category": "La croissance démographique"
+    },
+    {
+      "id": "geo5-005",
+      "type": "mcq",
+      "question": "Qu'est-ce que l'IDH (Indice de Développement Humain) ?",
+      "choices": ["Un indicateur mesurant la richesse d'un pays", "Un indicateur combinant espérance de vie, éducation et niveau de vie", "Un indicateur de la pollution d'un pays", "Un indicateur du taux de natalité"],
+      "answer": 1,
+      "explanation": "L'IDH combine trois critères : l'espérance de vie, le niveau d'éducation et le revenu par habitant. Il est compris entre 0 et 1.",
+      "category": "Richesse et pauvreté dans le monde"
+    },
+    {
+      "id": "geo5-006",
+      "type": "mcq",
+      "question": "Qu'appelle-t-on les pays du « Sud » en géographie ?",
+      "choices": ["Les pays de l'hémisphère sud uniquement", "Les pays en développement", "Les pays chauds", "Les pays d'Afrique"],
+      "answer": 1,
+      "explanation": "En géographie, les pays du « Sud » désignent les pays en développement, par opposition aux pays du « Nord » (pays développés). Cette limite ne correspond pas exactement à l'hémisphère sud.",
+      "category": "Richesse et pauvreté dans le monde"
+    },
+    {
+      "id": "geo5-007",
+      "type": "mcq",
+      "question": "Quel est l'objectif principal du développement durable ?",
+      "choices": ["Produire le plus possible", "Répondre aux besoins du présent sans compromettre ceux des générations futures", "Interdire toute industrie polluante", "Réduire la population mondiale"],
+      "answer": 1,
+      "explanation": "Le développement durable vise à concilier développement économique, protection de l'environnement et justice sociale pour les générations actuelles et futures.",
+      "category": "Le développement durable"
+    },
+    {
+      "id": "geo5-008",
+      "type": "mcq",
+      "question": "Quels sont les trois piliers du développement durable ?",
+      "choices": ["Économique, social, environnemental", "Politique, militaire, culturel", "Agriculture, industrie, services", "Eau, air, terre"],
+      "answer": 0,
+      "explanation": "Le développement durable repose sur trois piliers : économique (prospérité), social (équité) et environnemental (préservation des ressources).",
+      "category": "Le développement durable"
+    },
+    {
+      "id": "geo5-009",
+      "type": "mcq",
+      "question": "Quelle est la principale cause du réchauffement climatique ?",
+      "choices": ["La déforestation", "L'émission de gaz à effet de serre", "La surpêche", "Le volcanisme"],
+      "answer": 1,
+      "explanation": "L'augmentation des gaz à effet de serre (CO₂, méthane) liée aux activités humaines (industrie, transports, agriculture) est la principale cause du réchauffement climatique.",
+      "category": "Le changement climatique"
+    },
+    {
+      "id": "geo5-010",
+      "type": "mcq",
+      "question": "Qu'est-ce qu'une ressource non renouvelable ?",
+      "choices": ["Une ressource qui se régénère rapidement", "Une ressource qui existe en quantité limitée et ne se renouvelle pas à l'échelle humaine", "Une ressource gratuite", "Une ressource que l'on trouve uniquement dans les pays du Nord"],
+      "answer": 1,
+      "explanation": "Les ressources non renouvelables (pétrole, gaz, charbon, minerais) existent en quantité finie et mettent des millions d'années à se former.",
+      "category": "Les ressources et leur gestion"
+    },
+    {
+      "id": "geo5-011",
+      "type": "mcq",
+      "question": "Quel pourcentage de l'eau sur Terre est de l'eau douce accessible ?",
+      "choices": ["Environ 25%", "Environ 10%", "Moins de 1%", "Environ 50%"],
+      "answer": 2,
+      "explanation": "Moins de 1% de l'eau sur Terre est de l'eau douce facilement accessible (lacs, rivières, nappes phréatiques). Le reste est de l'eau salée (97%) ou emprisonnée dans les glaciers.",
+      "category": "Les ressources et leur gestion"
+    },
+    {
+      "id": "geo5-012",
+      "type": "mcq",
+      "question": "Qu'est-ce que l'exode rural ?",
+      "choices": ["Le déplacement des citadins vers la campagne", "Le départ massif des populations rurales vers les villes", "La destruction des forêts", "Le tourisme de masse"],
+      "answer": 1,
+      "explanation": "L'exode rural est le départ massif des populations des campagnes vers les villes, à la recherche de meilleures conditions de vie et d'emploi.",
+      "category": "L'urbanisation dans le monde"
+    },
+    {
+      "id": "geo5-013",
+      "type": "mcq",
+      "question": "Quelle part de la population mondiale vit en ville aujourd'hui ?",
+      "choices": ["Environ 30%", "Environ 40%", "Plus de 55%", "Plus de 80%"],
+      "answer": 2,
+      "explanation": "Plus de 55% de la population mondiale vit désormais en ville. Ce chiffre pourrait atteindre 68% d'ici 2050 selon l'ONU.",
+      "category": "L'urbanisation dans le monde"
+    },
+    {
+      "id": "geo5-014",
+      "type": "mcq",
+      "question": "Qu'est-ce qu'une mégapole ?",
+      "choices": ["Une ville de plus de 100 000 habitants", "Une ville de plus de 1 million d'habitants", "Une ville de plus de 10 millions d'habitants", "La capitale d'un pays"],
+      "answer": 2,
+      "explanation": "Une mégapole (ou mégalopole au sens courant) est une agglomération de plus de 10 millions d'habitants. Exemples : Tokyo, Delhi, Shanghai, São Paulo.",
+      "category": "L'urbanisation dans le monde"
+    },
+    {
+      "id": "geo5-015",
+      "type": "mcq",
+      "question": "Quel secteur économique est le plus gros consommateur d'eau dans le monde ?",
+      "choices": ["L'industrie", "L'usage domestique", "L'agriculture", "Le tourisme"],
+      "answer": 2,
+      "explanation": "L'agriculture utilise environ 70% de l'eau douce mondiale, principalement pour l'irrigation des cultures.",
+      "category": "Les ressources et leur gestion"
+    },
+    {
+      "id": "geo5-016",
+      "type": "mcq",
+      "question": "Qu'est-ce que la sécurité alimentaire ?",
+      "choices": ["Contrôler les importations de nourriture", "Quand tous les êtres humains ont accès à une nourriture suffisante et saine", "Produire le plus de nourriture possible", "Interdire les OGM"],
+      "answer": 1,
+      "explanation": "La sécurité alimentaire est atteinte quand toutes les personnes ont, à tout moment, un accès physique et économique à une nourriture suffisante, saine et nutritive.",
+      "category": "Richesse et pauvreté dans le monde"
+    },
+    {
+      "id": "geo5-017",
+      "type": "mcq",
+      "question": "Qu'est-ce qu'un bidonville ?",
+      "choices": ["Un quartier industriel", "Un habitat précaire et insalubre en périphérie des villes", "Un village de vacances", "Un quartier résidentiel moderne"],
+      "answer": 1,
+      "explanation": "Un bidonville est un quartier d'habitat précaire, souvent sans eau courante ni électricité, qui se développe en périphérie des grandes villes des pays en développement.",
+      "category": "L'urbanisation dans le monde"
+    },
+    {
+      "id": "geo5-018",
+      "type": "mcq",
+      "question": "Quelle énergie est considérée comme renouvelable ?",
+      "choices": ["Le charbon", "Le pétrole", "L'énergie solaire", "Le gaz naturel"],
+      "answer": 2,
+      "explanation": "L'énergie solaire est renouvelable car elle provient du soleil, une source inépuisable à l'échelle humaine. Comme l'éolien, l'hydraulique et la géothermie.",
+      "category": "Le développement durable"
+    },
+    {
+      "id": "geo5-019",
+      "type": "mcq",
+      "question": "Quel accord international de 2015 vise à limiter le réchauffement climatique ?",
+      "choices": ["Le protocole de Kyoto", "L'Accord de Paris", "Le sommet de Rio", "La COP1"],
+      "answer": 1,
+      "explanation": "L'Accord de Paris (COP21, 2015) a pour objectif de limiter le réchauffement climatique à +2°C (idéalement +1,5°C) par rapport à l'ère préindustrielle.",
+      "category": "Le changement climatique"
+    },
+    {
+      "id": "geo5-020",
+      "type": "mcq",
+      "question": "Qu'appelle-t-on le « stress hydrique » ?",
+      "choices": ["Une inondation", "Une situation où la demande en eau dépasse les ressources disponibles", "La pollution de l'eau", "L'évaporation de l'eau"],
+      "answer": 1,
+      "explanation": "Le stress hydrique survient quand la demande en eau dépasse les ressources disponibles. De nombreuses régions du monde y sont confrontées (Moyen-Orient, Afrique du Nord).",
+      "category": "Les ressources et leur gestion"
+    }
+  ]
+}
