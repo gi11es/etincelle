@@ -300,15 +300,20 @@ async function captureScreenshot() {
 
   try {
     if (isSafari) {
+      statusEl.textContent = 'DEBUG: Safari path, loading html2canvas...';
       const html2canvas = await loadHtml2Canvas();
+      statusEl.textContent = 'DEBUG: html2canvas loaded, capturing...';
       const canvas = await html2canvas(document.body, {
         backgroundColor: bgcolor,
         width: Math.min(document.body.scrollWidth, 1200),
         height: Math.min(document.body.scrollHeight, 2400),
         scale: 1,
       });
+      statusEl.textContent = `DEBUG: canvas ${canvas.width}x${canvas.height}, converting...`;
       screenshotDataUrl = canvas.toDataURL('image/jpeg', 0.85);
+      statusEl.textContent = `DEBUG: done, dataUrl=${screenshotDataUrl ? screenshotDataUrl.length + ' chars' : 'null'}`;
     } else {
+      statusEl.textContent = 'DEBUG: non-Safari path';
       const domtoimage = await loadDomToImage();
       screenshotDataUrl = await domtoimage.toJpeg(document.body, {
         quality: 0.85,
@@ -319,6 +324,7 @@ async function captureScreenshot() {
     }
   } catch (err) {
     console.warn('Bug widget: screenshot failed', err);
+    statusEl.textContent = `DEBUG ERROR: ${err.message}`;
     screenshotDataUrl = null;
   } finally {
     hidden.forEach((el, i) => { el.style.display = savedDisplay[i]; });
@@ -380,6 +386,7 @@ async function handleSend() {
       `### Instructions for implementation`,
       ``,
       `- **Read \`CLAUDE.md\` first** to understand the project architecture and patterns.`,
+      `- For **bug fixes**, identify the root cause before coding. Do not add workarounds (timeouts, auto-success, data deletion) that mask failures. Search closed issues for prior fix attempts on the same problem.`,
       `- If this is a **feature request** (new game, new activity, new section), implement it **fully end-to-end** — data, UI, game logic, navigation, and user interaction. The feature must be usable and complete. Study an existing similar feature first and follow the same patterns.`,
       `- If this request adds a **new section or activity**, make sure it is linked from the relevant portal/menu page (e.g. \`felix/index.html\`, \`zoe/index.html\`, \`dasha/index.html\`).`,
       `- If this request adds **new features or pages**, add smoke tests in \`tests/\` that open the new page/feature and verify no JavaScript errors occur. Add the new test to the CI matrix in \`.github/workflows/ci.yml\`.`,
