@@ -167,7 +167,7 @@
         ? 'Salut ! Clique sur moi pour un fun fact échecs ♟️'
         : 'Hey ! Clique sur moi pour un fun fact foot ⚽';
       bubbleEl.classList.add('visible');
-      setTimeout(() => bubbleEl.classList.remove('visible'), 4000);
+      bubbleEl._timer = setTimeout(() => bubbleEl.classList.remove('visible'), 4000);
     }, 1500);
   })();
   </script>

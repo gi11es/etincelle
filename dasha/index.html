@@ -90,7 +90,7 @@
   <script type="module" src="../shared/bug-report/bug-widget.js?v=1771447445"></script>
   <script>
   (function() {
-    const MASCOTS = ['🥖', '🧀', '🗼', '🥐', '🇫🇷'];
+    const MASCOTS = ['🥖', '🧀', '🥐', '🇫🇷'];
     const emoji = MASCOTS[Math.floor(Math.random() * MASCOTS.length)];
 
     const avatarEl = document.getElementById('mascot-avatar');
@@ -127,7 +127,7 @@
     setTimeout(() => {
       bubbleEl.textContent = 'Clique sur moi pour un fun fact sur la France !';
       bubbleEl.classList.add('visible');
-      setTimeout(() => bubbleEl.classList.remove('visible'), 4000);
+      bubbleEl._timer = setTimeout(() => bubbleEl.classList.remove('visible'), 4000);
     }, 1500);
   })();
   </script>
