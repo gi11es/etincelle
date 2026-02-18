@@ -347,6 +347,15 @@ async function handleSend() {
     if (screenshotUrl) {
       bodyParts.push('', `### Capture d'écran`, `![Screenshot](${screenshotUrl})`);
     }
+    bodyParts.push(
+      ``,
+      `---`,
+      `### Instructions for implementation`,
+      ``,
+      `- If this request adds a **new section or activity**, make sure it is linked from the relevant portal/menu page (e.g. \`felix/index.html\`, \`zoe/index.html\`, \`dasha/index.html\`).`,
+      `- If this request adds **new features or pages**, add smoke tests in \`tests/\` that open the new page/feature and verify no JavaScript errors occur. Add the new test to the CI matrix in \`.github/workflows/ci.yml\`.`,
+      `- **Iterate until CI passes.** If the PR fails checks, fix the issues and push again before merging. Do not merge a red PR.`,
+    );
     const body = bodyParts.join('\n');
 
     statusEl.textContent = 'Envoi du rapport...';
