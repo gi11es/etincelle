@@ -265,8 +265,8 @@ async function toggleMic() {
 }
 
 // ── Screenshot ─────────────────────────────────────────────────────────
-const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent) ||
-  /iPad|iPhone|iPod/.test(navigator.userAgent);
+const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
 function loadDomToImage() {
   return new Promise((resolve, reject) => {
@@ -290,6 +290,33 @@ function loadHtml2Canvas() {
   });
 }
 
+/** Render SVG data URL via Blob URL (bypasses iOS data-URL size limit). */
+function svgDataUrlToJpeg(svgDataUrl, width, height, quality) {
+  const commaIdx = svgDataUrl.indexOf(',');
+  const meta = svgDataUrl.substring(0, commaIdx);
+  const encoded = svgDataUrl.substring(commaIdx + 1);
+  const svgString = meta.includes('base64') ? atob(encoded) : decodeURIComponent(encoded);
+  const blob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
+  const blobUrl = URL.createObjectURL(blob);
+
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => {
+      try {
+        const canvas = document.createElement('canvas');
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, width, height);
+        resolve(canvas.toDataURL('image/jpeg', quality));
+      } catch (err) { reject(err); }
+      finally { URL.revokeObjectURL(blobUrl); }
+    };
+    img.onerror = () => { URL.revokeObjectURL(blobUrl); reject(new Error('SVG render failed')); };
+    img.src = blobUrl;
+  });
+}
+
 async function captureScreenshot() {
   const hidden = [fab, panel];
   document.querySelectorAll('#confetti-canvas, .levelup-overlay, .lottie-overlay').forEach(el => hidden.push(el));
@@ -297,41 +324,43 @@ async function captureScreenshot() {
   hidden.forEach(el => { el.style.display = 'none'; });
 
   const bgcolor = getComputedStyle(document.body).backgroundColor || '#0f0f23';
+  const w = Math.min(document.body.scrollWidth, 1200);
+  const h = Math.min(document.body.scrollHeight, 2400);
 
-  let _dbgPath = '';
-  let _dbgErr = '';
   try {
-    if (isSafari) {
-      _dbgPath = 'safari/html2canvas';
+    // Strategy 1: html2canvas (works well on Safari, can fail on Chrome iOS)
+    try {
       const html2canvas = await loadHtml2Canvas();
       const canvas = await html2canvas(document.body, {
-        backgroundColor: bgcolor,
-        width: Math.min(document.body.scrollWidth, 1200),
-        height: Math.min(document.body.scrollHeight, 2400),
-        scale: 1,
+        backgroundColor: bgcolor, width: w, height: h, scale: 1,
       });
       screenshotDataUrl = canvas.toDataURL('image/jpeg', 0.85);
+      // Detect black/empty screenshots (data URL < 1KB is suspicious)
+      if (screenshotDataUrl && screenshotDataUrl.length > 1000) return;
+      console.warn('Bug widget: html2canvas produced suspiciously small image, trying fallback');
+    } catch (err) {
+      console.warn('Bug widget: html2canvas failed, trying fallback', err);
+    }
+
+    // Strategy 2: dom-to-image with Blob URL rendering (avoids iOS data-URL limit)
+    screenshotDataUrl = null;
+    const domtoimage = await loadDomToImage();
+    if (isIOS) {
+      const svgDataUrl = await domtoimage.toSvg(document.body, { bgcolor, width: w, height: h });
+      if (svgDataUrl && svgDataUrl !== 'data:,') {
+        screenshotDataUrl = await svgDataUrlToJpeg(svgDataUrl, w, h, 0.85);
+      }
     } else {
-      _dbgPath = 'dom-to-image';
-      const domtoimage = await loadDomToImage();
       screenshotDataUrl = await domtoimage.toJpeg(document.body, {
-        quality: 0.85,
-        bgcolor,
-        width: Math.min(document.body.scrollWidth, 1200),
-        height: Math.min(document.body.scrollHeight, 2400),
+        quality: 0.85, bgcolor, width: w, height: h,
       });
     }
   } catch (err) {
     console.warn('Bug widget: screenshot failed', err);
-    _dbgErr = err.message;
     screenshotDataUrl = null;
   } finally {
     hidden.forEach((el, i) => { el.style.display = savedDisplay[i]; });
   }
-  // Temporary debug — visible after panel is restored
-  const ok = screenshotDataUrl ? `ok (${screenshotDataUrl.length} chars)` : 'FAILED';
-  statusEl.textContent = `[DBG] path=${_dbgPath} result=${ok}${_dbgErr ? ' err=' + _dbgErr : ''} UA=${navigator.userAgent.slice(0, 80)}`;
-  if (_dbgErr) statusEl.style.color = '#ef4444';
 }
 
 // ── Submit ─────────────────────────────────────────────────────────────
