@@ -272,6 +272,47 @@
   background-clip: text;
 }
 
+/* ===== Match Pairs ===== */
+.match-container {
+  display: flex;
+  gap: 16px;
+}
+
+.match-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.match-column h4 {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.match-item {
+  padding: 12px;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  font-size: 0.88rem;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.match-en { background: rgba(79,172,254,0.1); border-color: rgba(79,172,254,0.15); }
+.match-fr { background: rgba(168,85,247,0.1); border-color: rgba(168,85,247,0.15); }
+
+.match-item:hover:not(.matched) { transform: scale(1.02); }
+.match-item.selected { border-color: var(--primary); box-shadow: 0 0 12px var(--primary-glow); }
+.match-item.matched { background: var(--success-light); border-color: var(--success); opacity: 0.6; cursor: default; }
+.match-item.wrong-match { border-color: var(--danger); animation: shake 0.4s; }
+
 /* ===== Question text ===== */
 .question-text {
   font-size: 1rem;
