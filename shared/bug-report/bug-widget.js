@@ -400,27 +400,36 @@ async function handleSend() {
 }
 
 // ── Toggle ─────────────────────────────────────────────────────────────
-async function togglePanel() {
-  panelOpen = !panelOpen;
-  panel.classList.toggle('brw-open', panelOpen);
+let toggling = false;
 
-  if (panelOpen) {
-    if (!screenshotDataUrl) {
-      await captureScreenshot();
-      if (screenshotDataUrl) {
-        const img = document.createElement('img');
-        img.className = 'brw-screenshot-thumb';
-        img.src = screenshotDataUrl;
-        img.alt = 'Capture d\'écran';
-        bodyEl.insertBefore(img, descEl);
+async function togglePanel() {
+  if (toggling) return;
+  toggling = true;
+
+  try {
+    panelOpen = !panelOpen;
+    panel.classList.toggle('brw-open', panelOpen);
+
+    if (panelOpen) {
+      if (!screenshotDataUrl) {
+        await captureScreenshot();
+        if (screenshotDataUrl) {
+          const img = document.createElement('img');
+          img.className = 'brw-screenshot-thumb';
+          img.src = screenshotDataUrl;
+          img.alt = 'Capture d\'écran';
+          bodyEl.insertBefore(img, descEl);
+        }
       }
+      descEl.focus();
+    } else if (listening && stt) {
+      stt.stopContinuous();
+      listening = false;
+      micBtn?.classList.remove('brw-mic-on');
+      statusEl.textContent = '';
     }
-    descEl.focus();
-  } else if (listening && stt) {
-    stt.stopContinuous();
-    listening = false;
-    micBtn?.classList.remove('brw-mic-on');
-    statusEl.textContent = '';
+  } finally {
+    toggling = false;
   }
 }
 
