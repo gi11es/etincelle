@@ -126,3 +126,42 @@ Puppeteer-based smoke tests. Each test file loads a page and checks for JS error
 - IndexedDB for persistence, localStorage for quick values
 - CSS variables for theming (defined in `:root`)
 - Screen-based SPA navigation via `goTo()` / `showScreen()` with slide animations
+
+## Bug Fix Quality Rules
+
+When fixing a bug (as opposed to implementing a feature):
+
+1. **Find the root cause.** Read the affected code path end-to-end before writing any fix. Trace from the user's action to the symptom.
+2. **Fix the root cause directly.** Do not add workarounds that mask the problem. Specifically, NEVER:
+   - Add timeouts that silently swallow errors or skip functionality
+   - Add "auto-success" fallbacks that pretend something worked when it didn't
+   - Delete or hide conflicting data instead of synchronizing it
+   - Add try/catch blocks that suppress errors without fixing them
+3. **Check for prior attempts.** Search closed issues for the same problem: `gh issue list --state closed --search '<keywords>' --limit 10`. If a previous fix was merged but the problem persists, the previous approach was wrong — take a different one.
+4. **Preserve existing functionality.** Especially in `zoe/app.html` (monolithic 3200+ line file), read the surrounding code carefully. Edits to one game can easily break another.
+
+## Known Gotchas
+
+### Mobile WASM / ONNX Runtime
+
+Many users access from phones (iPhone/iPad). The EMNIST letter recognition model in `zoe/ai/` uses ONNX Runtime Web with WASM backend.
+
+**Critical:** WASM multi-threading often fails on mobile browsers because SharedArrayBuffer requires cross-origin isolation headers (COOP/COEP). The fix is:
+```js
+ort.env.wasm.numThreads = 1;  // MUST be set before InferenceSession.create()
+```
+If you see issues with ONNX model loading on mobile, the root cause is almost certainly threading — not timeouts, not network speed.
+
+### Monolithic `zoe/app.html`
+
+This file contains ALL of Zoe's games in one HTML file. When editing it:
+- Read the full game you're modifying, not just a snippet
+- Make sure your changes don't break the `goTo()` switch, the `VALID_SCREENS` array, or other games' DOM elements
+- Test that navigation between games still works
+
+### Mobile Users
+
+A significant portion of usage is from mobile devices. When fixing UI bugs:
+- Check if the issue is viewport/touch-specific
+- Read the User-Agent in the issue context to identify the device
+- Consider that touch events, screen size, and Safari/WebKit quirks may be the root cause

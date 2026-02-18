@@ -34,9 +34,13 @@ jobs:
           echo "$ISSUE_TITLE" > /tmp/issue_title.txt
           echo "$ISSUE_BODY" > /tmp/issue_body.txt
 
+      - name: Ensure latest master
+        run: git pull --rebase origin master
+
       - name: Run Claude to fix the issue
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           TITLE=$(cat /tmp/issue_title.txt)
           BODY=$(cat /tmp/issue_body.txt)
@@ -58,6 +62,9 @@ jobs:
 
           For BUG FIXES:
           - Read the relevant files, understand the issue, and make the minimal fix.
+          - Identify and fix the ROOT CAUSE. Do not add workarounds, timeouts, or fallbacks that mask the problem.
+          - If the issue mentions mobile or WASM, read the Known Gotchas section in CLAUDE.md.
+          - Before starting, search closed issues for prior fix attempts: gh issue list --state closed --search '<keywords>' --limit 10. If a previous fix exists for the same problem, take a DIFFERENT approach.
           - Only change what is necessary.
 
           For FEATURE REQUESTS (new game, new activity, new section, new content):
