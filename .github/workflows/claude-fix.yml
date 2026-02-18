@@ -12,7 +12,6 @@ jobs:
       contents: write
       pull-requests: write
       issues: write
-      workflows: write
 
     steps:
       - uses: actions/checkout@v4
@@ -76,6 +75,7 @@ jobs:
 
           General:
           - Do NOT add comments, docstrings, or unrelated improvements.
+          - Do NOT modify files in .github/ — changes there are excluded from commits and will be lost.
           - After making your changes, write a short English summary (under 60 chars, no quotes) of what you did to a file called /tmp/fix_summary.txt. Example: Add color-matching game for Zoe portal"
 
           claude --print --dangerously-skip-permissions \
