@@ -265,6 +265,9 @@ async function toggleMic() {
 }
 
 // ── Screenshot ─────────────────────────────────────────────────────────
+const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent) ||
+  /iPad|iPhone|iPod/.test(navigator.userAgent);
+
 function loadDomToImage() {
   return new Promise((resolve, reject) => {
     if (window.domtoimage) { resolve(window.domtoimage); return; }
@@ -276,20 +279,44 @@ function loadDomToImage() {
   });
 }
 
+function loadHtml2Canvas() {
+  return new Promise((resolve, reject) => {
+    if (window.html2canvas) { resolve(window.html2canvas); return; }
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/html2canvas@1.4.1/dist/html2canvas.min.js';
+    script.onload = () => resolve(window.html2canvas);
+    script.onerror = () => reject(new Error('Failed to load html2canvas'));
+    document.head.appendChild(script);
+  });
+}
+
 async function captureScreenshot() {
-  // Hide widget + any overlays during capture
   const hidden = [fab, panel];
   document.querySelectorAll('#confetti-canvas, .levelup-overlay, .lottie-overlay').forEach(el => hidden.push(el));
   const savedDisplay = hidden.map(el => el.style.display);
   hidden.forEach(el => { el.style.display = 'none'; });
 
+  const bgcolor = getComputedStyle(document.body).backgroundColor || '#0f0f23';
+
   try {
-    const domtoimage = await loadDomToImage();
-    screenshotDataUrl = await domtoimage.toJpeg(document.body, {
-      quality: 0.85,
-      bgcolor: getComputedStyle(document.body).backgroundColor || '#0f0f23',
-      width: Math.min(document.body.scrollWidth, 1200),
-    });
+    if (isSafari) {
+      const html2canvas = await loadHtml2Canvas();
+      const canvas = await html2canvas(document.body, {
+        backgroundColor: bgcolor,
+        width: Math.min(document.body.scrollWidth, 1200),
+        height: Math.min(document.body.scrollHeight, 2400),
+        scale: 1,
+      });
+      screenshotDataUrl = canvas.toDataURL('image/jpeg', 0.85);
+    } else {
+      const domtoimage = await loadDomToImage();
+      screenshotDataUrl = await domtoimage.toJpeg(document.body, {
+        quality: 0.85,
+        bgcolor,
+        width: Math.min(document.body.scrollWidth, 1200),
+        height: Math.min(document.body.scrollHeight, 2400),
+      });
+    }
   } catch (err) {
     console.warn('Bug widget: screenshot failed', err);
     screenshotDataUrl = null;
