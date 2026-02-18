@@ -195,7 +195,7 @@ function createDOM() {
   panel.className = 'brw-panel';
   panel.innerHTML = `
     <div class="brw-header">
-      <span>Demander une modification</span>
+      <span>Demander une modification (v7)</span>
       <button class="brw-close">&times;</button>
     </div>
     <div class="brw-body">
