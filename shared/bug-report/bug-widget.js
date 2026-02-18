@@ -298,22 +298,21 @@ async function captureScreenshot() {
 
   const bgcolor = getComputedStyle(document.body).backgroundColor || '#0f0f23';
 
+  let _dbgPath = '';
+  let _dbgErr = '';
   try {
     if (isSafari) {
-      statusEl.textContent = 'DEBUG: Safari path, loading html2canvas...';
+      _dbgPath = 'safari/html2canvas';
       const html2canvas = await loadHtml2Canvas();
-      statusEl.textContent = 'DEBUG: html2canvas loaded, capturing...';
       const canvas = await html2canvas(document.body, {
         backgroundColor: bgcolor,
         width: Math.min(document.body.scrollWidth, 1200),
         height: Math.min(document.body.scrollHeight, 2400),
         scale: 1,
       });
-      statusEl.textContent = `DEBUG: canvas ${canvas.width}x${canvas.height}, converting...`;
       screenshotDataUrl = canvas.toDataURL('image/jpeg', 0.85);
-      statusEl.textContent = `DEBUG: done, dataUrl=${screenshotDataUrl ? screenshotDataUrl.length + ' chars' : 'null'}`;
     } else {
-      statusEl.textContent = 'DEBUG: non-Safari path';
+      _dbgPath = 'dom-to-image';
       const domtoimage = await loadDomToImage();
       screenshotDataUrl = await domtoimage.toJpeg(document.body, {
         quality: 0.85,
@@ -324,11 +323,15 @@ async function captureScreenshot() {
     }
   } catch (err) {
     console.warn('Bug widget: screenshot failed', err);
-    statusEl.textContent = `DEBUG ERROR: ${err.message}`;
+    _dbgErr = err.message;
     screenshotDataUrl = null;
   } finally {
     hidden.forEach((el, i) => { el.style.display = savedDisplay[i]; });
   }
+  // Temporary debug — visible after panel is restored
+  const ok = screenshotDataUrl ? `ok (${screenshotDataUrl.length} chars)` : 'FAILED';
+  statusEl.textContent = `[DBG] path=${_dbgPath} result=${ok}${_dbgErr ? ' err=' + _dbgErr : ''} UA=${navigator.userAgent.slice(0, 80)}`;
+  if (_dbgErr) statusEl.style.color = '#ef4444';
 }
 
 // ── Submit ─────────────────────────────────────────────────────────────
