@@ -774,6 +774,58 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════
+   NUMBERS GAME
+   ═══════════════════════════════════════════════════════ */
+.number-emoji-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  min-height: 80px;
+  max-width: 340px;
+  animation: letterPop 0.5s ease-out;
+}
+
+.number-emoji-grid span {
+  font-size: clamp(32px, 8vw, 48px);
+  line-height: 1.2;
+}
+
+.number-choices {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 380px;
+}
+
+.number-choice-btn {
+  padding: 18px 12px;
+  font-size: clamp(22px, 5vw, 30px);
+  font-weight: 800;
+  border-radius: 16px;
+  border: 4px solid rgba(255,255,255,0.6);
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.2s, box-shadow 0.2s;
+  text-align: center;
+  color: white;
+  background: linear-gradient(135deg, #69b4ff, #1e90ff);
+  box-shadow: 0 4px 0 rgba(0,0,0,0.15), var(--shadow);
+  text-shadow: 0 2px 3px rgba(0,0,0,0.3);
+}
+
+.number-choice-btn:active { transform: scale(0.95); }
+.number-choice-btn.correct {
+  border-color: var(--gold);
+  animation: correctPulse 0.6s ease;
+  box-shadow: 0 0 30px rgba(46,204,113,0.5);
+}
+.number-choice-btn.wrong {
+  animation: wrongShake 0.5s ease;
+}
+
+/* ═══════════════════════════════════════════════════════
    BUILD WORD SCREEN
    ═══════════════════════════════════════════════════════ */
 .build-area {
@@ -1469,6 +1521,10 @@ body {
         <span class="menu-icon">🎨</span>
         Les Couleurs
       </div>
+      <div class="menu-btn blue" onclick="goTo('numbers')">
+        <span class="menu-icon">🔢</span>
+        Les Nombres
+      </div>
     </div>
   </div>
 
@@ -1597,6 +1653,18 @@ body {
       <div id="color-choices" class="color-choices"></div>
       <div id="color-result" class="letter-quiz-result hidden"></div>
       <button id="color-next-btn" class="btn-action hidden" onclick="nextColorRound()">➡️ Suivant</button>
+    </div>
+  </div>
+
+  <!-- ═══ NUMBERS SCREEN ═══ -->
+  <div id="screen-numbers" class="screen">
+    <div class="screen-title">Les Nombres 🔢</div>
+    <div class="word-game-area">
+      <div id="number-emoji-grid" class="number-emoji-grid"></div>
+      <div id="number-prompt" class="word-prompt">Combien y en a-t-il ?</div>
+      <div id="number-choices" class="number-choices"></div>
+      <div id="number-result" class="letter-quiz-result hidden"></div>
+      <button id="number-next-btn" class="btn-action hidden" onclick="nextNumberRound()">➡️ Suivant</button>
     </div>
   </div>
 
@@ -1817,6 +1885,24 @@ const COLORS = [
   { word:'doré', css:'#ffd700', emoji:'💛', level:3 },
 ];
 
+const NUMBERS = [
+  { num:1, word:'un', emoji:'🍎', level:1 },
+  { num:2, word:'deux', emoji:'⭐', level:1 },
+  { num:3, word:'trois', emoji:'🌸', level:1 },
+  { num:4, word:'quatre', emoji:'🐱', level:1 },
+  { num:5, word:'cinq', emoji:'🦋', level:1 },
+  { num:6, word:'six', emoji:'🐟', level:2 },
+  { num:7, word:'sept', emoji:'🎈', level:2 },
+  { num:8, word:'huit', emoji:'🌺', level:2 },
+  { num:9, word:'neuf', emoji:'🍓', level:2 },
+  { num:10, word:'dix', emoji:'🦄', level:2 },
+  { num:11, word:'onze', emoji:'🌻', level:3 },
+  { num:12, word:'douze', emoji:'🎵', level:3 },
+  { num:13, word:'treize', emoji:'🍊', level:3 },
+  { num:14, word:'quatorze', emoji:'🐸', level:3 },
+  { num:15, word:'quinze', emoji:'💎', level:3 },
+];
+
 /* ────────── GAME STATE ────────── */
 let stars = parseInt(localStorage.getItem('lili-stars') || '0');
 let currentScreen = 'home';
@@ -1870,6 +1956,12 @@ let colorRoundIndex = 0;
 let colorOrder = [];
 let colorCorrect = 0;
 let colorTotal = 0;
+
+// Numbers game
+let numberRoundIndex = 0;
+let numberOrder = [];
+let numberCorrect = 0;
+let numberTotal = 0;
 
 updateStarDisplay();
 
@@ -2090,6 +2182,11 @@ const TIER_CONFIGS = {
     choices: [3, 4, 6],
     items: function(tier) { return COLORS.filter(c => c.level <= tier).map(c => c.word); },
   },
+  numbers: {
+    maxTier: 3,
+    choices: [3, 4, 5],
+    items: function(tier) { return NUMBERS.filter(n => n.level <= tier).map(n => String(n.num)); },
+  },
 };
 
 const EASY_DRAW_LETTERS = ['C','I','J','L','O','S','T','U','V','X'];
@@ -2299,7 +2396,7 @@ function createDecorations() {
 }
 
 /* ────────── NAVIGATION ────────── */
-const VALID_SCREENS = ['home','letters','lettermatch','sylquiz','syllables','words','build','draw','pronunciation','colors','stats'];
+const VALID_SCREENS = ['home','letters','lettermatch','sylquiz','syllables','words','build','draw','pronunciation','colors','numbers','stats'];
 
 function goTo(screen, updateHash = true) {
   sfxClick();
@@ -2335,6 +2432,7 @@ function goTo(screen, updateHash = true) {
   else if (screen === 'draw') initDraw();
   else if (screen === 'pronunciation') initPronunciation();
   else if (screen === 'colors') initColors();
+  else if (screen === 'numbers') initNumbers();
   else if (screen === 'stats') initStats();
 
   if (screen === 'home') {
