@@ -2592,7 +2592,7 @@ async function loadGameProgress(game) {
 const TIER_NAMES = ['', 'Apprentie', 'Exploratrice', 'Experte', 'Championne'];
 const TIER_EMOJIS = ['', '🌱', '🌟', '💎', '👑'];
 
-async function updateTierBadge(game) {
+async function updateTierBadge(game, optMasteryMap) {
   const badge = document.getElementById('tier-badge');
   const progress = _gameProgress[game];
   if (!progress) { badge.style.display = 'none'; return; }
@@ -2606,7 +2606,7 @@ async function updateTierBadge(game) {
   } else {
     const tierItems = getItemsForTier(game, tier);
     const needed = Math.ceil(tierItems.length * 0.50);
-    const masteryMap = await dbReadAllByIndex('mastery', 'game', game);
+    const masteryMap = optMasteryMap || await dbReadAllByIndex('mastery', 'game', game);
     let mastered = 0;
     for (const item of tierItems) {
       if (computeStatus(masteryMap[game + ':' + item]) === 'mastered') mastered++;
@@ -2688,7 +2688,7 @@ async function recordAttempt(game, item, correct) {
       _gameProgress[game] = progress;
     }
   }
-  updateTierBadge(game);
+  updateTierBadge(game, masteryMap);
 }
 
 /* ────────── END ADAPTIVE LEARNING ENGINE ────────── */
