@@ -144,49 +144,45 @@ body {
 #btn-back.visible { opacity: 1; pointer-events: auto; }
 #btn-back:active { transform: scale(0.9); }
 
-#star-counter {
-  display: flex; align-items: center; gap: 6px;
+#top-right-widget {
+  display: flex;
+  align-items: center;
   background: white;
   border-radius: 25px;
-  padding: 6px 16px;
+  padding: 6px 14px;
+  box-shadow: var(--shadow);
+  border: 3px solid var(--gold);
+  gap: 10px;
+}
+.widget-stars {
+  display: flex; align-items: center; gap: 5px;
   font-size: 20px;
   font-weight: 800;
   color: var(--purple-dark);
-  box-shadow: var(--shadow);
-  border: 3px solid var(--gold);
 }
-
-#star-counter .star-icon { font-size: 24px; }
-#star-count { min-width: 30px; text-align: center; }
+.widget-stars .star-icon { font-size: 22px; }
+#star-count { min-width: 24px; text-align: center; }
 
 #tier-badge {
   display: none;
-  flex-direction: column;
   align-items: center;
-  background: white;
-  border-radius: 20px;
-  padding: 4px 12px 6px;
-  font-size: 14px;
-  font-weight: 800;
-  color: var(--purple-dark);
-  box-shadow: var(--shadow);
-  border: 2px solid var(--pink);
-  gap: 2px;
-  min-width: 80px;
+  gap: 6px;
+  padding-left: 10px;
+  border-left: 2px solid var(--gold);
 }
-#tier-badge .tier-top { display: flex; align-items: center; gap: 4px; }
-#tier-badge .tier-emoji { font-size: 16px; }
-#tier-badge .tier-name { font-size: 12px; white-space: nowrap; }
+#tier-badge .tier-left { display: flex; align-items: center; gap: 3px; }
+#tier-badge .tier-emoji { font-size: 14px; }
+#tier-badge .tier-name { font-size: 11px; font-weight: 700; color: var(--purple); white-space: nowrap; }
 #tier-badge-progress {
-  width: 100%;
-  height: 4px;
-  border-radius: 2px;
+  width: 36px;
+  height: 5px;
+  border-radius: 3px;
   background: rgba(155, 89, 182, 0.15);
   overflow: hidden;
 }
 #tier-badge-fill {
   height: 100%;
-  border-radius: 2px;
+  border-radius: 3px;
   background: linear-gradient(90deg, var(--pink), var(--purple));
   transition: width 0.5s ease;
   width: 0%;
@@ -202,7 +198,7 @@ body {
   z-index: 90;
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   pointer-events: none;
 }
 
@@ -254,7 +250,8 @@ body {
 #speech-bubble::after {
   content: '';
   position: absolute;
-  bottom: 12px;
+  top: 50%;
+  transform: translateY(-50%);
   left: -10px;
   border: 10px solid transparent;
   border-right-color: white;
@@ -1416,13 +1413,15 @@ body {
   <!-- ═══ Top Bar ═══ -->
   <div id="top-bar">
     <div id="btn-back" onclick="goHome()">🏠</div>
-    <div id="tier-badge">
-      <div class="tier-top"><span class="tier-emoji"></span><span class="tier-name"></span></div>
-      <div id="tier-badge-progress"><div id="tier-badge-fill"></div></div>
-    </div>
-    <div id="star-counter" onclick="goTo('stats')" style="cursor:pointer" title="Mes Progrès">
-      <span class="star-icon">⭐</span>
-      <span id="star-count">0</span>
+    <div id="top-right-widget" onclick="goTo('stats')" style="cursor:pointer" title="Mes Progrès">
+      <div class="widget-stars">
+        <span class="star-icon">⭐</span>
+        <span id="star-count">0</span>
+      </div>
+      <div id="tier-badge">
+        <div class="tier-left"><span class="tier-emoji"></span><span class="tier-name"></span></div>
+        <div id="tier-badge-progress"><div id="tier-badge-fill"></div></div>
+      </div>
     </div>
   </div>
 
@@ -2085,13 +2084,11 @@ const TIER_CONFIGS = {
     },
   },
   syllables: {
-    maxTier: 3,
-    items: function(tier) {
-      let c = [...CONSONANTS];
-      let v = [...VOWELS];
-      if (tier >= 2) { c = c.concat(CONSONANTS_TIER2); v = v.concat(VOWELS_TIER2); }
-      if (tier >= 3) { c = c.concat(CONSONANTS_TIER3); v = v.concat(VOWELS_TIER3); }
-      return { consonants: c, vowels: v };
+    maxTier: 1,
+    items: function() {
+      const c = [...CONSONANTS, ...CONSONANTS_TIER2, ...CONSONANTS_TIER3, ...CONSONANTS_TIER4];
+      const v = [...VOWELS, ...VOWELS_TIER2, ...VOWELS_TIER3, ...VOWELS_TIER4];
+      return c.flatMap(con => v.map(vow => (con + vow).toUpperCase()));
     },
   },
   words: {
@@ -2156,10 +2153,12 @@ const SYLLABLES_TIER4 = [
   'OUR','AIR','EAU','AIN','OIN','EUR',
 ];
 
-const CONSONANTS_TIER2 = [];
-const VOWELS_TIER2 = [];
-const CONSONANTS_TIER3 = ['CH','PH','GN'];
-const VOWELS_TIER3 = ['AN','IN','ON','OI','AU','EU'];
+const CONSONANTS_TIER2 = ['H','K','W','Z','QU'];
+const VOWELS_TIER2 = ['Ê','Â','Ô','OI','AI','AU','EU'];
+const CONSONANTS_TIER3 = ['CH','PH','GN','TH'];
+const VOWELS_TIER3 = ['AN','EN','IN','ON','UN'];
+const CONSONANTS_TIER4 = ['BL','BR','CL','CR','DR','FL','FR','GL','GR','PL','PR','TR','VR'];
+const VOWELS_TIER4 = ['AIN','EIN','OIN','EAU','EUR','OUR','IEN'];
 
 const SENTENCES = [
   { word:'le chat dort', emoji:'🐱', syllables:['le','chat','dort'], level:5 },
@@ -2891,16 +2890,15 @@ function nextSylRound() {
 /* ────────── SYLLABLES GAME ────────── */
 async function initSyllables() {
   selectedConsonant = null;
-  const progress = await loadGameProgress('syllables');
-  const tier = progress.currentTier;
-  const content = TIER_CONFIGS.syllables.items(tier);
+  const allC = [...CONSONANTS, ...CONSONANTS_TIER2, ...CONSONANTS_TIER3, ...CONSONANTS_TIER4];
+  const allV = [...VOWELS, ...VOWELS_TIER2, ...VOWELS_TIER3, ...VOWELS_TIER4];
 
   const cRow = document.getElementById('consonants-row');
   const vRow = document.getElementById('vowels-row');
   cRow.innerHTML = '';
   vRow.innerHTML = '';
 
-  content.consonants.forEach(c => {
+  allC.forEach(c => {
     const btn = document.createElement('button');
     btn.className = 'syl-btn consonant';
     btn.textContent = c;
@@ -2908,7 +2906,7 @@ async function initSyllables() {
     cRow.appendChild(btn);
   });
 
-  content.vowels.forEach(v => {
+  allV.forEach(v => {
     const btn = document.createElement('button');
     btn.className = 'syl-btn vowel';
     btn.textContent = v;
@@ -2917,7 +2915,6 @@ async function initSyllables() {
   });
 
   resetSyllableDisplay();
-  updateTierBadge('syllables');
   showMascotMessage('Fabrique des syllabes !');
 }
 
