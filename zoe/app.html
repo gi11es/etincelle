@@ -4326,8 +4326,10 @@ function showNumberRound() {
 
   const nounLabel = numData.num === 1 ? noun.sing : noun.plur;
   const wordWithGender = numData.num === 1 ? (noun.fem ? 'une' : 'un') + ' ' + noun.sing : numData.word + ' ' + noun.plur;
+  const elide = /^[aeiouyéèêëàâîïôùûh]/i.test(noun.plur);
+  const combien = elide ? "Combien d'" + noun.plur : 'Combien de ' + noun.plur;
 
-  document.getElementById('number-prompt').textContent = 'Combien de ' + noun.plur + ' ?';
+  document.getElementById('number-prompt').textContent = combien + ' ?';
   document.getElementById('number-next-btn').classList.add('hidden');
   document.getElementById('number-result').classList.add('hidden');
 
@@ -4359,7 +4361,7 @@ function showNumberRound() {
     container.appendChild(btn);
   });
 
-  speak('Combien de ' + noun.plur, 0.65);
+  speak(combien, 0.65);
 }
 
 function checkNumberAnswer(btn, correct, numData, label) {
