@@ -159,6 +159,39 @@ body {
 #star-counter .star-icon { font-size: 24px; }
 #star-count { min-width: 30px; text-align: center; }
 
+#tier-badge {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  padding: 4px 12px 6px;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--purple-dark);
+  box-shadow: var(--shadow);
+  border: 2px solid var(--pink);
+  gap: 2px;
+  min-width: 80px;
+}
+#tier-badge .tier-top { display: flex; align-items: center; gap: 4px; }
+#tier-badge .tier-emoji { font-size: 16px; }
+#tier-badge .tier-name { font-size: 12px; white-space: nowrap; }
+#tier-badge-progress {
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(155, 89, 182, 0.15);
+  overflow: hidden;
+}
+#tier-badge-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--pink), var(--purple));
+  transition: width 0.5s ease;
+  width: 0%;
+}
+
 /* ═══════════════════════════════════════════════════════
    MASCOT - LILI LA LICORNE
    ═══════════════════════════════════════════════════════ */
@@ -1383,6 +1416,10 @@ body {
   <!-- ═══ Top Bar ═══ -->
   <div id="top-bar">
     <div id="btn-back" onclick="goHome()">🏠</div>
+    <div id="tier-badge">
+      <div class="tier-top"><span class="tier-emoji"></span><span class="tier-name"></span></div>
+      <div id="tier-badge-progress"><div id="tier-badge-fill"></div></div>
+    </div>
     <div id="star-counter" onclick="goTo('stats')" style="cursor:pointer" title="Mes Progrès">
       <span class="star-icon">⭐</span>
       <span id="star-count">0</span>
@@ -2194,6 +2231,30 @@ async function loadGameProgress(game) {
 const TIER_NAMES = ['', 'Apprentie', 'Exploratrice', 'Experte', 'Championne'];
 const TIER_EMOJIS = ['', '🌱', '🌟', '💎', '👑'];
 
+async function updateTierBadge(game) {
+  const badge = document.getElementById('tier-badge');
+  const progress = _gameProgress[game];
+  if (!progress) { badge.style.display = 'none'; return; }
+  const tier = progress.currentTier;
+  const config = TIER_CONFIGS[game];
+  badge.querySelector('.tier-emoji').textContent = TIER_EMOJIS[tier] || '🌱';
+  badge.querySelector('.tier-name').textContent = TIER_NAMES[tier] || 'Apprentie';
+  const fill = document.getElementById('tier-badge-fill');
+  if (!config || tier >= config.maxTier) {
+    fill.style.width = '100%';
+  } else {
+    const tierItems = getItemsForTier(game, tier);
+    const needed = Math.ceil(tierItems.length * 0.50);
+    const masteryMap = await dbReadAllByIndex('mastery', 'game', game);
+    let mastered = 0;
+    for (const item of tierItems) {
+      if (computeStatus(masteryMap[game + ':' + item]) === 'mastered') mastered++;
+    }
+    fill.style.width = Math.min(100, Math.round((mastered / needed) * 100)) + '%';
+  }
+  badge.style.display = 'flex';
+}
+
 function showTierUnlockCelebration(game, newTier) {
   spawnConfetti();
   setTimeout(spawnConfetti, 300);
@@ -2266,6 +2327,7 @@ async function recordAttempt(game, item, correct) {
       _gameProgress[game] = progress;
     }
   }
+  updateTierBadge(game);
 }
 
 /* ────────── END ADAPTIVE LEARNING ENGINE ────────── */
@@ -2319,6 +2381,7 @@ function goTo(screen, updateHash = true) {
   }
 
   document.getElementById('btn-back').classList.toggle('visible', screen !== 'home');
+  if (screen === 'home' || screen === 'stats') document.getElementById('tier-badge').style.display = 'none';
 
   // Update URL hash for bookmarking
   if (updateHash) {
@@ -2473,6 +2536,7 @@ async function initLetters() {
   letterOrder = buildAdaptiveOrder(pool, masteryMap, 'letters', pool.length);
   letterRoundIndex = 0;
   showLetterRound();
+  updateTierBadge('letters');
   showMascotMessage('Trouve la lettre ! 🎯');
 }
 
@@ -2601,6 +2665,7 @@ async function initLetterMatch() {
   matchOrder = buildAdaptiveOrder(pool, masteryMap, 'lettermatch', pool.length);
   matchRoundIndex = 0;
   showMatchRound();
+  updateTierBadge('lettermatch');
   showMascotMessage('Trouve la même lettre ! ✨');
 }
 
@@ -2724,6 +2789,7 @@ async function initSylQuiz() {
   sqOrder = buildAdaptiveOrder(pool, masteryMap, 'sylquiz', pool.length);
   sqRoundIndex = 0;
   showSylRound();
+  updateTierBadge('sylquiz');
   showMascotMessage('Trouve la syllabe ! 🧩');
 }
 
@@ -2851,6 +2917,7 @@ async function initSyllables() {
   });
 
   resetSyllableDisplay();
+  updateTierBadge('syllables');
   showMascotMessage('Fabrique des syllabes !');
 }
 
@@ -2931,6 +2998,7 @@ async function initWords() {
   wordOrder = buildAdaptiveOrder(pool, masteryMap, 'words', pool.length);
   wordRoundIndex = 0;
   showWordRound();
+  updateTierBadge('words');
   showMascotMessage('Trouve le bon mot ! 🎯');
 }
 
@@ -3022,6 +3090,7 @@ async function initBuild() {
   buildOrder = buildAdaptiveOrder(pool, masteryMap, 'build', pool.length);
   buildRoundIndex = 0;
   showBuildRound();
+  updateTierBadge('build');
   showMascotMessage('Construis le mot ! 🧱');
 }
 
@@ -3255,6 +3324,7 @@ async function initDraw() {
   drawRoundIndex = 0;
   setupDrawCanvas();
   showDrawRound();
+  updateTierBadge('draw');
   showMascotMessage('Dessine les lettres ! ✏️');
 }
 
@@ -3470,6 +3540,7 @@ async function initPronunciation() {
   pronunOrder = buildAdaptiveOrder(pool, masteryMap, 'pronunciation', pool.length);
   pronunRoundIndex = 0;
   showPronunRound();
+  updateTierBadge('pronunciation');
   if (!whisperTranscriber && !whisperLoading) {
     loadWhisperModel();
   }
@@ -3751,6 +3822,7 @@ async function initColors() {
   colorOrder = buildAdaptiveOrder(pool, masteryMap, 'colors', pool.length);
   colorRoundIndex = 0;
   showColorRound();
+  updateTierBadge('colors');
   showMascotMessage('Trouve la couleur ! 🎨');
 }
 
