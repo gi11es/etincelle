@@ -3776,13 +3776,16 @@ function showColorRound() {
   const container = document.getElementById('color-choices');
   container.innerHTML = '';
 
+  const showColorHint = tier < 2;
   choices.forEach((c) => {
     const btn = document.createElement('button');
     btn.className = 'color-choice-btn';
-    btn.style.background = c.css;
-    if (c.word === 'blanc' || c.word === 'jaune' || c.word === 'doré') {
-      btn.style.color = '#333';
-      btn.style.textShadow = 'none';
+    if (showColorHint) {
+      btn.style.background = c.css;
+      if (c.word === 'blanc' || c.word === 'jaune' || c.word === 'doré') {
+        btn.style.color = '#333';
+        btn.style.textShadow = 'none';
+      }
     }
     btn.textContent = c.word;
     btn.onclick = () => checkColorAnswer(btn, c.word === color.word, color);
