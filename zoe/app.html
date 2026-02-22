@@ -2643,10 +2643,10 @@ function showTierUnlockCelebration(game, newTier) {
   spawnConfetti();
   setTimeout(spawnConfetti, 300);
   const gameNames = {
-    letters:'Les Lettres', lettermatch:'Les Formes', sylquiz:'Quiz Syllabes',
-    syllables:'Labo Syllabes', words:'Les Mots', build:'Construis',
-    draw:'Dessine', pronunciation:'Lis à voix haute', colors:'Les Couleurs',
-    numbers:'Les Nombres',
+    letters:'Lettres', lettermatch:'Formes de Lettres', sylquiz:'Syllabes',
+    syllables:'Labo Syllabes', words:'Mots', build:'Construction de Mots',
+    draw:'Dessin', pronunciation:'Lecture à voix haute', colors:'Couleurs',
+    numbers:'Nombres',
   };
   showMascotMessage(TIER_EMOJIS[newTier] + ' Niveau ' + TIER_NAMES[newTier] + ' !');
   speak('Bravo Zoé ! Tu es maintenant ' + TIER_NAMES[newTier] + ' en ' + (gameNames[game] || game) + ' !', 0.75);
