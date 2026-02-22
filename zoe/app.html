@@ -2281,10 +2281,11 @@ function selectNextItem(allItems, masteryMap, game, recentlyShown) {
 
   const sessionKey = game;
   if (!_sessionNewItems[sessionKey]) _sessionNewItems[sessionKey] = 0;
+  const maxNew = Math.max(10, Math.ceil(allItems.length * 0.3));
 
   const roll = Math.random();
   let pool;
-  if (roll < 0.60 && learningItems.length > 0) {
+  if (roll < 0.50 && learningItems.length > 0) {
     // Sort by weakness (fewest recent correct first)
     pool = learningItems.sort((a, b) => {
       const ma = masteryMap[game + ':' + a], mb = masteryMap[game + ':' + b];
@@ -2292,7 +2293,7 @@ function selectNextItem(allItems, masteryMap, game, recentlyShown) {
       const rb = (mb?.recentWindow || []).filter(x => x).length;
       return ra - rb;
     });
-  } else if (roll < 0.85 && newItems.length > 0 && _sessionNewItems[sessionKey] < 3) {
+  } else if (newItems.length > 0 && _sessionNewItems[sessionKey] < maxNew) {
     pool = shuffle([...newItems]);
     _sessionNewItems[sessionKey]++;
   } else if (masteredItems.length > 0) {
@@ -2310,14 +2311,15 @@ function selectNextItem(allItems, masteryMap, game, recentlyShown) {
 }
 
 function buildAdaptiveOrder(allItems, masteryMap, game, count) {
-  const n = count || Math.min(allItems.length, 20);
+  const n = count || allItems.length;
   const order = [];
   const recent = [];
+  const recentSize = Math.max(5, Math.ceil(allItems.length * 0.1));
   for (let i = 0; i < n; i++) {
     const item = selectNextItem(allItems, masteryMap, game, recent);
     order.push(item);
     recent.push(item);
-    if (recent.length > 3) recent.shift();
+    if (recent.length > recentSize) recent.shift();
   }
   return order;
 }
