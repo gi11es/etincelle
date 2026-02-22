@@ -804,6 +804,58 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════
+   NUMBERS GAME
+   ═══════════════════════════════════════════════════════ */
+.number-emoji-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  min-height: 80px;
+  max-width: 340px;
+  animation: letterPop 0.5s ease-out;
+}
+
+.number-emoji-grid span {
+  font-size: clamp(32px, 8vw, 48px);
+  line-height: 1.2;
+}
+
+.number-choices {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 380px;
+}
+
+.number-choice-btn {
+  padding: 18px 12px;
+  font-size: clamp(22px, 5vw, 30px);
+  font-weight: 800;
+  border-radius: 16px;
+  border: 4px solid rgba(255,255,255,0.6);
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.2s, box-shadow 0.2s;
+  text-align: center;
+  color: white;
+  background: linear-gradient(135deg, #69b4ff, #1e90ff);
+  box-shadow: 0 4px 0 rgba(0,0,0,0.15), var(--shadow);
+  text-shadow: 0 2px 3px rgba(0,0,0,0.3);
+}
+
+.number-choice-btn:active { transform: scale(0.95); }
+.number-choice-btn.correct {
+  border-color: var(--gold);
+  animation: correctPulse 0.6s ease;
+  box-shadow: 0 0 30px rgba(46,204,113,0.5);
+}
+.number-choice-btn.wrong {
+  animation: wrongShake 0.5s ease;
+}
+
+/* ═══════════════════════════════════════════════════════
    BUILD WORD SCREEN
    ═══════════════════════════════════════════════════════ */
 .build-area {
@@ -1505,6 +1557,10 @@ body {
         <span class="menu-icon">🎨</span>
         Les Couleurs
       </div>
+      <div class="menu-btn blue" onclick="goTo('numbers')">
+        <span class="menu-icon">🔢</span>
+        Les Nombres
+      </div>
     </div>
   </div>
 
@@ -1633,6 +1689,18 @@ body {
       <div id="color-choices" class="color-choices"></div>
       <div id="color-result" class="letter-quiz-result hidden"></div>
       <button id="color-next-btn" class="btn-action hidden" onclick="nextColorRound()">➡️ Suivant</button>
+    </div>
+  </div>
+
+  <!-- ═══ NUMBERS SCREEN ═══ -->
+  <div id="screen-numbers" class="screen">
+    <div class="screen-title">Les Nombres 🔢</div>
+    <div class="word-game-area">
+      <div id="number-emoji-grid" class="number-emoji-grid"></div>
+      <div id="number-prompt" class="word-prompt">Combien y en a-t-il ?</div>
+      <div id="number-choices" class="number-choices"></div>
+      <div id="number-result" class="letter-quiz-result hidden"></div>
+      <button id="number-next-btn" class="btn-action hidden" onclick="nextNumberRound()">➡️ Suivant</button>
     </div>
   </div>
 
@@ -2116,6 +2184,24 @@ const COLORS = [
   { word:'doré', css:'#ffd700', emoji:'💛', level:3 },
 ];
 
+const NUMBERS = [
+  { num:1, word:'un', emoji:'🍎', level:1 },
+  { num:2, word:'deux', emoji:'⭐', level:1 },
+  { num:3, word:'trois', emoji:'🌸', level:1 },
+  { num:4, word:'quatre', emoji:'🐱', level:1 },
+  { num:5, word:'cinq', emoji:'🦋', level:1 },
+  { num:6, word:'six', emoji:'🐟', level:2 },
+  { num:7, word:'sept', emoji:'🎈', level:2 },
+  { num:8, word:'huit', emoji:'🌺', level:2 },
+  { num:9, word:'neuf', emoji:'🍓', level:2 },
+  { num:10, word:'dix', emoji:'🦄', level:2 },
+  { num:11, word:'onze', emoji:'🌻', level:3 },
+  { num:12, word:'douze', emoji:'🎵', level:3 },
+  { num:13, word:'treize', emoji:'🍊', level:3 },
+  { num:14, word:'quatorze', emoji:'🐸', level:3 },
+  { num:15, word:'quinze', emoji:'💎', level:3 },
+];
+
 /* ────────── GAME STATE ────────── */
 let stars = parseInt(localStorage.getItem('lili-stars') || '0');
 let currentScreen = 'home';
@@ -2169,6 +2255,12 @@ let colorRoundIndex = 0;
 let colorOrder = [];
 let colorCorrect = 0;
 let colorTotal = 0;
+
+// Numbers game
+let numberRoundIndex = 0;
+let numberOrder = [];
+let numberCorrect = 0;
+let numberTotal = 0;
 
 updateStarDisplay();
 
@@ -2388,6 +2480,11 @@ const TIER_CONFIGS = {
     maxTier: 3,
     choices: [3, 4, 6],
     items: function(tier) { return COLORS.filter(c => c.level <= tier).map(c => c.word); },
+  },
+  numbers: {
+    maxTier: 3,
+    choices: [3, 4, 5],
+    items: function(tier) { return NUMBERS.filter(n => n.level <= tier).map(n => String(n.num)); },
   },
 };
 
@@ -2625,7 +2722,7 @@ function createDecorations() {
 }
 
 /* ────────── NAVIGATION ────────── */
-const VALID_SCREENS = ['home','letters','lettermatch','sylquiz','syllables','words','build','draw','pronunciation','colors','stats'];
+const VALID_SCREENS = ['home','letters','lettermatch','sylquiz','syllables','words','build','draw','pronunciation','colors','numbers','stats'];
 
 function goTo(screen, updateHash = true) {
   sfxClick();
@@ -2662,6 +2759,7 @@ function goTo(screen, updateHash = true) {
   else if (screen === 'draw') initDraw();
   else if (screen === 'pronunciation') initPronunciation();
   else if (screen === 'colors') initColors();
+  else if (screen === 'numbers') initNumbers();
   else if (screen === 'stats') initStats();
 
   if (screen === 'home') {
@@ -4071,6 +4169,7 @@ const GAME_INFO = [
   { key:'draw', emoji:'✏️', name:'Dessine', color:'#e74c3c' },
   { key:'pronunciation', emoji:'🎤', name:'Lecture', color:'#9b59b6' },
   { key:'colors', emoji:'🎨', name:'Couleurs', color:'#e67e22' },
+  { key:'numbers', emoji:'🔢', name:'Nombres', color:'#1e90ff' },
 ];
 
 /* ────────── COLORS GAME ────────── */
@@ -4174,6 +4273,108 @@ function nextColorRound() {
   sfxClick();
   colorRoundIndex++;
   showColorRound();
+}
+
+/* ────────── NUMBERS GAME ────────── */
+async function initNumbers() {
+  numberCorrect = 0;
+  numberTotal = 0;
+  _sessionNewItems['numbers'] = 0;
+  const progress = await loadGameProgress('numbers');
+  const masteryMap = await dbReadAllByIndex('mastery', 'game', 'numbers');
+  const pool = getItemsForTier('numbers', progress.currentTier);
+  numberOrder = buildAdaptiveOrder(pool, masteryMap, 'numbers', pool.length);
+  numberRoundIndex = 0;
+  showNumberRound();
+  showMascotMessage('Compte les objets ! 🔢');
+}
+
+function showNumberRound() {
+  if (numberRoundIndex >= numberOrder.length) {
+    numberOrder = shuffle([...numberOrder]);
+    numberRoundIndex = 0;
+  }
+  const targetId = numberOrder[numberRoundIndex];
+  const numData = NUMBERS.find(n => String(n.num) === targetId) || NUMBERS[0];
+
+  document.getElementById('number-prompt').textContent = 'Combien y en a-t-il ?';
+  document.getElementById('number-next-btn').classList.add('hidden');
+  document.getElementById('number-result').classList.add('hidden');
+
+  // Show N copies of the emoji
+  const emojiGrid = document.getElementById('number-emoji-grid');
+  emojiGrid.innerHTML = '';
+  for (let i = 0; i < numData.num; i++) {
+    const span = document.createElement('span');
+    span.textContent = numData.emoji;
+    emojiGrid.appendChild(span);
+  }
+
+  // Build choices
+  const tier = _gameProgress['numbers']?.currentTier || 1;
+  const numChoices = (TIER_CONFIGS.numbers.choices[tier - 1] || 4);
+  const numWrong = numChoices - 1;
+
+  const wrongPool = shuffle(NUMBERS.filter(n => n.num !== numData.num)).slice(0, numWrong);
+  const choices = shuffle([numData, ...wrongPool]);
+
+  const container = document.getElementById('number-choices');
+  container.innerHTML = '';
+
+  choices.forEach((n) => {
+    const btn = document.createElement('button');
+    btn.className = 'number-choice-btn';
+    btn.textContent = n.num;
+    btn.onclick = () => checkNumberAnswer(btn, n.num === numData.num, numData);
+    container.appendChild(btn);
+  });
+
+  speak(numData.num + ' ' + numData.emoji, 0.65);
+}
+
+function checkNumberAnswer(btn, correct, numData) {
+  if (btn.classList.contains('correct') || btn.classList.contains('wrong')) return;
+  numberTotal++;
+  recordAttempt('numbers', String(numData.num), correct);
+
+  if (correct) {
+    btn.classList.add('correct');
+    sfxSuccess();
+    numberCorrect++;
+    addStar();
+    mascotCelebrate();
+    spawnConfetti();
+    showMascotMessage('Bravo ! 🎉');
+
+    speakQueue([
+      { text: 'Bravo !', rate: 0.7 },
+      { text: numData.word, rate: 0.65 },
+    ]);
+
+    document.getElementById('number-prompt').textContent = '✅ ' + numData.word.toUpperCase() + ' !';
+
+    const result = document.getElementById('number-result');
+    result.innerHTML = '<span class="letter-quiz-result-emoji">' + numData.emoji + '</span>' +
+      '<span class="letter-quiz-result-text"><strong>' + numData.word + '</strong> (' + numData.num + ')</span>';
+    result.classList.remove('hidden');
+
+    document.getElementById('number-next-btn').classList.remove('hidden');
+
+    document.querySelectorAll('.number-choice-btn').forEach(b => {
+      if (b !== btn) b.style.pointerEvents = 'none';
+    });
+  } else {
+    btn.classList.add('wrong');
+    sfxWrong();
+    showMascotMessage('Essaie encore ! 💪');
+    speak('Essaie encore !', 0.85);
+  }
+}
+
+function nextNumberRound() {
+  sfxClick();
+  numberRoundIndex++;
+  showNumberRound();
 }
 
 async function initStats() {
