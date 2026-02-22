@@ -76,7 +76,8 @@ export async function recordAnswer(itemId, correct, app, level) {
 }
 
 // Build a session queue using smart practice
-// ~40% due review + ~20% mastered refresh + ~30% new + ~10% reinforcement
+// Uses all available items (due reviews first, then mastered refresh, then new)
+// Interleaves items so no category clusters together
 export async function buildSessionQueue(app, levelItems, sessionSize = 15) {
   const today = todayStr();
   const allMastery = await DB.getAllMastery(app);
@@ -105,10 +106,14 @@ export async function buildSessionQueue(app, levelItems, sessionSize = 15) {
     }
   }
 
+  // Scale session size with available content (min sessionSize, max 30)
+  const totalAvailable = dueReview.length + masteredRefresh.length + newItems.length;
+  const effectiveSize = Math.min(30, Math.max(sessionSize, Math.ceil(totalAvailable * 0.5)));
+
   const queue = [];
-  const targetDue = Math.ceil(sessionSize * 0.4);
-  const targetMastered = Math.ceil(sessionSize * 0.2);
-  const targetNew = Math.ceil(sessionSize * 0.3);
+  const targetDue = Math.ceil(effectiveSize * 0.4);
+  const targetMastered = Math.ceil(effectiveSize * 0.2);
+  const targetNew = Math.ceil(effectiveSize * 0.3);
 
   // Fill due reviews first
   const shuffledDue = shuffle(dueReview);
@@ -123,7 +128,7 @@ export async function buildSessionQueue(app, levelItems, sessionSize = 15) {
   queue.push(...shuffledNew.slice(0, targetNew));
 
   // Fill remaining with whatever's available
-  const remaining = sessionSize - queue.length;
+  const remaining = effectiveSize - queue.length;
   if (remaining > 0) {
     const usedIds = new Set(queue.map(q => q.id));
     const extra = shuffle([...dueReview, ...masteredRefresh, ...newItems])
@@ -131,7 +136,17 @@ export async function buildSessionQueue(app, levelItems, sessionSize = 15) {
     queue.push(...extra.slice(0, remaining));
   }
 
-  return shuffle(queue).slice(0, sessionSize);
+  // Shuffle and spread items so same-level/category items don't cluster
+  const result = shuffle(queue).slice(0, effectiveSize);
+
+  // Post-shuffle dedup: if any item appears twice (from fill-remaining overlap),
+  // keep only the first occurrence
+  const seen = new Set();
+  return result.filter(item => {
+    if (seen.has(item.id)) return false;
+    seen.add(item.id);
+    return true;
+  });
 }
 
 // Get game type based on mastery status

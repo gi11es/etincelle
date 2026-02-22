@@ -2401,21 +2401,26 @@ function selectNextItem(allItems, masteryMap, game, recentlyShown) {
   const roll = Math.random();
   let pool;
   if (roll < 0.50 && learningItems.length > 0) {
-    // Sort by weakness (fewest recent correct first)
-    pool = learningItems.sort((a, b) => {
+    // Pick randomly from the weakest half (not always the single weakest)
+    const sorted = [...learningItems].sort((a, b) => {
       const ma = masteryMap[game + ':' + a], mb = masteryMap[game + ':' + b];
       const ra = (ma?.recentWindow || []).filter(x => x).length;
       const rb = (mb?.recentWindow || []).filter(x => x).length;
       return ra - rb;
     });
+    const topN = Math.max(3, Math.ceil(sorted.length * 0.5));
+    pool = shuffle(sorted.slice(0, topN));
   } else if (newItems.length > 0 && _sessionNewItems[sessionKey] < maxNew) {
     pool = shuffle([...newItems]);
     _sessionNewItems[sessionKey]++;
   } else if (masteredItems.length > 0) {
-    pool = masteredItems.sort((a, b) => {
+    // Pick randomly from the least-recently-seen half
+    const sorted = [...masteredItems].sort((a, b) => {
       const ma = masteryMap[game + ':' + a], mb = masteryMap[game + ':' + b];
       return (ma?.lastSeen || 0) - (mb?.lastSeen || 0);
     });
+    const topN = Math.max(3, Math.ceil(sorted.length * 0.5));
+    pool = shuffle(sorted.slice(0, topN));
   } else {
     pool = shuffle([...learningItems, ...newItems, ...masteredItems]);
   }
@@ -2429,7 +2434,8 @@ function buildAdaptiveOrder(allItems, masteryMap, game, count) {
   const n = count || allItems.length;
   const order = [];
   const recent = [];
-  const recentSize = Math.max(5, Math.ceil(allItems.length * 0.1));
+  // Window = 33% of pool (min 8) — prevents repeats within last ~third of items
+  const recentSize = Math.min(allItems.length - 1, Math.max(8, Math.ceil(allItems.length * 0.33)));
   for (let i = 0; i < n; i++) {
     const item = selectNextItem(allItems, masteryMap, game, recent);
     order.push(item);
