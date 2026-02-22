@@ -4169,6 +4169,7 @@ const GAME_INFO = [
   { key:'draw', emoji:'✏️', name:'Dessine', color:'#e74c3c' },
   { key:'pronunciation', emoji:'🎤', name:'Lecture', color:'#9b59b6' },
   { key:'colors', emoji:'🎨', name:'Couleurs', color:'#e67e22' },
+  { key:'numbers', emoji:'🔢', name:'Nombres', color:'#1e90ff' },
 ];
 
 /* ────────── COLORS GAME ────────── */
@@ -4272,6 +4273,108 @@ function nextColorRound() {
   sfxClick();
   colorRoundIndex++;
   showColorRound();
+}
+
+/* ────────── NUMBERS GAME ────────── */
+async function initNumbers() {
+  numberCorrect = 0;
+  numberTotal = 0;
+  _sessionNewItems['numbers'] = 0;
+  const progress = await loadGameProgress('numbers');
+  const masteryMap = await dbReadAllByIndex('mastery', 'game', 'numbers');
+  const pool = getItemsForTier('numbers', progress.currentTier);
+  numberOrder = buildAdaptiveOrder(pool, masteryMap, 'numbers', pool.length);
+  numberRoundIndex = 0;
+  showNumberRound();
+  showMascotMessage('Compte les objets ! 🔢');
+}
+
+function showNumberRound() {
+  if (numberRoundIndex >= numberOrder.length) {
+    numberOrder = shuffle([...numberOrder]);
+    numberRoundIndex = 0;
+  }
+  const targetId = numberOrder[numberRoundIndex];
+  const numData = NUMBERS.find(n => String(n.num) === targetId) || NUMBERS[0];
+
+  document.getElementById('number-prompt').textContent = 'Combien y en a-t-il ?';
+  document.getElementById('number-next-btn').classList.add('hidden');
+  document.getElementById('number-result').classList.add('hidden');
+
+  // Show N copies of the emoji
+  const emojiGrid = document.getElementById('number-emoji-grid');
+  emojiGrid.innerHTML = '';
+  for (let i = 0; i < numData.num; i++) {
+    const span = document.createElement('span');
+    span.textContent = numData.emoji;
+    emojiGrid.appendChild(span);
+  }
+
+  // Build choices
+  const tier = _gameProgress['numbers']?.currentTier || 1;
+  const numChoices = (TIER_CONFIGS.numbers.choices[tier - 1] || 4);
+  const numWrong = numChoices - 1;
+
+  const wrongPool = shuffle(NUMBERS.filter(n => n.num !== numData.num)).slice(0, numWrong);
+  const choices = shuffle([numData, ...wrongPool]);
+
+  const container = document.getElementById('number-choices');
+  container.innerHTML = '';
+
+  choices.forEach((n) => {
+    const btn = document.createElement('button');
+    btn.className = 'number-choice-btn';
+    btn.textContent = n.num;
+    btn.onclick = () => checkNumberAnswer(btn, n.num === numData.num, numData);
+    container.appendChild(btn);
+  });
+
+  speak(numData.num + ' ' + numData.emoji, 0.65);
+}
+
+function checkNumberAnswer(btn, correct, numData) {
+  if (btn.classList.contains('correct') || btn.classList.contains('wrong')) return;
+  numberTotal++;
+  recordAttempt('numbers', String(numData.num), correct);
+
+  if (correct) {
+    btn.classList.add('correct');
+    sfxSuccess();
+    numberCorrect++;
+    addStar();
+    mascotCelebrate();
+    spawnConfetti();
+    showMascotMessage('Bravo ! 🎉');
+
+    speakQueue([
+      { text: 'Bravo !', rate: 0.7 },
+      { text: numData.word, rate: 0.65 },
+    ]);
+
+    document.getElementById('number-prompt').textContent = '✅ ' + numData.word.toUpperCase() + ' !';
+
+    const result = document.getElementById('number-result');
+    result.innerHTML = '<span class="letter-quiz-result-emoji">' + numData.emoji + '</span>' +
+      '<span class="letter-quiz-result-text"><strong>' + numData.word + '</strong> (' + numData.num + ')</span>';
+    result.classList.remove('hidden');
+
+    document.getElementById('number-next-btn').classList.remove('hidden');
+
+    document.querySelectorAll('.number-choice-btn').forEach(b => {
+      if (b !== btn) b.style.pointerEvents = 'none';
+    });
+  } else {
+    btn.classList.add('wrong');
+    sfxWrong();
+    showMascotMessage('Essaie encore ! 💪');
+    speak('Essaie encore !', 0.85);
+  }
+}
+
+function nextNumberRound() {
+  sfxClick();
+  numberRoundIndex++;
+  showNumberRound();
 }
 
 async function initStats() {
