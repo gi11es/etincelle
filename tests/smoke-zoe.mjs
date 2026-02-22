@@ -44,5 +44,18 @@ for (let i = 0; i < btnCount; i++) {
   }
 }
 
+// Test stats screen loads without errors
+const colStats = collectErrors(page, 'Zoe → Stats', errors);
+try {
+  await page.evaluate(() => goTo('stats'));
+  await wait(2000);
+  const stuck = await page.evaluate(() =>
+    document.getElementById('stats-content')?.textContent?.includes('Chargement'));
+  if (stuck) colStats.errors.push('Stats page stuck on Chargement');
+} catch (e) {
+  colStats.errors.push(`Stats navigation error: ${e.message}`);
+}
+colStats.check();
+
 await page.close();
 await done();
