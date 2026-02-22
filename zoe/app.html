@@ -2184,22 +2184,44 @@ const COLORS = [
   { word:'doré', css:'#ffd700', emoji:'💛', level:3 },
 ];
 
+const NUMBER_NOUNS = [
+  { emoji:'🍎', sing:'pomme', plur:'pommes', fem:true },
+  { emoji:'⭐', sing:'étoile', plur:'étoiles', fem:true },
+  { emoji:'🌸', sing:'fleur', plur:'fleurs', fem:true },
+  { emoji:'🐱', sing:'chat', plur:'chats', fem:false },
+  { emoji:'🦋', sing:'papillon', plur:'papillons', fem:false },
+  { emoji:'🐟', sing:'poisson', plur:'poissons', fem:false },
+  { emoji:'🎈', sing:'ballon', plur:'ballons', fem:false },
+  { emoji:'🍓', sing:'fraise', plur:'fraises', fem:true },
+  { emoji:'🦄', sing:'licorne', plur:'licornes', fem:true },
+  { emoji:'🌻', sing:'tournesol', plur:'tournesols', fem:false },
+  { emoji:'🍊', sing:'orange', plur:'oranges', fem:true },
+  { emoji:'🐸', sing:'grenouille', plur:'grenouilles', fem:true },
+  { emoji:'🐶', sing:'chien', plur:'chiens', fem:false },
+  { emoji:'🍌', sing:'banane', plur:'bananes', fem:true },
+  { emoji:'🐘', sing:'éléphant', plur:'éléphants', fem:false },
+  { emoji:'🍰', sing:'gâteau', plur:'gâteaux', fem:false },
+  { emoji:'🚗', sing:'voiture', plur:'voitures', fem:true },
+  { emoji:'📚', sing:'livre', plur:'livres', fem:false },
+  { emoji:'🌳', sing:'arbre', plur:'arbres', fem:false },
+  { emoji:'🐦', sing:'oiseau', plur:'oiseaux', fem:false },
+];
 const NUMBERS = [
-  { num:1, word:'un', emoji:'🍎', level:1 },
-  { num:2, word:'deux', emoji:'⭐', level:1 },
-  { num:3, word:'trois', emoji:'🌸', level:1 },
-  { num:4, word:'quatre', emoji:'🐱', level:1 },
-  { num:5, word:'cinq', emoji:'🦋', level:1 },
-  { num:6, word:'six', emoji:'🐟', level:2 },
-  { num:7, word:'sept', emoji:'🎈', level:2 },
-  { num:8, word:'huit', emoji:'🌺', level:2 },
-  { num:9, word:'neuf', emoji:'🍓', level:2 },
-  { num:10, word:'dix', emoji:'🦄', level:2 },
-  { num:11, word:'onze', emoji:'🌻', level:3 },
-  { num:12, word:'douze', emoji:'🎵', level:3 },
-  { num:13, word:'treize', emoji:'🍊', level:3 },
-  { num:14, word:'quatorze', emoji:'🐸', level:3 },
-  { num:15, word:'quinze', emoji:'💎', level:3 },
+  { num:1, word:'un', level:1 },
+  { num:2, word:'deux', level:1 },
+  { num:3, word:'trois', level:1 },
+  { num:4, word:'quatre', level:1 },
+  { num:5, word:'cinq', level:1 },
+  { num:6, word:'six', level:2 },
+  { num:7, word:'sept', level:2 },
+  { num:8, word:'huit', level:2 },
+  { num:9, word:'neuf', level:2 },
+  { num:10, word:'dix', level:2 },
+  { num:11, word:'onze', level:3 },
+  { num:12, word:'douze', level:3 },
+  { num:13, word:'treize', level:3 },
+  { num:14, word:'quatorze', level:3 },
+  { num:15, word:'quinze', level:3 },
 ];
 
 /* ────────── GAME STATE ────────── */
@@ -2261,6 +2283,7 @@ let numberRoundIndex = 0;
 let numberOrder = [];
 let numberCorrect = 0;
 let numberTotal = 0;
+let _currentNumberNoun = null;
 
 updateStarDisplay();
 
@@ -4297,7 +4320,14 @@ function showNumberRound() {
   const targetId = numberOrder[numberRoundIndex];
   const numData = NUMBERS.find(n => String(n.num) === targetId) || NUMBERS[0];
 
-  document.getElementById('number-prompt').textContent = 'Combien y en a-t-il ?';
+  // Pick a random noun for this round
+  const noun = NUMBER_NOUNS[Math.floor(Math.random() * NUMBER_NOUNS.length)];
+  _currentNumberNoun = noun;
+
+  const nounLabel = numData.num === 1 ? noun.sing : noun.plur;
+  const wordWithGender = numData.num === 1 ? (noun.fem ? 'une' : 'un') + ' ' + noun.sing : numData.word + ' ' + noun.plur;
+
+  document.getElementById('number-prompt').textContent = 'Combien de ' + noun.plur + ' ?';
   document.getElementById('number-next-btn').classList.add('hidden');
   document.getElementById('number-result').classList.add('hidden');
 
@@ -4306,7 +4336,7 @@ function showNumberRound() {
   emojiGrid.innerHTML = '';
   for (let i = 0; i < numData.num; i++) {
     const span = document.createElement('span');
-    span.textContent = numData.emoji;
+    span.textContent = noun.emoji;
     emojiGrid.appendChild(span);
   }
 
@@ -4325,17 +4355,18 @@ function showNumberRound() {
     const btn = document.createElement('button');
     btn.className = 'number-choice-btn';
     btn.textContent = n.num;
-    btn.onclick = () => checkNumberAnswer(btn, n.num === numData.num, numData);
+    btn.onclick = () => checkNumberAnswer(btn, n.num === numData.num, numData, wordWithGender);
     container.appendChild(btn);
   });
 
-  speak(numData.num + ' ' + numData.emoji, 0.65);
+  speak('Combien de ' + noun.plur, 0.65);
 }
 
-function checkNumberAnswer(btn, correct, numData) {
+function checkNumberAnswer(btn, correct, numData, label) {
   if (btn.classList.contains('correct') || btn.classList.contains('wrong')) return;
   numberTotal++;
   recordAttempt('numbers', String(numData.num), correct);
+  const noun = _currentNumberNoun;
 
   if (correct) {
     btn.classList.add('correct');
@@ -4348,14 +4379,14 @@ function checkNumberAnswer(btn, correct, numData) {
 
     speakQueue([
       { text: 'Bravo !', rate: 0.7 },
-      { text: numData.word, rate: 0.65 },
+      { text: label, rate: 0.65 },
     ]);
 
-    document.getElementById('number-prompt').textContent = '✅ ' + numData.word.toUpperCase() + ' !';
+    document.getElementById('number-prompt').textContent = '✅ ' + label.toUpperCase() + ' !';
 
     const result = document.getElementById('number-result');
-    result.innerHTML = '<span class="letter-quiz-result-emoji">' + numData.emoji + '</span>' +
-      '<span class="letter-quiz-result-text"><strong>' + numData.word + '</strong> (' + numData.num + ')</span>';
+    result.innerHTML = '<span class="letter-quiz-result-emoji">' + noun.emoji + '</span>' +
+      '<span class="letter-quiz-result-text"><strong>' + label + '</strong></span>';
     result.classList.remove('hidden');
 
     document.getElementById('number-next-btn').classList.remove('hidden');
