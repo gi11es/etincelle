@@ -3945,8 +3945,7 @@ async function initStats() {
     let mastered = 0, learning = 0, total = items.length || 1;
     if (g.key === 'syllables') {
       // Labo: count unique syllables explored vs total possible
-      const content = TIER_CONFIGS.syllables.items(progress.currentTier);
-      total = content.consonants.length * content.vowels.length;
+      total = items.length || 1;
       mastered = Object.keys(mMap).length;
       learning = 0;
     } else {
