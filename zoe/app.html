@@ -167,8 +167,8 @@ body {
   display: none;
   align-items: center;
   gap: 6px;
-  padding-left: 10px;
-  border-left: 2px solid var(--gold);
+  padding-right: 10px;
+  border-right: 2px solid var(--gold);
 }
 #tier-badge .tier-left { display: flex; align-items: center; gap: 3px; }
 #tier-badge .tier-emoji { font-size: 14px; }
@@ -1414,13 +1414,13 @@ body {
   <div id="top-bar">
     <div id="btn-back" onclick="goHome()">🏠</div>
     <div id="top-right-widget" onclick="goTo('stats')" style="cursor:pointer" title="Mes Progrès">
-      <div class="widget-stars">
-        <span class="star-icon">⭐</span>
-        <span id="star-count">0</span>
-      </div>
       <div id="tier-badge">
         <div class="tier-left"><span class="tier-emoji"></span><span class="tier-name"></span></div>
         <div id="tier-badge-progress"><div id="tier-badge-fill"></div></div>
+      </div>
+      <div class="widget-stars">
+        <span class="star-icon">⭐</span>
+        <span id="star-count">0</span>
       </div>
     </div>
   </div>
