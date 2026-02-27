@@ -2900,14 +2900,14 @@ function setWordEmoji(elId, emoji) {
   if (emoji.startsWith('avatar:')) {
     const who = emoji.replace('avatar:', '');
     if (who === 'moustache') {
-      el.innerHTML = `<div style="width:clamp(70px,18vw,130px);height:clamp(70px,18vw,130px);border-radius:50%;overflow:hidden;border:4px solid #8B4513;box-shadow:0 3px 10px rgba(139,69,19,0.3);display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#f0e6ff,#ffe0f5)"><img src="assets/moustache_cartoon.png${ASSET_V}" style="width:95%;height:95%;object-fit:cover;border-radius:50%" alt="Moustache"></div>`;
+      el.innerHTML = `<div style="width:clamp(70px,18vw,130px);height:clamp(70px,18vw,130px);border-radius:50%;overflow:hidden;border:4px solid #8B4513;box-shadow:0 3px 10px rgba(139,69,19,0.3);display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#f0e6ff,#ffe0f5)"><img src="assets/moustache_cartoon.png${ASSET_V}" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt="Moustache"></div>`;
       return;
     }
     const src = who === 'felix' ? 'assets/felix_cartoon.png' + ASSET_V
       : who === 'zoe' ? 'assets/zoe_cartoon.png' + ASSET_V
       : who === 'maman' ? 'assets/maman_cartoon.png' + ASSET_V
       : 'assets/papa_cartoon.png' + ASSET_V;
-    el.innerHTML = `<div style="width:clamp(70px,18vw,130px);height:clamp(70px,18vw,130px);border-radius:50%;overflow:hidden;border:4px solid var(--pink);box-shadow:0 3px 10px rgba(255,105,180,0.3);display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#f0e6ff,#ffe0f5)"><img src="${src}" style="width:95%;height:95%;object-fit:cover;border-radius:50%" alt="${who}"></div>`;
+    el.innerHTML = `<div style="width:clamp(70px,18vw,130px);height:clamp(70px,18vw,130px);border-radius:50%;overflow:hidden;border:4px solid var(--pink);box-shadow:0 3px 10px rgba(255,105,180,0.3);display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#f0e6ff,#ffe0f5)"><img src="${src}" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt="${who}"></div>`;
   } else {
     el.textContent = emoji;
   }
