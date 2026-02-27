@@ -2,6 +2,8 @@
 
 A personalized learning platform for the whole family. Three portals, three learners, one shared home — each with tailored content, adaptive difficulty, and progress tracking.
 
+*Built from scratch, kneaded with care, and rising every day — much like a good pain de campagne.*
+
 Hosted on our LAN with HTTPS, accessible from any device in the house.
 
 <p align="center">
