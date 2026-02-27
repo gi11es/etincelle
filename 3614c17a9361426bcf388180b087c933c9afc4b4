@@ -1,0 +1,31 @@
+## Claude Code Prompts
+
+<!-- format:v2 -->
+
+**Session**: 2190e6f2-e070-469b-8d63-180cf35698b3
+**Slug**: adaptive-launching-valley
+**Captured**: 2026-02-27T20:42:59Z
+**Branch**: master
+**Model**: claude-opus-4-6
+**Client**: 2.1.62
+**Permission**: default
+
+### Prompts
+
+**1.** add a subtle joke about bread to the README
+
+**2.** please commit and push
+
+### Stats
+
+| Metric | Value |
+|--------|-------|
+| Turns | 6 user, 6 assistant |
+| Tokens in | 14 |
+| Tokens out | 563 |
+| Cache read | 141,394 |
+| Cache write | 16,468 |
+
+### Tools
+
+Bash(2) Edit(1) Read(1)
