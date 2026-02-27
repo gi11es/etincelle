@@ -1,0 +1,52 @@
+## Claude Code Prompts
+
+<!-- format:v2 -->
+
+**Session**: 5288660c-0635-4264-8c49-23a6d09449d2
+**Slug**: idempotent-knitting-falcon
+**Captured**: 2026-02-27T21:39:24Z
+**Branch**: master
+**Model**: claude-opus-4-6
+**Client**: 2.1.62
+
+### Prompts
+
+**1.** [Request interrupted by user for tool use]
+
+**2.** Implement the following plan:
+
+# Plan: Commit and push avatar clipping fix
+
+## Context
+The previous commit (744e3fe) attempted to fix avatar clipping by using `transform: scale(0.85)`, but this made it worse — the square image corners became visible against the gradient background. The edits have already been applied to `zoe/app.html` to fix this properly.
+
+## Changes already made
+**File: `zoe/app.html`** — 4 avatar template strings updated in `letterEmojiHTML()` and `setWordEmoji()`:
+- Replaced `transform:scale(0.85)` with actual sizing: `width:85%;height:85%`
+- Added `border-radius:50%` to the image so it's circular (no visible square corners)
+- Added flexbox centering on containers: `display:flex;align-items:center;justify-content:center`
+
+## Steps
+1. Stage `zoe/app.html`
+2. Commit with message describing the fix
+3. Push to remote
+4. Deploy via SSH pull
+
+## Verification
+- Check the site on mobile after deploy — avatars in Les Mots and Les Lettres should show full head/hair with a smooth gradient ring, no square corners visible
+
+If you need specific details from before exiting plan mode (like exact code snippets, error messages, or content you generated), read the full transcript at: /Users/gilles/.[REDACTED_LONG_SECRET].jsonl
+
+### Stats
+
+| Metric | Value |
+|--------|-------|
+| Turns | 4 user, 6 assistant |
+| Tokens in | 14 |
+| Tokens out | 72 |
+| Cache read | 120,106 |
+| Cache write | 32,926 |
+
+### Tools
+
+Bash(2)
