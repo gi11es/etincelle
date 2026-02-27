@@ -1,0 +1,50 @@
+## Claude Code Prompts
+
+<!-- format:v2 -->
+
+**Session**: dd8e401d-889e-4231-8397-6f6ec7c7ba49
+**Slug**: idempotent-knitting-falcon
+**Captured**: 2026-02-27T21:49:27Z
+**Branch**: master
+**Model**: claude-opus-4-6
+**Client**: 2.1.62
+
+### Prompts
+
+**1.** [Request interrupted by user for tool use]
+
+**2.** Implement the following plan:
+
+# Plan: Increase avatar inner image size
+
+## Context
+The previous fix (58fe460) replaced `transform:scale(0.85)` with `width:85%;height:85%` + `border-radius:50%` to avoid square corners. The square corner issue is resolved, but at 85% the inner image is too small — leaving a thick gradient ring between the border and the avatar. The image needs to fill more of the circle.
+
+## File to modify
+`zoe/app.html` — 4 occurrences on lines 2886, 2892, 2903, 2910
+
+## Change
+Replace `width:85%;height:85%` with `width:95%;height:95%` in all 4 avatar `<img>` style strings. This leaves just a thin decorative gradient ring while still showing the full head/hair without clipping.
+
+## Steps
+1. Edit `zoe/app.html`: change `width:85%;height:85%` → `width:95%;height:95%` (4 occurrences)
+2. Commit, push, deploy
+
+## Verification
+- Check avatars on mobile — the gradient ring should be thin and decorative, not a wide band
+
+If you need specific details from before exiting plan mode (like exact code snippets, error messages, or content you generated), read the full transcript at: /Users/gilles/.[REDACTED_LONG_SECRET].jsonl
+
+### Stats
+
+| Metric | Value |
+|--------|-------|
+| Turns | 6 user, 6 assistant |
+| Tokens in | 10 |
+| Tokens out | 547 |
+| Cache read | 138,686 |
+| Cache write | 16,308 |
+
+### Tools
+
+Edit(2) Bash(1) Read(1)
