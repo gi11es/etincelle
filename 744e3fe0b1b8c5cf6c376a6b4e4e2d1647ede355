@@ -1,0 +1,72 @@
+## Claude Code Prompts
+
+<!-- format:v2 -->
+
+**Session**: 3595d759-b0c9-4ca5-ade6-6d72cb33be5d
+**Slug**: merry-brewing-alpaca
+**Captured**: 2026-02-27T20:49:24Z
+**Branch**: master
+**Model**: claude-opus-4-6
+**Client**: 2.1.62
+**Permission**: accept-edits
+
+### Prompts
+
+**1.** [Request interrupted by user for tool use]
+
+**2.** Implement the following plan:
+
+# Fix: Avatar images cut off at top in "Les Mots" and other games
+
+## Context
+
+In Zoe's portal, family member avatars (maman, papa, félix, zoé, moustache) appear as word illustrations in "Les Mots" and other games. The cartoon portrait images are 512x512px (square) displayed in square containers with `border-radius: 50%` creating a circular crop. Since the images are the same aspect ratio as the container, `object-fit: cover` fills the square exactly — the `object-position` values currently set (e.g. `50% 25%`) have no effect because there's no overflow to position.
+
+The circle naturally clips the corners of the square image. The top of each character's head/hair extends across the full width of the image, so the circular curvature clips it — visible especially at the larger sizes used in games (up to 130px) vs. the home screen (~55-80px).
+
+## Fix
+
+Scale the `<img>` down to ~85% with `transform: scale(0.85)` inside the circular container, and add a background color to fill the exposed gap. This gives ~7.5% more breathing room on each edge, keeping the head/hair fully visible within the circle.
+
+Remove the now-ineffective `object-position` values (they do nothing with matching aspect ratios).
+
+### File: `zoe/app.html`
+
+**1. `setWordEmoji()` function (~line 2902)** — used by Les Mots, Construis le Mot, Pronunciation games:
+
+Change the avatar `<div>` + `<img>` HTML template to add:
+- `background: linear-gradient(135deg, #f0e6ff, #ffe0f5)` on the container div (matches app theme)
+- `transform: scale(0.85)` on the img element
+- Remove `object-position` (no effect on square-in-square)
+
+Apply to both the moustache special case and the general avatar case.
+
+**2. `letterEmojiHTML()` function (~line 2882)** — used by Les Lettres and Syllable Quiz result displays:
+
+Same changes as above (smaller container: `clamp(50px,12vw,80px)` but same principle).
+
+## Verification
+
+1. Open `zoe/app.html` on a phone or in responsive mode
+2. Play "Les Mots" — trigger a family member word (papa, maman, félix, zoé are level 1)
+3. Verify the full head/hair is visible within the circle, no top cutoff
+4. Check "Les Lettres" — letters D (Dasha), F (Félix), P (Papa), Z (Zoé) show avatars in results
+5. Verify home screen family portraits are unaffected (those use `.family-portrait` class, not these functions)
+
+If you need specific details from before exiting plan mode (like exact code snippets, error messages, or content you generated), read the full transcript at: /Users/gilles/.[REDACTED_LONG_SECRET].jsonl
+
+**3.** [accept-edits] ok, please commit and push
+
+### Stats
+
+| Metric | Value |
+|--------|-------|
+| Turns | 11 user, 15 assistant |
+| Tokens in | 25 |
+| Tokens out | 3,506 |
+| Cache read | 401,466 |
+| Cache write | 38,047 |
+
+### Tools
+
+Bash(4) Read(2) Edit(2)
