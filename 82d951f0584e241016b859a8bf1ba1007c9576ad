@@ -1,0 +1,32 @@
+## Claude Code Prompts
+
+<!-- format:v2 -->
+
+**Session**: 1590a921-9cdf-4e2c-8e02-5d6834b05d5e
+<!-- continued from session c991fea2-2ea0-4b8b-864f-ba8a21c3e97f -->
+**Slug**: sparkling-dazzling-orbit
+**Captured**: 2026-02-27T21:59:12Z
+**Branch**: master
+**Model**: claude-opus-4-6
+**Client**: 2.1.62
+**Permission**: accept-edits
+
+### Prompts
+
+**1.** [plan] I want you to increase the inner size of the avatar circle on Les Mots. it should fill the inside completely/Users/gilles/Desktop/Screenshot\ 2026-02-27\ at\ 22.56.42.heic
+
+**2.** [accept-edits] please commit and push
+
+### Stats
+
+| Metric | Value |
+|--------|-------|
+| Turns | 8 user, 8 assistant |
+| Tokens in | 16 |
+| Tokens out | 1,279 |
+| Cache read | 195,717 |
+| Cache write | 11,873 |
+
+### Tools
+
+Bash(2) Edit(2) Read(1)
