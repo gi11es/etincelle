@@ -1,0 +1,21 @@
+{
+  "session_id": "6e29af17-39a6-44eb-beda-db2df4095d17",
+  "slug": "luminous-snuggling-balloon",
+  "started": "2026-02-28T15:43:58.106Z",
+  "last_updated": "2026-02-28T15:45:40.385Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.63",
+  "git_branch": "master",
+  "user_turns": 13,
+  "assistant_turns": 25,
+  "commits": [],
+  "tools_used": {
+    "Bash": 3,
+    "Read": 5,
+    "Edit": 2,
+    "Grep": 2
+  },
+  "compressed_size": 19610
+}
