@@ -129,6 +129,46 @@
       bubbleEl.classList.add('visible');
       bubbleEl._timer = setTimeout(() => bubbleEl.classList.remove('visible'), 4000);
     }, 1500);
+
+    // Easter egg: tap the title 5 times rapidly
+    (function() {
+      const title = document.querySelector('.portal-title');
+      const subtitle = document.querySelector('.portal-subtitle');
+      const originalSubtitle = subtitle.textContent;
+      let clicks = 0;
+      let timer = null;
+
+      title.style.cursor = 'pointer';
+      title.addEventListener('click', function() {
+        clicks++;
+        clearTimeout(timer);
+        timer = setTimeout(() => { clicks = 0; }, 800);
+
+        if (clicks >= 5) {
+          clicks = 0;
+          // Brief Russian subtitle
+          subtitle.textContent = 'Учить французский, стать гражданкой ❤️';
+          subtitle.style.transition = 'opacity 0.3s';
+          subtitle.style.opacity = '1';
+
+          // Fire confetti (module is already initialized by portal.js)
+          import('../shared/confetti.js').then(m => m.default.launch());
+
+          // Mascot reacts
+          avatarEl.textContent = '🪆';
+          avatarEl.classList.add('talking');
+          bubbleEl.textContent = 'Молодец, Даша! Tu es incroyable! 🇷🇺🇫🇷';
+          bubbleEl.classList.add('visible');
+
+          setTimeout(() => {
+            subtitle.textContent = originalSubtitle;
+            avatarEl.textContent = MASCOTS[Math.floor(Math.random() * MASCOTS.length)];
+            avatarEl.classList.remove('talking');
+            bubbleEl.classList.remove('visible');
+          }, 4000);
+        }
+      });
+    })();
   })();
   </script>
 </body>
