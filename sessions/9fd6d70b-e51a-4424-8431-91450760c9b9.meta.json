@@ -1,0 +1,18 @@
+{
+  "session_id": "9fd6d70b-e51a-4424-8431-91450760c9b9",
+  "slug": "lively-fluttering-alpaca",
+  "started": "2026-02-17T17:33:43.567Z",
+  "last_updated": "2026-02-17T17:34:32.378Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.44",
+  "git_branch": "master",
+  "user_turns": 3,
+  "assistant_turns": 4,
+  "commits": [],
+  "tools_used": {
+    "Task": 1
+  },
+  "compressed_size": 42904
+}
