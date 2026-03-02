@@ -1,0 +1,26 @@
+{
+  "session_id": "1d28745b-d09f-43cf-af2d-f97b22868dd8",
+  "slug": "reflective-puzzling-rivest",
+  "started": "2026-02-18T20:16:03.295Z",
+  "last_updated": "2026-02-18T20:56:36.803Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.45",
+  "git_branch": "master",
+  "user_turns": 148,
+  "assistant_turns": 240,
+  "commits": [],
+  "tools_used": {
+    "Task": 4,
+    "Read": 16,
+    "Edit": 19,
+    "Bash": 74,
+    "Grep": 13,
+    "Write": 1,
+    "WebFetch": 1,
+    "WebSearch": 1,
+    "Glob": 2
+  },
+  "compressed_size": 203516
+}
