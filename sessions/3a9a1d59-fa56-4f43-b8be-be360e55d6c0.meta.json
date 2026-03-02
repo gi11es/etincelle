@@ -1,0 +1,25 @@
+{
+  "session_id": "3a9a1d59-fa56-4f43-b8be-be360e55d6c0",
+  "slug": "smooth-sprouting-whisper",
+  "started": "2026-02-17T15:27:36.910Z",
+  "last_updated": "2026-02-17T16:28:51.757Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.44",
+  "git_branch": "master",
+  "user_turns": 22,
+  "assistant_turns": 33,
+  "commits": [],
+  "tools_used": {
+    "Bash": 2,
+    "Glob": 1,
+    "Task": 5,
+    "EnterPlanMode": 1,
+    "Read": 8,
+    "Grep": 1,
+    "Write": 1,
+    "ExitPlanMode": 1
+  },
+  "compressed_size": 285500
+}
