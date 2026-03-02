@@ -1,0 +1,21 @@
+{
+  "session_id": "57c8e7d5-8bee-46f7-b247-efc3c938780b",
+  "slug": "melodic-popping-fountain",
+  "started": "2026-02-18T20:32:15.274Z",
+  "last_updated": "2026-02-18T20:35:23.826Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.45",
+  "git_branch": "master",
+  "user_turns": 20,
+  "assistant_turns": 30,
+  "commits": [],
+  "tools_used": {
+    "Bash": 15,
+    "Grep": 1,
+    "Read": 1,
+    "Edit": 1
+  },
+  "compressed_size": 20810
+}
