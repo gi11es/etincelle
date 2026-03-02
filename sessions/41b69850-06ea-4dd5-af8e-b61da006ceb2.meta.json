@@ -1,0 +1,23 @@
+{
+  "session_id": "41b69850-06ea-4dd5-af8e-b61da006ceb2",
+  "slug": "swift-tinkering-map",
+  "started": "2026-02-22T09:50:44.947Z",
+  "last_updated": "2026-02-22T10:00:21.821Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.50",
+  "git_branch": "master",
+  "user_turns": 45,
+  "assistant_turns": 62,
+  "commits": [],
+  "tools_used": {
+    "Bash": 27,
+    "TaskCreate": 1,
+    "TaskUpdate": 2,
+    "Grep": 4,
+    "Read": 6,
+    "Edit": 2
+  },
+  "compressed_size": 102113
+}
