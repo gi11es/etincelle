@@ -1,0 +1,29 @@
+{
+  "session_id": "b17fd8e5-2bea-47e6-8cde-7968152e33f8",
+  "slug": "jazzy-giggling-quill",
+  "started": "2026-02-22T11:09:06.126Z",
+  "last_updated": "2026-02-22T14:23:04.859Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.50",
+  "git_branch": "master",
+  "user_turns": 208,
+  "assistant_turns": 308,
+  "commits": [],
+  "tools_used": {
+    "TaskCreate": 7,
+    "Task": 2,
+    "Glob": 2,
+    "Read": 39,
+    "Bash": 70,
+    "TaskOutput": 11,
+    "TaskUpdate": 11,
+    "Write": 6,
+    "Grep": 6,
+    "Edit": 18,
+    "WebSearch": 12,
+    "WebFetch": 3
+  },
+  "compressed_size": 792242
+}
