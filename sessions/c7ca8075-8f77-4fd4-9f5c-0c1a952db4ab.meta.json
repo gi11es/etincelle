@@ -1,0 +1,20 @@
+{
+  "session_id": "c7ca8075-8f77-4fd4-9f5c-0c1a952db4ab",
+  "slug": "twinkling-snuggling-thimble",
+  "started": "2026-02-18T20:45:58.876Z",
+  "last_updated": "2026-02-18T20:48:42.850Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.45",
+  "git_branch": "master",
+  "user_turns": 18,
+  "assistant_turns": 30,
+  "commits": [],
+  "tools_used": {
+    "Bash": 15,
+    "Read": 1,
+    "Glob": 1
+  },
+  "compressed_size": 17361
+}
