@@ -1,0 +1,22 @@
+{
+  "session_id": "6e93af01-eb18-49ef-bcc4-6a2b1fd1fc7c",
+  "slug": "woolly-painting-clover",
+  "started": "2026-02-17T17:34:08.911Z",
+  "last_updated": "2026-02-17T17:37:52.175Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.44",
+  "git_branch": "master",
+  "user_turns": 12,
+  "assistant_turns": 21,
+  "commits": [],
+  "tools_used": {
+    "Task": 1,
+    "Read": 3,
+    "Grep": 1,
+    "Edit": 1,
+    "Bash": 4
+  },
+  "compressed_size": 50324
+}
