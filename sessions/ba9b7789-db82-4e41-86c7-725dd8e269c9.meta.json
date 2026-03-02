@@ -1,0 +1,28 @@
+{
+  "session_id": "ba9b7789-db82-4e41-86c7-725dd8e269c9",
+  "slug": "sprightly-percolating-avalanche",
+  "started": "2026-02-17T18:12:30.247Z",
+  "last_updated": "2026-02-17T20:42:23.730Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.44",
+  "git_branch": "master",
+  "user_turns": 58,
+  "assistant_turns": 84,
+  "commits": [],
+  "tools_used": {
+    "EnterPlanMode": 1,
+    "Task": 4,
+    "Read": 11,
+    "Grep": 2,
+    "AskUserQuestion": 1,
+    "Write": 5,
+    "ExitPlanMode": 1,
+    "TaskCreate": 6,
+    "TaskUpdate": 12,
+    "Edit": 7,
+    "Bash": 6
+  },
+  "compressed_size": 251430
+}
