@@ -1,0 +1,25 @@
+{
+  "session_id": "c74b223a-dd0a-4284-aec5-60928611d187",
+  "slug": "whimsical-discovering-crown",
+  "started": "2026-02-18T21:05:29.730Z",
+  "last_updated": "2026-02-18T21:24:51.534Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.45",
+  "git_branch": "master",
+  "user_turns": 143,
+  "assistant_turns": 187,
+  "commits": [],
+  "tools_used": {
+    "Bash": 12,
+    "EnterPlanMode": 1,
+    "Task": 2,
+    "Read": 50,
+    "Grep": 9,
+    "Write": 1,
+    "ExitPlanMode": 1,
+    "Edit": 65
+  },
+  "compressed_size": 646361
+}
