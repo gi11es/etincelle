@@ -1,0 +1,26 @@
+{
+  "session_id": "54000384-8ad7-4543-ad2a-123b4e109342",
+  "slug": "temporal-baking-cake",
+  "started": "2026-02-18T21:08:36.375Z",
+  "last_updated": "2026-02-18T21:31:44.676Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.45",
+  "git_branch": "master",
+  "user_turns": 89,
+  "assistant_turns": 139,
+  "commits": [],
+  "tools_used": {
+    "Task": 1,
+    "Bash": 28,
+    "Read": 18,
+    "Grep": 4,
+    "Glob": 2,
+    "Edit": 17,
+    "TaskCreate": 3,
+    "TaskUpdate": 6,
+    "Write": 4
+  },
+  "compressed_size": 183368
+}
