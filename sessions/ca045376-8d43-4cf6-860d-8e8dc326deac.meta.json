@@ -1,0 +1,20 @@
+{
+  "session_id": "ca045376-8d43-4cf6-860d-8e8dc326deac",
+  "slug": "deep-yawning-kitten",
+  "started": "2026-02-18T20:59:04.421Z",
+  "last_updated": "2026-02-18T21:00:38.573Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.45",
+  "git_branch": "master",
+  "user_turns": 9,
+  "assistant_turns": 11,
+  "commits": [],
+  "tools_used": {
+    "Read": 1,
+    "Edit": 1,
+    "Bash": 4
+  },
+  "compressed_size": 5454
+}
