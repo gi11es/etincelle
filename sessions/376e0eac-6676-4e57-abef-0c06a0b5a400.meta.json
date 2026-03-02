@@ -1,0 +1,29 @@
+{
+  "session_id": "376e0eac-6676-4e57-abef-0c06a0b5a400",
+  "slug": "partitioned-waddling-rossum",
+  "started": "2026-02-17T14:33:25.383Z",
+  "last_updated": "2026-02-17T15:27:05.137Z",
+  "models": [
+    "claude-opus-4-6",
+    "<synthetic>"
+  ],
+  "client_version": "2.1.44",
+  "git_branch": "master",
+  "user_turns": 139,
+  "assistant_turns": 209,
+  "commits": [],
+  "tools_used": {
+    "Task": 9,
+    "Write": 11,
+    "Bash": 33,
+    "Read": 29,
+    "Edit": 20,
+    "Glob": 4,
+    "Grep": 2,
+    "EnterPlanMode": 1,
+    "TaskCreate": 6,
+    "TaskUpdate": 5,
+    "TaskOutput": 4
+  },
+  "compressed_size": 622850
+}
