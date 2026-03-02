@@ -1,0 +1,24 @@
+{
+  "session_id": "60451489-e83e-4bad-bfaa-e31e0dc7deac",
+  "slug": "jolly-puzzling-narwhal",
+  "started": "2026-02-17T17:46:24.036Z",
+  "last_updated": "2026-02-17T18:05:54.233Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.44",
+  "git_branch": "master",
+  "user_turns": 55,
+  "assistant_turns": 100,
+  "commits": [],
+  "tools_used": {
+    "Task": 1,
+    "Read": 14,
+    "Grep": 9,
+    "Bash": 18,
+    "Write": 3,
+    "Glob": 1,
+    "Edit": 5
+  },
+  "compressed_size": 163789
+}
