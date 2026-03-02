@@ -1,0 +1,21 @@
+{
+  "session_id": "5d69d52e-c976-4d6d-aad9-0a0e26253e05",
+  "slug": "jazzy-rolling-taco",
+  "started": "2026-02-22T09:29:52.029Z",
+  "last_updated": "2026-02-22T09:40:25.992Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.50",
+  "git_branch": "master",
+  "user_turns": 38,
+  "assistant_turns": 55,
+  "commits": [],
+  "tools_used": {
+    "Grep": 1,
+    "Read": 8,
+    "Edit": 8,
+    "Bash": 19
+  },
+  "compressed_size": 89046
+}
