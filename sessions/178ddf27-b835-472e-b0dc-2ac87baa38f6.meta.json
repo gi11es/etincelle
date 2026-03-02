@@ -1,0 +1,18 @@
+{
+  "session_id": "178ddf27-b835-472e-b0dc-2ac87baa38f6",
+  "slug": "snuggly-toasting-sutton",
+  "started": "2026-02-22T09:17:32.153Z",
+  "last_updated": "2026-02-22T09:20:59.691Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.50",
+  "git_branch": "master",
+  "user_turns": 22,
+  "assistant_turns": 40,
+  "commits": [],
+  "tools_used": {
+    "Bash": 19
+  },
+  "compressed_size": 11685
+}
