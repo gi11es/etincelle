@@ -1,0 +1,25 @@
+{
+  "session_id": "569d754b-c0bd-48cc-8860-f89c2ae82806",
+  "slug": "glistening-wobbling-flamingo",
+  "started": "2026-02-17T18:25:43.189Z",
+  "last_updated": "2026-02-17T19:34:35.306Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.44",
+  "git_branch": "master",
+  "user_turns": 57,
+  "assistant_turns": 74,
+  "commits": [],
+  "tools_used": {
+    "Task": 1,
+    "Read": 7,
+    "TaskCreate": 2,
+    "TaskUpdate": 4,
+    "Write": 2,
+    "Edit": 27,
+    "Bash": 10,
+    "Glob": 1
+  },
+  "compressed_size": 115196
+}
