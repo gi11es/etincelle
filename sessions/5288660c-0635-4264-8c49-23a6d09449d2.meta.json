@@ -1,0 +1,23 @@
+{
+  "session_id": "5288660c-0635-4264-8c49-23a6d09449d2",
+  "slug": "idempotent-knitting-falcon",
+  "started": "2026-02-27T21:39:10.820Z",
+  "last_updated": "2026-02-27T21:49:09.202Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.62",
+  "git_branch": "master",
+  "user_turns": 18,
+  "assistant_turns": 24,
+  "commits": [],
+  "tools_used": {
+    "Bash": 6,
+    "Read": 3,
+    "Grep": 1,
+    "Write": 1,
+    "AskUserQuestion": 1,
+    "ExitPlanMode": 1
+  },
+  "compressed_size": 11051
+}
