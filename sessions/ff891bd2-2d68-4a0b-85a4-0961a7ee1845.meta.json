@@ -1,0 +1,22 @@
+{
+  "session_id": "ff891bd2-2d68-4a0b-85a4-0961a7ee1845",
+  "slug": "velvety-munching-map",
+  "started": "2026-02-17T17:33:15.966Z",
+  "last_updated": "2026-02-17T17:43:55.105Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.44",
+  "git_branch": "master",
+  "user_turns": 26,
+  "assistant_turns": 47,
+  "commits": [],
+  "tools_used": {
+    "Task": 1,
+    "Read": 11,
+    "Grep": 2,
+    "Bash": 8,
+    "Edit": 2
+  },
+  "compressed_size": 96412
+}
