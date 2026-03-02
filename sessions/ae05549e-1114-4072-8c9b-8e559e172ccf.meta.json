@@ -1,0 +1,24 @@
+{
+  "session_id": "ae05549e-1114-4072-8c9b-8e559e172ccf",
+  "slug": "snappy-foraging-seal",
+  "started": "2026-02-17T21:15:16.472Z",
+  "last_updated": "2026-02-17T21:42:39.980Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.44",
+  "git_branch": "master",
+  "user_turns": 70,
+  "assistant_turns": 114,
+  "commits": [],
+  "tools_used": {
+    "Glob": 1,
+    "Task": 1,
+    "Read": 7,
+    "Bash": 41,
+    "Write": 1,
+    "Grep": 2,
+    "Edit": 8
+  },
+  "compressed_size": 74916
+}
