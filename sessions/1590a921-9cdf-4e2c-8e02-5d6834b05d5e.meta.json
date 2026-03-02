@@ -1,0 +1,20 @@
+{
+  "session_id": "1590a921-9cdf-4e2c-8e02-5d6834b05d5e",
+  "slug": "sparkling-dazzling-orbit",
+  "started": "2026-02-27T21:58:32.126Z",
+  "last_updated": "2026-02-27T21:59:26.497Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.62",
+  "git_branch": "master",
+  "user_turns": 11,
+  "assistant_turns": 12,
+  "commits": [],
+  "tools_used": {
+    "Read": 1,
+    "Edit": 2,
+    "Bash": 5
+  },
+  "compressed_size": 90003
+}
