@@ -1,0 +1,28 @@
+{
+  "session_id": "9cb5a0c3-e57a-42bd-8a0d-a210c05667e3",
+  "slug": "tidy-popping-bumblebee",
+  "started": "2026-02-18T20:12:46.758Z",
+  "last_updated": "2026-02-18T20:58:59.739Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.45",
+  "git_branch": "master",
+  "user_turns": 108,
+  "assistant_turns": 184,
+  "commits": [],
+  "tools_used": {
+    "Task": 7,
+    "Read": 14,
+    "Glob": 1,
+    "Write": 1,
+    "ExitPlanMode": 1,
+    "TaskCreate": 3,
+    "TaskUpdate": 6,
+    "Edit": 10,
+    "Bash": 52,
+    "Grep": 4,
+    "TaskOutput": 3
+  },
+  "compressed_size": 389184
+}
