@@ -1,0 +1,22 @@
+{
+  "session_id": "7769dbb4-94be-46c3-9e75-5f17a4448a70",
+  "slug": "sparkling-launching-cascade",
+  "started": "2026-02-17T19:28:38.911Z",
+  "last_updated": "2026-02-17T19:39:31.129Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.44",
+  "git_branch": "master",
+  "user_turns": 20,
+  "assistant_turns": 46,
+  "commits": [],
+  "tools_used": {
+    "Task": 1,
+    "Read": 9,
+    "Edit": 3,
+    "Grep": 2,
+    "Bash": 2
+  },
+  "compressed_size": 94493
+}
