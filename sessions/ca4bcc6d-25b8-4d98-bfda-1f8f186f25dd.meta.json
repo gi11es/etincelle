@@ -1,0 +1,25 @@
+{
+  "session_id": "ca4bcc6d-25b8-4d98-bfda-1f8f186f25dd",
+  "slug": "cached-hopping-feigenbaum",
+  "started": "2026-02-18T20:58:03.371Z",
+  "last_updated": "2026-02-18T21:06:10.092Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.45",
+  "git_branch": "master",
+  "user_turns": 34,
+  "assistant_turns": 53,
+  "commits": [],
+  "tools_used": {
+    "Task": 1,
+    "AskUserQuestion": 1,
+    "Read": 2,
+    "WebSearch": 6,
+    "WebFetch": 6,
+    "Bash": 14,
+    "Grep": 1,
+    "Edit": 1
+  },
+  "compressed_size": 56038
+}
