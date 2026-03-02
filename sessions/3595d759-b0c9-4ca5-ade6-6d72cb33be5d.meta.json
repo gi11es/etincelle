@@ -1,0 +1,20 @@
+{
+  "session_id": "3595d759-b0c9-4ca5-ade6-6d72cb33be5d",
+  "slug": "merry-brewing-alpaca",
+  "started": "2026-02-27T20:46:35.049Z",
+  "last_updated": "2026-02-27T20:49:41.174Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.62",
+  "git_branch": "master",
+  "user_turns": 14,
+  "assistant_turns": 19,
+  "commits": [],
+  "tools_used": {
+    "Read": 2,
+    "Edit": 2,
+    "Bash": 7
+  },
+  "compressed_size": 95513
+}
