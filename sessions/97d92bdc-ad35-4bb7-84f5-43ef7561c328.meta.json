@@ -1,0 +1,29 @@
+{
+  "session_id": "97d92bdc-ad35-4bb7-84f5-43ef7561c328",
+  "slug": "curious-moseying-mochi",
+  "started": "2026-02-22T09:23:53.152Z",
+  "last_updated": "2026-02-22T11:09:52.230Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.50",
+  "git_branch": "master",
+  "user_turns": 266,
+  "assistant_turns": 400,
+  "commits": [],
+  "tools_used": {
+    "Grep": 43,
+    "Read": 60,
+    "Edit": 49,
+    "Bash": 66,
+    "EnterPlanMode": 1,
+    "Task": 5,
+    "Write": 5,
+    "ExitPlanMode": 1,
+    "Glob": 2,
+    "TaskCreate": 3,
+    "TaskUpdate": 6,
+    "TaskOutput": 1
+  },
+  "compressed_size": 1922940
+}
