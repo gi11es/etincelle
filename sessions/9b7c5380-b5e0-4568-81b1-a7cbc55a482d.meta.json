@@ -1,0 +1,28 @@
+{
+  "session_id": "9b7c5380-b5e0-4568-81b1-a7cbc55a482d",
+  "slug": "rosy-painting-liskov",
+  "started": "2026-02-17T20:19:17.738Z",
+  "last_updated": "2026-02-18T07:57:28.862Z",
+  "models": [
+    "claude-opus-4-6"
+  ],
+  "client_version": "2.1.44",
+  "git_branch": "master",
+  "user_turns": 431,
+  "assistant_turns": 660,
+  "commits": [],
+  "tools_used": {
+    "TaskCreate": 6,
+    "Read": 96,
+    "Task": 4,
+    "TaskUpdate": 14,
+    "Bash": 140,
+    "Write": 13,
+    "Grep": 9,
+    "Edit": 87,
+    "Glob": 3,
+    "WebFetch": 2,
+    "WebSearch": 2
+  },
+  "compressed_size": 1038041
+}
