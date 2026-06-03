@@ -425,6 +425,10 @@ body {
   opacity: 0.85;
   line-height: 1;
 }
+.letter-quiz-choice .letter-btn-cursive-only {
+  font-size: 1.15em;
+  opacity: 1;
+}
 .letter-quiz-choice.correct {
   border-color: var(--gold);
   animation: correctPulse 0.6s ease;
@@ -763,76 +767,29 @@ body {
 /* ═══════════════════════════════════════════════════════
    COLOR GAME
    ═══════════════════════════════════════════════════════ */
-.color-emoji-display {
-  font-size: clamp(64px, 15vw, 100px);
-  line-height: 1;
-  animation: letterPop 0.5s ease-out;
-}
-
-.color-choices {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  width: 100%;
-  max-width: 380px;
-}
-
-.color-choice-btn {
-  padding: 22px 12px;
-  font-size: clamp(18px, 4vw, 22px);
-  font-weight: 800;
-  border-radius: 16px;
-  border: 4px solid rgba(255,255,255,0.6);
-  cursor: pointer;
-  transition: transform 0.15s, border-color 0.2s, box-shadow 0.2s;
-  text-shadow: 0 2px 3px rgba(0,0,0,0.3);
-  letter-spacing: 1px;
-  text-align: center;
-  text-transform: uppercase;
-  color: white;
-  box-shadow: 0 4px 0 rgba(0,0,0,0.15), var(--shadow);
-}
-
-.color-choice-btn:active { transform: scale(0.95); }
-.color-choice-btn.correct {
-  border-color: var(--gold);
-  animation: correctPulse 0.6s ease;
-  box-shadow: 0 0 30px rgba(46,204,113,0.5);
-}
-.color-choice-btn.wrong {
-  animation: wrongShake 0.5s ease;
-}
-
 /* ═══════════════════════════════════════════════════════
-   NUMBERS GAME
+   MATH GAME (Calcul)
    ═══════════════════════════════════════════════════════ */
-.number-emoji-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  min-height: 80px;
-  max-width: 340px;
+.math-equation {
+  font-size: clamp(48px, 12vw, 80px);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--purple);
+  letter-spacing: 2px;
   animation: letterPop 0.5s ease-out;
 }
 
-.number-emoji-grid span {
-  font-size: clamp(32px, 8vw, 48px);
-  line-height: 1.2;
-}
-
-.number-choices {
+.math-choices {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   width: 100%;
   max-width: 380px;
 }
 
-.number-choice-btn {
+.math-choice-btn {
   padding: 18px 12px;
-  font-size: clamp(22px, 5vw, 30px);
+  font-size: clamp(24px, 6vw, 34px);
   font-weight: 800;
   border-radius: 16px;
   border: 4px solid rgba(255,255,255,0.6);
@@ -845,13 +802,13 @@ body {
   text-shadow: 0 2px 3px rgba(0,0,0,0.3);
 }
 
-.number-choice-btn:active { transform: scale(0.95); }
-.number-choice-btn.correct {
+.math-choice-btn:active { transform: scale(0.95); }
+.math-choice-btn.correct {
   border-color: var(--gold);
   animation: correctPulse 0.6s ease;
   box-shadow: 0 0 30px rgba(46,204,113,0.5);
 }
-.number-choice-btn.wrong {
+.math-choice-btn.wrong {
   animation: wrongShake 0.5s ease;
 }
 
@@ -1553,13 +1510,9 @@ body {
         <span class="menu-icon">🎤</span>
         Lis à voix haute
       </div>
-      <div class="menu-btn coral" onclick="goTo('colors')">
-        <span class="menu-icon">🎨</span>
-        Les Couleurs
-      </div>
-      <div class="menu-btn blue" onclick="goTo('numbers')">
-        <span class="menu-icon">🔢</span>
-        Les Nombres
+      <div class="menu-btn blue" onclick="goTo('math')">
+        <span class="menu-icon">🧮</span>
+        Calcul
       </div>
     </div>
   </div>
@@ -1680,27 +1633,16 @@ body {
     </div>
   </div>
 
-  <!-- ═══ COLORS SCREEN ═══ -->
-  <div id="screen-colors" class="screen">
-    <div class="screen-title">Les Couleurs 🎨</div>
+  <!-- ═══ MATH SCREEN (Calcul) ═══ -->
+  <div id="screen-math" class="screen">
+    <div class="screen-title">Calcul 🧮</div>
     <div class="word-game-area">
-      <div id="color-emoji" class="color-emoji-display"></div>
-      <div id="color-prompt" class="word-prompt">Quelle est cette couleur ?</div>
-      <div id="color-choices" class="color-choices"></div>
-      <div id="color-result" class="letter-quiz-result hidden"></div>
-      <button id="color-next-btn" class="btn-action hidden" onclick="nextColorRound()">➡️ Suivant</button>
-    </div>
-  </div>
-
-  <!-- ═══ NUMBERS SCREEN ═══ -->
-  <div id="screen-numbers" class="screen">
-    <div class="screen-title">Les Nombres 🔢</div>
-    <div class="word-game-area">
-      <div id="number-emoji-grid" class="number-emoji-grid"></div>
-      <div id="number-prompt" class="word-prompt">Combien y en a-t-il ?</div>
-      <div id="number-choices" class="number-choices"></div>
-      <div id="number-result" class="letter-quiz-result hidden"></div>
-      <button id="number-next-btn" class="btn-action hidden" onclick="nextNumberRound()">➡️ Suivant</button>
+      <button id="math-speaker-btn" class="letter-speaker-btn" onclick="replayMathPrompt()">🔊</button>
+      <div id="math-equation" class="math-equation"></div>
+      <div id="math-prompt" class="word-prompt">Combien ça fait ?</div>
+      <div id="math-choices" class="math-choices"></div>
+      <div id="math-result" class="letter-quiz-result hidden"></div>
+      <button id="math-next-btn" class="btn-action hidden" onclick="nextMathRound()">➡️ Suivant</button>
     </div>
   </div>
 
@@ -2169,60 +2111,36 @@ const WORDS = [
   { word:'catastrophique', emoji:'🌪️', syllables:['ca','tas','tro','phi','que'], level:4 },
 ];
 
-const COLORS = [
-  { word:'rouge', css:'#e74c3c', emoji:'🔴', level:1 },
-  { word:'bleu', css:'#3498db', emoji:'🔵', level:1 },
-  { word:'vert', css:'#2ecc71', emoji:'🟢', level:1 },
-  { word:'jaune', css:'#f1c40f', emoji:'🟡', level:1 },
-  { word:'orange', css:'#e67e22', emoji:'🟠', level:1 },
-  { word:'rose', css:'#ff69b4', emoji:'🩷', level:1 },
-  { word:'violet', css:'#9b59b6', emoji:'🟣', level:2 },
-  { word:'blanc', css:'#ffffff', emoji:'⚪', level:2 },
-  { word:'noir', css:'#2c3e50', emoji:'⚫', level:2 },
-  { word:'marron', css:'#8B4513', emoji:'🟤', level:2 },
-  { word:'gris', css:'#95a5a6', emoji:'🩶', level:3 },
-  { word:'doré', css:'#ffd700', emoji:'💛', level:3 },
-];
+/* ────────── MATH FACTS (Calcul: additions & subtractions, within 20) ──────────
+   Each "item" is an equation string like "3+4" or "12-5", generated
+   deterministically so mastery keys stay stable across sessions. */
+function buildMathFacts(tier) {
+  const facts = [];
+  const cap = tier <= 2 ? 10 : 20;          // result/operand ceiling per tier
+  const useSub = tier >= 2;                  // subtractions unlock at tier 2
+  // Additions: a + b, with a <= b to avoid commutative duplicates
+  for (let a = 1; a <= cap; a++) {
+    for (let b = a; b <= cap; b++) {
+      if (a + b <= cap) facts.push(a + '+' + b);
+    }
+  }
+  // Subtractions: a - b, result >= 0
+  if (useSub) {
+    for (let a = 2; a <= cap; a++) {
+      for (let b = 1; b < a; b++) {
+        facts.push(a + '-' + b);
+      }
+    }
+  }
+  return facts;
+}
 
-const NUMBER_NOUNS = [
-  { emoji:'🍎', sing:'pomme', plur:'pommes', fem:true },
-  { emoji:'⭐', sing:'étoile', plur:'étoiles', fem:true },
-  { emoji:'🌸', sing:'fleur', plur:'fleurs', fem:true },
-  { emoji:'🐱', sing:'chat', plur:'chats', fem:false },
-  { emoji:'🦋', sing:'papillon', plur:'papillons', fem:false },
-  { emoji:'🐟', sing:'poisson', plur:'poissons', fem:false },
-  { emoji:'🎈', sing:'ballon', plur:'ballons', fem:false },
-  { emoji:'🍓', sing:'fraise', plur:'fraises', fem:true },
-  { emoji:'🦄', sing:'licorne', plur:'licornes', fem:true },
-  { emoji:'🌻', sing:'tournesol', plur:'tournesols', fem:false },
-  { emoji:'🍊', sing:'orange', plur:'oranges', fem:true },
-  { emoji:'🐸', sing:'grenouille', plur:'grenouilles', fem:true },
-  { emoji:'🐶', sing:'chien', plur:'chiens', fem:false },
-  { emoji:'🍌', sing:'banane', plur:'bananes', fem:true },
-  { emoji:'🐘', sing:'éléphant', plur:'éléphants', fem:false },
-  { emoji:'🍰', sing:'gâteau', plur:'gâteaux', fem:false },
-  { emoji:'🚗', sing:'voiture', plur:'voitures', fem:true },
-  { emoji:'📚', sing:'livre', plur:'livres', fem:false },
-  { emoji:'🌳', sing:'arbre', plur:'arbres', fem:false },
-  { emoji:'🐦', sing:'oiseau', plur:'oiseaux', fem:false },
-];
-const NUMBERS = [
-  { num:1, word:'un', level:1 },
-  { num:2, word:'deux', level:1 },
-  { num:3, word:'trois', level:1 },
-  { num:4, word:'quatre', level:1 },
-  { num:5, word:'cinq', level:1 },
-  { num:6, word:'six', level:2 },
-  { num:7, word:'sept', level:2 },
-  { num:8, word:'huit', level:2 },
-  { num:9, word:'neuf', level:2 },
-  { num:10, word:'dix', level:2 },
-  { num:11, word:'onze', level:3 },
-  { num:12, word:'douze', level:3 },
-  { num:13, word:'treize', level:3 },
-  { num:14, word:'quatorze', level:3 },
-  { num:15, word:'quinze', level:3 },
-];
+// Parse an equation string into {a, op, b, answer}
+function parseMathFact(fact) {
+  const op = fact.includes('+') ? '+' : '-';
+  const [a, b] = fact.split(op).map(Number);
+  return { a, op, b, answer: op === '+' ? a + b : a - b };
+}
 
 /* ────────── GAME STATE ────────── */
 let stars = parseInt(localStorage.getItem('lili-stars') || '0');
@@ -2273,17 +2191,12 @@ let whisperLoading = false;
 let mediaStream = null;
 
 // Colors game
-let colorRoundIndex = 0;
-let colorOrder = [];
-let colorCorrect = 0;
-let colorTotal = 0;
-
-// Numbers game
-let numberRoundIndex = 0;
-let numberOrder = [];
-let numberCorrect = 0;
-let numberTotal = 0;
-let _currentNumberNoun = null;
+// Math game (Calcul)
+let mathRoundIndex = 0;
+let mathOrder = [];
+let mathCorrect = 0;
+let mathTotal = 0;
+let mathCurrentFact = null;
 
 updateStarDisplay();
 
@@ -2505,15 +2418,10 @@ const TIER_CONFIGS = {
       return pool;
     },
   },
-  colors: {
-    maxTier: 3,
-    choices: [3, 4, 6],
-    items: function(tier) { return COLORS.filter(c => c.level <= tier).map(c => c.word); },
-  },
-  numbers: {
-    maxTier: 3,
-    choices: [3, 4, 5],
-    items: function(tier) { return NUMBERS.filter(n => n.level <= tier).map(n => String(n.num)); },
+  math: {
+    maxTier: 4,
+    choices: [3, 4, 4, 5],
+    items: function(tier) { return buildMathFacts(tier); },
   },
 };
 
@@ -2651,8 +2559,7 @@ function showTierUnlockCelebration(game, newTier) {
   const gameNames = {
     letters:'Lettres', lettermatch:'Formes de Lettres', sylquiz:'Syllabes',
     syllables:'Labo Syllabes', words:'Mots', build:'Construction de Mots',
-    draw:'Dessin', pronunciation:'Lecture à voix haute', colors:'Couleurs',
-    numbers:'Nombres',
+    draw:'Dessin', pronunciation:'Lecture à voix haute', math:'Calcul',
   };
   showMascotMessage(TIER_EMOJIS[newTier] + ' Niveau ' + TIER_NAMES[newTier] + ' !');
   speak('Bravo Zoé ! Tu es maintenant ' + TIER_NAMES[newTier] + ' en ' + (gameNames[game] || game) + ' !', 0.75);
@@ -2752,7 +2659,7 @@ function createDecorations() {
 }
 
 /* ────────── NAVIGATION ────────── */
-const VALID_SCREENS = ['home','letters','lettermatch','sylquiz','syllables','words','build','draw','pronunciation','colors','numbers','stats'];
+const VALID_SCREENS = ['home','letters','lettermatch','sylquiz','syllables','words','build','draw','pronunciation','math','stats'];
 
 function goTo(screen, updateHash = true) {
   sfxClick();
@@ -2788,8 +2695,7 @@ function goTo(screen, updateHash = true) {
   else if (screen === 'build') initBuild();
   else if (screen === 'draw') initDraw();
   else if (screen === 'pronunciation') initPronunciation();
-  else if (screen === 'colors') initColors();
-  else if (screen === 'numbers') initNumbers();
+  else if (screen === 'math') initMath();
   else if (screen === 'stats') initStats();
 
   if (screen === 'home') {
@@ -2969,7 +2875,7 @@ function showLetterRound() {
     const btn = document.createElement('div');
     btn.className = 'letter-quiz-choice';
     btn.style.background = `linear-gradient(135deg, ${LETTER_COLORS[ci]}, ${LETTER_COLORS[(ci+5) % LETTER_COLORS.length]})`;
-    btn.innerHTML = '<span class="letter-btn-upper">' + c.l + '</span><span class="letter-btn-cursive">' + c.l.toLowerCase() + '</span>';
+    btn.innerHTML = '<span class="letter-btn-cursive letter-btn-cursive-only">' + c.l.toLowerCase() + '</span>';
     btn.onclick = () => checkLetterAnswer(btn, c.l === data.l, data);
     container.appendChild(btn);
   });
@@ -4140,15 +4046,61 @@ function startWebSpeechRecognition() {
   }, 5000);
 }
 
+// Synonyms & common homophones a child might say while reading aloud.
+// Keyed by the displayed word; any listed alternate is accepted as correct.
+const WORD_SYNONYMS = {
+  'vélo': ['bicyclette'],
+  'moto': ['motocyclette', 'scooter'],
+  'bus': ['autobus', 'car'],
+  'autobus': ['bus', 'car'],
+  'chien': ['toutou', 'chiot'],
+  'chat': ['minou', 'minet', 'chaton'],
+  'ours': ['nounours', 'ourson'],
+  'bébé': ['poupon'],
+  'gâteau': ['cake'],
+  'cake': ['gâteau'],
+  'bonbon': ['sucrerie'],
+  'poney': ['cheval', 'petit cheval'],
+  'cheval': ['poney'],
+  'lapin': ['petit lapin'],
+  'maison': ['cabane'],
+  'copain': ['ami', 'copine'],
+  'pierre': ['caillou', 'rocher'],
+  'crocodile': ['croco'],
+  'hibou': ['chouette'],
+  'souris': ['petite souris'],
+  'mer': ['mère', 'maire'],
+  'pain': ['pin'],
+  'clé': ['clef'],
+};
+
+// Lowercase, strip accents and punctuation, collapse spacing — for tolerant matching.
+function normalizeSpoken(s) {
+  return s.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[.,!?;:]/g, '')
+    .replace(/['’\-]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 function processTranscription(text) {
-  const said = text.toLowerCase().trim().replace(/[.,!?]/g, '');
+  const said = normalizeSpoken(text);
   const expected = pronunCurrentWord.word.toLowerCase();
+
+  // Acceptable answers: the word itself, any per-word alternates, plus synonyms/homophones.
+  const accepted = [expected,
+    ...(pronunCurrentWord.accept || []),
+    ...(WORD_SYNONYMS[expected] || []),
+  ].map(normalizeSpoken).filter(Boolean);
 
   // Tier-based fuzzy matching strictness
   const pronTier = _gameProgress['pronunciation']?.currentTier || 1;
   const divisor = [2, 3, 4][pronTier - 1] || 3;
-  const match = said.includes(expected) || expected.includes(said) ||
-    levenshtein(said, expected) <= Math.max(1, Math.floor(expected.length / divisor));
+  const match = said.length >= 2 && accepted.some(exp =>
+    said.includes(exp) || exp.includes(said) ||
+    levenshtein(said, exp) <= Math.max(1, Math.floor(exp.length / divisor))
+  );
 
   recordAttempt('pronunciation', pronunCurrentWord.word, match);
 
@@ -4193,209 +4145,108 @@ const GAME_INFO = [
   { key:'build', emoji:'🧱', name:'Construis', color:'#ff9800' },
   { key:'draw', emoji:'✏️', name:'Dessine', color:'#e74c3c' },
   { key:'pronunciation', emoji:'🎤', name:'Lecture', color:'#9b59b6' },
-  { key:'colors', emoji:'🎨', name:'Couleurs', color:'#e67e22' },
-  { key:'numbers', emoji:'🔢', name:'Nombres', color:'#1e90ff' },
+  { key:'math', emoji:'🧮', name:'Calcul', color:'#1e90ff' },
 ];
 
-/* ────────── COLORS GAME ────────── */
-async function initColors() {
-  colorCorrect = 0;
-  colorTotal = 0;
-  _sessionNewItems['colors'] = 0;
-  const progress = await loadGameProgress('colors');
-  const masteryMap = await dbReadAllByIndex('mastery', 'game', 'colors');
-  const pool = getItemsForTier('colors', progress.currentTier);
-  colorOrder = buildAdaptiveOrder(pool, masteryMap, 'colors', pool.length);
-  colorRoundIndex = 0;
-  showColorRound();
-  updateTierBadge('colors');
-  showMascotMessage('Trouve la couleur ! 🎨');
+/* ────────── MATH GAME (Calcul: additions & subtractions) ────────── */
+async function initMath() {
+  mathCorrect = 0;
+  mathTotal = 0;
+  _sessionNewItems['math'] = 0;
+  const progress = await loadGameProgress('math');
+  const masteryMap = await dbReadAllByIndex('mastery', 'game', 'math');
+  const pool = getItemsForTier('math', progress.currentTier);
+  mathOrder = buildAdaptiveOrder(pool, masteryMap, 'math', pool.length);
+  mathRoundIndex = 0;
+  showMathRound();
+  updateTierBadge('math');
+  showMascotMessage('Compte bien ! 🧮');
 }
 
-function showColorRound() {
-  if (colorRoundIndex >= colorOrder.length) {
-    colorOrder = shuffle([...colorOrder]);
-    colorRoundIndex = 0;
-  }
-  const targetColor = colorOrder[colorRoundIndex];
-  const color = COLORS.find(c => c.word === targetColor) || COLORS[0];
-
-  document.getElementById('color-prompt').textContent = 'Quelle est cette couleur ?';
-  document.getElementById('color-next-btn').classList.add('hidden');
-  document.getElementById('color-result').classList.add('hidden');
-
-  const tier = _gameProgress['colors']?.currentTier || 1;
-  const numChoices = (TIER_CONFIGS.colors.choices[tier - 1] || 4);
-  const numWrong = numChoices - 1;
-
-  const wrongPool = shuffle(COLORS.filter(c => c.word !== color.word)).slice(0, numWrong);
-  const choices = shuffle([color, ...wrongPool]);
-
-  const container = document.getElementById('color-choices');
-  container.innerHTML = '';
-
-  const showColorHint = tier < 2;
-  choices.forEach((c) => {
-    const btn = document.createElement('button');
-    btn.className = 'color-choice-btn';
-    if (showColorHint) {
-      btn.style.background = c.css;
-      if (c.word === 'blanc' || c.word === 'jaune' || c.word === 'doré') {
-        btn.style.color = '#333';
-        btn.style.textShadow = 'none';
-      }
-    }
-    btn.textContent = c.word;
-    btn.onclick = () => checkColorAnswer(btn, c.word === color.word, color);
-    container.appendChild(btn);
-  });
-
-  document.getElementById('color-emoji').textContent = color.emoji;
-
-  speak(color.word, 0.65);
+function speakMathPrompt() {
+  if (!mathCurrentFact) return;
+  const f = mathCurrentFact;
+  speak(f.a + (f.op === '+' ? ' plus ' : ' moins ') + f.b, 0.6);
 }
 
-function checkColorAnswer(btn, correct, colorData) {
-  if (btn.classList.contains('correct') || btn.classList.contains('wrong')) return;
-  colorTotal++;
-  recordAttempt('colors', colorData.word, correct);
-
-  if (correct) {
-    btn.classList.add('correct');
-    sfxSuccess();
-    colorCorrect++;
-    addStar();
-    mascotCelebrate();
-    spawnConfetti();
-    showMascotMessage('Bravo ! 🎉');
-
-    speakQueue([
-      { text: 'Bravo !', rate: 0.7 },
-      { text: colorData.word, rate: 0.65 },
-    ]);
-
-    document.getElementById('color-prompt').textContent = '✅ ' + colorData.word.toUpperCase() + ' !';
-
-    const result = document.getElementById('color-result');
-    result.innerHTML = '<span class="letter-quiz-result-emoji">' + colorData.emoji + '</span>' +
-      '<span class="letter-quiz-result-text"><strong>' + colorData.word + '</strong></span>';
-    result.classList.remove('hidden');
-
-    document.getElementById('color-next-btn').classList.remove('hidden');
-
-    document.querySelectorAll('.color-choice-btn').forEach(b => {
-      if (b !== btn) b.style.pointerEvents = 'none';
-    });
-  } else {
-    btn.classList.add('wrong');
-    sfxWrong();
-    showMascotMessage('Essaie encore ! 💪');
-    speak('Essaie encore !', 0.85);
-  }
-}
-
-function nextColorRound() {
+function replayMathPrompt() {
   sfxClick();
-  colorRoundIndex++;
-  showColorRound();
+  speakMathPrompt();
 }
 
-/* ────────── NUMBERS GAME ────────── */
-async function initNumbers() {
-  numberCorrect = 0;
-  numberTotal = 0;
-  _sessionNewItems['numbers'] = 0;
-  const progress = await loadGameProgress('numbers');
-  const masteryMap = await dbReadAllByIndex('mastery', 'game', 'numbers');
-  const pool = getItemsForTier('numbers', progress.currentTier);
-  numberOrder = buildAdaptiveOrder(pool, masteryMap, 'numbers', pool.length);
-  numberRoundIndex = 0;
-  showNumberRound();
-  showMascotMessage('Compte les objets ! 🔢');
-}
-
-function showNumberRound() {
-  if (numberRoundIndex >= numberOrder.length) {
-    numberOrder = shuffle([...numberOrder]);
-    numberRoundIndex = 0;
+function showMathRound() {
+  if (mathRoundIndex >= mathOrder.length) {
+    mathOrder = shuffle([...mathOrder]);
+    mathRoundIndex = 0;
   }
-  const targetId = numberOrder[numberRoundIndex];
-  const numData = NUMBERS.find(n => String(n.num) === targetId) || NUMBERS[0];
+  const fact = parseMathFact(mathOrder[mathRoundIndex]);
+  fact.key = mathOrder[mathRoundIndex];
+  mathCurrentFact = fact;
 
-  // Pick a random noun for this round
-  const noun = NUMBER_NOUNS[Math.floor(Math.random() * NUMBER_NOUNS.length)];
-  _currentNumberNoun = noun;
+  document.getElementById('math-equation').textContent = fact.a + ' ' + fact.op + ' ' + fact.b + ' = ?';
+  document.getElementById('math-prompt').textContent = 'Combien ça fait ?';
+  document.getElementById('math-next-btn').classList.add('hidden');
+  document.getElementById('math-result').classList.add('hidden');
 
-  const nounLabel = numData.num === 1 ? noun.sing : noun.plur;
-  const wordWithGender = numData.num === 1 ? (noun.fem ? 'une' : 'un') + ' ' + noun.sing : numData.word + ' ' + noun.plur;
-  const elide = /^[aeiouyéèêëàâîïôùûh]/i.test(noun.plur);
-  const combien = elide ? "Combien d'" + noun.plur : 'Combien de ' + noun.plur;
+  const tier = _gameProgress['math']?.currentTier || 1;
+  const numChoices = (TIER_CONFIGS.math.choices[tier - 1] || 4);
+  const cap = tier <= 2 ? 10 : 20;
 
-  document.getElementById('number-prompt').textContent = combien + ' ?';
-  document.getElementById('number-next-btn').classList.add('hidden');
-  document.getElementById('number-result').classList.add('hidden');
-
-  // Show N copies of the emoji
-  const emojiGrid = document.getElementById('number-emoji-grid');
-  emojiGrid.innerHTML = '';
-  for (let i = 0; i < numData.num; i++) {
-    const span = document.createElement('span');
-    span.textContent = noun.emoji;
-    emojiGrid.appendChild(span);
+  // Distractors: plausible answers near the correct one, within [0, cap]
+  const wrong = new Set();
+  for (const d of shuffle([1, 2, 3, -1, -2, -3, 4, -4])) {
+    if (wrong.size >= numChoices - 1) break;
+    const cand = fact.answer + d;
+    if (cand >= 0 && cand <= cap && cand !== fact.answer) wrong.add(cand);
+  }
+  for (let fill = 0; wrong.size < numChoices - 1 && fill <= cap; fill++) {
+    if (fill !== fact.answer) wrong.add(fill);
   }
 
-  // Build choices
-  const tier = _gameProgress['numbers']?.currentTier || 1;
-  const numChoices = (TIER_CONFIGS.numbers.choices[tier - 1] || 4);
-  const numWrong = numChoices - 1;
-
-  const wrongPool = shuffle(NUMBERS.filter(n => n.num !== numData.num)).slice(0, numWrong);
-  const choices = shuffle([numData, ...wrongPool]);
-
-  const container = document.getElementById('number-choices');
+  const choices = shuffle([fact.answer, ...wrong]);
+  const container = document.getElementById('math-choices');
   container.innerHTML = '';
-
   choices.forEach((n) => {
     const btn = document.createElement('button');
-    btn.className = 'number-choice-btn';
-    btn.textContent = n.num;
-    btn.onclick = () => checkNumberAnswer(btn, n.num === numData.num, numData, wordWithGender);
+    btn.className = 'math-choice-btn';
+    btn.textContent = n;
+    btn.onclick = () => checkMathAnswer(btn, n === fact.answer, fact);
     container.appendChild(btn);
   });
 
-  speak(combien, 0.65);
+  speakMathPrompt();
 }
 
-function checkNumberAnswer(btn, correct, numData, label) {
+function checkMathAnswer(btn, correct, fact) {
   if (btn.classList.contains('correct') || btn.classList.contains('wrong')) return;
-  numberTotal++;
-  recordAttempt('numbers', String(numData.num), correct);
-  const noun = _currentNumberNoun;
+  mathTotal++;
+  recordAttempt('math', fact.key, correct);
 
   if (correct) {
     btn.classList.add('correct');
     sfxSuccess();
-    numberCorrect++;
+    mathCorrect++;
     addStar();
     mascotCelebrate();
     spawnConfetti();
     showMascotMessage('Bravo ! 🎉');
 
+    const spoken = fact.a + (fact.op === '+' ? ' plus ' : ' moins ') + fact.b + ' égalent ' + fact.answer;
     speakQueue([
       { text: 'Bravo !', rate: 0.7 },
-      { text: label, rate: 0.65 },
+      { text: spoken, rate: 0.65 },
     ]);
 
-    document.getElementById('number-prompt').textContent = '✅ ' + label.toUpperCase() + ' !';
+    const eq = fact.a + ' ' + fact.op + ' ' + fact.b + ' = ' + fact.answer;
+    document.getElementById('math-prompt').textContent = '✅ ' + eq + ' !';
 
-    const result = document.getElementById('number-result');
-    result.innerHTML = '<span class="letter-quiz-result-emoji">' + noun.emoji + '</span>' +
-      '<span class="letter-quiz-result-text"><strong>' + label + '</strong></span>';
+    const result = document.getElementById('math-result');
+    result.innerHTML = '<span class="letter-quiz-result-text"><strong>' + eq + '</strong></span>';
     result.classList.remove('hidden');
 
-    document.getElementById('number-next-btn').classList.remove('hidden');
+    document.getElementById('math-next-btn').classList.remove('hidden');
 
-    document.querySelectorAll('.number-choice-btn').forEach(b => {
+    document.querySelectorAll('.math-choice-btn').forEach(b => {
       if (b !== btn) b.style.pointerEvents = 'none';
     });
   } else {
@@ -4406,10 +4257,10 @@ function checkNumberAnswer(btn, correct, numData, label) {
   }
 }
 
-function nextNumberRound() {
+function nextMathRound() {
   sfxClick();
-  numberRoundIndex++;
-  showNumberRound();
+  mathRoundIndex++;
+  showMathRound();
 }
 
 async function initStats() {
