@@ -56,6 +56,8 @@ jobs:
             index.html
             felix/index.html
             felix/english/index.html
+            felix/verbes-anglais/index.html
+            felix/famille-espagnol/index.html
             felix/math/index.html
             felix/quiz-livre/index.html
             felix/stats/index.html
@@ -103,6 +105,8 @@ jobs:
           - { name: 'Page loads', file: 'smoke-pages.mjs' }
           - { name: 'Felix Math', file: 'smoke-felix-math.mjs' }
           - { name: 'Felix English', file: 'smoke-felix-english.mjs' }
+          - { name: 'Felix Verbes', file: 'smoke-felix-verbes.mjs' }
+          - { name: 'Felix Famille', file: 'smoke-felix-famille.mjs' }
           - { name: 'Felix Quiz-Livre', file: 'smoke-felix-quizlivre.mjs' }
           - { name: 'Dasha French', file: 'smoke-dasha-french.mjs' }
           - { name: 'Dasha Citizenship', file: 'smoke-dasha-citizenship.mjs' }
