@@ -813,6 +813,43 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════
+   ENGLISH GAME (Anglais)
+   ═══════════════════════════════════════════════════════ */
+.english-choices {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  width: 100%;
+  max-width: 380px;
+}
+.english-choices.three { grid-template-columns: repeat(3, 1fr); max-width: 480px; }
+
+.english-choice-btn {
+  aspect-ratio: 1;
+  font-size: clamp(56px, 16vw, 90px);
+  line-height: 1;
+  border-radius: 24px;
+  border: 4px solid var(--pink-light);
+  background: white;
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.1), var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.english-choice-btn:active { transform: scale(0.95); }
+.english-choice-btn.correct {
+  border-color: var(--gold);
+  animation: correctPulse 0.6s ease;
+  box-shadow: 0 0 30px rgba(46,204,113,0.5);
+}
+.english-choice-btn.wrong {
+  animation: wrongShake 0.5s ease;
+  opacity: 0.4;
+}
+
+/* ═══════════════════════════════════════════════════════
    BUILD WORD SCREEN
    ═══════════════════════════════════════════════════════ */
 .build-area {
@@ -1514,6 +1551,10 @@ body {
         <span class="menu-icon">🧮</span>
         Calcul
       </div>
+      <div class="menu-btn coral" onclick="goTo('english')">
+        <span class="menu-icon">🇬🇧</span>
+        Anglais
+      </div>
     </div>
   </div>
 
@@ -1646,6 +1687,18 @@ body {
     </div>
   </div>
 
+  <!-- ═══ ENGLISH SCREEN (Anglais) ═══ -->
+  <div id="screen-english" class="screen">
+    <div class="screen-title">Anglais 🇬🇧</div>
+    <div class="word-game-area">
+      <button id="english-speaker-btn" class="letter-speaker-btn" onclick="replayEnglishWord()">🔊</button>
+      <div id="english-prompt" class="word-prompt">Écoute et touche la bonne image !</div>
+      <div id="english-choices" class="english-choices"></div>
+      <div id="english-result" class="letter-quiz-result hidden"></div>
+      <button id="english-next-btn" class="btn-action hidden" onclick="nextEnglishRound()">➡️ Suivant</button>
+    </div>
+  </div>
+
   <!-- ═══ Stats Screen ═══ -->
   <div id="screen-stats" class="screen">
     <div class="screen-title">Mes Progrès</div>
@@ -1734,8 +1787,25 @@ function initVoices() {
   if (frenchVoice) console.log('French female voice:', frenchVoice.name, frenchVoice.lang);
   else console.warn('No French voice found!');
 }
-speechSynthesis.onvoiceschanged = initVoices;
+/* English voice for the Anglais game — same preference order as Felix's
+   English activities, but female voices first to match Lili's French voice. */
+let englishVoice = null;
+function initEnglishVoice() {
+  const enVoices = speechSynthesis.getVoices().filter(v => v.lang.startsWith('en'));
+  const byName = (lang, name) => enVoices.find(v => v.lang === lang && v.name.toLowerCase().includes(name));
+  englishVoice = byName('en-GB', 'kate') || byName('en-GB', 'serena') || byName('en-GB', 'martha')
+    || byName('en-US', 'samantha') || byName('en-US', 'allison')
+    || enVoices.find(v => v.lang === 'en-GB' && v.localService)
+    || enVoices.find(v => v.lang === 'en-US' && v.localService)
+    || enVoices.find(v => v.localService)
+    || enVoices[0]
+    || null;
+  if (englishVoice) console.log('English voice:', englishVoice.name, englishVoice.lang);
+}
+
+speechSynthesis.onvoiceschanged = () => { initVoices(); initEnglishVoice(); };
 initVoices();
+initEnglishVoice();
 
 /* speak() uses a short delay after cancel() to work around a Chrome/Safari bug
    where speechSynthesis.speak() right after .cancel() silently drops the utterance,
@@ -1756,7 +1826,8 @@ function speak(text, rate = 0.85) {
 
 /* Queue multiple utterances that play sequentially using onend chaining.
    Queuing via speechSynthesis.speak() in a loop is buggy in Chrome/Safari —
-   short final utterances get silently dropped. Chaining with onend avoids this. */
+   short final utterances get silently dropped. Chaining with onend avoids this.
+   An item with lang:'en' uses the English voice (Anglais game). */
 function speakQueue(items) {
   speechSynthesis.cancel();
   if (!frenchVoice) initVoices();
@@ -1766,10 +1837,13 @@ function speakQueue(items) {
     if (index >= items.length) return;
     const item = items[index];
     const u = new SpeechSynthesisUtterance(item.text);
-    u.lang = 'fr-FR';
+    const isEnglish = item.lang === 'en';
+    if (isEnglish && !englishVoice) initEnglishVoice();
+    u.lang = isEnglish ? (englishVoice?.lang || 'en-GB') : 'fr-FR';
     u.rate = item.rate || 0.7;
     u.pitch = 1.1;
-    if (frenchVoice) u.voice = frenchVoice;
+    const voice = isEnglish ? englishVoice : frenchVoice;
+    if (voice) u.voice = voice;
     u.onend = () => { index++; speakNext(); };
     u.onerror = () => { index++; speakNext(); };
     speechSynthesis.speak(u);
@@ -2142,6 +2216,64 @@ function parseMathFact(fact) {
   return { a, op, b, answer: op === '+' ? a + b : a - b };
 }
 
+/* ────────── ENGLISH WORDS (Anglais: listen and tap the picture) ──────────
+   Zoé does not read yet, so every item is a picture she can recognise.
+   'en' is the mastery key and the spoken word, 'fr' is the French translation. */
+const ENGLISH_WORDS = [
+  // Level 1: pets and colours
+  { en:'cat', fr:'le chat', emoji:'🐱', level:1 },
+  { en:'dog', fr:'le chien', emoji:'🐶', level:1 },
+  { en:'fish', fr:'le poisson', emoji:'🐟', level:1 },
+  { en:'bird', fr:"l'oiseau", emoji:'🐦', level:1 },
+  { en:'duck', fr:'le canard', emoji:'🦆', level:1 },
+  { en:'apple', fr:'la pomme', emoji:'🍎', level:1 },
+  { en:'red', fr:'rouge', emoji:'🔴', level:1 },
+  { en:'blue', fr:'bleu', emoji:'🔵', level:1 },
+  { en:'yellow', fr:'jaune', emoji:'🟡', level:1 },
+  { en:'green', fr:'vert', emoji:'🟢', level:1 },
+  // Level 2: food, toys and home
+  { en:'banana', fr:'la banane', emoji:'🍌', level:2 },
+  { en:'cake', fr:'le gâteau', emoji:'🎂', level:2 },
+  { en:'milk', fr:'le lait', emoji:'🥛', level:2 },
+  { en:'egg', fr:"l'œuf", emoji:'🥚', level:2 },
+  { en:'ball', fr:'le ballon', emoji:'⚽', level:2 },
+  { en:'car', fr:'la voiture', emoji:'🚗', level:2 },
+  { en:'house', fr:'la maison', emoji:'🏠', level:2 },
+  { en:'book', fr:'le livre', emoji:'📖', level:2 },
+  { en:'bed', fr:'le lit', emoji:'🛏️', level:2 },
+  { en:'teddy bear', fr:'le nounours', emoji:'🧸', level:2 },
+  // Level 3: nature and the body
+  { en:'sun', fr:'le soleil', emoji:'☀️', level:3 },
+  { en:'moon', fr:'la lune', emoji:'🌙', level:3 },
+  { en:'star', fr:"l'étoile", emoji:'⭐', level:3 },
+  { en:'tree', fr:"l'arbre", emoji:'🌳', level:3 },
+  { en:'flower', fr:'la fleur', emoji:'🌸', level:3 },
+  { en:'rain', fr:'la pluie', emoji:'🌧️', level:3 },
+  { en:'hand', fr:'la main', emoji:'✋', level:3 },
+  { en:'eye', fr:"l'œil", emoji:'👁️', level:3 },
+  { en:'nose', fr:'le nez', emoji:'👃', level:3 },
+  { en:'ear', fr:"l'oreille", emoji:'👂', level:3 },
+  { en:'foot', fr:'le pied', emoji:'🦶', level:3 },
+  { en:'mouth', fr:'la bouche', emoji:'👄', level:3 },
+  // Level 4: numbers, more colours, farm and zoo animals
+  { en:'one', fr:'un', emoji:'1️⃣', level:4 },
+  { en:'two', fr:'deux', emoji:'2️⃣', level:4 },
+  { en:'three', fr:'trois', emoji:'3️⃣', level:4 },
+  { en:'four', fr:'quatre', emoji:'4️⃣', level:4 },
+  { en:'five', fr:'cinq', emoji:'5️⃣', level:4 },
+  { en:'purple', fr:'violet', emoji:'🟣', level:4 },
+  { en:'black', fr:'noir', emoji:'⚫', level:4 },
+  { en:'white', fr:'blanc', emoji:'⚪', level:4 },
+  { en:'cow', fr:'la vache', emoji:'🐮', level:4 },
+  { en:'pig', fr:'le cochon', emoji:'🐷', level:4 },
+  { en:'horse', fr:'le cheval', emoji:'🐴', level:4 },
+  { en:'rabbit', fr:'le lapin', emoji:'🐰', level:4 },
+  { en:'lion', fr:'le lion', emoji:'🦁', level:4 },
+  { en:'elephant', fr:"l'éléphant", emoji:'🐘', level:4 },
+  { en:'monkey', fr:'le singe', emoji:'🐵', level:4 },
+  { en:'frog', fr:'la grenouille', emoji:'🐸', level:4 },
+];
+
 /* ────────── GAME STATE ────────── */
 let stars = parseInt(localStorage.getItem('lili-stars') || '0');
 let currentScreen = 'home';
@@ -2197,6 +2329,12 @@ let mathOrder = [];
 let mathCorrect = 0;
 let mathTotal = 0;
 let mathCurrentFact = null;
+
+// English game (Anglais)
+let englishRoundIndex = 0;
+let englishOrder = [];
+let englishCurrentWord = null;
+let englishIntroDone = false;
 
 updateStarDisplay();
 
@@ -2423,6 +2561,11 @@ const TIER_CONFIGS = {
     choices: [3, 4, 4, 5],
     items: function(tier) { return buildMathFacts(tier); },
   },
+  english: {
+    maxTier: 4,
+    choices: [2, 3, 4, 4],
+    items: function(tier) { return ENGLISH_WORDS.filter(w => w.level <= tier).map(w => w.en); },
+  },
 };
 
 const EASY_DRAW_LETTERS = ['C','I','J','L','O','S','T','U','V','X'];
@@ -2560,6 +2703,7 @@ function showTierUnlockCelebration(game, newTier) {
     letters:'Lettres', lettermatch:'Formes de Lettres', sylquiz:'Syllabes',
     syllables:'Labo Syllabes', words:'Mots', build:'Construction de Mots',
     draw:'Dessin', pronunciation:'Lecture à voix haute', math:'Calcul',
+    english:'Anglais',
   };
   showMascotMessage(TIER_EMOJIS[newTier] + ' Niveau ' + TIER_NAMES[newTier] + ' !');
   speak('Bravo Zoé ! Tu es maintenant ' + TIER_NAMES[newTier] + ' en ' + (gameNames[game] || game) + ' !', 0.75);
@@ -2659,7 +2803,7 @@ function createDecorations() {
 }
 
 /* ────────── NAVIGATION ────────── */
-const VALID_SCREENS = ['home','letters','lettermatch','sylquiz','syllables','words','build','draw','pronunciation','math','stats'];
+const VALID_SCREENS = ['home','letters','lettermatch','sylquiz','syllables','words','build','draw','pronunciation','math','english','stats'];
 
 function goTo(screen, updateHash = true) {
   sfxClick();
@@ -2696,6 +2840,7 @@ function goTo(screen, updateHash = true) {
   else if (screen === 'draw') initDraw();
   else if (screen === 'pronunciation') initPronunciation();
   else if (screen === 'math') initMath();
+  else if (screen === 'english') initEnglish();
   else if (screen === 'stats') initStats();
 
   if (screen === 'home') {
@@ -4146,6 +4291,7 @@ const GAME_INFO = [
   { key:'draw', emoji:'✏️', name:'Dessine', color:'#e74c3c' },
   { key:'pronunciation', emoji:'🎤', name:'Lecture', color:'#9b59b6' },
   { key:'math', emoji:'🧮', name:'Calcul', color:'#1e90ff' },
+  { key:'english', emoji:'🇬🇧', name:'Anglais', color:'#ff7f50' },
 ];
 
 /* ────────── MATH GAME (Calcul: additions & subtractions) ────────── */
@@ -4261,6 +4407,120 @@ function nextMathRound() {
   sfxClick();
   mathRoundIndex++;
   showMathRound();
+}
+
+/* ────────── ENGLISH GAME (Anglais: listen and tap the picture) ────────── */
+async function initEnglish() {
+  _sessionNewItems['english'] = 0;
+  englishIntroDone = false;
+  const progress = await loadGameProgress('english');
+  const masteryMap = await dbReadAllByIndex('mastery', 'game', 'english');
+  const pool = getItemsForTier('english', progress.currentTier);
+  englishOrder = buildAdaptiveOrder(pool, masteryMap, 'english', pool.length);
+  englishRoundIndex = 0;
+  showEnglishRound();
+  updateTierBadge('english');
+  showMascotMessage('Hello Zoé ! 👋');
+}
+
+function speakEnglishWord() {
+  if (!englishCurrentWord) return;
+  const items = [];
+  // First round of each visit: explain the game in French before the first word
+  if (!englishIntroDone) {
+    items.push({ text: 'Écoute le mot en anglais, et touche la bonne image !', rate: 0.8 });
+    englishIntroDone = true;
+  }
+  items.push({ text: englishCurrentWord.en, lang: 'en', rate: 0.7 });
+  speakQueue(items);
+}
+
+function replayEnglishWord() {
+  sfxClick();
+  speakEnglishWord();
+}
+
+function showEnglishRound() {
+  if (englishRoundIndex >= englishOrder.length) {
+    englishOrder = shuffle([...englishOrder]);
+    englishRoundIndex = 0;
+  }
+  const word = ENGLISH_WORDS.find(w => w.en === englishOrder[englishRoundIndex]);
+  englishCurrentWord = word;
+
+  document.getElementById('english-prompt').textContent = 'Écoute et touche la bonne image ! 👂';
+  document.getElementById('english-next-btn').classList.add('hidden');
+  document.getElementById('english-result').classList.add('hidden');
+
+  const tier = _gameProgress['english']?.currentTier || 1;
+  const numChoices = TIER_CONFIGS.english.choices[tier - 1] || 4;
+  const unlocked = ENGLISH_WORDS.filter(w => w.level <= tier && w.en !== word.en);
+  const choices = shuffle([word, ...shuffle(unlocked).slice(0, numChoices - 1)]);
+
+  const container = document.getElementById('english-choices');
+  container.className = 'english-choices' + (numChoices === 3 ? ' three' : '');
+  container.innerHTML = '';
+  choices.forEach((w) => {
+    const btn = document.createElement('button');
+    btn.className = 'english-choice-btn';
+    btn.textContent = w.emoji;
+    btn.setAttribute('aria-label', w.fr);
+    btn.onclick = () => checkEnglishAnswer(btn, w.en === word.en, word);
+    container.appendChild(btn);
+  });
+
+  speakEnglishWord();
+}
+
+function checkEnglishAnswer(btn, correct, word) {
+  if (btn.classList.contains('correct') || btn.classList.contains('wrong')) return;
+  recordAttempt('english', word.en, correct);
+
+  if (correct) {
+    btn.classList.add('correct');
+    sfxSuccess();
+    addStar();
+    mascotCelebrate();
+    spawnConfetti();
+    showMascotMessage('Yes! Bravo ! 🎉');
+
+    // Say the word again in English, then give the French meaning
+    speakQueue([
+      { text: 'Yes! ' + word.en + '!', lang: 'en', rate: 0.75 },
+      { text: 'Bravo ! Ça veut dire ' + word.fr + ' !', rate: 0.8 },
+    ]);
+
+    document.getElementById('english-prompt').textContent = '✅ ' + word.emoji + ' ' + word.en + ' !';
+    const result = document.getElementById('english-result');
+    result.innerHTML = '';
+    const text = document.createElement('span');
+    text.className = 'letter-quiz-result-text';
+    const strong = document.createElement('strong');
+    strong.textContent = word.en;
+    text.append(word.emoji + ' ', strong, ' = ' + word.fr);
+    result.appendChild(text);
+    result.classList.remove('hidden');
+
+    document.getElementById('english-next-btn').classList.remove('hidden');
+    document.querySelectorAll('.english-choice-btn').forEach(b => {
+      if (b !== btn) b.style.pointerEvents = 'none';
+    });
+  } else {
+    btn.classList.add('wrong');
+    sfxWrong();
+    showMascotMessage('Essaie encore ! 💪');
+    // Repeat the English word so she can listen again
+    speakQueue([
+      { text: 'Essaie encore !', rate: 0.85 },
+      { text: word.en, lang: 'en', rate: 0.7 },
+    ]);
+  }
+}
+
+function nextEnglishRound() {
+  sfxClick();
+  englishRoundIndex++;
+  showEnglishRound();
 }
 
 async function initStats() {
