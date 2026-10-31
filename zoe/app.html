@@ -1803,14 +1803,6 @@ function initEnglishVoice() {
   if (englishVoice) console.log('English voice:', englishVoice.name, englishVoice.lang);
 }
 
-// TEMP diagnostics for the Anglais audio bug: send speech data to the nginx access log
-function englishDiag(event, data) {
-  try {
-    const q = new URLSearchParams({ e: event, d: JSON.stringify(data).slice(0, 1500), t: Date.now() });
-    fetch('/zoe/_diag?' + q, { cache: 'no-store' }).catch(() => {});
-  } catch (e) {}
-}
-
 speechSynthesis.onvoiceschanged = () => { initVoices(); initEnglishVoice(); };
 initVoices();
 initEnglishVoice();
@@ -1852,14 +1844,6 @@ function speakQueue(items) {
     u.pitch = 1.1;
     const voice = isEnglish ? englishVoice : frenchVoice;
     if (voice) u.voice = voice;
-    if (currentScreen === 'english') {
-      const t0 = Date.now();
-      const info = { text: item.text, lang: u.lang, voice: voice && [voice.name, voice.lang, voice.localService, voice.voiceURI] };
-      englishDiag('speak', info);
-      u.addEventListener('start', () => englishDiag('start', { text: item.text, ms: Date.now() - t0 }));
-      u.addEventListener('end', () => englishDiag('end', { text: item.text, ms: Date.now() - t0 }));
-      u.addEventListener('error', (ev) => englishDiag('error', { text: item.text, err: ev.error, ms: Date.now() - t0 }));
-    }
     u.onend = () => { index++; speakNext(); };
     u.onerror = () => { index++; speakNext(); };
     speechSynthesis.speak(u);
@@ -4429,8 +4413,6 @@ function nextMathRound() {
 async function initEnglish() {
   _sessionNewItems['english'] = 0;
   englishIntroDone = false;
-  englishDiag('voices', speechSynthesis.getVoices().filter(v => v.lang.startsWith('en') || v === frenchVoice)
-    .map(v => [v.name, v.lang, v.localService ? 1 : 0]));
   const progress = await loadGameProgress('english');
   const masteryMap = await dbReadAllByIndex('mastery', 'game', 'english');
   const pool = getItemsForTier('english', progress.currentTier);
