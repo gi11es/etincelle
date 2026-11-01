@@ -1130,6 +1130,14 @@ body {
   border-radius: 20px;
 }
 .draw-ghost-canvas { opacity: 0.2; pointer-events: none; }
+/* Cursive guide: pulsing start dot(s) and a pen that draws the letter along its path */
+.draw-guide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+.guide-trail { fill: none; stroke: #ff69b4; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; opacity: 0.8; transition: opacity 0.8s; }
+.guide-trail.faded { opacity: 0; }
+.guide-start circle { fill: #2ecc71; stroke: white; stroke-width: 3; transform-box: fill-box; transform-origin: center; animation: guidePulse 1.2s ease-in-out infinite; }
+.guide-start text { fill: white; font: bold 13px sans-serif; text-anchor: middle; dominant-baseline: central; }
+.guide-pen { fill: #8b00ff; stroke: white; stroke-width: 3; }
+@keyframes guidePulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.35); } }
 .draw-cursive-letter { font-family: 'Dancing Script', cursive; font-weight: 700; font-size: 2.2em; line-height: 0.8; vertical-align: -0.1em; color: var(--pink); }
 .draw-canvas { touch-action: none; cursor: crosshair; }
 .draw-buttons { display: flex; gap: 12px; justify-content: center; margin: 12px 0; }
@@ -1666,6 +1674,7 @@ body {
       <div id="draw-prompt" class="word-prompt">Dessine la lettre !</div>
       <div class="draw-canvas-container">
         <canvas id="draw-ghost" class="draw-ghost-canvas" width="280" height="280"></canvas>
+        <svg id="draw-guide" class="draw-guide" viewBox="0 0 280 280" aria-hidden="true"></svg>
         <canvas id="draw-canvas" class="draw-canvas" width="280" height="280"></canvas>
       </div>
       <div class="draw-buttons">
@@ -3738,8 +3747,8 @@ async function recognizeLetter(canvas, target = drawCurrentLetter) {
 
 /* Cursive letter recognition by template matching. The EMNIST model rejects
    many cursive shapes (b, h, k, l, r, s, u, v, z), so the drawing is compared
-   with the 26 Dancing Script letters (the guide font). Both are scaled to a
-   32x32 grid, and the score is the symmetric mean chamfer distance. */
+   with the 26 letters drawn from CURSIVE_PATHS with the child's pen width. Both
+   are scaled to a 32x32 grid, and the score is the symmetric mean chamfer distance. */
 const CURSIVE_GRID = 32;
 let _cursiveTemplates = null;
 
@@ -3800,15 +3809,16 @@ function cursiveDistance(mask) {
 
 function cursiveTemplates() {
   if (_cursiveTemplates) return _cursiveTemplates;
+  // Templates are the stroke paths drawn with the child's pen width, so they look
+  // like real drawings (thin lines), not like the thick font glyphs
   const c = document.createElement('canvas');
   c.width = 280; c.height = 280;
   const ctx = c.getContext('2d');
+  ctx.lineWidth = 12; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = '#000';
   _cursiveTemplates = {};
-  for (const L of 'abcdefghijklmnopqrstuvwxyz') {
+  for (const [L, strokes] of Object.entries(CURSIVE_PATHS)) {
     ctx.clearRect(0, 0, 280, 280);
-    ctx.font = 'bold 200px \'Dancing Script\'';
-    ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = '#000';
-    ctx.fillText(L, 140, 140);
+    for (const d of strokes) ctx.stroke(new Path2D(d));
     const mask = cursiveMask(c);
     _cursiveTemplates[L] = { mask, dist: cursiveDistance(mask) };
   }
@@ -3831,6 +3841,84 @@ function recognizeCursive(canvas) {
   }
   const ranked = Object.entries(scores).sort((x, y) => x[1] - y[1]);
   return { best: ranked[0][0], scores, ranked };
+}
+
+/* Stroke paths of the 26 cursive letters, in draw-canvas coordinates (280x280), on the
+   centre line of the guide glyph that renderGhost() draws. Each letter is a list of strokes
+   in writing order (French school ductus: round letters start top right and turn left;
+   the dot of i/j and the bar of t come last). Used for the guide and for recognition. */
+const CURSIVE_PATHS = {"a":["M 164 104 C 147.1 48.8 54.8 149.8 84 179.8 C 95 191.1 141.9 155.5 143 154.1 C 153.5 140.7 157.6 123.7 163 108 C 157.7 123.4 139.8 154.5 144.6 169.2 C 156.3 205 199.5 149.2 205 135"],"b":["M 118 141 C 134.5 130.6 184.5 55.4 160.1 52.8 C 146.7 51.4 133.6 80.5 128.5 89.9 C 114.2 116.5 72.5 205.8 98.5 231.4 C 139.6 272 183.8 136.9 138.8 157.3 C 97.2 176.2 178.2 255.1 197 178"],"c":["M 156 121 C 191.4 49.8 63.3 120.6 102.1 176.8 C 126.8 212.4 179.3 158 188 133"],"d":["M 147 145 C 115.8 132.8 86.2 171.3 76.9 197.4 C 73.2 207.8 67.8 231.4 84.1 234 C 105.7 237.5 117.9 215.2 130.7 202.9 C 135.6 198.2 143.6 198 147.7 192.5 C 157.6 179.1 160.6 157 166.9 141.6 C 180 109 197 78.6 212 47 C 190.6 92.1 152.4 150.6 147.4 200.7 C 140.7 267.2 196.4 222.5 208 190"],"e":["M 103 150 C 123.2 151.6 191.9 118.4 164.4 93.9 C 139.8 72.1 78.9 150.2 102.5 181.3 C 128.7 215.8 181.3 164.4 193 140"],"f":["M 137 108 C 156.8 104.1 201.2 41.8 174.6 46 C 148.7 50 106.8 163.7 104.5 188.2 C 103.4 200.4 90.1 221.3 101.1 233 C 120.6 253.9 131.8 175.1 132.9 173.2 C 136.2 167 151.2 173.4 157.6 171.6 C 167 169 172.6 160.5 178 153"],"g":["M 166 70 C 145.8 33.4 66 108.3 93.4 140.4 C 104 152.9 147.3 125.8 152.7 117.8 C 160.7 105.9 163 89.8 170 77 C 149.4 114.7 147.5 158 124.7 194.8 C 118.1 205.5 101.1 230.1 86 217.6 C 72.3 206.2 95.5 186.4 104.2 180.8 C 113.6 174.9 127.5 174.2 135.8 168 C 140.2 164.7 140.9 158.4 145.5 155.3 C 160.3 145 194.2 143.1 200 105"],"h":["M 115 143 C 116.7 134.1 172.9 55.3 147.1 52.8 C 136 51.8 121.2 79.4 116.3 88 C 94 126.9 73.3 178.7 78 224 C 82.9 219.8 89.4 216.2 93.1 210.8 C 106.3 191.7 109.3 160.7 138.8 159.8 C 144.6 159.6 149.4 162.2 151.6 167.6 C 158.6 184.7 135.9 217.3 153 229.8 C 174.2 245.3 206.2 201.8 205 185"],"i":["M 138 123 C 125.2 141.7 97.3 179.6 113.3 203.3 C 132.4 231.5 171.5 181.8 175 163","M 155 80 L 168 74"],"j":["M 135 141 C 137.9 129 145.3 127.2 151.5 117.7 C 156.7 109.8 158.6 98.8 162 90 C 146.7 129.6 145.7 170.4 124.9 208.6 C 119.2 218.9 103.8 243.1 88.9 234.6 C 75.3 226.9 94.5 207 101.4 201.8 C 111 194.6 120.4 193.7 130.6 188.9 C 136.5 186.1 137.3 178.9 142.4 175.4 C 165.3 159.8 172.5 172.8 195 132","M 163 52 L 173 47"],"k":["M 112 124 C 132.2 120.9 172.3 62.2 153 54.3 C 140.8 49.3 125.9 80.2 121.7 88.2 C 98.7 131.7 83.7 174 80 222 C 84.9 214.4 92.7 210.2 97.6 202.7 C 109.7 183.8 126.4 137.1 157.8 149.9 C 186.8 161.7 147.8 202.7 122 192 C 136.4 202.1 134.2 221.3 148.6 231.5 C 173.3 248.9 199.5 203.4 203 185"],"l":["M 114 172 C 139.2 165.9 163.5 114.8 172.8 92 C 175.5 85.5 185.8 59.9 174.7 56.6 C 160.1 52.3 146 86.2 140.2 95.4 C 122.9 123 92.3 192.4 101.6 224.5 C 113.5 265.7 157.8 206.9 163 190"],"m":["M 69 103 C 68.7 131.1 56.4 155.7 48 182 C 51.8 170.3 55.2 153.9 62.8 144.2 C 67.5 138.3 76.4 138 82.1 133.3 C 90.4 126.7 118.8 91.4 131.8 106.6 C 145.6 122.7 122.2 163.7 117 180 C 120.4 169.2 124.9 155.8 132.2 146.9 C 139 138.6 178.7 108.3 188.2 122.7 C 199.2 139.5 174.9 163.5 188.6 179.9 C 207.2 202.2 236.9 151.4 239 137"],"n":["M 94 110 C 86.5 130.6 81 151.3 73 172 C 76.6 162.6 80.2 150.6 86.8 142.8 C 91.1 137.6 99 137.2 104.3 133.2 C 114.9 125.2 144.3 91.6 158.8 111.8 C 171.1 129 144.2 157.1 160.9 172 C 181.7 190.5 208.8 145.5 210 130"],"o":["M 130 118 C 97.2 107.4 79.2 174.5 100.8 182.3 C 135.9 195.1 187.2 102.3 156.9 91.7 C 149.2 89.1 142.2 91.2 137.2 97.3 C 107.5 133.6 162.2 193.3 195 138"],"p":["M 119 57 C 125.5 94.1 98.7 186.5 83 222 C 99.9 183.9 103.1 130.1 116.3 102 C 120.1 93.8 164.6 65 176.7 66.9 C 222.5 73.8 175.3 174.7 125 152"],"q":["M 172 68 C 140.4 24 63.6 118.2 89.8 145.8 C 101.5 158.3 142.7 125.6 148 119.5 C 158.6 107.2 165.9 89.7 172 75 C 165 92.1 151.9 107.7 146.9 125.5 C 144.5 134 145.8 143 143.6 151.5 C 141.1 160.9 136.6 168.5 135.3 178.4 C 134.3 186 128.3 211 137.4 215.4 C 157.4 225 151.5 167.2 146.7 158 C 145.5 155.6 144.5 152.8 145.6 150.2 C 147.6 145.7 188.9 139.9 200 105"],"r":["M 82 165 C 93.8 138.8 108.7 114 112 85 C 107.8 122 132.1 105.8 133.8 136.1 C 134.6 151.8 112.9 176 126.9 189.8 C 145.1 207.8 187.3 165.9 187 147"],"s":["M 100 152 C 107 126.2 133.1 111.8 139 85 C 132.2 116.7 165.8 160.4 138.7 187.7 C 113.7 212.9 73.6 169.8 93.7 153.6 C 101.5 147.4 118.6 167 126 170.2 C 153.8 182.4 184.6 169.5 193 140"],"t":["M 161 57 C 139.1 102.7 105.4 141.6 103.3 194.6 C 100.9 255.4 164.6 208.8 183 173","M 98 126 C 113.8 138.3 162.9 135 183 130"],"u":["M 104 103 C 93.6 114.4 69.6 171.1 95.4 177.2 C 112.5 181.3 155.8 137 155 108 C 155.6 130.1 135.6 147.7 143.3 170.9 C 155 206.3 199.2 147 205 135"],"v":["M 91 117 C 88.8 128.9 88.1 141.3 88.1 153.5 C 87.7 220.1 128.8 158.4 141.6 140.4 C 144.8 136 150.1 133.5 153.1 129 C 158.2 121.1 157.9 108.8 162 100 C 144.1 138.7 178 187.9 198 136"],"w":["M 75 106 C 64.6 117 42.8 172 65.7 179.5 C 86.1 186.1 93.7 158.4 105.3 149.3 C 109.8 145.7 116.5 148.6 119.6 142.9 C 124.8 133.6 125.5 117.3 126 107 C 125.3 122.8 112.1 168.7 125.6 180.2 C 139.4 191.8 179.8 138.6 183.6 128.9 C 186.7 121.2 186.8 111.2 188 103 C 178.9 165.3 220.9 174.8 228 135"],"x":["M 78 143 C 80.5 135.9 83.3 129.3 86.9 122.7 C 91.9 113.5 98.4 103.4 109.2 100.8 C 138.4 93.9 132.1 155.7 144 171.5 C 162.7 196.4 193.2 151.3 198 136","M 87 190 C 103.8 164.4 119.3 156.8 130.9 142.5 C 134.9 137.5 132.8 130.4 136.3 125.2 C 143.5 114.4 175.5 92.3 188 93"],"y":["M 113 65 C 100.5 77.1 74.2 142.6 112.8 132.5 C 118.3 131.1 152.8 106.2 155.1 102.3 C 161.9 90.8 163.2 79 172 68 C 153.1 91.5 156.8 119.4 145.9 145.4 C 140.4 158.6 131.6 175.9 123.9 188.2 C 117.4 198.7 101.2 224.1 85.8 213.1 C 69.3 201.4 94.1 181.3 102.8 174.9 C 113 167.4 124.1 167.7 134.3 162.3 C 140 159.2 139.4 151.1 145.1 148.2 C 161.2 139.9 192.5 137 198 100"],"z":["M 104 111 C 111.7 92.8 130.8 46.6 158.9 61.3 C 187.8 76.4 143.7 112.7 144.3 121.4 C 145.6 144.1 170.6 148.2 151.4 185.7 C 143.3 201.4 108.2 237.1 88.3 218.9 C 76.1 207.8 95.4 191.1 103.8 185.1 C 123.5 171 137.3 168.6 155.4 159 C 167.2 152.7 192.9 120.4 198 107"]};
+
+let _guideAnim = null;
+let drawGuideAllowed = false;
+
+function clearCursiveGuide() {
+  cancelAnimationFrame(_guideAnim);
+  _guideAnim = null;
+  document.getElementById('draw-guide').textContent = '';
+}
+
+// Show the start dot of each stroke, and if animate, move a pen along the strokes in order
+function showCursiveGuide(letter, animate) {
+  clearCursiveGuide();
+  const strokes = CURSIVE_PATHS[letter];
+  if (!strokes) return;
+  const svg = document.getElementById('draw-guide');
+  const NS = 'http://www.w3.org/2000/svg';
+  const trails = strokes.map(d => {
+    const p = document.createElementNS(NS, 'path');
+    p.setAttribute('d', d);
+    p.setAttribute('class', 'guide-trail');
+    svg.appendChild(p);
+    const len = p.getTotalLength();
+    p.style.strokeDasharray = len;
+    p.style.strokeDashoffset = len;
+    return { p, len };
+  });
+  trails.forEach((t, i) => {
+    const pt = t.p.getPointAtLength(0);
+    const g = document.createElementNS(NS, 'g');
+    g.setAttribute('class', 'guide-start');
+    const c = document.createElementNS(NS, 'circle');
+    c.setAttribute('cx', pt.x); c.setAttribute('cy', pt.y); c.setAttribute('r', 11);
+    g.appendChild(c);
+    if (trails.length > 1) {
+      const n = document.createElementNS(NS, 'text');
+      n.setAttribute('x', pt.x); n.setAttribute('y', pt.y);
+      n.textContent = i + 1;
+      g.appendChild(n);
+    }
+    svg.appendChild(g);
+  });
+  if (!animate) return;
+
+  const pen = document.createElementNS(NS, 'circle');
+  pen.setAttribute('r', 9);
+  pen.setAttribute('class', 'guide-pen');
+  svg.appendChild(pen);
+  const SPEED = 0.22;  // px per ms: slow enough for a child to follow
+  const PAUSE = 300;   // ms between strokes (pen lifted)
+  let stroke = 0, strokeStart = null;
+  function frame(now) {
+    if (strokeStart === null) strokeStart = now;
+    const t = trails[stroke];
+    const done = Math.min(t.len, (now - strokeStart) * SPEED);
+    t.p.style.strokeDashoffset = t.len - done;
+    const pt = t.p.getPointAtLength(done);
+    pen.setAttribute('cx', pt.x); pen.setAttribute('cy', pt.y);
+    if (done >= t.len) {
+      stroke++;
+      if (stroke >= trails.length) {
+        // Finished: fade the trail, keep only the start dots
+        setTimeout(() => { pen.remove(); trails.forEach(x => x.p.classList.add('faded')); }, 500);
+        _guideAnim = null;
+        return;
+      }
+      strokeStart = now + PAUSE;
+    }
+    _guideAnim = requestAnimationFrame(frame);
+  }
+  _guideAnim = requestAnimationFrame(frame);
 }
 
 const DRAW_GAMES = { upper: 'draw', cursive: 'drawcursive' };
@@ -3896,13 +3984,22 @@ function showDrawRound() {
   // Tier-based ghost opacity (tier 3: adaptive per item)
   const drawTier = _gameProgress[game]?.currentTier || 1;
   let ghostOpacity = TIER_CONFIGS[game].ghostOpacity[drawTier - 1];
+  // Cursive: show the start dot and animate the pen, unless she draws from memory
+  clearCursiveGuide();
+  drawGuideAllowed = drawMode === 'cursive' && ghostOpacity !== null;
+  if (drawGuideAllowed) showCursiveGuide(drawCurrentLetter, true);
   if (ghostOpacity === null) {
     // Per-item adaptive: no ghost for mastered, faint for learning
     const mk = game + ':' + drawCurrentLetter;
+    const letter = drawCurrentLetter;
     dbRead('mastery', mk).then(m => {
       const st = computeStatus(m);
       const ghost = document.getElementById('draw-ghost');
       ghost.style.opacity = st === 'mastered' ? '0' : st === 'learning' ? '0.08' : '0.2';
+      if (drawMode === 'cursive' && st !== 'mastered' && drawCurrentLetter === letter) {
+        drawGuideAllowed = true;
+        showCursiveGuide(letter, true);
+      }
     });
     ghostOpacity = 0.2; // default while loading
   }
@@ -4029,8 +4126,9 @@ async function checkDrawing() {
       return;
     }
     // Accept when the target shape is about as close as the best match, or when EMNIST
-    // also sees the letter. Tuned on Dancing Script plus 3 other handwriting fonts:
-    // all traced guide letters pass, and about 3-8% of wrong letters pass.
+    // also sees the letter. Tuned on pen drawings of the paths (rotated, scaled, other pen
+    // widths, moved dots) and 3 other handwriting fonts: all 104 pen drawings pass,
+    // and about 3% of wrong letters pass (6-9% for the other fonts).
     const best = r.ranked[0][1];
     accepted = r.scores[target] - best <= Math.max(0.5, 0.15 * best);
     if (!accepted && window.emnistSession) {
@@ -4097,6 +4195,7 @@ function replayDrawSound() {
   if (drawCurrentLetter) {
     sfxClick();
     speak('Dessine la lettre ' + drawLetterSound(drawCurrentLetter), 0.75);
+    if (drawGuideAllowed) showCursiveGuide(drawCurrentLetter, true);
   }
 }
 

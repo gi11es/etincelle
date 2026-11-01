@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-/** Zoé Dessine: rounds alternate capital and cursive letters, and the cursive recogniser accepts the right letter. */
+/** Zoé Dessine: rounds alternate capital and cursive letters, a tap leaves a dot, the cursive guide animates,
+    and the cursive recogniser accepts the right letter and rejects a wrong one. */
 import { setup, wait } from "./smoke-harness.mjs";
 const { browser, base, done } = await setup();
 const page = await browser.newPage();
@@ -14,8 +15,13 @@ await wait(1000);
 const drawLetter = (letter) => page.evaluate((letter) => {
   const c = document.getElementById("draw-canvas"), ctx = c.getContext("2d");
   ctx.clearRect(0, 0, c.width, c.height);
-  const cursive = letter !== letter.toUpperCase();
-  ctx.font = cursive ? "bold 200px \"Dancing Script\"" : "bold 200px Arial";
+  if (letter !== letter.toUpperCase()) {
+    // cursive: follow the stroke paths with the 12px pen, like a child following the guide
+    ctx.lineWidth = 12; ctx.lineCap = "round"; ctx.lineJoin = "round"; ctx.strokeStyle = "#8b00ff";
+    for (const d of CURSIVE_PATHS[letter]) ctx.stroke(new Path2D(d));
+    return;
+  }
+  ctx.font = "bold 200px Arial";
   ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillStyle = "#8b00ff";
   ctx.fillText(letter, 140, 140);
 }, letter);
@@ -51,6 +57,14 @@ for (let round = 0; round < 6; round++) {
   if (!rejected || !accepted) failures++;
   await page.evaluate(() => nextDrawRound()); await wait(300);
 }
+// The cursive guide: one start dot per stroke, and the pen animation draws the whole trail
+await page.evaluate(() => { drawMode = "cursive"; drawCurrentLetter = "i"; drawGuideAllowed = true; showCursiveGuide("i", true); });
+const dots = await page.$$eval("#draw-guide .guide-start", e => e.length);
+await wait(4000);
+const trailDrawn = await page.evaluate(() => [...document.querySelectorAll("#draw-guide .guide-trail")].every(p => parseFloat(p.style.strokeDashoffset) < 1));
+console.log("guide dots for i:", dots, "| trail fully drawn:", trailDrawn);
+if (dots !== 2 || !trailDrawn) failures++;
+
 const keys = await page.evaluate(async () => [
   ...Object.keys(await dbReadAllByIndex("mastery", "game", "draw")),
   ...Object.keys(await dbReadAllByIndex("mastery", "game", "drawcursive"))]);
