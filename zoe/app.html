@@ -839,6 +839,8 @@ body {
   justify-content: center;
 }
 .english-choice-btn:active { transform: scale(0.95); }
+.english-choice-img { width: 78%; height: 78%; object-fit: contain; pointer-events: none; }
+.english-img-inline { width: 1.4em; height: 1.4em; vertical-align: middle; }
 .english-choice-btn.correct {
   border-color: var(--gold);
   animation: correctPulse 0.6s ease;
@@ -1128,6 +1130,7 @@ body {
   border-radius: 20px;
 }
 .draw-ghost-canvas { opacity: 0.2; pointer-events: none; }
+.draw-cursive-letter { font-family: 'Dancing Script', cursive; font-weight: 700; font-size: 2.2em; line-height: 0.8; vertical-align: -0.1em; color: var(--pink); }
 .draw-canvas { touch-action: none; cursor: crosshair; }
 .draw-buttons { display: flex; gap: 12px; justify-content: center; margin: 12px 0; }
 .draw-result { text-align: center; font-size: 1.3em; padding: 10px; font-weight: 700; color: var(--purple-dark); }
@@ -1721,6 +1724,7 @@ body {
 <!-- ═══════════════════════════════════════════════════════
      MAIN GAME SCRIPT
      ═══════════════════════════════════════════════════════ -->
+<script src="english/words.js?v=7a67faa1"></script>
 <script>
 const ASSET_V = '?v=1771447445';
 /* ────────── AUDIO CONTEXT ────────── */
@@ -2216,116 +2220,6 @@ function parseMathFact(fact) {
   return { a, op, b, answer: op === '+' ? a + b : a - b };
 }
 
-/* ────────── ENGLISH WORDS (Anglais: listen and tap the picture, about 25 new words per level) ──────────
-   Zoé does not read yet, so every item is a picture she can recognise.
-   'en' is the mastery key and the spoken word, 'fr' is the French translation. */
-const ENGLISH_WORDS = [
-  // Level 1: animals, food, colours and first things
-  { en:'cat', fr:'le chat', emoji:'🐱', level:1 },
-  { en:'dog', fr:'le chien', emoji:'🐶', level:1 },
-  { en:'fish', fr:'le poisson', emoji:'🐟', level:1 },
-  { en:'bird', fr:"l'oiseau", emoji:'🐦', level:1 },
-  { en:'duck', fr:'le canard', emoji:'🦆', level:1 },
-  { en:'cow', fr:'la vache', emoji:'🐮', level:1 },
-  { en:'pig', fr:'le cochon', emoji:'🐷', level:1 },
-  { en:'horse', fr:'le cheval', emoji:'🐴', level:1 },
-  { en:'rabbit', fr:'le lapin', emoji:'🐰', level:1 },
-  { en:'frog', fr:'la grenouille', emoji:'🐸', level:1 },
-  { en:'unicorn', fr:'la licorne', emoji:'🦄', level:1 },
-  { en:'apple', fr:'la pomme', emoji:'🍎', level:1 },
-  { en:'banana', fr:'la banane', emoji:'🍌', level:1 },
-  { en:'cake', fr:'le gâteau', emoji:'🎂', level:1 },
-  { en:'milk', fr:'le lait', emoji:'🥛', level:1 },
-  { en:'egg', fr:"l'œuf", emoji:'🥚', level:1 },
-  { en:'red', fr:'rouge', emoji:'🔴', level:1 },
-  { en:'blue', fr:'bleu', emoji:'🔵', level:1 },
-  { en:'yellow', fr:'jaune', emoji:'🟡', level:1 },
-  { en:'green', fr:'vert', emoji:'🟢', level:1 },
-  { en:'ball', fr:'le ballon', emoji:'⚽', level:1 },
-  { en:'car', fr:'la voiture', emoji:'🚗', level:1 },
-  { en:'house', fr:'la maison', emoji:'🏠', level:1 },
-  { en:'sun', fr:'le soleil', emoji:'☀️', level:1 },
-  { en:'moon', fr:'la lune', emoji:'🌙', level:1 },
-  // Level 2: more animals, food, toys and clothes
-  { en:'bear', fr:"l'ours", emoji:'🐻', level:2 },
-  { en:'lion', fr:'le lion', emoji:'🦁', level:2 },
-  { en:'elephant', fr:"l'éléphant", emoji:'🐘', level:2 },
-  { en:'monkey', fr:'le singe', emoji:'🐵', level:2 },
-  { en:'mouse', fr:'la souris', emoji:'🐭', level:2 },
-  { en:'sheep', fr:'le mouton', emoji:'🐑', level:2 },
-  { en:'chicken', fr:'la poule', emoji:'🐔', level:2 },
-  { en:'snake', fr:'le serpent', emoji:'🐍', level:2 },
-  { en:'bee', fr:"l'abeille", emoji:'🐝', level:2 },
-  { en:'butterfly', fr:'le papillon', emoji:'🦋', level:2 },
-  { en:'orange', fr:"l'orange", emoji:'🍊', level:2 },
-  { en:'strawberry', fr:'la fraise', emoji:'🍓', level:2 },
-  { en:'grapes', fr:'le raisin', emoji:'🍇', level:2 },
-  { en:'bread', fr:'le pain', emoji:'🍞', level:2 },
-  { en:'cheese', fr:'le fromage', emoji:'🧀', level:2 },
-  { en:'ice cream', fr:'la glace', emoji:'🍦', level:2 },
-  { en:'cookie', fr:'le biscuit', emoji:'🍪', level:2 },
-  { en:'carrot', fr:'la carotte', emoji:'🥕', level:2 },
-  { en:'book', fr:'le livre', emoji:'📖', level:2 },
-  { en:'bed', fr:'le lit', emoji:'🛏️', level:2 },
-  { en:'teddy bear', fr:'le nounours', emoji:'🧸', level:2 },
-  { en:'hat', fr:'le chapeau', emoji:'🎩', level:2 },
-  { en:'shoe', fr:'la chaussure', emoji:'👟', level:2 },
-  { en:'boat', fr:'le bateau', emoji:'⛵', level:2 },
-  { en:'train', fr:'le train', emoji:'🚂', level:2 },
-  // Level 3: nature, the body, people and objects
-  { en:'star', fr:"l'étoile", emoji:'⭐', level:3 },
-  { en:'tree', fr:"l'arbre", emoji:'🌳', level:3 },
-  { en:'flower', fr:'la fleur', emoji:'🌸', level:3 },
-  { en:'rain', fr:'la pluie', emoji:'🌧️', level:3 },
-  { en:'snow', fr:'la neige', emoji:'☃️', level:3 },
-  { en:'cloud', fr:'le nuage', emoji:'☁️', level:3 },
-  { en:'rainbow', fr:"l'arc-en-ciel", emoji:'🌈', level:3 },
-  { en:'fire', fr:'le feu', emoji:'🔥', level:3 },
-  { en:'hand', fr:'la main', emoji:'✋', level:3 },
-  { en:'eye', fr:"l'œil", emoji:'👁️', level:3 },
-  { en:'nose', fr:'le nez', emoji:'👃', level:3 },
-  { en:'ear', fr:"l'oreille", emoji:'👂', level:3 },
-  { en:'foot', fr:'le pied', emoji:'🦶', level:3 },
-  { en:'mouth', fr:'la bouche', emoji:'👄', level:3 },
-  { en:'tooth', fr:'la dent', emoji:'🦷', level:3 },
-  { en:'baby', fr:'le bébé', emoji:'👶', level:3 },
-  { en:'girl', fr:'la fille', emoji:'👧', level:3 },
-  { en:'boy', fr:'le garçon', emoji:'👦', level:3 },
-  { en:'plane', fr:"l'avion", emoji:'✈️', level:3 },
-  { en:'bike', fr:'le vélo', emoji:'🚲', level:3 },
-  { en:'bus', fr:'le bus', emoji:'🚌', level:3 },
-  { en:'key', fr:'la clé', emoji:'🔑', level:3 },
-  { en:'door', fr:'la porte', emoji:'🚪', level:3 },
-  { en:'chair', fr:'la chaise', emoji:'🪑', level:3 },
-  { en:'clock', fr:"l'horloge", emoji:'⏰', level:3 },
-  { en:'umbrella', fr:'le parapluie', emoji:'☂️', level:3 },
-  // Level 4: numbers, more colours, wild animals
-  { en:'one', fr:'un', emoji:'1️⃣', level:4 },
-  { en:'two', fr:'deux', emoji:'2️⃣', level:4 },
-  { en:'three', fr:'trois', emoji:'3️⃣', level:4 },
-  { en:'four', fr:'quatre', emoji:'4️⃣', level:4 },
-  { en:'five', fr:'cinq', emoji:'5️⃣', level:4 },
-  { en:'six', fr:'six', emoji:'6️⃣', level:4 },
-  { en:'seven', fr:'sept', emoji:'7️⃣', level:4 },
-  { en:'eight', fr:'huit', emoji:'8️⃣', level:4 },
-  { en:'nine', fr:'neuf', emoji:'9️⃣', level:4 },
-  { en:'ten', fr:'dix', emoji:'🔟', level:4 },
-  { en:'purple', fr:'violet', emoji:'🟣', level:4 },
-  { en:'black', fr:'noir', emoji:'⚫', level:4 },
-  { en:'white', fr:'blanc', emoji:'⚪', level:4 },
-  { en:'brown', fr:'marron', emoji:'🟤', level:4 },
-  { en:'tiger', fr:'le tigre', emoji:'🐯', level:4 },
-  { en:'zebra', fr:'le zèbre', emoji:'🦓', level:4 },
-  { en:'giraffe', fr:'la girafe', emoji:'🦒', level:4 },
-  { en:'penguin', fr:'le pingouin', emoji:'🐧', level:4 },
-  { en:'owl', fr:'le hibou', emoji:'🦉', level:4 },
-  { en:'shark', fr:'le requin', emoji:'🦈', level:4 },
-  { en:'whale', fr:'la baleine', emoji:'🐳', level:4 },
-  { en:'turtle', fr:'la tortue', emoji:'🐢', level:4 },
-  { en:'spider', fr:"l'araignée", emoji:'🕷️', level:4 },
-  { en:'dinosaur', fr:'le dinosaure', emoji:'🦕', level:4 },
-  { en:'crocodile', fr:'le crocodile', emoji:'🐊', level:4 },
-];
 
 /* ────────── GAME STATE ────────── */
 let stars = parseInt(localStorage.getItem('lili-stars') || '0');
@@ -2605,6 +2499,14 @@ const TIER_CONFIGS = {
       return LETTERS.map(l => l.l);
     },
   },
+  drawcursive: {
+    maxTier: 3,
+    ghostOpacity: [0.3, 0.2, null], // null = per-item adaptive
+    items: function(tier) {
+      if (tier === 1) return EASY_CURSIVE_LETTERS;
+      return 'abcdefghijklmnopqrstuvwxyz'.split('');
+    },
+  },
   pronunciation: {
     maxTier: 3,
     items: function(tier) {
@@ -2619,8 +2521,9 @@ const TIER_CONFIGS = {
     items: function(tier) { return buildMathFacts(tier); },
   },
   english: {
-    maxTier: 4,
-    choices: [2, 3, 4, 4],
+    // One tier per level of ENGLISH_WORDS (english/words.js), about 25 new words each
+    maxTier: Math.max(...ENGLISH_WORDS.map(w => w.level)),
+    choices: [2, 3, 4],
     // Zoé learns fast: a word is mastered after 2 correct answers in a row,
     // and a tier unlocks when 30% of its words are mastered
     masteryStreak: 2,
@@ -2631,6 +2534,7 @@ const TIER_CONFIGS = {
 };
 
 const EASY_DRAW_LETTERS = ['C','I','J','L','O','S','T','U','V','X'];
+const EASY_CURSIVE_LETTERS = ['c','e','i','l','o','u','a','n','m','t'];
 
 const CONFUSABLE_LETTERS = {
   'B':['D','P','R'],'D':['B','P','Q'],'P':['B','D','Q','R'],'Q':['O','D','G'],
@@ -2735,14 +2639,25 @@ async function loadGameProgress(game) {
 const TIER_NAMES = ['', 'Apprentie', 'Exploratrice', 'Experte', 'Championne'];
 const TIER_EMOJIS = ['', '🌱', '🌟', '💎', '👑'];
 
+// Games with more than 4 tiers (Anglais) show "Niveau N" and spread the 4 emojis over the tiers
+function tierName(game, tier) {
+  const max = TIER_CONFIGS[game]?.maxTier || 4;
+  return max <= 4 ? (TIER_NAMES[tier] || 'Apprentie') : 'Niveau ' + tier;
+}
+function tierEmoji(game, tier) {
+  const max = TIER_CONFIGS[game]?.maxTier || 4;
+  if (max <= 4) return TIER_EMOJIS[tier] || '🌱';
+  return TIER_EMOJIS[Math.min(4, 1 + Math.floor((tier - 1) * 4 / max))];
+}
+
 async function updateTierBadge(game, optMasteryMap) {
   const badge = document.getElementById('tier-badge');
   const progress = _gameProgress[game];
   if (!progress) { badge.style.display = 'none'; return; }
   const tier = progress.currentTier;
   const config = TIER_CONFIGS[game];
-  badge.querySelector('.tier-emoji').textContent = TIER_EMOJIS[tier] || '🌱';
-  badge.querySelector('.tier-name').textContent = TIER_NAMES[tier] || 'Apprentie';
+  badge.querySelector('.tier-emoji').textContent = tierEmoji(game, tier);
+  badge.querySelector('.tier-name').textContent = tierName(game, tier);
   const fill = document.getElementById('tier-badge-fill');
   if (!config || tier >= config.maxTier) {
     fill.style.width = '100%';
@@ -2766,10 +2681,15 @@ function showTierUnlockCelebration(game, newTier) {
     letters:'Lettres', lettermatch:'Formes de Lettres', sylquiz:'Syllabes',
     syllables:'Labo Syllabes', words:'Mots', build:'Construction de Mots',
     draw:'Dessin', pronunciation:'Lecture à voix haute', math:'Calcul',
-    english:'Anglais',
+    english:'Anglais', drawcursive:'Écriture attachée',
   };
-  showMascotMessage(TIER_EMOJIS[newTier] + ' Niveau ' + TIER_NAMES[newTier] + ' !');
-  speak('Bravo Zoé ! Tu es maintenant ' + TIER_NAMES[newTier] + ' en ' + (gameNames[game] || game) + ' !', 0.75);
+  if ((TIER_CONFIGS[game]?.maxTier || 4) > 4) {
+    showMascotMessage(tierEmoji(game, newTier) + ' ' + tierName(game, newTier) + ' !');
+    speak('Bravo Zoé ! Tu passes au niveau ' + newTier + ' en ' + (gameNames[game] || game) + ' !', 0.75);
+  } else {
+    showMascotMessage(TIER_EMOJIS[newTier] + ' Niveau ' + TIER_NAMES[newTier] + ' !');
+    speak('Bravo Zoé ! Tu es maintenant ' + TIER_NAMES[newTier] + ' en ' + (gameNames[game] || game) + ' !', 0.75);
+  }
   familyCelebrate();
 }
 
@@ -3707,8 +3627,12 @@ function speakBuildWord() {
 }
 
 /* ────────── DRAWING GAME ────────── */
-let drawRoundIndex = 0;
-let drawOrder = [];
+// The draw game alternates capital letters ('upper', game 'draw') and cursive
+// lowercase letters ('cursive', game 'drawcursive'). Each mode has its own order and progress.
+let drawMode = 'upper';
+const drawOrders = { upper: [], cursive: [] };
+const drawRoundIndexes = { upper: 0, cursive: 0 };
+const drawOrderTiers = { upper: 0, cursive: 0 };
 let drawCorrect = 0;
 let drawTotal = 0;
 let drawCurrentLetter = null;
@@ -3783,7 +3707,7 @@ function canvasToEmnistTensor(canvas) {
   return tensor;
 }
 
-async function recognizeLetter(canvas) {
+async function recognizeLetter(canvas, target = drawCurrentLetter) {
   if (!window.emnistSession) {
     return { letter: null, confidence: 0 };
   }
@@ -3806,35 +3730,160 @@ async function recognizeLetter(canvas) {
   const confidence = probs[bestIdx];
 
   // Get target letter probability
-  const targetIdx = drawCurrentLetter.charCodeAt(0) - 65;
+  const targetIdx = target.toUpperCase().charCodeAt(0) - 65;
   const targetProb = probs[targetIdx];
 
   return { letter: bestLetter, confidence, targetProb };
 }
 
+/* Cursive letter recognition by template matching. The EMNIST model rejects
+   many cursive shapes (b, h, k, l, r, s, u, v, z), so the drawing is compared
+   with the 26 Dancing Script letters (the guide font). Both are scaled to a
+   32x32 grid, and the score is the symmetric mean chamfer distance. */
+const CURSIVE_GRID = 32;
+let _cursiveTemplates = null;
+
+// Drawn pixels (alpha) -> binary GRIDxGRID mask, scaled to fit and centred
+function cursiveMask(canvas) {
+  const w = canvas.width, h = canvas.height;
+  const px = canvas.getContext('2d').getImageData(0, 0, w, h).data;
+  let minX = w, minY = h, maxX = -1, maxY = -1;
+  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+    if (px[(y * w + x) * 4 + 3] > 50) {
+      if (x < minX) minX = x; if (x > maxX) maxX = x;
+      if (y < minY) minY = y; if (y > maxY) maxY = y;
+    }
+  }
+  if (maxX < 0) return null;
+  const side = Math.max(maxX - minX + 1, maxY - minY + 1);
+  const inner = CURSIVE_GRID - 4;
+  const scale = inner / side;
+  const offX = (CURSIVE_GRID - (maxX - minX + 1) * scale) / 2;
+  const offY = (CURSIVE_GRID - (maxY - minY + 1) * scale) / 2;
+  const mask = new Uint8Array(CURSIVE_GRID * CURSIVE_GRID);
+  for (let y = minY; y <= maxY; y++) for (let x = minX; x <= maxX; x++) {
+    if (px[(y * w + x) * 4 + 3] > 50) {
+      const gx = Math.min(CURSIVE_GRID - 1, Math.floor(offX + (x - minX) * scale));
+      const gy = Math.min(CURSIVE_GRID - 1, Math.floor(offY + (y - minY) * scale));
+      mask[gy * CURSIVE_GRID + gx] = 1;
+    }
+  }
+  return mask;
+}
+
+// Chamfer distance transform (3-4) of a mask: distance from each cell to the nearest set cell
+function cursiveDistance(mask) {
+  const N = CURSIVE_GRID, INF = 1e6, d = new Float32Array(N * N);
+  for (let i = 0; i < N * N; i++) d[i] = mask[i] ? 0 : INF;
+  for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
+    let v = d[y * N + x];
+    if (x > 0) v = Math.min(v, d[y * N + x - 1] + 3);
+    if (y > 0) {
+      v = Math.min(v, d[(y - 1) * N + x] + 3);
+      if (x > 0) v = Math.min(v, d[(y - 1) * N + x - 1] + 4);
+      if (x < N - 1) v = Math.min(v, d[(y - 1) * N + x + 1] + 4);
+    }
+    d[y * N + x] = v;
+  }
+  for (let y = N - 1; y >= 0; y--) for (let x = N - 1; x >= 0; x--) {
+    let v = d[y * N + x];
+    if (x < N - 1) v = Math.min(v, d[y * N + x + 1] + 3);
+    if (y < N - 1) {
+      v = Math.min(v, d[(y + 1) * N + x] + 3);
+      if (x < N - 1) v = Math.min(v, d[(y + 1) * N + x + 1] + 4);
+      if (x > 0) v = Math.min(v, d[(y + 1) * N + x - 1] + 4);
+    }
+    d[y * N + x] = v;
+  }
+  return d;
+}
+
+function cursiveTemplates() {
+  if (_cursiveTemplates) return _cursiveTemplates;
+  const c = document.createElement('canvas');
+  c.width = 280; c.height = 280;
+  const ctx = c.getContext('2d');
+  _cursiveTemplates = {};
+  for (const L of 'abcdefghijklmnopqrstuvwxyz') {
+    ctx.clearRect(0, 0, 280, 280);
+    ctx.font = 'bold 200px \'Dancing Script\'';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = '#000';
+    ctx.fillText(L, 140, 140);
+    const mask = cursiveMask(c);
+    _cursiveTemplates[L] = { mask, dist: cursiveDistance(mask) };
+  }
+  return _cursiveTemplates;
+}
+
+// Symmetric mean chamfer distance between the drawing and each template, lower = closer
+function recognizeCursive(canvas) {
+  const mask = cursiveMask(canvas);
+  if (!mask) return null;
+  const dist = cursiveDistance(mask);
+  const scores = {};
+  for (const [L, t] of Object.entries(cursiveTemplates())) {
+    let a = 0, na = 0, b = 0, nb = 0;
+    for (let i = 0; i < mask.length; i++) {
+      if (mask[i]) { a += t.dist[i]; na++; }
+      if (t.mask[i]) { b += dist[i]; nb++; }
+    }
+    scores[L] = a / na + b / nb;
+  }
+  const ranked = Object.entries(scores).sort((x, y) => x[1] - y[1]);
+  return { best: ranked[0][0], scores, ranked };
+}
+
+const DRAW_GAMES = { upper: 'draw', cursive: 'drawcursive' };
+function drawGame() { return DRAW_GAMES[drawMode]; }
+
+async function buildDrawOrder(mode) {
+  const game = DRAW_GAMES[mode];
+  _sessionNewItems[game] = 0;
+  const progress = await loadGameProgress(game);
+  const masteryMap = await dbReadAllByIndex('mastery', 'game', game);
+  const pool = getItemsForTier(game, progress.currentTier);
+  drawOrders[mode] = buildAdaptiveOrder(pool, masteryMap, game, pool.length);
+  drawRoundIndexes[mode] = 0;
+  drawOrderTiers[mode] = progress.currentTier;
+}
+
+// Letter label for the prompt and the result: cursive letters use the cursive font
+function drawLetterNode(letter) {
+  const span = document.createElement('span');
+  span.textContent = letter;
+  if (letter !== letter.toUpperCase()) span.className = 'draw-cursive-letter';
+  return span;
+}
+
+function setDrawText(el, ...parts) {
+  el.textContent = '';
+  for (const p of parts) el.append(typeof p === 'string' ? p : drawLetterNode(p.letter));
+}
+
+function drawLetterSound(letter) {
+  const sound = LETTER_SOUNDS[letter.toUpperCase()] || letter;
+  return letter === letter.toUpperCase() ? sound : sound + ', en attaché';
+}
+
 async function initDraw() {
   drawCorrect = 0;
   drawTotal = 0;
-  _sessionNewItems['draw'] = 0;
-  const progress = await loadGameProgress('draw');
-  const masteryMap = await dbReadAllByIndex('mastery', 'game', 'draw');
-  const pool = getItemsForTier('draw', progress.currentTier);
-  drawOrder = buildAdaptiveOrder(pool, masteryMap, 'draw', pool.length);
-  drawRoundIndex = 0;
+  drawMode = 'upper';
+  // The cursive guide and templates need the font before they are drawn
+  try { await document.fonts.load('bold 200px "Dancing Script"'); } catch (e) {}
+  await buildDrawOrder('upper');
+  await buildDrawOrder('cursive');
   setupDrawCanvas();
   showDrawRound();
-  updateTierBadge('draw');
   showMascotMessage('Dessine les lettres ! ✏️');
 }
 
 function showDrawRound() {
-  if (drawRoundIndex >= drawOrder.length) {
-    drawOrder = shuffle([...drawOrder]);
-    drawRoundIndex = 0;
-  }
-  drawCurrentLetter = drawOrder[drawRoundIndex];
+  const game = drawGame();
+  drawCurrentLetter = drawOrders[drawMode][drawRoundIndexes[drawMode]];
 
-  document.getElementById('draw-prompt').textContent = 'Dessine la lettre ' + drawCurrentLetter + ' !';
+  setDrawText(document.getElementById('draw-prompt'), 'Dessine la lettre ', { letter: drawCurrentLetter },
+    drawMode === 'cursive' ? ' en attaché !' : ' !');
   document.getElementById('draw-result').classList.add('hidden');
   document.getElementById('draw-result').textContent = '';
   document.getElementById('draw-next-btn').classList.add('hidden');
@@ -3842,13 +3891,14 @@ function showDrawRound() {
   document.getElementById('draw-clear-btn').classList.remove('hidden');
 
   clearDrawing();
+  updateTierBadge(game);
 
   // Tier-based ghost opacity (tier 3: adaptive per item)
-  const drawTier = _gameProgress['draw']?.currentTier || 1;
-  let ghostOpacity = TIER_CONFIGS.draw.ghostOpacity[drawTier - 1];
+  const drawTier = _gameProgress[game]?.currentTier || 1;
+  let ghostOpacity = TIER_CONFIGS[game].ghostOpacity[drawTier - 1];
   if (ghostOpacity === null) {
     // Per-item adaptive: no ghost for mastered, faint for learning
-    const mk = 'draw:' + drawCurrentLetter;
+    const mk = game + ':' + drawCurrentLetter;
     dbRead('mastery', mk).then(m => {
       const st = computeStatus(m);
       const ghost = document.getElementById('draw-ghost');
@@ -3859,7 +3909,7 @@ function showDrawRound() {
   document.getElementById('draw-ghost').style.opacity = ghostOpacity;
   renderGhost(drawCurrentLetter);
 
-  speak('Dessine la lettre ' + (LETTER_SOUNDS[drawCurrentLetter] || drawCurrentLetter), 0.75);
+  speak('Dessine la lettre ' + drawLetterSound(drawCurrentLetter), 0.75);
 }
 
 function renderGhost(letter) {
@@ -3867,10 +3917,28 @@ function renderGhost(letter) {
   const ctx = ghost.getContext('2d');
   ctx.clearRect(0, 0, ghost.width, ghost.height);
   ctx.fillStyle = '#999';
-  ctx.font = 'bold 200px Arial, sans-serif';
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  ctx.fillText(letter, ghost.width / 2, ghost.height / 2);
+  const cursive = letter !== letter.toUpperCase();
+  if (!cursive) {
+    ctx.font = 'bold 200px Arial, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(letter, ghost.width / 2, ghost.height / 2);
+    return;
+  }
+  // Cursive lowercase letters are short and sit on the baseline: scale the visible
+  // shape up to fit the box (max 1.4x) and centre it on its real bounds
+  ctx.font = 'bold 200px "Dancing Script", cursive';
+  let m = ctx.measureText(letter);
+  const w0 = m.actualBoundingBoxLeft + m.actualBoundingBoxRight;
+  const h0 = m.actualBoundingBoxAscent + m.actualBoundingBoxDescent;
+  const size = Math.round(200 * Math.min(1.4, 210 / Math.max(w0, h0)));
+  ctx.font = 'bold ' + size + 'px "Dancing Script", cursive';
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'alphabetic';
+  m = ctx.measureText(letter);
+  const x = ghost.width / 2 - (m.actualBoundingBoxRight - m.actualBoundingBoxLeft) / 2;
+  const y = ghost.height / 2 + (m.actualBoundingBoxAscent - m.actualBoundingBoxDescent) / 2;
+  ctx.fillText(letter, x, y);
 }
 
 function setupDrawCanvas() {
@@ -3943,53 +4011,58 @@ function clearDrawing() {
 async function checkDrawing() {
   const canvas = document.getElementById('draw-canvas');
   const resultEl = document.getElementById('draw-result');
+  const game = drawGame();
+  const target = drawCurrentLetter;
+  let accepted = false;
+  let lookalike = null; // the letter the drawing looks like, when it is clearly another letter
 
-  if (!window.emnistSession) {
-    if (window.emnistLoadFailed) {
-      drawTotal++;
-      recordAttempt('draw', drawCurrentLetter, true);
-      drawCorrect++;
-      resultEl.textContent = '🎉 Bravo ! C\'est bien ' + drawCurrentLetter + ' !';
+  if (drawMode === 'cursive') {
+    const r = recognizeCursive(canvas);
+    if (!r) {
+      resultEl.textContent = 'Dessine quelque chose d\'abord ! ✏️';
       resultEl.classList.remove('hidden');
-      document.getElementById('draw-check-btn').classList.add('hidden');
-      document.getElementById('draw-clear-btn').classList.add('hidden');
-      document.getElementById('draw-next-btn').classList.remove('hidden');
-      sfxSuccess();
-      addStar();
-      mascotCelebrate();
-      spawnConfetti();
-      showMascotMessage('Bravo ! 🎉');
-      speak('Bravo ! C\'est bien la lettre ' + (LETTER_SOUNDS[drawCurrentLetter] || drawCurrentLetter), 0.75);
       return;
     }
-    resultEl.textContent = 'Le modèle charge... Attends un instant !';
-    resultEl.classList.remove('hidden');
-    return;
-  }
-
-  const result = await recognizeLetter(canvas);
-
-  if (!result.letter && !result.targetProb) {
-    // Model returned nothing useful — don't count this attempt
-    resultEl.textContent = 'Dessine quelque chose d\'abord ! ✏️';
-    resultEl.classList.remove('hidden');
-    return;
+    // Accept when the target shape is about as close as the best match, or when EMNIST
+    // also sees the letter. Tuned on Dancing Script plus 3 other handwriting fonts:
+    // all traced guide letters pass, and about 3-8% of wrong letters pass.
+    const best = r.ranked[0][1];
+    accepted = r.scores[target] - best <= Math.max(0.5, 0.15 * best);
+    if (!accepted && window.emnistSession) {
+      const e = await recognizeLetter(canvas, target);
+      accepted = e.letter === target.toUpperCase() || e.targetProb > 0.30;
+    }
+    if (!accepted) lookalike = r.best;
+  } else {
+    if (!window.emnistSession) {
+      if (!window.emnistLoadFailed) {
+        resultEl.textContent = 'Le modèle charge... Attends un instant !';
+        resultEl.classList.remove('hidden');
+        return;
+      }
+      accepted = true; // model unavailable: do not block the child
+    } else {
+      const result = await recognizeLetter(canvas, target);
+      if (!result.letter && !result.targetProb) {
+        // Model returned nothing useful — don't count this attempt
+        resultEl.textContent = 'Dessine quelque chose d\'abord ! ✏️';
+        resultEl.classList.remove('hidden');
+        return;
+      }
+      // Tier-based acceptance threshold
+      const drawCheckTier = _gameProgress['draw']?.currentTier || 1;
+      const drawThreshold = TIER_CONFIGS.draw.threshold[drawCheckTier - 1] || 0.10;
+      accepted = result.letter === target || result.targetProb > drawThreshold;
+      if (!accepted && result.confidence > 0.5) lookalike = result.letter;
+    }
   }
 
   drawTotal++;
-
-  const bestIsTarget = result.letter === drawCurrentLetter;
-  const targetProb = result.targetProb;
-
-  // Tier-based acceptance threshold
-  const drawCheckTier = _gameProgress['draw']?.currentTier || 1;
-  const drawThreshold = TIER_CONFIGS.draw.threshold[drawCheckTier - 1] || 0.10;
-  const accepted = bestIsTarget || targetProb > drawThreshold;
+  recordAttempt(game, target, accepted);
 
   if (accepted) {
-    recordAttempt('draw', drawCurrentLetter, true);
     drawCorrect++;
-    resultEl.textContent = '🎉 Bravo ! C\'est bien ' + drawCurrentLetter + ' !';
+    setDrawText(resultEl, '🎉 Bravo ! C\'est bien ', { letter: target }, ' !');
     resultEl.classList.remove('hidden');
     document.getElementById('draw-check-btn').classList.add('hidden');
     document.getElementById('draw-clear-btn').classList.add('hidden');
@@ -3999,17 +4072,15 @@ async function checkDrawing() {
     mascotCelebrate();
     spawnConfetti();
     showMascotMessage('Bravo ! 🎉');
-    speak('Bravo ! C\'est bien la lettre ' + (LETTER_SOUNDS[drawCurrentLetter] || drawCurrentLetter), 0.75);
-  } else if (result.confidence > 0.5) {
-    recordAttempt('draw', drawCurrentLetter, false);
-    resultEl.textContent = '🤔 On dirait ' + result.letter + ' ! Essaie encore ' + drawCurrentLetter + ' !';
+    speak('Bravo ! C\'est bien la lettre ' + drawLetterSound(target), 0.75);
+  } else if (lookalike) {
+    setDrawText(resultEl, '🤔 On dirait ', { letter: lookalike }, ' ! Essaie encore ', { letter: target }, ' !');
     resultEl.classList.remove('hidden');
     sfxWrong();
     showMascotMessage('Essaie encore ! 💪');
-    speak('On dirait ' + (LETTER_SOUNDS[result.letter] || result.letter) + '. Essaie encore ' + (LETTER_SOUNDS[drawCurrentLetter] || drawCurrentLetter) + ' !', 0.8);
+    speak('On dirait ' + (LETTER_SOUNDS[lookalike.toUpperCase()] || lookalike) + '. Essaie encore ' + (LETTER_SOUNDS[target.toUpperCase()] || target) + ' !', 0.8);
   } else {
-    recordAttempt('draw', drawCurrentLetter, false);
-    resultEl.textContent = '🤔 Essaie encore ! Dessine ' + drawCurrentLetter;
+    setDrawText(resultEl, '🤔 Essaie encore ! Dessine ', { letter: target });
     resultEl.classList.remove('hidden');
     sfxWrong();
     showMascotMessage('Essaie encore ! 💪');
@@ -4020,13 +4091,20 @@ async function checkDrawing() {
 function replayDrawSound() {
   if (drawCurrentLetter) {
     sfxClick();
-    speak('Dessine la lettre ' + (LETTER_SOUNDS[drawCurrentLetter] || drawCurrentLetter), 0.75);
+    speak('Dessine la lettre ' + drawLetterSound(drawCurrentLetter), 0.75);
   }
 }
 
-function nextDrawRound() {
+async function nextDrawRound() {
   sfxClick();
-  drawRoundIndex++;
+  drawRoundIndexes[drawMode]++;
+  // Alternate capital and cursive letters
+  drawMode = drawMode === 'upper' ? 'cursive' : 'upper';
+  const game = drawGame();
+  const tier = _gameProgress[game]?.currentTier || 1;
+  if (tier !== drawOrderTiers[drawMode] || drawRoundIndexes[drawMode] >= drawOrders[drawMode].length) {
+    await buildDrawOrder(drawMode);
+  }
   showDrawRound();
 }
 
@@ -4352,6 +4430,7 @@ const GAME_INFO = [
   { key:'words', emoji:'🖼️', name:'Mots', color:'#2ecc71' },
   { key:'build', emoji:'🧱', name:'Construis', color:'#ff9800' },
   { key:'draw', emoji:'✏️', name:'Dessine', color:'#e74c3c' },
+  { key:'drawcursive', emoji:'✍️', name:'Attaché', color:'#c0392b' },
   { key:'pronunciation', emoji:'🎤', name:'Lecture', color:'#9b59b6' },
   { key:'math', emoji:'🧮', name:'Calcul', color:'#1e90ff' },
   { key:'english', emoji:'🇬🇧', name:'Anglais', color:'#ff7f50' },
@@ -4508,9 +4587,21 @@ async function buildEnglishOrder() {
   const tier = _gameProgress['english']?.currentTier || 1;
   const masteryMap = await dbReadAllByIndex('mastery', 'game', 'english');
   const pool = getItemsForTier('english', tier);
-  englishOrder = buildAdaptiveOrder(pool, masteryMap, 'english', pool.length);
+  // Max 30 rounds per list: buildAdaptiveOrder() is quadratic, and the list is rebuilt when it ends
+  englishOrder = buildAdaptiveOrder(pool, masteryMap, 'english', Math.min(pool.length, 30));
   englishOrderTier = tier;
   englishRoundIndex = 0;
+}
+
+// A word shows either an emoji or a drawing from english/img/
+function englishPicture(w, className) {
+  if (!w.img) return document.createTextNode(w.emoji);
+  const img = document.createElement('img');
+  img.src = 'english/img/' + w.img;
+  img.alt = '';
+  img.className = className || 'english-img-inline';
+  img.draggable = false;
+  return img;
 }
 
 function showEnglishRound() {
@@ -4532,7 +4623,7 @@ function showEnglishRound() {
   choices.forEach((w) => {
     const btn = document.createElement('button');
     btn.className = 'english-choice-btn';
-    btn.textContent = w.emoji;
+    btn.appendChild(englishPicture(w, 'english-choice-img'));
     btn.setAttribute('aria-label', w.fr);
     btn.onclick = () => checkEnglishAnswer(btn, w.en === word.en, word);
     container.appendChild(btn);
@@ -4559,14 +4650,16 @@ function checkEnglishAnswer(btn, correct, word) {
       { text: 'Bravo ! Ça veut dire ' + word.fr + ' !', rate: 0.8 },
     ]);
 
-    document.getElementById('english-prompt').textContent = '✅ ' + word.emoji + ' ' + word.en + ' !';
+    const prompt = document.getElementById('english-prompt');
+    prompt.textContent = '✅ ';
+    prompt.append(englishPicture(word), ' ' + word.en + ' !');
     const result = document.getElementById('english-result');
     result.innerHTML = '';
     const text = document.createElement('span');
     text.className = 'letter-quiz-result-text';
     const strong = document.createElement('strong');
     strong.textContent = word.en;
-    text.append(word.emoji + ' ', strong, ' = ' + word.fr);
+    text.append(englishPicture(word), ' ', strong, ' = ' + word.fr);
     result.appendChild(text);
     result.classList.remove('hidden');
 
@@ -4650,7 +4743,7 @@ async function initStats() {
         <div class="stats-tower-fill" style="height:${pct}%;background:${g.color}"></div>
       </div>
       <div class="stats-tower-label">${g.name}</div>
-      <div class="stats-tower-tier">${TIER_EMOJIS[tier] || '🌱'}</div>
+      <div class="stats-tower-tier">${tierEmoji(g.key, tier)}</div>
     </div>`;
   }
   html += '</div>';
@@ -4739,7 +4832,7 @@ async function showStatsDetail(game) {
   const items = getItemsForTier(game, progress.currentTier);
 
   let html = `<div class="stats-detail">`;
-  html += `<div class="stats-detail-title">${info.emoji} ${info.name} — Niveau ${TIER_NAMES[progress.currentTier]} ${TIER_EMOJIS[progress.currentTier]}</div>`;
+  html += `<div class="stats-detail-title">${info.emoji} ${info.name} — ${(TIER_CONFIGS[game]?.maxTier || 4) > 4 ? '' : 'Niveau '}${tierName(game, progress.currentTier)} ${tierEmoji(game, progress.currentTier)}</div>`;
 
   if (game === 'syllables') {
     // Labo: show unique syllables explored
