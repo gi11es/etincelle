@@ -3966,6 +3966,11 @@ function setupDrawCanvas() {
     e.preventDefault();
     isDrawing = true;
     const pos = getPos(e);
+    // Draw a dot at once: a tap without movement must leave a mark (the dot of i and j)
+    ctx.beginPath();
+    ctx.arc(pos.x, pos.y, ctx.lineWidth / 2, 0, Math.PI * 2);
+    ctx.fillStyle = ctx.strokeStyle;
+    ctx.fill();
     ctx.beginPath();
     ctx.moveTo(pos.x, pos.y);
   }

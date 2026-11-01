@@ -20,6 +20,19 @@ const drawLetter = (letter) => page.evaluate((letter) => {
   ctx.fillText(letter, 140, 140);
 }, letter);
 
+// A tap (no finger movement) must leave a dot: the dot of i and j is often a tap
+await page.evaluate(() => clearDrawing());
+const box = await (await page.$("#draw-canvas")).boundingBox();
+await page.touchscreen.tap(box.x + box.width / 2, box.y + box.height / 2);
+await wait(200);
+const tapInk = await page.evaluate(() => {
+  const d = document.getElementById("draw-canvas").getContext("2d").getImageData(0, 0, 280, 280).data;
+  let n = 0; for (let i = 3; i < d.length; i += 4) if (d[i] > 50) n++;
+  return n;
+});
+console.log("tap ink pixels:", tapInk);
+if (tapInk < 50) { console.log("FAIL: a tap leaves no dot"); }
+
 const modes = [], results = [];
 let failures = 0;
 for (let round = 0; round < 6; round++) {
@@ -45,7 +58,7 @@ const alternates = modes.every((m, i) => m.startsWith(i % 2 === 0 ? "upper" : "c
 console.log(results.join("\n"));
 console.log("alternates:", alternates, "| mastery keys:", keys.join(" "));
 console.log("page errors:", errors.length ? errors : "none");
-const pass = failures === 0 && alternates && keys.some(k => k.startsWith("drawcursive:")) && errors.length === 0;
+const pass = tapInk >= 50 && failures === 0 && alternates && keys.some(k => k.startsWith("drawcursive:")) && errors.length === 0;
 console.log(pass ? "PASS" : "FAIL");
 await page.close(); await done();
 process.exit(pass ? 0 : 1);
