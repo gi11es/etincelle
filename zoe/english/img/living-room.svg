@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><defs><clipPath id="rl"><rect x="6" y="10" width="116" height="108" rx="14"/></clipPath></defs><g clip-path="url(#rl)"><rect x="6" y="10" width="116" height="108" fill="#ffe0b2"/><rect x="6" y="98" width="116" height="20" fill="#a1887f"/><g stroke="#3b2a4a" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+<rect x="22" y="20" width="32" height="24" rx="2" fill="#81d4fa"/>
+<path d="M26 40 L34 30 L42 38 L46 34 L52 40 Z" fill="#66bb6a" stroke-width="2"/>
+<ellipse cx="62" cy="108" rx="48" ry="7" fill="#e57373" stroke-width="3"/>
+<rect x="14" y="54" width="54" height="34" rx="8" fill="#4db6ac"/>
+<rect x="12" y="80" width="60" height="18" rx="5" fill="#26a69a"/>
+<rect x="18" y="74" width="48" height="12" rx="4" fill="#80cbc4"/>
+<rect x="8" y="66" width="12" height="30" rx="5" fill="#4db6ac"/>
+<rect x="64" y="66" width="12" height="30" rx="5" fill="#4db6ac"/>
+<rect x="82" y="80" width="34" height="20" rx="2" fill="#8d5a3b"/>
+<rect x="80" y="48" width="38" height="28" rx="3" fill="#37474f"/>
+<rect x="85" y="53" width="28" height="18" rx="1" fill="#4fc3f7" stroke-width="2"/>
+<path d="M99 76 L99 80" fill="none" stroke-width="3"/>
+</g></g><rect x="6" y="10" width="116" height="108" rx="14" fill="none" stroke="#3b2a4a" stroke-width="4"/></svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><g stroke="#3b2a4a" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+<rect x="52" y="4" width="24" height="6" rx="3" fill="#b0bec5"/>
+<path d="M64 10 L64 40" fill="none" stroke-width="3"/>
+<path d="M64 56 Q40 76 22 60 M64 56 Q88 76 106 60 M64 60 Q52 84 42 72 M64 60 Q76 84 86 72" fill="none" stroke="#3b2a4a" stroke-width="11"/><path d="M64 56 Q40 76 22 60 M64 56 Q88 76 106 60 M64 60 Q52 84 42 72 M64 60 Q76 84 86 72" fill="none" stroke="#ffca28" stroke-width="4"/>
+<path d="M54 40 L74 40 L70 64 Q64 70 58 64 Z" fill="#ffca28"/>
+<path d="M14 60 L30 60 L28 50 L16 50 Z M98 60 L114 60 L112 50 L100 50 Z M34 72 L50 72 L48 62 L36 62 Z M78 72 L94 72 L92 62 L80 62 Z" fill="#ffca28"/>
+<path d="M22 50 Q16 42 22 36 Q28 42 22 50 Z M106 50 Q100 42 106 36 Q112 42 106 50 Z M42 62 Q36 54 42 48 Q48 54 42 62 Z M86 62 Q80 54 86 48 Q92 54 86 62 Z" fill="#fff59d"/>
+<path d="M64 70 L64 80" fill="none" stroke-width="3"/>
+<path d="M64 80 L58 90 L64 100 L70 90 Z" fill="#b3e5fc" stroke-width="2.5"/>
+<path d="M22 64 L22 74 M106 64 L106 74" fill="none" stroke-width="2.5"/>
+<path d="M22 74 L19 80 L22 86 L25 80 Z M106 74 L103 80 L106 86 L109 80 Z" fill="#b3e5fc" stroke-width="2"/>
+</g></svg>

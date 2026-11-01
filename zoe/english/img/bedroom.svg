@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><defs><clipPath id="rbd"><rect x="6" y="10" width="116" height="108" rx="14"/></clipPath></defs><g clip-path="url(#rbd)"><rect x="6" y="10" width="116" height="108" fill="#e1bee7"/><rect x="6" y="102" width="116" height="16" fill="#d7a86e"/><g stroke="#3b2a4a" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+<rect x="48" y="22" width="30" height="24" rx="2" fill="#fff59d"/>
+<path d="M54 40 L60 32 L66 38 L70 34 L74 40 Z" fill="#66bb6a" stroke-width="2"/>
+<rect x="12" y="52" width="12" height="56" rx="3" fill="#8d5a3b"/>
+<rect x="20" y="78" width="74" height="22" rx="3" fill="#a0602f"/>
+<path d="M26 102 L26 110 M88 102 L88 110" fill="none" stroke-width="5"/>
+<rect x="22" y="66" width="72" height="16" rx="4" fill="#fafafa"/>
+<path d="M44 66 L94 66 Q98 66 98 72 L98 92 Q98 96 94 96 L44 96 Z" fill="#f48fb1"/>
+<path d="M44 72 L96 72" fill="none" stroke="#f8bbd0" stroke-width="3"/>
+<ellipse cx="34" cy="64" rx="11" ry="7" fill="#fff"/>
+<rect x="100" y="76" width="18" height="30" rx="2" fill="#c8834a"/>
+<path d="M100 90 L118 90" fill="none" stroke-width="2.5"/>
+<path d="M104 60 L114 60 L118 72 L100 72 Z" fill="#ffd34d" stroke-width="3"/>
+<path d="M109 72 L109 76" fill="none" stroke-width="3"/>
+</g></g><rect x="6" y="10" width="116" height="108" rx="14" fill="none" stroke="#3b2a4a" stroke-width="4"/></svg>

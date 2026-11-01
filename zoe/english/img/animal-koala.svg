@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><g stroke="#3b2a4a" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M28 128 L36 80 M36 80 L22 60" fill="none" stroke-width="12"/><path d="M28 128 L36 80 M36 80 L22 60" fill="none" stroke="#a0703c" stroke-width="6"/>
+<path d="M18 62 C10 56 12 48 22 52 C26 48 32 52 28 58 Z" fill="#5cc64a"/>
+<ellipse cx="64" cy="96" rx="28" ry="24" fill="#9a9aa6"/>
+<ellipse cx="64" cy="100" rx="15" ry="16" fill="#e6e6ec" stroke="none"/>
+<ellipse cx="44" cy="116" rx="11" ry="6" fill="#9a9aa6"/><ellipse cx="84" cy="116" rx="11" ry="6" fill="#9a9aa6"/>
+<ellipse cx="40" cy="84" rx="8" ry="10" fill="#9a9aa6"/><ellipse cx="88" cy="84" rx="8" ry="10" fill="#9a9aa6"/>
+<circle cx="28" cy="30" r="17" fill="#9a9aa6"/><circle cx="100" cy="30" r="17" fill="#9a9aa6"/>
+<circle cx="28" cy="32" r="9" fill="#f2f2f6" stroke="none"/><circle cx="100" cy="32" r="9" fill="#f2f2f6" stroke="none"/>
+<circle cx="64" cy="48" r="29" fill="#9a9aa6"/>
+<ellipse cx="64" cy="54" rx="9" ry="13" fill="#3b2a4a"/>
+<circle cx="48" cy="44" r="4" fill="#3b2a4a" stroke="none"/><circle cx="80" cy="44" r="4" fill="#3b2a4a" stroke="none"/>
+<path d="M58 70 Q64 74 70 70" fill="none" stroke-width="2.5"/></g></svg>
