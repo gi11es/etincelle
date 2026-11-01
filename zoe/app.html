@@ -2216,62 +2216,115 @@ function parseMathFact(fact) {
   return { a, op, b, answer: op === '+' ? a + b : a - b };
 }
 
-/* ────────── ENGLISH WORDS (Anglais: listen and tap the picture) ──────────
+/* ────────── ENGLISH WORDS (Anglais: listen and tap the picture, about 25 new words per level) ──────────
    Zoé does not read yet, so every item is a picture she can recognise.
    'en' is the mastery key and the spoken word, 'fr' is the French translation. */
 const ENGLISH_WORDS = [
-  // Level 1: pets and colours
+  // Level 1: animals, food, colours and first things
   { en:'cat', fr:'le chat', emoji:'🐱', level:1 },
   { en:'dog', fr:'le chien', emoji:'🐶', level:1 },
   { en:'fish', fr:'le poisson', emoji:'🐟', level:1 },
   { en:'bird', fr:"l'oiseau", emoji:'🐦', level:1 },
   { en:'duck', fr:'le canard', emoji:'🦆', level:1 },
+  { en:'cow', fr:'la vache', emoji:'🐮', level:1 },
+  { en:'pig', fr:'le cochon', emoji:'🐷', level:1 },
+  { en:'horse', fr:'le cheval', emoji:'🐴', level:1 },
+  { en:'rabbit', fr:'le lapin', emoji:'🐰', level:1 },
+  { en:'frog', fr:'la grenouille', emoji:'🐸', level:1 },
+  { en:'unicorn', fr:'la licorne', emoji:'🦄', level:1 },
   { en:'apple', fr:'la pomme', emoji:'🍎', level:1 },
+  { en:'banana', fr:'la banane', emoji:'🍌', level:1 },
+  { en:'cake', fr:'le gâteau', emoji:'🎂', level:1 },
+  { en:'milk', fr:'le lait', emoji:'🥛', level:1 },
+  { en:'egg', fr:"l'œuf", emoji:'🥚', level:1 },
   { en:'red', fr:'rouge', emoji:'🔴', level:1 },
   { en:'blue', fr:'bleu', emoji:'🔵', level:1 },
   { en:'yellow', fr:'jaune', emoji:'🟡', level:1 },
   { en:'green', fr:'vert', emoji:'🟢', level:1 },
-  // Level 2: food, toys and home
-  { en:'banana', fr:'la banane', emoji:'🍌', level:2 },
-  { en:'cake', fr:'le gâteau', emoji:'🎂', level:2 },
-  { en:'milk', fr:'le lait', emoji:'🥛', level:2 },
-  { en:'egg', fr:"l'œuf", emoji:'🥚', level:2 },
-  { en:'ball', fr:'le ballon', emoji:'⚽', level:2 },
-  { en:'car', fr:'la voiture', emoji:'🚗', level:2 },
-  { en:'house', fr:'la maison', emoji:'🏠', level:2 },
+  { en:'ball', fr:'le ballon', emoji:'⚽', level:1 },
+  { en:'car', fr:'la voiture', emoji:'🚗', level:1 },
+  { en:'house', fr:'la maison', emoji:'🏠', level:1 },
+  { en:'sun', fr:'le soleil', emoji:'☀️', level:1 },
+  { en:'moon', fr:'la lune', emoji:'🌙', level:1 },
+  // Level 2: more animals, food, toys and clothes
+  { en:'bear', fr:"l'ours", emoji:'🐻', level:2 },
+  { en:'lion', fr:'le lion', emoji:'🦁', level:2 },
+  { en:'elephant', fr:"l'éléphant", emoji:'🐘', level:2 },
+  { en:'monkey', fr:'le singe', emoji:'🐵', level:2 },
+  { en:'mouse', fr:'la souris', emoji:'🐭', level:2 },
+  { en:'sheep', fr:'le mouton', emoji:'🐑', level:2 },
+  { en:'chicken', fr:'la poule', emoji:'🐔', level:2 },
+  { en:'snake', fr:'le serpent', emoji:'🐍', level:2 },
+  { en:'bee', fr:"l'abeille", emoji:'🐝', level:2 },
+  { en:'butterfly', fr:'le papillon', emoji:'🦋', level:2 },
+  { en:'orange', fr:"l'orange", emoji:'🍊', level:2 },
+  { en:'strawberry', fr:'la fraise', emoji:'🍓', level:2 },
+  { en:'grapes', fr:'le raisin', emoji:'🍇', level:2 },
+  { en:'bread', fr:'le pain', emoji:'🍞', level:2 },
+  { en:'cheese', fr:'le fromage', emoji:'🧀', level:2 },
+  { en:'ice cream', fr:'la glace', emoji:'🍦', level:2 },
+  { en:'cookie', fr:'le biscuit', emoji:'🍪', level:2 },
+  { en:'carrot', fr:'la carotte', emoji:'🥕', level:2 },
   { en:'book', fr:'le livre', emoji:'📖', level:2 },
   { en:'bed', fr:'le lit', emoji:'🛏️', level:2 },
   { en:'teddy bear', fr:'le nounours', emoji:'🧸', level:2 },
-  // Level 3: nature and the body
-  { en:'sun', fr:'le soleil', emoji:'☀️', level:3 },
-  { en:'moon', fr:'la lune', emoji:'🌙', level:3 },
+  { en:'hat', fr:'le chapeau', emoji:'🎩', level:2 },
+  { en:'shoe', fr:'la chaussure', emoji:'👟', level:2 },
+  { en:'boat', fr:'le bateau', emoji:'⛵', level:2 },
+  { en:'train', fr:'le train', emoji:'🚂', level:2 },
+  // Level 3: nature, the body, people and objects
   { en:'star', fr:"l'étoile", emoji:'⭐', level:3 },
   { en:'tree', fr:"l'arbre", emoji:'🌳', level:3 },
   { en:'flower', fr:'la fleur', emoji:'🌸', level:3 },
   { en:'rain', fr:'la pluie', emoji:'🌧️', level:3 },
+  { en:'snow', fr:'la neige', emoji:'☃️', level:3 },
+  { en:'cloud', fr:'le nuage', emoji:'☁️', level:3 },
+  { en:'rainbow', fr:"l'arc-en-ciel", emoji:'🌈', level:3 },
+  { en:'fire', fr:'le feu', emoji:'🔥', level:3 },
   { en:'hand', fr:'la main', emoji:'✋', level:3 },
   { en:'eye', fr:"l'œil", emoji:'👁️', level:3 },
   { en:'nose', fr:'le nez', emoji:'👃', level:3 },
   { en:'ear', fr:"l'oreille", emoji:'👂', level:3 },
   { en:'foot', fr:'le pied', emoji:'🦶', level:3 },
   { en:'mouth', fr:'la bouche', emoji:'👄', level:3 },
-  // Level 4: numbers, more colours, farm and zoo animals
+  { en:'tooth', fr:'la dent', emoji:'🦷', level:3 },
+  { en:'baby', fr:'le bébé', emoji:'👶', level:3 },
+  { en:'girl', fr:'la fille', emoji:'👧', level:3 },
+  { en:'boy', fr:'le garçon', emoji:'👦', level:3 },
+  { en:'plane', fr:"l'avion", emoji:'✈️', level:3 },
+  { en:'bike', fr:'le vélo', emoji:'🚲', level:3 },
+  { en:'bus', fr:'le bus', emoji:'🚌', level:3 },
+  { en:'key', fr:'la clé', emoji:'🔑', level:3 },
+  { en:'door', fr:'la porte', emoji:'🚪', level:3 },
+  { en:'chair', fr:'la chaise', emoji:'🪑', level:3 },
+  { en:'clock', fr:"l'horloge", emoji:'⏰', level:3 },
+  { en:'umbrella', fr:'le parapluie', emoji:'☂️', level:3 },
+  // Level 4: numbers, more colours, wild animals
   { en:'one', fr:'un', emoji:'1️⃣', level:4 },
   { en:'two', fr:'deux', emoji:'2️⃣', level:4 },
   { en:'three', fr:'trois', emoji:'3️⃣', level:4 },
   { en:'four', fr:'quatre', emoji:'4️⃣', level:4 },
   { en:'five', fr:'cinq', emoji:'5️⃣', level:4 },
+  { en:'six', fr:'six', emoji:'6️⃣', level:4 },
+  { en:'seven', fr:'sept', emoji:'7️⃣', level:4 },
+  { en:'eight', fr:'huit', emoji:'8️⃣', level:4 },
+  { en:'nine', fr:'neuf', emoji:'9️⃣', level:4 },
+  { en:'ten', fr:'dix', emoji:'🔟', level:4 },
   { en:'purple', fr:'violet', emoji:'🟣', level:4 },
   { en:'black', fr:'noir', emoji:'⚫', level:4 },
   { en:'white', fr:'blanc', emoji:'⚪', level:4 },
-  { en:'cow', fr:'la vache', emoji:'🐮', level:4 },
-  { en:'pig', fr:'le cochon', emoji:'🐷', level:4 },
-  { en:'horse', fr:'le cheval', emoji:'🐴', level:4 },
-  { en:'rabbit', fr:'le lapin', emoji:'🐰', level:4 },
-  { en:'lion', fr:'le lion', emoji:'🦁', level:4 },
-  { en:'elephant', fr:"l'éléphant", emoji:'🐘', level:4 },
-  { en:'monkey', fr:'le singe', emoji:'🐵', level:4 },
-  { en:'frog', fr:'la grenouille', emoji:'🐸', level:4 },
+  { en:'brown', fr:'marron', emoji:'🟤', level:4 },
+  { en:'tiger', fr:'le tigre', emoji:'🐯', level:4 },
+  { en:'zebra', fr:'le zèbre', emoji:'🦓', level:4 },
+  { en:'giraffe', fr:'la girafe', emoji:'🦒', level:4 },
+  { en:'penguin', fr:'le pingouin', emoji:'🐧', level:4 },
+  { en:'owl', fr:'le hibou', emoji:'🦉', level:4 },
+  { en:'shark', fr:'le requin', emoji:'🦈', level:4 },
+  { en:'whale', fr:'la baleine', emoji:'🐳', level:4 },
+  { en:'turtle', fr:'la tortue', emoji:'🐢', level:4 },
+  { en:'spider', fr:"l'araignée", emoji:'🕷️', level:4 },
+  { en:'dinosaur', fr:'le dinosaure', emoji:'🦕', level:4 },
+  { en:'crocodile', fr:'le crocodile', emoji:'🐊', level:4 },
 ];
 
 /* ────────── GAME STATE ────────── */
@@ -2333,6 +2386,7 @@ let mathCurrentFact = null;
 // English game (Anglais)
 let englishRoundIndex = 0;
 let englishOrder = [];
+let englishOrderTier = 0;
 let englishCurrentWord = null;
 let englishIntroDone = false;
 
@@ -2423,6 +2477,9 @@ openDB().catch(() => {});
 /* ────────── MASTERY ALGORITHM ────────── */
 function computeStatus(m) {
   if (!m || m.total === 0) return 'new';
+  // Games with a masteryStreak (Anglais) use a faster rule: N correct in a row
+  const fast = TIER_CONFIGS[m.game]?.masteryStreak;
+  if (fast) return m.streak >= fast ? 'mastered' : 'learning';
   const recent = m.recentWindow || [];
   const recentCorrect = recent.filter(x => x === 1).length;
   if (m.total >= 3 && recentCorrect >= 3 && recent.length >= 3 && m.streak >= 2) {
@@ -2564,6 +2621,11 @@ const TIER_CONFIGS = {
   english: {
     maxTier: 4,
     choices: [2, 3, 4, 4],
+    // Zoé learns fast: a word is mastered after 2 correct answers in a row,
+    // and a tier unlocks when 30% of its words are mastered
+    masteryStreak: 2,
+    unlockRatio: 0.30,
+    regressRatio: 0.10,
     items: function(tier) { return ENGLISH_WORDS.filter(w => w.level <= tier).map(w => w.en); },
   },
 };
@@ -2637,7 +2699,7 @@ async function checkTierUnlock(game, masteryMap) {
     const m = masteryMap[game + ':' + item];
     if (computeStatus(m) === 'mastered') masteredCount++;
   }
-  return masteredCount >= Math.ceil(tierItems.length * 0.50);
+  return masteredCount >= Math.ceil(tierItems.length * (config.unlockRatio || 0.50));
 }
 
 async function checkTierRegression(game, masteryMap) {
@@ -2657,7 +2719,8 @@ async function checkTierRegression(game, masteryMap) {
   // Only regress if we've been playing at this tier and mastery dropped significantly
   const totalAttempted = masteredCount + learningCount;
   if (totalAttempted < 5) return false;
-  return masteredCount < Math.ceil(tierItems.length * 0.25);
+  const regressRatio = TIER_CONFIGS[game]?.regressRatio || 0.25;
+  return masteredCount < Math.ceil(tierItems.length * regressRatio);
 }
 
 // Cache progress in memory for sync access during rounds
@@ -2685,7 +2748,7 @@ async function updateTierBadge(game, optMasteryMap) {
     fill.style.width = '100%';
   } else {
     const tierItems = getItemsForTier(game, tier);
-    const needed = Math.ceil(tierItems.length * 0.50);
+    const needed = Math.ceil(tierItems.length * (config.unlockRatio || 0.50));
     const masteryMap = optMasteryMap || await dbReadAllByIndex('mastery', 'game', game);
     let mastered = 0;
     for (const item of tierItems) {
@@ -4411,13 +4474,9 @@ function nextMathRound() {
 
 /* ────────── ENGLISH GAME (Anglais: listen and tap the picture) ────────── */
 async function initEnglish() {
-  _sessionNewItems['english'] = 0;
   englishIntroDone = false;
-  const progress = await loadGameProgress('english');
-  const masteryMap = await dbReadAllByIndex('mastery', 'game', 'english');
-  const pool = getItemsForTier('english', progress.currentTier);
-  englishOrder = buildAdaptiveOrder(pool, masteryMap, 'english', pool.length);
-  englishRoundIndex = 0;
+  await loadGameProgress('english');
+  await buildEnglishOrder();
   showEnglishRound();
   updateTierBadge('english');
   showMascotMessage('Hello Zoé ! 👋');
@@ -4440,11 +4499,21 @@ function replayEnglishWord() {
   speakEnglishWord();
 }
 
+/* Build the question list for the current tier. Call it again when the tier
+   changes during play, so that the new words also become questions. */
+async function buildEnglishOrder() {
+  // buildAdaptiveOrder() uses the new-word budget for each word it adds, so reset
+  // the budget for each new list. Otherwise a new tier never gets its new words.
+  _sessionNewItems['english'] = 0;
+  const tier = _gameProgress['english']?.currentTier || 1;
+  const masteryMap = await dbReadAllByIndex('mastery', 'game', 'english');
+  const pool = getItemsForTier('english', tier);
+  englishOrder = buildAdaptiveOrder(pool, masteryMap, 'english', pool.length);
+  englishOrderTier = tier;
+  englishRoundIndex = 0;
+}
+
 function showEnglishRound() {
-  if (englishRoundIndex >= englishOrder.length) {
-    englishOrder = shuffle([...englishOrder]);
-    englishRoundIndex = 0;
-  }
   const word = ENGLISH_WORDS.find(w => w.en === englishOrder[englishRoundIndex]);
   englishCurrentWord = word;
 
@@ -4517,9 +4586,13 @@ function checkEnglishAnswer(btn, correct, word) {
   }
 }
 
-function nextEnglishRound() {
+async function nextEnglishRound() {
   sfxClick();
   englishRoundIndex++;
+  const tier = _gameProgress['english']?.currentTier || 1;
+  if (tier !== englishOrderTier || englishRoundIndex >= englishOrder.length) {
+    await buildEnglishOrder();
+  }
   showEnglishRound();
 }
 

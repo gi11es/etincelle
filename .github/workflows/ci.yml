@@ -111,6 +111,7 @@ jobs:
           - { name: 'Dasha French', file: 'smoke-dasha-french.mjs' }
           - { name: 'Dasha Citizenship', file: 'smoke-dasha-citizenship.mjs' }
           - { name: 'Zoe', file: 'smoke-zoe.mjs' }
+          - { name: 'Zoe English tiers', file: 'test-zoe-english-tiers.mjs' }
     name: smoke / ${{ matrix.test.name }}
     steps:
       - uses: actions/checkout@v4
