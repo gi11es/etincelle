@@ -8,6 +8,7 @@ const pages = [
   ['/', 'Home'],
   ['/felix/', 'Felix Portal'],
   ['/felix/stats/', 'Felix Stats'],
+  ['/felix/proportionnalite/', 'Felix Proportionnalité 4ème'],
   ['/felix/verbes-anglais/', 'Felix Verbes irréguliers'],
   ['/felix/famille-espagnol/', 'Felix La famille (Espagnol)'],
   ['/dasha/', 'Dasha Portal'],

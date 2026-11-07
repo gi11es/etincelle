@@ -59,6 +59,7 @@ jobs:
             felix/verbes-anglais/index.html
             felix/famille-espagnol/index.html
             felix/math/index.html
+            felix/proportionnalite/index.html
             felix/quiz-livre/index.html
             felix/stats/index.html
             zoe/app.html
@@ -104,6 +105,8 @@ jobs:
         test:
           - { name: 'Page loads', file: 'smoke-pages.mjs' }
           - { name: 'Felix Math', file: 'smoke-felix-math.mjs' }
+          - { name: 'Felix Proportionnalité', file: 'smoke-felix-proportionnalite.mjs' }
+          - { name: 'Felix Proportionnalité questions', file: 'test-felix-proportionnalite.mjs' }
           - { name: 'Felix English', file: 'smoke-felix-english.mjs' }
           - { name: 'Felix Verbes', file: 'smoke-felix-verbes.mjs' }
           - { name: 'Felix Famille', file: 'smoke-felix-famille.mjs' }

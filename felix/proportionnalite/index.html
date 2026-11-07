@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=1771447445">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0f0f23">
+  <title>Proportionnalité 4ème - Felix Academy</title>
+  <link rel="stylesheet" href="../../shared/base.css?v=1771447445">
+  <link rel="stylesheet" href="proportionnalite.css?v=1771447445">
+  <script src="../../shared/vendor/lottie-player.js?v=1771447445"></script>
+</head>
+<body>
+  <canvas id="confetti-canvas"></canvas>
+
+  <div id="lottie-overlay" class="lottie-overlay hidden">
+    <lottie-player id="lottie-player" speed="1" style="width:200px;height:200px;"></lottie-player>
+  </div>
+
+  <div id="app">
+    <!-- Home -->
+    <section id="screen-home" class="screen active">
+      <nav class="screen-nav">
+        <a href="../index.html" class="btn-back">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+          Accueil
+        </a>
+      </nav>
+      <header class="prop-header">
+        <h1 class="prop-title">Proportionnalité</h1>
+        <p class="prop-subtitle">Tout le programme de 4ème · révise, puis passe le contrôle</p>
+      </header>
+
+      <button class="exam-card" id="btn-start-exam">
+        <div class="exam-card-icon">📝</div>
+        <div class="exam-card-info">
+          <h2>Contrôle blanc</h2>
+          <p>20 questions · noté sur 20 · environ 50 min</p>
+          <p class="exam-card-history" id="exam-history">Aucun contrôle passé pour l'instant</p>
+        </div>
+        <div class="exam-card-arrow">›</div>
+      </button>
+
+      <h2 class="prop-section-title">Révisions par chapitre</h2>
+      <div class="theme-grid" id="theme-grid"></div>
+
+      <h2 class="prop-section-title">Ateliers visuels</h2>
+      <div class="atelier-grid" id="atelier-grid"></div>
+    </section>
+
+    <!-- Revision sheet -->
+    <section id="screen-fiche" class="screen">
+      <nav class="screen-nav">
+        <button class="btn-back" data-go-home>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+          Chapitres
+        </button>
+      </nav>
+      <div class="fiche-card">
+        <h2 id="fiche-title"></h2>
+        <div id="fiche-body" class="fiche-body"></div>
+        <button class="btn btn-primary fiche-start" id="btn-start-practice">S'entraîner : 8 exercices</button>
+      </div>
+    </section>
+
+    <!-- Practice and exam session -->
+    <section id="screen-session" class="screen">
+      <div class="session-topbar">
+        <button class="btn-back" id="btn-session-quit">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-fill" id="session-progress"></div>
+        </div>
+        <div class="session-streak-pill" id="session-pill"></div>
+      </div>
+      <div class="session-question-count" id="session-count"></div>
+      <div id="question-container" class="game-container"></div>
+      <div id="exam-nav" class="exam-nav hidden"></div>
+    </section>
+
+    <!-- Practice results -->
+    <section id="screen-results" class="screen">
+      <div class="results-card">
+        <div id="results-lottie" class="results-lottie"></div>
+        <h2 id="results-title"></h2>
+        <div class="results-score">
+          <span id="results-score"></span><span class="results-divider">/</span><span id="results-total"></span>
+        </div>
+        <p id="results-message"></p>
+        <div id="results-xp" class="results-xp"></div>
+        <div class="results-actions">
+          <button class="btn btn-primary" id="btn-results-retry">Recommencer</button>
+          <button class="btn btn-secondary" data-go-home>Retour aux chapitres</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Exam copy: mark and correction -->
+    <section id="screen-copie" class="screen">
+      <nav class="screen-nav">
+        <button class="btn-back" data-go-home>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+          Chapitres
+        </button>
+      </nav>
+      <div class="copie-head">
+        <div class="copie-note"><span id="copie-note"></span><span class="copie-sur">/20</span></div>
+        <div class="copie-appreciation" id="copie-appreciation"></div>
+        <div class="copie-meta" id="copie-meta"></div>
+        <div id="copie-xp" class="results-xp"></div>
+      </div>
+      <h3 class="prop-section-title">Bilan par chapitre</h3>
+      <div id="copie-bilan" class="copie-bilan"></div>
+      <h3 class="prop-section-title">Correction détaillée</h3>
+      <div id="copie-corrections"></div>
+      <div class="results-actions copie-actions">
+        <button class="btn btn-primary" id="btn-copie-retry">Nouveau contrôle</button>
+        <button class="btn btn-secondary" data-go-home>Retour aux chapitres</button>
+      </div>
+    </section>
+
+    <!-- WebGL workshop -->
+    <section id="screen-atelier" class="screen">
+      <div class="session-topbar">
+        <button class="btn-back" id="btn-atelier-quit">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-fill" id="atelier-progress"></div>
+        </div>
+        <div class="session-streak-pill"><span>⭐</span><span id="atelier-score">0</span></div>
+      </div>
+      <h2 class="atelier-title" id="atelier-title"></h2>
+      <div id="atelier-container" class="atelier-container"></div>
+    </section>
+  </div>
+
+  <script type="module" src="app.js?v=1771447445"></script>
+  <script type="module" src="../../shared/bug-report/bug-widget.js?v=1771447445"></script>
+</body>
+</html>
