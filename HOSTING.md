@@ -85,5 +85,5 @@ audio stays in the browser; no API key or backend speech service is required.
 
 `npm run test:oral` in `tests/` checks the guided UI with controlled recognition.
 `npm run test:oral-stt` runs the actual WASM recognizer against the lesson audio and
-Chromium's fake microphone, verifies that no audio is uploaded, and requires
-ffmpeg to prepare its temporary microphone fixture.
+Chromium's fake microphone using the bundled synthetic PCM fixture, and verifies
+that no audio is uploaded.

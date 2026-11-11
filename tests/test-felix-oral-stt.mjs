@@ -1,12 +1,6 @@
 import assert from 'node:assert/strict';
-import { execFileSync } from 'node:child_process';
-import { mkdtempSync, rmSync } from 'node:fs';
-import { tmpdir } from 'node:os';
-import { join } from 'node:path';
 import { setup, collectErrors, ROOT } from './smoke-harness.mjs';
-const fixtureDir = mkdtempSync(join(tmpdir(), 'etincelle-oral-mic-'));
-const fixture = join(fixtureDir, 'family.wav');
-execFileSync('ffmpeg', ['-v', 'error', '-i', `${ROOT}/felix/healthy-lifestyle/audio/o1-q1.mp3`, '-ar', '48000', '-ac', '1', '-c:a', 'pcm_s16le', fixture]);
+const fixture = `${ROOT}/tests/fixtures/oral-family.wav`;
 const { browser, base, errors, done } = await setup({ launchArgs: ['--use-fake-device-for-media-stream', '--use-fake-ui-for-media-stream', `--use-file-for-fake-audio-capture=${fixture}`] });
 const page = await browser.newPage();
 page.setDefaultTimeout(240000);
@@ -49,6 +43,5 @@ try {
   assert.deepEqual(sentAudio, [], 'No audio or transcript is uploaded');
   for (const result of results) { console.log(JSON.stringify(result)); assert.ok(result.passed, JSON.stringify(result)); }
 } catch (error) { errors.push({ page: 'Moonshine oral recognition', error: error.stack }); }
-rmSync(fixtureDir, { recursive: true, force: true });
 collector.check();
 await done();
