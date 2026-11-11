@@ -26,6 +26,10 @@ English vocabulary, maths (collège/lycée), and book quizzes with spaced repeti
 
 **Maths** — Exercises from 5e to 2nde: fractions, algebra, geometry, functions, statistics. Procedurally generated problems with step-by-step feedback.
 
+**Eat well, live well** — Atelier d’anglais fondé sur les fiches de cours : lexique audio, traduction et dictée, familles d’aliments, phrases à trous et à reconstruire, compréhension orale et préparation à l’oral sur deux scènes. Audio britannique ElevenLabs v4 embarqué et progression locale.
+
+**Dictée · Sur l’eau** — L’extrait de Maupassant de la feuille de révision, découpé en 13 passages : lecture audio, mots difficiles, dictées à trous et dictées de passages. Audio français ElevenLabs v4 embarqué, vitesse lente, pause/reprise, barre de lecture pour naviguer dans le passage, réécoute par phrase, correction des accents et accords, progression sauvegardée sur l’appareil.
+
 **Quiz Livre** — Reading comprehension quizzes on French literature (Jules Verne, Albert Robida). QCM, vrai/faux, associations, timeline ordering, and "qui suis-je" — each answer backed by direct quotes from the source text.
 
 <p align="center">
@@ -116,3 +120,16 @@ Requires `shared/secrets.js` with a GitHub PAT (gitignored) and an nginx proxy f
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+## Regenerating the learning audio
+
+The English workshop and French dictation bundle ElevenLabs v4 MP3 recordings.
+Run `python3 scripts/generate-learning-audio.py` to regenerate changed or missing
+clips, or pass `--activity healthy-lifestyle` / `--activity dictee` to select one.
+The generator reads `ELEVENLABS_API_KEY` or the private cached key at
+`~/.codex/secrets/elevenlabs_api_key`; credentials are never shipped to the browser.
+It requires Python, ffmpeg and ffprobe. Each activity’s `audio-manifest.json`
+records the model, voice, source-text hash and audio hash for every clip, allowing
+interrupted generation to resume without paying again for finished recordings.
+Use `--dry-run` to list the number of pending clips, `--limit 2` for a sample run,
+and `--force` only when intentionally regenerating recordings that already match.

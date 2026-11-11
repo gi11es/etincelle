@@ -1,0 +1,652 @@
+{
+  "title": "Eat well, live well",
+  "groups": {
+    "produce": "Fruit & vegetables",
+    "protein": "Protein foods",
+    "carbs": "Carbohydrates",
+    "dairy": "Dairy products",
+    "other": "Other words"
+  },
+  "vocabulary": [
+    {
+      "id": "v1",
+      "en": "a dish",
+      "fr": "un plat",
+      "group": "other"
+    },
+    {
+      "id": "v2",
+      "en": "vegetables",
+      "fr": "des légumes",
+      "group": "produce"
+    },
+    {
+      "id": "v3",
+      "en": "fruit",
+      "fr": "des fruits",
+      "group": "produce"
+    },
+    {
+      "id": "v4",
+      "en": "homemade food",
+      "fr": "de la nourriture faite maison",
+      "group": "other"
+    },
+    {
+      "id": "v5",
+      "en": "processed food",
+      "fr": "des aliments transformés",
+      "group": "other"
+    },
+    {
+      "id": "v6",
+      "en": "a meal",
+      "fr": "un repas",
+      "group": "other"
+    },
+    {
+      "id": "v7",
+      "en": "to share a meal",
+      "fr": "partager un repas",
+      "group": "other"
+    },
+    {
+      "id": "v8",
+      "en": "colourful",
+      "fr": "coloré",
+      "group": "other"
+    },
+    {
+      "id": "v9",
+      "en": "healthy",
+      "fr": "sain",
+      "group": "other"
+    },
+    {
+      "id": "v10",
+      "en": "a balanced diet",
+      "fr": "une alimentation équilibrée",
+      "group": "other"
+    },
+    {
+      "id": "v11",
+      "en": "fish",
+      "fr": "du poisson",
+      "group": "protein"
+    },
+    {
+      "id": "v12",
+      "en": "meat",
+      "fr": "de la viande",
+      "group": "protein"
+    },
+    {
+      "id": "v13",
+      "en": "eggs",
+      "fr": "des œufs",
+      "group": "protein"
+    },
+    {
+      "id": "v14",
+      "en": "proteins",
+      "fr": "des protéines",
+      "group": "other"
+    },
+    {
+      "id": "v15",
+      "en": "carbohydrates",
+      "fr": "des glucides",
+      "group": "other"
+    },
+    {
+      "id": "v16",
+      "en": "pasta",
+      "fr": "des pâtes",
+      "group": "carbs"
+    },
+    {
+      "id": "v17",
+      "en": "cereals",
+      "fr": "des céréales",
+      "group": "carbs"
+    },
+    {
+      "id": "v18",
+      "en": "rice",
+      "fr": "du riz",
+      "group": "carbs"
+    },
+    {
+      "id": "v19",
+      "en": "pulses",
+      "fr": "des légumineuses",
+      "group": "protein",
+      "groups": [
+        "protein",
+        "carbs"
+      ]
+    },
+    {
+      "id": "v20",
+      "en": "dairy products",
+      "fr": "des produits laitiers",
+      "group": "other"
+    },
+    {
+      "id": "v21",
+      "en": "milk",
+      "fr": "du lait",
+      "group": "dairy"
+    },
+    {
+      "id": "v22",
+      "en": "cheese",
+      "fr": "du fromage",
+      "group": "dairy"
+    },
+    {
+      "id": "v23",
+      "en": "yogurt",
+      "fr": "du yaourt",
+      "group": "dairy",
+      "accepted": [
+        "yoghurt"
+      ]
+    },
+    {
+      "id": "v24",
+      "en": "butter",
+      "fr": "du beurre",
+      "group": "dairy"
+    },
+    {
+      "id": "v25",
+      "en": "cream",
+      "fr": "de la crème",
+      "group": "dairy"
+    },
+    {
+      "id": "v26",
+      "en": "family",
+      "fr": "la famille",
+      "group": "other"
+    },
+    {
+      "id": "v27",
+      "en": "friends",
+      "fr": "des amis",
+      "group": "other"
+    },
+    {
+      "id": "v28",
+      "en": "to shop",
+      "fr": "faire les courses",
+      "group": "other"
+    },
+    {
+      "id": "v29",
+      "en": "to cook",
+      "fr": "cuisiner",
+      "group": "other"
+    },
+    {
+      "id": "v30",
+      "en": "to eat",
+      "fr": "manger",
+      "group": "other"
+    },
+    {
+      "id": "v31",
+      "en": "happy",
+      "fr": "heureux",
+      "group": "other"
+    },
+    {
+      "id": "v32",
+      "en": "relaxed",
+      "fr": "détendu",
+      "group": "other"
+    },
+    {
+      "id": "v33",
+      "en": "water",
+      "fr": "de l’eau",
+      "group": "other"
+    },
+    {
+      "id": "v34",
+      "en": "physical activity",
+      "fr": "une activité physique",
+      "group": "other"
+    },
+    {
+      "id": "v35",
+      "en": "a healthy lifestyle",
+      "fr": "un mode de vie sain",
+      "group": "other"
+    },
+    {
+      "id": "v36",
+      "en": "varied food",
+      "fr": "une nourriture variée",
+      "group": "other"
+    },
+    {
+      "id": "v37",
+      "en": "a baby",
+      "fr": "un bébé",
+      "group": "other"
+    },
+    {
+      "id": "v38",
+      "en": "a toddler",
+      "fr": "un enfant en bas âge",
+      "group": "other"
+    },
+    {
+      "id": "v39",
+      "en": "a burger",
+      "fr": "un hamburger",
+      "group": "other"
+    },
+    {
+      "id": "v40",
+      "en": "a bottle",
+      "fr": "une bouteille ou un biberon",
+      "group": "other"
+    },
+    {
+      "id": "v41",
+      "en": "unhealthy",
+      "fr": "mauvais pour la santé",
+      "group": "other"
+    },
+    {
+      "id": "v42",
+      "en": "junk food",
+      "fr": "de la malbouffe",
+      "group": "other"
+    },
+    {
+      "id": "v43",
+      "en": "addicted",
+      "fr": "dépendant",
+      "group": "other"
+    },
+    {
+      "id": "v44",
+      "en": "obsessed",
+      "fr": "obsédé",
+      "group": "other"
+    },
+    {
+      "id": "v45",
+      "en": "fat",
+      "fr": "de la matière grasse",
+      "group": "other"
+    },
+    {
+      "id": "v46",
+      "en": "sugar",
+      "fr": "du sucre",
+      "group": "other"
+    },
+    {
+      "id": "v47",
+      "en": "salt",
+      "fr": "du sel",
+      "group": "other"
+    },
+    {
+      "id": "v48",
+      "en": "fast food",
+      "fr": "de la restauration rapide",
+      "group": "other"
+    }
+  ],
+  "phrases": [
+    {
+      "id": "p1",
+      "fr": "Je vois deux bébés et un hamburger.",
+      "en": "I can see two babies and a burger.",
+      "gap": "I can ___ two babies and a burger.",
+      "answers": [
+        "see"
+      ],
+      "tip": "I can see… = Je peux voir… Après can, le verbe est à la base verbale."
+    },
+    {
+      "id": "p2",
+      "fr": "Il y a un plat sur la table.",
+      "en": "There is a dish on the table.",
+      "gap": "There ___ a dish on the table.",
+      "answers": [
+        "is"
+      ],
+      "tip": "There is + singulier ; there are + pluriel."
+    },
+    {
+      "id": "p3",
+      "fr": "Il y a des légumes sur la table.",
+      "en": "There are vegetables on the table.",
+      "gap": "There ___ vegetables on the table.",
+      "answers": [
+        "are"
+      ],
+      "tip": "Vegetables est au pluriel : there are."
+    },
+    {
+      "id": "p4",
+      "fr": "Ils essaient de manger le hamburger.",
+      "en": "They are trying to eat the burger.",
+      "gap": "They are ___ to eat the burger.",
+      "answers": [
+        "trying"
+      ],
+      "tip": "Pour une action en cours : be + verbe en -ing."
+    },
+    {
+      "id": "p5",
+      "fr": "La nourriture a l’air colorée.",
+      "en": "It looks colourful.",
+      "gap": "It ___ colourful.",
+      "answers": [
+        "looks"
+      ],
+      "tip": "It est singulier : looks prend un s."
+    },
+    {
+      "id": "p6",
+      "fr": "Je pense que la vidéo parle de bébés dépendants à la restauration rapide.",
+      "en": "I think the video is about babies addicted to fast food.",
+      "gap": "I think the video is ___ babies addicted to fast food.",
+      "answers": [
+        "about"
+      ],
+      "tip": "Dire « the video is about… ». Évite « the video it is about… »."
+    },
+    {
+      "id": "p7",
+      "fr": "Peut-être qu’ils mangent en famille.",
+      "en": "Maybe they are eating with their family.",
+      "gap": "___ they are eating with their family.",
+      "answers": [
+        "Maybe"
+      ],
+      "tip": "Maybe = peut-être. On présente une hypothèse."
+    },
+    {
+      "id": "p8",
+      "fr": "Manger sainement ne concerne pas seulement la nourriture.",
+      "en": "Healthy eating is not only about food.",
+      "gap": "Healthy eating is not ___ about food.",
+      "answers": [
+        "only"
+      ],
+      "tip": "Not only about… = pas seulement une question de…"
+    },
+    {
+      "id": "p9",
+      "fr": "Il est aussi question d’une alimentation équilibrée.",
+      "en": "It is also about having a balanced diet.",
+      "gap": "It is also about having a ___ diet.",
+      "answers": [
+        "balanced"
+      ],
+      "tip": "A balanced diet = une alimentation équilibrée."
+    },
+    {
+      "id": "p10",
+      "fr": "Partager un repas peut rendre les gens heureux.",
+      "en": "Sharing a meal can make people feel happy.",
+      "gap": "Sharing a meal can make people ___ happy.",
+      "answers": [
+        "feel"
+      ],
+      "tip": "Make people feel + adjectif : faire ressentir une émotion."
+    },
+    {
+      "id": "p11",
+      "fr": "Manger ensemble peut aider les gens à se sentir détendus.",
+      "en": "Eating together can help people feel relaxed.",
+      "gap": "Eating together can help people feel ___.",
+      "answers": [
+        "relaxed"
+      ],
+      "tip": "Relax est un verbe ; relaxed est l’adjectif « détendu »."
+    },
+    {
+      "id": "p12",
+      "fr": "Il est important de pratiquer une activité physique.",
+      "en": "It is important to practise a physical activity.",
+      "gap": "It is important to ___ a physical activity.",
+      "answers": [
+        "practise",
+        "practice"
+      ],
+      "tip": "Practise est le verbe en anglais britannique. Practice est accepté en anglais américain."
+    },
+    {
+      "id": "p13",
+      "fr": "Un mode de vie sain signifie manger une nourriture saine et variée.",
+      "en": "A healthy lifestyle means eating healthy, varied food.",
+      "gap": "A healthy lifestyle means ___ healthy, varied food.",
+      "answers": [
+        "eating"
+      ],
+      "tip": "Après means au sens de « implique », utilise une forme en -ing."
+    },
+    {
+      "id": "p14",
+      "fr": "Cela signifie aussi boire de l’eau et partager des repas.",
+      "en": "It also means drinking water and sharing meals.",
+      "gap": "It also means ___ water and sharing meals.",
+      "answers": [
+        "drinking"
+      ],
+      "tip": "Eating, drinking, doing, sharing : garde la même construction en -ing."
+    },
+    {
+      "id": "p15",
+      "fr": "La malbouffe est riche en matières grasses, en sucre ou en sel.",
+      "en": "Junk food is high in fat, sugar or salt.",
+      "gap": "Junk food is high ___ fat, sugar or salt.",
+      "answers": [
+        "in"
+      ],
+      "tip": "High in… = riche en… C’est la définition de vocabulaire de la fiche."
+    },
+    {
+      "id": "p16",
+      "fr": "Dépendant signifie incapable d’arrêter de faire quelque chose.",
+      "en": "Addicted means unable to stop doing something.",
+      "gap": "Addicted means unable to stop ___ something.",
+      "answers": [
+        "doing"
+      ],
+      "tip": "Stop doing something = arrêter de faire quelque chose."
+    },
+    {
+      "id": "p17",
+      "fr": "Obsédé signifie penser à quelque chose tout le temps.",
+      "en": "Obsessed means thinking about something all the time.",
+      "gap": "Obsessed means thinking about something all the ___.",
+      "answers": [
+        "time"
+      ],
+      "tip": "All the time = tout le temps."
+    },
+    {
+      "id": "p18",
+      "fr": "Un bébé est un très jeune enfant.",
+      "en": "A baby is a very young child.",
+      "gap": "A baby is a very young ___.",
+      "answers": [
+        "child"
+      ],
+      "tip": "Le pluriel de child est children ; le pluriel de baby est babies."
+    }
+  ],
+  "listening": [
+    {
+      "id": "l1",
+      "title": "A family meal",
+      "text": "I can see a family in the kitchen. There are vegetables, rice and fish on the table. They are sharing a homemade meal. The food looks colourful. I think they feel happy and relaxed.",
+      "questions": [
+        {
+          "prompt": "Where are the people?",
+          "options": [
+            "In the kitchen",
+            "At school",
+            "In a restaurant"
+          ],
+          "answer": 0,
+          "tip": "Le texte dit « in the kitchen » : dans la cuisine."
+        },
+        {
+          "prompt": "What food is on the table?",
+          "options": [
+            "Burgers and chips",
+            "Vegetables, rice and fish",
+            "Only fruit"
+          ],
+          "answer": 1,
+          "tip": "On entend « vegetables, rice and fish »."
+        },
+        {
+          "prompt": "What kind of meal are they sharing?",
+          "options": [
+            "A homemade meal",
+            "A takeaway meal",
+            "No meal"
+          ],
+          "answer": 0,
+          "tip": "Homemade = fait maison."
+        },
+        {
+          "prompt": "How do they seem to feel?",
+          "options": [
+            "Angry",
+            "Sad",
+            "Happy and relaxed"
+          ],
+          "answer": 2,
+          "tip": "La dernière phrase dit « happy and relaxed »."
+        }
+      ]
+    },
+    {
+      "id": "l2",
+      "title": "Healthy habits",
+      "text": "A healthy lifestyle means eating healthy, varied food and drinking water. It also means doing physical activities and sharing meals with family or friends. Healthy eating is not only about food. Eating together can make people feel happy.",
+      "questions": [
+        {
+          "prompt": "What drink is mentioned?",
+          "options": [
+            "Milk",
+            "Water",
+            "Juice"
+          ],
+          "answer": 1,
+          "tip": "Le texte mentionne « drinking water »."
+        },
+        {
+          "prompt": "Which activity is mentioned?",
+          "options": [
+            "Watching television",
+            "Playing video games",
+            "Doing physical activities"
+          ],
+          "answer": 2,
+          "tip": "On entend « doing physical activities »."
+        },
+        {
+          "prompt": "Who can people share meals with?",
+          "options": [
+            "Family or friends",
+            "Only strangers",
+            "Nobody"
+          ],
+          "answer": 0,
+          "tip": "Le texte dit « with family or friends »."
+        },
+        {
+          "prompt": "Healthy eating is only about food.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 1,
+          "tip": "On entend « not only about food » : pas seulement la nourriture."
+        }
+      ]
+    },
+    {
+      "id": "l3",
+      "title": "Fast Food Babies — vocabulary",
+      "text": "In my class notes, I can see two babies and a burger. They are trying to eat the burger. A baby is a very young child. A bottle is a container for liquids. Junk food is food high in fat, sugar or salt. Addicted means unable to stop doing something. Obsessed means thinking about something all the time.",
+      "questions": [
+        {
+          "prompt": "How many babies are mentioned?",
+          "options": [
+            "One",
+            "Two",
+            "Three"
+          ],
+          "answer": 1,
+          "tip": "Le texte dit « two babies ». On travaille ici les notes de cours, pas la vidéo originale."
+        },
+        {
+          "prompt": "What is a bottle?",
+          "options": [
+            "A container for liquids",
+            "A type of vegetable",
+            "A meal"
+          ],
+          "answer": 0,
+          "tip": "A container for liquids = un récipient pour les liquides."
+        },
+        {
+          "prompt": "Which definition matches addicted?",
+          "options": [
+            "Feeling relaxed",
+            "Thinking about something sometimes",
+            "Unable to stop doing something"
+          ],
+          "answer": 2,
+          "tip": "Addicted = dépendant ; unable to stop = incapable d’arrêter."
+        },
+        {
+          "prompt": "Which definition matches obsessed?",
+          "options": [
+            "Eating varied food",
+            "Thinking about something all the time",
+            "Sharing a meal"
+          ],
+          "answer": 1,
+          "tip": "Obsessed = obsédé ; all the time = tout le temps."
+        }
+      ]
+    }
+  ],
+  "oral": [
+    {
+      "id": "o1",
+      "title": "A meal together",
+      "prompt": "Décris la scène : les personnes, le lieu, la nourriture et l’ambiance. Fais ensuite une hypothèse.",
+      "people": "👩 🧑 👦 👧",
+      "place": "Kitchen · cuisine",
+      "food": "🥕 🥦 🍚 🐟 💧",
+      "model": "I can see a family in the kitchen. There are vegetables, rice and fish on the table. There is a bottle of water. They are sharing a meal. It looks colourful. I think they feel relaxed. Maybe the food is homemade."
+    },
+    {
+      "id": "o2",
+      "title": "A picnic with friends",
+      "prompt": "Décris ce pique-nique entre amis. Utilise le singulier et le pluriel, une action en cours et une hypothèse.",
+      "people": "🧑 👧 👦",
+      "place": "Park · parc",
+      "food": "🍎 🍌 🧀 🍞 💧",
+      "model": "I can see three friends in a park. There are apples, bananas, cheese and bread. There is a bottle of water. They are eating together. It looks colourful. I think they are happy. Maybe they are sharing homemade food."
+    }
+  ]
+}

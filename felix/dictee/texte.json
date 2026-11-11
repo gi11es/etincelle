@@ -1,0 +1,336 @@
+{
+  "title": "Sur l’eau",
+  "author": "Guy de Maupassant",
+  "source": "Extrait de la feuille de révision fournie (mention : 1888).",
+  "context": "Le narrateur rencontre un matelot qui lui raconte une aventure étrange et angoissante : une nuit, il se retrouve seul sur sa barque.",
+  "sections": [
+    {
+      "id": 1,
+      "title": "La barque s’anime",
+      "paragraph": 0,
+      "omissionAfter": false,
+      "chunks": [
+        "Pendant quelque temps, je demeurai tranquille, mais bientôt les légers mouvements de la barque m’inquiétèrent.",
+        "Il me sembla qu’elle faisait des embardées gigantesques, touchant tour à tour les deux berges du fleuve ;"
+      ],
+      "words": [
+        {
+          "word": "quelque",
+          "tip": "Devant « temps », quelque signifie « un certain » : il reste au singulier."
+        },
+        {
+          "word": "m’inquiétèrent",
+          "tip": "Passé simple, sujet pluriel : les mouvements."
+        },
+        {
+          "word": "embardées",
+          "tip": "Une embardée est un brusque écart de direction."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Une force invisible",
+      "paragraph": 0,
+      "omissionAfter": false,
+      "chunks": [
+        "puis je crus qu’un être ou qu’une force invisible l’attirait doucement au fond de l’eau et la soulevait ensuite pour la laisser retomber."
+      ],
+      "words": [
+        {
+          "word": "crus",
+          "tip": "Passé simple de croire : je crus."
+        },
+        {
+          "word": "l’attirait",
+          "tip": "Imparfait, troisième personne du singulier."
+        },
+        {
+          "word": "soulevait",
+          "tip": "Imparfait de soulever : sans accent grave ici."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Le calme trompeur",
+      "paragraph": 0,
+      "omissionAfter": true,
+      "chunks": [
+        "J’étais ballotté comme au milieu d’une tempête ; j’entendis des bruits autour de moi ; je me dressai d’un bond : l’eau brillait, tout était calme."
+      ],
+      "words": [
+        {
+          "word": "ballotté",
+          "tip": "Deux l et deux t ; participe passé au masculin singulier."
+        },
+        {
+          "word": "j’entendis",
+          "tip": "Passé simple d’entendre."
+        },
+        {
+          "word": "dressai",
+          "tip": "Passé simple : je me dressai, sans s final."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "L’ancre résiste",
+      "paragraph": 0,
+      "omissionAfter": true,
+      "chunks": [
+        "Je compris que j’avais les nerfs un peu ébranlés et je résolus de m’en aller.",
+        "Je tirai sur ma chaîne ; le canot se mit en mouvement, puis je sentis une résistance, je tirai plus fort, l’ancre ne vint pas ; elle avait accroché quelque chose au fond de l’eau et je ne pouvais la soulever"
+      ],
+      "words": [
+        {
+          "word": "ébranlés",
+          "tip": "Les nerfs sont ébranlés : masculin pluriel."
+        },
+        {
+          "word": "résolus",
+          "tip": "Passé simple de résoudre : je résolus."
+        },
+        {
+          "word": "chaîne",
+          "tip": "N’oublie pas l’accent circonflexe."
+        },
+        {
+          "word": "accroché",
+          "tip": "Avec avoir, pas d’accord avec le sujet « elle »."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Un bruit soudain",
+      "paragraph": 1,
+      "omissionAfter": false,
+      "chunks": [
+        "Soudain, un petit coup sonna contre mon bordage.",
+        "Je fis un soubresaut, et une sueur froide me glaça des pieds à la tête."
+      ],
+      "words": [
+        {
+          "word": "bordage",
+          "tip": "Le bordage désigne les planches qui forment la coque du bateau."
+        },
+        {
+          "word": "soubresaut",
+          "tip": "Un mouvement brusque provoqué par la surprise."
+        },
+        {
+          "word": "glaça",
+          "tip": "Une cédille devant a pour conserver le son « s »."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "L’agitation revient",
+      "paragraph": 1,
+      "omissionAfter": false,
+      "chunks": [
+        "Ce bruit venait sans doute de quelque bout de bois entraîné par le courant, mais cela avait suffi et je me sentis envahi de nouveau par une étrange agitation nerveuse."
+      ],
+      "words": [
+        {
+          "word": "entraîné",
+          "tip": "Le bout de bois est entraîné : masculin singulier."
+        },
+        {
+          "word": "suffi",
+          "tip": "Participe passé de suffire, sans t."
+        },
+        {
+          "word": "envahi",
+          "tip": "Participe passé au masculin singulier, sans t."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Un effort désespéré",
+      "paragraph": 1,
+      "omissionAfter": false,
+      "chunks": [
+        "Je saisis ma chaîne et je me raidis dans un effort désespéré.",
+        "L’ancre tint bon. Je me rassis épuisé."
+      ],
+      "words": [
+        {
+          "word": "raidis",
+          "tip": "Passé simple de se raidir : je me raidis."
+        },
+        {
+          "word": "désespéré",
+          "tip": "Trois accents aigus."
+        },
+        {
+          "word": "tint",
+          "tip": "Passé simple de tenir, troisième personne du singulier."
+        },
+        {
+          "word": "rassis",
+          "tip": "Passé simple de se rasseoir : je me rassis."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Le brouillard",
+      "paragraph": 1,
+      "omissionAfter": false,
+      "chunks": [
+        "Cependant, la rivière s’était peu à peu couverte d’un brouillard blanc très épais qui rampait sur l’eau fort bas, de sorte que, en me dressant debout, je ne voyais plus le fleuve, ni mes pieds, ni mon bateau,"
+      ],
+      "words": [
+        {
+          "word": "couverte",
+          "tip": "Avec être : accord avec la rivière, féminin singulier."
+        },
+        {
+          "word": "brouillard",
+          "tip": "Deux l et un d final."
+        },
+        {
+          "word": "épais",
+          "tip": "Un s final même au singulier."
+        },
+        {
+          "word": "voyais",
+          "tip": "Imparfait de voir à la première personne."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Le paysage sous la lune",
+      "paragraph": 1,
+      "omissionAfter": false,
+      "chunks": [
+        "mais j’apercevais seulement les pointes des roseaux, puis, plus loin, la plaine toute pâle de la lumière de la lune, avec de grandes taches noires qui montaient dans le ciel, formées par des groupes de peupliers d’Italie."
+      ],
+      "words": [
+        {
+          "word": "j’apercevais",
+          "tip": "Apercevoir prend un seul p et un c devant e."
+        },
+        {
+          "word": "roseaux",
+          "tip": "Le pluriel de roseau se termine par x."
+        },
+        {
+          "word": "taches",
+          "tip": "Ici, des marques sombres : pas d’accent circonflexe."
+        },
+        {
+          "word": "formées",
+          "tip": "Accord avec les taches : féminin pluriel."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Des imaginations fantastiques",
+      "paragraph": 1,
+      "omissionAfter": false,
+      "chunks": [
+        "J’étais comme enseveli jusqu’à la ceinture dans une nappe de coton d’une blancheur singulière, et il me venait des imaginations fantastiques."
+      ],
+      "words": [
+        {
+          "word": "enseveli",
+          "tip": "Participe passé au masculin singulier."
+        },
+        {
+          "word": "singulière",
+          "tip": "Un accent grave ; signifie ici « étrange »."
+        },
+        {
+          "word": "fantastiques",
+          "tip": "Accord avec imaginations : féminin pluriel."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Des êtres dans l’eau",
+      "paragraph": 1,
+      "omissionAfter": false,
+      "chunks": [
+        "Je me figurais qu’on essayait de monter dans ma barque que je ne pouvais plus distinguer, et que la rivière, cachée par ce brouillard opaque, devait être pleine d’êtres étranges qui nageaient autour de moi."
+      ],
+      "words": [
+        {
+          "word": "figurais",
+          "tip": "Imparfait : je me figurais."
+        },
+        {
+          "word": "cachée",
+          "tip": "Accord avec la rivière : féminin singulier."
+        },
+        {
+          "word": "nageaient",
+          "tip": "Conserve le e après g pour garder le son « j »."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "La peur de fuir",
+      "paragraph": 1,
+      "omissionAfter": true,
+      "chunks": [
+        "J’éprouvais un malaise horrible, j’avais les tempes serrées, mon cœur battait à m’étouffer ; et, perdant la tête, je pensai à me sauver à la nage ; puis aussitôt cette idée me fit frissonner d’épouvante."
+      ],
+      "words": [
+        {
+          "word": "serrées",
+          "tip": "Accord avec les tempes : féminin pluriel."
+        },
+        {
+          "word": "aussitôt",
+          "tip": "Deux s et un accent circonflexe sur le o."
+        },
+        {
+          "word": "frissonner",
+          "tip": "Deux s et deux n."
+        },
+        {
+          "word": "d’épouvante",
+          "tip": "Épouvante désigne une peur très forte."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "L’attente",
+      "paragraph": 2,
+      "omissionAfter": true,
+      "chunks": [
+        "Je demeurais immobile, les yeux ouverts, l’oreille tendue et attendant. Quoi ?",
+        "Je n’en savais rien, mais ce devait être terrible."
+      ],
+      "words": [
+        {
+          "word": "demeurais",
+          "tip": "Ici, imparfait : je demeurais. Au début du texte : je demeurai, au passé simple."
+        },
+        {
+          "word": "immobile",
+          "tip": "Deux m, un seul l."
+        },
+        {
+          "word": "tendue",
+          "tip": "Accord avec l’oreille : féminin singulier."
+        },
+        {
+          "word": "attendant",
+          "tip": "Participe présent en -ant, invariable."
+        }
+      ]
+    }
+  ]
+}

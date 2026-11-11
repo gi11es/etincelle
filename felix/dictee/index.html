@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f0f23">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="dictee.css?v=playback-2">
+  <title>Sur l’eau · Atelier dictée — Félix</title>
+</head>
+<body>
+<main id="app">
+  <nav><a class="btn-back" href="../index.html">← Accueil Félix</a></nav>
+  <header><p class="eyebrow">FRANÇAIS · ATELIER DICTÉE</p><h1>Sur l’eau <span aria-hidden="true">🌙</span></h1><p>Guy de Maupassant · Prépare ta dictée, un passage à la fois.</p></header>
+  <p class="intro">Commence par écouter et lire, travaille les mots difficiles, puis passe aux dictées. Tous les passages de ta feuille sont disponibles : entraîne-toi sur celui de ton choix.</p>
+  <div class="toolbar"><label for="section">Passage à travailler</label><select id="section"></select><button id="random" class="btn btn-secondary">🎲 Au hasard</button></div>
+  <p id="progress" class="muted" aria-live="polite"></p>
+  <div class="modes" role="group" aria-label="Choisir une activité">
+    <button data-mode="read" aria-pressed="true">📖 Lire et écouter</button>
+    <button data-mode="words" aria-pressed="false">✍️ Mots difficiles</button>
+    <button data-mode="gaps" aria-pressed="false">🧩 Dictée à trous</button>
+    <button data-mode="dictation" aria-pressed="false">🎧 Dictée du passage</button>
+  </div>
+  <section class="panel" aria-labelledby="activity-title">
+    <h2 id="activity-title"></h2>
+    <p id="instruction"></p>
+    <div class="audio-tools">
+      <button id="listen" class="btn btn-primary">▶ Écouter le passage</button>
+      <button id="pause" class="btn btn-secondary" disabled>⏸ Pause</button>
+      <button id="stop" class="btn btn-secondary">⏹ Arrêter</button>
+      <label for="speed">Vitesse <select id="speed"><option value="0.5">Très lente (×0,5)</option><option value="0.65">Lente (×0,65)</option><option value="0.8">Modérée (×0,8)</option><option value="1" selected>Normale (×1)</option></select></label>
+    </div>
+    <div class="playback-bar">
+      <p id="audio-caption" class="muted">Passage entier</p>
+      <audio id="audio-player" preload="metadata"></audio>
+      <label for="seek" class="muted">Position dans l’audio</label>
+      <input id="seek" type="range" min="0" max="0" value="0" step="0.1" disabled aria-label="Position dans l’audio">
+      <div class="audio-times"><span id="elapsed">0:00</span><span id="duration">0:00</span></div>
+    </div>
+    <div id="phrase-tools" hidden><button id="previous-phrase" class="btn btn-secondary" aria-label="Phrase précédente">←</button><button id="phrase" class="btn btn-secondary">Écouter la phrase</button><button id="next-phrase" class="btn btn-secondary" aria-label="Phrase suivante">→</button><span id="phrase-position"></span></div>
+    <p id="audio-status" role="status"></p>
+    <div id="exercise"></div>
+    <div id="feedback" role="status" aria-live="polite"></div>
+    <div class="actions"><button id="check" class="btn btn-primary">Corriger</button><button id="retry" class="btn btn-secondary" hidden>Recommencer</button><button id="next" class="btn btn-secondary">Passage suivant →</button></div>
+  </section>
+  <details id="full-text"><summary>Relire tout le texte de la feuille</summary><div id="source"></div></details>
+  <p class="muted footnote">Les résultats restent enregistrés sur cet appareil. Les accents, les accords et les majuscules comptent ; la ponctuation est à vérifier dans le modèle. Les […] signalent les coupures de la feuille et ne sont pas à dicter.</p>
+  <p id="load-status" role="alert"></p>
+</main>
+<script type="module" src="dictee.js?v=playback-4"></script>
+<script type="module" src="../../shared/bug-report/bug-widget.js"></script>
+</body>
+</html>

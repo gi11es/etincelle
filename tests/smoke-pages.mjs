@@ -7,6 +7,8 @@ const { browser, base, errors, done } = await setup();
 const pages = [
   ['/', 'Home'],
   ['/felix/', 'Felix Portal'],
+  ['/felix/healthy-lifestyle/', 'Felix Eat well, live well'],
+  ['/felix/dictee/', 'Felix Dictée Sur l’eau'],
   ['/felix/stats/', 'Felix Stats'],
   ['/felix/proportionnalite/', 'Felix Proportionnalité 4ème'],
   ['/felix/verbes-anglais/', 'Felix Verbes irréguliers'],

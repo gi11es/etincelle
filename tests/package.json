@@ -2,7 +2,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "npm run test:pages && npm run test:math && npm run test:english && npm run test:verbes && npm run test:famille && npm run test:quizlivre && npm run test:french && npm run test:citizenship && npm run test:zoe",
+    "test": "npm run test:pages && npm run test:dictee && npm run test:healthy && npm run test:math && npm run test:english && npm run test:verbes && npm run test:famille && npm run test:quizlivre && npm run test:french && npm run test:citizenship && npm run test:zoe",
     "test:pages": "node smoke-pages.mjs",
     "test:math": "node smoke-felix-math.mjs",
     "test:english": "node smoke-felix-english.mjs",
@@ -12,7 +12,9 @@
     "test:french": "node smoke-dasha-french.mjs",
     "test:citizenship": "node smoke-dasha-citizenship.mjs",
     "test:zoe": "node smoke-zoe.mjs",
-    "test:gamification": "node gamification-test.mjs"
+    "test:gamification": "node gamification-test.mjs",
+    "test:dictee": "node smoke-felix-dictee.mjs",
+    "test:healthy": "node smoke-felix-healthy.mjs"
   },
   "devDependencies": {
     "puppeteer": "^24.0.0"

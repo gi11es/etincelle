@@ -55,6 +55,8 @@ jobs:
           expected=(
             index.html
             felix/index.html
+            felix/healthy-lifestyle/index.html
+            felix/dictee/index.html
             felix/english/index.html
             felix/verbes-anglais/index.html
             felix/famille-espagnol/index.html
@@ -109,6 +111,8 @@ jobs:
           - { name: 'Felix Proportionnalité questions', file: 'test-felix-proportionnalite.mjs' }
           - { name: 'Felix English', file: 'smoke-felix-english.mjs' }
           - { name: 'Felix Verbes', file: 'smoke-felix-verbes.mjs' }
+          - { name: 'Felix Healthy lifestyle', file: 'smoke-felix-healthy.mjs' }
+          - { name: 'Felix Dictée', file: 'smoke-felix-dictee.mjs' }
           - { name: 'Felix Famille', file: 'smoke-felix-famille.mjs' }
           - { name: 'Felix Quiz-Livre', file: 'smoke-felix-quizlivre.mjs' }
           - { name: 'Dasha French', file: 'smoke-dasha-french.mjs' }
