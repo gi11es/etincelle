@@ -637,7 +637,60 @@
       "people": "👩 🧑 👦 👧",
       "place": "Kitchen · cuisine",
       "food": "🥕 🥦 🍚 🐟 💧",
-      "model": "I can see a family in the kitchen. There are vegetables, rice and fish on the table. There is a bottle of water. They are sharing a meal. It looks colourful. I think they feel relaxed. Maybe the food is homemade."
+      "model": "I can see a family in the kitchen. There are vegetables, rice and fish on the table. There is a bottle of water. They are sharing a meal. It looks colourful. I think they feel relaxed. Maybe the food is homemade.",
+      "description": "Une famille de quatre personnes dans une cuisine, avec des légumes, du riz, du poisson et de l’eau.",
+      "questions": [
+        {
+          "id": "o1-q1",
+          "title": "Qui et où ?",
+          "question": "Who can you see and where are they?",
+          "instruction": "Dis qui tu vois et où ces personnes se trouvent.",
+          "starter": "I can see… in…",
+          "help": "Nomme les personnes, puis le lieu.",
+          "example": "I can see a family in the kitchen.",
+          "kind": "people"
+        },
+        {
+          "id": "o1-q2",
+          "title": "La nourriture",
+          "question": "What food and drink can you see?",
+          "instruction": "Nomme au moins trois aliments et une boisson. Fais deux phrases.",
+          "starter": "There are… There is…",
+          "help": "There are pour plusieurs aliments ; there is pour la boisson.",
+          "example": "There are vegetables, rice and fish. There is water.",
+          "kind": "food"
+        },
+        {
+          "id": "o1-q3",
+          "title": "L’action",
+          "question": "What are they doing?",
+          "instruction": "Dis ce que les personnes sont en train de faire.",
+          "starter": "They are…",
+          "help": "Après They are, utilise un verbe en -ing : eating ou sharing.",
+          "example": "They are sharing a meal.",
+          "kind": "action"
+        },
+        {
+          "id": "o1-q4",
+          "title": "Les émotions",
+          "question": "How do you think they feel?",
+          "instruction": "Dis comment ces personnes semblent se sentir.",
+          "starter": "I think they…",
+          "help": "Tu peux utiliser happy ou relaxed.",
+          "example": "I think they feel relaxed.",
+          "kind": "feelings"
+        },
+        {
+          "id": "o1-q5",
+          "title": "Ton hypothèse",
+          "question": "What do you think about the food?",
+          "instruction": "Imagine quelque chose à propos de la nourriture. Commence par Maybe ou I think.",
+          "starter": "Maybe…",
+          "help": "Une hypothèse est une possibilité, pas une certitude. Homemade = fait maison.",
+          "example": "Maybe the food is homemade.",
+          "kind": "opinion"
+        }
+      ]
     },
     {
       "id": "o2",
@@ -646,7 +699,60 @@
       "people": "🧑 👧 👦",
       "place": "Park · parc",
       "food": "🍎 🍌 🧀 🍞 💧",
-      "model": "I can see three friends in a park. There are apples, bananas, cheese and bread. There is a bottle of water. They are eating together. It looks colourful. I think they are happy. Maybe they are sharing homemade food."
+      "model": "I can see three friends in a park. There are apples, bananas, cheese and bread. There is a bottle of water. They are eating together. It looks colourful. I think they are happy. Maybe they are sharing homemade food.",
+      "description": "Trois amis dans un parc, avec des pommes, des bananes, du fromage, du pain et de l’eau.",
+      "questions": [
+        {
+          "id": "o2-q1",
+          "title": "Qui et où ?",
+          "question": "Who can you see and where are they?",
+          "instruction": "Dis qui tu vois et où ces personnes se trouvent.",
+          "starter": "I can see… in…",
+          "help": "Nomme les personnes, puis le lieu.",
+          "example": "I can see three friends in a park.",
+          "kind": "people"
+        },
+        {
+          "id": "o2-q2",
+          "title": "La nourriture",
+          "question": "What food and drink can you see?",
+          "instruction": "Nomme au moins trois aliments et une boisson. Fais deux phrases.",
+          "starter": "There are… There is…",
+          "help": "There are pour plusieurs aliments ; there is pour la boisson.",
+          "example": "There are apples, bananas, cheese and bread. There is water.",
+          "kind": "food"
+        },
+        {
+          "id": "o2-q3",
+          "title": "L’action",
+          "question": "What are they doing?",
+          "instruction": "Dis ce que les personnes sont en train de faire.",
+          "starter": "They are…",
+          "help": "Après They are, utilise un verbe en -ing : eating ou sharing.",
+          "example": "They are eating together.",
+          "kind": "action"
+        },
+        {
+          "id": "o2-q4",
+          "title": "Les émotions",
+          "question": "How do you think they feel?",
+          "instruction": "Dis comment ces personnes semblent se sentir.",
+          "starter": "I think they…",
+          "help": "Tu peux utiliser happy ou relaxed.",
+          "example": "I think they are happy.",
+          "kind": "feelings"
+        },
+        {
+          "id": "o2-q5",
+          "title": "Ton hypothèse",
+          "question": "What do you think about the food?",
+          "instruction": "Imagine quelque chose à propos de la nourriture. Commence par Maybe ou I think.",
+          "starter": "Maybe…",
+          "help": "Une hypothèse est une possibilité, pas une certitude. Homemade = fait maison.",
+          "example": "Maybe they are sharing homemade food.",
+          "kind": "opinion"
+        }
+      ]
     }
   ]
 }

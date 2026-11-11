@@ -30,9 +30,10 @@ def tracks(activity):
     source = root / ('content.json' if activity == 'healthy-lifestyle' else 'texte.json')
     content = json.loads(source.read_text())
     if activity == 'healthy-lifestyle':
-        return [(item['id'], item['en']) for item in content['vocabulary'] + content['phrases']] + [
+        base = [(item['id'], item['en']) for item in content['vocabulary'] + content['phrases']] + [
             (item['id'], item['text']) for item in content['listening']
         ] + [(item['id'], item['model']) for item in content['oral']]
+        return base + [(question['id'], question['example']) for scene in content['oral'] for question in scene['questions']] + [(question['id'] + '-prompt', question['question']) for scene in content['oral'] for question in scene['questions']]
     result = []
     for section in content['sections']:
         result += [(f"{section['id']}-{i}", text) for i, text in enumerate(section['chunks'])]

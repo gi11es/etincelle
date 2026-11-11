@@ -111,6 +111,8 @@ jobs:
           - { name: 'Felix Proportionnalité questions', file: 'test-felix-proportionnalite.mjs' }
           - { name: 'Felix English', file: 'smoke-felix-english.mjs' }
           - { name: 'Felix Verbes', file: 'smoke-felix-verbes.mjs' }
+          - { name: 'Felix Guided oral', file: 'smoke-felix-oral.mjs' }
+          - { name: 'Felix Oral speech recognition', file: 'test-felix-oral-stt.mjs' }
           - { name: 'Felix Healthy lifestyle', file: 'smoke-felix-healthy.mjs' }
           - { name: 'Felix Dictée', file: 'smoke-felix-dictee.mjs' }
           - { name: 'Felix Famille', file: 'smoke-felix-famille.mjs' }
@@ -134,6 +136,10 @@ jobs:
       - name: Install test dependencies
         working-directory: tests
         run: npm ci
+
+      - name: Install audio fixture tools
+        if: matrix.test.file == 'test-felix-oral-stt.mjs'
+        run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
 
       - name: ${{ matrix.test.name }}
         working-directory: tests

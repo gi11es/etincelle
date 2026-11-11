@@ -19,9 +19,9 @@ try {
   await page.goto(`${base}/felix/`);
   await page.click('a[href="healthy-lifestyle/index.html"]');
   await page.waitForSelector('[data-mode="learn"]');
-  const tracks = [...data.vocabulary, ...data.phrases, ...data.listening, ...data.oral];
+  const tracks = [...data.vocabulary, ...data.phrases, ...data.listening, ...data.oral, ...data.oral.flatMap(scene => scene.questions.flatMap(q => [{id:q.id}, {id:q.id + '-prompt'}]))];
   const manifest = JSON.parse(readFileSync(`${ROOT}/felix/healthy-lifestyle/audio-manifest.json`, 'utf8'));
-  assert.equal(Object.keys(manifest.tracks).length, 71);
+  assert.equal(Object.keys(manifest.tracks).length, tracks.length);
   for (const item of tracks) {
     const entry = manifest.tracks[item.id];
     assert.equal(entry.model_id, 'eleven_v4');
@@ -111,18 +111,25 @@ try {
   }
   assert.match(await page.$eval('#score', el => el.textContent), /12 \/ 12/);
   await page.click('#home-button'); await page.click('[data-mode="oral"]');
-  await page.type('#draft', 'I can see a family. There are vegetables.');
+  assert.match(await page.$eval('#oral-title', el => el.textContent), /Regarde la scène/);
+  await page.click('#oral-begin');
+  assert.match(await page.$eval('#oral-title', el => el.textContent), /Qui et où/);
+  await page.click('#oral-example summary');
+  await page.click('#oral-example-audio');
+  await page.waitForFunction(() => window.lastPlayer.currentTime > 0);
+  await page.click('#oral-fallback summary');
+  await page.click('#oral-manual');
+  await page.type('#oral-edit', 'I can see a family in the kitchen.');
+  await page.click('#oral-recheck');
+  assert.match(await page.$eval('#oral-result', el => el.textContent), /Ton texte contient/);
   await page.select('#scene-choice', '1');
-  assert.equal(await page.$eval('#draft', el => el.value), '');
+  assert.match(await page.$eval('#oral-title', el => el.textContent), /Regarde la scène/);
   await page.select('#scene-choice', '0');
-  assert.match(await page.$eval('#draft', el => el.value), /I can see a family/);
-  await page.click('.checklist input');
-  await page.click('#content details summary');
-  await page.click('#play'); await page.waitForFunction(() => window.lastPlayer.currentTime > 0);
+  assert.match(await page.$eval('#oral-transcript', el => el.textContent), /I can see a family/);
   await page.reload(); await page.waitForSelector('[data-mode="oral"]');
   assert.match(await page.$eval('#listen-progress', el => el.textContent), /12 \/ 12/);
   await page.click('[data-mode="oral"]');
-  assert.match(await page.$eval('#draft', el => el.value), /There are vegetables/);
+  assert.match(await page.$eval('#oral-transcript', el => el.textContent), /in the kitchen/);
   const checks = await page.evaluate(async () => {
     const { matches } = await import('/felix/healthy-lifestyle/answers.js');
     return [matches('healthy', ['unhealthy'], true), matches('relax', ['relaxed'], true), matches('There is vegetables', ['There are vegetables']), matches('YOGHURT', ['yogurt','yoghurt'], true), matches('  A MEAL! ', ['a meal'], true), matches('vegetable', ['vegetables'], true), matches('fish', ['fish'], true)];

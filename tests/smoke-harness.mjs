@@ -30,7 +30,7 @@ function isExternalError(text) {
 }
 
 /** Start a local static file server. Returns { server, base, browser, errors, done }. */
-export async function setup() {
+export async function setup({ launchArgs = [] } = {}) {
   const server = await new Promise((resolve) => {
     const s = createServer((req, res) => {
       let url = req.url.split('?')[0];
@@ -41,7 +41,9 @@ export async function setup() {
       }
       try {
         const content = readFileSync(filePath);
+        const oralIsolation = url.startsWith('/felix/healthy-lifestyle/') || url.startsWith('/shared/vendor/moonshine-0.1.6/');
         res.writeHead(200, {
+          ...(oralIsolation ? { 'Cross-Origin-Opener-Policy': 'same-origin', 'Cross-Origin-Embedder-Policy': 'require-corp' } : {}),
           'Content-Type': MIME_TYPES[extname(filePath)] || 'application/octet-stream',
           'Access-Control-Allow-Origin': '*',
         });
@@ -55,7 +57,7 @@ export async function setup() {
   const base = `http://127.0.0.1:${port}`;
   const browser = await puppeteer.launch({
     headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-web-security'],
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-web-security', ...launchArgs],
   });
   const errors = [];
 

@@ -29,3 +29,23 @@ button:disabled { opacity: .55; cursor: default; } .prompt { font-size: 1.25rem;
 .scene p { margin-top: 10px; } .checklist { display: grid; gap: 12px; margin: 16px 0; } .checklist label { display: flex; align-items: center; gap: 12px; min-height: 44px; } .checklist input { width: 22px; height: 22px; flex-shrink: 0; }
 summary { padding: 12px 0; cursor: pointer; } footer { margin-top: 30px; line-height: 1.9; } #score { font-size: 1.7rem; color: #89e0ba; margin-bottom: 15px; }
 @media(max-width: 600px) { .mode-grid, .vocab-list { grid-template-columns: 1fr; } .mode-card, .panel { padding: 20px; } .choices { grid-template-columns: 1fr; } .audio-tools .btn { flex: 1; } .scene { padding: 15px; } .scene-people { letter-spacing: 0; } }
+.oral-scene-picker { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 16px; }
+.oral-progress { width: 100%; height: 10px; accent-color: #89e0ba; margin-bottom: 20px; }
+#oral-title { font-size: 1.45rem; line-height: 1.5; margin-top: 8px; }
+#oral-title:focus { outline: none; }
+#content .scene { padding: 14px; margin: 14px 0 20px; }
+#content .scene-people { font-size: 2rem; }
+#content .scene-table { font-size: 1.8rem; margin-bottom: 0; padding: 8px; }
+.oral-instructions { padding-left: 24px; line-height: 1.8; }
+.oral-instructions li { padding: 6px 0; }
+.oral-task { font-size: 1.1rem; line-height: 1.7; }
+.oral-starter, .oral-cues { margin: 14px 0; padding: 12px; background: #203d39; border-radius: 10px; line-height: 1.8; }
+.oral-note { color: #bfc0d7; font-size: .9rem; line-height: 1.7; margin: 12px 0; }
+.oral-record-actions, .oral-navigation { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+.oral-status { color: #89e0ba; line-height: 1.8; }
+#oral-feedback { border-top: 1px solid #555570; margin: 20px 0; padding-top: 20px; }
+#oral-checks { padding-left: 22px; line-height: 1.9; margin: 12px 0; }
+#oral-checks li { margin: 8px 0; } #oral-checks li p { color: #cfcfe2; font-size: .95rem; }
+#oral-replay { display: block; width: 100%; margin: 10px 0; }
+#oral-skip { display: block; margin-top: 20px; color: #cfcfe2; text-decoration: underline; }
+@media (max-width: 600px) { .oral-record-actions > .btn, .oral-navigation > .btn { width: 100%; } }

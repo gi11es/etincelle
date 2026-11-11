@@ -26,7 +26,7 @@ English vocabulary, maths (collège/lycée), and book quizzes with spaced repeti
 
 **Maths** — Exercises from 5e to 2nde: fractions, algebra, geometry, functions, statistics. Procedurally generated problems with step-by-step feedback.
 
-**Eat well, live well** — Atelier d’anglais fondé sur les fiches de cours : lexique audio, traduction et dictée, familles d’aliments, phrases à trous et à reconstruire, compréhension orale et préparation à l’oral sur deux scènes. Audio britannique ElevenLabs v4 embarqué et progression locale.
+**Eat well, live well** — Atelier d’anglais fondé sur les fiches de cours : lexique audio, traduction et dictée, familles d’aliments, phrases à trous et à reconstruire, compréhension orale et oral guidé en sept étapes sur deux scènes, avec réponses au micro, transcription locale Moonshine et retour sur les idées et les constructions. Audio britannique ElevenLabs v4 embarqué et progression locale.
 
 **Dictée · Sur l’eau** — L’extrait de Maupassant de la feuille de révision, découpé en 13 passages : lecture audio, mots difficiles, dictées à trous et dictées de passages. Audio français ElevenLabs v4 embarqué, vitesse lente, pause/reprise, barre de lecture pour naviguer dans le passage, réécoute par phrase, correction des accents et accords, progression sauvegardée sur l’appareil.
 

@@ -71,3 +71,19 @@ Without `secrets.js`, the widget does not appear. Without the proxy, the widget 
 ```
 */5 * * * * cd /var/www/etincelle && git pull --ff-only origin master
 ```
+
+## Local speech recognition for the oral workshop
+
+Include `scripts/nginx-oral.conf` inside the HTTPS server block and reload nginx.
+It scopes `Cross-Origin-Opener-Policy: same-origin` and
+`Cross-Origin-Embedder-Policy: require-corp` to the English workshop and its pinned
+Moonshine WASM runtime. This enables the runtime's worker threads without changing
+headers for other family activities. Keep `.mjs` and `.wasm` MIME types configured
+as above. The browser downloads English Small Streaming model weights from
+`https://download.moonshine.ai` on first use and caches them locally. Microphone
+audio stays in the browser; no API key or backend speech service is required.
+
+`npm run test:oral` in `tests/` checks the guided UI with controlled recognition.
+`npm run test:oral-stt` runs the actual WASM recognizer against the lesson audio and
+Chromium's fake microphone, verifies that no audio is uploaded, and requires
+ffmpeg to prepare its temporary microphone fixture.

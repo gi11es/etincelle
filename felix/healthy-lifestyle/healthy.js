@@ -1,4 +1,5 @@
 import { matches } from './answers.js';
+import { createOralCoach } from './oral-coach.js?v=oral-2';
 import * as DB from '../../shared/db.js';
 const $ = selector => document.querySelector(selector);
 const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -10,6 +11,7 @@ const shuffle = values => {
 const storageKey = 'felix-healthy-lifestyle-v1';
 let data, mode, queue = [], index = 0, responses = [], answered = false, selected = '', built = [];
 let saved = { items: {}, drafts: {} }, sessionStart = 0, audio = new Audio(), currentTrack = null, playbackId = 0;
+let oralCoach;
 const titles = { learn: 'La boîte à outils', vocab: 'Vocabulaire & dictée', sort: 'Les familles d’aliments', phrases: 'Construire ses phrases', listen: 'Comprendre à l’écoute', oral: 'Préparer son oral' };
 
 function save() {
@@ -37,6 +39,7 @@ function screen(name) {
   ['home', 'workspace', 'results'].forEach(id => { $(`#${id}`).hidden = id !== name; });
 }
 function home() {
+  oralCoach?.leave();
   screen('home');
   for (const name of ['vocab', 'sort', 'phrases', 'listen']) {
     const entries = Object.entries(saved.items).filter(([key]) => key.startsWith(`${name}:`));
@@ -50,12 +53,13 @@ function controls(track = null) {
   $('#feedback').replaceChildren();
 }
 function start(name, retry) {
+  oralCoach?.leave();
   mode = name;
   screen('workspace');
   $('#activity-title').textContent = titles[mode];
   $('#activity-title').focus();
   if (mode === 'learn') return learn();
-  if (mode === 'oral') return oral(0);
+  if (mode === 'oral') { controls(); return oralCoach.open(0); }
   queue = retry || createQueue(mode);
   index = 0; responses = []; sessionStart = Date.now();
   renderQuestion();
@@ -189,23 +193,6 @@ function learn() {
   }
   $('#filter').oninput = filter; filter();
 }
-function oral(sceneIndex) {
-  stop();
-  const item = data.oral[sceneIndex];
-  controls(item.id);
-  $('#position').textContent = `Scène ${sceneIndex + 1} / ${data.oral.length}`;
-  $('#instructions').textContent = item.prompt;
-  $('#content').innerHTML = `<label for="scene-choice">Choisir une scène</label><select id="scene-choice">${data.oral.map((o, i) => `<option value="${i}">${esc(o.title)}</option>`).join('')}</select>
-    <div class="scene" role="img" aria-label="${esc(item.id === 'o1' ? 'Une famille de quatre personnes dans une cuisine, avec des légumes, du riz, du poisson et de l’eau.' : 'Trois amis dans un parc, avec des pommes, des bananes, du fromage, du pain et de l’eau.')}"><strong lang="en">${esc(item.place)}</strong><div class="scene-people" aria-hidden="true">${item.people}</div><div class="scene-table" aria-hidden="true">${item.food}</div><p>Scène d’entraînement créée pour cet atelier.</p></div>
-    <p class="explanation" lang="en">I can see… · There is… · There are… · They are… · It looks… · I think… · Maybe…</p>
-    <label for="draft">Prépare quelques phrases, puis dis-les à voix haute sans lire</label><textarea id="draft" spellcheck="false" placeholder="I can see…"></textarea><p id="draft-status" role="status"></p>
-    <h3>Écoute-toi et vérifie</h3><p>Cette grille sert à t’auto-évaluer. Elle ne note pas automatiquement ton anglais.</p><div class="checklist">${['J’ai décrit les personnes et le lieu.', 'J’ai nommé au moins trois aliments.', 'J’ai utilisé there is et there are.', 'J’ai utilisé be + verbe en -ing.', 'J’ai parlé de l’ambiance ou des émotions.', 'J’ai proposé une hypothèse avec I think ou Maybe.', 'J’ai parlé à voix haute sans tout lire.'].map((label, i) => `<label><input type="checkbox" data-check="${i}">${label}</label>`).join('')}</div>
-    <details><summary>Voir un modèle possible (plusieurs réponses sont possibles)</summary><p class="explanation" lang="en">${esc(item.model)}</p></details><p>Le bouton Écouter lit le modèle. Essaie d’abord avec tes propres mots.</p>`;
-  $('#scene-choice').value = sceneIndex;
-  $('#scene-choice').onchange = () => oral(Number($('#scene-choice').value));
-  $('#draft').value = saved.drafts[item.id] || '';
-  $('#draft').oninput = () => { saved.drafts[item.id] = $('#draft').value; save(); $('#draft-status').textContent = 'Brouillon mis à jour sur cet appareil.'; };
-}
 async function init() {
   const response = await fetch('content.json');
   if (!response.ok) throw new Error('Contenu indisponible');
@@ -214,6 +201,7 @@ async function init() {
     const value = JSON.parse(localStorage.getItem(storageKey) || 'null');
     if (value && typeof value.items === 'object' && value.items && typeof value.drafts === 'object' && value.drafts) saved = value;
   } catch { $('#status').textContent = 'La progression précédente est indisponible. Tu peux commencer une nouvelle série.'; }
+  oralCoach = createOralCoach({ root: $('#content'), scenes: data.oral, getSaved: () => saved, save, play, stop });
   document.querySelectorAll('[data-mode]').forEach(button => { button.onclick = () => start(button.dataset.mode); });
   $('#back').onclick = home; $('#home-button').onclick = home;
   $('#play').onclick = () => { if (currentTrack) play(currentTrack); };
@@ -221,8 +209,8 @@ async function init() {
   $('#check').onclick = check;
   $('#next').onclick = () => { if (!answered) return; if (++index === queue.length) finish(); else renderQuestion(); };
   $('#content').onkeydown = event => { if (event.key === 'Enter' && event.target.id === 'answer') { event.preventDefault(); check(); } };
-  document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); });
-  window.addEventListener('pagehide', stop);
+  document.addEventListener('visibilitychange', () => { if (document.hidden) { stop(); oralCoach?.suspend(); } });
+  window.addEventListener('pagehide', () => { stop(); oralCoach?.leave(); });
   home();
 }
 init().catch(() => { $('#status').textContent = 'Impossible de charger l’atelier. Recharge la page pour réessayer.'; });
