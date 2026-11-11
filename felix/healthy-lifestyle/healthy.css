@@ -49,3 +49,5 @@ summary { padding: 12px 0; cursor: pointer; } footer { margin-top: 30px; line-he
 #oral-replay { display: block; width: 100%; margin: 10px 0; }
 #oral-skip { display: block; margin-top: 20px; color: #cfcfe2; text-decoration: underline; }
 @media (max-width: 600px) { .oral-record-actions > .btn, .oral-navigation > .btn { width: 100%; } }
+
+#oral-feedback > #oral-next { display: block; width: 100%; margin: 18px 0; }

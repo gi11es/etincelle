@@ -63,6 +63,7 @@ try {
   await page.evaluate(() => { window.testMicError = null; });
   await say('I can see a family in the kitchen.');
   assert.match(await page.$eval('#oral-result', el => el.textContent), /Ta réponse contient/);
+  assert.ok(await page.$('#oral-feedback #oral-next'), 'Continue sits directly below the answer feedback');
   await page.click('#oral-next');
   await page.reload(); await page.waitForSelector('[data-mode="oral"]');
   await page.click('[data-mode="oral"]');

@@ -1,5 +1,5 @@
 import { matches } from './answers.js';
-import { createOralCoach } from './oral-coach.js?v=oral-2';
+import { createOralCoach } from './oral-coach.js?v=oral-3';
 import * as DB from '../../shared/db.js';
 const $ = selector => document.querySelector(selector);
 const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

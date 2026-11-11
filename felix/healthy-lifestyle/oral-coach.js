@@ -116,6 +116,7 @@ export function createOralCoach({ root, scenes, getSaved, save, play, stop }) {
       $('#oral-transcript-label').textContent = answer.adjusted ? 'Texte ajusté par toi' : answer.spoken ? 'Ce que j’ai entendu' : 'Ta réponse écrite';
       $('#oral-correct-transcript').hidden = !answer.spoken;
       $('#oral-next').hidden = !result.passed;
+      $('#oral-checks').after($('#oral-next'));
       $('#oral-record').textContent = '🎙️ Réessayer à voix haute';
     }
   }
