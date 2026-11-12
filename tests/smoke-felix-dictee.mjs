@@ -162,6 +162,22 @@ try {
   });
   assert.equal(Object.keys(manifest.tracks).length, 76);
   assert.deepEqual(scores, { accent: 0, omission: 1, extra: 1, typography: 100, caps: 1, wrong: 1 });
+  // The scores tab lists the saved history outside any exercise and opens a passage.
+  await page.click('[data-mode="scores"]');
+  await page.waitForSelector('#scores .score-summary');
+  assert.equal(await page.$eval('.audio-tools', el => el.hidden), true);
+  assert.equal(await page.$eval('.actions', el => el.hidden), true);
+  assert.match(await page.$eval('.score-summary', el => el.textContent), /13 \/ 13/);
+  assert.equal(await page.$$eval('#scores tbody tr button[data-passage]', els => els.length), 13);
+  const latest = await page.$$eval('#scores table', tables => tables.at(-1).querySelector('tbody tr').textContent);
+  assert.match(latest, /Dictée à trous/);
+  assert.match(latest, /0 %/);
+  assert.match(await page.$eval('#scores tbody tr', el => el.textContent), /1 \/ 3/);
+  await page.screenshot({ path: '/tmp/felix-dictee-scores-mobile.png', fullPage: true });
+  await page.click('button[data-passage="4"]');
+  assert.equal(await page.$eval('[data-mode="dictation"]', el => el.getAttribute('aria-pressed')), 'true');
+  assert.equal(await page.$eval('#section', el => el.value), '4');
+  assert.equal(await page.$eval('.actions', el => el.hidden), false);
   await page.click('[data-mode="read"]');
   await page.click('#full-text summary');
   assert.equal(await page.$eval('#full-text', el => el.open), true);

@@ -100,6 +100,66 @@ function progress() {
     (storageAvailable ? '' : ' · Enregistrement indisponible sur cet appareil.');
 }
 
+const MODE_NAMES = { words: 'Mot difficile', gaps: 'Dictée à trous', dictation: 'Dictée du passage' };
+const percentOf = session => session.total ? Math.round(100 * session.correct / session.total) : 0;
+const scoreClass = percent => percent >= 90 ? 'score-high' : percent >= 60 ? 'score-mid' : 'score-low';
+const scoreCell = attempts => {
+  if (!attempts.length) return '<td>—</td>';
+  const best = Math.max(...attempts.map(percentOf)), last = percentOf(attempts[attempts.length - 1]);
+  return `<td><span class="${scoreClass(best)}">${best} %</span><small>dernier ${last} % · ${attempts.length} essai${attempts.length > 1 ? 's' : ''}</small></td>`;
+};
+const formatDate = timestamp => new Date(timestamp).toLocaleString('fr-FR', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+
+async function renderScores() {
+  const view = document.createElement('div');
+  view.id = 'scores';
+  $('#exercise').replaceChildren(view);
+  let sessions;
+  try { sessions = (await DB.getSessions('dictee')).sort((a, b) => a.timestamp - b.timestamp); }
+  catch {
+    view.innerHTML = '<p>Les scores n’ont pas pu être lus sur cet appareil. Recharge la page pour réessayer.</p>';
+    return;
+  }
+  if (mode !== 'scores') return;
+  const dictations = sessions.filter(s => s.mode === 'dictation');
+  const bestByPassage = data.sections.map(section => dictations.filter(s => s.passage === section.id).map(percentOf))
+    .filter(list => list.length).map(list => Math.max(...list));
+  const average = bestByPassage.length ? Math.round(bestByPassage.reduce((a, b) => a + b, 0) / bestByPassage.length) : null;
+  view.innerHTML = `<div class="score-summary">
+      <div><strong>${sessions.length}</strong>exercice${sessions.length > 1 ? 's' : ''} corrigé${sessions.length > 1 ? 's' : ''}</div>
+      <div><strong>${bestByPassage.length} / ${data.sections.length}</strong>passages en dictée</div>
+      <div><strong>${average === null ? '—' : `${average} %`}</strong>moyenne des meilleures dictées</div>
+    </div>
+    <h3>Par passage</h3>
+    <p class="muted">Le grand chiffre est ton meilleur score. Appuie sur un passage pour t’entraîner dessus.</p>
+    <div class="score-table-wrap"><table class="score-table">
+      <thead><tr><th>Passage</th><th>Mots difficiles</th><th>Dictée à trous</th><th>Dictée</th></tr></thead>
+      <tbody>${data.sections.map((section, i) => {
+        const mine = sessions.filter(s => s.passage === section.id);
+        const known = section.words.filter((_, w) => results[`${section.id}-words-${w}`]?.percent === 100).length;
+        return `<tr><td><button data-passage="${i}">${section.id}. ${escape(section.title)}</button></td>` +
+          `<td>${mine.some(s => s.mode === 'words') || known ? `<span class="${scoreClass(100 * known / section.words.length)}">${known} / ${section.words.length}</span><small>mots réussis</small>` : '—'}</td>` +
+          scoreCell(mine.filter(s => s.mode === 'gaps')) + scoreCell(mine.filter(s => s.mode === 'dictation')) + '</tr>';
+      }).join('')}</tbody>
+    </table></div>
+    <h3>Derniers essais</h3>
+    ${sessions.length ? `<div class="score-table-wrap"><table class="score-table">
+      <thead><tr><th>Date</th><th>Exercice</th><th>Score</th></tr></thead>
+      <tbody>${sessions.slice(-20).reverse().map(s => {
+        const title = data.sections.find(section => section.id === s.passage)?.title || '';
+        return `<tr><td>${formatDate(s.timestamp)}</td><td>${MODE_NAMES[s.mode] || s.mode}<small>${s.passage}. ${escape(title)}</small></td>` +
+          `<td><span class="${scoreClass(percentOf(s))}">${percentOf(s)} %</span><small>${s.correct} / ${s.total}${s.timeSec ? ` · ${formatTime(s.timeSec)}` : ''}</small></td></tr>`;
+      }).join('')}</tbody>
+    </table></div>` : '<p>Aucun exercice corrigé pour l’instant. Fais une dictée, puis reviens ici !</p>'}`;
+  view.querySelectorAll('[data-passage]').forEach(button => {
+    button.onclick = () => {
+      sectionIndex = Number(button.dataset.passage);
+      $('#section').value = sectionIndex;
+      $('[data-mode="dictation"]').click();
+    };
+  });
+}
+
 function gapExercise() {
   let source = text();
   const positions = section().words.map((item, i) => ({ ...item, i, at: source.indexOf(item.word) })).sort((a, b) => a.at - b.at);
@@ -123,7 +183,16 @@ function render() {
   $('#retry').hidden = true;
   $('#full-text').hidden = mode !== 'read';
   $('#full-text').open = false;
-  $('#phrase-tools').hidden = mode === 'words';
+  $('#phrase-tools').hidden = mode === 'words' || mode === 'scores';
+  document.querySelectorAll('.toolbar, .audio-tools, .playback-bar, .actions').forEach(el => { el.hidden = mode === 'scores'; });
+  $('#audio-status').hidden = mode === 'scores';
+  if (mode === 'scores') {
+    $('#activity-title').textContent = 'Mes scores';
+    $('#instruction').textContent = 'Tous tes exercices corrigés sur cet appareil, passage par passage.';
+    progress();
+    renderScores();
+    return;
+  }
   const titles = { read: 'Lire et écouter', words: 'Mots difficiles', gaps: 'Dictée à trous', dictation: 'Dictée du passage' };
   $('#activity-title').textContent = `${titles[mode]} · ${section().title}`;
   $('#instruction').textContent = {
